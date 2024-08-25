@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Custom CSS for curved background */
+.footer-curved-background {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-curved-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px; /* Adjust as necessary */
+    background: #D4ECDC; /* Light mode background */
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transform: scale(2, 1);
+    z-index: -1;
+  }
+  
+  .dark .footer-curved-background::before {
+    background: #003D3B; /* Dark mode background */
+  }
+  

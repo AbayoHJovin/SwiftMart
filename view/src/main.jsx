@@ -1,0 +1,48 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import LandingPage from "./pages/Landing";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import About from "./pages/About";
+import ShopNow from "./pages/ShopNow";
+import NotFound from "./pages/Notfound";
+import Contact from "./pages/Contacts";
+import AdminDashboard from "../admin/Dashboard.jsx";
+import Account from "./pages/Account.jsx";
+import Login from "./pages/Login.jsx";
+import SignupForm from "./pages/Signup.jsx";
+import ProdDescription from "./pages/ProdDescription.jsx";
+import { ThemeProvider } from "../constants/ThemeContext.jsx";
+import CartPage from "./pages/Cart.jsx";
+import CartItems from "../constants/cartItems.jsx";
+import FavItems from "../constants/favItems.jsx";
+
+const router = createBrowserRouter([
+  { path: "/", element: <LandingPage /> },
+  { path: "/about", element: <About /> },
+  { path: "shop", element: <ShopNow /> },
+  { path: "/contacts", element: <Contact /> },
+  { path: "/admin", element: <AdminDashboard /> },
+  { path: "/account", element: <Account /> },
+  { path: "/login", element: <Login /> },
+  { path: "/signup", element: <SignupForm /> },
+  { path: "/product/:prodId", element: <ProdDescription /> },
+  { path: "/cart", element: <CartPage /> },
+  { path: "/try", element: <CartItems /> },
+  { path: "*", element: <NotFound /> },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <FavItems>
+      <CartItems>
+        <ThemeProvider>
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </CartItems>
+    </FavItems>
+  </React.StrictMode>
+);
