@@ -1,6 +1,12 @@
 const User = require("../model/Users");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const {
+  createAccessToken,
+  createRefreshToken,
+  sendAccessToken,
+  sendRefreshToken,
+} = require("../auth/tokens");
+const isAuth = require("../auth/isAuth");
 require("dotenv").config();
 
 exports.signupUser = async (req, res) => {
@@ -42,30 +48,21 @@ exports.loginUser = async (req, res) => {
     if (!user) {
       return res.status(400).json({ message: "Invalid Email" });
     }
-
     const validPassword = await bcrypt.compare(password, user.password);
     if (!validPassword) {
       return res.status(400).json({ message: "Invalid password" });
     }
-
-    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
-    });
-
-    res.header("Authorization",  token).json({
-      message: "Logged in successfully",
-      token:token,
-      user: {
-        id: user._id,
-        username: user.username,
-        email: user.email,
-      },
-    });
+    const accessToken = createAccessToken(user._id);
+    const refreshToken = createRefreshToken(user._id);
+    user.refreshToken = refreshToken;
+    // await user.save()
+    sendRefreshToken(res, refreshToken);
+    sendAccessToken(req, res, accessToken, user);
+    return;
   } catch (err) {
     res.status(500).json({ message: err.message || "Internal server error" });
   }
 };
-
 
 exports.getUserDetails = async (req, res) => {
   try {
@@ -79,32 +76,8 @@ exports.getUserDetails = async (req, res) => {
   }
 };
 
-// Update user details
-// exports.updateUserDetails = async (req, res) => {
-//   const userId = req.user._id; // assuming user ID is available in req.user
-//   const { name, email, profilePicture } = req.body;
-//   try {
-//     const user = await User.findById(userId);
-//     if (!user) {
-//       return res.status(404).json({ message: "User not found" });
-//     }
-
-//     user.username = name || user.username;
-//     user.email = email || user.email;
-//     user.profilePicture = profilePicture || user.profilePicture;
-
-//     await user.save();
-
-//     res.status(200).json({ success: true, message: "User updated successfully" });
-//   } catch (err) {
-//     res.status(500).json({ message: err.message || "Internal server error" });
-//   }
-// };
-
-
-
 exports.updateUserDetails = async (req, res) => {
-  const userId = req.query.userId; 
+  const userId = req.query.userId;
   const { name, email, profilePicture } = req.body;
 
   try {
@@ -119,8 +92,32 @@ exports.updateUserDetails = async (req, res) => {
 
     await user.save();
 
-    res.status(200).json({ success: true, message: "User updated successfully" });
+    res
+      .status(200)
+      .json({ success: true, message: "User updated successfully" });
   } catch (err) {
     res.status(500).json({ message: err.message || "Internal server error" });
   }
+};
+
+exports.getCurrentUser = async (req, res) => {
+  const token = req.headers.token;
+  try {
+    const userId = isAuth(token);
+
+    if (!userId) {
+      return res.json({ user: null });
+    }
+
+    const currentUser = await User.findById(userId);
+
+    return res.status(200).json({ user: currentUser });
+  } catch (e) {
+    return res.status(401).json({ error: e.message || "Something went wrong" });
+  }
+};
+
+exports.logOut = (req, res) => {
+  res.clearCookie("refreshToken", { path: "/refresh_token" });
+  return res.send({ message: "Logged out" });
 };

@@ -1,36 +1,36 @@
-import { useEffect, useState } from "react";
-import UseUsers from "./Users";
+/* eslint-disable react/prop-types */
+import { createContext, useEffect, useState } from "react";
 
-const CurrentUser = () => {
-  const [currentName, setName] = useState("");
-  const [currentEmail, setEmail] = useState("");
-  const [currentUserId, setUserId] = useState("");
-  const { users } = UseUsers();
-
+export const CurrentUserContext = createContext();
+const CurrentUser = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [isLoading, setISLoading] = useState(false);
   useEffect(() => {
-    const userData = JSON.parse(sessionStorage.getItem("User"));
+    const userToken = localStorage.getItem("token");
+    setISLoading(true);
+    fetch("http://localhost:5000/currentUser", {
+      method: "GET",
+      headers: { token: userToken },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setCurrentUser(data.user);
+      })
+      .catch((e) => console.error(e))
+      .finally(() => {
+        setISLoading(false);
+      });
+  }, []);
 
-    if (userData) {
-      console.log(userData);
-      const { userId, usernames, emails } = userData;
-      if (!userId || !usernames || !emails) {
-        console.log("No auth is available");
-      } else {
-        const availableUser = users.filter((user) => user._id === userId);
-        if (availableUser.length === 0) {
-          console.log("No current user!");
-        } else {
-          setName(usernames);
-          setEmail(emails);
-          setUserId(userId);
-        }
-      }
-    } else {
-      console.log("No user data available in session storage.");
-    }
-  }, [users]);
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
 
-  return { currentName, currentEmail, currentUserId };
+  return (
+    <CurrentUserContext.Provider value={{ currentUser }}>
+      {children}
+    </CurrentUserContext.Provider>
+  );
 };
 
 export default CurrentUser;

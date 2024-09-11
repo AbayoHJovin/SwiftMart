@@ -1,3 +1,4 @@
+const isAuth = require("../auth/isAuth");
 const Cart = require("../model/Cart");
 exports.addCartItem = async (req, res) => {
   const { userId, prodId } = req.body;
@@ -10,7 +11,6 @@ exports.addCartItem = async (req, res) => {
     const userCart = await Cart.findOne({ userId });
 
     if (!userCart) {
-      // If the cart doesn't exist, create a new one
       const newCart = await Cart.create({
         userId: userId,
         products: [{ productId: prodId }],
@@ -39,21 +39,29 @@ exports.addCartItem = async (req, res) => {
   }
 };
 
+
 exports.getCartItem = async (req, res) => {
   const currentUserId = req.query.currentUser;
+  const authorization = req.headers.authorization;
+
   try {
-    if (!currentUserId) {
-      throw new Error("Unauthorized");
+    if (!currentUserId || !authorization) {
+      return res.status(401).json({ message: "Not authorized" });
     }
-    const getItems = await Cart.findOne({ userId: currentUserId });
-    if (!getItems) {
-      throw new Error("No item on your cart");
+
+    const userId = isAuth(authorization);
+    if (!userId) {
+      return res.status(401).json({ message: "Not authorized" });
     }
-    return res.status(200).json({ data: getItems });
+
+    const cart = await Cart.findOne({ userId: currentUserId });
+    if (!cart || cart.products.length === 0) {
+      return res.status(404).json({ message: "No items in your cart" });
+    }
+
+    return res.status(200).json({ products: cart.products });
   } catch (e) {
-    return res
-      .status(401)
-      .json({ message: e.message || "Something went wrong" });
+    return res.status(500).json({ message: e.message || "Something went wrong" });
   }
 };
 

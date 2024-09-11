@@ -1,15 +1,20 @@
-
-
-
-const express = require('express');
-const { signupUser, loginUser, getUserDetails, updateUserDetails } = require('../userControllers');
-// const authenticate = require('../middleware/authenticate'); // Assuming you have middleware to handle JWT
+const express = require("express");
+const {
+  signupUser,
+  loginUser,
+  getUserDetails,
+  updateUserDetails,
+  logOut,
+  getCurrentUser,
+} = require("../userControllers");
 
 const router = express.Router();
 
-router.post('/signup', signupUser);
-router.post('/login', loginUser);
-router.get('/users', getUserDetails);
-router.patch('/user/update', updateUserDetails);
+router.post("/signup", signupUser);
+router.post("/login", loginUser);
+router.get("/users", getUserDetails);
+router.patch("/user/update", updateUserDetails);
+router.post("/logout", logOut);
+router.get("/currentUser", getCurrentUser);
 
 module.exports = router;

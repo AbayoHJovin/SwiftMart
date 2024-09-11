@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { FaMoon, FaSearch, FaSun } from "react-icons/fa";
+import { FaRegMoon, FaSearch, FaSun } from "react-icons/fa";
 import { CgClose, CgHeart, CgShoppingCart } from "react-icons/cg";
 import { Drawer, List, ListItem } from "@mui/material";
 import { ThemeContext } from "../../constants/ThemeContext";
@@ -94,7 +94,7 @@ export default function Navbar() {
         {theme === "dark" ? (
           <FaSun onClick={toggleTheme} className="cursor-pointer" />
         ) : (
-          <FaMoon onClick={toggleTheme} className="cursor-pointer" />
+          <FaRegMoon onClick={toggleTheme} className="cursor-pointer" />
         )}
         <CgHeart className="cursor-pointer" />
         <a href="/cart">
@@ -108,7 +108,7 @@ export default function Navbar() {
           {theme === "dark" ? (
             <FaSun onClick={toggleTheme} />
           ) : (
-            <FaMoon onClick={toggleTheme} />
+            <FaRegMoon onClick={toggleTheme} />
           )}
           <AiOutlineMenu
             className="mr-2 visible sm:hidden"

@@ -1,34 +1,36 @@
 /* eslint-disable react/prop-types */
-import { createContext, useEffect, useState } from "react";
-import CurrentUser from "./currentUser";
-// import { redirect, useNavigate } from "react-router-dom";
+import { createContext, useContext, useEffect, useState } from "react";
+import { CurrentUserContext } from "./currentUser";
 
 export const CartContext = createContext();
 export default function CartItems({ children }) {
   const [itemsOnCart, setIsOnCart] = useState([]);
-  const { currentUserId } = CurrentUser();
-  // const navigate = useNavigate();
+  const { CurrentUser } = useContext(CurrentUserContext);
+  const token=localStorage.getItem("token")
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
-    fetch(`http://localhost:5000/getCartItems?currentUser=${currentUserId}`, {
+    fetch(`http://localhost:5000/getCartItems?currentUser=${CurrentUser._id}`, {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        authorization: token,
+      },
     })
       .then((response) => response.json())
       .then((data) => {
         setIsOnCart(data.data.products);
       })
       .catch((e) => console.error(e));
-  }, [currentUserId]);
+  }, [CurrentUser._id, token]);
 
   function addItemOncart(itemId) {
-    if (!currentUserId) {
-      // navigate("/login");
+    if (!CurrentUser._id) {
       console.log("Unauthorized");
     }
     fetch("http://localhost:5000/addItemOncart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ userId: currentUserId, prodId: itemId }),
+      body: JSON.stringify({ userId: CurrentUser._id, prodId: itemId }),
     })
       .then((response) => response.json())
       .then((data) => console.log(data))
@@ -36,7 +38,7 @@ export default function CartItems({ children }) {
   }
   function deleteItem(itemId) {
     fetch(
-      `http://localhost:5000/deleteCartItem?itemId=${itemId}&userId=${currentUserId}
+      `http://localhost:5000/deleteCartItem?itemId=${itemId}&userId=${CurrentUser._id}
 `,
       {
         method: "DELETE",
@@ -48,6 +50,7 @@ export default function CartItems({ children }) {
       })
       .catch((e) => console.error(e));
   }
+
   return (
     <CartContext.Provider value={{ itemsOnCart, addItemOncart, deleteItem }}>
       {children}

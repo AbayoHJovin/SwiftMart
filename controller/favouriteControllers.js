@@ -1,4 +1,5 @@
-const Favourites=require("../model/Favourites")
+const isAuth = require("../auth/isAuth");
+const Favourites = require("../model/Favourites");
 exports.addFavouritesItem = async (req, res) => {
   const { userId, prodId } = req.body;
   try {
@@ -39,50 +40,86 @@ exports.addFavouritesItem = async (req, res) => {
   }
 };
 
+// exports.getFavouritesItem = async (req, res) => {
+//   const currentUserId = req.query.currentUser;
+//   const authorization = req.headers.authorization;
+//   try {
+//     if (!currentUserId || !authorization) {
+//       throw new Error("Not authorized");
+//     }
+//     const userId = isAuth(authorization);
+//     if (!userId) {
+//       throw new Error("Not authorized");
+//     }
+//     const getItems = await Favourites.findOne({ userId: currentUserId });
+//     if (!getItems) {
+//       throw new Error("No item on your Favourites");
+//     }
+//     return res.status(200).json({ data: getItems });
+//   } catch (e) {
+//     return res
+//       .status(401)
+//       .json({ message: e.message || "Something went wrong" });
+//   }
+// };
+
 exports.getFavouritesItem = async (req, res) => {
   const currentUserId = req.query.currentUser;
+  const authorization = req.headers.authorization;
+
   try {
-    if (!currentUserId) {
-      throw new Error("Unauthorized");
+    if (!currentUserId || !authorization) {
+      return res.status(401).json({ message: "Not authorized" });
     }
-    const getItems = await Favourites.findOne({ userId: currentUserId });
-    if (!getItems) {
-      throw new Error("No item on your Favourites");
+
+    // Validate token and get userId
+    const userId = isAuth(authorization);
+    if (!userId) {
+      return res.status(401).json({ message: "Not authorized" });
     }
-    return res.status(200).json({ data: getItems });
+
+    // Find the user's cart
+    const cart = await Favourites.findOne({ userId: currentUserId });
+    if (!cart || cart.products.length === 0) {
+      return res.status(404).json({ message: "No items in your cart" });
+    }
+
+    return res.status(200).json({ products: cart.products });
+  } catch (e) {
+    return res.status(500).json({ message: e.message || "Something went wrong" });
+  }
+};
+
+
+exports.deleteFavouritesItem = async (req, res) => {
+  const { itemId, userId } = req.query;
+  try {
+    if (!itemId || !userId) {
+      throw new Error("No item selected");
+    }
+
+    const userFavourites = await Favourites.findOne({ userId: userId });
+    if (!userFavourites) {
+      throw new Error("Favourites not found");
+    }
+
+    const updatedProducts = userFavourites.products.filter(
+      (product) => product.productId.toString() !== itemId
+    );
+
+    if (updatedProducts.length === userFavourites.products.length) {
+      throw new Error("Item not found in Favourites");
+    }
+
+    userFavourites.products = updatedProducts;
+    await userFavourites.save();
+
+    return res
+      .status(200)
+      .json({ message: "Item deleted", data: userFavourites.products });
   } catch (e) {
     return res
       .status(401)
       .json({ message: e.message || "Something went wrong" });
   }
 };
-
-exports.deleteFavouritesItem = async (req, res) => {
-    const { itemId, userId } = req.query;
-    try {
-      if (!itemId || !userId) {
-        throw new Error("No item selected");
-      }
-  
-      const userFavourites = await Favourites.findOne({ userId: userId });
-      if (!userFavourites) {
-        throw new Error("Favourites not found");
-      }
-  
-      const updatedProducts = userFavourites.products.filter(
-        (product) => product.productId.toString() !== itemId
-      );
-  
-      if (updatedProducts.length === userFavourites.products.length) {
-        throw new Error("Item not found in Favourites");
-      }
-  
-      userFavourites.products = updatedProducts;
-      await userFavourites.save();
-  
-      return res.status(200).json({ message: "Item deleted", data: userFavourites.products });
-    } catch (e) {
-      return res.status(401).json({ message: e.message || "Something went wrong" });
-    }
-  };
-  

@@ -11,7 +11,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleRememberMeChange = () => setRememberMe(!rememberMe);
@@ -25,6 +24,7 @@ const Login = () => {
         method: "POST",
         body: JSON.stringify({ email: email, password: password }),
         headers: { "Content-Type": "application/json" },
+        credentials:"include"
       })
         .then((response) => response.json())
         .then((data) => {
@@ -32,14 +32,8 @@ const Login = () => {
           setTimeout(() => {
             navigate("/");
           }, 3000);
-          const usernames = data.user.username;
-          const emails = data.user.email;
-          const userId = data.user.id;
-          sessionStorage.setItem(
-            "User",
-            JSON.stringify({ usernames, emails, userId })
-          );
-          sessionStorage.setItem("user_token_id", data.token);
+          const accessToken=data.accessToken
+          localStorage.setItem("token", accessToken)
         })
         .catch((e) => toast.error(e));
     } catch (error) {
