@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useState } from "react";
 import { Box, Typography, List, ListItem, ListItemText } from "@mui/material";
 import { FaSignOutAlt, FaList, FaLock, FaUser } from "react-icons/fa";
@@ -7,6 +6,9 @@ import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import PersonalDetails from "../components/PersonalDetails";
 import { ThemeContext } from "../../constants/ThemeContext";
+import LogoutModal from "./logout";
+import { toast } from "react-toastify";
+import Loader from "../components/loader";
 
 function TabPanel(props) {
   // eslint-disable-next-line react/prop-types
@@ -30,23 +32,71 @@ function TabPanel(props) {
 }
 
 export default function Account() {
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(true);
   const [tabValue, setTabValue] = useState(0);
+  const [isLoggingOut,setIsLoggingOut]=useState(false)
   const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpen = () => setModalOpen(true);
+  const handleClose = () => setModalOpen(false);
+
+  function handleConfirmLogout  (){
+    handleClose();
+    setIsLoggingOut(true)
+    fetch("http://localhost:5000/logout",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      credentials:"include"
+    })
+    .then((res)=>res.json())
+    .then((data)=>{
+      if (data.message=== "Logged out"){
+        // setIsLoggingOut(false)
+        localStorage.removeItem("token")
+        navigate("/")
+
+      }
+    })
+    .catch((e)=>{
+      console.log(e)
+      toast.error("Can't logout!")
+    })
+    .finally(()=>{
+      setIsLoggingOut(false)
+    })
+    
+  }
 
   useEffect(() => {
-    const userAuthKey = sessionStorage.getItem("user_token_id");
-    const User = sessionStorage.getItem("User");
-    if (userAuthKey && User) {
-      setIsSignedIn(true);
-    }
+    const token = localStorage.getItem("token");
+    fetch("http://localhost:5000/protected", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", authorization: token },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message === "Unauthorized") {
+          setIsSignedIn(false);
+        } else if (data.message === "Authorized") {
+          setIsSignedIn(true);
+        } else {
+          setIsSignedIn(false);
+        }
+      })
+      .catch((e) => {
+        console.log("Error while checking the user", e);
+        setIsSignedIn(false);
+      });
   }, []);
 
   const handleTabClick = (index) => {
     setTabValue(index);
   };
-
+if(isLoggingOut){
+  return <Loader text="Logging out ..."/>
+}
   return (
     <div className="dark:bg-black bg-white">
       <Navbar />
@@ -100,22 +150,19 @@ export default function Account() {
                 ))}
                 <ListItem
                   button
-                  onClick={() => {
-                    sessionStorage.clear();
-                    navigate("/login");
-                  }}
+                  onClick={handleOpen}
                   sx={{
                     justifyContent: { xs: "center", md: "flex-start" },
                     padding: { xs: "10px 0", md: "10px 16px" },
                   }}
                 >
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <FaSignOutAlt />
-                    <ListItemText
-                      primary="Logout"
-                      sx={{ display: { xs: "none", md: "block" } }}
-                    />
-                  </Box>
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <FaSignOutAlt />
+                      <ListItemText
+                        primary="Logout"
+                        sx={{ display: { xs: "none", md: "block" } }}
+                      />
+                    </Box>
                 </ListItem>
               </List>
             </Box>
@@ -145,6 +192,7 @@ export default function Account() {
               </TabPanel>
             </Box>
           </Box>
+          <LogoutModal handleClose={handleClose} open={modalOpen} handleConfirmLogout={handleConfirmLogout} />
         </div>
       ) : (
         <div className=" text-black dark:text-white bg-white dark:bg-black">

@@ -1,6 +1,6 @@
 // hooks/useProducts.js
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const useProducts = () => {
   const [products, setProducts] = useState([]);
@@ -10,18 +10,17 @@ const useProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/products');
+        const response = await axios.get("http://localhost:5000/products");
         setProducts(response.data);
         setLoading(false);
       } catch (error) {
-        setError('Error fetching products');
+        setError("Error fetching products");
         setLoading(false);
       }
     };
 
     fetchProducts();
   }, []);
-
   return { products, loading, error };
 };
 

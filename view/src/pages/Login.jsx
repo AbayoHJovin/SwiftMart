@@ -24,16 +24,18 @@ const Login = () => {
         method: "POST",
         body: JSON.stringify({ email: email, password: password }),
         headers: { "Content-Type": "application/json" },
-        credentials:"include"
+        credentials: "include",
       })
         .then((response) => response.json())
         .then((data) => {
+          if (data.message == "loggedIn") {
+            setTimeout(() => {
+              navigate("/");
+            }, 3000);
+            const accessToken = data.accessToken;
+            localStorage.setItem("token", accessToken);
+          }
           toast.info(data.message);
-          setTimeout(() => {
-            navigate("/");
-          }, 3000);
-          const accessToken=data.accessToken
-          localStorage.setItem("token", accessToken)
         })
         .catch((e) => toast.error(e));
     } catch (error) {

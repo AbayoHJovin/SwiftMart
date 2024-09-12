@@ -11,7 +11,8 @@ const MenPants = () => {
   const { itemsOnCart, addItemOncart, deleteItem } = useContext(CartContext);
   const [localCart, setLocalCart] = useState([]);
   const [localFav, setLocalFav] = useState([]);
-  const { itemsOnFav, addItemOnFav, deleteItemFromFav } = useContext(FavContext);
+  const { itemsOnFav, addItemOnFav, deleteItemFromFav } =
+    useContext(FavContext);
 
   useEffect(() => {
     const menProducts = products.filter(
@@ -54,7 +55,6 @@ const MenPants = () => {
           {Menpants.map((pant) => {
             const isOnCart = localCart.includes(pant._id);
             const isOnFav = localFav.includes(pant._id);
-            console.log(pant.name, isOnFav);
 
             return (
               <div key={pant._id}>

@@ -27,3 +27,13 @@ exports.refreshToken = async (req, res) => {
   sendRefreshToken(res, refreshToken);
   return res.send({ accessToken: accessToken });
 };
+
+exports.protectedRoute=(req,res)=>{
+  const token=req.headers.authorization
+  if(!token) return res.status(401).send({message:"Unauthorized"})
+  const userId=isAuth(token)
+  if(!userId){
+    return res.status(401).send({message:"Unauthorized"})
+  }
+  return res.status(200).json({message:"Authorized"})
+}

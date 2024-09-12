@@ -7,7 +7,6 @@ exports.addCartItem = async (req, res) => {
       throw new Error("Something went wrong!");
     }
 
-    // Find the user's cart
     const userCart = await Cart.findOne({ userId });
 
     if (!userCart) {
@@ -17,7 +16,6 @@ exports.addCartItem = async (req, res) => {
       });
       return res.status(201).json({ message: "Added to cart" });
     } else {
-      // Check if the product is already in the cart
       const findItem = userCart.products.find(
         (item) => item.productId.toString() === prodId
       );
@@ -26,7 +24,6 @@ exports.addCartItem = async (req, res) => {
         throw new Error("Item already in cart");
       }
 
-      // If not, add the product to the cart
       userCart.products.push({ productId: prodId });
       await userCart.save();
 

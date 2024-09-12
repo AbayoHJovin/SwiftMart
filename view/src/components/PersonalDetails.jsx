@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect, useContext } from "react";
 import {
   Box,
@@ -11,14 +9,17 @@ import {
   Grid,
   useMediaQuery,
 } from "@mui/material";
-import PhotoCamera from "@mui/icons-material/PhotoCamera";
+import { FaCamera } from "react-icons/fa";
 import { useTheme } from "@mui/material/styles";
 import { ThemeContext } from "../../constants/ThemeContext";
+import { CurrentUserContext } from "../../constants/currentUser";
 
 const PersonalDetails = () => {
   const { theme } = useContext(ThemeContext);
+  const { currentUser } = useContext(CurrentUserContext);
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
+    id: "",
     name: "",
     email: "",
     profilePicture: "",
@@ -28,21 +29,15 @@ const PersonalDetails = () => {
   const isSmallScreen = useMediaQuery(themeObj.breakpoints.down("sm"));
 
   useEffect(() => {
-    // Retrieve user data from session storage
-    const userData = JSON.parse(sessionStorage.getItem("User"));
-
-    if (userData) {
-      const { userId, usernames: name, emails: email } = userData;
+    if (currentUser) {
       setFormData((prevData) => ({
         ...prevData,
-        id: userId || "",
-        name: name || "",
-        email: email || "",
+        id: currentUser._id || "",
+        name: currentUser.username || "",
+        email: currentUser.email || "",
       }));
-    } else {
-      console.log("No user data available in session storage.");
     }
-  }, []);
+  }, [currentUser]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -57,7 +52,7 @@ const PersonalDetails = () => {
   };
 
   const handleSave = async () => {
-    console.log("Form data is:",formData)
+    console.log("Form data is:", formData);
     try {
       const response = await fetch(
         `http://localhost:5000/user/update?userId=${formData.id}`,
@@ -166,7 +161,7 @@ const PersonalDetails = () => {
                 component="span"
                 sx={{ color: theme === "dark" ? "white" : "black" }}
               >
-                <PhotoCamera />
+                <FaCamera className="mr-3" />
                 profile picture
               </IconButton>
             </label>

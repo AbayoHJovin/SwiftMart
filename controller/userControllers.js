@@ -1,5 +1,6 @@
 const User = require("../model/Users");
 const bcrypt = require("bcrypt");
+const lodash = require("lodash");
 const {
   createAccessToken,
   createRefreshToken,
@@ -46,18 +47,18 @@ exports.loginUser = async (req, res) => {
   try {
     const user = await User.findOne({ email: email });
     if (!user) {
-      return res.status(400).json({ message: "Invalid Email" });
+      return res.status(400).json({ message: "invalid credentials" });
     }
     const validPassword = await bcrypt.compare(password, user.password);
     if (!validPassword) {
-      return res.status(400).json({ message: "Invalid password" });
+      return res.status(400).json({ message: "invalid credentials" });
     }
     const accessToken = createAccessToken(user._id);
     const refreshToken = createRefreshToken(user._id);
     user.refreshToken = refreshToken;
     // await user.save()
     sendRefreshToken(res, refreshToken);
-    sendAccessToken(req, res, accessToken, user);
+    sendAccessToken(req, res, accessToken);
     return;
   } catch (err) {
     res.status(500).json({ message: err.message || "Internal server error" });
@@ -109,8 +110,8 @@ exports.getCurrentUser = async (req, res) => {
       return res.json({ user: null });
     }
 
-    const currentUser = await User.findById(userId);
-
+    const currentUserCredentials = await User.findById(userId);
+    const currentUser = lodash.omit(currentUserCredentials.toObject(), ["password"]);
     return res.status(200).json({ user: currentUser });
   } catch (e) {
     return res.status(401).json({ error: e.message || "Something went wrong" });

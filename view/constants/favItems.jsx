@@ -37,10 +37,6 @@ export default function FavItems({ children }) {
     }
   }
 
-  if (!currentUser) {
-    return <div>Hello</div>;
-  }
-
   function deleteItemFromFav(itemId) {
     if (currentUser) {
       fetch(

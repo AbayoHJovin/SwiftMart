@@ -6,10 +6,10 @@ function createAccessToken(userId) {
 function createRefreshToken(userId) {
   return jwt.sign({ userId }, process.env.REFRESH_TOKEN, { expiresIn: "7d" });
 }
-function sendAccessToken(req, res, accessToken, user) {
+function sendAccessToken(req, res, accessToken) {
   res
     .status(200)
-    .json({ accessToken, email: user.email, username: user.username,_id:user._id });
+    .json({ accessToken ,message:"loggedIn"});
 }
 function sendRefreshToken(res, refreshToken) {
   res.cookie("refreshToken", refreshToken, {

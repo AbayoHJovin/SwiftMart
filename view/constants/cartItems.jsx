@@ -1,56 +1,65 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "./currentUser";
+import { useNavigate } from "react-router-dom";
 
 export const CartContext = createContext();
 export default function CartItems({ children }) {
   const [itemsOnCart, setIsOnCart] = useState([]);
-  const { CurrentUser } = useContext(CurrentUserContext);
-  const token=localStorage.getItem("token")
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { currentUser } = useContext(CurrentUserContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/getCartItems?currentUser=${CurrentUser._id}`, {
-      method: "GET",
-      headers: {
-        authorization: token,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setIsOnCart(data.data.products);
-      })
-      .catch((e) => console.error(e));
-  }, [CurrentUser._id, token]);
-
+    if (currentUser) {
+      const token = localStorage.getItem("token");
+      fetch(
+        `http://localhost:5000/getCartItems?currentUser=${currentUser._id}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: token,
+          },
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setIsOnCart(data.products);
+        })
+        .catch((e) => console.error(e));
+    }
+  }, [currentUser]);
+  const navigate = useNavigate();
   function addItemOncart(itemId) {
-    if (!CurrentUser._id) {
-      console.log("Unauthorized");
+    if (!currentUser) {
+      console.log("no user")
+      navigate("/login");
     }
     fetch("http://localhost:5000/addItemOncart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ userId: CurrentUser._id, prodId: itemId }),
+      body: JSON.stringify({ userId: currentUser._id, prodId: itemId }),
     })
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((e) => console.error(e));
   }
   function deleteItem(itemId) {
-    fetch(
-      `http://localhost:5000/deleteCartItem?itemId=${itemId}&userId=${CurrentUser._id}
+    if (currentUser._id) {
+      fetch(
+        `http://localhost:5000/deleteCartItem?itemId=${itemId}&userId=${currentUser._id}
 `,
-      {
-        method: "DELETE",
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((e) => console.error(e));
+        {
+          method: "DELETE",
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((e) => console.error(e));
+    }
   }
-
+  if (!itemsOnCart) {
+    return <div>No items</div>;
+  }
   return (
     <CartContext.Provider value={{ itemsOnCart, addItemOncart, deleteItem }}>
       {children}

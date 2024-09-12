@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
+import Loader from "../src/components/loader";
 
 export const CurrentUserContext = createContext();
 const CurrentUser = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setISLoading] = useState(false);
   useEffect(() => {
     const userToken = localStorage.getItem("token");
@@ -21,11 +22,9 @@ const CurrentUser = ({ children }) => {
         setISLoading(false);
       });
   }, []);
-
   if (isLoading) {
-    return <div>loading...</div>;
+    return <Loader text="Loading the page ..."/>
   }
-
   return (
     <CurrentUserContext.Provider value={{ currentUser }}>
       {children}
