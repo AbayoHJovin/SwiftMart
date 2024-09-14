@@ -149,7 +149,7 @@ export default function AdminDashboard() {
             </ListItem>
             <ListItem button onClick={() => handleTabClick(4)}>
               <FaUsers style={{ marginRight: 8 }} />
-              <ListItemText primary="Customers" />
+              <ListItemText primary="Orders" />
             </ListItem>
             <ListItem button onClick={() => handleTabClick(5)}>
               <FaChartBar style={{ marginRight: 8 }} />
@@ -217,7 +217,7 @@ export default function AdminDashboard() {
             </ListItem>
             <ListItem button onClick={() => handleTabClick(4)}>
               <FaUsers style={{ marginRight: 8 }} />
-              <ListItemText primary="Customers" />
+              <ListItemText primary="Orders" />
             </ListItem>
             <ListItem button onClick={() => handleTabClick(5)}>
               <FaChartBar style={{ marginRight: 8 }} />
@@ -266,7 +266,7 @@ export default function AdminDashboard() {
             {/* Sales Content */}
           </TabPanel>
           <TabPanel value={tabValue} index={4}>
-            {/* Customers Content */}
+            {/* Orders Content */}
           </TabPanel>
           <TabPanel value={tabValue} index={5}>
             {/* Analytics Content */}

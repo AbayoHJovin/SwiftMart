@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   profilePicture: {
-    type: String, // URL of the profile picture
+    type: String,
     required: false,
   },
   orders: [

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../../constants/ThemeContext";
 import Navbar from "../components/Navbar";
@@ -6,22 +7,26 @@ import { Buffer } from "buffer";
 import useProducts from "../../constants/products";
 import { useNavigate } from "react-router-dom";
 import { CurrentUserContext } from "../../constants/currentUser";
+import { toast, ToastContainer } from "react-toastify";
+import { FaTimesCircle } from "react-icons/fa";
 
 const CartPage = () => {
   const { theme } = useContext(ThemeContext);
-  const { itemsOnCart } = useContext(CartContext);
+  const { itemsOnCart, deleteItem } = useContext(CartContext);
   const { currentUser } = useContext(CurrentUserContext);
   const { products } = useProducts();
   const navigate = useNavigate();
-  if (!itemsOnCart) {
-    console.log("Your cart contains nothing");
+
+  if (!itemsOnCart || itemsOnCart.length === 0) {
+    goToShop();
   }
+
   const itemsInCart = products.filter((cartItem) =>
-    itemsOnCart.some((product) => product.productId === cartItem._id)
+    itemsOnCart?.some((product) => product.productId === cartItem._id)
   );
 
   const [quantities, setQuantities] = useState(itemsInCart.map(() => 1));
-  const [subtotal, setSubtotal] = useState(1);
+  const [subtotal, setSubtotal] = useState(0);
 
   useEffect(() => {
     const newSubtotal = itemsInCart.reduce(
@@ -36,25 +41,41 @@ const CartPage = () => {
     newQuantities[index] = value;
     setQuantities(newQuantities);
   };
-
+  function handleCheck() {
+    if (isNaN(subtotal) || subtotal < 100) {
+      toast.error("please enter valid amount");
+    } else {
+      navigate(`/checkout/RWF${subtotal}`);
+    }
+  }
+  function goToShop() {
+    return (
+      <div className="flex h-screen flex-col justify-center items-center content-center">
+        <h1 className="text-black dark:text-white">
+          No item is found on your cart.
+        </h1>
+        <button
+          onClick={() => navigate("/shop")}
+          className="bg-green-900 text-white my-2 p-3 px-5 rounded-md"
+        >
+          Shop Now
+        </button>
+      </div>
+    );
+  }
   return (
-    <div className="bg-white dark:bg-black">
+    <div className="bg-white dark:bg-black text-black dark:text-white">
+      <ToastContainer />
       <Navbar />
       {currentUser ? (
         <div
           className={`min-h-screen p-4 ${
-            theme === "dark" ? "bg-gray-900" : "bg-gray-100"
+            theme === "dark" ? "bg-black" : "bg-gray-100"
           }`}
         >
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              <div
-                className={`lg:col-span-2 p-4 rounded-lg shadow-md ${
-                  theme === "dark"
-                    ? "bg-gray-800 text-white"
-                    : "bg-white text-black"
-                }`}
-              >
+              <div className={`lg:col-span-2 p-4 rounded-lg`}>
                 <h2 className="text-lg font-semibold mb-4">Shopping Cart</h2>
 
                 <div className="overflow-x-auto">
@@ -69,6 +90,7 @@ const CartPage = () => {
                         <th className="p-2 text-left">Price</th>
                         <th className="p-2 text-left">Quantity</th>
                         <th className="p-2 text-left">Subtotal</th>
+                        <th className="p-2 text-left"> </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -76,7 +98,7 @@ const CartPage = () => {
                         <tr
                           key={index}
                           className={`${
-                            theme === "dark" ? "bg-gray-700" : "bg-gray-100"
+                            theme === "dark" ? "bg-black" : "bg-gray-100"
                           }`}
                         >
                           <td className="p-2 flex items-center">
@@ -100,7 +122,7 @@ const CartPage = () => {
                               className="p-2 border rounded-lg dark:bg-gray-600 dark:text-white bg-white text-black"
                               min={1}
                               max={item.stock}
-                              value={quantities[index] || 1}
+                              value={quantities[index] || 0}
                               onChange={(e) =>
                                 handleQuantityChange(
                                   index,
@@ -115,13 +137,21 @@ const CartPage = () => {
                               ? item.price
                               : (item.price * quantities[index]).toFixed(2)}
                           </td>
+                          <td
+                            onClick={() => {
+                              deleteItem(item._id), location.reload();
+                            }}
+                            className="cursor-pointer"
+                          >
+                            <FaTimesCircle />
+                          </td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
 
-                <div className="flex justify-between mt-4">
+                <div className="flex flex-col items-center gap-4 smm:flex-row justify-between mt-4">
                   <button
                     onClick={() => navigate("/shop")}
                     className={`px-4 py-2 rounded-lg ${
@@ -151,24 +181,24 @@ const CartPage = () => {
                   <div className="flex justify-between">
                     <span>Subtotal</span>
                     <span>
-                      ${" "}
-                      {isNaN(subtotal)
-                        ? subtotal.toFixed(2)
-                        : subtotal.toFixed(2)}
+                      $ {isNaN(subtotal) ? 0 : subtotal.toFixed(2)}
                     </span>{" "}
                   </div>
                   <div className="flex justify-between">
-                    <span>Shipping</span>
-                    <span>Free</span>
+                    <span>Delivery cost (DC)</span>
+                    <span>Depends on your location</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Total</span>
                     <span className="text-lg font-semibold">
-                      $ {isNaN(subtotal) ? 0 : subtotal.toFixed(2)}
+                      $ {isNaN(subtotal) ? 0 : subtotal.toFixed(2)} + DC
                     </span>
                   </div>
                 </div>
-                <button className="w-full mt-4 bg-green-500 text-white p-2 rounded-lg">
+                <button
+                  onClick={handleCheck}
+                  className="w-full mt-4 bg-green-500 text-white p-2 rounded-lg"
+                >
                   Proceed to checkout
                 </button>
               </div>

@@ -91,3 +91,20 @@ exports.deleteCartItem = async (req, res) => {
   }
 };
 
+exports.deleteAllcartItems = async (req, res) => {
+  const { userId } = req.query;
+  try {
+    if (!userId) {
+      throw new Error("No item selected");
+    }
+
+    const cart = await Cart.deleteMany({ userId: userId });
+    if (!cart) {
+      throw new Error("Cart not found");
+    }
+    return res.status(200).json({ message: "Reset the cart" });
+  } catch (e) {
+    return res.status(401).json({ message: e.message || "Something went wrong" });
+  }
+};
+

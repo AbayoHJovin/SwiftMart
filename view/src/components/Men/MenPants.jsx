@@ -4,6 +4,7 @@ import ProductCard from "../Product";
 import { Buffer } from "buffer";
 import { CartContext } from "../../../constants/cartItems";
 import { FavContext } from "../../../constants/favItems";
+import Loader from "../loader";
 
 const MenPants = () => {
   const { loading, products } = useProducts();
@@ -19,9 +20,19 @@ const MenPants = () => {
       (prod) => prod.gender === "Male" && prod.category === "pants"
     );
     setMenpants(menProducts);
-
-    setLocalCart(itemsOnCart.map((item) => item.productId));
-    setLocalFav(itemsOnFav.map((items) => items.productId));
+    // if (itemsOnCart || itemsOnCart.length > 0) {
+    //   setLocalCart(itemsOnCart.map((item) => item.productId));
+    // }
+    if (itemsOnCart && itemsOnCart.length > 0) {
+      setLocalCart(itemsOnCart.map((item) => item.productId));
+    } else {
+      setLocalCart([]);
+    }
+    if (itemsOnFav && itemsOnFav.length > 0) {
+      setLocalFav(itemsOnFav.map((items) => items.productId));
+    } else {
+      setLocalFav([]);
+    }
   }, [products, itemsOnCart, itemsOnFav]);
 
   const handleAddToCart = (pantId) => {
@@ -45,7 +56,7 @@ const MenPants = () => {
   };
 
   if (loading) {
-    return <h1>Loading ...</h1>;
+    return <Loader text="Loading products ..." />;
   }
 
   return (

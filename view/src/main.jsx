@@ -19,6 +19,8 @@ import { ThemeProvider } from "../constants/ThemeContext.jsx";
 import CartPage from "./pages/Cart.jsx";
 import CurrentUser from "../constants/currentUser.jsx";
 import CartItems from "../constants/cartItems.jsx";
+import OrderForm from "./pages/CheckOut.jsx";
+import Orders from "../admin/Orders.jsx";
 
 function App() {
   useEffect(() => {
@@ -40,13 +42,30 @@ function App() {
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
   { path: "/about", element: <About /> },
-  { path: "/shop", element: <ShopNow /> },
+  {
+    path: "/shop",
+    element: (
+      <CartItems>
+        <ShopNow />
+      </CartItems>
+    ),
+  },
   { path: "/contacts", element: <Contact /> },
   { path: "/admin", element: <AdminDashboard /> },
   { path: "/account", element: <Account /> },
   { path: "/login", element: <Login /> },
   { path: "/signup", element: <SignupForm /> },
+  { path: "/try", element: <Orders /> },
+  {
+    path: "/checkout/:amount",
+    element: (
+      <CartItems>
+        <OrderForm />
+      </CartItems>
+    ),
+  },
   { path: "/product/:prodId", element: <ProdDescription /> },
+
   {
     path: "/cart",
     element: (

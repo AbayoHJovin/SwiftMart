@@ -91,7 +91,7 @@ export default function ProductTable() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/products/${id}`);
+      await axios.delete(`http://localhost:5000/products?id=${id}`);
       fetchProducts();
     } catch (error) {
       console.error("Error deleting product", error);

@@ -23,14 +23,15 @@ export default function CartItems({ children }) {
         .then((data) => {
           setIsOnCart(data.products);
         })
-        .catch((e) => console.error(e));
+        .catch((e) => console.log("error getting products", e));
     }
   }, [currentUser]);
   const navigate = useNavigate();
   function addItemOncart(itemId) {
     if (!currentUser) {
-      console.log("no user")
+      console.log("no user");
       navigate("/login");
+      return;
     }
     fetch("http://localhost:5000/addItemOncart", {
       method: "POST",
@@ -57,9 +58,7 @@ export default function CartItems({ children }) {
         .catch((e) => console.error(e));
     }
   }
-  if (!itemsOnCart) {
-    return <div>No items</div>;
-  }
+
   return (
     <CartContext.Provider value={{ itemsOnCart, addItemOncart, deleteItem }}>
       {children}
