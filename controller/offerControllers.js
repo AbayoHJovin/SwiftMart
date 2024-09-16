@@ -1,18 +1,4 @@
 const Offers = require("../model/Offers");
-// exports.addOffer = async (req, res) => {
-//    const {userId,names,email,address,phoneNumber,paymentMethod,amount,products,day,date,time}=req.body
-//    try {
-//     if(!userId || !names || !email || !phoneNumber || !paymentMethod || !amount){
-//         throw new Error("Missing details!")
-//     }
-//         const newOffer=await Offers.create({userId:userId,names:names,email:email,address:address,phoneNumber:phoneNumber,paymentMethod:paymentMethod,amount:amount,products:products,day:day,date:date,time:time})
-//         return res.status(201).json({message:"Offer placed"})
-
-//    } catch (e) {
-//     return res.status(400).json({error:e.message || "Something went wrong"})
-//    }
-// };
-
 exports.addOffer = async (req, res) => {
   const {
     userId,
@@ -75,4 +61,15 @@ exports.addOffer = async (req, res) => {
   }
 };
 
-exports.getOffer = async (req, res) => {};
+exports.getOffer = async (req, res) => {
+  try {
+    const allOffers = await Offers.find({});
+    if (!allOffers) {
+      throw new Error("No orders found");
+    }
+    return res.status(200).json({ message: allOffers });
+  } catch (e) {
+    console.log(e);
+    return res.status(200).json({ error: e.message || "Something went wrong" });
+  }
+};

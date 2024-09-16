@@ -1,65 +1,142 @@
-// import React from 'react';
-
-// const sampleOrders = [
-//   { id: 1, product: 'User 1', status: 'Delivered',date:"9-9-2022",time:"14:30 PM" },
-//   { id: 2, product: 'User 1', status: 'Pending',date:"9-9-2022",time:"14:30 PM" },
-//   { id: 3, product: 'User 1', status: 'Shipped',date:"9-9-2022",time:"14:30 PM" },
-//   { id: 4, product: 'User 1', status: 'Cancelled',date:"9-9-2022",time:"14:30 PM" },
-// ];
-
-// const Orders = () => {
-//   return (
-//     <div className="flex flex-col p-4 space-y-4">
-//       <h2 className="text-2xl font-semibold mb-4">Your Orders</h2>
-//       <div className="space-y-2">
-//         {sampleOrders.map((order) => (
-//           <div
-//             key={order.id}
-//             className="flex justify-between items-center p-4 bg-white shadow rounded-lg hover:bg-gray-100 transition duration-200"
-//           >
-//             <div className="flex flex-col">
-//               <span className="text-lg font-medium">{order.product}</span>
-//               <span className={`text-sm ${order.status === 'Delivered' ? 'text-green-500' : order.status === 'Pending' ? 'text-yellow-500' : 'text-red-500'}`}>
-//                 {order.status}
-//               </span>
-//             </div>
-//             <button className="text-blue-500 hover:underline">View</button>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Orders;
-
-import React from "react";
-
-const ordersData = [
-  { id: 1, item: "Order 1", date: "2024-09-01" },
-  { id: 2, item: "Order 2", date: "2024-09-05" },
-  { id: 3, item: "Order 3", date: "2024-09-10" },
-  // Add more orders as needed
-];
+import { useEffect, useState } from "react";
+import useProducts from "../constants/products";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { Buffer } from "buffer";
 
 const Orders = () => {
+  const [offers, setOffers] = useState([]);
+  const [filteredOrders, setFilteredOrders] = useState(offers);
+  const [openOfferModal, setOpenOfferModal] = useState(false);
+  const [selectedOrder, setSelectedOrder] = useState({});
+  const [bougthProducts, setBoughtProducts] = useState([]);
+  const { products } = useProducts();
+  useEffect(() => {
+    fetch("http://localhost:5000/getOffer", {
+      method: "GET",
+    })
+      .then((resp) => resp.json())
+      .then((message) => {
+        setOffers(message.message);
+      })
+      .catch((e) => console.error(e));
+  }, []);
+  function handleDate(date) {
+    const targetedOrders = offers.filter((order) => order.date == date);
+    setFilteredOrders(targetedOrders);
+  }
+  function handleOfferClick(item) {
+    setOpenOfferModal(true);
+    const prod = [];
+
+    for (let i = 0; i < item.products.length; i++) {
+      console.log(products.find((items) => items._id == item.products[i]));
+   }
+    setSelectedOrder(item);
+    setBoughtProducts(prod);
+  }
+  useEffect(() => {
+    console.log("Here are the bought prods", bougthProducts);
+  }, [bougthProducts]);
   return (
-    <div className="flex flex-col space-y-4 p-4 max-w-md mx-auto">
-      <h2 className="text-2xl font-semibold text-gray-800">Your Orders</h2>
-      <div className="bg-white shadow-md rounded-lg">
-        {ordersData.map((order) => (
-          <div
-            key={order.id}
-            className="flex justify-between items-center border-b p-4 last:border-b-0 hover:bg-gray-100 transition duration-200"
-          >
-            <div>
-              <p className="text-lg font-medium text-gray-900">{order.item}</p>
-              <p className="text-sm text-gray-500">{order.date}</p>
+    <div>
+      {offers.length == 0 ? (
+        <div>No orders found</div>
+      ) : (
+        <div>
+          <div className="flex items-center justify-between px-10 my-10">
+            <div className="flex flex-col">
+              <div className="font-bold text-2xl">Orders</div>
+              <div>{offers.length} Orders found</div>
             </div>
-            <button className="text-blue-600 hover:underline">View</button>
+            <input
+              onInput={(e) => handleDate(e.target.value)}
+              type="date"
+              className="border border-gray-200 text-black px-5 h-10"
+            />
           </div>
-        ))}
-      </div>
+          {openOfferModal ? (
+            // selectedOrder.map((order) => (
+            <div>
+              <div className="flex items-start cursor-pointer justify-between">
+                <div key={selectedOrder._id}>
+                  <h1 className="font-bold text-2xl">{selectedOrder.names}</h1>
+                  <h1>{selectedOrder.address}</h1>
+                  <h1>{selectedOrder.email}</h1>
+                  <h1>{selectedOrder.phoneNumber}</h1>
+                  <h1>{selectedOrder.date}</h1>
+                  <h1>{selectedOrder.day}</h1>
+                  <h1>{selectedOrder.time}</h1>
+                  <h1>Amount : RWF{selectedOrder.amount}</h1>
+                </div>
+                <AiFillCloseCircle
+                  onClick={() => setOpenOfferModal(false)}
+                  className="text-3xl hover:text-red-500"
+                />
+              </div>
+              <div>
+                {bougthProducts.length == 0 ? (
+                  <h1>Loading products ...</h1>
+                ) : (
+                  bougthProducts.map((item) => (
+                    <div key={item._id}>
+                      <div className="grid grid-cols-3 bg-red-500">
+                        <img
+                          src={`data:${
+                            item.image.contentType
+                          };base64,${Buffer.from(item.image.data).toString(
+                            "base64"
+                          )}`}
+                          className="w-16"
+                          alt={item.name}
+                        />
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+          ) : (
+            // ))
+            <table className="w-full">
+              <tr className="bg-gray-200 p-10 h-16">
+                <th>Name</th>
+                <th>Address</th>
+                <th>Number of products</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+              </tr>
+              {filteredOrders.length === 0 ? (
+                <tr>
+                  <td colSpan={6} className="text-center content-center">
+                    {" "}
+                    No orders available on the selected date
+                  </td>
+                </tr>
+              ) : (
+                filteredOrders.map((item) => (
+                  <tr
+                    onClick={() => handleOfferClick(item)}
+                    key={item._id}
+                    className="border text-center border-gray-200 h-16 cursor-pointer bg-white hover:bg-blue-500 text-black hover:text-white"
+                  >
+                    <td>{item.names}</td>
+                    <td>{item.address}</td>
+                    <td>{item.products.length}</td>
+                    <td>{item.date}</td>
+                    <td>{item.time}</td>
+                    {item.approved == true ? (
+                      <td>Approved</td>
+                    ) : (
+                      <td>Pending</td>
+                    )}
+                  </tr>
+                ))
+              )}
+            </table>
+          )}
+        </div>
+      )}
     </div>
   );
 };

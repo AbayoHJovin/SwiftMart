@@ -75,7 +75,7 @@ const MenPants = () => {
                   };base64,${Buffer.from(pant.image.data).toString("base64")}`}
                   itemName={pant.name}
                   itemDesc={pant.description}
-                  itemPrice={`$${pant.price}`}
+                  itemPrice={`RWF ${pant.price}`}
                   handleAddToCart={() => handleAddToCart(pant._id)}
                   deleteItem={() => handleDeleteItem(pant._id)}
                   isOnCart={isOnCart}

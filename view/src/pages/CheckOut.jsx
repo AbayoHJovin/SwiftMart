@@ -227,6 +227,7 @@ const OrderForm = () => {
               <input
                 className="p-3 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500"
                 type="tel"
+                minLength={10}
                 placeholder="Phone number"
                 name="phone"
                 value={formData.phone}

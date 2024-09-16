@@ -27,6 +27,7 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import ProductTable from "./Products";
+import Orders from "./Orders";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -266,7 +267,7 @@ export default function AdminDashboard() {
             {/* Sales Content */}
           </TabPanel>
           <TabPanel value={tabValue} index={4}>
-            {/* Orders Content */}
+           <Orders/>
           </TabPanel>
           <TabPanel value={tabValue} index={5}>
             {/* Analytics Content */}
