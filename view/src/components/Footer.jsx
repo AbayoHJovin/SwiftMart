@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="relative bg-[#D4ECDC] z-0 dark:bg-[#003D3B] text-black dark:text-white py-10 px-5 mt-10 md:px-20 overflow-hidden footer-curved-background">
+    <div className="relative bottom-0 bg-[#D4ECDC] z-0 dark:bg-[#003D3B] text-black dark:text-white py-10 px-5 mt-10 md:px-20 overflow-hidden footer-curved-background">
       <div className="container mx-auto relative z-10 flex flex-col md:flex-row justify-between items-center">
         <div className="flex flex-col sssm:flex-row sssm:space-x-20 mb-10 md:mb-0">
           <div className="mb-8 md:mb-0">

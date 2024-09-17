@@ -68,3 +68,25 @@ exports.deleteProduct = async (req, res) => {
     res.status(500).json({ error: error.message || "Error deleting product" });
   }
 };
+
+exports.makeAPopularProduct=async (req,res)=>{
+  const prodId=req.query.prodId
+  const popularity=req.headers.popularity
+  try { 
+    if(!prodId || !popularity){throw new Error("Please sent all credentials")}
+    const product=await Product.findByIdAndUpdate(prodId,{popular:popularity},{new:true})
+    return res.status(200).json({message:"product updated"})
+  } catch (e) {
+    return res.status(500).json({message:e.message || "Something went wrong"})
+  }
+}
+exports.getpopularProducts=async (req,res)=>{
+  try {
+    const popularProds= await Product.find({popular:true})
+    if(!popularProds){throw new Error("No popular products")}
+    return res.status(200).json({data:popularProds})
+  } catch (e) {
+    return res.status(500).json({data:e.message || "Something went wrong"})
+    
+  }
+}

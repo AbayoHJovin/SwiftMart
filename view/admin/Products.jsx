@@ -26,6 +26,7 @@ import {
 } from "@mui/material";
 import { FaEdit, FaTrashAlt, FaSearch } from "react-icons/fa";
 import useProducts from "../constants/products";
+import { CgAdd, CgMathMinus } from "react-icons/cg";
 
 export default function ProductTable() {
   const { products } = useProducts();
@@ -44,7 +45,6 @@ export default function ProductTable() {
     imageUrl: "",
   });
   const [preview, setPreview] = useState("");
-
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === "dark";
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -156,7 +156,18 @@ export default function ProductTable() {
     setSelectedProduct({ ...selectedProduct, image: file });
     setPreview(URL.createObjectURL(file));
   };
-
+  function handleAddToPopular(item, popularity) {
+    fetch(`http://localhost:5000/makeAPopularProduct?prodId=${item}`, {
+      method: "PATCH",
+      headers: { popularity: popularity },
+    })
+      .then((response) => response.json())
+      .then((data) =>{
+        console.log(data)
+        location.reload()
+      })
+      .catch((e) => console.error(e));
+  }
   return (
     <Box sx={{ p: 3 }}>
       <Box
@@ -267,6 +278,21 @@ export default function ProductTable() {
                       <IconButton onClick={() => handleDelete(product._id)}>
                         <FaTrashAlt />
                       </IconButton>
+                      {product.popular ? (
+                        <IconButton
+                          title="remove from pupular products"
+                          onClick={() => handleAddToPopular(product._id, false)}
+                        >
+                          <CgMathMinus />
+                        </IconButton>
+                      ) : (
+                        <IconButton
+                          title="Add to pupular products"
+                          onClick={() => handleAddToPopular(product._id, true)}
+                        >
+                          <CgAdd />
+                        </IconButton>
+                      )}
                     </TableCell>
                   </TableRow>
                 ))

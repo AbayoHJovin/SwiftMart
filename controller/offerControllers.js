@@ -62,14 +62,59 @@ exports.addOffer = async (req, res) => {
 };
 
 exports.getOffer = async (req, res) => {
+  const userId = req.query.userId;
   try {
-    const allOffers = await Offers.find({});
-    if (!allOffers) {
-      throw new Error("No orders found");
+    if (!userId) {
+      const allOffers = await Offers.find({});
+      if (!allOffers) {
+        throw new Error("No orders found");
+      }
+      return res.status(200).json({ message: allOffers });
+    } else {
+      const userOffers = await Offers.find({userId:userId})
+      if(!userOffers){
+        throw new Error("No offers made")
+      }
+      return res.status(200).json({message:userOffers})
     }
-    return res.status(200).json({ message: allOffers });
   } catch (e) {
-    console.log(e);
     return res.status(200).json({ error: e.message || "Something went wrong" });
+  }
+};
+
+exports.approveOffer = async (req, res) => {
+  const offerId = req.query.offerId;
+  try {
+    if (!offerId) {
+      throw new Error("No offer id is found");
+    }
+    const offer = await Offers.findByIdAndUpdate(
+      offerId,
+      { approved: true },
+      { new: true }
+    );
+    if (!offer) {
+      throw new Error("No offer is found");
+    }
+    return res.status(200).json({ message: "Offer Approved" });
+  } catch (e) {
+    return res
+      .status(401)
+      .json({ message: e.message || "Something went wrong" });
+  }
+};
+
+exports.declineOffer = async (req, res) => {
+  const offerId = req.query.offerId;
+  try {
+    if (!offerId) {
+      throw new Error("No offerId Found");
+    }
+    await Offers.findByIdAndDelete(offerId);
+    return res.status(200).json({ message: "Offer removed" });
+  } catch (e) {
+    return res
+      .status(401)
+      .json({ message: e.message || "Something went wrong" });
   }
 };

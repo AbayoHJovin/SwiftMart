@@ -9,6 +9,8 @@ import { ThemeContext } from "../../constants/ThemeContext";
 import LogoutModal from "./logout";
 import { toast } from "react-toastify";
 import Loader from "../components/loader";
+import Orders from "../../admin/Orders";
+import { CurrentUserContext } from "../../constants/currentUser";
 
 function TabPanel(props) {
   // eslint-disable-next-line react/prop-types
@@ -34,39 +36,37 @@ function TabPanel(props) {
 export default function Account() {
   const [isSignedIn, setIsSignedIn] = useState(true);
   const [tabValue, setTabValue] = useState(0);
-  const [isLoggingOut,setIsLoggingOut]=useState(false)
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
   const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
-
+const {currentUser}=useContext(CurrentUserContext)
   const handleOpen = () => setModalOpen(true);
   const handleClose = () => setModalOpen(false);
 
-  function handleConfirmLogout  (){
+  function handleConfirmLogout() {
     handleClose();
-    setIsLoggingOut(true)
-    fetch("http://localhost:5000/logout",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      credentials:"include"
+    setIsLoggingOut(true);
+    fetch("http://localhost:5000/logout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
     })
-    .then((res)=>res.json())
-    .then((data)=>{
-      if (data.message=== "Logged out"){
-        // setIsLoggingOut(false)
-        localStorage.removeItem("token")
-        navigate("/")
-
-      }
-    })
-    .catch((e)=>{
-      console.log(e)
-      toast.error("Can't logout!")
-    })
-    .finally(()=>{
-      setIsLoggingOut(false)
-    })
-    
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.message === "Logged out") {
+          // setIsLoggingOut(false)
+          localStorage.removeItem("token");
+          navigate("/");
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+        toast.error("Can't logout!");
+      })
+      .finally(() => {
+        setIsLoggingOut(false);
+      });
   }
 
   useEffect(() => {
@@ -94,9 +94,9 @@ export default function Account() {
   const handleTabClick = (index) => {
     setTabValue(index);
   };
-if(isLoggingOut){
-  return <Loader text="Logging out ..."/>
-}
+  if (isLoggingOut) {
+    return <Loader text="Logging out ..." />;
+  }
   return (
     <div className="dark:bg-black bg-white">
       <Navbar />
@@ -105,7 +105,6 @@ if(isLoggingOut){
           <Box
             sx={{
               display: "flex",
-              height: "100vh",
               bgcolor: theme === "dark" ? "black" : "white",
               color: theme === "dark" ? "white" : "black",
             }}
@@ -156,13 +155,13 @@ if(isLoggingOut){
                     padding: { xs: "10px 0", md: "10px 16px" },
                   }}
                 >
-                    <Box sx={{ display: "flex", alignItems: "center" }}>
-                      <FaSignOutAlt />
-                      <ListItemText
-                        primary="Logout"
-                        sx={{ display: { xs: "none", md: "block" } }}
-                      />
-                    </Box>
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <FaSignOutAlt />
+                    <ListItemText
+                      primary="Logout"
+                      sx={{ display: { xs: "none", md: "block" } }}
+                    />
+                  </Box>
                 </ListItem>
               </List>
             </Box>
@@ -179,10 +178,7 @@ if(isLoggingOut){
                 <PersonalDetails />
               </TabPanel>
               <TabPanel value={tabValue} index={1}>
-                <Typography variant="h6">Orders</Typography>
-                <Typography variant="body1">
-                  Here you can view your past orders.
-                </Typography>
+                <Orders AdminOptions={false} currentUser={currentUser? currentUser._id: null}/>
               </TabPanel>
               <TabPanel value={tabValue} index={2}>
                 <Typography variant="h6">Security</Typography>
@@ -192,7 +188,11 @@ if(isLoggingOut){
               </TabPanel>
             </Box>
           </Box>
-          <LogoutModal handleClose={handleClose} open={modalOpen} handleConfirmLogout={handleConfirmLogout} />
+          <LogoutModal
+            handleClose={handleClose}
+            open={modalOpen}
+            handleConfirmLogout={handleConfirmLogout}
+          />
         </div>
       ) : (
         <div className=" text-black dark:text-white bg-white dark:bg-black">

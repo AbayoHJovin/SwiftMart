@@ -12,6 +12,7 @@ const productSchema = new mongoose.Schema({
     data: Buffer,
     contentType: String,
   },
+  popular:{type:Boolean,default:false}
 });
 
 const Product = mongoose.model("Product", productSchema);

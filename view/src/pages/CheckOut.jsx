@@ -10,12 +10,12 @@ const OrderForm = () => {
   const { theme } = useContext(ThemeContext);
   const { currentUser } = useContext(CurrentUserContext);
   const { itemsOnCart } = useContext(CartContext);
-  const [isPlacingOffer,setIsPlacingOffer]=useState(false)
+  const [isPlacingOffer, setIsPlacingOffer] = useState(false);
   // State for form fields
   const [formData, setFormData] = useState({
-    firstName: "",
+    firstName: currentUser ? currentUser.username : "",
     lastName: "",
-    email: "",
+    email: currentUser ? currentUser.email : "",
     phone: "",
     province: "",
     district: "",
@@ -25,20 +25,25 @@ const OrderForm = () => {
     paymentMethod: "",
     termsAccepted: false,
   });
+
   const [productsId, setProductsId] = useState([]);
   const [cost, setCost] = useState("");
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
   useEffect(() => {
+    if (!currentUser || !itemsOnCart) {
+      navigate("/login");
+    }
     const ids = [];
     for (let i = 0; i < itemsOnCart.length; i++) {
-      if (itemsOnCart[i] && itemsOnCart[i]._id) {
-        ids.push(itemsOnCart[i]._id);
+      if (itemsOnCart[i] && itemsOnCart[i].productId) {
+        ids.push(itemsOnCart[i].productId);
       }
     }
 
     setProductsId(ids);
-  }, [itemsOnCart]);
+  }, [itemsOnCart, currentUser, navigate]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -58,7 +63,7 @@ const OrderForm = () => {
   const realTime = `${hours}:${minutes} ${hours >= 12 ? "PM" : "AM"}`;
   const currentDay = daysOfWeek[now.getDay()];
   const currentDate = now.toISOString().split("T")[0];
-  const currentTime = realTime
+  const currentTime = realTime;
   const handleCheckboxChange = (e) => {
     setFormData((prev) => ({ ...prev, termsAccepted: e.target.checked }));
   };
@@ -94,11 +99,7 @@ const OrderForm = () => {
 
     return errors;
   };
-  useEffect(() => {
-    if (!currentUser) {
-      navigate("/login");
-    }
-  }, [currentUser]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const errors = validateForm();
@@ -134,26 +135,29 @@ const OrderForm = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-            if(data.message== "Offer placed"){
-                setIsPlacingOffer(true)
-                handleRedirect()
-            }
+          if (data.message == "Offer placed") {
+            setIsPlacingOffer(true);
+            handleRedirect();
+          }
         })
         .catch((e) => console.error(e));
     }
   };
-  function handleRedirect(){
-    fetch(`http://localhost:5000/deleteAllCartItems?userId=${currentUser._id}`,{
-        method:"DELETE"
-    })
-    .then((response)=>response.json())
-    .then((message)=>{
-        if(message.message== "Reset the cart"){
-            setIsPlacingOffer(false)
-            navigate("/shop")
+  function handleRedirect() {
+    fetch(
+      `http://localhost:5000/deleteAllCartItems?userId=${currentUser._id}`,
+      {
+        method: "DELETE",
+      }
+    )
+      .then((response) => response.json())
+      .then((message) => {
+        if (message.message == "Reset the cart") {
+          setIsPlacingOffer(false);
+          navigate("/shop");
         }
-    })
-    .catch((e)=>console.error(e))
+      })
+      .catch((e) => console.error(e));
   }
   const { amount } = useParams();
   useEffect(() => {
@@ -163,8 +167,8 @@ const OrderForm = () => {
       setCost(amount);
     }
   }, [amount, navigate]);
-  if(isPlacingOffer){
-    return <Loader text="Placing your order"/>
+  if (isPlacingOffer) {
+    return <Loader text="Placing your order" />;
   }
   return (
     <div className={`${theme == "dark" ? "bg-black" : "bg-white"}`}>

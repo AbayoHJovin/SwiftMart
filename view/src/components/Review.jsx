@@ -31,7 +31,6 @@ const Testimonials = [
     role: "Verified Buyer",
     rating: 5,
   },
-  // Add more testimonials as needed
 ];
 
 const Review = () => {

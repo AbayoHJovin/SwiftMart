@@ -28,6 +28,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import ProductTable from "./Products";
 import Orders from "./Orders";
+import PopularProds from "./PopularProds";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -50,7 +51,7 @@ function TabPanel(props) {
 }
 
 export default function AdminDashboard() {
-  const [tabValue, setTabValue] = useState(0);
+  const [tabValue, setTabValue] = useState(1);
   const [open, setOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [productsOpen, setProductsOpen] = useState(true);
@@ -142,6 +143,13 @@ export default function AdminDashboard() {
                 >
                   <ListItemText primary="Product List" />
                 </ListItem>
+                <ListItem
+                  button
+                  sx={{ pl: 4 }}
+                  onClick={() => handleTabClick(1.1)}
+                >
+                  <ListItemText primary="Popular products" />
+                </ListItem>
               </List>
             </Collapse>
             <ListItem button onClick={() => handleTabClick(3)}>
@@ -210,6 +218,13 @@ export default function AdminDashboard() {
                 >
                   <ListItemText primary="Product List" />
                 </ListItem>
+                <ListItem
+                  button
+                  sx={{ pl: 4 }}
+                  onClick={() => handleTabClick(1.1)}
+                >
+                  <ListItemText primary="Popular Products" />
+                </ListItem>
               </List>
             </Collapse>
             <ListItem button onClick={() => handleTabClick(3)}>
@@ -262,12 +277,15 @@ export default function AdminDashboard() {
           <TabPanel value={tabValue} index={1}>
             <ProductTable />
           </TabPanel>
+          <TabPanel value={tabValue} index={1.1}>
+            <PopularProds />
+          </TabPanel>
 
           <TabPanel value={tabValue} index={3}>
             {/* Sales Content */}
           </TabPanel>
           <TabPanel value={tabValue} index={4}>
-           <Orders/>
+            <Orders AdminOptions={true} />
           </TabPanel>
           <TabPanel value={tabValue} index={5}>
             {/* Analytics Content */}

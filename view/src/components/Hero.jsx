@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const Hero = () => {
+  const navigate=useNavigate()
   return (
     <div className="bg-[#CFC6B8] dark:bg-black text-black font-lato dark:text-white flex flex-col h-screen p-5 lg:flex-row items-center justify-evenly space-x-5">
       <div className="flex flex-col justify-center lg:justify-normal text-center lg:text-start max-w-[50rem] p-0 sm:p-3 space-y-3">
@@ -12,7 +15,7 @@ const Hero = () => {
           laudantium.
         </h1>
         <div className="flex justify-center lg:justify-start">
-          <button className="bg-green-900 p-5 py-2 p  text-white rounded-full">
+          <button onClick={()=>navigate("/shop")} className="bg-green-900 p-5 py-2 p  text-white rounded-full">
             Shop Now
           </button>
         </div>
