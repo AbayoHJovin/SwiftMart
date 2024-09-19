@@ -12,16 +12,15 @@ const Orders = ({ AdminOptions, currentUser }) => {
   const now = new Date();
   const currentDate = now.toISOString().split("T")[0];
   const [offers, setOffers] = useState([]);
-  const [loading,setLoading]=useState(false)
+  const [loading, setLoading] = useState(false);
   const [filteredOrders, setFilteredOrders] = useState(offers);
   const [openOfferModal, setOpenOfferModal] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState({});
   const [boughtProducts, setBoughtProducts] = useState([]);
   const { products } = useProducts();
-  useEffect(()=>{
-      setLoading(true)
-
-  },[])
+  useEffect(() => {
+    setLoading(true);
+  }, []);
   useEffect(() => {
     setInterval(() => {
       if (!currentUser) {
@@ -31,7 +30,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
           .then((resp) => resp.json())
           .then((message) => {
             setOffers(message.message);
-            setLoading(false)
+            setLoading(false);
           })
           .catch((e) => console.error(e));
       } else {
@@ -41,19 +40,15 @@ const Orders = ({ AdminOptions, currentUser }) => {
           .then((resp) => resp.json())
           .then((message) => {
             setOffers(message.message);
-            setLoading(false)
+            setLoading(false);
           })
           .catch((e) => console.error(e));
       }
     }, 2000);
   }, [currentUser]);
   useEffect(() => {
-    setFilteredOrders(
-      offers.filter(
-        (order) => order.date == currentDate || order.date == currentDate
-      )
-    );
-  }, [currentDate, offers]);
+    setFilteredOrders(offers.filter((order) => order.date == currentDate));
+  }, [offers]);
   function handleDate(date) {
     const targetedOrders = offers.filter((order) => order.date == date);
     setFilteredOrders(targetedOrders);
@@ -97,8 +92,8 @@ const Orders = ({ AdminOptions, currentUser }) => {
       })
       .catch((e) => console.error(e));
   }
-  if(loading){
-    return <Loader text="Loading orders ..."/>
+  if (loading) {
+    return <Loader text="Loading orders ..." />;
   }
   return (
     <div>
@@ -186,7 +181,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
                         <div className="mt-4 text-center">
                           <h2 className="text-lg font-semibold">{item.name}</h2>
                           <p className="text-gray-700 text-base font-medium">
-                            ${item.price.toFixed(2)}
+                            RWF {item.price.toFixed(2)}
                           </p>
                         </div>
                       </div>
@@ -195,26 +190,26 @@ const Orders = ({ AdminOptions, currentUser }) => {
                 )}
                 <h1 className="my-10 font-bold text-3xl">Transaction Method</h1>
                 <h1>{selectedOrder.paymentMethod}</h1>
-                {AdminOptions ? (
-                  <div className="my-5">
-                    <h1 className="font-bold text-3xl">Options</h1>
-                    <div className="flex gap-5 my-4">
+                <div className="my-5">
+                  <h1 className="font-bold text-3xl">Options</h1>
+                  <div className="flex gap-5 my-4">
+                    {AdminOptions ? (
                       <button
                         onClick={(e) => handleApprove(selectedOrder, e)}
                         className={`bg-green-500 text-white hover:bg-green-700 p-4 px-10 rounded-md`}
                       >
                         Approve
                       </button>
-                      <div
-                        onClick={() => handleDecline(selectedOrder)}
-                        className="flex items-center cursor-pointer  text-red-500 hover:bg-gray-200 p-4 px-10 rounded-md"
-                      >
-                        <button>Decline</button>
-                        (<CgTrash className="text-red-500" />)
-                      </div>
+                    ) : null}
+                    <div
+                      onClick={() => handleDecline(selectedOrder)}
+                      className="flex items-center cursor-pointer  text-red-500 hover:bg-gray-200 p-4 px-10 rounded-md"
+                    >
+                      <button>Decline</button>
+                      (<CgTrash className="text-red-500" />)
                     </div>
                   </div>
-                ) : null}
+                </div>
               </div>
             </div>
           ) : (

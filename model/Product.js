@@ -8,6 +8,8 @@ const productSchema = new mongoose.Schema({
   category: String,
   stock: Number,
   sold: Number,
+  booked:{type:Number,default:0},
+  liked:{type:Number,default:0},
   image: {
     data: Buffer,
     contentType: String,

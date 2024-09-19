@@ -18,7 +18,7 @@ const Locations = () => {
         </h1>
       </div>
       <img
-        src="./location.jpg"
+        src="./location.png"
         alt="locationImage"
         className="w-[20rem] h-[20rem] rounded-md"
       />

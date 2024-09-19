@@ -1,29 +1,16 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaRegMoon, FaSearch, FaSun } from "react-icons/fa";
-import { CgClose, CgHeart, CgShoppingCart } from "react-icons/cg";
-import { Drawer, List, ListItem } from "@mui/material";
+import { CgClose, CgShoppingCart } from "react-icons/cg";
+import { Drawer, List, ListItem, Badge } from "@mui/material"; // Add Badge for displaying the cart count
 import { ThemeContext } from "../../constants/ThemeContext";
+import CartItems, { CartContext } from "../../constants/cartItems"; // Import CartContext
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const { itemsOnCart } = useContext(CartContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width <= 460) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+
   const links = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
@@ -43,124 +30,111 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={`flex items-center p-4 justify-between px-10 text-black bg-[#dadce0] dark:bg-black dark:text-white lg:px-36 sticky top-0 z-50`}
-    >
-      {isMobile ? (
-        theme === "dark" ? (
-          <img
-            src="/mobileLogoDarkMode.png"
-            alt="logo"
-            className="h-[4.5rem] w-[10rem] logo"
-          />
-        ) : (
-          <img
-            src="/mobileLogoWhiteMode.png"
-            alt="logo"
-            className="h-[4.5rem] w-[10rem] logo"
-          />
-        )
-      ) : theme === "dark" ? (
-        <img
-          src="/pcLogoDarkMode.png"
-          alt="logo"
-          className="h-[4.5rem] w-[10rem] logo"
-        />
-      ) : (
-        <img
-          src="/pcLogoLightMode.png"
-          alt="logo"
-          className="h-[4.5rem] w-[10rem] logo"
-        />
-      )}
+    <CartItems>
+      <nav
+        className={`flex items-center p-4 justify-between px-10 text-black bg-[#dadce0] dark:bg-black dark:text-white lg:px-36 sticky top-0 z-50`}
+      >
+        <img src="/newLogo.png" alt="logo" className="h-[4.5rem] w-[10rem]" />
 
-      {/* For larger devices */}
-      <div className="hidden sm:flex justify-center items-center">
-        <div className="p-2 space-x-7 text-center items-center justify-center flex rounded-full px-5">
-          {links.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              className="cursor-pointer hover:text-blue-600"
-            >
-              {link.name}
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div className="hidden sm:flex space-x-5">
-        <FaSearch className="cursor-pointer" />
-        {theme === "dark" ? (
-          <FaSun onClick={toggleTheme} className="cursor-pointer" />
-        ) : (
-          <FaRegMoon onClick={toggleTheme} className="cursor-pointer" />
-        )}
-        <CgHeart className="cursor-pointer" />
-        <a href="/cart">
-          <CgShoppingCart className="cursor-pointer" />
-        </a>
-      </div>
-
-      {/* For smaller devices */}
-      <div className="block sm:hidden">
-        <div className="flex items-center space-x-4">
-          {theme === "dark" ? (
-            <FaSun onClick={toggleTheme} />
-          ) : (
-            <FaRegMoon onClick={toggleTheme} />
-          )}
-          <AiOutlineMenu
-            className="mr-2 visible sm:hidden"
-            onClick={toggleDrawer(true)}
-          />
-        </div>
-        <Drawer
-          anchor="right"
-          open={drawerOpen}
-          onClose={toggleDrawer(false)}
-          PaperProps={{
-            style: {
-              width: "75%",
-              padding: "20px",
-              backgroundColor: theme === "dark" ? "black" : "white",
-              color: theme === "dark" ? "white" : "black",
-              backdropFilter: "blur(50px)",
-              boxShadow: "none",
-            },
-          }}
-        >
-          <div
-            onClick={toggleDrawer(false)}
-            className="flex text-2xl justify-end font-bold cursor-pointer"
-          >
-            <CgClose className="text-black dark:text-white" />
-          </div>
-          <List>
+        <div className="hidden sm:flex justify-center items-center">
+          <div className="p-2 space-x-7 text-center items-center justify-center flex rounded-full px-5">
             {links.map((link, index) => (
-              <ListItem key={index} button onClick={toggleDrawer(false)}>
-                <a
-                  href={link.href}
-                  className="w-full block text-lg mb-2 text-black dark:text-white"
-                >
-                  {link.name}
+              <a
+                key={index}
+                href={link.href}
+                className="cursor-pointer hover:text-blue-600"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden sm:flex space-x-5 items-center">
+          <FaSearch className="cursor-pointer" />
+          {theme === "dark" ? (
+            <FaSun onClick={toggleTheme} className="cursor-pointer" />
+          ) : (
+            <FaRegMoon onClick={toggleTheme} className="cursor-pointer" />
+          )}
+
+          <a href="/cart" className="relative">
+            <Badge
+              badgeContent={itemsOnCart.length > 0 ? itemsOnCart.length : 0}
+              color="primary"
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+            >
+              <CgShoppingCart className="cursor-pointer" />
+            </Badge>
+          </a>
+        </div>
+
+        <div className="block sm:hidden">
+          <div className="flex items-center space-x-4">
+            {theme === "dark" ? (
+              <FaSun onClick={toggleTheme} />
+            ) : (
+              <FaRegMoon onClick={toggleTheme} />
+            )}
+            <AiOutlineMenu
+              className="mr-2 visible sm:hidden"
+              onClick={toggleDrawer(true)}
+            />
+          </div>
+          <Drawer
+            anchor="right"
+            open={drawerOpen}
+            onClose={toggleDrawer(false)}
+            PaperProps={{
+              style: {
+                width: "75%",
+                padding: "20px",
+                backgroundColor: theme === "dark" ? "black" : "white",
+                color: theme === "dark" ? "white" : "black",
+                backdropFilter: "blur(50px)",
+                boxShadow: "none",
+              },
+            }}
+          >
+            <div
+              onClick={toggleDrawer(false)}
+              className="flex text-2xl justify-end font-bold cursor-pointer"
+            >
+              <CgClose className="text-black dark:text-white" />
+            </div>
+            <List>
+              {links.map((link, index) => (
+                <ListItem key={index} button onClick={toggleDrawer(false)}>
+                  <a
+                    href={link.href}
+                    className="w-full block text-lg mb-2 text-black dark:text-white"
+                  >
+                    {link.name}
+                  </a>
+                </ListItem>
+              ))}
+              <ListItem>
+                <FaSearch className="cursor-pointer text-black dark:text-white" />
+              </ListItem>
+              <ListItem>
+                <a href="/cart">
+                  <Badge
+                    badgeContent={
+                      itemsOnCart.length > 0 ? itemsOnCart.length : 0
+                    }
+                    color="primary"
+                  >
+                    <CgShoppingCart className="cursor-pointer text-black dark:text-white" />
+                  </Badge>
                 </a>
               </ListItem>
-            ))}
-            <ListItem>
-              <FaSearch className="cursor-pointer text-black dark:text-white" />
-            </ListItem>
-            <ListItem>
-              <CgHeart className="cursor-pointer text-black dark:text-white" />
-            </ListItem>
-            <ListItem>
-              <a href="/cart">
-                <CgShoppingCart className="cursor-pointer text-black dark:text-white" />
-              </a>
-            </ListItem>
-          </List>
-        </Drawer>
-      </div>
-    </nav>
+            </List>
+          </Drawer>
+        </div>
+      </nav>
+    </CartItems>
   );
 }

@@ -1,40 +1,34 @@
 import { useContext, useEffect, useState } from "react";
-import useProducts from "../../../constants/products";
-import ProductCard from "../Product";
+import ProductCard from "./Product";
 import { Buffer } from "buffer";
-import { CartContext } from "../../../constants/cartItems";
-import { FavContext } from "../../../constants/favItems";
-import Loader from "../loader";
 import { Pagination, Stack } from "@mui/material";
 import { ThemeContext } from "@emotion/react";
+import { FavContext } from "../../constants/favItems";
+import { CartContext } from "../../constants/cartItems";
+import Loader from "./loader";
+import useProducts from "../../constants/products";
 
-const MenPants = () => {
+const FavProducts = () => {
   const { loading, products } = useProducts();
-  const [Menpants, setMenpants] = useState([]);
   const { itemsOnCart, addItemOncart, deleteItem } = useContext(CartContext);
   const [localCart, setLocalCart] = useState([]);
   const [localFav, setLocalFav] = useState([]);
+  const [Favprods, setFavProds] = useState([]);
   const { itemsOnFav, addItemOnFav, deleteItemFromFav } =
     useContext(FavContext);
+  const { theme } = useContext(ThemeContext);
+
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12;
-
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = Menpants.slice(
+  const currentProducts = Favprods.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
-  const { theme } = useContext(ThemeContext);
-  // Calculate total pages
-  const totalPages = Math.ceil(Menpants.length / productsPerPage);
+  const totalPages = Math.ceil(Favprods.length / productsPerPage);
 
   useEffect(() => {
-    const menProducts = products.filter(
-      (prod) => prod.gender === "Male" && prod.category === "pants"
-    );
-    setMenpants(menProducts);
-
     if (itemsOnCart && itemsOnCart.length > 0) {
       setLocalCart(itemsOnCart.map((item) => item.productId));
     } else {
@@ -45,7 +39,7 @@ const MenPants = () => {
     } else {
       setLocalFav([]);
     }
-  }, [products, itemsOnCart, itemsOnFav]);
+  }, [itemsOnCart, itemsOnFav]);
 
   const handleAddToCart = (pantId) => {
     addItemOncart(pantId);
@@ -65,10 +59,23 @@ const MenPants = () => {
   const handleDeleteFromFav = (pantId) => {
     deleteItemFromFav(pantId);
     setLocalFav(localFav.filter((id) => id !== pantId));
+    setFavProds(Favprods.filter((product) => product._id !== pantId));
   };
+
   const handlePageChange = (event, pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+  useEffect(() => {
+    if (itemsOnFav?.length > 0 && products?.length > 0) {
+      const filteredFavProducts = products.filter((product) =>
+        itemsOnFav.some((favItem) => favItem.productId === product._id)
+      );
+      setFavProds(filteredFavProducts);
+    } else {
+      setFavProds([]);
+    }
+  }, [itemsOnFav, products]);
 
   if (loading) {
     return <Loader text="Loading products ..." />;
@@ -76,7 +83,7 @@ const MenPants = () => {
 
   return (
     <div>
-      {Menpants.length > 0 ? (
+      {Favprods.length > 0 ? (
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {currentProducts.map((pant) => {
@@ -118,15 +125,15 @@ const MenPants = () => {
                   boundaryCount={2}
                   sx={{
                     "& .MuiPaginationItem-root": {
-                      color: theme == "dark" ? "#fff" : "#000",
-                      borderColor: theme == "dark" ? "#fff" : "#000",
+                      color: theme === "dark" ? "#fff" : "#000",
+                      borderColor: theme === "dark" ? "#fff" : "#000",
                     },
                     "& .MuiPaginationItem-root.Mui-selected": {
-                      backgroundColor: theme == "dark" ? "#fff" : "#000",
-                      color: theme == "dark" ? "#000" : "#fff",
+                      backgroundColor: theme === "dark" ? "#fff" : "#000",
+                      color: theme === "dark" ? "#000" : "#fff",
                     },
                     "& .MuiPaginationItem-ellipsis": {
-                      color: theme == "dark" ? "#fff" : "#000",
+                      color: theme === "dark" ? "#fff" : "#000",
                     },
                   }}
                 />
@@ -147,4 +154,5 @@ const MenPants = () => {
     </div>
   );
 };
-export default MenPants;
+
+export default FavProducts;

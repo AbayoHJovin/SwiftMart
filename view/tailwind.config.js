@@ -6,11 +6,12 @@ export default {
   theme: {
     screens: {
       sssm: "320px",
-      smm:"400px",
+      xsm: "386px",
+      smm: "400px",
       ssm: "550px",
       sm: "640px",
       md: "768px",
-      xmd:"960px",
+      xmd: "960px",
       lg: "1024px",
       xlg: "1160px",
     },

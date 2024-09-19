@@ -5,15 +5,14 @@ export const FavContext = createContext();
 export default function FavItems({ children }) {
   const [itemsOnFav, setIsOnFav] = useState([]);
   const { currentUser } = useContext(CurrentUserContext);
-
-  // const navigate = useNavigate();
   useEffect(() => {
     if (currentUser) {
+      const token=localStorage.getItem("token")
       fetch(
         `http://localhost:5000/getFavItems?currentUser=${currentUser._id}`,
         {
           method: "GET",
-          headers: { "Content-Type": "application/json" },
+          headers: {authorization:token },
         }
       )
         .then((response) => response.json())

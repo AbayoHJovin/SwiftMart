@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "./currentUser";
@@ -7,7 +8,7 @@ export const CartContext = createContext();
 export default function CartItems({ children }) {
   const [itemsOnCart, setIsOnCart] = useState([]);
   const { currentUser } = useContext(CurrentUserContext);
-  useEffect(() => {
+  function fetchCartItems() {
     if (currentUser) {
       const token = localStorage.getItem("token");
       fetch(
@@ -21,11 +22,18 @@ export default function CartItems({ children }) {
       )
         .then((response) => response.json())
         .then((data) => {
-          setIsOnCart(data.products);
+          if(data.products){
+            setIsOnCart(data.products);
+          }else{
+            setIsOnCart([])
+          }
         })
         .catch((e) => console.log("error getting products", e));
     }
-  }, [currentUser]);
+  }
+  useEffect(() => {
+    fetchCartItems();
+  }, []);
   const navigate = useNavigate();
   function addItemOncart(itemId) {
     if (!currentUser) {
@@ -39,7 +47,9 @@ export default function CartItems({ children }) {
       body: JSON.stringify({ userId: currentUser._id, prodId: itemId }),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        fetchCartItems();
+      })
       .catch((e) => console.error(e));
   }
   function deleteItem(itemId) {
@@ -53,7 +63,7 @@ export default function CartItems({ children }) {
       )
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          fetchCartItems();
         })
         .catch((e) => console.error(e));
     }

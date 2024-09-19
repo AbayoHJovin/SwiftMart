@@ -269,7 +269,7 @@ export default function ProductTable() {
                     <TableCell>{product.category}</TableCell>
                     <TableCell>{product.stock}</TableCell>
                     <TableCell>{product.sold}</TableCell>
-                    <TableCell>${product.price.toFixed(2)}</TableCell>
+                    <TableCell>RWF {product.price.toFixed(2)}</TableCell>
                     <TableCell>{product.gender}</TableCell>
                     <TableCell>
                       <IconButton onClick={() => handleEdit(product)}>
@@ -360,7 +360,7 @@ export default function ProductTable() {
           />
           <TextField
             type="number"
-            label="Price($)"
+            label="Price(RWF)"
             value={selectedProduct.price}
             onChange={(e) =>
               setSelectedProduct({
