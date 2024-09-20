@@ -139,7 +139,7 @@ const CartPage = () => {
                           </td>
                           <td
                             onClick={() => {
-                              deleteItem(item._id), location.reload();
+                              deleteItem(item._id)
                             }}
                             className="cursor-pointer"
                           >

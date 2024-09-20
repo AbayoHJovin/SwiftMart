@@ -40,8 +40,16 @@ function App() {
 }
 
 const router = createBrowserRouter([
-  { path: "/", element: <LandingPage /> },
-  { path: "/about", element: <About /> },
+  {
+    path: "/",
+    element: (
+      <CartItems>
+        <LandingPage />
+      </CartItems>
+    ),
+  },
+  { path: "/about", element: <CartItems><About />
+    </CartItems> },
   {
     path: "/shop",
     element: (
@@ -50,11 +58,39 @@ const router = createBrowserRouter([
       </CartItems>
     ),
   },
-  { path: "/contacts", element: <Contact /> },
+  {
+    path: "/contacts",
+    element: (
+      <CartItems>
+        <Contact />
+      </CartItems>
+    ),
+  },
   { path: "/admin", element: <AdminDashboard /> },
-  { path: "/account", element: <Account /> },
-  { path: "/login", element: <Login /> },
-  { path: "/signup", element: <SignupForm /> },
+  {
+    path: "/account",
+    element: (
+      <CartItems>
+        <Account />
+      </CartItems>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <CartItems>
+        <Login />
+      </CartItems>
+    ),
+  },
+  {
+    path: "/signup",
+    element: (
+      <CartItems>
+        <SignupForm />
+      </CartItems>
+    ),
+  },
   { path: "/try", element: <Orders /> },
   {
     path: "/checkout/:amount",
