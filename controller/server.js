@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "*",
+    origin: ["http://localhost:5173", "http://localhost:5174", "https://shopin-xi.vercel.app"],
     credentials: true,
     optionsSuccessStatus: 200,
   })
@@ -41,4 +41,3 @@ app.use(tokenRoutes);
 app.use(cartRoutes);
 app.use(FavRoutes);
 app.use(offerRoutes);
-
