@@ -2,14 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-
 const userRoutes = require("./Routes/userRoutes");
 const productRoutes = require("./Routes/productRoutes");
 const cartRoutes = require("./Routes/cartRoutes");
 const FavRoutes = require("./Routes/favouriteRoutes");
 const tokenRoutes = require("./Routes/tokenRoutes");
 const cookieParser = require("cookie-parser");
-const offerRoutes=require("./Routes/offerRoutes")
+const offerRoutes = require("./Routes/offerRoutes");
+require("dotenv").config();
 
 const app = express();
 app.use(cookieParser());
@@ -26,8 +26,13 @@ app.use(
 app.use(express.json());
 
 mongoose
-  .connect("mongodb://localhost:27017/ecommerceDB")
-  .then(() => console.log("Connected to the database"))
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("Connected to the database");
+    app.listen(5000, () => {
+      console.log("Server is running on port 5000");
+    });
+  })
   .catch((e) => console.log(e));
 
 app.use(userRoutes);
@@ -37,6 +42,3 @@ app.use(cartRoutes);
 app.use(FavRoutes);
 app.use(offerRoutes);
 
-app.listen(5000, () => {
-  console.log("Server is running on port 5000");
-});
