@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import Loader from "../components/loader";
 import Orders from "../../admin/Orders";
 import { CurrentUserContext } from "../../constants/currentUser";
+import { apiUrl } from "../lib/apis";
 
 function TabPanel(props) {
   // eslint-disable-next-line react/prop-types
@@ -47,7 +48,7 @@ const {currentUser}=useContext(CurrentUserContext)
   function handleConfirmLogout() {
     handleClose();
     setIsLoggingOut(true);
-    fetch("http://localhost:5000/logout", {
+    fetch(`${apiUrl}/logout`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -71,7 +72,7 @@ const {currentUser}=useContext(CurrentUserContext)
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    fetch("http://localhost:5000/protected", {
+    fetch(`${apiUrl}/protected`, {
       method: "POST",
       headers: { "Content-Type": "application/json", authorization: token },
     })

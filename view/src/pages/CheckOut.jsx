@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { CurrentUserContext } from "../../constants/currentUser";
 import { CartContext } from "../../constants/cartItems";
 import Loader from "../components/loader";
+import { apiUrl } from "../lib/apis";
 
 const OrderForm = () => {
   const { theme } = useContext(ThemeContext);
@@ -128,7 +129,7 @@ const OrderForm = () => {
         date: currentDate,
         time: currentTime,
       };
-      fetch("http://localhost:5000/addOffer", {
+      fetch(`${apiUrl}/addOffer`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dataToSend),
@@ -145,7 +146,7 @@ const OrderForm = () => {
   };
   function handleRedirect() {
     fetch(
-      `http://localhost:5000/deleteAllCartItems?userId=${currentUser._id}`,
+      `${apiUrl}/deleteAllCartItems?userId=${currentUser._id}`,
       {
         method: "DELETE",
       }

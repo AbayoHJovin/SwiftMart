@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { apiUrl } from "../lib/apis";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +21,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      fetch("http://localhost:5000/login", {
+      fetch(`${apiUrl}/login`, {
         method: "POST",
         body: JSON.stringify({ email: email, password: password }),
         headers: { "Content-Type": "application/json" },

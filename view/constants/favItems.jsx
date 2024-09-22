@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "./currentUser";
+import { apiUrl } from "../src/lib/apis";
 export const FavContext = createContext();
 export default function FavItems({ children }) {
   const [itemsOnFav, setIsOnFav] = useState([]);
@@ -9,7 +10,7 @@ export default function FavItems({ children }) {
     if (currentUser) {
       const token=localStorage.getItem("token")
       fetch(
-        `http://localhost:5000/getFavItems?currentUser=${currentUser._id}`,
+        `${apiUrl}/getFavItems?currentUser=${currentUser._id}`,
         {
           method: "GET",
           headers: {authorization:token },
@@ -25,7 +26,7 @@ export default function FavItems({ children }) {
 
   function addItemOnFav(itemId) {
     if (currentUser) {
-      fetch("http://localhost:5000/addItemOnFav", {
+      fetch(`${apiUrl}/addItemOnFav`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: currentUser._id, prodId: itemId }),
@@ -39,7 +40,7 @@ export default function FavItems({ children }) {
   function deleteItemFromFav(itemId) {
     if (currentUser) {
       fetch(
-        `http://localhost:5000/deleteFavItem?itemId=${itemId}&userId=${currentUser._id}
+        `${apiUrl}/deleteFavItem?itemId=${itemId}&userId=${currentUser._id}
   `,
         {
           method: "DELETE",

@@ -13,6 +13,7 @@ import { FaCamera } from "react-icons/fa";
 import { useTheme } from "@mui/material/styles";
 import { ThemeContext } from "../../constants/ThemeContext";
 import { CurrentUserContext } from "../../constants/currentUser";
+import { apiUrl } from "../lib/apis";
 
 const PersonalDetails = () => {
   const { theme } = useContext(ThemeContext);
@@ -55,7 +56,7 @@ const PersonalDetails = () => {
     console.log("Form data is:", formData);
     try {
       const response = await fetch(
-        `http://localhost:5000/user/update?userId=${formData.id}`,
+        `${apiUrl}/user/update?userId=${formData.id}`,
         {
           method: "PATCH",
           headers: {

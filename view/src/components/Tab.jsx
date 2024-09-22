@@ -1,30 +1,4 @@
 /* eslint-disable react/prop-types */
-// /* eslint-disable react/prop-types */
-// import { Tab } from "@mui/material";
-
-// export default function MyTab({ Icon, Name, tabvalue, realTabValue }) {
-//   return (
-//     <Tab
-//       label={
-//         <span className="flex items-center content-center text-center">
-//           <Icon className="mr-8" size={30} /> {/* Use the Icon prop as a component */}
-//           {Name}&nbsp;
-//         </span>
-//       }
-//       sx={{
-//         bgcolor: tabvalue === realTabValue ? "#ebeced" : "transparent",
-//         color: "black",
-//         "&:hover": {
-//           bgcolor: "#ebeced",
-//           color: "black",
-//         },
-//         my: 3,
-//         borderRadius: 3,
-//       }}
-//     />
-//   );
-// }
-
 import { Tab } from "@mui/material";
 
 export default function MyTab({ Icon, Name, tabvalue, realTabValue }) {

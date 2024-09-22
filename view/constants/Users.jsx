@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { apiUrl } from "../src/lib/apis";
 
 const UseUsers = () => {
     const [users, setUsers] = useState([]);
@@ -8,7 +9,7 @@ const UseUsers = () => {
         // Define the async function inside useEffect
         const getUsers = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/users", {
+                const response = await axios.get(`${apiUrl}/users`, {
                     headers: { "Content-Type": "application/json" },
                 });
                 setUsers(response.data);

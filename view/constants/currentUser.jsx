@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
 import Loader from "../src/components/loader";
+import { apiUrl } from "../src/lib/apis";
 
 export const CurrentUserContext = createContext();
 const CurrentUser = ({ children }) => {
@@ -9,7 +10,7 @@ const CurrentUser = ({ children }) => {
   useEffect(() => {
     const userToken = localStorage.getItem("token");
     setISLoading(true);
-    fetch("http://localhost:5000/currentUser", {
+    fetch(`${apiUrl}/currentUser`, {
       method: "GET",
       headers: { token: userToken },
     })

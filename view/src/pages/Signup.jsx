@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import Navbar from "../components/Navbar";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
+import { apiUrl } from "../lib/apis";
 
 const SignupForm = () => {
   const [username, setUsername] = useState("");
@@ -27,7 +28,7 @@ const SignupForm = () => {
       return;
     }
     try {
-      fetch("http://localhost:5000/signup", {
+      fetch(`${apiUrl}/signup`, {
         method: "POST",
         body: JSON.stringify({username,email,password}),
         headers: {

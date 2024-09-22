@@ -17,6 +17,7 @@ import {
 import { FaSearch } from "react-icons/fa";
 import useProducts from "../constants/products";
 import { CgMathMinus } from "react-icons/cg";
+import { apiUrl } from "../src/lib/apis";
 
 export default function PopularProds() {
   const { products } = useProducts();
@@ -54,7 +55,7 @@ export default function PopularProds() {
   };
 
   function handleAddToPopular(item, popularity) {
-    fetch(`http://localhost:5000/makeAPopularProduct?prodId=${item}`, {
+    fetch(`${apiUrl}/makeAPopularProduct?prodId=${item}`, {
       method: "PATCH",
       headers: { popularity: popularity },
     })

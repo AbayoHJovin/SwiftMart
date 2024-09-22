@@ -7,6 +7,7 @@ import { Buffer } from "buffer";
 import { CgTrash } from "react-icons/cg";
 import { toast } from "react-toastify";
 import Loader from "../src/components/loader";
+import { apiUrl } from "../src/lib/apis";
 
 const Orders = ({ AdminOptions, currentUser }) => {
   const now = new Date();
@@ -24,7 +25,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
   useEffect(() => {
     setInterval(() => {
       if (!currentUser) {
-        fetch("http://localhost:5000/getOffer", {
+        fetch(`${apiUrl}/getOffer`, {
           method: "GET",
         })
           .then((resp) => resp.json())
@@ -34,7 +35,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
           })
           .catch((e) => console.error(e));
       } else {
-        fetch(`http://localhost:5000/getOffer?userId=${currentUser}`, {
+        fetch(`${apiUrl}/getOffer?userId=${currentUser}`, {
           method: "GET",
         })
           .then((resp) => resp.json())
@@ -68,7 +69,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
     setBoughtProducts(prod);
   }
   function handleDecline(order) {
-    fetch(`http://localhost:5000/removeOrder?offerId=${order._id}`, {
+    fetch(`${apiUrl}/removeOrder?offerId=${order._id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -80,8 +81,9 @@ const Orders = ({ AdminOptions, currentUser }) => {
       .catch((e) => console.error(e));
   }
   function handleApprove(order, e) {
-    fetch(`http://localhost:5000/updateOrder?offerId=${order._id}`, {
-      method: "PATCH",
+    fetch(`${apiUrl}/updateOrder?offerId=${order._id}`, {
+      method: "PATC
+      H",
       headers: { "Content-Type": "application/json" },
     })
       .then((response) => response.json())

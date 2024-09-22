@@ -1,6 +1,7 @@
 // hooks/useProducts.js
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { apiUrl } from "../src/lib/apis";
 
 const useProducts = () => {
   const [products, setProducts] = useState([]);
@@ -10,7 +11,7 @@ const useProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/products");
+        const response = await axios.get(`${apiUrl}/products`);
         setProducts(response.data);
         setLoading(false);
       } catch (error) {

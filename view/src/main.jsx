@@ -20,10 +20,11 @@ import CurrentUser from "../constants/currentUser.jsx";
 import CartItems from "../constants/cartItems.jsx";
 import OrderForm from "./pages/CheckOut.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
+import { apiUrl } from "./lib/apis.js";
 
 function App() {
   useEffect(() => {
-    fetch("http://localhost:5000/refresh_token", {
+    fetch(`${apiUrl}/refresh_token`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

@@ -27,6 +27,7 @@ import {
 import { FaEdit, FaTrashAlt, FaSearch } from "react-icons/fa";
 import useProducts from "../constants/products";
 import { CgAdd, CgMathMinus } from "react-icons/cg";
+import { apiUrl } from "../src/lib/apis";
 
 export default function ProductTable() {
   const { products } = useProducts();
@@ -91,7 +92,7 @@ export default function ProductTable() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/products?id=${id}`);
+      await axios.delete(`${apiUrl}/products?id=${id}`);
       fetchProducts();
     } catch (error) {
       console.error("Error deleting product", error);
@@ -131,7 +132,7 @@ export default function ProductTable() {
       if (selectedProduct._id) {
         await axios
           .put(
-            `http://localhost:5000/products/${selectedProduct._id}`,
+            `${apiUrl}/products/${selectedProduct._id}`,
             formData
           )
           .then(() => {
@@ -140,7 +141,7 @@ export default function ProductTable() {
           .catch((e) => console.log(e));
       } else {
         await axios
-          .post("http://localhost:5000/addProduct", formData)
+          .post(`${apiUrl}/addProduct`, formData)
           .then(() => location.reload())
           .catch((e) => console.log(e));
       }
@@ -157,7 +158,7 @@ export default function ProductTable() {
     setPreview(URL.createObjectURL(file));
   };
   function handleAddToPopular(item, popularity) {
-    fetch(`http://localhost:5000/makeAPopularProduct?prodId=${item}`, {
+    fetch(`${apiUrl}/makeAPopularProduct?prodId=${item}`, {
       method: "PATCH",
       headers: { popularity: popularity },
     })

@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "./currentUser";
 import { useNavigate } from "react-router-dom";
+import { apiUrl } from "../src/lib/apis";
 
 export const CartContext = createContext();
 export default function CartItems({ children }) {
@@ -12,7 +13,7 @@ export default function CartItems({ children }) {
     if (currentUser) {
       const token = localStorage.getItem("token");
       fetch(
-        `http://localhost:5000/getCartItems?currentUser=${currentUser._id}`,
+        `${apiUrl}/getCartItems?currentUser=${currentUser._id}`,
         {
           method: "GET",
           headers: {
@@ -41,7 +42,7 @@ export default function CartItems({ children }) {
       navigate("/login");
       return;
     }
-    fetch("http://localhost:5000/addItemOncart", {
+    fetch(`${apiUrl}/addItemOncart`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId: currentUser._id, prodId: itemId }),
@@ -55,7 +56,7 @@ export default function CartItems({ children }) {
   function deleteItem(itemId) {
     if (currentUser._id) {
       fetch(
-        `http://localhost:5000/deleteCartItem?itemId=${itemId}&userId=${currentUser._id}
+        `${apiUrl}/deleteCartItem?itemId=${itemId}&userId=${currentUser._id}
 `,
         {
           method: "DELETE",
