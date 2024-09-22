@@ -82,8 +82,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
   }
   function handleApprove(order, e) {
     fetch(`${apiUrl}/updateOrder?offerId=${order._id}`, {
-      method: "PATC
-      H",
+      method: "PATCH",
       headers: { "Content-Type": "application/json" },
     })
       .then((response) => response.json())
