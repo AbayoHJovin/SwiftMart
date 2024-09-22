@@ -5,11 +5,13 @@ import { CgClose, CgShoppingCart } from "react-icons/cg";
 import { Drawer, List, ListItem, Badge } from "@mui/material"; // Add Badge for displaying the cart count
 import { ThemeContext } from "../../constants/ThemeContext";
 import CartItems, { CartContext } from "../../constants/cartItems"; // Import CartContext
+import Search from "./searchComponent";
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { itemsOnCart } = useContext(CartContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const links = [
     { name: "Home", href: "/" },
@@ -51,7 +53,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden sm:flex space-x-5 items-center">
-          <FaSearch className="cursor-pointer" />
+          <FaSearch onClick={()=>setIsModalVisible(true)} className="cursor-pointer" />
           {theme === "dark" ? (
             <FaSun onClick={toggleTheme} className="cursor-pointer" />
           ) : (
@@ -117,7 +119,7 @@ export default function Navbar() {
                 </ListItem>
               ))}
               <ListItem>
-                <FaSearch className="cursor-pointer text-black dark:text-white" />
+                <FaSearch onClick={()=>{setIsModalVisible(true),setDrawerOpen(false)}} className="cursor-pointer text-black dark:text-white" />
               </ListItem>
               <ListItem>
                 <a href="/cart">
@@ -135,6 +137,7 @@ export default function Navbar() {
           </Drawer>
         </div>
       </nav>
+      <Search isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
     </CartItems>
   );
 }

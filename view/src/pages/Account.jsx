@@ -109,10 +109,9 @@ const {currentUser}=useContext(CurrentUserContext)
               color: theme === "dark" ? "white" : "black",
             }}
           >
-            {/* Responsive Sidebar */}
             <Box
               sx={{
-                width: { xs: "60px", md: "240px" }, // Adjust width for small and large screens
+                width: { xs: "60px", md: "240px" },
                 flexShrink: 0,
                 backgroundColor: theme === "dark" ? "black" : "white",
                 color: theme === "dark" ? "white" : "black",

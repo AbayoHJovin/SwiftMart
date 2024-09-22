@@ -1,63 +1,39 @@
-// import { useNavigate } from "react-router-dom";
-
-// const Hero = () => {
-//   const navigate=useNavigate()
-//   return (
-//     <div className="bg-[#CFC6B8] dark:bg-black text-black font-lato dark:text-white flex flex-col h-screen p-5 lg:flex-row items-center justify-evenly space-x-5">
-//       <div className="flex flex-col justify-center lg:justify-normal text-center lg:text-start max-w-[50rem] p-0 sm:p-3 space-y-3">
-//         <div className="font-extrabold text-[2rem] sm:text-[3rem]">
-//           <h1>Explore, shop</h1>
-//           <h1>repeat again.</h1>
-//         </div>
-//         <h1>
-//           Lorem ipsum dolor sit amet, consectetur adipisicing elit. A mollitia
-//           obcaecati aliquam iure earum esse! Mollitia quibusdam magnam in
-//           laudantium.
-//         </h1>
-//         <div className="flex justify-center lg:justify-start">
-//           <button onClick={()=>navigate("/shop")} className="bg-green-900 p-5 py-2 p  text-white rounded-full">
-//             Shop Now
-//           </button>
-//         </div>
-//       </div>
-//       <div className="flex justify-end">
-//         <img src="./hero.png" alt="heroImage" />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Hero;
-
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[url('./bg-white.png')] dark:bg-[url('./bg-black.png')] bg-cover bg-center  text-black font-lato dark:text-white flex flex-col h-screen p-5 lg:flex-row items-center justify-evenly space-x-5">
-      <div className="flex flex-col justify-center lg:justify-normal text-center lg:text-start max-w-[50rem] p-0 sm:p-3 space-y-3">
-        <div className="font-extrabold text-[2rem] sm:text-[3rem]">
-          <h1>Explore, shop</h1>
-          <h1>repeat again.</h1>
-        </div>
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A mollitia
-          obcaecati aliquam iure earum esse! Mollitia quibusdam magnam in
-          laudantium.
+    <div className="relative flex h-screen p-5 bg-[url('./bg-white.png')] dark:bg-[url('./bg-black.png')]  items-center justify-center bg-cover bg-center text-black font-lato dark:text-white">
+      <div className="absolute inset-0 bg-black opacity-30 dark:bg-gray-900 dark:opacity-50"></div>{" "}
+      {/* Overlay for readability */}
+      <div className="relative filter inset-0 lg:inset-auto backdrop-blur-[1px] h-screen md:h-auto z-10 flex flex-col justify-center lg:justify-start text-center lg:text-start max-w-[45rem] space-y-3">
+        <h1 className={`font-extrabold text-3xl sm:text-5xl text-white`}>
+          IT&apos;S ALL ABOUT FASHION
         </h1>
+        <h2 className="text-xl sm:text-2xl text-white">
+          We bring stock to your door!
+        </h2>
+        <p className="text-lg text-white">
+          Buy now and get 10% off on your first purchase!
+        </p>
+
         <div className="flex justify-center lg:justify-start">
           <button
             onClick={() => navigate("/shop")}
-            className="bg-green-900 p-5 py-2 text-white rounded-full"
+            className="bg-green-900 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300"
           >
             Shop Now
           </button>
         </div>
       </div>
-      {/* <div className="flex justify-end">
-        <img src="./hero.png" alt="heroImage" />
-      </div> */}
+      <div className="absolute lg:relative flex justify-center lg:justify-normal mt-5 lg:mt-0">
+        <img
+          src="./heroImage.png"
+          alt="hero"
+          className="max-w-full h-auto rounded-lg z-0"
+        />
+      </div>
     </div>
   );
 };

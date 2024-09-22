@@ -14,13 +14,12 @@ import AdminDashboard from "../admin/Dashboard.jsx";
 import Account from "./pages/Account.jsx";
 import Login from "./pages/Login.jsx";
 import SignupForm from "./pages/Signup.jsx";
-import ProdDescription from "./pages/ProdDescription.jsx";
 import { ThemeProvider } from "../constants/ThemeContext.jsx";
 import CartPage from "./pages/Cart.jsx";
 import CurrentUser from "../constants/currentUser.jsx";
 import CartItems from "../constants/cartItems.jsx";
 import OrderForm from "./pages/CheckOut.jsx";
-import Orders from "../admin/Orders.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
 
 function App() {
   useEffect(() => {
@@ -48,8 +47,14 @@ const router = createBrowserRouter([
       </CartItems>
     ),
   },
-  { path: "/about", element: <CartItems><About />
-    </CartItems> },
+  {
+    path: "/about",
+    element: (
+      <CartItems>
+        <About />
+      </CartItems>
+    ),
+  },
   {
     path: "/shop",
     element: (
@@ -91,7 +96,6 @@ const router = createBrowserRouter([
       </CartItems>
     ),
   },
-  { path: "/try", element: <Orders /> },
   {
     path: "/checkout/:amount",
     element: (
@@ -100,7 +104,14 @@ const router = createBrowserRouter([
       </CartItems>
     ),
   },
-  { path: "/product/:prodId", element: <ProdDescription /> },
+  {
+    path: "/product/:prodId",
+    element: (
+      <CartItems>
+        <ProductPage />
+      </CartItems>
+    ),
+  },
 
   {
     path: "/cart",

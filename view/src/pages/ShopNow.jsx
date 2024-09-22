@@ -21,8 +21,8 @@ import { HeartIcon } from "lucide-react";
 const ShopNow = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [typeOpen, setTypeOpen] = useState(false);
-  const [selectedGender, setSelectedGender] = useState("Select Gender");
-  const [selectType, setSelectType] = useState("Select Type");
+  const [selectedGender, setSelectedGender] = useState("Male");
+  const [selectType, setSelectType] = useState("pants");
   const [showFav, setShowFav] = useState(false);
 
   const toggleDropdown = () => {
@@ -48,7 +48,7 @@ const ShopNow = () => {
   return (
     <CartItems>
       <FavItems>
-        <div className="bg-white dark:bg-black">
+        <div className="bg-white dark:bg-black min-h-screen">
           <Navbar />
           <div className="bg-[#CFC6B8] dark:bg-black flex flex-col md:flex-row items-center justify-around h-auto min-h-[20rem] px-6 md:px-16 py-8 md:py-16 rounded-lg">
             <div className="md:w-1/2 text-center md:text-left">
