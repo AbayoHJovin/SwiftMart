@@ -1,17 +1,17 @@
 {
     "rewrites": [
-      { "source": "/", "destination": "/view/index.html" },
-      { "source": "/about", "destination": "/view/index.html" },
-      { "source": "/shop", "destination": "/view/index.html" },
-      { "source": "/contacts", "destination": "/view/index.html" },
-      { "source": "/admin", "destination": "/view/index.html" },
-      { "source": "/account", "destination": "/view/index.html" },
-      { "source": "/login", "destination": "/view/index.html" },
-      { "source": "/signup", "destination": "/view/index.html" },
-      { "source": "/checkout/:amount", "destination": "/view/index.html" },
-      { "source": "/product/:prodId", "destination": "/view/index.html" },
-      { "source": "/cart", "destination": "/view/index.html" },
-      { "source": "/(.*)", "destination": "/view/index.html" }
+      { "source": "/", "destination": "/index.html" },
+      { "source": "/about", "destination": "/index.html" },
+      { "source": "/shop", "destination": "/index.html" },
+      { "source": "/contacts", "destination": "/index.html" },
+      { "source": "/admin", "destination": "/index.html" },
+      { "source": "/account", "destination": "/index.html" },
+      { "source": "/login", "destination": "/index.html" },
+      { "source": "/signup", "destination": "/index.html" },
+      { "source": "/checkout/:amount", "destination": "/index.html" },
+      { "source": "/product/:prodId", "destination": "/index.html" },
+      { "source": "/cart", "destination": "/index.html" },
+      { "source": "/(.*)", "destination": "/index.html" }
     ]
   }
   
