@@ -56,7 +56,7 @@ const {currentUser}=useContext(CurrentUserContext)
       .then((res) => res.json())
       .then((data) => {
         if (data.message === "Logged out") {
-          // setIsLoggingOut(false)
+          console.log("loggin out")
           localStorage.removeItem("token");
           navigate("/");
         }
