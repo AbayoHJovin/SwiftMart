@@ -1,26 +1,34 @@
-// eslint-disable-next-line react/prop-types
-const Loader = ({text}) => {
+const Loader = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-transparent backdrop:blur-md">
-      <div className="flex flex-col items-center">
-        <div className="sk-fading-circle">
-          <div className="sk-circle1 sk-circle"></div>
-          <div className="sk-circle2 sk-circle"></div>
-          <div className="sk-circle3 sk-circle"></div>
-          <div className="sk-circle4 sk-circle"></div>
-          <div className="sk-circle5 sk-circle"></div>
-          <div className="sk-circle6 sk-circle"></div>
-          <div className="sk-circle7 sk-circle"></div>
-          <div className="sk-circle8 sk-circle"></div>
-          <div className="sk-circle9 sk-circle"></div>
-          <div className="sk-circle10 sk-circle"></div>
-          <div className="sk-circle11 sk-circle"></div>
-          <div className="sk-circle12 sk-circle"></div>
-        </div>
-        <h1 className="mt-4 text-black text-lg sm:text-xl md:text-2xl lg:text-3xl">
-          {text}
-        </h1>
-      </div>
+    <div className="flex justify-center items-center bg-transparent backdrop:blur-md">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+        width="180"
+        height="180"
+        style={{
+          shapeRendering: "auto",
+          display: "block",
+        }}
+      >
+        <g>
+          <path
+            stroke="none"
+            fill="#070101"
+            d="M29 50A21 21 0 0 0 71 50A21 22.5 0 0 1 29 50"
+          >
+            <animateTransform
+              values="0 50 50.75;360 50 50.75"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              dur="0.826s"
+              type="rotate"
+              attributeName="transform"
+            ></animateTransform>
+          </path>
+        </g>
+      </svg>
     </div>
   );
 };

@@ -50,21 +50,11 @@ const ShopNow = () => {
       <FavItems>
         <div className="bg-white dark:bg-black min-h-screen">
           <Navbar />
-          <div className="bg-[#CFC6B8] dark:bg-black flex flex-col md:flex-row items-center justify-around h-auto min-h-[20rem] px-6 md:px-16 py-8 md:py-16 rounded-lg">
+          <div className="bg-[url('./bg-white.png')] dark:bg-[url('./bg-black.png')] dark:bg-black flex flex-col md:flex-row items-center justify-around h-auto min-h-[20rem] px-6 md:px-16 py-8 md:py-16 rounded-lg">
             <div className="md:w-1/2 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-semibold text-[#184A45] dark:text-white mb-4">
-                Grab Up to 50% Off On Selected items
+              <h2 className="text-3xl md:text-4xl font-semibold text-black dark:text-white mb-4">
+                Choose a product for a faster delivery
               </h2>
-              <button className="bg-[#184A45] text-white text-lg py-2 px-6 rounded-full mt-4">
-                Buy Now
-              </button>
-            </div>
-            <div className="md:w-1/2 w-full flex justify-center md:justify-end mt-6 md:mt-0">
-              <img
-                src="https://via.placeholder.com/400"
-                alt="items"
-                className="h-auto w-1/2 md:w-2/3 lg:w-1/2 rounded-lg shadow-lg"
-              />
             </div>
           </div>
           <div className="flex sticky top-24 bg-transparent backdrop-blur-3xl z-50 flex-row justify-center items-start sssm:items-center sm:items-start sm:justify-center">

@@ -28,6 +28,7 @@ import { FaEdit, FaTrashAlt, FaSearch } from "react-icons/fa";
 import useProducts from "../constants/products";
 import { CgAdd, CgMathMinus } from "react-icons/cg";
 import { apiUrl } from "../src/lib/apis";
+import Loader from "../src/components/loader";
 
 export default function ProductTable() {
   const { products } = useProducts();
@@ -46,6 +47,7 @@ export default function ProductTable() {
     imageUrl: "",
   });
   const [preview, setPreview] = useState("");
+  const [loading, setLoading] = useState(false);
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === "dark";
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -62,17 +64,21 @@ export default function ProductTable() {
   }, [products, searchTerm]);
 
   const fetchProducts = () => {
+    setLoading(true);
     setFilteredProducts(products);
+    setLoading(false);
   };
 
   const handleSearch = () => {
     const lowercasedFilter = searchTerm.toLowerCase();
+    setLoading(true);
     const filteredData = products.filter(
       (product) =>
         product.name.toLowerCase().includes(lowercasedFilter) ||
         product.description.toLowerCase().includes(lowercasedFilter)
     );
     setFilteredProducts(filteredData);
+    setLoading(false);
   };
 
   const handleEdit = (product) => {
@@ -131,10 +137,7 @@ export default function ProductTable() {
     try {
       if (selectedProduct._id) {
         await axios
-          .put(
-            `${apiUrl}/products/${selectedProduct._id}`,
-            formData
-          )
+          .put(`${apiUrl}/products/${selectedProduct._id}`, formData)
           .then(() => {
             location.reload();
           })
@@ -163,9 +166,9 @@ export default function ProductTable() {
       headers: { popularity: popularity },
     })
       .then((response) => response.json())
-      .then((data) =>{
-        console.log(data)
-        location.reload()
+      .then((data) => {
+        console.log(data);
+        location.reload();
       })
       .catch((e) => console.error(e));
   }
@@ -251,7 +254,9 @@ export default function ProductTable() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {filteredProducts.length > 0 ? (
+              {loading ? (
+                <Loader />
+              ) : filteredProducts.length > 0 ? (
                 filteredProducts.map((product) => (
                   <TableRow key={product._id}>
                     <TableCell>
@@ -300,7 +305,7 @@ export default function ProductTable() {
               ) : (
                 <TableRow>
                   <TableCell colSpan={7} align="center">
-                    No products available
+                    <Loader />
                   </TableCell>
                 </TableRow>
               )}

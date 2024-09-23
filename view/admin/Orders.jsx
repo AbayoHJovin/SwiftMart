@@ -94,7 +94,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
       .catch((e) => console.error(e));
   }
   if (loading) {
-    return <Loader text="Loading orders ..." />;
+    return <Loader/>;
   }
   return (
     <div>

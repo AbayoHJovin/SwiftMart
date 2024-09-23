@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useProducts from "../../constants/products";
 import { Buffer } from "buffer";
@@ -14,11 +14,29 @@ import {
   Autoplay,
 } from "swiper/modules";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Loader from "./loader";
 
 const Popular = () => {
   const { products } = useProducts();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [popularProducts, setPopularProducts] = useState([]);
   const swiperRef = useRef(null);
+  useEffect(() => {
+    const filterProducts = async () => {
+      setLoading(true);
+      const filteredProducts = await new Promise((resolve) =>
+        setTimeout(
+          () => resolve(products.filter((item) => item.popular === true)),
+          100
+        )
+      );
+      setPopularProducts(filteredProducts);
+      setLoading(false);
+    };
+
+    filterProducts();
+  }, [products]);
 
   useEffect(() => {
     if (swiperRef.current) {
@@ -81,9 +99,10 @@ const Popular = () => {
             reverseDirection: true,
           }}
         >
-          {products
-            .filter((item) => item.popular)
-            .map((item) => (
+          {loading || popularProducts.length === 0 ? (
+            <Loader />
+          ) : (
+            popularProducts.map((item) => (
               <SwiperSlide
                 key={item._id}
                 style={{ width: "15rem", height: "15rem" }}
@@ -99,7 +118,9 @@ const Popular = () => {
                   />
                 </div>
               </SwiperSlide>
-            ))}
+            ))
+          )}
+
           <div className="my-5">
             <div className="flex content-center items-center justify-center gap-24">
               <div className="prevbtn cursor-pointer z-20">

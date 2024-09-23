@@ -4,6 +4,7 @@ import useProducts from "../../constants/products";
 import { Buffer } from "buffer";
 import Navbar from "../components/Navbar";
 import { CartContext } from "../../constants/cartItems";
+import Loader from "../components/loader";
 
 const ProductPage = () => {
   const { itemsOnCart, addItemOncart, deleteItem } = useContext(CartContext);
@@ -11,8 +12,10 @@ const ProductPage = () => {
   const [isOnCart, setIsOnCart] = useState(false);
   const { products } = useProducts();
   const { prodId } = useParams();
+  const [loadingPage, setLoadingPage] = useState(false);
 
   useEffect(() => {
+    setLoadingPage(true);
     const product = products.find((product) => product._id === prodId);
     const isOnTheCart = itemsOnCart?.find((item) => item.productId == prodId);
     if (isOnTheCart) {
@@ -21,6 +24,7 @@ const ProductPage = () => {
       setIsOnCart(false);
     }
     setRealProduct(product || null);
+    setLoadingPage(false);
   }, [prodId, products, itemsOnCart]);
   return (
     <div>
@@ -29,20 +33,18 @@ const ProductPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           {realProduct ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-              {/* Product Image */}
               <div className="flex justify-center items-center bg-gray-100 p-4 rounded-lg">
                 <img
                   src={`data:${
                     realProduct.image.contentType
                   };base64,${Buffer.from(realProduct.image.data).toString(
                     "base64"
-                  )}`} // Ensure your product object contains an 'imageUrl' field
+                  )}`}
                   alt={realProduct.name}
                   className="w-full h-auto object-contain"
                 />
               </div>
 
-              {/* Product Details */}
               <div>
                 <h2 className="text-3xl font-semibold text-gray-800 mb-4">
                   {realProduct.name}
@@ -51,7 +53,6 @@ const ProductPage = () => {
                   {realProduct.description}
                 </p>
 
-                {/* Reviews */}
                 <div className="flex items-center mb-4">
                   <div className="flex items-center">
                     <span className="text-green-500 text-xl">★★★★★</span>
@@ -96,9 +97,7 @@ const ProductPage = () => {
               </div>
             </div>
           ) : (
-            <div className="text-center text-2xl text-red-500">
-              Product not found
-            </div>
+            <Loader/>
           )}
         </div>
       ) : (

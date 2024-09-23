@@ -21,6 +21,7 @@ import CartItems from "../constants/cartItems.jsx";
 import OrderForm from "./pages/CheckOut.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import { apiUrl } from "./lib/apis.js";
+import Loader from "./components/loader.jsx";
 
 function App() {
   useEffect(() => {
@@ -122,6 +123,7 @@ const router = createBrowserRouter([
       </CartItems>
     ),
   },
+  { path: "try", element: <Loader /> },
   { path: "*", element: <NotFound /> },
 ]);
 

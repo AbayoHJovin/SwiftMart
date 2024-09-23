@@ -39,7 +39,7 @@ const ProductCard = ({
           (isOnFav ? (
             <button
               onClick={(event) => {
-                event.stopPropagation(); // Stop click event propagation to parent
+                event.stopPropagation();
                 deleteFromFav();
               }}
               className="absolute top-2 right-2 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md"
@@ -49,7 +49,7 @@ const ProductCard = ({
           ) : (
             <button
               onClick={(event) => {
-                event.stopPropagation(); // Stop click event propagation to parent
+                event.stopPropagation()
                 addToFav();
               }}
               className="absolute top-2 right-2 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md"
@@ -123,7 +123,7 @@ const ProductCard = ({
           ) : (
             <button
               onClick={(event) => {
-                event.stopPropagation(); // Stop click event propagation to parent
+                event.stopPropagation();
                 handleAddToCart(event);
               }}
               className="border border-green-500 text-green-500 dark:text-yellow-400 py-2 px-4 rounded-full hover:bg-green-900 hover:text-white dark:hover:bg-yellow-600"

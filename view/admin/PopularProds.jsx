@@ -18,11 +18,13 @@ import { FaSearch } from "react-icons/fa";
 import useProducts from "../constants/products";
 import { CgMathMinus } from "react-icons/cg";
 import { apiUrl } from "../src/lib/apis";
+import Loader from "../src/components/loader";
 
 export default function PopularProds() {
   const { products } = useProducts();
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(false);
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === "dark";
 
@@ -46,12 +48,10 @@ export default function PopularProds() {
   }, [products, searchTerm]);
   const popProds = [];
   const fetchProducts = () => {
+    setLoading(true);
     popProds.push(products.filter((item) => item.popular === true));
-    console.log(
-      "HEre are the pop ones",
-      products.filter((item) => item.popular !== true)
-    );
     setFilteredProducts(popProds);
+    setLoading(false);
   };
 
   function handleAddToPopular(item, popularity) {
@@ -66,6 +66,7 @@ export default function PopularProds() {
       })
       .catch((e) => console.error(e));
   }
+
   return (
     <Box sx={{ p: 3 }}>
       <Box
@@ -141,7 +142,9 @@ export default function PopularProds() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {filteredProducts.length > 0 ? (
+              {loading ? (
+                <Loader />
+              ) : filteredProducts.length > 0 ? (
                 filteredProducts.map((product) => (
                   <TableRow key={product._id}>
                     <TableCell>
@@ -175,7 +178,7 @@ export default function PopularProds() {
               ) : (
                 <TableRow>
                   <TableCell colSpan={7} align="center">
-                    No products available
+                    <Loader />
                   </TableCell>
                 </TableRow>
               )}

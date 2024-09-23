@@ -79,6 +79,7 @@ const {currentUser}=useContext(CurrentUserContext)
       .then((response) => response.json())
       .then((data) => {
         if (data.message === "Unauthorized") {
+          console.log("error in viewing account data", data)
           setIsSignedIn(false);
         } else if (data.message === "Authorized") {
           setIsSignedIn(true);
