@@ -6,8 +6,8 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { Buffer } from "buffer";
 import { CgTrash } from "react-icons/cg";
 import { toast } from "react-toastify";
-import Loader from "../src/components/loader";
 import { apiUrl } from "../src/lib/apis";
+import Loader2 from "../src/components/loader2";
 
 const Orders = ({ AdminOptions, currentUser }) => {
   const now = new Date();
@@ -94,12 +94,12 @@ const Orders = ({ AdminOptions, currentUser }) => {
       .catch((e) => console.error(e));
   }
   if (loading) {
-    return <Loader/>;
+    return <Loader2 />;
   }
   return (
-    <div>
+    <div className="px-5">
       {offers.length == 0 ? (
-        <div>No orders found</div>
+        <div className="flex justify-center">No orders found</div>
       ) : (
         <div>
           <div className="flex items-center justify-between px-10 my-10">
@@ -117,71 +117,86 @@ const Orders = ({ AdminOptions, currentUser }) => {
             />
           </div>
           {openOfferModal ? (
-            <div>
-              <div className="flex items-start cursor-pointer justify-between">
+            <div className="p-6 bg-green-100 rounded-lg shadow-lg">
+              <div className="flex items-start justify-between">
                 <div key={selectedOrder._id}>
-                  <h1 className="font-bold text-2xl">
+                  <h1 className="font-bold text-3xl text-green-700 mb-4">
                     Customer Name: {selectedOrder.names}
                   </h1>
-                  <h1>
-                    <span className="font-bold">address: </span>
+                  <p className="text-lg mb-2">
+                    <span className="font-semibold text-green-600">
+                      Address:{" "}
+                    </span>
                     {selectedOrder.address}
-                  </h1>
-                  <h1>
-                    <span className="font-bold">Email: </span>
+                  </p>
+                  <p className="text-lg mb-2">
+                    <span className="font-semibold text-green-600">
+                      Email:{" "}
+                    </span>
                     {selectedOrder.email}
-                  </h1>
-                  <h1>
-                    <span className="font-bold">Phone No: </span>
+                  </p>
+                  <p className="text-lg mb-2">
+                    <span className="font-semibold text-green-600">
+                      Phone No:{" "}
+                    </span>
                     {selectedOrder.phoneNumber}
-                  </h1>
-                  <h1>
-                    <span className="font-bold">Ordered on: </span>
+                  </p>
+                  <p className="text-lg mb-2">
+                    <span className="font-semibold text-green-600">
+                      Ordered on:{" "}
+                    </span>
                     {selectedOrder.date}
-                  </h1>
-                  <h1>
-                    <span className="font-bold">Day: </span>
+                  </p>
+                  <p className="text-lg mb-2">
+                    <span className="font-semibold text-green-600">Day: </span>
                     {selectedOrder.day}
-                  </h1>
-                  <h1>
-                    <span className="font-bold">At: </span>
+                  </p>
+                  <p className="text-lg mb-2">
+                    <span className="font-semibold text-green-600">At: </span>
                     {selectedOrder.time}
-                  </h1>
-                  <h1>
-                    <span className="font-bold">Amount to pay: </span>RWF
-                    {selectedOrder.amount}
-                  </h1>
+                  </p>
+                  <p className="text-lg mb-2">
+                    <span className="font-semibold text-green-600">
+                      Amount to pay:{" "}
+                    </span>
+                    RWF {selectedOrder.amount}
+                  </p>
                 </div>
                 <AiFillCloseCircle
                   onClick={() => setOpenOfferModal(false)}
-                  className="text-3xl hover:text-red-500"
+                  className="text-4xl text-red-500 hover:text-red-700 cursor-pointer"
                 />
               </div>
-              <h1 className="my-5 font-bold text-3xl">Selected products</h1>
+
+              <h1 className="my-6 font-bold text-4xl text-green-700">
+                Selected Products
+              </h1>
               <div>
-                {boughtProducts.length == 0 ? (
+                {boughtProducts.length === 0 ? (
                   <h1>Loading products ...</h1>
                 ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {boughtProducts.map((item) => (
                       <div
                         key={item._id}
-                        className="bg-white p-4 w-24 rounded-lg shadow-md"
+                        className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
                       >
-                        <div className="flex justify-center">
+                        <div className="flex justify-center mb-4">
                           <img
                             src={`data:${
                               item.image.contentType
                             };base64,${Buffer.from(item.image.data).toString(
                               "base64"
                             )}`}
-                            className="w-64 h-64 object-cover rounded-md"
+                            className="w-80 h-80 object-cover rounded-lg"
                             alt={item.name}
                           />
                         </div>
-                        <div className="mt-4 text-center">
-                          <h2 className="text-lg font-semibold">{item.name}</h2>
-                          <p className="text-gray-700 text-base font-medium">
+                        <div className="text-center">
+                          <h2 className="text-2xl font-bold text-green-700">
+                            {item.name}
+                          </h2>
+                          <p className="text-lg text-green-600 mt-2">
                             RWF {item.price.toFixed(2)}
                           </p>
                         </div>
@@ -189,68 +204,104 @@ const Orders = ({ AdminOptions, currentUser }) => {
                     ))}
                   </div>
                 )}
-                <h1 className="my-10 font-bold text-3xl">Transaction Method</h1>
-                <h1>{selectedOrder.paymentMethod}</h1>
-                <div className="my-5">
-                  <h1 className="font-bold text-3xl">Options</h1>
-                  <div className="flex gap-5 my-4">
-                    {AdminOptions ? (
-                      <button
-                        onClick={(e) => handleApprove(selectedOrder, e)}
-                        className={`bg-green-500 text-white hover:bg-green-700 p-4 px-10 rounded-md`}
-                      >
-                        Approve
-                      </button>
-                    ) : null}
-                    <div
-                      onClick={() => handleDecline(selectedOrder)}
-                      className="flex items-center cursor-pointer  text-red-500 hover:bg-gray-200 p-4 px-10 rounded-md"
+              </div>
+
+              <h1 className="mt-10 mb-3 font-bold text-3xl text-green-700">
+                Transaction Method
+              </h1>
+              <p className="text-xl mb-10 text-green-600">
+                {selectedOrder.paymentMethod}
+              </p>
+
+              <div className="my-8">
+                <h1 className="font-bold text-3xl text-green-700">Options</h1>
+                <div className="flex gap-5 mt-4">
+                  {AdminOptions && (
+                    <button
+                      onClick={(e) => handleApprove(selectedOrder, e)}
+                      className="bg-green-500 text-white hover:bg-green-600 py-3 px-6 rounded-md"
                     >
-                      <button>Decline</button>
-                      (<CgTrash className="text-red-500" />)
-                    </div>
+                      Approve
+                    </button>
+                  )}
+                  <div
+                    onClick={() => handleDecline(selectedOrder)}
+                    className="flex items-center cursor-pointer text-red-500 hover:bg-gray-200 py-3 px-6 rounded-md"
+                  >
+                    <button>Decline</button>
+                    <CgTrash className="ml-2 text-xl" />
                   </div>
                 </div>
               </div>
             </div>
           ) : (
-            <table className="w-full">
-              <tr className="bg-gray-200 p-10 h-16">
-                <th>Name</th>
-                <th>Address</th>
-                <th>Number of products</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Status</th>
-              </tr>
-              {filteredOrders.length === 0 ? (
-                <tr>
-                  <td colSpan={6} className="text-center content-center">
-                    {" "}
-                    No orders available on the selected date
-                  </td>
-                </tr>
-              ) : (
-                filteredOrders.map((item) => (
-                  <tr
-                    onClick={() => handleOfferClick(item)}
-                    key={item._id}
-                    className="border text-center border-gray-200 h-16 cursor-pointer bg-white hover:bg-blue-500 text-black hover:text-white"
-                  >
-                    <td>{item.names}</td>
-                    <td>{item.address}</td>
-                    <td>{item.products.length}</td>
-                    <td>{item.date}</td>
-                    <td>{item.time}</td>
-                    {item.approved == true ? (
-                      <td>Approved</td>
+            <div className="container mx-auto p-4">
+              <div className="overflow-x-auto">
+                <table className="min-w-full table-auto">
+                  <thead>
+                    <tr className="bg-green-200 h-8 rounded-md">
+                      <th className="p-4 border-b text-left text-sm w-1/6 rounded-l-md">
+                        Name
+                      </th>
+                      <th className="p-4 border-b text-left text-sm w-1/6">
+                        Address
+                      </th>
+                      <th className="p-4 border-b text-left text-sm w-1/6">
+                        Number of products
+                      </th>
+                      <th className="p-4 border-b text-left text-sm w-1/6">
+                        Date
+                      </th>
+                      <th className="p-4 border-b text-left text-sm w-1/6">
+                        Time
+                      </th>
+                      <th className="p-4 border-b text-left text-sm w-1/6 rounded-r-md">
+                        Status
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filteredOrders.length === 0 ? (
+                      <tr>
+                        <td
+                          colSpan={6}
+                          className="text-center content-center p-4 border-b text-sm truncate"
+                        >
+                          No orders available on the selected date
+                        </td>
+                      </tr>
                     ) : (
-                      <td>Pending</td>
+                      filteredOrders.map((item) => (
+                        <tr
+                          onClick={() => handleOfferClick(item)}
+                          key={item._id}
+                          className="border text-center border-gray-200 h-16 cursor-pointer bg-white hover:bg-green-500 text-black hover:text-white rounded-md"
+                        >
+                          <td className="p-4 border-b text-sm truncate rounded-l-md">
+                            {item.names}
+                          </td>
+                          <td className="p-4 border-b text-sm truncate">
+                            {item.address}
+                          </td>
+                          <td className="p-4 border-b text-sm truncate">
+                            {item.products.length}
+                          </td>
+                          <td className="p-4 border-b text-sm truncate">
+                            {item.date}
+                          </td>
+                          <td className="p-4 border-b text-sm truncate">
+                            {item.time}
+                          </td>
+                          <td className="p-4 border-b text-sm truncate rounded-r-md">
+                            {item.approved ? "Approved" : "Pending"}
+                          </td>
+                        </tr>
+                      ))
                     )}
-                  </tr>
-                ))
-              )}
-            </table>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           )}
         </div>
       )}

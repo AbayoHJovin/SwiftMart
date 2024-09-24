@@ -11,7 +11,6 @@ import ShopNow from "./pages/ShopNow";
 import NotFound from "./pages/Notfound";
 import Contact from "./pages/Contacts";
 import AdminDashboard from "../admin/Dashboard.jsx";
-import Account from "./pages/Account.jsx";
 import Login from "./pages/Login.jsx";
 import SignupForm from "./pages/Signup.jsx";
 import { ThemeProvider } from "../constants/ThemeContext.jsx";
@@ -21,7 +20,8 @@ import CartItems from "../constants/cartItems.jsx";
 import OrderForm from "./pages/CheckOut.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import { apiUrl } from "./lib/apis.js";
-import Loader from "./components/loader.jsx";
+import NewAccount from "./pages/newAccount.jsx";
+import CustomTable from "./components/trial.jsx";
 
 function App() {
   useEffect(() => {
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
     path: "/account",
     element: (
       <CartItems>
-        <Account />
+        <NewAccount />
       </CartItems>
     ),
   },
@@ -123,7 +123,7 @@ const router = createBrowserRouter([
       </CartItems>
     ),
   },
-  { path: "try", element: <Loader /> },
+  { path: "try", element: <CustomTable /> },
   { path: "*", element: <NotFound /> },
 ]);
 

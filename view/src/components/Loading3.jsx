@@ -1,0 +1,161 @@
+const Loader3 = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMidYMid"
+      width="60"
+      height="25"
+      zoomAndPan=""
+      style={{
+        shapeRendering: "auto",
+        display: "block",
+      }}
+    >
+      <g>
+        <g transform="rotate(0 50 50)">
+          <rect
+            fill="#ffffff"
+            height="9"
+            width="6"
+            ry="4.5"
+            rx="3"
+            y="32.5"
+            x="47"
+          >
+            <animate
+              repeatCount="indefinite"
+              begin="-0.8241758241758241s"
+              dur="0.9615384615384615s"
+              keyTimes="0;1"
+              values="1;0"
+              attributeName="opacity"
+            />
+          </rect>
+        </g>
+        <g transform="rotate(51.42857142857143 50 50)">
+          <rect
+            fill="#ffffff"
+            height="9"
+            width="6"
+            ry="4.5"
+            rx="3"
+            y="32.5"
+            x="47"
+          >
+            <animate
+              repeatCount="indefinite"
+              begin="-0.6868131868131868s"
+              dur="0.9615384615384615s"
+              keyTimes="0;1"
+              values="1;0"
+              attributeName="opacity"
+            />
+          </rect>
+        </g>
+        <g transform="rotate(102.85714285714286 50 50)">
+          <rect
+            fill="#ffffff"
+            height="9"
+            width="6"
+            ry="4.5"
+            rx="3"
+            y="32.5"
+            x="47"
+          >
+            <animate
+              repeatCount="indefinite"
+              begin="-0.5494505494505494s"
+              dur="0.9615384615384615s"
+              keyTimes="0;1"
+              values="1;0"
+              attributeName="opacity"
+            />
+          </rect>
+        </g>
+        <g transform="rotate(154.28571428571428 50 50)">
+          <rect
+            fill="#ffffff"
+            height="9"
+            width="6"
+            ry="4.5"
+            rx="3"
+            y="32.5"
+            x="47"
+          >
+            <animate
+              repeatCount="indefinite"
+              begin="-0.41208791208791207s"
+              dur="0.9615384615384615s"
+              keyTimes="0;1"
+              values="1;0"
+              attributeName="opacity"
+            />
+          </rect>
+        </g>
+        <g transform="rotate(205.71428571428572 50 50)">
+          <rect
+            fill="#ffffff"
+            height="9"
+            width="6"
+            ry="4.5"
+            rx="3"
+            y="32.5"
+            x="47"
+          >
+            <animate
+              repeatCount="indefinite"
+              begin="-0.2747252747252747s"
+              dur="0.9615384615384615s"
+              keyTimes="0;1"
+              values="1;0"
+              attributeName="opacity"
+            />
+          </rect>
+        </g>
+        <g transform="rotate(257.14285714285717 50 50)">
+          <rect
+            fill="#ffffff"
+            height="9"
+            width="6"
+            ry="4.5"
+            rx="3"
+            y="32.5"
+            x="47"
+          >
+            <animate
+              repeatCount="indefinite"
+              begin="-0.13736263736263735s"
+              dur="0.9615384615384615s"
+              keyTimes="0;1"
+              values="1;0"
+              attributeName="opacity"
+            />
+          </rect>
+        </g>
+        <g transform="rotate(308.57142857142856 50 50)">
+          <rect
+            fill="#ffffff"
+            height="9"
+            width="6"
+            ry="4.5"
+            rx="3"
+            y="32.5"
+            x="47"
+          >
+            <animate
+              repeatCount="indefinite"
+              begin="0s"
+              dur="0.9615384615384615s"
+              keyTimes="0;1"
+              values="1;0"
+              attributeName="opacity"
+            />
+          </rect>
+        </g>
+      </g>
+    </svg>
+  );
+};
+
+export default Loader3;

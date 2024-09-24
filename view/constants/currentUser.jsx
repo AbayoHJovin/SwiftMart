@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
-import Loader from "../src/components/loader";
 import { apiUrl } from "../src/lib/apis";
+import Loader2 from "../src/components/loader2";
 
 export const CurrentUserContext = createContext();
 const CurrentUser = ({ children }) => {
@@ -24,7 +24,7 @@ const CurrentUser = ({ children }) => {
       });
   }, []);
   if (isLoading) {
-    return <Loader text="Loading the page ..."/>
+    return <Loader2 />;
   }
   return (
     <CurrentUserContext.Provider value={{ currentUser }}>

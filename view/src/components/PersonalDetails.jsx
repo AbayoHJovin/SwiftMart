@@ -1,16 +1,5 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect, useContext } from "react";
-import {
-  Box,
-  Button,
-  Typography,
-  TextField,
-  Avatar,
-  IconButton,
-  Grid,
-  useMediaQuery,
-} from "@mui/material";
-import { FaCamera } from "react-icons/fa";
-import { useTheme } from "@mui/material/styles";
 import { ThemeContext } from "../../constants/ThemeContext";
 import { CurrentUserContext } from "../../constants/currentUser";
 import { apiUrl } from "../lib/apis";
@@ -26,17 +15,14 @@ const PersonalDetails = () => {
     profilePicture: "",
   });
 
-  const themeObj = useTheme();
-  const isSmallScreen = useMediaQuery(themeObj.breakpoints.down("sm"));
-
   useEffect(() => {
     if (currentUser) {
-      setFormData((prevData) => ({
-        ...prevData,
-        id: currentUser._id || "",
-        name: currentUser.username || "",
-        email: currentUser.email || "",
-      }));
+      setFormData({
+        id: currentUser._id,
+        name: currentUser.username,
+        email: currentUser.email,
+        profilePicture: currentUser.profilePicture,
+      });
     }
   }, [currentUser]);
 
@@ -53,7 +39,6 @@ const PersonalDetails = () => {
   };
 
   const handleSave = async () => {
-    console.log("Form data is:", formData);
     try {
       const response = await fetch(
         `${apiUrl}/user/update?userId=${formData.id}`,
@@ -72,9 +57,7 @@ const PersonalDetails = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("User updated successfully:", data);
         setIsEditing(false);
-        // Optionally update session storage with new user data
         sessionStorage.setItem(
           "User",
           JSON.stringify({
@@ -107,192 +90,97 @@ const PersonalDetails = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: 3,
-        maxWidth: "800px",
-        margin: "0 auto",
-        color: theme === "dark" ? "white" : "black",
-        width: "100%",
-      }}
+    <div
+      className={`flex flex-col items-center p-6 max-w-xl mx-auto ${
+        theme === "dark" ? "text-white" : "text-black"
+      }`}
     >
-      <Grid
-        container
-        spacing={isSmallScreen ? 2 : 3}
-        alignItems="center"
-        sx={{
-          flexDirection: isSmallScreen ? "column" : "row",
-          width: "100%",
-        }}
-      >
-        <Grid item xs={12} sm={3} md={2}>
-          <Avatar
+      <div className="flex flex-col sm:flex-row items-center w-full space-y-4 sm:space-y-0 sm:space-x-4">
+        <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gray-200">
+          <img
             src={formData.profilePicture || "https://via.placeholder.com/150"}
-            sx={{
-              width: { xs: 60, sm: 80 },
-              height: { xs: 60, sm: 80 },
-              margin: "0 auto",
-            }}
+            alt="Profile"
+            className="w-full h-full rounded-full object-cover"
           />
-        </Grid>
-
-        <Grid item xs={12} sm={9} md={10}>
-          <Typography
-            variant="h5"
-            sx={{
-              textAlign: isSmallScreen ? "center" : "left",
-              color: theme === "dark" ? "white" : "black",
-            }}
+        </div>
+        <div className="text-center sm:text-left">
+          <h2 className="text-2xl font-semibold">{formData.name}</h2>
+          <label
+            htmlFor="upload-profile-picture"
+            className="flex items-center justify-center sm:justify-start cursor-pointer text-blue-500"
           >
-            {formData.name}
-          </Typography>
-          <Box sx={{ textAlign: isSmallScreen ? "center" : "left" }}>
-            <label htmlFor="upload-profile-picture">
-              <input
-                accept="image/*"
-                id="upload-profile-picture"
-                type="file"
-                style={{ display: "none" }}
-                onChange={handleProfilePictureChange}
-              />
-              <IconButton
-                component="span"
-                sx={{ color: theme === "dark" ? "white" : "black" }}
-              >
-                <FaCamera className="mr-3" />
-                profile picture
-              </IconButton>
-            </label>
-          </Box>
-        </Grid>
-      </Grid>
+            <input
+              accept="image/*"
+              id="upload-profile-picture"
+              type="file"
+              className="hidden"
+              onChange={handleProfilePictureChange}
+            />
+            Add Photo
+          </label>
+        </div>
+      </div>
 
-      <Typography
-        variant="h6"
-        sx={{
-          mb: 2,
-          mt: 3,
-          width: "100%",
-          textAlign: isSmallScreen ? "center" : "left",
-          color: theme === "dark" ? "white" : "black",
-        }}
-      >
-        Personal
-      </Typography>
+      <h3 className="mt-8 mb-4 text-lg font-medium w-full text-center sm:text-left">
+        Personal Details
+      </h3>
 
-      <TextField
-        label="Full name"
+      <input
+        type="text"
         name="name"
         value={formData.name}
         onChange={handleInputChange}
-        variant="outlined"
-        fullWidth
         disabled={!isEditing}
-        sx={{
-          mb: 2,
-          "& .MuiInputBase-input": {
-            color: theme === "dark" ? "white" : "black",
-            bgcolor: theme === "dark" ? "#424242" : "white",
-          },
-          "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: theme === "dark" ? "white" : "black",
-            },
-            "&:hover fieldset": {
-              borderColor: theme === "dark" ? "lightgray" : "gray",
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: theme === "dark" ? "lightgray" : "black",
-            },
-          },
-          "& .MuiInputLabel-root": {
-            color: theme === "dark" ? "lightgray" : "gray",
-          },
-        }}
+        className={`w-full p-5 mb-4 ${
+          isEditing
+            ? "border-none border-l-8 border-green-800 focus:outline-[#58982e] outline-none"
+            : "border-none"
+        } rounded bg-[#e6fad9] text-gray-900`}
+        placeholder="Full Name"
+        required
       />
-      <TextField
-        label="Email"
+
+      <input
+        type="email"
         name="email"
         value={formData.email}
         onChange={handleInputChange}
-        variant="outlined"
-        fullWidth
         disabled={!isEditing}
-        sx={{
-          mb: 3,
-          "& .MuiInputBase-input": {
-            color: theme === "dark" ? "white" : "black",
-            bgcolor: theme === "dark" ? "#424242" : "white",
-          },
-          "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: theme === "dark" ? "white" : "black",
-            },
-            "&:hover fieldset": {
-              borderColor: theme === "dark" ? "lightgray" : "gray",
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: theme === "dark" ? "lightgray" : "black",
-            },
-          },
-          "& .MuiInputLabel-root": {
-            color: theme === "dark" ? "lightgray" : "gray",
-          },
-        }}
+        className={`w-full p-5 mb-4 ${
+          isEditing
+            ? "border-none border-l-8 border-green-800 focus:outline-[#58982e] outline-none"
+            : "border-none"
+        } rounded bg-[#e6fad9] text-gray-900`}
+        placeholder="Email"
+        required
       />
 
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          flexDirection: isSmallScreen ? "column" : "row",
-          gap: 2,
-          justifyContent: "center",
-        }}
-      >
+      <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full">
         {isEditing ? (
           <>
-            <Button
-              variant="contained"
+            <button
               onClick={handleSave}
-              sx={{
-                width: isSmallScreen ? "100%" : "auto",
-                maxWidth: "200px",
-                bgcolor: theme === "dark" ? "gray" : "primary.main",
-              }}
+              className="w-full sm:w-auto px-4 py-2 bg-[#58982e] text-white rounded shadow"
             >
               Save
-            </Button>
-            <Button
-              variant="outlined"
+            </button>
+            <button
               onClick={handleEditToggle}
-              sx={{
-                width: isSmallScreen ? "100%" : "auto",
-                maxWidth: "200px",
-                color: theme === "dark" ? "white" : "primary.main",
-              }}
+              className="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded shadow"
             >
               Cancel
-            </Button>
+            </button>
           </>
         ) : (
-          <Button
-            variant="contained"
+          <button
             onClick={handleEditToggle}
-            sx={{
-              width: isSmallScreen ? "100%" : "auto",
-              maxWidth: "200px",
-              bgcolor: theme === "dark" ? "gray" : "primary.main",
-            }}
+            className="w-full sm:w-auto px-4 py-2 bg-[#58982e] text-white rounded shadow"
           >
             Edit
-          </Button>
+          </button>
         )}
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };
 

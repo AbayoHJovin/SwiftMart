@@ -9,6 +9,7 @@ export const CartContext = createContext();
 export default function CartItems({ children }) {
   const [itemsOnCart, setIsOnCart] = useState([]);
   const { currentUser } = useContext(CurrentUserContext);
+  const [loading,setLoading]=useState(false)
   function fetchCartItems() {
     if (currentUser) {
       const token = localStorage.getItem("token");
@@ -42,6 +43,7 @@ export default function CartItems({ children }) {
       navigate("/login");
       return;
     }
+    setLoading(true)
     fetch(`${apiUrl}/addItemOncart`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -50,10 +52,12 @@ export default function CartItems({ children }) {
       .then((response) => response.json())
       .then((data) => {
         fetchCartItems();
+        setLoading(false)
       })
       .catch((e) => console.error(e));
   }
   function deleteItem(itemId) {
+    setLoading(true)
     if (currentUser._id) {
       fetch(
         `${apiUrl}/deleteCartItem?itemId=${itemId}&userId=${currentUser._id}
@@ -65,13 +69,14 @@ export default function CartItems({ children }) {
         .then((response) => response.json())
         .then((data) => {
           fetchCartItems();
+          setLoading(false)
         })
         .catch((e) => console.error(e));
     }
   }
 
   return (
-    <CartContext.Provider value={{ itemsOnCart, addItemOncart, deleteItem }}>
+    <CartContext.Provider value={{loading, itemsOnCart, addItemOncart, deleteItem }}>
       {children}
     </CartContext.Provider>
   );

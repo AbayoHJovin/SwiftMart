@@ -4,10 +4,11 @@ import useProducts from "../../constants/products";
 import { Buffer } from "buffer";
 import Navbar from "../components/Navbar";
 import { CartContext } from "../../constants/cartItems";
-import Loader from "../components/loader";
+import Loader2 from "../components/loader2";
+import Loader3 from "../components/Loading3";
 
 const ProductPage = () => {
-  const { itemsOnCart, addItemOncart, deleteItem } = useContext(CartContext);
+  const { loading,itemsOnCart, addItemOncart, deleteItem } = useContext(CartContext);
   const [realProduct, setRealProduct] = useState(null);
   const [isOnCart, setIsOnCart] = useState(false);
   const { products } = useProducts();
@@ -83,21 +84,22 @@ const ProductPage = () => {
                       onClick={() => deleteItem(realProduct._id)}
                       className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700"
                     >
-                      On cart
+                      {loading ? <Loader3/>:"On cart"}
+                     
                     </button>
                   ) : (
                     <button
                       onClick={() => addItemOncart(realProduct._id)}
                       className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700"
                     >
-                      Add to Cart
+                      {loading ? <Loader3/> :"Add to cart"}
                     </button>
                   )}
                 </div>
               </div>
             </div>
           ) : (
-            <Loader/>
+            <Loader2 />
           )}
         </div>
       ) : (

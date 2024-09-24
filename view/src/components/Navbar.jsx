@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaRegMoon, FaSearch, FaSun } from "react-icons/fa";
 import { CgClose, CgShoppingCart } from "react-icons/cg";
@@ -12,6 +12,23 @@ export default function Navbar() {
   const { itemsOnCart } = useContext(CartContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      if (width < 375) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize",handleResize);
+    };
+  }, []);
 
   const links = [
     { name: "Home", href: "/" },
@@ -36,7 +53,7 @@ export default function Navbar() {
       <nav
         className={`flex items-center p-4 justify-between px-10 text-black bg-[#dadce0] dark:bg-black dark:text-white lg:px-36 sticky top-0 z-50`}
       >
-        <img src="/newLogo.png" alt="logo" className="h-[4.5rem] w-[10rem]" />
+        <img src={isMobile ? "/mobileLogo.svg":"/logo.svg"} alt="logo" className="h-[4.5rem] w-[10rem]" />
 
         <div className="hidden sm:flex justify-center items-center">
           <div className="p-2 space-x-7 text-center items-center justify-center flex rounded-full px-5">
@@ -53,7 +70,10 @@ export default function Navbar() {
         </div>
 
         <div className="hidden sm:flex space-x-5 items-center">
-          <FaSearch onClick={()=>setIsModalVisible(true)} className="cursor-pointer" />
+          <FaSearch
+            onClick={() => setIsModalVisible(true)}
+            className="cursor-pointer"
+          />
           {theme === "dark" ? (
             <FaSun onClick={toggleTheme} className="cursor-pointer" />
           ) : (
@@ -119,7 +139,12 @@ export default function Navbar() {
                 </ListItem>
               ))}
               <ListItem>
-                <FaSearch onClick={()=>{setIsModalVisible(true),setDrawerOpen(false)}} className="cursor-pointer text-black dark:text-white" />
+                <FaSearch
+                  onClick={() => {
+                    setIsModalVisible(true), setDrawerOpen(false);
+                  }}
+                  className="cursor-pointer text-black dark:text-white"
+                />
               </ListItem>
               <ListItem>
                 <a href="/cart">
@@ -137,7 +162,10 @@ export default function Navbar() {
           </Drawer>
         </div>
       </nav>
-      <Search isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
+      <Search
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
+      />
     </CartItems>
   );
 }

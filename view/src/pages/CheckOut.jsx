@@ -145,12 +145,9 @@ const OrderForm = () => {
     }
   };
   function handleRedirect() {
-    fetch(
-      `${apiUrl}/deleteAllCartItems?userId=${currentUser._id}`,
-      {
-        method: "DELETE",
-      }
-    )
+    fetch(`${apiUrl}/deleteAllCartItems?userId=${currentUser._id}`, {
+      method: "DELETE",
+    })
       .then((response) => response.json())
       .then((message) => {
         if (message.message == "Reset the cart") {
@@ -189,12 +186,12 @@ const OrderForm = () => {
 
           {/* Personal Details Section */}
           <div className="mb-8">
-            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+            <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
               Personal Details
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
-                className="p-3 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500"
+                className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
                 type="text"
                 placeholder="First name"
                 name="firstName"
@@ -206,7 +203,7 @@ const OrderForm = () => {
               )}
 
               <input
-                className="p-3 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500"
+                className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
                 type="text"
                 placeholder="Last name"
                 name="lastName"
@@ -218,7 +215,7 @@ const OrderForm = () => {
               )}
 
               <input
-                className="p-3 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500"
+                className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
                 type="email"
                 placeholder="Email"
                 name="email"
@@ -230,7 +227,7 @@ const OrderForm = () => {
               )}
 
               <input
-                className="p-3 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500"
+                className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
                 type="tel"
                 minLength={10}
                 placeholder="Phone number"
@@ -245,7 +242,7 @@ const OrderForm = () => {
           </div>
 
           <div className="mb-8">
-            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+            <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
               Transaction method
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -258,7 +255,7 @@ const OrderForm = () => {
                 <div className="flex items-center space-x-3" key={method}>
                   <input
                     type="radio"
-                    name="paymentMethod"
+                   name="paymentMethod"
                     value={method}
                     checked={formData.paymentMethod === method}
                     onChange={handleChange}
@@ -273,7 +270,7 @@ const OrderForm = () => {
           </div>
 
           <div className="mb-8">
-            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+            <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
               Delivery Address
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -281,7 +278,7 @@ const OrderForm = () => {
                 (field) => (
                   <div key={field}>
                     <input
-                      className="p-3 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500"
+                      className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
                       type="text"
                       placeholder={field}
                       name={field.toLowerCase()}
@@ -299,7 +296,7 @@ const OrderForm = () => {
             </div>
           </div>
           <div className="mb-8">
-            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+            <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
               Amount to pay
             </h3>
             <h1>{cost}</h1>
@@ -336,7 +333,7 @@ const OrderForm = () => {
           <div className="flex flex-col sssm:flex-row justify-between mt-8 gap-3">
             <button
               type="submit"
-              className="p-3 w-full sssm:order-2 sssm:w-1/3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              className="p-3 w-full sssm:order-2 sssm:w-1/3 bg-green-600 text-white rounded-lg hover:bg-green-700"
             >
               Complete Purchase
             </button>
