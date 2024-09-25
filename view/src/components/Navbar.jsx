@@ -6,6 +6,7 @@ import { Drawer, List, ListItem, Badge } from "@mui/material"; // Add Badge for 
 import { ThemeContext } from "../../constants/ThemeContext";
 import CartItems, { CartContext } from "../../constants/cartItems"; // Import CartContext
 import Search from "./searchComponent";
+import { Moon, SearchIcon, ShoppingCart, Sun, UserPlus } from "lucide-react";
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -26,14 +27,14 @@ export default function Navbar() {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener("resize",handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   const links = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Shop Now", href: "/shop" },
+    { name: "Shop", href: "/shop" },
     { name: "Contacts", href: "/contacts" },
     { name: "Account", href: "/account" },
   ];
@@ -53,7 +54,11 @@ export default function Navbar() {
       <nav
         className={`flex items-center p-4 justify-between px-10 text-black bg-[#dadce0] dark:bg-black dark:text-white lg:px-36 sticky top-0 z-50`}
       >
-        <img src={isMobile ? "/mobileLogo.svg":"/logo.svg"} alt="logo" className="h-[4.5rem] w-[10rem]" />
+        <img
+          src={isMobile ? "/mobileLogo.svg" : "/logo.svg"}
+          alt="logo"
+          className="h-[4.5rem] w-[10rem]"
+        />
 
         <div className="hidden sm:flex justify-center items-center">
           <div className="p-2 space-x-7 text-center items-center justify-center flex rounded-full px-5">
@@ -70,14 +75,14 @@ export default function Navbar() {
         </div>
 
         <div className="hidden sm:flex space-x-5 items-center">
-          <FaSearch
+          <SearchIcon
             onClick={() => setIsModalVisible(true)}
             className="cursor-pointer"
           />
           {theme === "dark" ? (
-            <FaSun onClick={toggleTheme} className="cursor-pointer" />
+            <Sun onClick={toggleTheme} className="cursor-pointer" />
           ) : (
-            <FaRegMoon onClick={toggleTheme} className="cursor-pointer" />
+            <Moon onClick={toggleTheme} className="cursor-pointer" />
           )}
 
           <a href="/cart" className="relative">
@@ -89,8 +94,11 @@ export default function Navbar() {
                 horizontal: "right",
               }}
             >
-              <CgShoppingCart className="cursor-pointer" />
+              <ShoppingCart className="cursor-pointer" />
             </Badge>
+          </a>
+          <a href="/signup" className="cursor-pointer">
+            <UserPlus />
           </a>
         </div>
 
@@ -156,6 +164,11 @@ export default function Navbar() {
                   >
                     <CgShoppingCart className="cursor-pointer text-black dark:text-white" />
                   </Badge>
+                </a>
+              </ListItem>
+              <ListItem>
+                <a href="/signup" className="cursor-pointer">
+                  <UserPlus />
                 </a>
               </ListItem>
             </List>

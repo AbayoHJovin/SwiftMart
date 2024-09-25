@@ -4,15 +4,14 @@ import { ThemeContext } from "../../constants/ThemeContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { CurrentUserContext } from "../../constants/currentUser";
 import { CartContext } from "../../constants/cartItems";
-import Loader from "../components/loader";
 import { apiUrl } from "../lib/apis";
+import Loader3 from "../components/Loading3";
 
 const OrderForm = () => {
   const { theme } = useContext(ThemeContext);
   const { currentUser } = useContext(CurrentUserContext);
   const { itemsOnCart } = useContext(CartContext);
-  const [isPlacingOffer, setIsPlacingOffer] = useState(false);
-  // State for form fields
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: currentUser ? currentUser.username : "",
     lastName: "",
@@ -129,6 +128,7 @@ const OrderForm = () => {
         date: currentDate,
         time: currentTime,
       };
+      setLoading(true);
       fetch(`${apiUrl}/addOffer`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -137,7 +137,6 @@ const OrderForm = () => {
         .then((response) => response.json())
         .then((data) => {
           if (data.message == "Offer placed") {
-            setIsPlacingOffer(true);
             handleRedirect();
           }
         })
@@ -151,11 +150,11 @@ const OrderForm = () => {
       .then((response) => response.json())
       .then((message) => {
         if (message.message == "Reset the cart") {
-          setIsPlacingOffer(false);
-          navigate("/shop");
+          navigate("/offerComfirmation");
         }
       })
-      .catch((e) => console.error(e));
+      .catch((e) => console.error(e))
+      .finally(() => setLoading(false));
   }
   const { amount } = useParams();
   useEffect(() => {
@@ -165,8 +164,13 @@ const OrderForm = () => {
       setCost(amount);
     }
   }, [amount, navigate]);
-  if (isPlacingOffer) {
-    return <Loader text="Placing your order" />;
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen content-center">
+      <Loader3/>
+      <h1 className="text-lg">Placing order</h1>
+      </div>
+    )
   }
   return (
     <div className={`${theme == "dark" ? "bg-black" : "bg-white"}`}>
@@ -255,7 +259,7 @@ const OrderForm = () => {
                 <div className="flex items-center space-x-3" key={method}>
                   <input
                     type="radio"
-                   name="paymentMethod"
+                    name="paymentMethod"
                     value={method}
                     checked={formData.paymentMethod === method}
                     onChange={handleChange}
@@ -323,9 +327,8 @@ const OrderForm = () => {
             <h1 className="dark:text-gray-100">
               Note that after you click on complete purchase, you will be called
               shortly on the phone number you entered. You will pay using the
-              method provided after getting your products. The delivery cost
-              will be discussed on the phone call. In case of any issues, call
-              or WhatsApp us on +250798509561.
+              method provided after getting your products.In case of any issues,
+              call or WhatsApp us on +250798509561.
             </h1>
           </div>
 

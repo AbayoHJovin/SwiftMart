@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useProducts from "../../constants/products";
@@ -8,7 +9,8 @@ import Loader2 from "../components/loader2";
 import Loader3 from "../components/Loading3";
 
 const ProductPage = () => {
-  const { loading,itemsOnCart, addItemOncart, deleteItem } = useContext(CartContext);
+  const { loading, itemsOnCart, addItemOncart, deleteItem } =
+    useContext(CartContext);
   const [realProduct, setRealProduct] = useState(null);
   const [isOnCart, setIsOnCart] = useState(false);
   const { products } = useProducts();
@@ -28,7 +30,7 @@ const ProductPage = () => {
     setLoadingPage(false);
   }, [prodId, products, itemsOnCart]);
   return (
-    <div>
+    <div className="bg-white dark:bg-black">
       <Navbar />
       {prodId ? (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -47,27 +49,27 @@ const ProductPage = () => {
               </div>
 
               <div>
-                <h2 className="text-3xl font-semibold text-gray-800 mb-4">
+                <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">
                   {realProduct.name}
                 </h2>
-                <p className="text-sm text-gray-500 mb-4">
+                <p className="text-sm text-gray-500 dark:text-gray-200 mb-4">
                   {realProduct.description}
                 </p>
 
                 <div className="flex items-center mb-4">
                   <div className="flex items-center">
                     <span className="text-green-500 text-xl">★★★★★</span>
-                    <span className="ml-2 text-sm text-gray-600">
+                    <span className="ml-2 text-sm text-gray-600 dark:text-gray-200">
                       (1000 Reviews)
                     </span>
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <span className="text-2xl font-bold text-gray-800">
+                  <span className="text-2xl font-bold text-gray-800 dark:text-gray-200">
                     ${realProduct.price}
                   </span>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-200">
                     You pay after getting a product
                   </p>
                 </div>
@@ -84,15 +86,14 @@ const ProductPage = () => {
                       onClick={() => deleteItem(realProduct._id)}
                       className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700"
                     >
-                      {loading ? <Loader3/>:"On cart"}
-                     
+                      {loading ? <Loader3 /> : "On cart"}
                     </button>
                   ) : (
                     <button
                       onClick={() => addItemOncart(realProduct._id)}
                       className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700"
                     >
-                      {loading ? <Loader3/> :"Add to cart"}
+                      {loading ? <Loader3 /> : "Add to cart"}
                     </button>
                   )}
                 </div>

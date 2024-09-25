@@ -56,7 +56,6 @@ exports.loginUser = async (req, res) => {
     const accessToken = createAccessToken(user._id);
     const refreshToken = createRefreshToken(user._id);
     user.refreshToken = refreshToken;
-    // await user.save()
     sendRefreshToken(res, refreshToken);
     sendAccessToken(req, res, accessToken);
     return;

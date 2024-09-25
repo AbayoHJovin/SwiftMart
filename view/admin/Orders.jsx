@@ -23,37 +23,39 @@ const Orders = ({ AdminOptions, currentUser }) => {
     setLoading(true);
   }, []);
   useEffect(() => {
-    setInterval(() => {
-      if (!currentUser) {
-        fetch(`${apiUrl}/getOffer`, {
-          method: "GET",
+    if (!currentUser) {
+      fetch(`${apiUrl}/getOffer`, {
+        method: "GET",
+      })
+        .then((resp) => resp.json())
+        .then((message) => {
+          setOffers(message.message);
+          setLoading(false);
         })
-          .then((resp) => resp.json())
-          .then((message) => {
-            setOffers(message.message);
-            setLoading(false);
-          })
-          .catch((e) => console.error(e));
-      } else {
-        fetch(`${apiUrl}/getOffer?userId=${currentUser}`, {
-          method: "GET",
+        .catch((e) => console.error(e));
+    } else {
+      fetch(`${apiUrl}/getOffer?userId=${currentUser}`, {
+        method: "GET",
+      })
+        .then((resp) => resp.json())
+        .then((message) => {
+          setOffers(message.message);
+          setLoading(false);
         })
-          .then((resp) => resp.json())
-          .then((message) => {
-            setOffers(message.message);
-            setLoading(false);
-          })
-          .catch((e) => console.error(e));
-      }
-    }, 2000);
+        .catch((e) => console.error(e));
+    }
   }, [currentUser]);
+
   useEffect(() => {
-    setFilteredOrders(offers.filter((order) => order.date == currentDate));
-  }, [offers]);
-  function handleDate(date) {
-    const targetedOrders = offers.filter((order) => order.date == date);
+    const todayOrders = offers.filter((order) => order.date === currentDate);
+    setFilteredOrders(todayOrders);
+  }, [offers, currentDate]);
+
+  const handleDate = (date) => {
+    const targetedOrders = offers.filter((order) => order.date === date);
     setFilteredOrders(targetedOrders);
-  }
+  };
+
   function handleOfferClick(item) {
     setOpenOfferModal(true);
     const prod = [];
@@ -99,7 +101,9 @@ const Orders = ({ AdminOptions, currentUser }) => {
   return (
     <div className="px-5">
       {offers.length == 0 ? (
-        <div className="flex justify-center">No orders found</div>
+        <div className="flex justify-center items-center h-screen text-center content-center">
+          <h1>No orders found</h1>
+        </div>
       ) : (
         <div>
           <div className="flex items-center justify-between px-10 my-10">
@@ -165,6 +169,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
                 <AiFillCloseCircle
                   onClick={() => setOpenOfferModal(false)}
                   className="text-4xl text-red-500 hover:text-red-700 cursor-pointer"
+                  size={30}
                 />
               </div>
 
@@ -239,7 +244,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
               <div className="overflow-x-auto">
                 <table className="min-w-full table-auto">
                   <thead>
-                    <tr className="bg-green-200 h-8 rounded-md">
+                    <tr className="bg-green-200 h-4 rounded-full">
                       <th className="p-4 border-b text-left text-sm w-1/6 rounded-l-md">
                         Name
                       </th>
@@ -275,7 +280,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
                         <tr
                           onClick={() => handleOfferClick(item)}
                           key={item._id}
-                          className="border text-center border-gray-200 h-16 cursor-pointer bg-white hover:bg-green-500 text-black hover:text-white rounded-md"
+                          className="border text-center border-gray-200 h-16 cursor-pointer bg-white hover:bg-gray-50 text-black rounded-md"
                         >
                           <td className="p-4 border-b text-sm truncate rounded-l-md">
                             {item.names}

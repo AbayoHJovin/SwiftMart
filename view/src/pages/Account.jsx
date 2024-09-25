@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import { useContext, useEffect, useState } from "react";
 import { Box, Typography, List, ListItem, ListItemText } from "@mui/material";
 import { FaSignOutAlt, FaList, FaLock, FaUser } from "react-icons/fa";
@@ -44,31 +46,6 @@ export default function Account() {
 const {currentUser}=useContext(CurrentUserContext)
   const handleOpen = () => setModalOpen(true);
   const handleClose = () => setModalOpen(false);
-
-  function handleConfirmLogout() {
-    handleClose();
-    setIsLoggingOut(true);
-    fetch(`${apiUrl}/logout`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.message === "Logged out") {
-          console.log("loggin out")
-          localStorage.removeItem("token");
-          navigate("/");
-        }
-      })
-      .catch((e) => {
-        console.log(e);
-        toast.error("Can't logout!");
-      })
-      .finally(() => {
-        setIsLoggingOut(false);
-      });
-  }
 
   useEffect(() => {
     const token = localStorage.getItem("token");

@@ -21,7 +21,7 @@ import OrderForm from "./pages/CheckOut.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import { apiUrl } from "./lib/apis.js";
 import NewAccount from "./pages/newAccount.jsx";
-import CustomTable from "./components/trial.jsx";
+import OfferComfirmation from "./pages/OfferComfirmation.jsx";
 
 function App() {
   useEffect(() => {
@@ -85,17 +85,15 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: (
-      <CartItems>
-        <Login />
-      </CartItems>
+      <Login />
+
     ),
   },
   {
     path: "/signup",
     element: (
-      <CartItems>
-        <SignupForm />
-      </CartItems>
+      <SignupForm />
+
     ),
   },
   {
@@ -123,7 +121,7 @@ const router = createBrowserRouter([
       </CartItems>
     ),
   },
-  { path: "try", element: <CustomTable /> },
+  { path: "offerComfirmation", element: <OfferComfirmation /> },
   { path: "*", element: <NotFound /> },
 ]);
 
