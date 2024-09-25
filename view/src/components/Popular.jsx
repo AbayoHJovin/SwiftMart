@@ -14,7 +14,7 @@ import {
   Autoplay,
 } from "swiper/modules";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import Loader from "./loader";
+import Loader3 from "./Loading3";
 
 const Popular = () => {
   const { products } = useProducts();
@@ -100,7 +100,7 @@ const Popular = () => {
           }}
         >
           {loading || popularProducts.length === 0 ? (
-            <Loader />
+            <Loader3 />
           ) : (
             popularProducts.map((item) => (
               <SwiperSlide

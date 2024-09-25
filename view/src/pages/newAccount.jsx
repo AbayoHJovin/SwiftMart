@@ -19,8 +19,6 @@ const NewAccount = () => {
   const navigate = useNavigate();
   const [isSignedIn, setIsSignedIn] = useState(false);
 
-
-
   useEffect(() => {
     const token = localStorage.getItem("token");
     fetch(`${apiUrl}/protected`, {
@@ -69,7 +67,6 @@ const NewAccount = () => {
       ),
     },
   ];
-
 
   return (
     <div className={`dark:bg-black bg-white`}>
