@@ -31,15 +31,15 @@ const Login = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          if( localStorage.removeItem("admTokn")){
+          if (localStorage.removeItem("admTokn")) {
             localStorage.removeItem("admTokn");
           }
           if (data.message === "loggedIn") {
-            navigate("/shop");
+            navigate("/shop/Both/pants");
             const accessToken = data.accessToken;
             localStorage.setItem("token", accessToken);
           } else {
-            toast.error(data.message || "Invalid credentials", {
+            toast.error("Invalid credentials", {
               style: { backgroundColor: "red", color: "white" },
             });
           }
