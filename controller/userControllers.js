@@ -10,6 +10,17 @@ const {
 const isAuth = require("../auth/isAuth");
 require("dotenv").config();
 
+function isAuth(authorization) {
+  try {
+    const token = authorization;
+    const { adminToken } = verify(token, process.env.ACCESS_TOKEN);
+    return adminToken;
+  } catch (error) {
+    console.error("Error verifying token:", error.message);
+    return null;
+  }
+}
+
 exports.signupUser = async (req, res) => {
   const { username, email, password } = req.body;
   try {
@@ -65,11 +76,17 @@ exports.loginUser = async (req, res) => {
 };
 
 exports.getUserDetails = async (req, res) => {
+  const token=req.headers.token
+  const Admintoken= isAuth(token)
   try {
+    if(!Admintoken){
+      throw new Error("Unauthorized")
+    }
     const user = await User.find();
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
+
     res.status(200).json(user);
   } catch (err) {
     res.status(500).json({ message: err.message || "Internal server error" });

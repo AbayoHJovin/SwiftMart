@@ -6,11 +6,11 @@ const UseUsers = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        // Define the async function inside useEffect
+        const token=localStorage.getItem("admTokn")
         const getUsers = async () => {
             try {
                 const response = await axios.get(`${apiUrl}/users`, {
-                    headers: { "Content-Type": "application/json" },
+                    headers: { token:token},
                 });
                 setUsers(response.data);
             } catch (e) {
