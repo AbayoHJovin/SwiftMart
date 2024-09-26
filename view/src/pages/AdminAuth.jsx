@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -10,10 +9,14 @@ import adminImage from "../../public/admin.png";
 const AdminAuth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [key, setKey] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showKey, setShowKey] = useState(false);
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handleKeyChange = (e) => setKey(e.target.value);
   const toggleShowPassword = () => setShowPassword(!showPassword);
+  const toggleShowKey = () => setShowKey(!showKey);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -21,20 +24,20 @@ const AdminAuth = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      fetch(`${apiUrl}/login`, {
+      fetch(`${apiUrl}/adminLogin`, {
         method: "POST",
-        body: JSON.stringify({ email: email, password: password }),
+        body: JSON.stringify({ email: email, password: password, Token: key }),
         headers: { "Content-Type": "application/json" },
         credentials: "include",
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data.message === "loggedIn") {
-            navigate("/shop");
-            const accessToken = data.accessToken;
-            localStorage.setItem("token", accessToken);
+          if (data.message === "Welcome To Admin") {
+            navigate("/authorized/Admin");
+            const adminToken = data.adminToken;
+            localStorage.setItem("admTokn", adminToken);
           } else {
-            toast.error(data.message || "Invalid credentials", {
+            toast.error("Invalid credentials", {
               style: { backgroundColor: "red", color: "white" },
             });
           }
@@ -42,6 +45,8 @@ const AdminAuth = () => {
         .catch((e) => toast.error(e))
         .finally(() => {
           setLoading(false);
+          setPassword("");
+          setKey("");
         });
     } catch (error) {
       toast.error(error || "Login failed! Please try again.");
@@ -111,16 +116,16 @@ const AdminAuth = () => {
                 </label>
                 <div className="flex items-center bg-[#e6fad9] dark:bg-gray-900 border-l-4 border-green-800 rounded-md">
                   <input
-                    type={showPassword ? "text" : "password"}
-                    value={password}
-                    onChange={handlePasswordChange}
+                    type={showKey ? "text" : "password"}
+                    value={key}
+                    onChange={handleKeyChange}
                     placeholder="Enter admin key"
                     className="w-full p-5 bg-[#e6fad9] dark:bg-gray-900  outline-none focus:outline-none text-gray-700 dark:text-gray-200"
                     required
                   />
                   <button
                     type="button"
-                    onClick={toggleShowPassword}
+                    onClick={toggleShowKey}
                     className="text-gray-500 dark:text-gray-400 mx-3 focus:outline-none"
                   >
                     {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -152,19 +157,6 @@ const AdminAuth = () => {
                 </button>
               )}
             </form>
-            <h1 className="text-center text-lg">Or</h1>
-            <div className="flex items-center justify-center mt-4">
-              <button className="w-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 font-medium py-2 rounded-md flex items-center justify-center focus:outline-none">
-                <FcGoogle className="text-red-500 mr-2" />
-                Login with Google
-              </button>
-            </div>
-            <h1 className="text-center my-4">
-              Don&apos;t have an account?{" "}
-              <a href="/signup" className="font-semibold hover:underline">
-                Signup
-              </a>
-            </h1>
           </div>
         </div>
 

@@ -182,58 +182,22 @@ export default function ProductTable() {
           mb: 2,
         }}
       >
-        <TextField
-          variant="outlined"
-          placeholder="Search products"
+        <input
+          type="search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <FaSearch />
-              </InputAdornment>
-            ),
-          }}
-          sx={{
-            mb: { xs: 2, sm: 0 },
-            width: { xs: "100%", sm: "auto" },
-            backgroundColor: isDarkMode
-              ? theme.palette.background.default
-              : theme.palette.background.paper,
-            color: isDarkMode
-              ? theme.palette.text.primary
-              : theme.palette.text.secondary,
-            "& .MuiInputBase-input": {
-              color: isDarkMode
-                ? theme.palette.text.primary
-                : theme.palette.text.secondary,
-            },
-            "& .MuiOutlinedInput-root": {
-              "& fieldset": {
-                borderColor: isDarkMode
-                  ? theme.palette.text.primary
-                  : theme.palette.text.secondary,
-              },
-              "&:hover fieldset": {
-                borderColor: isDarkMode
-                  ? theme.palette.text.primary
-                  : theme.palette.text.secondary,
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: isDarkMode
-                  ? theme.palette.text.primary
-                  : theme.palette.text.secondary,
-              },
-            },
-          }}
+          name="search"
+          placeholder="Search a product"
+          className="mb-0 xsm:mb-2 px-3 outline-none border-none"
+          style={{ backgroundColor: "#e0facf" }}
         />
-        <Button
-          variant="contained"
-          color="primary"
+
+        <button
           onClick={() => setOpenModal(true)}
+          className="bg-green-500 p-3 px-4 rounded-md text-white"
         >
           Add Product
-        </Button>
+        </button>
       </Box>
       <Box
         sx={{ overflowX: "auto", "&::-webkit-scrollbar": { height: "8px" } }}

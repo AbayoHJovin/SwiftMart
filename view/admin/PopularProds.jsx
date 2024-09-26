@@ -1,8 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { Buffer } from "buffer";
 import {
   Box,
-  TextField,
   Table,
   TableBody,
   TableCell,
@@ -11,7 +11,6 @@ import {
   TableRow,
   Paper,
   IconButton,
-  InputAdornment,
   useTheme,
 } from "@mui/material";
 import { FaSearch } from "react-icons/fa";
@@ -26,7 +25,6 @@ export default function PopularProds() {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const theme = useTheme();
-  const isDarkMode = theme.palette.mode === "dark";
 
   useEffect(() => {
     fetchProducts();
@@ -77,50 +75,14 @@ export default function PopularProds() {
           mb: 2,
         }}
       >
-        <TextField
-          variant="outlined"
-          placeholder="Search products"
+        <input
+          type="search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <FaSearch />
-              </InputAdornment>
-            ),
-          }}
-          sx={{
-            mb: { xs: 2, sm: 0 },
-            width: { xs: "100%", sm: "auto" },
-            backgroundColor: isDarkMode
-              ? theme.palette.background.default
-              : theme.palette.background.paper,
-            color: isDarkMode
-              ? theme.palette.text.primary
-              : theme.palette.text.secondary,
-            "& .MuiInputBase-input": {
-              color: isDarkMode
-                ? theme.palette.text.primary
-                : theme.palette.text.secondary,
-            },
-            "& .MuiOutlinedInput-root": {
-              "& fieldset": {
-                borderColor: isDarkMode
-                  ? theme.palette.text.primary
-                  : theme.palette.text.secondary,
-              },
-              "&:hover fieldset": {
-                borderColor: isDarkMode
-                  ? theme.palette.text.primary
-                  : theme.palette.text.secondary,
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: isDarkMode
-                  ? theme.palette.text.primary
-                  : theme.palette.text.secondary,
-              },
-            },
-          }}
+          name="search"
+          placeholder="Search a product"
+          className="mb-0 xsm:mb-2 p-3 outline-none border-none"
+          style={{ backgroundColor: "#e0facf" }}
         />
       </Box>
       <Box

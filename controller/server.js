@@ -9,6 +9,7 @@ const FavRoutes = require("./Routes/favouriteRoutes");
 const tokenRoutes = require("./Routes/tokenRoutes");
 const cookieParser = require("cookie-parser");
 const offerRoutes = require("./Routes/offerRoutes");
+const adminRoutes=require("./Routes/adminRoutes")
 require("dotenv").config();
 
 const app = express();
@@ -41,3 +42,4 @@ app.use(tokenRoutes);
 app.use(cartRoutes);
 app.use(FavRoutes);
 app.use(offerRoutes);
+app.use(adminRoutes)

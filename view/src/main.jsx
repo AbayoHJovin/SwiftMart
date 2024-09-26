@@ -33,7 +33,11 @@ function App() {
     })
       .then((data) => data.json())
       .then((response) => {
-        localStorage.setItem("token", response.accessToken);
+        if(response.accessToken){
+          localStorage.setItem("token", response.accessToken);
+        }else{
+          localStorage.setItem("admTokn", response.adminToken);
+        }
       })
       .catch((e) => console.error(e));
   }, []);
@@ -82,7 +86,7 @@ const router = createBrowserRouter([
       </CartItems>
     ),
   },
-  { path: "/admin", element: <AdminDashboard /> },
+  { path: "/authorized/Admin", element: <AdminDashboard /> },
   {
     path: "/account",
     element: (

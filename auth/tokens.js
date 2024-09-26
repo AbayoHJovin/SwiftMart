@@ -25,7 +25,7 @@ function createAdminRefreshToken(adminToken){
 }
 function sendAdminToken(res,adminToken){
   return res.status(200).json({adminToken,message:"Welcome To Admin"})
-}
+} 
 function sendAdminRefreshToken(res,AdRefreshToken){
   res.cookie("refreshToken",AdRefreshToken,{
     httpOnly:true,

@@ -18,6 +18,7 @@ const NewAccount = () => {
   const { currentUser } = useContext(CurrentUserContext);
   const navigate = useNavigate();
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [isLoggingOut,setIsLoggingOut]=useState(false)
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -41,7 +42,27 @@ const NewAccount = () => {
         setIsSignedIn(false);
       });
   }, []);
-
+  const handleConfirmLogout = () => {
+    setIsLoggingOut(true);
+    fetch(`${apiUrl}/logout`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.message === "Logged out") {
+          localStorage.removeItem("token");
+          navigate("/");
+        }
+      })
+      .catch(() => {
+        toast.error("Can't logout!");
+      })
+      .finally(() => {
+        setIsLoggingOut(false);
+      });
+  };
   const labels = [
     { icon: <User2 />, text: "Account", value: 1, page: <PersonalDetails /> },
     {
@@ -71,7 +92,7 @@ const NewAccount = () => {
   return (
     <div className={`dark:bg-black bg-white`}>
       {isSignedIn ? (
-        <Sidebar labels={labels} />
+        <Sidebar labels={labels} handleConfirmLogout={handleConfirmLogout} isLoggingOut={isLoggingOut}/>
       ) : (
         <div className=" text-black dark:text-white bg-white dark:bg-black">
           <div className="my-10">
