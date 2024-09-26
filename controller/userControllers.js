@@ -10,7 +10,7 @@ const {
 const isAuth = require("../auth/isAuth");
 require("dotenv").config();
 
-function isAuth(authorization) {
+function AdminAuth(authorization) {
   try {
     const token = authorization;
     const { adminToken } = verify(token, process.env.ACCESS_TOKEN);
@@ -77,7 +77,7 @@ exports.loginUser = async (req, res) => {
 
 exports.getUserDetails = async (req, res) => {
   const token=req.headers.token
-  const Admintoken= isAuth(token)
+  const Admintoken= AdminAuth(token)
   try {
     if(!Admintoken){
       throw new Error("Unauthorized")
