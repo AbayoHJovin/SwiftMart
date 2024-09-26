@@ -4,7 +4,7 @@ import { ThemeContext } from "../../constants/ThemeContext";
 const Loader3 = () => {
   const { theme } = useContext(ThemeContext);
 
-  const fillColor = theme === "light" ? "#000000" : "#ffffff"; // Black for light, white for dark
+  const fillColor = theme === "light" ? "#000000" : "#ffffff";
 
   return (
     <svg
