@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { CgHeart } from "react-icons/cg";
 import { FaCheckCircle, FaHeart } from "react-icons/fa";
@@ -49,7 +50,7 @@ const ProductCard = ({
           ) : (
             <button
               onClick={(event) => {
-                event.stopPropagation()
+                event.stopPropagation();
                 addToFav();
               }}
               className="absolute top-2 right-2 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md"

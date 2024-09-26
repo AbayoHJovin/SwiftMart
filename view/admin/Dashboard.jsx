@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   Typography,
@@ -29,6 +29,7 @@ import { useNavigate } from "react-router-dom";
 import ProductTable from "./Products";
 import Orders from "./Orders";
 import PopularProds from "./PopularProds";
+import { apiUrl } from "../src/lib/apis";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -56,6 +57,28 @@ export default function AdminDashboard() {
   const [darkMode, setDarkMode] = useState(false);
   const [productsOpen, setProductsOpen] = useState(true);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token") || "";
+    fetch(`${apiUrl}/adminProtected`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", authorization: token },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message === "Unauthorized") {
+          navigate("/try/admin/auth")
+        } else if (data.message === "Authorized") {
+        console.log(data)
+        } else {
+          navigate("/try/admin/auth")
+        }
+      })
+      .catch((e) => {
+        console.log("Error while checking the user", e);
+      });
+  }, [navigate]);
+
 
   const handleDrawerToggle = () => {
     setOpen(!open);

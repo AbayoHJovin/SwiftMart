@@ -5,8 +5,8 @@ import { Pagination, Stack } from "@mui/material";
 import { ThemeContext } from "@emotion/react";
 import { FavContext } from "../../constants/favItems";
 import { CartContext } from "../../constants/cartItems";
-import Loader from "./loader";
 import useProducts from "../../constants/products";
+import Loader3 from "./Loading3";
 
 const FavProducts = () => {
   const { loading, products } = useProducts();
@@ -78,7 +78,11 @@ const FavProducts = () => {
   }, [itemsOnFav, products]);
 
   if (loading) {
-    return <Loader text="Loading products ..." />;
+    return (
+      <div className="flex justify-center">
+        <Loader3 />
+      </div>
+    );
   }
 
   return (

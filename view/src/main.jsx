@@ -22,6 +22,7 @@ import ProductPage from "./pages/ProductPage.jsx";
 import { apiUrl } from "./lib/apis.js";
 import NewAccount from "./pages/newAccount.jsx";
 import OfferComfirmation from "./pages/OfferComfirmation.jsx";
+import AdminAuth from "./pages/AdminAuth.jsx";
 
 function App() {
   useEffect(() => {
@@ -58,7 +59,15 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/shop",
+    path: "/shop/:gender/:product",
+    element: (
+      <CartItems>
+        <ShopNow />
+      </CartItems>
+    ),
+  },
+  {
+    path: "/shop/favourites",
     element: (
       <CartItems>
         <ShopNow />
@@ -122,6 +131,7 @@ const router = createBrowserRouter([
     ),
   },
   { path: "offerComfirmation", element: <OfferComfirmation /> },
+  {path:"/try/admin/auth",element:<AdminAuth/>},
   { path: "*", element: <NotFound /> },
 ]);
 

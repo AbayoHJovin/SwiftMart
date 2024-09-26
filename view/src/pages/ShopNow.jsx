@@ -1,7 +1,8 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import { useNavigate, useParams } from "react-router-dom"; // Import for navigation and URL parameters
 import MenPants from "../components/Men/MenPants";
 import MenShoes from "../components/Men/MenShoes";
 import Menshirts from "../components/Men/Menshirts";
@@ -19,32 +20,38 @@ import FavProducts from "../components/Favourites";
 import { HeartIcon } from "lucide-react";
 
 const ShopNow = () => {
+  const navigate = useNavigate();
+  const { gender, product } = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const [typeOpen, setTypeOpen] = useState(false);
-  const [selectedGender, setSelectedGender] = useState("Male");
-  const [selectType, setSelectType] = useState("pants");
+  const [selectedGender, setSelectedGender] = useState(gender || "Male");
+  const [selectType, setSelectType] = useState(product || "pants");
   const [showFav, setShowFav] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-  const toggleTypeDropdown = () => {
-    setTypeOpen(!typeOpen);
-  };
+  useEffect(() => {
+    if (showFav) {
+      navigate("/shop/favourites");
+    } else {
+      navigate(`/shop/${selectedGender}/${selectType}`);
+    }
+  }, [selectedGender, selectType, navigate, showFav]);
 
   const handleGenderSelect = (gender) => {
     setSelectedGender(gender);
     setIsOpen(false);
     setShowFav(false);
   };
+
   const handleTypeSelect = (type) => {
     setSelectType(type);
     setTypeOpen(false);
     setShowFav(false);
   };
+
   function showFavProds() {
     setShowFav(true);
   }
+
   return (
     <CartItems>
       <FavItems>
@@ -59,11 +66,12 @@ const ShopNow = () => {
           </div>
           <div className="flex sticky top-24 bg-transparent backdrop-blur-3xl z-50 flex-row justify-center items-start sssm:items-center sm:items-start sm:justify-center">
             <div className="flex flex-col sssm:flex-row sssm:space-x-4 gap-4 items-center sm:items-start my-5 mx-5">
-              <div className="relative inline-block z-[3] bg-white dark:bg-black w-full sm:w-auto text-left">
-                <button
-                  onClick={toggleDropdown}
-                  className="inline-flex justify-between w-full sm:w-48 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
+              <div
+                className="relative inline-block z-[3] bg-white dark:bg-black w-full sm:w-auto text-left"
+                onMouseEnter={() => setIsOpen(true)}
+                onMouseLeave={() => setIsOpen(false)}
+              >
+                <button className="inline-flex justify-between w-full sm:w-48 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                   {selectedGender}
                   <FaChevronDown
                     className={`w-5 h-5 ml-2 transition-transform duration-300 transform ${
@@ -71,9 +79,8 @@ const ShopNow = () => {
                     }`}
                   />
                 </button>
-
                 <div
-                  className={`origin-top-right absolute right-0 mt-2 w-full sm:w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none transition duration-300 ease-out transform ${
+                  className={`origin-top-right absolute right-0 w-full sm:w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none transition duration-300 ease-out transform ${
                     isOpen
                       ? "opacity-100 scale-100"
                       : "opacity-0 scale-95 pointer-events-none"
@@ -101,11 +108,13 @@ const ShopNow = () => {
                   </div>
                 </div>
               </div>
-              <div className="relative inline-block z-[2] bg-white dark:bg-black w-full sm:w-auto text-left">
-                <button
-                  onClick={toggleTypeDropdown}
-                  className="inline-flex justify-between w-full sm:w-48 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
+
+              <div
+                className="relative inline-block z-[2] bg-white dark:bg-black w-full sm:w-auto text-left"
+                onMouseEnter={() => setTypeOpen(true)}
+                onMouseLeave={() => setTypeOpen(false)}
+              >
+                <button className="inline-flex justify-between w-full sm:w-48 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                   {selectType}
                   <FaChevronDown
                     className={`w-5 h-5 ml-2 transition-transform duration-300 transform ${
@@ -113,15 +122,14 @@ const ShopNow = () => {
                     }`}
                   />
                 </button>
-
                 <div
-                  className={`origin-top-right absolute right-0 z-20 mt-2 w-full sm:w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none transition duration-300 ease-out transform ${
+                  className={`origin-top-right absolute right-0 z-20 w-full sm:w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none transition duration-300 ease-out transform ${
                     typeOpen
                       ? "opacity-100 scale-100"
                       : "opacity-0 scale-95 pointer-events-none"
                   }`}
                 >
-                  <div className="py-1 z-20">
+                  <div className="py-1">
                     <button
                       onClick={() => handleTypeSelect("shoes")}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -138,7 +146,7 @@ const ShopNow = () => {
                       onClick={() => handleTypeSelect("shirts")}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
-                      shirts & T-shirts
+                      Shirts & T-Shirts
                     </button>
                     <button
                       onClick={() => handleTypeSelect("watches")}
@@ -186,20 +194,15 @@ const ShopNow = () => {
                 selectedGender === "Both") &&
               selectType === "watches" ? (
               <Watches />
-            ) : (selectedGender === "Male" ||
-                selectedGender === "Female" ||
-                selectedGender === "Both") &&
-              selectType === "hats" ? (
+            ) : selectType === "hats" ? (
               <Hats />
-            ) : selectedGender === "Both" && selectType === "pants" ? (
+            ) : selectType === "pants" ? (
               <Pants />
-            ) : selectedGender === "Both" && selectType === "shoes" ? (
-              <Shoes />
-            ) : selectedGender === "Both" && selectType === "shirts" ? (
+            ) : selectType === "shirts" ? (
               <Shirts />
-            ) : (
-              ""
-            )}
+            ) : selectType === "shoes" ? (
+              <Shoes />
+            ) : null}
           </div>
           <Footer />
         </div>

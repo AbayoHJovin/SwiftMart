@@ -7,6 +7,7 @@ import { ThemeContext } from "../../constants/ThemeContext";
 import CartItems, { CartContext } from "../../constants/cartItems"; // Import CartContext
 import Search from "./searchComponent";
 import { Moon, SearchIcon, ShoppingCart, Sun, UserPlus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -34,7 +35,7 @@ export default function Navbar() {
   const links = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Shop", href: "/shop" },
+    { name: "Shop", href: "/shop/Both/pants" },
     { name: "Contacts", href: "/contacts" },
     { name: "Account", href: "/account" },
   ];
@@ -48,16 +49,17 @@ export default function Navbar() {
     }
     setDrawerOpen(open);
   };
-
+  const navigate = useNavigate();
   return (
     <CartItems>
       <nav
         className={`flex items-center p-4 justify-between px-10 text-black bg-[#dadce0] dark:bg-black dark:text-white lg:px-36 sticky top-0 z-50`}
       >
         <img
+          onClick={() => navigate("/")}
           src={isMobile ? "/mobileLogo.svg" : "/logo.svg"}
           alt="logo"
-          className="h-[4.5rem] w-[10rem]"
+          className="h-[4.5rem] w-[10rem] cursor-pointer"
         />
 
         <div className="hidden sm:flex justify-center items-center">

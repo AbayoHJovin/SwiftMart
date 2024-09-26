@@ -5,8 +5,10 @@ import {
   FaLinkedinIn,
   FaWhatsapp,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="relative bottom-0 bg-[#D4ECDC] z-0 dark:bg-[#003D3B] text-black dark:text-white py-10 px-5 mt-10 md:px-20 overflow-hidden footer-curved-background">
@@ -16,29 +18,44 @@ const Footer = () => {
               <h3 className="font-semibold mb-4">SHOP</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="hover:underline">
+                  <h1
+                    onClick={() => navigate("/shop/Both/pants")}
+                    className="hover:underline cursor-pointer"
+                  >
                     Pants
-                  </a>
+                  </h1>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <h1
+                    onClick={() => navigate("/shop/Both/pants")}
+                    className="hover:underline cursor-pointer"
+                  >
                     Shorts
-                  </a>
+                  </h1>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <h1
+                    onClick={() => navigate("/shop/Both/shirts")}
+                    className="hover:underline cursor-pointer"
+                  >
                     Shirts
-                  </a>
+                  </h1>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <h1
+                    onClick={() => navigate("/shop/Both/shirts")}
+                    className="hover:underline cursor-pointer"
+                  >
                     T-shirts
-                  </a>
+                  </h1>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <h1
+                    onClick={() => navigate("/shop/Both/shoes")}
+                    className="hover:underline cursor-pointer"
+                  >
                     Shoes
-                  </a>
+                  </h1>
                 </li>
               </ul>
             </div>
@@ -46,12 +63,12 @@ const Footer = () => {
               <h3 className="font-semibold mb-4">HELP</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="/contacts" className="hover:underline">
                     Contact Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="/about" className="hover:underline">
                     FAQ
                   </a>
                 </li>
@@ -149,6 +166,9 @@ const Footer = () => {
             </a>
             <a href="#" className="hover:underline">
               Privacy Policy
+            </a>
+            <a href="/try/admin/auth" className="hover:underline">
+              admin
             </a>
           </div>
         </div>
