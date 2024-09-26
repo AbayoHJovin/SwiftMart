@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174", "https://homedel.vercel.app/"],
+    origin: ["http://localhost:5173", "http://localhost:5174", "https://homedel.vercel.app"],
     credentials: true,
     optionsSuccessStatus: 200,
   })
