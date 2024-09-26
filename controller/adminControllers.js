@@ -1,4 +1,5 @@
 const { verify } = require("jsonwebtoken");
+const jwt=require("jsonwebtoken")
 const {
   createAdminToken,
   createAdminRefreshToken,
@@ -48,10 +49,30 @@ exports.logout = async (req, res) => {
 
 exports.protectedRoute = (req, res) => {
   const token = req.headers.authorization;
-  if (!token) return res.status(401).send({ message: "Unauthorized" });
+  if (!token) return res.status(401).send({ message: "no token" });
   const adminToken = isAuth(token);
   if (!adminToken) {
     return res.status(401).send({ message: "Unauthorized" });
   }
   return res.status(200).json({ message: "Authorized" });
+};
+
+exports.refreshToken = async (req, res) => {
+  const token = req.cookies.refreshToken;
+  if (!token) {
+    return res.send({ adminToken: "No token" });
+  }
+  let payload = null;
+  try {
+    payload = jwt.verify(token, process.env.REFRESH_TOKEN);
+    if (!payload.adminToken) {
+      return res.send({ adminToken: "" });
+    }
+  } catch (e) {
+    return res.send({ adminToken:e.message || "" });
+  }
+  const adminToken = createAdminToken(process.env.AD_KEY);
+  const refreshToken = createAdminRefreshToken(process.env.AD_KEY);
+  sendAdminRefreshToken(res, refreshToken);
+  return res.send({ adminToken: adminToken });
 };

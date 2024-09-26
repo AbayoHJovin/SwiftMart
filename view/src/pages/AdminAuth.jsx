@@ -33,6 +33,9 @@ const AdminAuth = () => {
         .then((response) => response.json())
         .then((data) => {
           if (data.message === "Welcome To Admin") {
+            if (localStorage.removeItem("token")) {
+              localStorage.removeItem("token");
+            }
             navigate("/authorized/Admin");
             const adminToken = data.adminToken;
             localStorage.setItem("admTokn", adminToken);

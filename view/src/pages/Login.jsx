@@ -31,6 +31,9 @@ const Login = () => {
       })
         .then((response) => response.json())
         .then((data) => {
+          if( localStorage.removeItem("admTokn")){
+            localStorage.removeItem("admTokn");
+          }
           if (data.message === "loggedIn") {
             navigate("/shop");
             const accessToken = data.accessToken;
