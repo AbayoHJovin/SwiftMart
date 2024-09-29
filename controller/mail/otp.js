@@ -57,7 +57,7 @@ exports.verifyOtp = async (req, res) => {
       maxAge: 1000 * 60 * 60,
       path: "/",
         secure: process.env.NODE_ENV === "production", // Only over HTTPS in production
-        sameSite: "Strict",
+        sameSite: "None",
         maxAge: 1000 * 60 * 60, // 1 hour
     });
     console.log(req.cookies)
@@ -90,7 +90,7 @@ exports.resendOtpCookie = async (req, res) => {
       httpOnly: true,
       path: "/",
       secure: process.env.NODE_ENV === "production",
-      sameSite: "Strict",
+      sameSite: "None",
       maxAge: 1000 * 60 * 60,  // 1 hour expiration
     });
 
