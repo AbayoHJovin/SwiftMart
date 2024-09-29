@@ -10,17 +10,6 @@ const {
 const isAuth = require("../auth/isAuth");
 require("dotenv").config();
 
-function AdminAuth(authorization) {
-  try {
-    const token = authorization;
-    const { adminToken } = verify(token, process.env.ACCESS_TOKEN);
-    return adminToken;
-  } catch (error) {
-    console.error("Error verifying token:", error.message);
-    return null;
-  }
-}
-
 exports.signupUser = async (req, res) => {
   const { username, email, password } = req.body;
   try {
@@ -54,7 +43,7 @@ exports.signupUser = async (req, res) => {
 
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
-
+  let isAdmin = false;
   try {
     const user = await User.findOne({ email: email });
     if (!user) {
@@ -64,11 +53,14 @@ exports.loginUser = async (req, res) => {
     if (!validPassword) {
       return res.status(400).json({ message: "invalid credentials" });
     }
+    if (user.email === process.env.AD_EMAIL) {
+      isAdmin = true;
+    }
     const accessToken = createAccessToken(user._id);
     const refreshToken = createRefreshToken(user._id);
     user.refreshToken = refreshToken;
     sendRefreshToken(res, refreshToken);
-    sendAccessToken(req, res, accessToken);
+    sendAccessToken(req, res, accessToken, isAdmin);
     return;
   } catch (err) {
     res.status(500).json({ message: err.message || "Internal server error" });
@@ -76,17 +68,11 @@ exports.loginUser = async (req, res) => {
 };
 
 exports.getUserDetails = async (req, res) => {
-  const token=req.headers.token
-  const Admintoken= AdminAuth(token)
   try {
-    if(!Admintoken){
-      throw new Error("Unauthorized")
-    }
     const user = await User.find();
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
-
     res.status(200).json(user);
   } catch (err) {
     res.status(500).json({ message: err.message || "Internal server error" });
@@ -119,17 +105,23 @@ exports.updateUserDetails = async (req, res) => {
 
 exports.getCurrentUser = async (req, res) => {
   const token = req.headers.token;
+  let isAdmin = false;
   try {
     const userId = isAuth(token);
 
     if (!userId) {
       return res.json({ user: null });
     }
-
     const currentUserCredentials = await User.findById(userId);
-    const currentUser = lodash.omit(currentUserCredentials.toObject(), ["password"]);
-    return res.status(200).json({ user: currentUser });
+    if (currentUserCredentials.email === process.env.AD_EMAIL) {
+      isAdmin = true;
+    }
+    const currentUser = lodash.omit(currentUserCredentials.toObject(), [
+      "password",
+    ]);
+    return res.status(200).json({ user: currentUser, isAdmin: isAdmin });
   } catch (e) {
+    console.log(e);
     return res.status(401).json({ error: e.message || "Something went wrong" });
   }
 };

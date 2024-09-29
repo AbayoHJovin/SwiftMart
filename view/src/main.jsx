@@ -23,38 +23,21 @@ import { apiUrl } from "./lib/apis.js";
 import NewAccount from "./pages/newAccount.jsx";
 import OfferComfirmation from "./pages/OfferComfirmation.jsx";
 import AdminAuth from "./pages/AdminAuth.jsx";
+import AuthorizedAdmin from "../constants/AuthorizedAdmin.jsx";
 
 function App() {
-  const adminToken = localStorage.getItem("admTokn");
-  const userToken = localStorage.getItem("token");
   useEffect(() => {
-    if(userToken){
-      fetch(`${apiUrl}/refresh_token`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
+    fetch(`${apiUrl}/refresh_token`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+    })
+      .then((data) => data.json())
+      .then((response) => {
+        localStorage.setItem("token", response.accessToken);
       })
-        .then((data) => data.json())
-        .then((response) => {
-            localStorage.setItem("token", response.accessToken);
-          })
-          .catch((e) => console.error(e));
-        }
-        else if(adminToken){
-          fetch(`${apiUrl}/refresh_admToken`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            credentials: "include",
-          })
-            .then((data) => data.json())
-            .then((response) => {
-                localStorage.setItem("admTokn", response.adminToken);
-              })
-              .catch((e) => console.error(e));     
-        }
-        else{console.log("Not logged in")}
-    }
-  , [adminToken,userToken]);
+      .catch((e) => console.error(e));
+  }, []);
 
   return <RouterProvider router={router} />;
 }
@@ -100,7 +83,14 @@ const router = createBrowserRouter([
       </CartItems>
     ),
   },
-  { path: "/authorized/Admin", element: <AdminDashboard /> },
+  {
+    path: "/authorized/Admin",
+    element: (
+      <AuthorizedAdmin>
+        <AdminDashboard />
+      </AuthorizedAdmin>
+    ),
+  },
   {
     path: "/account",
     element: (
@@ -143,7 +133,15 @@ const router = createBrowserRouter([
     ),
   },
   { path: "offerComfirmation", element: <OfferComfirmation /> },
-  { path: "/try/admin/auth", element: <AdminAuth /> },
+  {
+    path: "/try/admin/auth",
+    element: (
+
+      <AuthorizedAdmin>
+        <AdminAuth />
+      </AuthorizedAdmin>
+    ),
+  },
   { path: "*", element: <NotFound /> },
 ]);
 

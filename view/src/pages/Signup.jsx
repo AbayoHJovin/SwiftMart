@@ -57,16 +57,16 @@ const SignupForm = () => {
         {/* Form Section */}
         <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-6 overflow-y-auto">
           <div className=" p-6 rounded-lg w-full max-w-md">
-            <div
+            <a
               className="flex justify-center my-5"
-              onClick={() => navigate("/")}
+              href="/"
             >
               <img
                 src="./logo.svg"
                 alt="logo"
                 className="w-44 cursor-pointer"
               />
-            </div>
+            </a>
             <h2 className="text-center font-montserrat text-xl font-semibold text-gray-700 dark:text-gray-200 mb-6">
               Sign Up
             </h2>

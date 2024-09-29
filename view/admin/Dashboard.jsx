@@ -10,37 +10,33 @@ import {
   AiOutlineOrderedList,
 } from "react-icons/ai";
 import Sidebar from "../src/pages/Sidebar";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { AdminContext } from "../constants/AuthorizedAdmin";
 
 export default function AdminDashboard() {
+  const { isAdminLoggedIn, setIsAdminLoggedIn } = useContext(AdminContext);
   const navigate = useNavigate();
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+
   useEffect(() => {
-    const token = localStorage.getItem("admTokn") || "";
-    fetch(`${apiUrl}/adminProtected`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", authorization: token },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.message === "Unauthorized") {
-          navigate("/try/admin/auth");
-        } else if (data.message === "Authorized") {
-          console.log("Authorized");
-        } else {
-          navigate("/try/admin/auth");
-        }
-      })
-      .catch((e) => {
-        console.log("Error while checking the user", e);
+    async function checkAdminStatus() {
+      const response = await fetch(`${apiUrl}/check-admin`, {
+        method: "GET",
+        credentials: "include", 
       });
+      const data = await response.json();
+      if (data.isAdmin == false) {
+        navigate("/");
+      }
+    }
+    checkAdminStatus();
   }, [navigate]);
 
   const handleConfirmLogout = () => {
     setIsLoggingOut(true);
-    fetch(`${apiUrl}/adminLogout`, {
+    fetch(`${apiUrl}/logout`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -48,7 +44,9 @@ export default function AdminDashboard() {
       .then((res) => res.json())
       .then((data) => {
         if (data.message === "Logged out") {
+          setIsAdminLoggedIn(false);
           localStorage.removeItem("admTokn");
+
           navigate("/");
         }
       })
@@ -80,5 +78,11 @@ export default function AdminDashboard() {
       page: <Orders AdminOptions={true} />,
     },
   ];
-  return <Sidebar labels={labels} handleConfirmLogout={handleConfirmLogout} isLoggingOut={isLoggingOut}/>;
+  return (
+    <Sidebar
+      labels={labels}
+      handleConfirmLogout={handleConfirmLogout}
+      isLoggingOut={isLoggingOut}
+    />
+  );
 }

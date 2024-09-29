@@ -3,7 +3,6 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
 import { apiUrl } from "../lib/apis";
 import Loader3 from "../components/Loading3";
 
@@ -17,7 +16,6 @@ const Login = () => {
   const handleRememberMeChange = () => setRememberMe(!rememberMe);
   const toggleShowPassword = () => setShowPassword(!showPassword);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -35,7 +33,8 @@ const Login = () => {
             localStorage.removeItem("admTokn");
           }
           if (data.message === "loggedIn") {
-            navigate("/shop/Both/pants");
+            // navigate("/shop/Both/pants");
+            window.location.href = "/shop/Both/pants";
             const accessToken = data.accessToken;
             localStorage.setItem("token", accessToken);
           } else {
@@ -60,12 +59,9 @@ const Login = () => {
       <div className="flex min-h-screen">
         <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-6 overflow-y-auto">
           <div className="p-6 rounded-lg w-full max-w-md">
-            <div
-              className="flex justify-center my-5 cursor-pointer"
-              onClick={() => navigate("/")}
-            >
+            <a className="flex justify-center my-5 cursor-pointer" href="/">
               <img src="./logo.svg" alt="logo" className="w-44" />
-            </div>
+            </a>
             <h2 className="text-center font-montserrat text-xl font-semibold text-gray-700 dark:text-gray-200 mb-6">
               Login
             </h2>

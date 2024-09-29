@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   FaInstagram,
   FaFacebookF,
@@ -6,9 +7,11 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { CurrentUserContext } from "../../constants/currentUser";
 
 const Footer = () => {
   const navigate = useNavigate();
+  const {isAnAdmin}=useContext(CurrentUserContext)
   return (
     <div>
       <div className="relative bottom-0 bg-[#D4ECDC] z-0 dark:bg-[#003D3B] text-black dark:text-white py-10 px-5 mt-10 md:px-20 overflow-hidden footer-curved-background">
@@ -167,9 +170,12 @@ const Footer = () => {
             <a href="#" className="hover:underline">
               Privacy Policy
             </a>
+            {
+              isAnAdmin ? 
             <a href="/try/admin/auth" className="hover:underline">
               admin
-            </a>
+            </a>:null
+            }
           </div>
         </div>
       </div>

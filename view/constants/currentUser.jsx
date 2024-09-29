@@ -7,27 +7,41 @@ export const CurrentUserContext = createContext();
 const CurrentUser = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setISLoading] = useState(false);
+  const [isAnAdmin, setIsAnAdmin] = useState(null);
   useEffect(() => {
-    const userToken = localStorage.getItem("token");
-    setISLoading(true);
-    fetch(`${apiUrl}/currentUser`, {
-      method: "GET",
-      headers: { token: userToken },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setCurrentUser(data.user);
+    function getUser() {  
+      const userToken = localStorage.getItem("token");
+      setISLoading(true);
+      fetch(`${apiUrl}/currentUser`, {
+        method: "GET",
+        headers: { token: userToken },
       })
-      .catch((e) => console.error(e))
-      .finally(() => {
-        setISLoading(false);
-      });
-  }, []);
+        .then((response) => response.json())
+        .then((data) => {
+          setCurrentUser(data.user);
+          if(data.isAdmin == true){
+            setIsAnAdmin(true);
+          }
+          else{
+            setIsAnAdmin(false)
+          }
+        })
+        .catch((e) => console.error(e))
+        .finally(() => {
+          console.log("The received data is", isAnAdmin);
+          setISLoading(false);
+        });
+    }
+    getUser();
+  }, [isAnAdmin]);
+  useEffect(() => {
+    console.log(isAnAdmin);
+  }, [isAnAdmin]);
   if (isLoading) {
     return <Loader2 />;
   }
   return (
-    <CurrentUserContext.Provider value={{ currentUser }}>
+    <CurrentUserContext.Provider value={{ isLoading,currentUser, isAnAdmin }}>
       {children}
     </CurrentUserContext.Provider>
   );
