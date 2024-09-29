@@ -10,13 +10,11 @@ import {
   AiOutlineOrderedList,
 } from "react-icons/ai";
 import Sidebar from "../src/pages/Sidebar";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { AdminContext } from "../constants/AuthorizedAdmin";
 
 export default function AdminDashboard() {
-  const { isAdminLoggedIn, setIsAdminLoggedIn } = useContext(AdminContext);
   const navigate = useNavigate();
   const [isLoggingOut, setIsLoggingOut] = useState(false);
 
@@ -44,9 +42,7 @@ export default function AdminDashboard() {
       .then((res) => res.json())
       .then((data) => {
         if (data.message === "Logged out") {
-          setIsAdminLoggedIn(false);
           localStorage.removeItem("admTokn");
-
           navigate("/");
         }
       })

@@ -15,14 +15,8 @@ function sendRefreshToken(res, refreshToken) {
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
     path: "/refresh_token",
-    // secure:process.env.NODE_ENV === "production",
-    // sameSite:"Strict",
+    secure:process.env.NODE_ENV === "production",
+    sameSite:"Strict",
   });
 }
-// function sendOtpToken(res,token){
-// res.cookie("OTP",token,{
-//   httpOnly:true,
-//   path:"/verify-otp"
-// })
-// }
 module.exports = { createAccessToken, createRefreshToken,sendAccessToken,sendRefreshToken };

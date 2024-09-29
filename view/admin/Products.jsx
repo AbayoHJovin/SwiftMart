@@ -241,7 +241,7 @@ export default function ProductTable() {
                     <TableCell>{product.sold}</TableCell>
                     <TableCell>RWF {product.price.toFixed(2)}</TableCell>
                     <TableCell>{product.gender}</TableCell>
-                    <TableCell>
+                    <TableCell sx={{ display: "flex" }}>
                       <IconButton onClick={() => handleEdit(product)}>
                         <FaEdit />
                       </IconButton>
