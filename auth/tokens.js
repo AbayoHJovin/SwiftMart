@@ -15,8 +15,10 @@ function sendRefreshToken(res, refreshToken) {
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
     path: "/refresh_token",
-    secure:process.env.NODE_ENV === "production",
-    sameSite:"Strict",
+    secure: process.env.NODE_ENV === "production", // Ensures it's sent only over HTTPS in production
+    sameSite: "None", // None for cross-domain cookies
+    maxAge: 1000 * 60 * 60 * 24 * 7, // Optional: set an expiry of 7 days
   });
 }
+
 module.exports = { createAccessToken, createRefreshToken,sendAccessToken,sendRefreshToken };
