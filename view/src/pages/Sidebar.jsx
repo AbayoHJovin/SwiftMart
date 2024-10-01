@@ -45,7 +45,7 @@ const Sidebar = ({ labels, handleConfirmLogout, isLoggingOut }) => {
   const navigate = useNavigate();
 
   if (isLoggingOut) {
-    return <div>Signing out ...</div>;
+    return <div className="text-lg flex justify-center min-h-screen">Signing out ...</div>;
   }
 
   return (

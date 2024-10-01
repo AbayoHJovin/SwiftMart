@@ -76,7 +76,6 @@ exports.resendOtpCookie = async (req, res) => {
     if (!adminAuth) {
       throw new Error("Unauthorized");
     }
-    // Verify the current token and generate a new one
     const decoded = jwt.verify(adminAuth, process.env.JWT_SECRET);
     const newToken = jwt.sign(
       { isAdmin: decoded.isAdmin },
@@ -91,7 +90,7 @@ exports.resendOtpCookie = async (req, res) => {
       path: "/",
       secure: process.env.NODE_ENV === "production",
       sameSite: "None",
-      maxAge: 1000 * 60 * 60, // 1 hour expiration
+      maxAge: 1000 * 60 * 60,
     });
 
     return res.status(200).json({ message: "Token refreshed successfully" });
@@ -117,3 +116,10 @@ exports.checkAdmin = async (req, res) => {
       .json({ message: e.message || "Error checking admin status" });
   }
 };
+
+
+exports.logOut = (req, res) => {
+    res.clearCookie("adminAuth", { path: "/" });
+    return res.send({ message: "Logged out" });
+  };
+  

@@ -36,7 +36,7 @@ export default function AdminDashboard() {
 
   const handleConfirmLogout = () => {
     setIsLoggingOut(true);
-    fetch(`${apiUrl}/logout`, {
+    fetch(`${apiUrl}/admLogout`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
