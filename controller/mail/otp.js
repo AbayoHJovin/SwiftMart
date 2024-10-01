@@ -22,8 +22,8 @@ exports.generateOtp = async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "homedel.rw@gmail.com",
-        pass: "qsxukogjnpzxpwee",
+        user: process.env.COMPANY_EMAIL,
+        pass: process.env.COMPANY_PASSWORD,
       },
     });
 
@@ -56,11 +56,11 @@ exports.verifyOtp = async (req, res) => {
       httpOnly: true,
       maxAge: 1000 * 60 * 60,
       path: "/",
-        secure: process.env.NODE_ENV === "production", // Only over HTTPS in production
-        sameSite: "None",
-        maxAge: 1000 * 60 * 60, // 1 hour
+      secure: process.env.NODE_ENV === "production", // Only over HTTPS in production
+      sameSite: "None",
+      maxAge: 1000 * 60 * 60, // 1 hour
     });
-    console.log(req.cookies)
+    console.log(req.cookies);
     res.status(200).json({ message: "OTP verified successfully" });
   } catch (error) {
     console.error(error);
@@ -91,7 +91,7 @@ exports.resendOtpCookie = async (req, res) => {
       path: "/",
       secure: process.env.NODE_ENV === "production",
       sameSite: "None",
-      maxAge: 1000 * 60 * 60,  // 1 hour expiration
+      maxAge: 1000 * 60 * 60, // 1 hour expiration
     });
 
     return res.status(200).json({ message: "Token refreshed successfully" });

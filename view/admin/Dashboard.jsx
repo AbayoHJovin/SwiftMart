@@ -13,6 +13,7 @@ import Sidebar from "../src/pages/Sidebar";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Dashboard from "../test/Dash";
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ export default function AdminDashboard() {
       });
   };
   const labels = [
-    { icon: <LayoutDashboard />, text: "Dashboard", value: 1, page: "" },
+    { icon: <LayoutDashboard />, text: "Dashboard", value: 1, page: <Dashboard/> },
     {
       icon: <AiFillProduct />,
       text: "products",

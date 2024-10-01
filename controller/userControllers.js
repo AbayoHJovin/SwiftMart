@@ -1,6 +1,7 @@
 const User = require("../model/Users");
 const bcrypt = require("bcrypt");
 const lodash = require("lodash");
+const axios=require("axios")
 const {
   createAccessToken,
   createRefreshToken,
@@ -12,26 +13,35 @@ require("dotenv").config();
 
 exports.signupUser = async (req, res) => {
   const { username, email, password } = req.body;
+  const verifyEmailUrl = `https://api.zerobounce.net/v2/validate?api_key=${process.env.ZB_API_KEY}&email=${email}`;
   try {
-    if (!username || !email || !password) {
-      throw new Error("Missing credentials");
-    }
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res
+    const verificationResponse = await axios.get(verifyEmailUrl);
+    console.log(verificationResponse.status)
+    const { status } = verificationResponse.data;
+    if(status === "valid"){
+
+      if (!username || !email || !password) {
+        throw new Error("Missing credentials");
+      }
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+        return res
         .status(400)
         .json({ success: false, message: "User already exists" });
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 5);
-    const saveUser = await User.create({
+      }
+      
+      const hashedPassword = await bcrypt.hash(password, 5);
+      const saveUser = await User.create({
       username: username,
       email: email,
       password: hashedPassword,
     });
     res
-      .status(201)
-      .json({ success: true, message: "User created successfully" });
+    .status(201)
+    .json({ success: true, message: "User created successfully" });
+  }else{
+    throw new Error("Invalid email")
+  }
   } catch (err) {
     console.error(err);
     res.status(500).json({
