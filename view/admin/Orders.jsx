@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import useProducts from "../constants/products";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Buffer } from "buffer";
@@ -8,6 +8,7 @@ import { CgTrash } from "react-icons/cg";
 import { toast } from "react-toastify";
 import { apiUrl } from "../src/lib/apis";
 import Loader2 from "../src/components/loader2";
+import { OffersContext } from "../constants/Offers";
 
 const Orders = ({ AdminOptions, currentUser }) => {
   const now = new Date();
@@ -19,20 +20,18 @@ const Orders = ({ AdminOptions, currentUser }) => {
   const [selectedOrder, setSelectedOrder] = useState({});
   const [boughtProducts, setBoughtProducts] = useState([]);
   const { products } = useProducts();
+  const {allOffers,isLoading}=useContext(OffersContext)
   useEffect(() => {
     setLoading(true);
   }, []);
+  useEffect(()=>{
+    if(isLoading){
+      setLoading(true)
+    }
+  },[isLoading])
   useEffect(() => {
     if (!currentUser) {
-      fetch(`${apiUrl}/getOffer`, {
-        method: "GET",
-      })
-        .then((resp) => resp.json())
-        .then((message) => {
-          setOffers(message.message);
-          setLoading(false);
-        })
-        .catch((e) => console.error(e));
+      setOffers(allOffers)
     } else {
       fetch(`${apiUrl}/getOffer?userId=${currentUser}`, {
         method: "GET",
@@ -40,11 +39,11 @@ const Orders = ({ AdminOptions, currentUser }) => {
         .then((resp) => resp.json())
         .then((message) => {
           setOffers(message.message);
-          setLoading(false);
         })
-        .catch((e) => console.error(e));
+        .catch((e) => console.error(e))
+        .finally(()=>setLoading(false))
     }
-  }, [currentUser]);
+  }, [currentUser,allOffers]);
 
   useEffect(() => {
     const todayOrders = offers.filter((order) => order.date === currentDate);
@@ -99,6 +98,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
     return <Loader2 />;
   }
   return (
+    
     <div className="px-5">
       {offers.length == 0 ? (
         <div className="flex justify-center items-center h-screen text-center content-center">

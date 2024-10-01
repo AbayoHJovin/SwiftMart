@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Dashboard from "../test/Dash";
+import Offers from "../constants/Offers";
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ export default function AdminDashboard() {
     async function checkAdminStatus() {
       const response = await fetch(`${apiUrl}/check-admin`, {
         method: "GET",
-        credentials: "include", 
+        credentials: "include",
       });
       const data = await response.json();
       if (data.isAdmin == false) {
@@ -55,7 +56,16 @@ export default function AdminDashboard() {
       });
   };
   const labels = [
-    { icon: <LayoutDashboard />, text: "Dashboard", value: 1, page: <Dashboard/> },
+    {
+      icon: <LayoutDashboard />,
+      text: "Dashboard",
+      value: 1,
+      page: (
+        <Offers>
+          <Dashboard />
+        </Offers>
+      ),
+    },
     {
       icon: <AiFillProduct />,
       text: "products",
@@ -72,7 +82,11 @@ export default function AdminDashboard() {
       icon: <AiOutlineOrderedList />,
       text: "Orders",
       value: 4,
-      page: <Orders AdminOptions={true} />,
+      page: (
+        <Offers>
+          <Orders AdminOptions={true} />
+        </Offers>
+      ),
     },
   ];
   return (

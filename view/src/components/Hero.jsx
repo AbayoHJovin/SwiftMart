@@ -18,12 +18,11 @@ const Hero = () => {
         </p>
 
         <div className="flex justify-center lg:justify-start">
-          <button
-            onClick={() => navigate("/shop")}
-            className="bg-green-900 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300"
-          >
+          <a href="/shop/Both/pants">
+          <button className="bg-green-900 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300">
             Shop Now
           </button>
+          </a>
         </div>
       </div>
       <div className="absolute lg:relative flex justify-center lg:justify-normal mt-5 lg:mt-0">

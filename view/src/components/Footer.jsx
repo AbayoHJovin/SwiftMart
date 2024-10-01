@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {
   FaInstagram,
   FaFacebookF,
@@ -8,12 +8,42 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { CurrentUserContext } from "../../constants/currentUser";
+import { apiUrl } from "../lib/apis";
+import { toast, ToastContainer } from "react-toastify";
+import Loader3 from "./Loading3";
 
 const Footer = () => {
   const navigate = useNavigate();
-  const {isAnAdmin}=useContext(CurrentUserContext)
+  const { isAnAdmin } = useContext(CurrentUserContext);
+  const [email, setEmail] = useState("");
+  const [error, seterror] = useState("");
+  const [loading, setLoading] = useState(false);
+  function handleSubscribe() {
+    if (email == "" || email.trim == "") {
+      seterror("Pleas enter your email");
+      return;
+    }
+    setLoading(true);
+    fetch(`${apiUrl}/addSubscription`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email }),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data.message === "Subscription successful!") {
+          toast.success("Subscription added !");
+        } else {
+          seterror(data.message);
+        }
+      })
+      .catch((e) => console.error("fjdsk", e))
+      .finally(() => setLoading(false));
+  }
+
   return (
     <div>
+      <ToastContainer position="bottom-right" />
       <div className="relative bottom-0 bg-[#D4ECDC] z-0 dark:bg-[#003D3B] text-black dark:text-white py-10 px-5 mt-10 md:px-20 overflow-hidden footer-curved-background">
         <div className="container mx-auto relative z-10 flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col sssm:flex-row sssm:space-x-20 mb-10 md:mb-0">
@@ -110,13 +140,20 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3">
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email Address"
                 className="px-4 py-2 rounded-full border border-gray-300 focus:outline-none w-full md:w-auto"
               />
-              <button className="bg-[#FFD700] text-black px-4 py-2 rounded-full w-full md:w-auto">
-                Subscribe
+
+              <button
+                onClick={handleSubscribe}
+                className="bg-[#04a56d] text-white px-4 text-center py-2 rounded-full w-full md:w-auto"
+              >
+                {loading ? <Loader3 /> : "Subscribe"}
               </button>
             </div>
+            <div className="text-red-500">{error}</div>
             <div className="flex justify-center md:justify-start space-x-3 mt-4">
               <a
                 href="https://instagram.com"
@@ -170,12 +207,11 @@ const Footer = () => {
             <a href="#" className="hover:underline">
               Privacy Policy
             </a>
-            {
-              isAnAdmin ? 
-            <a href="/try/admin/auth" className="hover:underline">
-              admin
-            </a>:null
-            }
+            {isAnAdmin ? (
+              <a href="/try/admin/auth" className="hover:underline">
+                admin
+              </a>
+            ) : null}
           </div>
         </div>
       </div>

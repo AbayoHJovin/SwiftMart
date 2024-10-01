@@ -6,7 +6,7 @@ import { apiUrl } from "../lib/apis";
 
 const PersonalDetails = () => {
   const { theme } = useContext(ThemeContext);
-  const { currentUser } = useContext(CurrentUserContext);
+  const { currentUser,isAnAdmin } = useContext(CurrentUserContext);
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     id: "",
@@ -154,32 +154,36 @@ const PersonalDetails = () => {
         placeholder="Email"
         required
       />
-
-      <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full">
-        {isEditing ? (
-          <>
-            <button
-              onClick={handleSave}
-              className="w-full sm:w-auto px-4 py-2 bg-[#58982e] text-white rounded shadow"
-            >
-              Save
-            </button>
-            <button
-              onClick={handleEditToggle}
-              className="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded shadow"
-            >
-              Cancel
-            </button>
-          </>
-        ) : (
-          <button
-            onClick={handleEditToggle}
-            className="w-full sm:w-auto px-4 py-2 bg-[#58982e] text-white rounded shadow"
-          >
-            Edit
-          </button>
-        )}
-      </div>
+{
+  isAnAdmin ? (null):(
+    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full">
+    {isEditing ? (
+      <>
+        <button
+          onClick={handleSave}
+          className="w-full sm:w-auto px-4 py-2 bg-[#58982e] text-white rounded shadow"
+        >
+          Save
+        </button>
+        <button
+          onClick={handleEditToggle}
+          className="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded shadow"
+        >
+          Cancel
+        </button>
+      </>
+    ) : (
+      <button
+        onClick={handleEditToggle}
+        className="w-full sm:w-auto px-4 py-2 bg-[#58982e] text-white rounded shadow"
+      >
+        Edit
+      </button>
+    )}
+  </div>
+  )
+}
+      
     </div>
   );
 };

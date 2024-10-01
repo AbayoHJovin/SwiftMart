@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
 import { apiUrl } from "../lib/apis";
+import { ArrowUpRight } from "lucide-react";
 
 const SignupForm = () => {
   const [username, setUsername] = useState("");
@@ -56,11 +57,18 @@ const SignupForm = () => {
       <div className="flex min-h-screen">
         {/* Form Section */}
         <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-6 overflow-y-auto">
-          <div className=" p-6 rounded-lg w-full max-w-md">
-            <a
-              className="flex justify-center my-5"
-              href="/"
+          <a href="/">
+            <div
+              className={`flex items-center gap-3 text-gray-700 text-3xl cursor-pointer rounded transition-colors duration-200 absolute top-0 left-0 p-5`}
             >
+              <h1 className="text-lg">Back</h1>
+              <span className="mr-2">
+                <ArrowUpRight />
+              </span>
+            </div>
+          </a>
+          <div className=" p-6 rounded-lg w-full max-w-md">
+            <a className="flex justify-center my-5" href="/">
               <img
                 src="./logo.svg"
                 alt="logo"

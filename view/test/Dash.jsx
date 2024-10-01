@@ -3,7 +3,6 @@ import {
   Clock,
   ShoppingBasket,
   Trash,
-  Users,
 } from "lucide-react";
 import { AiOutlineOrderedList } from "react-icons/ai";
 import { CgShutterstock } from "react-icons/cg";
@@ -20,6 +19,11 @@ import {
   Legend,
 } from "chart.js";
 import Header from "../admin/AdminNav";
+import UseUsers from "../constants/Users";
+import useProducts from "../constants/products";
+import { useContext } from "react";
+import { OffersContext } from "../constants/Offers";
+import Loader3 from "../src/components/Loading3";
 
 // Register Chart.js components
 ChartJS.register(
@@ -32,6 +36,10 @@ ChartJS.register(
 );
 
 export default function Dashboard() {
+  const { users } = UseUsers();
+  const { products, popularProds, loading } = useProducts();
+  const { allOffers, pending, approved, kigali, north, south, east, west } =
+    useContext(OffersContext);
   const sales = [
     {
       name: "Total Sales",
@@ -48,16 +56,16 @@ export default function Dashboard() {
       iconColor: "text-green-500",
     },
     {
-      name: "In Stock",
+      name: "Products in Stock",
       icon: <CgShutterstock />,
-      amount: 7890,
+      amount: products.length,
       bgColor: "bg-yellow-100",
       iconColor: "text-yellow-500",
     },
     {
       name: "Top-Selling Products",
       icon: <FaTrophy />,
-      amount: "12M+",
+      amount: popularProds.length,
       bgColor: "bg-blue-100",
       iconColor: "text-blue-500",
     },
@@ -66,21 +74,21 @@ export default function Dashboard() {
     {
       name: "Total Orders",
       icon: <AiOutlineOrderedList />,
-      amount: 7890,
+      amount: allOffers.length || 0,
       bgColor: "bg-red-100",
       iconColor: "text-red-500",
     },
     {
       name: "Approved Orders",
       icon: <CheckCheckIcon />,
-      amount: "1,000,000",
+      amount: approved.length || 0,
       bgColor: "bg-green-100",
       iconColor: "text-green-500",
     },
     {
       name: "Pending Orders",
       icon: <Clock />,
-      amount: 7890,
+      amount: pending.length || 0,
       bgColor: "bg-yellow-100",
       iconColor: "text-yellow-500",
     },
@@ -93,11 +101,11 @@ export default function Dashboard() {
     },
   ];
   const ordersData = [
-    { province: "Kigali", orders: 250 },
-    { province: "Southern", orders: 150 },
-    { province: "Western", orders: 500 },
-    { province: "Northern", orders: 200 },
-    { province: "Eastern", orders: 10 },
+    { province: "Kigali", orders: kigali.length },
+    { province: "Southern", orders: south.length },
+    { province: "Western", orders: west.length },
+    { province: "Northern", orders: north.length },
+    { province: "Eastern", orders: east.length },
   ];
 
   // Chart data and options
@@ -168,9 +176,13 @@ export default function Dashboard() {
                       <h2 className="text-lg font-semibold text-gray-700">
                         {item.name}
                       </h2>
-                      <p className="text-2xl font-bold text-gray-900">
-                        {item.amount}
-                      </p>
+                      {loading ? (
+                        <Loader3 />
+                      ) : (
+                        <p className="text-2xl font-bold text-gray-900">
+                          {item.amount}
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -193,9 +205,13 @@ export default function Dashboard() {
                       <h2 className="text-lg font-semibold text-gray-700">
                         {item.name}
                       </h2>
-                      <p className="text-2xl font-bold text-gray-900">
-                        {item.amount}
-                      </p>
+                      {loading ? (
+                        <Loader3 />
+                      ) : (
+                        <p className="text-2xl font-bold text-gray-900">
+                          {item.amount}
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -206,7 +222,9 @@ export default function Dashboard() {
         <div className="gap-6 p-6 flex flex-col sm:flex-row justify-center items-center">
           {/* Users Card */}
           <div className="bg-green-200 max-w-sm cursor-pointer w-full p-6 rounded-lg shadow-lg flex flex-col items-center">
-            <h1 className="text-3xl font-bold text-green-800">1.2k</h1>
+            <h1 className="text-3xl font-bold text-green-800">
+              {users.length}
+            </h1>
             <h2 className="text-lg text-green-700">Users</h2>
           </div>
 

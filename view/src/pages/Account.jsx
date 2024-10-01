@@ -14,6 +14,7 @@ import Loader from "../components/loader";
 import Orders from "../../admin/Orders";
 import { CurrentUserContext } from "../../constants/currentUser";
 import { apiUrl } from "../lib/apis";
+import Offers from "../../constants/Offers";
 
 function TabPanel(props) {
   // eslint-disable-next-line react/prop-types
@@ -43,7 +44,7 @@ export default function Account() {
   const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
-const {currentUser}=useContext(CurrentUserContext)
+  const { currentUser } = useContext(CurrentUserContext);
   const handleOpen = () => setModalOpen(true);
   const handleClose = () => setModalOpen(false);
 
@@ -56,7 +57,7 @@ const {currentUser}=useContext(CurrentUserContext)
       .then((response) => response.json())
       .then((data) => {
         if (data.message === "Unauthorized") {
-          console.log("error in viewing account data", data)
+          console.log("error in viewing account data", data);
           setIsSignedIn(false);
         } else if (data.message === "Authorized") {
           setIsSignedIn(true);
@@ -156,7 +157,12 @@ const {currentUser}=useContext(CurrentUserContext)
                 <PersonalDetails />
               </TabPanel>
               <TabPanel value={tabValue} index={1}>
-                <Orders AdminOptions={false} currentUser={currentUser? currentUser._id: null}/>
+                {/* <Offers> */}
+                  <Orders
+                    AdminOptions={false}
+                    currentUser={currentUser ? currentUser._id : null}
+                  />
+                {/* </Offers> */}
               </TabPanel>
               <TabPanel value={tabValue} index={2}>
                 <Typography variant="h6">Security</Typography>

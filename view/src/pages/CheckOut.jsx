@@ -25,6 +25,7 @@ const OrderForm = () => {
     paymentMethod: "",
     termsAccepted: false,
   });
+  const provinces = ["Kigali", "Northern", "Southern", "Eastern", "Western"];
 
   const [productsId, setProductsId] = useState([]);
   const [cost, setCost] = useState("");
@@ -167,10 +168,10 @@ const OrderForm = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen content-center">
-      <Loader3/>
-      <h1 className="text-lg">Placing order</h1>
+        <Loader3 />
+        <h1 className="text-lg">Placing order</h1>
       </div>
-    )
+    );
   }
   return (
     <div className={`${theme == "dark" ? "bg-black" : "bg-white"}`}>
@@ -278,25 +279,39 @@ const OrderForm = () => {
               Delivery Address
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {["Province", "District", "Sector", "Cell", "Village"].map(
-                (field) => (
-                  <div key={field}>
-                    <input
-                      className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
-                      type="text"
-                      placeholder={field}
-                      name={field.toLowerCase()}
-                      value={formData[field.toLowerCase()]}
-                      onChange={handleChange}
-                    />
-                    {formErrors[field.toLowerCase()] && (
-                      <p className="text-red-500">
-                        {formErrors[field.toLowerCase()]}
-                      </p>
-                    )}
-                  </div>
-                )
-              )}
+              <select
+                className="p-3 h-[3.1rem] outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
+                name="province"
+                value={formData.province}
+                onChange={handleChange}
+              >
+                <option value="" disabled>
+                  Select a province
+                </option>
+                {provinces.map((province, index) => (
+                  <option key={index} value={province}>
+                    {province}
+                  </option>
+                ))}
+              </select>
+
+              {["District", "Sector", "Cell", "Village"].map((field) => (
+                <div key={field}>
+                  <input
+                    className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
+                    type="text"
+                    placeholder={field}
+                    name={field.toLowerCase()}
+                    value={formData[field.toLowerCase()]}
+                    onChange={handleChange}
+                  />
+                  {formErrors[field.toLowerCase()] && (
+                    <p className="text-red-500">
+                      {formErrors[field.toLowerCase()]}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
           <div className="mb-8">

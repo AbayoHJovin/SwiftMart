@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { LogOut, SidebarIcon } from "lucide-react";
+import { ArrowUpRight, LogOut, SidebarIcon } from "lucide-react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
@@ -52,12 +52,14 @@ const Sidebar = ({ labels, handleConfirmLogout, isLoggingOut }) => {
     <div>
       {isMobile && (
         <div className="flex xmd:hidden p-3 items-center justify-between px-10">
-          <img
-            onClick={() => navigate("/")}
-            src="/mobileLogo.svg"
-            alt="logo"
-            width={80}
-          />
+          <a href="/">
+            <img
+              onClick={() => navigate("/")}
+              src="/mobileLogo.svg"
+              alt="logo"
+              width={80}
+            />
+          </a>
           <div>
             <AiOutlineMenu
               size={30}
@@ -82,19 +84,23 @@ const Sidebar = ({ labels, handleConfirmLogout, isLoggingOut }) => {
           </div>
 
           {shrink ? (
-            <img
-              onClick={() => navigate("/")}
-              src="/mobileLogo.svg"
-              alt="logo"
-              className="py-12 w-20 cursor-pointer"
-            />
+            <a href="/">
+              <img
+                onClick={() => navigate("/")}
+                src="/mobileLogo.svg"
+                alt="logo"
+                className="py-12 w-20 cursor-pointer"
+              />
+            </a>
           ) : (
-            <img
-              onClick={() => navigate("/")}
-              src="/logo.svg"
-              alt="logo"
-              className="p-12 cursor-pointer"
-            />
+            <a href="/">
+              <img
+                onClick={() => navigate("/")}
+                src="/logo.svg"
+                alt="logo"
+                className="p-12 cursor-pointer"
+              />
+            </a>
           )}
 
           {labels.map((label) => (
@@ -124,6 +130,18 @@ const Sidebar = ({ labels, handleConfirmLogout, isLoggingOut }) => {
             </span>
             {!shrink && <h1 className="text-lg">Logout</h1>}
           </div>
+          <a href="/">
+            <div
+              className={`flex items-center gap-3 hover:bg-green-200 text-gray-700 text-3xl ${
+                shrink ? "my-2 mx-2 px-4 py-3" : "my-2 mx-5 px-20 py-3"
+              } cursor-pointer rounded transition-colors duration-200 absolute bottom-0 left-0 p-5`}
+            >
+              <span className="mr-2">
+                <ArrowUpRight />
+              </span>
+              {!shrink && <h1 className="text-lg">Back</h1>}
+            </div>
+          </a>
         </div>
 
         {isMobile && openDrawer && (

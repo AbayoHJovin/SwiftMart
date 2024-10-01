@@ -11,6 +11,7 @@ import Loader from "../components/loader";
 import { toast } from "react-toastify";
 import { apiUrl } from "../lib/apis";
 import { List, Lock, LogOut, User2 } from "lucide-react";
+import Offers from "../../constants/Offers";
 
 const NewAccount = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -70,10 +71,13 @@ const NewAccount = () => {
       text: "Orders",
       value: 2,
       page: (
+        <Offers>
+
         <Orders
           AdminOptions={false}
           currentUser={currentUser ? currentUser._id : null}
-        />
+          />
+          </Offers>
       ),
     },
     {

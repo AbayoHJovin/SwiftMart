@@ -10,6 +10,7 @@ const tokenRoutes = require("./Routes/tokenRoutes");
 const cookieParser = require("cookie-parser");
 const offerRoutes = require("./Routes/offerRoutes");
 const otpRoutes=require("./Routes/otpRoutes")
+const subscriptionRoutes=require("./Routes/subscriptions")
 require("dotenv").config();
 
 const app = express();
@@ -43,3 +44,4 @@ app.use(cartRoutes);
 app.use(FavRoutes);
 app.use(offerRoutes);
 app.use(otpRoutes);
+app.use(subscriptionRoutes)

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useState, useRef, useEffect } from "react";
 import { FaBell, FaUserAlt, FaSignOutAlt, FaChevronDown } from "react-icons/fa";

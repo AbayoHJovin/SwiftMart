@@ -7,6 +7,7 @@ import { apiUrl } from "../lib/apis";
 import Loader3 from "../components/Loading3";
 import { AdminContext } from "../../constants/AuthorizedAdmin";
 import { CurrentUserContext } from "../../constants/currentUser";
+import { ArrowUpRight } from "lucide-react";
 
 const AdminAuth = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const AdminAuth = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     console.log(isAnAdmin);
-    if (!isLoading && isAnAdmin==false) {
+    if (!isLoading && isAnAdmin == false) {
       navigate("/");
     }
   }, [isAnAdmin, navigate, isLoading]);
@@ -53,7 +54,7 @@ const AdminAuth = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ otp: otpValue }),
-      credentials:"include"
+      credentials: "include",
     })
       .then((response) => response.json())
       .then((message) => {
@@ -144,6 +145,16 @@ const AdminAuth = () => {
               </div>
             )}
           </div>
+          <a href="/">
+          <div
+            className={`flex items-center gap-3 text-gray-700 text-3xl "my-2 mx-5 px-20 py-3" cursor-pointer rounded transition-colors duration-200 absolute bottom-0 left-0 p-5`}
+            >
+            <span className="mr-2">
+              <ArrowUpRight />
+            </span>
+            <h1 className="text-lg">Back</h1>
+          </div>
+              </a>
         </div>
 
         <div className="hidden md:block md:w-1/2 h-screen fixed top-0 right-0">

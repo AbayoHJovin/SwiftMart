@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { apiUrl } from "../lib/apis";
 import Loader3 from "../components/Loading3";
+import { ArrowUpRight } from "lucide-react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -57,6 +58,16 @@ const Login = () => {
         <ToastContainer position="top-left" closeOnClick />
       </div>
       <div className="flex min-h-screen">
+        <a href="/">
+          <div
+            className={`flex items-center gap-3 text-gray-700 text-3xl cursor-pointer rounded transition-colors duration-200 absolute top-0 left-0 p-5`}
+          >
+            <h1 className="text-lg">Back</h1>
+            <span className="mr-2">
+              <ArrowUpRight />
+            </span>
+          </div>
+        </a>
         <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-6 overflow-y-auto">
           <div className="p-6 rounded-lg w-full max-w-md">
             <a className="flex justify-center my-5 cursor-pointer" href="/">
@@ -155,7 +166,6 @@ const Login = () => {
             </h1>
           </div>
         </div>
-
         {/* Fixed Image Section */}
         <div className="hidden md:block md:w-1/2 h-screen fixed top-0 right-0">
           <img
