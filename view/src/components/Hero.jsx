@@ -1,7 +1,4 @@
-import { useNavigate } from "react-router-dom";
-
 const Hero = () => {
-  const navigate = useNavigate();
 
   return (
     <div className="relative flex h-screen p-5 bg-[url('./bg-white.png')] dark:bg-[url('./bg-black.png')]  items-center justify-center bg-cover bg-center text-black font-lato dark:text-white">

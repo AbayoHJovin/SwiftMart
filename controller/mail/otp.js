@@ -56,8 +56,8 @@ exports.verifyOtp = async (req, res) => {
       httpOnly: true,
       maxAge: 1000 * 60 * 60,
       path: "/",
-    //   secure: process.env.NODE_ENV === "production", // Only over HTTPS in production
-    //   sameSite: "None",
+      secure: process.env.NODE_ENV === "production", // Only over HTTPS in production
+      sameSite: "None",
       maxAge: 1000 * 60 * 60, // 1 hour
     });
     console.log(req.cookies);
@@ -89,9 +89,9 @@ exports.resendOtpCookie = async (req, res) => {
     res.cookie("adminAuth", newToken, {
       httpOnly: true,
       path: "/",
-    //   secure: process.env.NODE_ENV === "production",
-    //   sameSite: "None",
-    //   maxAge: 1000 * 60 * 60, // 1 hour expiration
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "None",
+      maxAge: 1000 * 60 * 60, // 1 hour expiration
     });
 
     return res.status(200).json({ message: "Token refreshed successfully" });
