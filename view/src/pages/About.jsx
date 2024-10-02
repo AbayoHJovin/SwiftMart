@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="bg-white dark:bg-black">
       <Navbar />
-      <div className="text-black dark:text-white bg-[url('./bg-white.png')]  [10rem] items-center content-center h-[20rem] px-10">
+      <div className="text-black dark:text-white bg-[url('/bg-white.png')]  [10rem] items-center content-center h-[20rem] px-10">
         <div className="font-extrabold text-[3rem] text-start flex">
           <h1>Discover Our Story!</h1>
         </div>
