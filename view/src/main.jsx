@@ -25,6 +25,7 @@ import OfferComfirmation from "./pages/OfferComfirmation.jsx";
 import AdminAuth from "./pages/AdminAuth.jsx";
 import AuthorizedAdmin from "../constants/AuthorizedAdmin.jsx";
 import Dashboard from "../test/Dash.jsx";
+import CategorySection from "./components/WhatWeSell.jsx";
 
 function App() {
   useEffect(() => {
@@ -137,13 +138,12 @@ const router = createBrowserRouter([
   {
     path: "/try/admin/auth",
     element: (
-
       <AuthorizedAdmin>
         <AdminAuth />
       </AuthorizedAdmin>
     ),
   },
-  {path:"/try",element:<Dashboard/>},
+  { path: "/try", element: <CategorySection /> },
   { path: "*", element: <NotFound /> },
 ]);
 

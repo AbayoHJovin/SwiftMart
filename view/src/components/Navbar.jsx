@@ -53,14 +53,16 @@ export default function Navbar() {
   return (
     <CartItems>
       <nav
-        className={`flex items-center p-4 justify-between px-10 text-black bg-[#dadce0] dark:bg-black dark:text-white lg:px-36 sticky top-0 z-50`}
+        className={`flex items-center  p-4 justify-between px-10 text-black bg-[#dadce0] dark:bg-black dark:text-white lg:px-36 sticky top-0 z-50`}
       >
-        <img
-          onClick={() => navigate("/")}
-          src={isMobile ? "/mobileLogo.svg" : "/logo.svg"}
-          alt="logo"
-          className="h-[4.5rem] w-[10rem] cursor-pointer"
-        />
+        <a href="/">
+          <img
+            onClick={() => navigate("/")}
+            src={isMobile ? "/mobileLogo.svg" : "/logo.svg"}
+            alt="logo"
+            className="h-[4.5rem] w-[10rem] cursor-pointer"
+          />
+        </a>
 
         <div className="hidden sm:flex justify-center items-center">
           <div className="p-2 space-x-7 text-center items-center justify-center flex rounded-full px-5">
@@ -68,7 +70,7 @@ export default function Navbar() {
               <a
                 key={index}
                 href={link.href}
-                className="cursor-pointer hover:text-blue-600"
+                className="cursor-pointer hover:text-green-600"
               >
                 {link.name}
               </a>

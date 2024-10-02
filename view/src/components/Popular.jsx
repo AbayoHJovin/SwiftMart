@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import useProducts from "../../constants/products";
 import { Buffer } from "buffer";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,7 +17,6 @@ import Loader3 from "./Loading3";
 
 const Popular = () => {
   const { products } = useProducts();
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [popularProducts, setPopularProducts] = useState([]);
   const swiperRef = useRef(null);
@@ -45,7 +43,7 @@ const Popular = () => {
   }, []);
 
   return (
-    <div className="text-black dark:text-white font-lato p-2 sm:p-5 my-12 mx-0 sm:mx-5">
+    <div className="text-black dark:text-white font-serif p-2 sm:p-5 my-12 mx-0 sm:mx-5">
       <div className="text-[20px] ssm:text-[30px] text-start sssm:text-center sm:text-[3rem] space-y-2 font-extrabold mb-4">
         <h1>Find innovations</h1>
         <h1>Only here</h1>

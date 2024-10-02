@@ -5,7 +5,7 @@ import { apiUrl } from "../lib/apis";
 import { CurrentUserContext } from "../../constants/currentUser";
 import Loader3 from "./Loading3";
 import { toast, ToastContainer } from "react-toastify";
-import { Modal, Button } from "antd";
+import { Modal} from "antd";
 
 const Password = () => {
   const [isChanging, setIsChanging] = useState(false);

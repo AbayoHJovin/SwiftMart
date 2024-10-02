@@ -4,14 +4,16 @@ import Locations from "../components/Locations";
 import Navbar from "../components/Navbar";
 import Popular from "../components/Popular";
 import Review from "../components/Review";
+import WhatWeSell from "../components/WhatWeSell";
 
 const LandingPage = () => {
   return (
     <div className="gap-5 bg-white dark:bg-black">
       <Navbar />
       <Hero />
-      <Review />
+      <WhatWeSell />
       <Popular />
+      <Review />
       <Locations />
       <Footer />
     </div>

@@ -57,7 +57,7 @@ const ShopNow = () => {
       <FavItems>
         <div className="bg-white dark:bg-black min-h-screen">
           <Navbar />
-          <div className="bg-[url('./bg-white.png')] dark:bg-[url('./bg-black.png')] dark:bg-black flex flex-col md:flex-row items-center justify-around h-auto min-h-[20rem] px-6 md:px-16 py-8 md:py-16 rounded-lg">
+          <div className="bg-[url('/bg-white.png')] dark:bg-black flex flex-col md:flex-row items-center justify-around h-auto min-h-[20rem] px-6 md:px-16 py-8 md:py-16">
             <div className="md:w-1/2 text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-semibold text-black dark:text-white mb-4">
                 Choose a product for a faster delivery

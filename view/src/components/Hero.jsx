@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
-    <div className="relative flex h-screen p-5 bg-[url('./bg-white.png')] dark:bg-[url('./bg-black.png')]  items-center justify-center bg-cover bg-center text-black font-roboto dark:text-white">
-      <div className="absolute inset-0 bg-black opacity-30 dark:bg-gray-900 dark:opacity-50"></div>{" "}
+    <div className="relative flex h-screen p-5 bg-[url('./bg-white.png')] dark:bg-[url('./bg-black.png')]  items-center justify-center bg-cover bg-center text-black font-serif dark:text-white">
+      <div className="absolute inset-0 opacity-30 dark:opacity-50"></div>{" "}
       <div className="relative filter inset-0 lg:inset-auto backdrop-blur-[1px] h-screen md:h-auto z-10 flex flex-col justify-center lg:justify-start text-center lg:text-start max-w-[45rem] space-y-3">
         <h1 className={`font-extrabold text-3xl sm:text-5xl text-white`}>
           IT&apos;S ALL ABOUT FASHION
