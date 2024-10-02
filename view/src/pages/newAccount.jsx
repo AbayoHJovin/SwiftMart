@@ -2,7 +2,6 @@
 import Sidebar from "./Sidebar";
 import PersonalDetails from "../components/PersonalDetails";
 import Orders from "../../admin/Orders";
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../../constants/ThemeContext";
 import { CurrentUserContext } from "../../constants/currentUser";
@@ -12,12 +11,12 @@ import { toast } from "react-toastify";
 import { apiUrl } from "../lib/apis";
 import { List, Lock, LogOut, User2 } from "lucide-react";
 import Offers from "../../constants/Offers";
+import Password from "../components/Password";
 
 const NewAccount = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
   const { currentUser } = useContext(CurrentUserContext);
-  const navigate = useNavigate();
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
 
@@ -54,7 +53,7 @@ const NewAccount = () => {
       .then((data) => {
         if (data.message === "Logged out") {
           localStorage.removeItem("token");
-          navigate("/");
+         window.location.href="/"
         }
       })
       .catch(() => {
@@ -84,12 +83,7 @@ const NewAccount = () => {
       icon: <Lock />,
       text: "Password",
       value: 3,
-      page: (
-        <>
-          <h2>Security</h2>
-          <p>Manage your security settings.</p>
-        </>
-      ),
+      page:<Password/>
     },
   ];
 

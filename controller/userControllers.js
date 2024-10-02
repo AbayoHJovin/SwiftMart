@@ -241,8 +241,50 @@ exports.forgotPassword = async (req, res) => {
     </div>
     `,
     });
-    return res.status(200).json({ message: "Password reset instructions sent to your email" });
+    return res
+      .status(200)
+      .json({ message: "Password reset instructions sent to your email" });
   } catch (e) {
     return res.status(500).json({ error: "Something went wrong" });
+  }
+};
+
+exports.checkOldPassword = async (req, res) => {
+  const { email, password } = req.headers;
+  try {
+    if (!email || !password) {
+      return res.status(401).json({ message: "Missing values" });
+    }
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ message: "Invalid password" });
+    }
+    const isValid = await bcrypt.compare(password, user.password);
+    if (!isValid) {
+      return res.status(401).json({ message: "Invalid password" });
+    }
+    return res.status(200).json({ message: "Password is valid" });
+  } catch (e) {
+    return res.status(401).json({ error: e.message || "Something went wrong" });
+  }
+};
+
+exports.updatePassword = async (req, res) => {
+  const { email, newPassword } = req.body;
+  try {
+    const hashedPassword = await bcrypt.hash(newPassword, 5);
+    const updatedPassword = await User.findOneAndUpdate(
+      { email: email },
+      { password: hashedPassword },
+      { new: true }
+    );
+    if (!updatedPassword) {
+      return res.status(401).json({ message: "Invalid email or password" });
+    }
+    return res.status(200).json({ message: "Password updated successfully" });
+  } catch (e) {
+    return res
+      .status(200)
+      .json({ message: e.message || "Something went wrong" });
   }
 };

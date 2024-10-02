@@ -117,9 +117,7 @@ exports.checkAdmin = async (req, res) => {
   }
 };
 
-
 exports.logOut = (req, res) => {
-    res.clearCookie("adminAuth", { path: "/" });
-    return res.send({ message: "Logged out" });
-  };
-  
+  res.clearCookie("adminAuth", { path: "/" });
+  return res.send({ message: "Logged out" });
+};

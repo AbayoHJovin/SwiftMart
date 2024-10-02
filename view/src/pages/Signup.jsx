@@ -120,6 +120,7 @@ const SignupForm = () => {
                   <input
                     type="password"
                     value={password}
+                    min={8}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
                     className="w-full p-5 bg-[#e6fad9] dark:bg-gray-900 outline-none text-gray-700 dark:text-gray-200"

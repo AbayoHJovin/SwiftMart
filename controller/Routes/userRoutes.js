@@ -7,6 +7,8 @@ const {
   logOut,
   getCurrentUser,
   forgotPassword,
+  checkOldPassword,
+  updatePassword,
 } = require("../userControllers");
 
 const router = express.Router();
@@ -18,5 +20,7 @@ router.patch("/user/update", updateUserDetails);
 router.post("/logout", logOut);
 router.get("/currentUser", getCurrentUser);
 router.patch("/forgotPass",forgotPassword)
+router.get("/checkPassword",checkOldPassword)
+router.patch("/updatePassword",updatePassword)
 
 module.exports = router;

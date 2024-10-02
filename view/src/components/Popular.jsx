@@ -54,7 +54,7 @@ const Popular = () => {
         <h1>Our goal is to supply all new collections</h1>
         <h1> in fashion to you</h1>
         <button
-          onClick={() => navigate("/shop")}
+          onClick={() => (window.location.href = "/shop/Both/pants")}
           className="bg-green-900 text-white my-2 p-3 px-5 rounded-md"
         >
           Shop Now
