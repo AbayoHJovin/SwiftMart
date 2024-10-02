@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
 import { apiUrl } from "../lib/apis";
 import { ArrowUpRight } from "lucide-react";
+import Loader3 from "../components/Loading3";
 
 const SignupForm = () => {
   const [username, setUsername] = useState("");
@@ -12,6 +13,7 @@ const SignupForm = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading,setLoading]=useState(false)
   const navigate = useNavigate();
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -20,6 +22,7 @@ const SignupForm = () => {
       return;
     }
     try {
+      setLoading(true)
       fetch(`${apiUrl}/signup`, {
         method: "POST",
         body: JSON.stringify({ username, email, password }),
@@ -40,7 +43,8 @@ const SignupForm = () => {
             });
           }
         })
-        .catch((e) => toast.error(e));
+        .catch((e) => toast.error(e))
+        .finally(()=>setLoading(false))
     } catch (err) {
       setError("Signup failed. Please try again.");
       console.error(err);
@@ -148,7 +152,7 @@ const SignupForm = () => {
                 type="submit"
                 className="w-full bg-green-800 hover:bg-green-900 text-white font-medium py-2 rounded-md focus:outline-none"
               >
-                Sign Up Now
+               {loading? <Loader3/>:"Sign Up Now"} 
               </button>
             </form>
             <h1 className="text-center text-lg text-black dark:text-white">
