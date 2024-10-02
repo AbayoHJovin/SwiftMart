@@ -15,12 +15,7 @@ require("dotenv").config();
 
 exports.signupUser = async (req, res) => {
   const { username, email, password } = req.body;
-  const verifyEmailUrl = `https://api.zerobounce.net/v2/validate?api_key=${process.env.ZB_API_KEY}&email=${email}`;
   try {
-    const verificationResponse = await axios.get(verifyEmailUrl);
-    console.log(verificationResponse.status);
-    const { status } = verificationResponse.data;
-    if (status === "valid") {
       if (!username || !email || !password) {
         throw new Error("Missing credentials");
       }
@@ -40,9 +35,7 @@ exports.signupUser = async (req, res) => {
       res
         .status(201)
         .json({ success: true, message: "User created successfully" });
-    } else {
-      throw new Error("Invalid email");
-    }
+
   } catch (err) {
     console.error(err);
     res.status(500).json({

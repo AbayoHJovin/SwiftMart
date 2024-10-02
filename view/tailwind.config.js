@@ -17,9 +17,20 @@ export default {
     },
     extend: {
       fontFamily: {
-        lato: ["lato", "sans-serif"],
-        montserrat: ["montserrat", "sans-serif"],
-      },
+        lato: ["Lato", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        openSans: ["Open Sans", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        merriweather: ["Merriweather", "serif"],
+        playfair: ["Playfair Display", "serif"],
+        cormorant: ["Cormorant", "serif"],
+        robotoSlab: ["Roboto Slab", "serif"],
+        arvo: ["Arvo", "serif"],
+        pacifico: ["Pacifico", "cursive"],
+        dancingScript: ["Dancing Script", "cursive"],
+      }
+      
     },
   },
   plugins: [],
