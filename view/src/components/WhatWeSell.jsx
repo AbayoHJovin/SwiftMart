@@ -3,14 +3,14 @@ import { useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const categories = [
-  { name: "Men Pants", icon: <CircleCheck /> },
-  { name: "Shirts", icon: <CircleCheck /> },
-  { name: "T-shirts", icon: <CircleCheck /> },
-  { name: "Shorts", icon: <CircleCheck /> },
-  { name: "Dresses", icon: <CircleCheck /> },
-  { name: "Skirts", icon: <CircleCheck /> },
-  { name: "Hats", icon: <CircleCheck /> },
-  { name: "Watches", icon: <CircleCheck /> },
+  { name: "Pants", icon: <CircleCheck />,href:"/shop/Both/pants" },
+  { name: "Shirts", icon: <CircleCheck />,href:"/shop/Both/shirts" },
+  { name: "T-shirts", icon: <CircleCheck />,href:"/shop/Both/shirts" },
+  { name: "Shorts", icon: <CircleCheck />,href:"/shop/Both/pants" },
+  { name: "Dresses", icon: <CircleCheck />,href:"/shop/Female/pants" },
+  { name: "Skirts", icon: <CircleCheck />,href:"/shop/Female/pants" },
+  { name: "Hats", icon: <CircleCheck />,href:"/shop/Both/hats" },
+  { name: "Watches", icon: <CircleCheck />,href:"/shop/Both/watches" },
 ];
 
 const CategorySection = () => {
@@ -53,14 +53,16 @@ const CategorySection = () => {
             style={{ transform: `translateX(-${currentIndex * 200}px)` }}
           >
             {categories.map((category, index) => (
+                <a href={category.href} key={category.name}>
               <div
                 key={index}
                 className="flex flex-col items-center p-4 border-2 border-gray-200 hover:text-white hover:bg-green-500 cursor-pointer hover:border-none rounded-lg"
                 style={{ minWidth: "200px" }}
-              >
+                >
                 <span className="text-4xl">{category.icon}</span>
                 <p className="mt-2 text-lg">{category.name}</p>
               </div>
+                  </a>
             ))}
           </div>
         </div>
