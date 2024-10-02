@@ -11,6 +11,7 @@ const categories = [
   { name: "Skirts", icon: <CircleCheck />,href:"/shop/Female/pants" },
   { name: "Hats", icon: <CircleCheck />,href:"/shop/Both/hats" },
   { name: "Watches", icon: <CircleCheck />,href:"/shop/Both/watches" },
+  { name: "Shoes", icon: <CircleCheck />,href:"/shop/Both/shoes" },
 ];
 
 const CategorySection = () => {
