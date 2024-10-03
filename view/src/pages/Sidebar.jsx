@@ -59,7 +59,7 @@ const Sidebar = ({
   }
 
   return (
-    <div className="">
+    <div className="z-40">
       {isMobile && (
         <div className="flex xmd:hidden p-3 items-center justify-between px-10">
           <a href="/">
@@ -132,7 +132,7 @@ const Sidebar = ({
 
           <div
             onClick={openModal}
-            className={`flex items-center hover:bg-green-700 text-gray-700 dark:text-gray-200 hover:text-gray-800 text-3xl ${
+            className={`flex items-center hover:bg-green-200 dark:hover:bg-green-700 text-gray-700 dark:text-gray-200 hover:text-gray-800 text-3xl ${
               shrink ? "my-2 mx-2 px-4 py-3" : "my-2 mx-5 px-20 py-3"
             } cursor-pointer rounded transition-colors duration-200`}
           >
@@ -143,7 +143,7 @@ const Sidebar = ({
           </div>
           <a href="/">
             <div
-              className={`flex items-center gap-3 hover:bg-green-700 text-gray-700 dark:text-gray-200 hover:text-gray-800 text-3xl ${
+              className={`flex items-center gap-3 hover:bg-green-200 dark:hover:bg-green-700 text-gray-700 dark:text-gray-200 hover:text-gray-800 text-3xl ${
                 shrink ? "my-2 mx-2 px-4 py-3" : "my-2 mx-5 px-20 py-3"
               } cursor-pointer rounded transition-colors duration-200 absolute bottom-0 left-0 p-5`}
             >

@@ -1,20 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { FaRegMoon, FaSearch, FaSun } from "react-icons/fa";
+import { FaSearch, FaSun } from "react-icons/fa";
 import { CgClose, CgShoppingCart } from "react-icons/cg";
 import { Drawer, List, ListItem, Badge } from "@mui/material"; // Add Badge for displaying the cart count
-import { ThemeContext } from "../../constants/ThemeContext";
 import CartItems, { CartContext } from "../../constants/cartItems"; // Import CartContext
 import Search from "./searchComponent";
-import { Moon, SearchIcon, ShoppingCart, Sun, UserPlus } from "lucide-react";
+import { SearchIcon, ShoppingCart, UserPlus } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../../constants/ThemeContext";
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { itemsOnCart } = useContext(CartContext);
-  const { theme, toggleTheme } = useContext(ThemeContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const {theme}=useContext(ThemeContext)
 
   useEffect(() => {
     function handleResize() {
@@ -83,12 +83,6 @@ export default function Navbar() {
             onClick={() => setIsModalVisible(true)}
             className="cursor-pointer"
           />
-          {theme === "dark" ? (
-            <Sun onClick={toggleTheme} className="cursor-pointer" />
-          ) : (
-            <Moon onClick={toggleTheme} className="cursor-pointer" />
-          )}
-
           <a href="/cart" className="relative">
             <Badge
               badgeContent={itemsOnCart.length > 0 ? itemsOnCart.length : 0}
@@ -108,11 +102,7 @@ export default function Navbar() {
 
         <div className="block sm:hidden">
           <div className="flex items-center space-x-4">
-            {theme === "dark" ? (
-              <FaSun onClick={toggleTheme} />
-            ) : (
-              <FaRegMoon onClick={toggleTheme} />
-            )}
+
             <AiOutlineMenu
               className="mr-2 visible sm:hidden"
               onClick={toggleDrawer(true)}
