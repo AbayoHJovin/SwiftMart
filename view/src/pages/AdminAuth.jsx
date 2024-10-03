@@ -60,7 +60,7 @@ const AdminAuth = () => {
       .then((message) => {
         if (message.message == "OTP verified successfully") {
           setIsAdminLoggedIn(true);
-          navigate("/authorized/Admin");
+          window.location.href="/authorized/Admin/dashboard";
         } else {
           toast.error("Invalid OTP", {
             style: { backgroundColor: "red", color: "white" },

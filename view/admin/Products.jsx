@@ -173,15 +173,8 @@ export default function ProductTable() {
       .catch((e) => console.error(e));
   }
   return (
-    <Box sx={{ p: 3 }}>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          justifyContent: "space-between",
-          mb: 2,
-        }}
-      >
+    <div>
+      <div className="flex flex-col sm:flex-row justify-between mb-2 sticky top-0 bg-gray-100 p-5">
         <input
           type="search"
           value={searchTerm}
@@ -198,221 +191,239 @@ export default function ProductTable() {
         >
           Add Product
         </button>
-      </Box>
-      <Box
-        sx={{ overflowX: "auto", "&::-webkit-scrollbar": { height: "8px" } }}
-      >
-        <TableContainer component={Paper} sx={{ minWidth: "600px" }}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>Image</TableCell>
-                <TableCell>Name</TableCell>
-                <TableCell>Description</TableCell>
-                <TableCell>Category</TableCell>
-                <TableCell>Stock</TableCell>
-                <TableCell>Sold</TableCell>
-                <TableCell>Price</TableCell>
-                <TableCell>Gender</TableCell>
-                <TableCell>Actions</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {loading ? (
-                <Loader />
-              ) : filteredProducts.length > 0 ? (
-                filteredProducts.map((product) => (
-                  <TableRow key={product._id}>
-                    <TableCell>
-                      <img
-                        src={`data:${
-                          product.image.contentType
-                        };base64,${Buffer.from(product.image.data).toString(
-                          "base64"
-                        )}`}
-                        alt={product.name}
-                        style={{ width: "50px", height: "50px" }}
-                      />
-                    </TableCell>
-                    <TableCell>{product.name}</TableCell>
-                    <TableCell>{product.description}</TableCell>
-                    <TableCell>{product.category}</TableCell>
-                    <TableCell>{product.stock}</TableCell>
-                    <TableCell>{product.sold}</TableCell>
-                    <TableCell>RWF {product.price.toFixed(2)}</TableCell>
-                    <TableCell>{product.gender}</TableCell>
-                    <TableCell sx={{ display: "flex" }}>
-                      <IconButton onClick={() => handleEdit(product)}>
-                        <FaEdit />
-                      </IconButton>
-                      <IconButton onClick={() => handleDelete(product._id)}>
-                        <FaTrashAlt />
-                      </IconButton>
-                      {product.popular ? (
-                        <IconButton
-                          title="remove from pupular products"
-                          onClick={() => handleAddToPopular(product._id, false)}
-                        >
-                          <CgMathMinus />
+      </div>
+      <Box sx={{ p: 3 }}>
+        {/* <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          justifyContent: "space-between",
+          mb: 2,
+          position: "sticky",
+          top: 3,
+
+        }}
+      > */}
+        {/* </Box> */}
+        <Box
+          sx={{ overflowX: "auto", "&::-webkit-scrollbar": { height: "8px" } }}
+        >
+          <TableContainer component={Paper} sx={{ minWidth: "600px" }}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Image</TableCell>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Description</TableCell>
+                  <TableCell>Category</TableCell>
+                  <TableCell>Stock</TableCell>
+                  <TableCell>Sold</TableCell>
+                  <TableCell>Price</TableCell>
+                  <TableCell>Gender</TableCell>
+                  <TableCell>Actions</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {loading ? (
+                  <Loader />
+                ) : filteredProducts.length > 0 ? (
+                  filteredProducts.map((product) => (
+                    <TableRow key={product._id}>
+                      <TableCell>
+                        <img
+                          src={`data:${
+                            product.image.contentType
+                          };base64,${Buffer.from(product.image.data).toString(
+                            "base64"
+                          )}`}
+                          alt={product.name}
+                          style={{ width: "50px", height: "50px" }}
+                        />
+                      </TableCell>
+                      <TableCell>{product.name}</TableCell>
+                      <TableCell>{product.description}</TableCell>
+                      <TableCell>{product.category}</TableCell>
+                      <TableCell>{product.stock}</TableCell>
+                      <TableCell>{product.sold}</TableCell>
+                      <TableCell>RWF {product.price.toFixed(2)}</TableCell>
+                      <TableCell>{product.gender}</TableCell>
+                      <TableCell sx={{ display: "flex" }}>
+                        <IconButton onClick={() => handleEdit(product)}>
+                          <FaEdit />
                         </IconButton>
-                      ) : (
-                        <IconButton
-                          title="Add to pupular products"
-                          onClick={() => handleAddToPopular(product._id, true)}
-                        >
-                          <CgAdd />
+                        <IconButton onClick={() => handleDelete(product._id)}>
+                          <FaTrashAlt />
                         </IconButton>
-                      )}
+                        {product.popular ? (
+                          <IconButton
+                            title="remove from pupular products"
+                            onClick={() =>
+                              handleAddToPopular(product._id, false)
+                            }
+                          >
+                            <CgMathMinus />
+                          </IconButton>
+                        ) : (
+                          <IconButton
+                            title="Add to pupular products"
+                            onClick={() =>
+                              handleAddToPopular(product._id, true)
+                            }
+                          >
+                            <CgAdd />
+                          </IconButton>
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell colSpan={7} align="center">
+                      <Loader />
                     </TableCell>
                   </TableRow>
-                ))
-              ) : (
-                <TableRow>
-                  <TableCell colSpan={7} align="center">
-                    <Loader />
-                  </TableCell>
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Box>
-
-      {/* Product Modal */}
-      <Modal open={openModal} onClose={handleCloseModal}>
-        <Box sx={{ ...modalStyle, width: { xs: "90%", sm: 400 } }}>
-          <TextField
-            label="Name"
-            value={selectedProduct.name}
-            onChange={(e) =>
-              setSelectedProduct({ ...selectedProduct, name: e.target.value })
-            }
-            fullWidth
-            margin="normal"
-          />
-          <TextField
-            label="Description"
-            value={selectedProduct.description}
-            onChange={(e) =>
-              setSelectedProduct({
-                ...selectedProduct,
-                description: e.target.value,
-              })
-            }
-            fullWidth
-            margin="normal"
-          />
-          <TextField
-            type="number"
-            label="Stock"
-            value={selectedProduct.stock}
-            onChange={(e) =>
-              setSelectedProduct({
-                ...selectedProduct,
-                stock: e.target.value,
-              })
-            }
-            fullWidth
-            margin="normal"
-          />
-          <TextField
-            type="number"
-            label="Sold"
-            value={selectedProduct.sold}
-            onChange={(e) =>
-              setSelectedProduct({
-                ...selectedProduct,
-                sold: e.target.value,
-              })
-            }
-            fullWidth
-            margin="normal"
-          />
-          <TextField
-            type="number"
-            label="Price(RWF)"
-            value={selectedProduct.price}
-            onChange={(e) =>
-              setSelectedProduct({
-                ...selectedProduct,
-                price: e.target.value,
-              })
-            }
-            fullWidth
-            margin="normal"
-          />
-
-          <FormControl fullWidth margin="normal">
-            <InputLabel>Gender</InputLabel>
-            <Select
-              value={selectedProduct.gender}
-              onChange={(e) =>
-                setSelectedProduct({
-                  ...selectedProduct,
-                  gender: e.target.value,
-                })
-              }
-            >
-              {genders.map((gender) => (
-                <MenuItem key={gender} value={gender}>
-                  {gender}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-
-          <FormControl fullWidth margin="normal">
-            <InputLabel>Category</InputLabel>
-            <Select
-              value={selectedProduct.category}
-              onChange={(e) =>
-                setSelectedProduct({
-                  ...selectedProduct,
-                  category: e.target.value,
-                })
-              }
-            >
-              {categories.map((category) => (
-                <MenuItem key={category} value={category}>
-                  {category}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-
-          <Button
-            variant="contained"
-            component="label"
-            fullWidth
-            margin="normal"
-            sx={{ mt: 2 }}
-          >
-            Upload Image
-            <input
-              type="file"
-              hidden
-              accept="image/*"
-              onChange={handleImageChange}
-            />
-          </Button>
-          {preview && (
-            <Box sx={{ mt: 2, textAlign: "center" }}>
-              <img
-                src={preview}
-                alt="preview"
-                style={{ maxWidth: "100%", maxHeight: "200px" }}
-              />
-            </Box>
-          )}
-
-          <Box sx={{ mt: 3, textAlign: "center" }}>
-            <Button variant="contained" color="primary" onClick={handleSave}>
-              Save
-            </Button>
-          </Box>
+                )}
+              </TableBody>
+            </Table>
+          </TableContainer>
         </Box>
-      </Modal>
-    </Box>
+
+        {/* Product Modal */}
+        <Modal open={openModal} onClose={handleCloseModal}>
+          <Box sx={{ ...modalStyle, width: { xs: "90%", sm: 400 } }}>
+            <TextField
+              label="Name"
+              value={selectedProduct.name}
+              onChange={(e) =>
+                setSelectedProduct({ ...selectedProduct, name: e.target.value })
+              }
+              fullWidth
+              margin="normal"
+            />
+            <TextField
+              label="Description"
+              value={selectedProduct.description}
+              onChange={(e) =>
+                setSelectedProduct({
+                  ...selectedProduct,
+                  description: e.target.value,
+                })
+              }
+              fullWidth
+              margin="normal"
+            />
+            <TextField
+              type="number"
+              label="Stock"
+              value={selectedProduct.stock}
+              onChange={(e) =>
+                setSelectedProduct({
+                  ...selectedProduct,
+                  stock: e.target.value,
+                })
+              }
+              fullWidth
+              margin="normal"
+            />
+            <TextField
+              type="number"
+              label="Sold"
+              value={selectedProduct.sold}
+              onChange={(e) =>
+                setSelectedProduct({
+                  ...selectedProduct,
+                  sold: e.target.value,
+                })
+              }
+              fullWidth
+              margin="normal"
+            />
+            <TextField
+              type="number"
+              label="Price(RWF)"
+              value={selectedProduct.price}
+              onChange={(e) =>
+                setSelectedProduct({
+                  ...selectedProduct,
+                  price: e.target.value,
+                })
+              }
+              fullWidth
+              margin="normal"
+            />
+
+            <FormControl fullWidth margin="normal">
+              <InputLabel>Gender</InputLabel>
+              <Select
+                value={selectedProduct.gender}
+                onChange={(e) =>
+                  setSelectedProduct({
+                    ...selectedProduct,
+                    gender: e.target.value,
+                  })
+                }
+              >
+                {genders.map((gender) => (
+                  <MenuItem key={gender} value={gender}>
+                    {gender}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+
+            <FormControl fullWidth margin="normal">
+              <InputLabel>Category</InputLabel>
+              <Select
+                value={selectedProduct.category}
+                onChange={(e) =>
+                  setSelectedProduct({
+                    ...selectedProduct,
+                    category: e.target.value,
+                  })
+                }
+              >
+                {categories.map((category) => (
+                  <MenuItem key={category} value={category}>
+                    {category}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+
+            <Button
+              variant="contained"
+              component="label"
+              fullWidth
+              margin="normal"
+              sx={{ mt: 2 }}
+            >
+              Upload Image
+              <input
+                type="file"
+                hidden
+                accept="image/*"
+                onChange={handleImageChange}
+              />
+            </Button>
+            {preview && (
+              <Box sx={{ mt: 2, textAlign: "center" }}>
+                <img
+                  src={preview}
+                  alt="preview"
+                  style={{ maxWidth: "100%", maxHeight: "200px" }}
+                />
+              </Box>
+            )}
+
+            <Box sx={{ mt: 3, textAlign: "center" }}>
+              <Button variant="contained" color="primary" onClick={handleSave}>
+                Save
+              </Button>
+            </Box>
+          </Box>
+        </Modal>
+      </Box>
+    </div>
   );
 }
 

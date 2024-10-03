@@ -20,18 +20,18 @@ const Orders = ({ AdminOptions, currentUser }) => {
   const [selectedOrder, setSelectedOrder] = useState({});
   const [boughtProducts, setBoughtProducts] = useState([]);
   const { products } = useProducts();
-  const {allOffers,isLoading}=useContext(OffersContext)
+  const { allOffers, isLoading } = useContext(OffersContext);
   useEffect(() => {
     setLoading(true);
   }, []);
-  useEffect(()=>{
-    if(isLoading){
-      setLoading(true)
+  useEffect(() => {
+    if (isLoading) {
+      setLoading(true);
     }
-  },[isLoading])
+  }, [isLoading]);
   useEffect(() => {
     if (!currentUser) {
-      setOffers(allOffers)
+      setOffers(allOffers);
     } else {
       fetch(`${apiUrl}/getOffer?userId=${currentUser}`, {
         method: "GET",
@@ -41,9 +41,9 @@ const Orders = ({ AdminOptions, currentUser }) => {
           setOffers(message.message);
         })
         .catch((e) => console.error(e))
-        .finally(()=>setLoading(false))
+        .finally(() => setLoading(false));
     }
-  }, [currentUser,allOffers]);
+  }, [currentUser, allOffers]);
 
   useEffect(() => {
     const todayOrders = offers.filter((order) => order.date === currentDate);
@@ -98,8 +98,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
     return <Loader2 />;
   }
   return (
-    
-    <div className="px-5">
+    <div className="px-5 text-black dark:text-white">
       {offers.length == 0 ? (
         <div className="flex justify-center items-center h-screen text-center content-center">
           <h1>No orders found</h1>

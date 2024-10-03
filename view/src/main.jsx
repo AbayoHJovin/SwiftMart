@@ -25,6 +25,7 @@ import OfferComfirmation from "./pages/OfferComfirmation.jsx";
 import AdminAuth from "./pages/AdminAuth.jsx";
 import AuthorizedAdmin from "../constants/AuthorizedAdmin.jsx";
 import CategorySection from "./components/WhatWeSell.jsx";
+import FavItems from "../constants/favItems.jsx";
 
 function App() {
   useEffect(() => {
@@ -85,7 +86,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/authorized/Admin",
+    path: "/authorized/Admin/:option",
     element: (
       <AuthorizedAdmin>
         <AdminDashboard />
@@ -93,10 +94,12 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/account",
+    path: "/account/:option",
     element: (
       <CartItems>
-        <NewAccount />
+        <FavItems>
+          <NewAccount />
+        </FavItems>
       </CartItems>
     ),
   },

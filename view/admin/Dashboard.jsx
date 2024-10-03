@@ -11,7 +11,7 @@ import {
 } from "react-icons/ai";
 import Sidebar from "../src/pages/Sidebar";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Dashboard from "../test/Dash";
 import Offers from "../constants/Offers";
@@ -19,7 +19,11 @@ import Offers from "../constants/Offers";
 export default function AdminDashboard() {
   const navigate = useNavigate();
   const [isLoggingOut, setIsLoggingOut] = useState(false);
-
+  const { option } = useParams();
+  const [bar, setBar] = useState(option || "dashboard");
+  useEffect(() => {
+    setBar(option || "dashboard");
+  }, [option]);
   useEffect(() => {
     async function checkAdminStatus() {
       const response = await fetch(`${apiUrl}/check-admin`, {
@@ -59,7 +63,7 @@ export default function AdminDashboard() {
     {
       icon: <LayoutDashboard />,
       text: "Dashboard",
-      value: 1,
+      value: "dashboard",
       page: (
         <Offers>
           <Dashboard />
@@ -69,19 +73,19 @@ export default function AdminDashboard() {
     {
       icon: <AiFillProduct />,
       text: "products",
-      value: 2,
+      value: "products",
       page: <ProductTable />,
     },
     {
       icon: <AiFillLike />,
       text: "P.Products",
-      value: 3,
+      value: "popularproducts",
       page: <PopularProds />,
     },
     {
       icon: <AiOutlineOrderedList />,
       text: "Orders",
-      value: 4,
+      value: "orders",
       page: (
         <Offers>
           <Orders AdminOptions={true} />
@@ -94,6 +98,11 @@ export default function AdminDashboard() {
       labels={labels}
       handleConfirmLogout={handleConfirmLogout}
       isLoggingOut={isLoggingOut}
+      activeTab={bar}
+      onTabChange={(newTab) => {
+        setBar(newTab);
+        window.location.href = `/authorized/Admin/${newTab}`;
+      }}
     />
   );
 }

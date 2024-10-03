@@ -37,7 +37,7 @@ export default function Navbar() {
     { name: "About", href: "/about" },
     { name: "Shop", href: "/shop/Both/pants" },
     { name: "Contacts", href: "/contacts" },
-    { name: "Account", href: "/account" },
+    { name: "Account", href: "/account/account" },
   ];
 
   const toggleDrawer = (open) => (event) => {

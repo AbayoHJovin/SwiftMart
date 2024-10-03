@@ -5,7 +5,7 @@ import { apiUrl } from "../lib/apis";
 import { CurrentUserContext } from "../../constants/currentUser";
 import Loader3 from "./Loading3";
 import { toast, ToastContainer } from "react-toastify";
-import { Modal} from "antd";
+import { Modal } from "antd";
 
 const Password = () => {
   const [isChanging, setIsChanging] = useState(false);
@@ -147,7 +147,7 @@ const Password = () => {
                         value={oldPassword}
                         onChange={(e) => setOldPassword(e.target.value)}
                         placeholder="Enter old password"
-                        className=" dark:bg-gray-900  w-full bg-[#e6fad9] outline-none text-gray-700 dark:text-gray-200"
+                        className=" w-full bg-[#e6fad9] outline-none text-gray-700 "
                         required
                       />
                       <button

@@ -9,9 +9,11 @@ import LogoutModal from "./logout";
 import Loader from "../components/loader";
 import { toast } from "react-toastify";
 import { apiUrl } from "../lib/apis";
-import { List, Lock, LogOut, User2 } from "lucide-react";
+import { Heart, List, Lock, LogOut, User2 } from "lucide-react";
 import Offers from "../../constants/Offers";
 import Password from "../components/Password";
+import { useNavigate, useParams } from "react-router-dom";
+import FavProducts from "../components/Favourites";
 
 const NewAccount = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -19,6 +21,11 @@ const NewAccount = () => {
   const { currentUser } = useContext(CurrentUserContext);
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const { option } = useParams();
+  const [bar, setBar] = useState(option || "personal");
+  useEffect(() => {
+    setBar(option || "personal");
+  }, [option]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -53,7 +60,7 @@ const NewAccount = () => {
       .then((data) => {
         if (data.message === "Logged out") {
           localStorage.removeItem("token");
-         window.location.href="/"
+          window.location.href = "/";
         }
       })
       .catch(() => {
@@ -64,36 +71,50 @@ const NewAccount = () => {
       });
   };
   const labels = [
-    { icon: <User2 />, text: "Account", value: 1, page: <PersonalDetails /> },
+    {
+      icon: <User2 />,
+      text: "Account",
+      value: "account",
+      page: <PersonalDetails />,
+    },
     {
       icon: <List />,
       text: "Orders",
-      value: 2,
+      value: "orders",
       page: (
         <Offers>
-
-        <Orders
-          AdminOptions={false}
-          currentUser={currentUser ? currentUser._id : null}
+          <Orders
+            AdminOptions={false}
+            currentUser={currentUser ? currentUser._id : null}
           />
-          </Offers>
+        </Offers>
       ),
     },
     {
       icon: <Lock />,
       text: "Password",
-      value: 3,
-      page:<Password/>
+      value: "password",
+      page: <Password />,
     },
+    {
+      icon:<Heart/>,
+      text:"Wishlist",
+      value:"wishlist",
+      page:<FavProducts/>
+    }
   ];
-
   return (
-    <div className={`bg-gray-200 dark:bg-black`}>
+    <div className="bg-gray-200 dark:bg-black">
       {isSignedIn ? (
         <Sidebar
           labels={labels}
           handleConfirmLogout={handleConfirmLogout}
           isLoggingOut={isLoggingOut}
+          activeTab={bar}
+          onTabChange={(newTab) => {
+            setBar(newTab);
+            window.location.href=`/account/${newTab}`;
+          }}
         />
       ) : (
         <div className="flex justify-center items-center min-h-screen text-black dark:text-white p-5">

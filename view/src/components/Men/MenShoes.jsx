@@ -26,7 +26,9 @@ const MenShoes = () => {
   const totalPages = Math.ceil(Menshoes.length / productsPerPage);
   useEffect(() => {
     const menProducts = products.filter(
-      (prod) => prod.gender == "Male" && prod.category == "shoes"
+      (prod) => prod.gender == "Male" && prod.category == "shoes" ||
+      (prod.gender === "Both" && prod.category === "shoes")
+
     );
     setMenshoes(menProducts);
 

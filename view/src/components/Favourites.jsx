@@ -79,14 +79,17 @@ const FavProducts = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center">
+      <div className="flex min-h-screen items-center text-center size-10  justify-center">
         <Loader3 />
       </div>
     );
   }
 
   return (
-    <div>
+    <div className="p-5">
+      <div className="font-roboto text-black dark:text-white font-bold text-2xl m-5">
+        <h1>User Wishlist</h1>
+      </div>
       {Favprods.length > 0 ? (
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -117,7 +120,7 @@ const FavProducts = () => {
             })}
           </div>
           <div className="flex justify-center items-center">
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center text-red-500">
               <Stack spacing={2} className="mt-5">
                 <Pagination
                   count={totalPages}
@@ -146,13 +149,15 @@ const FavProducts = () => {
           </div>
         </div>
       ) : (
-        <div className="text-black font-bold text-lg flex flex-col items-center justify-center dark:text-white">
+        <div className="text-black min-h-screen font-bold text-lg flex flex-col items-center justify-center dark:text-white">
           <img
             src="/noData.png"
             alt="No Data"
             className="w-[10rem] h-[10rem] rounded-md my-3"
           />
-          <h1>No products available</h1>
+          <h1 className="font-montserrat">
+            No products available on your wishlist
+          </h1>
         </div>
       )}
     </div>

@@ -5,8 +5,14 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 
-const Sidebar = ({ labels, handleConfirmLogout, isLoggingOut }) => {
-  const [tabValue, setTabValue] = useState(1);
+const Sidebar = ({
+  labels,
+  handleConfirmLogout,
+  isLoggingOut,
+  activeTab,
+  onTabChange,
+}) => {
+  // const [tabValue, setTabValue] = useState(1);
   const [shrink, setShrink] = useState(false);
   const [currentLabel, setCurrentLabel] = useState(null);
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -38,18 +44,22 @@ const Sidebar = ({ labels, handleConfirmLogout, isLoggingOut }) => {
   };
 
   useEffect(() => {
-    const selectedLabel = labels.find((item) => item.value === tabValue);
+    const selectedLabel = labels.find((item) => item.value === activeTab);
     setCurrentLabel(selectedLabel || null);
-  }, [labels, tabValue]);
+  }, [labels, activeTab]);
 
   const navigate = useNavigate();
 
   if (isLoggingOut) {
-    return <div className="text-lg flex justify-center tex-center min-h-screen">Signing out ...</div>;
+    return (
+      <div className="text-lg flex justify-center tex-center min-h-screen">
+        Signing out ...
+      </div>
+    );
   }
 
   return (
-    <div>
+    <div className="">
       {isMobile && (
         <div className="flex xmd:hidden p-3 items-center justify-between px-10">
           <a href="/">
@@ -72,7 +82,7 @@ const Sidebar = ({ labels, handleConfirmLogout, isLoggingOut }) => {
 
       <div className="bg-gray-50 flex">
         <div
-          className={`bg-white fixed h-screen z-30 xmd:relative xmd:translate-x-0 xmd:flex flex-col top-0 left-0 transform transition-all duration-300 ease-in-out ${
+          className={`bg-white dark:bg-[#424447]  fixed h-screen z-30 xmd:relative xmd:translate-x-0 xmd:flex flex-col top-0 left-0 transform transition-all duration-300 ease-in-out ${
             openDrawer ? "translate-x-0" : "-translate-x-full"
           } ${shrink ? "w-20" : "w-72"} ${isMobile ? "absolute" : "relative"}`}
         >
@@ -80,7 +90,7 @@ const Sidebar = ({ labels, handleConfirmLogout, isLoggingOut }) => {
             onClick={triggerShrink}
             className="w-full flex justify-end p-5 cursor-pointer"
           >
-            <SidebarIcon className="flex justify-end" />
+            <SidebarIcon className="flex justify-end text-black dark:text-white" />
           </div>
 
           {shrink ? (
@@ -106,22 +116,23 @@ const Sidebar = ({ labels, handleConfirmLogout, isLoggingOut }) => {
           {labels.map((label) => (
             <div
               key={label.value}
-              onClick={() => setTabValue(label.value)}
+              onClick={() => onTabChange(label.value)}
               className={`flex items-center ${
-                tabValue === label.value
-                  ? "bg-green-200 border-l-4 border-green-800"
-                  : "bg-transparent"
-              } hover:bg-green-200 text-gray-700 text-3xl ${
+                activeTab === label.value
+                  ? "bg-green-200 dark:bg-green-700 border-l-4 text-gray-700 dark:text-gray-200 border-green-800 dark:border-green-500"
+                  : "bg-transparent dark:bg-transparent"
+              } hover:bg-green-200 dark:hover:bg-green-700 text-3xl ${
                 shrink ? "my-2 mx-2 px-4 py-3" : "my-2 mx-5 px-20 py-3"
-              } cursor-pointer rounded transition-colors duration-200`}
+              } text-gray-700 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-100 cursor-pointer rounded transition-colors duration-200`}
             >
               <span className="mr-2">{label.icon}</span>
               {!shrink && <h1 className="text-lg">{label.text}</h1>}
             </div>
           ))}
+
           <div
             onClick={openModal}
-            className={`flex items-center hover:bg-green-200 text-gray-700 text-3xl ${
+            className={`flex items-center hover:bg-green-700 text-gray-700 dark:text-gray-200 hover:text-gray-800 text-3xl ${
               shrink ? "my-2 mx-2 px-4 py-3" : "my-2 mx-5 px-20 py-3"
             } cursor-pointer rounded transition-colors duration-200`}
           >
@@ -132,7 +143,7 @@ const Sidebar = ({ labels, handleConfirmLogout, isLoggingOut }) => {
           </div>
           <a href="/">
             <div
-              className={`flex items-center gap-3 hover:bg-green-200 text-gray-700 text-3xl ${
+              className={`flex items-center gap-3 hover:bg-green-700 text-gray-700 dark:text-gray-200 hover:text-gray-800 text-3xl ${
                 shrink ? "my-2 mx-2 px-4 py-3" : "my-2 mx-5 px-20 py-3"
               } cursor-pointer rounded transition-colors duration-200 absolute bottom-0 left-0 p-5`}
             >
@@ -151,7 +162,7 @@ const Sidebar = ({ labels, handleConfirmLogout, isLoggingOut }) => {
           ></div>
         )}
 
-        <div className="flex-1 overflow-y-scroll h-screen">
+        <div className="flex-1 overflow-y-scroll h-screen bg-white dark:bg-black">
           {currentLabel?.page}
         </div>
       </div>

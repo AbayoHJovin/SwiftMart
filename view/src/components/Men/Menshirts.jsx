@@ -26,8 +26,11 @@ const MenShirts = () => {
   const totalPages = Math.ceil(Menshirts.length / productsPerPage);
   useEffect(() => {
     const menProducts = products.filter(
-      (prod) => prod.gender == "Male" && prod.category == "shirts"
+      (prod) =>
+        (prod.gender === "Male" && prod.category === "shirts") ||
+        (prod.gender === "Both" && prod.category === "shirts")
     );
+
     setMenshirts(menProducts);
 
     if (itemsOnCart && itemsOnCart.length > 0) {

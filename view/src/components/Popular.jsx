@@ -43,7 +43,7 @@ const Popular = () => {
   }, []);
 
   return (
-    <div className="text-black dark:text-white font-serif p-2 sm:p-5 my-12 mx-0 sm:mx-5">
+    <div className="text-black dark:text-white font-roboto p-2 sm:p-5 my-12 mx-0 sm:mx-5">
       <div className="text-[20px] ssm:text-[30px] text-start sssm:text-center sm:text-[3rem] space-y-2 font-extrabold mb-4">
         <h1>Find innovations</h1>
         <h1>Only here</h1>

@@ -16,9 +16,6 @@ import Shirts from "../components/BothGender/Shirts";
 import Shoes from "../components/BothGender/Shoes";
 import CartItems from "../../constants/cartItems";
 import FavItems from "../../constants/favItems";
-import FavProducts from "../components/Favourites";
-import { HeartIcon } from "lucide-react";
-
 const ShopNow = () => {
   const navigate = useNavigate();
   const { gender, product } = useParams();
@@ -48,9 +45,7 @@ const ShopNow = () => {
     setShowFav(false);
   };
 
-  function showFavProds() {
-    setShowFav(true);
-  }
+
 
   return (
     <CartItems>
@@ -164,20 +159,9 @@ const ShopNow = () => {
                 </div>
               </div>
             </div>
-            <span
-              onClick={showFavProds}
-              className="text-3xl cursor-pointer sm:ml-4 my-5 text-center mt-5 text-gray-400 hover:text-transparent"
-            >
-              <HeartIcon
-                className="fill-transparent hover:fill-red-500 transition-all ease-in-out duration-150"
-                size={30}
-              />
-            </span>
           </div>
           <div className="mx-0 sm:mx-3 md:mx-10 bg-white dark:bg-black">
-            {showFav ? (
-              <FavProducts />
-            ) : selectedGender === "Male" && selectType === "pants" ? (
+            {selectedGender === "Male" && selectType === "pants" ? (
               <MenPants />
             ) : selectedGender === "Male" && selectType === "shoes" ? (
               <MenShoes />
