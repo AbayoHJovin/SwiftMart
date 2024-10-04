@@ -162,7 +162,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
                     <span className="font-semibold text-green-600">
                       Amount to pay:{" "}
                     </span>
-                    RWF {selectedOrder.amount}
+                    {selectedOrder.amount}
                   </p>
                 </div>
                 <AiFillCloseCircle
@@ -242,29 +242,29 @@ const Orders = ({ AdminOptions, currentUser }) => {
             <div className="container mx-auto p-4">
               <div className="overflow-x-auto">
                 <table className="min-w-full table-auto">
-                  <thead>
-                    <tr className="bg-green-200 h-4 rounded-full">
-                      <th className="p-4 border-b text-left text-sm w-1/6 rounded-l-md">
+                  <thead className="bg-green-50">
+                    <tr>
+                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
                         Name
                       </th>
-                      <th className="p-4 border-b text-left text-sm w-1/6">
+                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
                         Address
                       </th>
-                      <th className="p-4 border-b text-left text-sm w-1/6">
+                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
                         Number of products
                       </th>
-                      <th className="p-4 border-b text-left text-sm w-1/6">
+                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
                         Date
                       </th>
-                      <th className="p-4 border-b text-left text-sm w-1/6">
+                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
                         Time
                       </th>
-                      <th className="p-4 border-b text-left text-sm w-1/6 rounded-r-md">
-                        Status
+                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
+                        Actions
                       </th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="divide-y-4 divide-gray-200">
                     {filteredOrders.length === 0 ? (
                       <tr>
                         <td
@@ -279,24 +279,24 @@ const Orders = ({ AdminOptions, currentUser }) => {
                         <tr
                           onClick={() => handleOfferClick(item)}
                           key={item._id}
-                          className="border text-center border-gray-200 h-16 cursor-pointer bg-white hover:bg-gray-50 text-black rounded-md"
+                          className="border hover:bg-gray-100 text-center border-gray-200 h-16 cursor-pointer bg-white dark:bg-gray-800  text-black rounded-md"
                         >
-                          <td className="p-4 border-b text-sm truncate rounded-l-md">
+                          <td className="p-4 text-sm text-gray-700 dark:text-gray-200  truncate">
                             {item.names}
                           </td>
-                          <td className="p-4 border-b text-sm truncate">
+                          <td className="p-4 text-sm text-gray-700 dark:text-gray-200  truncate">
                             {item.address}
                           </td>
-                          <td className="p-4 border-b text-sm truncate">
+                          <td className="p-4 text-sm text-gray-700 dark:text-gray-200  truncate">
                             {item.products.length}
                           </td>
-                          <td className="p-4 border-b text-sm truncate">
+                          <td className="p-4 text-sm text-gray-700 dark:text-gray-200  truncate">
                             {item.date}
                           </td>
-                          <td className="p-4 border-b text-sm truncate">
+                          <td className="p-4 text-sm text-gray-700  dark:text-gray-200 truncate">
                             {item.time}
                           </td>
-                          <td className="p-4 border-b text-sm truncate rounded-r-md">
+                          <td className="p-4 text-sm text-gray-700 dark:text-gray-200 truncate rounded-r-md">
                             {item.approved ? "Approved" : "Pending"}
                           </td>
                         </tr>

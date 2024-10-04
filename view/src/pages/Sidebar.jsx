@@ -74,7 +74,7 @@ const Sidebar = ({
             <AiOutlineMenu
               size={30}
               onClick={() => setOpenDrawer(!openDrawer)}
-              className="cursor-pointer"
+              className="cursor-pointer text-black dark:text-white"
             />
           </div>
         </div>
