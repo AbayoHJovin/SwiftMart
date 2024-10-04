@@ -66,7 +66,7 @@ const CartPage = () => {
           No item is found in your cart.
         </h1>
         <button
-          onClick={() => navigate("/shop")}
+          onClick={() => navigate("/shop/Both/pants")}
           className="bg-green-900 text-white my-2 p-3 px-5 rounded-md"
         >
           Shop Now

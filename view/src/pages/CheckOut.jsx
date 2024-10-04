@@ -123,7 +123,7 @@ const OrderForm = () => {
           formData.village,
         phoneNumber: formData.phone,
         paymentMethod: formData.paymentMethod,
-        amount: "100",
+        amount: cost,
         products: productsId,
         day: currentDay,
         date: currentDate,

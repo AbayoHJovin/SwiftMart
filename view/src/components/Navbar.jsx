@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { FaSearch, FaSun } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { CgClose, CgShoppingCart } from "react-icons/cg";
 import { Drawer, List, ListItem, Badge } from "@mui/material"; // Add Badge for displaying the cart count
 import CartItems, { CartContext } from "../../constants/cartItems"; // Import CartContext
