@@ -27,6 +27,7 @@ import AuthorizedAdmin from "../constants/AuthorizedAdmin.jsx";
 import CategorySection from "./components/WhatWeSell.jsx";
 import FavItems from "../constants/favItems.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
 const queryClient = new QueryClient();
 
 function App() {
@@ -159,6 +160,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <App />
         </ThemeProvider>
       </CurrentUser>
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   </React.StrictMode>
 );

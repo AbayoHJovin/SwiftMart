@@ -193,18 +193,6 @@ export default function ProductTable() {
         </button>
       </div>
       <Box sx={{ p: 3 }}>
-        {/* <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          justifyContent: "space-between",
-          mb: 2,
-          position: "sticky",
-          top: 3,
-
-        }}
-      > */}
-        {/* </Box> */}
         <Box
           sx={{ overflowX: "auto", "&::-webkit-scrollbar": { height: "8px" } }}
         >
