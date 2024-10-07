@@ -13,7 +13,7 @@ const SignupForm = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  const [loading,setLoading]=useState(false)
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const SignupForm = () => {
       return;
     }
     try {
-      setLoading(true)
+      setLoading(true);
       fetch(`${apiUrl}/signup`, {
         method: "POST",
         body: JSON.stringify({ username, email, password }),
@@ -44,7 +44,7 @@ const SignupForm = () => {
           }
         })
         .catch((e) => toast.error(e))
-        .finally(()=>setLoading(false))
+        .finally(() => setLoading(false));
     } catch (err) {
       setError("Signup failed. Please try again.");
       console.error(err);
@@ -152,7 +152,13 @@ const SignupForm = () => {
                 type="submit"
                 className="w-full bg-green-800 hover:bg-green-900 text-white font-medium py-2 rounded-md focus:outline-none"
               >
-               {loading? <Loader3/>:"Sign Up Now"} 
+                {loading ? (
+                  <div className="flex justify-center items-center">
+                    <Loader3 />
+                  </div>
+                ) : (
+                  "Sign Up Now"
+                )}
               </button>
             </form>
             <h1 className="text-center text-lg text-black dark:text-white">

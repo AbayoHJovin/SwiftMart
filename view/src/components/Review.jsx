@@ -35,7 +35,7 @@ const Testimonials = [
 
 const Review = () => {
   return (
-    <div className="relative group my-12 font-serif text-black dark:text-white bg-white dark:bg-black">
+    <div className="relative group my-12 font-roboto text-black dark:text-white bg-white dark:bg-black">
       <div className="text-start md:text-center mb-8">
         <h2 className="text-2xl text-center md:text-3xl font-bold mb-4">
           Customer is our priority

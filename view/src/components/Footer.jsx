@@ -150,7 +150,14 @@ const Footer = () => {
                 onClick={handleSubscribe}
                 className="bg-[#04a56d] text-white px-4 text-center py-2 rounded-full w-full md:w-auto"
               >
-                {loading ? <Loader3 /> : "Subscribe"}
+                {loading ? (
+                  <div className="flex items-center p-0 justify-center">
+                    <Loader3 bg="white" />
+                    <span>wait ...</span>
+                  </div>
+                ) : (
+                  "Subscribe"
+                )}
               </button>
             </div>
             <div className="text-red-500">{error}</div>

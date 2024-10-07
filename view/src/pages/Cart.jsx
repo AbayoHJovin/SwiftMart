@@ -236,20 +236,28 @@ const CartPage = () => {
           </div>
         </div>
       ) : (
-        <div className=" text-black h-screen dark:text-white bg-white dark:bg-black">
-          <div className="my-10">
-            <div className="flex flex-col justify-center items-start ssm:items-center text-start ssm:text-center p-5 font-bold text-xl">
-              <h1 className="ssm:text-center">
-                Dear user, You are not signed in. Better Create an account
+        <div className="flex justify-center items-center min-h-screen text-black dark:text-white p-5">
+          <div className="mb-10 p-5 sm:p-10 rounded-lg bg-white dark:bg-black w-full max-w-md">
+            <div className="flex flex-col justify-center items-start ssm:items-center text-start ssm:text-center">
+              <h1 className="ssm:text-center my-5 font-bold text-2xl sm:text-xl">
+                Not signed in!
               </h1>
-              <h1 className="self-start ssm:self-center mt-4 ssm:mt-2">
-                <button
-                  className="bg-green-900 text-white p-2 rounded-md"
-                  onClick={() => navigate("/signup")}
-                >
-                  Create an account
+              <h1 className="ssm:text-center text-base sm:text-lg">
+                Log in or create an account to improve your shopping experience.
+              </h1>
+            </div>
+
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-5 mt-5">
+              <a href="/signup">
+                <button className="bg-[#6ed629] text-white py-2 px-4 sm:py-3 sm:px-5 rounded-md text-sm sm:text-base">
+                  Sign Up
                 </button>
-              </h1>
+              </a>
+              <a href="/login">
+                <button className="bg-[#6ed629] text-white py-2 px-4 sm:py-3 sm:px-5 rounded-md text-sm sm:text-base">
+                  Login
+                </button>
+              </a>
             </div>
           </div>
         </div>

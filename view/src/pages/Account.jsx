@@ -183,7 +183,7 @@ export default function Account() {
           <div className="my-10">
             <div className="flex flex-col justify-center items-start ssm:items-center text-start ssm:text-center p-5 font-bold text-xl">
               <h1 className="ssm:text-center">
-                Dear user, You are not signed in. Better Create an account
+                You are not signed in. Better Create an account
               </h1>
               <h1 className="self-start ssm:self-center mt-4 ssm:mt-2">Or</h1>
               <h1 className="ssm:text-center">
