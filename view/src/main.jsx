@@ -26,6 +26,8 @@ import AdminAuth from "./pages/AdminAuth.jsx";
 import AuthorizedAdmin from "../constants/AuthorizedAdmin.jsx";
 import CategorySection from "./components/WhatWeSell.jsx";
 import FavItems from "../constants/favItems.jsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
 
 function App() {
   useEffect(() => {
@@ -151,10 +153,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <CurrentUser>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </CurrentUser>
+    <QueryClientProvider client={queryClient}>
+      <CurrentUser>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </CurrentUser>
+    </QueryClientProvider>
   </React.StrictMode>
 );

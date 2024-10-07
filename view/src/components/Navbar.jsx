@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
@@ -6,7 +7,6 @@ import { Drawer, List, ListItem, Badge } from "@mui/material"; // Add Badge for 
 import CartItems, { CartContext } from "../../constants/cartItems"; // Import CartContext
 import Search from "./searchComponent";
 import { SearchIcon, ShoppingCart, UserPlus } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../../constants/ThemeContext";
 
 export default function Navbar() {
@@ -14,7 +14,7 @@ export default function Navbar() {
   const { itemsOnCart } = useContext(CartContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const {theme}=useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     function handleResize() {
@@ -49,7 +49,6 @@ export default function Navbar() {
     }
     setDrawerOpen(open);
   };
-  const navigate = useNavigate();
   return (
     <CartItems>
       <nav
@@ -57,8 +56,9 @@ export default function Navbar() {
       >
         <a href="/">
           <img
-            onClick={() => navigate("/")}
-            src={isMobile ? "/mobileLogo.svg" : "/logo.svg"}
+            onClick={() => (window.location.href = "/")}
+            // src={isMobile ? "/mobileLogo.svg" : "/logo.svg"}
+            src="/mobileLogo.svg"
             alt="logo"
             className="h-[4.5rem] w-[10rem] cursor-pointer"
           />
@@ -102,7 +102,6 @@ export default function Navbar() {
 
         <div className="block sm:hidden">
           <div className="flex items-center space-x-4">
-
             <AiOutlineMenu
               className="mr-2 visible sm:hidden"
               onClick={toggleDrawer(true)}

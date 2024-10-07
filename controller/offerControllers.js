@@ -15,7 +15,6 @@ exports.addOffer = async (req, res) => {
   } = req.body;
 
   try {
-    // Basic validation for required fields
     if (
       !userId ||
       !names ||
@@ -27,7 +26,6 @@ exports.addOffer = async (req, res) => {
       throw new Error("Missing details!");
     }
 
-    // Check if products array is provided and contains valid product IDs
     if (!products || !Array.isArray(products) || products.length === 0) {
       throw new Error(
         "Products are required and must be an array of valid product IDs!"

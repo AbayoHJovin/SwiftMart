@@ -1,25 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import useProducts from "../../constants/products";
 import { Buffer } from "buffer";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import {
-  EffectCoverflow,
-  Pagination,
-  Navigation,
-  Autoplay,
-} from "swiper/modules";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import Loader3 from "./Loading3";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Popular = () => {
   const { products } = useProducts();
   const [loading, setLoading] = useState(false);
   const [popularProducts, setPopularProducts] = useState([]);
-  const swiperRef = useRef(null);
+
   useEffect(() => {
     const filterProducts = async () => {
       setLoading(true);
@@ -36,12 +30,11 @@ const Popular = () => {
     filterProducts();
   }, [products]);
 
-  useEffect(() => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.update();
-    }
-  }, []);
-
+  const navigateToProduct = (productId) => {
+    window.location.href = `/product/${productId}`;
+  };
+  const prevRef = useRef(null); // Ref for previous button
+  const nextRef = useRef(null); // Ref
   return (
     <div className="text-black dark:text-white font-roboto p-2 sm:p-5 my-12 mx-0 sm:mx-5">
       <div className="text-[20px] ssm:text-[30px] text-start sssm:text-center sm:text-[3rem] space-y-2 font-extrabold mb-4">
@@ -58,82 +51,86 @@ const Popular = () => {
           Shop Now
         </button>
       </div>
+      <div className="flex flex-col md:flex-row items-center justify-center md:justify-between px-2 sm:px-5 my-5">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
+          Popular products
+        </h2>
+        <div className="flex space-x-2">
+          <div
+            ref={prevRef}
+            className=" cursor-pointer bg-green-700 p-2 rounded-full text-white flex justify-center items-center"
+          >
+            <FaChevronLeft className="w-6 h-6" />
+          </div>
+          <div
+            ref={nextRef}
+            className=" cursor-pointer bg-green-700 p-2 rounded-full text-white flex justify-center items-center"
+          >
+            <FaChevronRight className="w-6 h-6" />
+          </div>
+        </div>
+      </div>
 
-      <h2 className="text-2xl mx-0 sm:mx-7 my-3 md:text-3xl font-bold mb-4 text-center">
-        Popular products
-      </h2>
-
-      <div className="relative flex justify-center items-center space-y-4 p-4">
-        <Swiper
-          ref={swiperRef}
-          effect={"coverflow"}
-          grabCursor={true}
-          centeredSlides={true}
-          loop={true}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 20,
-            depth: 100,
-            modifier: 2.5,
-          }}
-          slidesPerView={"auto"}
-          pagination={{ el: ".swiper-pagination", clickable: true }}
-          navigation={{
-            nextEl: ".nextbtn",
-            prevEl: ".prevbtn",
-            clickable: true,
-          }}
-          breakpoints={{
-            320: { slidesPerView: 2, spaceBetween: 10 },
-            640: { slidesPerView: 2, spaceBetween: 10 },
-            768: { slidesPerView: 2, spaceBetween: 15 },
-            1024: { slidesPerView: 3, spaceBetween: 20 },
-            1440: { slidesPerView: 4, spaceBetween: 25 },
-          }}
-          modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-          autoplay={{
-            delay: 2500,
-            pauseOnMouseEnter: true,
-            reverseDirection: true,
-          }}
-        >
-          {loading || popularProducts.length === 0 ? (
-            <Loader3 />
-          ) : (
-            popularProducts.map((item) => (
-              <SwiperSlide
-                key={item._id}
-                style={{ width: "15rem", height: "15rem" }}
-                className="flex bg-gray-100 rounded-md justify-center"
-              >
-                <div className="w-full h-full bg-blue-60 rounded-md">
+      {loading || popularProducts.length === 0 ? (
+        <div className="flex justify-center items-center text-center w-full h-[300px]">
+          <Loader3 />
+        </div>
+      ) : (
+        <div className="relative">
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1} // one slide at a time for mobile
+            breakpoints={{
+              640: { slidesPerView: 1 }, // mobile view: show 1 product
+              768: { slidesPerView: 2, spaceBetween: 15 }, // tablet: show 2 products
+              1024: { slidesPerView: 3, spaceBetween: 20 }, // desktop: 3 products
+              1280: { slidesPerView: 4, spaceBetween: 20 }, // large desktop: 4 products
+            }}
+            loop={true} // infinite loop
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: true,
+            }}
+            onSwiper={(swiper) => {
+              setTimeout(() => {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+                swiper.navigation.init();
+                swiper.navigation.update();
+              }, 100);
+            }}
+            onMouseEnter={(swiper) => swiper.autoplay.stop()}
+            onMouseLeave={(swiper) => swiper.autoplay.start()}
+            onClick={(swiper) => swiper.autoplay.stop()} // stop autoplay when clicked
+            modules={[Navigation, Autoplay]}
+          >
+            {popularProducts.map((item) => (
+              <SwiperSlide key={item._id}>
+                <div className="flex justify-center items-center w-full max-w-[300px] h-[350px] sm:h-[400px] bg-gray-100 rounded-md cursor-pointer relative group mx-auto">
                   <img
                     src={`data:${item.image.contentType};base64,${Buffer.from(
                       item.image.data
                     ).toString("base64")}`}
                     alt="item"
-                    className="w-full h-full rounded-md"
+                    className="w-full h-full object-cover rounded-md"
                   />
+                  <div className="absolute inset-0 bg-green-50 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <button
+                    onClick={() => navigateToProduct(item._id)}
+                    className="absolute bottom-0 w-full bg-green-600 text-white py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    View Product
+                  </button>
                 </div>
               </SwiperSlide>
-            ))
-          )}
-
-          <div className="my-5">
-            <div className="flex content-center items-center justify-center gap-24">
-              <div className="prevbtn cursor-pointer z-20">
-                <ArrowLeft className="arrow-back cursor-pointer" />
-              </div>
-              <div className="swiper-pagination z-20"></div>
-              <div className="nextbtn cursor-pointer z-20">
-                <ArrowRight className="arrow-next cursor-pointer" />
-              </div>
-            </div>
-          </div>
-        </Swiper>
-
-        <div className="swiper-pagination absolute bottom-0 w-full text-center"></div>
-      </div>
+            ))}
+          </Swiper>
+        </div>
+      )}
     </div>
   );
 };
