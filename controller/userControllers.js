@@ -1,9 +1,9 @@
-const User = require("../model/Users");
 const bcrypt = require("bcrypt");
 const lodash = require("lodash");
 const axios = require("axios");
 const otpGenerator = require("otp-generator");
 const nodemailer = require("nodemailer");
+const { PrismaClient } = require("@prisma/client");
 const {
   createAccessToken,
   createRefreshToken,
@@ -12,30 +12,29 @@ const {
 } = require("../auth/tokens");
 const isAuth = require("../auth/isAuth");
 require("dotenv").config();
-
+const prisma = new PrismaClient();
 exports.signupUser = async (req, res) => {
   const { username, email, password } = req.body;
   try {
-      if (!username || !email || !password) {
-        throw new Error("Missing credentials");
-      }
-      const existingUser = await User.findOne({ email });
-      if (existingUser) {
-        return res
-          .status(400)
-          .json({ success: false, message: "User already exists" });
-      }
+    if (!username || !email || !password) {
+      throw new Error("Missing credentials");
+    }
+    const existingUser = await prisma.users.findFirst({
+      where: { email: email },
+    });
+    if (existingUser) {
+      return res
+        .status(400)
+        .json({ success: false, message: "User already exists" });
+    }
 
-      const hashedPassword = await bcrypt.hash(password, 5);
-      const saveUser = await User.create({
-        username: username,
-        email: email,
-        password: hashedPassword,
-      });
-      res
-        .status(201)
-        .json({ success: true, message: "User created successfully" });
-
+    const hashedPassword = await bcrypt.hash(password, 5);
+    const saveUser = await prisma.users.create({
+      data: { username: username, email: email, password: hashedPassword },
+    });
+    res
+      .status(201)
+      .json({ success: true, message: "User created successfully" });
   } catch (err) {
     console.error(err);
     res.status(500).json({
@@ -49,7 +48,7 @@ exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
   let isAdmin = false;
   try {
-    const user = await User.findOne({ email: email });
+    const user = await prisma.users.findFirst({ where: { email: email } });
     if (!user) {
       return res.status(400).json({ message: "invalid credentials" });
     }
@@ -73,7 +72,7 @@ exports.loginUser = async (req, res) => {
 
 exports.getUserDetails = async (req, res) => {
   try {
-    const user = await User.find();
+    const user = await prisma.users.findMany();
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
@@ -85,28 +84,30 @@ exports.getUserDetails = async (req, res) => {
 
 exports.updateUserDetails = async (req, res) => {
   const userId = req.query.userId;
-  const { name, email, profilePicture } = req.body;
+  const { username, email } = req.body;
 
   try {
-    const user = await User.findById(userId);
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
+    const updatedUser = await prisma.users.update({
+      where: { userId },
+      data: {
+        ...(username && { username: username }),
+        ...(email && { email: email }),
+      },
+    });
 
-    user.username = name || user.username;
-    user.email = email || user.email;
-    user.profilePicture = profilePicture || user.profilePicture;
+    res.status(200).json({
+      success: true,
+      message: "User updated successfully",
+      user: updatedUser,
+    });
 
-    await user.save();
-
-    res
-      .status(200)
-      .json({ success: true, message: "User updated successfully" });
   } catch (err) {
-    res.status(500).json({ message: err.message || "Internal server error" });
+    if (err.code === 'P2025') {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+    res.status(500).json({ success: false, message: err.message || "Internal server error" });
   }
 };
-
 exports.getCurrentUser = async (req, res) => {
   const token = req.headers.token;
   let isAdmin = false;
@@ -116,7 +117,7 @@ exports.getCurrentUser = async (req, res) => {
     if (!userId) {
       return res.json({ user: null });
     }
-    const currentUserCredentials = await User.findById(userId);
+    const currentUserCredentials = await prisma.users.findFirst({data:{userId:userId}});
     if (currentUserCredentials.email === process.env.AD_EMAIL) {
       isAdmin = true;
     }
@@ -147,16 +148,19 @@ exports.forgotPassword = async (req, res) => {
     if (!email) {
       return res.status(401).json({ message: "No email entered" });
     }
-    const doesEmailExist = await User.findOne({ email: email });
+    const doesEmailExist = await prisma.users.findFirst({data:{ email: email }});
     if (!doesEmailExist) {
       return res.status(401).json({ message: "The email doesn't exist" });
     }
     const newPasswordHashed = await bcrypt.hash(newPass, 5);
-    const updatedPassword = await User.findOneAndUpdate(
-      { email: email },
-      { password: newPasswordHashed },
-      { new: true }
-    );
+    const updatedPassword = await prisma.users.update({
+      where:{
+        email:email
+      },
+      data:{
+       password: newPasswordHashed ,
+      }
+   } );
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -248,7 +252,7 @@ exports.checkOldPassword = async (req, res) => {
     if (!email || !password) {
       return res.status(401).json({ message: "Missing values" });
     }
-    const user = await User.findOne({ email });
+    const user = await prisma.users.findFirst({ where:{email:email} });
     if (!user) {
       return res.status(401).json({ message: "Invalid password" });
     }
@@ -266,11 +270,14 @@ exports.updatePassword = async (req, res) => {
   const { email, newPassword } = req.body;
   try {
     const hashedPassword = await bcrypt.hash(newPassword, 5);
-    const updatedPassword = await User.findOneAndUpdate(
-      { email: email },
-      { password: hashedPassword },
-      { new: true }
-    );
+    const updatedPassword = await prisma.users.update({
+     where:{
+      email: email
+     },
+     data:{
+      password: hashedPassword
+     }
+    });
     if (!updatedPassword) {
       return res.status(401).json({ message: "Invalid email or password" });
     }

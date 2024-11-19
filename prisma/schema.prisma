@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Gender {
+  Male
+  Female
+  Unisex
+}
+
+model Users {
+  userId    String      @id @default(uuid())
+  username  String      @db.VarChar(255)
+  email     String      @unique
+  password  String      @db.VarChar(255)
+  otp       String?     @db.VarChar(10)
+  cart      Cart[]
+  favorites Favorites[]
+  orders    Orders[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+model Cart {
+  cartId       String         @id @default(cuid())
+  owner        Users          @relation(fields: [ownerId], references: [userId])
+  ownerId      String
+  cartProducts CartProducts[]
+}
+
+model CartProducts {
+  id        String   @id @default(cuid())
+  cart      Cart     @relation(fields: [cartId], references: [cartId])
+  product   Products @relation(fields: [productId], references: [prodId])
+  cartId    String
+  productId String
+  quantity  Int      @default(1)
+
+  @@unique([cartId, productId])
+}
+
+model Products {
+  prodId          String         @id @default(cuid())
+  prodName        String         @db.VarChar(255)
+  prodDescription String         @db.Text
+  prodPrice       Int
+  gender          Gender
+  category        String         @db.VarChar(255)
+  stock           Int            @default(0)
+  booked          Int            @default(0)
+  popular         Boolean        @default(false)
+  image           String         @db.Text
+  cartProducts    CartProducts[]
+  orderItems      OrderItem[]
+  favProducts     FavProducts[]
+}
+
+model Orders {
+  orderId       String      @id @default(cuid())
+  orderer       Users       @relation(fields: [ordererId], references: [userId])
+  ordererId     String
+  address       String      @db.VarChar(255)
+  phoneNo       String      @db.VarChar(15)
+  paymentMethod String      @db.VarChar(255)
+  price         Decimal     @db.Decimal(10, 2)
+  approved      Boolean     @default(false)
+  orderDate     DateTime?   @db.Date
+  orderItems    OrderItem[]
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  order     Orders   @relation(fields: [orderId], references: [orderId])
+  product   Products @relation(fields: [productId], references: [prodId])
+  orderId   String
+  productId String
+  quantity  Int      @default(1)
+
+  @@unique([orderId, productId])
+}
+
+model Favorites {
+  favId       String        @id @default(cuid())
+  user        Users         @relation(fields: [userId], references: [userId])
+  userId      String
+  favProducts FavProducts[]
+}
+
+model FavProducts {
+  id        String    @id @default(cuid())
+  favorite  Favorites @relation(fields: [favId], references: [favId])
+  product   Products  @relation(fields: [productId], references: [prodId])
+  favId     String
+  productId String
+  quantity  Int       @default(1)
+
+  @@unique([favId, productId])
+}
+
+model Subscription {
+  subscriptionId String @id @default(uuid())
+  email          String @unique @db.VarChar(255)
+}

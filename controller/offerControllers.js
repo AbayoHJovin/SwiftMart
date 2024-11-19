@@ -1,60 +1,57 @@
-const Offers = require("../model/Offers");
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
+
 exports.addOffer = async (req, res) => {
   const {
     userId,
-    names,
-    email,
     address,
-    phoneNumber,
+    phoneNo,
     paymentMethod,
-    amount,
+    price,
     products,
-    day,
-    date,
-    time,
+    orderDate,
   } = req.body;
 
   try {
     if (
       !userId ||
-      !names ||
-      !email ||
-      !phoneNumber ||
+      !address ||
+      !phoneNo ||
       !paymentMethod ||
-      !amount
+      !price ||
+      !products ||
+      !Array.isArray(products) ||
+      products.length === 0
     ) {
-      throw new Error("Missing details!");
+      throw new Error("Missing or invalid details!");
     }
 
-    if (!products || !Array.isArray(products) || products.length === 0) {
-      throw new Error(
-        "Products are required and must be an array of valid product IDs!"
-      );
-    }
-
-    // Ensure no product is null or undefined
-    const validProducts = products.filter((productId) => productId);
+    const validProducts = products.filter((product) => product.productId && product.quantity);
     if (validProducts.length !== products.length) {
-      throw new Error("All product IDs must be valid and not null.");
+      throw new Error("All product entries must have valid productId and quantity.");
     }
 
-    // Create the new offer
-    const newOffer = await Offers.create({
-      userId,
-      names,
-      email,
-      address,
-      phoneNumber,
-      paymentMethod,
-      amount,
-      products: validProducts,
-      day,
-      date,
-      time,
+    const newOrder = await prisma.orders.create({
+      data: {
+        ordererId: userId,
+        address,
+        phoneNo,
+        paymentMethod,
+        price,
+        orderDate: orderDate ? new Date(orderDate) : new Date(),
+        orderItems: {
+          create: validProducts.map((item) => ({
+            productId: item.productId,
+            quantity: item.quantity,
+          })),
+        },
+      },
+      include: { orderItems: true },
     });
 
-    return res.status(201).json({ message: "Offer placed" });
+    return res.status(201).json({ message: "Order placed successfully", order: newOrder });
   } catch (e) {
+    console.error(e);
     return res.status(400).json({ error: e.message || "Something went wrong" });
   }
 };
@@ -62,57 +59,57 @@ exports.addOffer = async (req, res) => {
 exports.getOffer = async (req, res) => {
   const userId = req.query.userId;
   try {
-    if (!userId) {
-      const allOffers = await Offers.find({});
-      if (!allOffers) {
-        throw new Error("No orders found");
-      }
-      return res.status(200).json({ message: allOffers });
+    if (userId) {
+      const userOrders = await prisma.orders.findMany({
+        where: { ordererId: userId },
+        include: { orderItems: true },
+      });
+      if (userOrders.length === 0) throw new Error("No orders found for the user");
+      return res.status(200).json({ orders: userOrders });
     } else {
-      const userOffers = await Offers.find({userId:userId})
-      if(!userOffers){
-        throw new Error("No offers made")
-      }
-      return res.status(200).json({message:userOffers})
+      const allOrders = await prisma.orders.findMany({
+        include: { orderItems: true },
+      });
+      if (allOrders.length === 0) throw new Error("No orders found");
+      return res.status(200).json({ orders: allOrders });
     }
   } catch (e) {
-    return res.status(200).json({ error: e.message || "Something went wrong" });
+    console.error(e);
+    return res.status(400).json({ error: e.message || "Something went wrong" });
   }
 };
 
 exports.approveOffer = async (req, res) => {
-  const offerId = req.query.offerId;
+  const { offerId } = req.query;
+
   try {
-    if (!offerId) {
-      throw new Error("No offer id is found");
-    }
-    const offer = await Offers.findByIdAndUpdate(
-      offerId,
-      { approved: true },
-      { new: true }
-    );
-    if (!offer) {
-      throw new Error("No offer is found");
-    }
-    return res.status(200).json({ message: "Offer Approved" });
+    if (!offerId) throw new Error("Offer ID is required");
+
+    const updatedOrder = await prisma.orders.update({
+      where: { orderId: offerId },
+      data: { approved: true },
+    });
+
+    return res.status(200).json({ message: "Offer approved successfully", order: updatedOrder });
   } catch (e) {
-    return res
-      .status(401)
-      .json({ message: e.message || "Something went wrong" });
+    console.error(e);
+    return res.status(400).json({ error: e.message || "Something went wrong" });
   }
 };
 
 exports.declineOffer = async (req, res) => {
-  const offerId = req.query.offerId;
+  const { offerId } = req.query;
+
   try {
-    if (!offerId) {
-      throw new Error("No offerId Found");
-    }
-    await Offers.findByIdAndDelete(offerId);
-    return res.status(200).json({ message: "Offer removed" });
+    if (!offerId) throw new Error("Offer ID is required");
+
+    await prisma.orders.delete({
+      where: { orderId: offerId },
+    });
+
+    return res.status(200).json({ message: "Offer removed successfully" });
   } catch (e) {
-    return res
-      .status(401)
-      .json({ message: e.message || "Something went wrong" });
+    console.error(e);
+    return res.status(400).json({ error: e.message || "Something went wrong" });
   }
 };

@@ -3,14 +3,14 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const userRoutes = require("./Routes/userRoutes");
-const productRoutes = require("./Routes/productRoutes");
-const cartRoutes = require("./Routes/cartRoutes");
-const FavRoutes = require("./Routes/favouriteRoutes");
-const tokenRoutes = require("./Routes/tokenRoutes");
 const cookieParser = require("cookie-parser");
-const offerRoutes = require("./Routes/offerRoutes");
-const otpRoutes=require("./Routes/otpRoutes")
-const subscriptionRoutes=require("./Routes/subscriptions")
+// const productRoutes = require("./Routes/productRoutes");
+// const cartRoutes = require("./Routes/cartRoutes");
+// const FavRoutes = require("./Routes/favouriteRoutes");
+// const tokenRoutes = require("./Routes/tokenRoutes");
+// const offerRoutes = require("./Routes/offerRoutes");
+// const otpRoutes=require("./Routes/otpRoutes")
+// const subscriptionRoutes=require("./Routes/subscriptions")
 require("dotenv").config();
 
 const app = express();
@@ -27,21 +27,15 @@ app.use(
 
 app.use(express.json());
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("Connected to the database");
-    app.listen(5000, () => {
-      console.log("Server is running on port 5000");
-    });
-  })
-  .catch((e) => console.log(e));
-
+  
+  app.listen(5000, () => {
+    console.log("Server is running on port 5000");
+  });
 app.use(userRoutes);
-app.use(productRoutes);
-app.use(tokenRoutes);
-app.use(cartRoutes);
-app.use(FavRoutes);
-app.use(offerRoutes);
-app.use(otpRoutes);
-app.use(subscriptionRoutes)
+// app.use(productRoutes);
+// app.use(tokenRoutes);
+// app.use(cartRoutes);
+// app.use(FavRoutes);
+// app.use(offerRoutes);
+// app.use(otpRoutes);
+// app.use(subscriptionRoutes)

@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
-const Users = require("../model/Users");
+const {PrismaClient} = require("@prisma/client")
+const prisma = new PrismaClient()
 const {
   createAccessToken,
   createRefreshToken,
@@ -18,7 +19,7 @@ exports.refreshToken = async (req, res) => {
   } catch (e) {
     return res.send({ accessToken: "" });
   }
-  const user = await Users.findOne({ _id: payload.userId });
+  const user = await prisma.users.findFirst({ where:{userId: payload.userId} });
   if (!user) {
     return res.send({ accessToken: "" });
   }
