@@ -33,10 +33,10 @@ exports.refreshToken = async (req, res) => {
 
 exports.protectedRoute = (req, res) => {
   const token = req.headers.authorization;
-  if (!token) return res.status(401).send({ message: "Unauthorized,no " });
+  if (!token) return res.status(401).send({ message: "Unauthorized" });
   const userId = isAuth(token);
   if (!userId) {
-    return res.status(401).send({ message: "Unauthorized,userId" });
+    return res.status(401).send({ message: "Unauthorized" });
   }
-  return res.status(200).json({ message: "Authorized finallly" });
+  return res.status(200).json({ message: "Authorized" });
 };

@@ -10,7 +10,7 @@ const {
   sendAccessToken,
   sendRefreshToken,
 } = require("../auth/tokens");
-const isAuth = require("../auth/isAuth").default;
+const isAuth = require("../auth/isAuth");
 require("dotenv").config();
 const prisma = new PrismaClient();
 exports.signupUser = async (req, res) => {
@@ -106,12 +106,10 @@ exports.updateUserDetails = async (req, res) => {
         .status(404)
         .json({ success: false, message: "User not found" });
     }
-    res
-      .status(500)
-      .json({
-        success: false,
-        message: err.message || "Internal server error",
-      });
+    res.status(500).json({
+      success: false,
+      message: err.message || "Internal server error",
+    });
   }
 };
 exports.getCurrentUser = async (req, res) => {
@@ -123,13 +121,16 @@ exports.getCurrentUser = async (req, res) => {
     if (!userId) {
       return res.json({ user: null });
     }
-    const currentUserCredentials = await prisma.users.findFirst({
-      data: { userId: userId },
+    const currentUserCredentials = await prisma.users.findUnique({
+      where: { userId },
     });
+    if (!currentUserCredentials) {
+      throw new Error("No user is found");
+    }
     if (currentUserCredentials.email === process.env.AD_EMAIL) {
       isAdmin = true;
     }
-    const currentUser = lodash.omit(currentUserCredentials.toObject(), [
+    const currentUser = lodash.omit(currentUserCredentials, [
       "password",
     ]);
     return res.status(200).json({ user: currentUser, isAdmin: isAdmin });

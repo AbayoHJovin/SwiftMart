@@ -1,9 +1,4 @@
-import {
-  CheckCheckIcon,
-  Clock,
-  ShoppingBasket,
-  Trash,
-} from "lucide-react";
+import { CheckCheckIcon, Clock, ShoppingBasket, Trash } from "lucide-react";
 import { AiOutlineOrderedList } from "react-icons/ai";
 import { CgShutterstock } from "react-icons/cg";
 import { FaMoneyCheck, FaTrophy } from "react-icons/fa";
@@ -74,7 +69,7 @@ export default function Dashboard() {
     {
       name: "Total Orders",
       icon: <AiOutlineOrderedList />,
-      amount: allOffers.length || 0,
+      amount: allOffers && allOffers.length > 0 ? allOffers.length : 0,
       bgColor: "bg-red-100",
       iconColor: "text-red-500",
     },
@@ -161,7 +156,7 @@ export default function Dashboard() {
       <div className="min-h-screen items-center content-center">
         <div className=" gap-5 p-6 flex flex-col sm:flex-row justify-center">
           <div className="max-w-4xl">
-            <div className="bg-white p-5 rounded-lg flex flex-col items-center">
+            <div className="bg-gray-100 p-5 rounded-lg flex flex-col items-center">
               <h1 className="font-bold text-gray-800 mb-8">Sales Overview</h1>
               <div className="grid grid-cols-1  md:grid-cols-2 gap-6">
                 {sales.map((item) => (
@@ -190,7 +185,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="max-w-4xl">
-            <div className="bg-white p-5 rounded-lg flex flex-col items-center">
+            <div className="bg-gray-100 p-5 rounded-lg flex flex-col items-center">
               <h1 className="font-bold text-gray-800 mb-8">Orders info</h1>
               <div className="grid grid-cols-1  md:grid-cols-2 gap-6">
                 {orders.map((item) => (

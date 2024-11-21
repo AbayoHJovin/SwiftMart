@@ -108,7 +108,7 @@ const OrderForm = () => {
       setFormErrors(errors);
     } else {
       const dataToSend = {
-        userId: currentUser._id,
+        userId: currentUser.userId,
         names: formData.firstName + "," + formData.lastName,
         email: formData.email,
         address:
@@ -145,7 +145,7 @@ const OrderForm = () => {
     }
   };
   function handleRedirect() {
-    fetch(`${apiUrl}/deleteAllCartItems?userId=${currentUser._id}`, {
+    fetch(`${apiUrl}/deleteAllCartItems?userId=${currentUser.userId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

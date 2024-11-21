@@ -26,9 +26,13 @@ exports.addOffer = async (req, res) => {
       throw new Error("Missing or invalid details!");
     }
 
-    const validProducts = products.filter((product) => product.productId && product.quantity);
+    const validProducts = products.filter(
+      (product) => product.productId && product.quantity
+    );
     if (validProducts.length !== products.length) {
-      throw new Error("All product entries must have valid productId and quantity.");
+      throw new Error(
+        "All product entries must have valid productId and quantity."
+      );
     }
 
     const newOrder = await prisma.orders.create({
@@ -49,7 +53,9 @@ exports.addOffer = async (req, res) => {
       include: { orderItems: true },
     });
 
-    return res.status(201).json({ message: "Order placed successfully", order: newOrder });
+    return res
+      .status(201)
+      .json({ message: "Order placed successfully", order: newOrder });
   } catch (e) {
     console.error(e);
     return res.status(400).json({ error: e.message || "Something went wrong" });
@@ -64,13 +70,13 @@ exports.getOffer = async (req, res) => {
         where: { ordererId: userId },
         include: { orderItems: true },
       });
-      if (userOrders.length === 0) throw new Error("No orders found for the user");
+      if (userOrders.length === 0)
+        throw new Error("No orders found for the user");
       return res.status(200).json({ orders: userOrders });
     } else {
       const allOrders = await prisma.orders.findMany({
         include: { orderItems: true },
       });
-      if (allOrders.length === 0) throw new Error("No orders found");
       return res.status(200).json({ orders: allOrders });
     }
   } catch (e) {
@@ -90,7 +96,9 @@ exports.approveOffer = async (req, res) => {
       data: { approved: true },
     });
 
-    return res.status(200).json({ message: "Offer approved successfully", order: updatedOrder });
+    return res
+      .status(200)
+      .json({ message: "Offer approved successfully", order: updatedOrder });
   } catch (e) {
     console.error(e);
     return res.status(400).json({ error: e.message || "Something went wrong" });

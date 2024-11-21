@@ -1,9 +1,10 @@
-const User = require("../../model/Users");
 const otpGenerator = require("otp-generator");
 const nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
 // const { sendOtpToken } = require("../../auth/tokens");
 require("dotenv").config();
+const {PrismaClient} =require("@prisma/client")
+const prisma=new PrismaClient()
 
 exports.generateOtp = async (req, res) => {
   const otp = otpGenerator.generate(6, {
@@ -14,11 +15,10 @@ exports.generateOtp = async (req, res) => {
   });
 
   try {
-    const updatedAdmin = await User.findOneAndUpdate(
-      { email: process.env.AD_EMAIL },
-      { otp: otp },
-      { new: true }
-    );
+    const updatedAdmin = await prisma.users.update({
+      where:{ email: process.env.AD_EMAIL },
+      data:{ otp: otp },
+    });
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -37,7 +37,7 @@ exports.generateOtp = async (req, res) => {
     res.status(200).json({ message: "OTP sent successfully" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: e.message || "Error sending OTP" });
+    res.status(500).json({ message: error.message || "Error sending OTP" });
   }
 };
 
@@ -45,7 +45,7 @@ exports.verifyOtp = async (req, res) => {
   const { otp } = req.body;
 
   try {
-    const otpRecord = await User.findOne({ otp }).exec();
+    const otpRecord = await prisma.users.findFirst({where:{ otp:otp }})
     if (!otpRecord) {
       res.status(400).json({ message: "Invalid OTP" });
     }

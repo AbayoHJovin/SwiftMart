@@ -1,56 +1,19 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Buffer } from "buffer";
-import {
-  Box,
-  Button,
-  Modal,
-  TextField,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  IconButton,
-  InputAdornment,
-  useTheme,
-  useMediaQuery,
-  MenuItem,
-  Select,
-  InputLabel,
-  FormControl,
-} from "@mui/material";
-import { FaEdit, FaTrashAlt, FaSearch } from "react-icons/fa";
-import useProducts from "../constants/products";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { CgAdd, CgMathMinus } from "react-icons/cg";
-import { apiUrl } from "../src/lib/apis";
 import Loader from "../src/components/loader";
+import ProductModal from "./ProductModal";
+import EmptyState from "./EmptyState";
+import { apiUrl } from "../src/lib/apis";
 
 export default function ProductTable() {
-  const { products } = useProducts();
+  const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [openModal, setOpenModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState({
-    name: "",
-    description: "",
-    price: "",
-    gender: "",
-    category: "",
-    stock: "",
-    sold: "",
-    image: null,
-    imageUrl: "",
-  });
-  const [preview, setPreview] = useState("");
-  const [loading, setLoading] = useState(false);
-  const theme = useTheme();
-  const isDarkMode = theme.palette.mode === "dark";
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const categories = ["shoes", "shirts", "pants", "watches", "hats"];
   const genders = ["Male", "Female", "Both"];
@@ -59,371 +22,153 @@ export default function ProductTable() {
     fetchProducts();
   }, []);
 
-  useEffect(() => {
-    handleSearch();
-  }, [products, searchTerm]);
-
-  const fetchProducts = () => {
+  const fetchProducts = async () => {
     setLoading(true);
-    setFilteredProducts(products);
+    try {
+      const response = await axios.get(`${apiUrl}/products`);
+      setProducts(response.data);
+      setFilteredProducts(response.data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
     setLoading(false);
   };
 
-  const handleSearch = () => {
-    const lowercasedFilter = searchTerm.toLowerCase();
-    setLoading(true);
-    const filteredData = products.filter(
-      (product) =>
-        product.name.toLowerCase().includes(lowercasedFilter) ||
-        product.description.toLowerCase().includes(lowercasedFilter)
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+    const searchTermLower = e.target.value.toLowerCase();
+    setFilteredProducts(
+      products.filter(
+        (product) =>
+          product.prodName.toLowerCase().includes(searchTermLower) ||
+          product.prodDescription.toLowerCase().includes(searchTermLower)
+      )
     );
-    setFilteredProducts(filteredData);
-    setLoading(false);
   };
 
-  const handleEdit = (product) => {
-    setSelectedProduct({
-      ...product,
-      imageUrl: `data:${product.image.contentType};base64,${Buffer.from(
-        product.image.data
-      ).toString("base64")}`,
-    });
-    setPreview(
-      `data:${product.image.contentType};base64,${Buffer.from(
-        product.image.data
-      ).toString("base64")}`
-    );
-    setOpenModal(true);
-  };
-
-  const handleDelete = async (id) => {
+  const handleDelete = async (prodId) => {
     try {
-      await axios.delete(`${apiUrl}/products?id=${id}`);
+      await axios.delete(`${apiUrl}/products?id=${prodId}`);
       fetchProducts();
     } catch (error) {
-      console.error("Error deleting product", error);
+      console.error("Error deleting product:", error);
     }
   };
 
-  const handleCloseModal = () => {
-    setOpenModal(false);
-    setSelectedProduct({
-      name: "",
-      description: "",
-      price: "",
-      gender: "",
-      category: "",
-      stock: "",
-      sold: "",
-      image: null,
-      imageUrl: "",
-    });
-    setPreview("");
-  };
-
-  const handleSave = async () => {
-    const formData = new FormData();
-    formData.append("name", selectedProduct.name);
-    formData.append("description", selectedProduct.description);
-    formData.append("price", selectedProduct.price);
-    formData.append("gender", selectedProduct.gender);
-    formData.append("category", selectedProduct.category);
-    formData.append("stock", selectedProduct.stock);
-    formData.append("sold", selectedProduct.sold);
-    if (selectedProduct.image) {
-      formData.append("image", selectedProduct.image);
-    }
-
+  const togglePopularity = async (prodId, popularity) => {
     try {
-      if (selectedProduct.prodId) {
-        await axios
-          .put(`${apiUrl}/products/${selectedProduct.prodId}`, formData)
-          .then(() => {
-            location.reload();
-          })
-          .catch((e) => console.log(e));
-      } else {
-        await axios
-          .post(`${apiUrl}/addProduct`, formData)
-          .then(() => location.reload())
-          .catch((e) => console.log(e));
-      }
+      await axios.patch(
+        `${apiUrl}/makeAPopularProduct?prodId=${prodId}`,
+        null,
+        {
+          headers: { popularity: popularity ? "true" : "false" },
+        }
+      );
       fetchProducts();
-      handleCloseModal();
     } catch (error) {
-      console.error("Error saving product", error);
+      console.error("Error toggling popularity:", error);
     }
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setSelectedProduct({ ...selectedProduct, image: file });
-    setPreview(URL.createObjectURL(file));
-  };
-  function handleAddToPopular(item, popularity) {
-    fetch(`${apiUrl}/makeAPopularProduct?prodId=${item}`, {
-      method: "PATCH",
-      headers: { popularity: popularity },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        location.reload();
-      })
-      .catch((e) => console.error(e));
-  }
   return (
-    <div>
-      <div className="flex flex-col sm:flex-row justify-between mb-2 sticky top-0 bg-gray-100 p-5">
+    <div className="p-5 bg-gray-100 min-h-screen">
+      <div className="flex flex-col sm:flex-row justify-between mb-4">
         <input
-          type="search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          name="search"
+          type="text"
           placeholder="Search a product"
-          className="mb-0 xsm:mb-2 px-3 outline-none border-none"
-          style={{ backgroundColor: "#e0facf" }}
+          value={searchTerm}
+          onChange={handleSearch}
+          className="mb-2 sm:mb-0 p-2 border border-gray-300 rounded w-[100%] sm:w-1/2"
         />
-
         <button
-          onClick={() => setOpenModal(true)}
-          className="bg-green-500 p-3 px-4 rounded-md text-white"
+          style={{ backgroundColor: "#0e8c2b" }}
+          onClick={() => setShowModal(true)}
+          className="bg-blue-600 text-white px-4 py-2 rounded"
         >
           Add Product
         </button>
       </div>
-      <Box sx={{ p: 3 }}>
-        <Box
-          sx={{ overflowX: "auto", "&::-webkit-scrollbar": { height: "8px" } }}
-        >
-          <TableContainer component={Paper} sx={{ minWidth: "600px" }}>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Image</TableCell>
-                  <TableCell>Name</TableCell>
-                  <TableCell>Description</TableCell>
-                  <TableCell>Category</TableCell>
-                  <TableCell>Stock</TableCell>
-                  <TableCell>Sold</TableCell>
-                  <TableCell>Price</TableCell>
-                  <TableCell>Gender</TableCell>
-                  <TableCell>Actions</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {loading ? (
-                  <Loader />
-                ) : filteredProducts.length > 0 ? (
-                  filteredProducts.map((product) => (
-                    <TableRow key={product.prodId}>
-                      <TableCell>
-                        <img
-                          src={`data:${
-                            product.image.contentType
-                          };base64,${Buffer.from(product.image.data).toString(
-                            "base64"
-                          )}`}
-                          alt={product.name}
-                          style={{ width: "50px", height: "50px" }}
-                        />
-                      </TableCell>
-                      <TableCell>{product.name}</TableCell>
-                      <TableCell>{product.description}</TableCell>
-                      <TableCell>{product.category}</TableCell>
-                      <TableCell>{product.stock}</TableCell>
-                      <TableCell>{product.sold}</TableCell>
-                      <TableCell>RWF {product.price.toFixed(2)}</TableCell>
-                      <TableCell>{product.gender}</TableCell>
-                      <TableCell sx={{ display: "flex" }}>
-                        <IconButton onClick={() => handleEdit(product)}>
-                          <FaEdit />
-                        </IconButton>
-                        <IconButton onClick={() => handleDelete(product.prodId)}>
-                          <FaTrashAlt />
-                        </IconButton>
-                        {product.popular ? (
-                          <IconButton
-                            title="remove from pupular products"
-                            onClick={() =>
-                              handleAddToPopular(product.prodId, false)
-                            }
-                          >
-                            <CgMathMinus />
-                          </IconButton>
-                        ) : (
-                          <IconButton
-                            title="Add to pupular products"
-                            onClick={() =>
-                              handleAddToPopular(product.prodId, true)
-                            }
-                          >
-                            <CgAdd />
-                          </IconButton>
-                        )}
-                      </TableCell>
-                    </TableRow>
-                  ))
-                ) : (
-                  <TableRow>
-                    <TableCell colSpan={7} align="center">
-                      <Loader />
-                    </TableCell>
-                  </TableRow>
-                )}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Box>
 
-        {/* Product Modal */}
-        <Modal open={openModal} onClose={handleCloseModal}>
-          <Box sx={{ ...modalStyle, width: { xs: "90%", sm: 400 } }}>
-            <TextField
-              label="Name"
-              value={selectedProduct.name}
-              onChange={(e) =>
-                setSelectedProduct({ ...selectedProduct, name: e.target.value })
-              }
-              fullWidth
-              margin="normal"
-            />
-            <TextField
-              label="Description"
-              value={selectedProduct.description}
-              onChange={(e) =>
-                setSelectedProduct({
-                  ...selectedProduct,
-                  description: e.target.value,
-                })
-              }
-              fullWidth
-              margin="normal"
-            />
-            <TextField
-              type="number"
-              label="Stock"
-              value={selectedProduct.stock}
-              onChange={(e) =>
-                setSelectedProduct({
-                  ...selectedProduct,
-                  stock: e.target.value,
-                })
-              }
-              fullWidth
-              margin="normal"
-            />
-            <TextField
-              type="number"
-              label="Sold"
-              value={selectedProduct.sold}
-              onChange={(e) =>
-                setSelectedProduct({
-                  ...selectedProduct,
-                  sold: e.target.value,
-                })
-              }
-              fullWidth
-              margin="normal"
-            />
-            <TextField
-              type="number"
-              label="Price(RWF)"
-              value={selectedProduct.price}
-              onChange={(e) =>
-                setSelectedProduct({
-                  ...selectedProduct,
-                  price: e.target.value,
-                })
-              }
-              fullWidth
-              margin="normal"
-            />
+      {loading ? (
+        <Loader />
+      ) : filteredProducts.length === 0 ? (
+        <EmptyState message="No products available" />
+      ) : (
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-white rounded-lg shadow-lg">
+            <thead>
+              <tr className="bg-gray-200 text-gray-600 uppercase text-sm">
+                <th className="p-4">Image</th>
+                <th className="p-4">Name</th>
+                <th className="p-4">Description</th>
+                <th className="p-4">Category</th>
+                <th className="p-4">Stock</th>
+                <th className="p-4">Sold</th>
+                <th className="p-4">Price</th>
+                <th className="p-4">Gender</th>
+                <th className="p-4">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredProducts.map((product, index) => (
+                <tr
+                  key={index}
+                  className={`text-center border-b-2 border-black`}
+                >
+                  <td className="p-4">
+                    <img
+                      src={product.image}
+                      alt={product.prodName}
+                      className="w-20 h-20 object-cover rounded-lg mx-auto"
+                    />
+                  </td>
+                  <td className="p-4">{product.prodName}</td>
+                  <td className="p-4">{product.prodDescription}</td>
+                  <td className="p-4">{product.category}</td>
+                  <td className="p-4">{product.stock}</td>
+                  <td className="p-4">{product.sold}</td>
+                  <td className="p-4">RWF {product.price}</td>
+                  <td className="p-4">{product.gender}</td>
+                  <td className="p-4 flex items-center justify-center gap-2">
+                    <button onClick={() => setSelectedProduct(product)}>
+                      <FaEdit className="text-blue-500 hover:text-blue-700" />
+                    </button>
+                    <button onClick={() => handleDelete(product.prodId)}>
+                      <FaTrashAlt className="text-red-500 hover:text-red-700" />
+                    </button>
+                    <button
+                      onClick={() =>
+                        togglePopularity(product.prodId, !product.popular)
+                      }
+                    >
+                      {product.popular ? (
+                        <CgMathMinus className="text-yellow-500 hover:text-yellow-700" />
+                      ) : (
+                        <CgAdd className="text-green-500 hover:text-green-700" />
+                      )}
+                    </button>
+                  </td>
+                </tr>
+              ))}
+              <hr />
+            </tbody>
+          </table>
+        </div>
+      )}
 
-            <FormControl fullWidth margin="normal">
-              <InputLabel>Gender</InputLabel>
-              <Select
-                value={selectedProduct.gender}
-                onChange={(e) =>
-                  setSelectedProduct({
-                    ...selectedProduct,
-                    gender: e.target.value,
-                  })
-                }
-              >
-                {genders.map((gender) => (
-                  <MenuItem key={gender} value={gender}>
-                    {gender}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-
-            <FormControl fullWidth margin="normal">
-              <InputLabel>Category</InputLabel>
-              <Select
-                value={selectedProduct.category}
-                onChange={(e) =>
-                  setSelectedProduct({
-                    ...selectedProduct,
-                    category: e.target.value,
-                  })
-                }
-              >
-                {categories.map((category) => (
-                  <MenuItem key={category} value={category}>
-                    {category}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-
-            <Button
-              variant="contained"
-              component="label"
-              fullWidth
-              margin="normal"
-              sx={{ mt: 2 }}
-            >
-              Upload Image
-              <input
-                type="file"
-                hidden
-                accept="image/*"
-                onChange={handleImageChange}
-              />
-            </Button>
-            {preview && (
-              <Box sx={{ mt: 2, textAlign: "center" }}>
-                <img
-                  src={preview}
-                  alt="preview"
-                  style={{ maxWidth: "100%", maxHeight: "200px" }}
-                />
-              </Box>
-            )}
-
-            <Box sx={{ mt: 3, textAlign: "center" }}>
-              <Button variant="contained" color="primary" onClick={handleSave}>
-                Save
-              </Button>
-            </Box>
-          </Box>
-        </Modal>
-      </Box>
+      {showModal && (
+        <ProductModal
+          isOpen={showModal}
+          onClose={() => {
+            setShowModal(false);
+            setSelectedProduct(null);
+          }}
+          product={selectedProduct}
+          refreshProducts={fetchProducts}
+          categories={categories}
+          genders={genders}
+        />
+      )}
     </div>
   );
 }
-
-const modalStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  bgcolor: "background.paper",
-  boxShadow: 24,
-  p: 4,
-  borderRadius: 2,
-  overflowY: "scroll",
-  height: "100vh",
-};

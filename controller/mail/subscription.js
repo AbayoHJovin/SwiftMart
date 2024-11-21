@@ -1,6 +1,7 @@
-const SubscriptionModel = require("../../model/Subscription");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 
 exports.handleSubscription = async (req, res) => {
   const { email } = req.body;
@@ -10,19 +11,19 @@ exports.handleSubscription = async (req, res) => {
   }
 
   try {
-    let subscription = await SubscriptionModel.findOne();
+    const existingSubscription = await prisma.subscription.findUnique({
+      where: { email: email },
+    });
 
-    if (subscription) {
-      if (subscription.emails.includes(email)) {
-        return res.status(400).json({ message: "Email already subscribed" });
-      }
-
-      subscription.emails.push(email);
-      await subscription.save();
-    } else {
-      subscription = new SubscriptionModel({ emails: [email] });
-      await subscription.save();
+    if (existingSubscription) {
+      return res.status(400).json({ message: "Email already subscribed" });
     }
+
+    const newSubscription = await prisma.subscription.create({
+      data: {
+        email: email,
+      },
+    });
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -40,6 +41,7 @@ exports.handleSubscription = async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
+
     res.status(200).json({ message: "Subscription successful!" });
   } catch (error) {
     console.log(error);

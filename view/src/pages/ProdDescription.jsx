@@ -11,7 +11,7 @@ const ProdDescription = () => {
 
   useEffect(() => {
     const productFilter = products.find(
-      (product) => product._id === params.prodId
+      (product) => product.prodId === params.prodId
     );
     setSelectedProduct(productFilter);
   }, [params.prodId, products]);

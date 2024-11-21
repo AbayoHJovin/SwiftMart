@@ -158,10 +158,10 @@ export default function Account() {
               </TabPanel>
               <TabPanel value={tabValue} index={1}>
                 {/* <Offers> */}
-                  <Orders
-                    AdminOptions={false}
-                    currentUser={currentUser ? currentUser.userId : null}
-                  />
+                <Orders
+                  AdminOptions={false}
+                  currentUser={currentUser ? currentUser.userId : null}
+                />
                 {/* </Offers> */}
               </TabPanel>
               <TabPanel value={tabValue} index={2}>
@@ -180,7 +180,7 @@ export default function Account() {
         </div>
       ) : (
         <div className=" text-black dark:text-white bg-white dark:bg-black">
-          <div className="my-10">
+          {/* <div className="my-10">
             <div className="flex flex-col justify-center items-start ssm:items-center text-start ssm:text-center p-5 font-bold text-xl">
               <h1 className="ssm:text-center">
                 You are not signed in. Better Create an account
@@ -203,7 +203,7 @@ export default function Account() {
                 </button>
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       )}
       <Footer />

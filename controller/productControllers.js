@@ -1,23 +1,34 @@
-const {PrismaClient} =require("@prisma/client")
-const prisma = new PrismaClient()
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+const cloudinary = require("cloudinary").v2;
+
 exports.addProduct = async (req, res) => {
   try {
-    const { name, description, price, gender, category, stock = 0, booked = 0, popular = false } = req.body;
-    const { buffer, mimetype } = req.file;
-
-    const base64Image = `data:${mimetype};base64,${buffer.toString("base64")}`;
-
+    const { name, description, price, gender, category, stock = 0, popular = false } = req.body;
+    if (!req.file) {
+      return res.status(400).json({ error: "Image is required" });
+    }
+    const uploadResult = await new Promise((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        { resource_type: "image", folder: "products" },
+        (error, result) => {
+          if (error) reject(error);
+          else resolve(result);
+        }
+      );
+      uploadStream.end(req.file.buffer);
+    });
+  console.log("The upload result is: ",uploadResult)
     const newProduct = await prisma.products.create({
       data: {
         prodName: name,
         prodDescription: description,
-        prodPrice: parseInt(price, 10),
-        gender:gender,
-        category:category,
+        price: parseInt(price, 10),
+        gender: gender,
+        category: category,
         stock: parseInt(stock, 10),
-        booked: parseInt(booked, 10),
         popular: popular === "true",
-        image: base64Image,
+        image: uploadResult.secure_url,
       },
     });
 
@@ -31,7 +42,7 @@ exports.addProduct = async (req, res) => {
 exports.getProducts = async (req, res) => {
   try {
     const products = await prisma.products.findMany();
-    res.json(products);
+    return res.json(products);
   } catch (error) {
     res.status(500).json({ error: "Error fetching products" });
   }
@@ -46,7 +57,6 @@ exports.updateProduct = async (req, res) => {
       gender: req.body.gender,
       category: req.body.category,
       stock: req.body.stock,
-      booked: req.body.sold,
     };
 
     if (req.file) {

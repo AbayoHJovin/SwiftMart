@@ -48,11 +48,10 @@ model Products {
   prodId          String         @id @default(cuid())
   prodName        String         @db.VarChar(255)
   prodDescription String         @db.Text
-  prodPrice       Int
+  price       Int
   gender          Gender
   category        String         @db.VarChar(255)
   stock           Int            @default(0)
-  booked          Int            @default(0)
   popular         Boolean        @default(false)
   image           String         @db.Text
   cartProducts    CartProducts[]

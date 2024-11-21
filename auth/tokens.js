@@ -1,7 +1,6 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 function createAccessToken(userId) {
-  console.log("yuserId:",userId)
   return jwt.sign({ userId }, process.env.ACCESS_TOKEN, { expiresIn: "60m" });
 }
 function createRefreshToken(userId) {

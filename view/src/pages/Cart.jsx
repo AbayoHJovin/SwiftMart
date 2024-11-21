@@ -26,7 +26,7 @@ const CartPage = () => {
   }, [itemsOnCart]);
 
   const itemsInCart = products.filter((cartItem) =>
-    itemsOnCart?.some((product) => product.productId === cartItem._id)
+    itemsOnCart?.some((product) => product.productId === cartItem.prodId)
   );
 
   useEffect(() => {
