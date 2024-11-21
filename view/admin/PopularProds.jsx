@@ -108,7 +108,7 @@ export default function PopularProds() {
                 <Loader />
               ) : filteredProducts.length > 0 ? (
                 filteredProducts.map((product) => (
-                  <TableRow key={product._id}>
+                  <TableRow key={product.prodId}>
                     <TableCell>
                       <img
                         src={`data:${
@@ -130,7 +130,7 @@ export default function PopularProds() {
                     <TableCell>
                       <IconButton
                         title="remove from pupular products"
-                        onClick={() => handleAddToPopular(product._id, false)}
+                        onClick={() => handleAddToPopular(product.prodId, false)}
                       >
                         <CgMathMinus />
                       </IconButton>

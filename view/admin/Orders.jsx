@@ -60,7 +60,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
     const prod = [];
     for (let i = 0; i < item.products.length; i++) {
       const filteredProducts = products.filter(
-        (items) => items._id === item.products[i]
+        (items) => items.orderId === item.products[i]
       );
       if (filteredProducts.length > 0) {
         prod.push(filteredProducts[0]);
@@ -70,7 +70,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
     setBoughtProducts(prod);
   }
   function handleDecline(order) {
-    fetch(`${apiUrl}/removeOrder?offerId=${order._id}`, {
+    fetch(`${apiUrl}/removeOrder?offerId=${order.orderId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -82,7 +82,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
       .catch((e) => console.error(e));
   }
   function handleApprove(order, e) {
-    fetch(`${apiUrl}/updateOrder?offerId=${order._id}`, {
+    fetch(`${apiUrl}/updateOrder?offerId=${order.orderId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
     })
@@ -122,7 +122,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
           {openOfferModal ? (
             <div className="p-6 bg-green-100 rounded-lg shadow-lg">
               <div className="flex items-start justify-between">
-                <div key={selectedOrder._id}>
+                <div key={selectedOrder.orderId}>
                   <h1 className="font-bold text-3xl text-green-700 mb-4">
                     Customer Name: {selectedOrder.names}
                   </h1>
@@ -182,7 +182,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {boughtProducts.map((item) => (
                       <div
-                        key={item._id}
+                        key={item.orderId}
                         className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
                       >
                         <div className="flex justify-center mb-4">
@@ -278,7 +278,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
                       filteredOrders.map((item) => (
                         <tr
                           onClick={() => handleOfferClick(item)}
-                          key={item._id}
+                          key={item.orderId}
                           className="border hover:bg-gray-100 text-center border-gray-200 h-16 cursor-pointer bg-white dark:bg-gray-800  text-black rounded-md"
                         >
                           <td className="p-4 text-sm text-gray-700 dark:text-gray-200  truncate">

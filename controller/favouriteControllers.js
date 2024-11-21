@@ -1,5 +1,6 @@
-const isAuth = require("../auth/isAuth");
-const Favourites = require("../model/Favourites");
+const isAuth = require("../auth/isAuth").default;
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 exports.addFavouritesItem = async (req, res) => {
   const { userId, prodId } = req.body;
   try {
@@ -7,61 +8,44 @@ exports.addFavouritesItem = async (req, res) => {
       throw new Error("Something went wrong!");
     }
 
-    // Find the user's Favourites
-    const userFavourites = await Favourites.findOne({ userId });
+    const userFavourites = await prisma.favorites.findUnique({
+      where: { userId },
+    });
 
     if (!userFavourites) {
-      // If the Favourites doesn't exist, create a new one
-      const newFavourites = await Favourites.create({
-        userId: userId,
-        products: [{ productId: prodId }],
+      userFavourites = await prisma.favorites.create({
+        data: {
+          userId,
+        },
       });
-      return res.status(201).json({ message: "Added to Favourites" });
-    } else {
-      // Check if the product is already in the Favourites
-      const findItem = userFavourites.products.find(
-        (item) => item.productId.toString() === prodId
-      );
-
-      if (findItem) {
-        throw new Error("Item already in Favourites");
-      }
-
-      // If not, add the product to the Favourites
-      userFavourites.products.push({ productId: prodId });
-      await userFavourites.save();
-
-      return res.status(201).json({ message: "Added to Favourites" });
     }
+    const existingProduct = await prisma.favProducts.findUnique({
+      where: {
+        favId_productId: {
+          favId: userFavourites.favId,
+          productId: prodId,
+        },
+      },
+    });
+    if (existingProduct) {
+      throw new Error("Product is already in favorites");
+    }
+    await prisma.favProducts.create({
+      data: {
+        favId: userFavourites.favId,
+        productId: prodId,
+        quantity: 1,
+      },
+    });
+    res
+      .status(201)
+      .json({ message: "Product added to Favorites successfully." });
   } catch (e) {
     return res
       .status(400)
       .json({ message: e.message || "Something went wrong" });
   }
 };
-
-// exports.getFavouritesItem = async (req, res) => {
-//   const currentUserId = req.query.currentUser;
-//   const authorization = req.headers.authorization;
-//   try {
-//     if (!currentUserId || !authorization) {
-//       throw new Error("Not authorized");
-//     }
-//     const userId = isAuth(authorization);
-//     if (!userId) {
-//       throw new Error("Not authorized");
-//     }
-//     const getItems = await Favourites.findOne({ userId: currentUserId });
-//     if (!getItems) {
-//       throw new Error("No item on your Favourites");
-//     }
-//     return res.status(200).json({ data: getItems });
-//   } catch (e) {
-//     return res
-//       .status(401)
-//       .json({ message: e.message || "Something went wrong" });
-//   }
-// };
 
 exports.getFavouritesItem = async (req, res) => {
   const currentUserId = req.query.currentUser;
@@ -72,54 +56,70 @@ exports.getFavouritesItem = async (req, res) => {
       return res.status(401).json({ message: "Not authorized" });
     }
 
-    // Validate token and get userId
     const userId = isAuth(authorization);
-    if (!userId) {
+    if (!userId || userId !== currentUserId) {
       return res.status(401).json({ message: "Not authorized" });
     }
 
-    // Find the user's cart
-    const cart = await Favourites.findOne({ userId: currentUserId });
-    if (!cart || cart.products.length === 0) {
-      return res.status(404).json({ message: "No items in your cart" });
+    const userFavorites = await prisma.favorites.findUnique({
+      where: { userId: currentUserId },
+      include: {
+        favProducts: {
+          include: {
+            product: true,
+          },
+        },
+      },
+    });
+
+    if (!userFavorites || userFavorites.favProducts.length === 0) {
+      return res.status(404).json({ message: "No items in your favorites." });
     }
 
-    return res.status(200).json({ products: cart.products });
+    const products = userFavorites.favProducts.map((favProduct) => ({
+      id: favProduct.id,
+      productId: favProduct.productId,
+      quantity: favProduct.quantity,
+    }));
+
+    return res.status(200).json({ products });
   } catch (e) {
-    return res.status(500).json({ message: e.message || "Something went wrong" });
+    return res
+      .status(500)
+      .json({ message: e.message || "Something went wrong." });
   }
 };
-
-
 exports.deleteFavouritesItem = async (req, res) => {
   const { itemId, userId } = req.query;
+
   try {
     if (!itemId || !userId) {
-      throw new Error("No item selected");
+      throw new Error("No item selected or user ID provided.");
     }
 
-    const userFavourites = await Favourites.findOne({ userId: userId });
-    if (!userFavourites) {
-      throw new Error("Favourites not found");
+    const userFavorites = await prisma.favorites.findUnique({
+      where: { userId },
+    });
+
+    if (!userFavorites) {
+      throw new Error("Favorites not found.");
     }
 
-    const updatedProducts = userFavourites.products.filter(
-      (product) => product.productId.toString() !== itemId
-    );
+    const deleteResult = await prisma.favProducts.deleteMany({
+      where: {
+        favId: userFavorites.favId,
+        productId: itemId,
+      },
+    });
 
-    if (updatedProducts.length === userFavourites.products.length) {
-      throw new Error("Item not found in Favourites");
+    if (deleteResult.count === 0) {
+      throw new Error("Item not found in Favorites.");
     }
 
-    userFavourites.products = updatedProducts;
-    await userFavourites.save();
-
-    return res
-      .status(200)
-      .json({ message: "Item deleted", data: userFavourites.products });
+    return res.status(200).json({ message: "Item deleted successfully." });
   } catch (e) {
     return res
-      .status(401)
-      .json({ message: e.message || "Something went wrong" });
+      .status(400)
+      .json({ message: e.message || "Something went wrong." });
   }
 };

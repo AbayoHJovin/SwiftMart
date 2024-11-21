@@ -14,7 +14,7 @@ export default function CartItems({ children }) {
     if (currentUser) {
       const token = localStorage.getItem("token");
       fetch(
-        `${apiUrl}/getCartItems?currentUser=${currentUser._id}`,
+        `${apiUrl}/getCartItems?currentUser=${currentUser.userId}`,
         {
           method: "GET",
           headers: {
@@ -47,7 +47,7 @@ export default function CartItems({ children }) {
     fetch(`${apiUrl}/addItemOncart`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ userId: currentUser._id, prodId: itemId }),
+      body: JSON.stringify({ userId: currentUser.userId, prodId: itemId }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -58,9 +58,9 @@ export default function CartItems({ children }) {
   }
   function deleteItem(itemId) {
     setLoading(true)
-    if (currentUser._id) {
+    if (currentUser.userId) {
       fetch(
-        `${apiUrl}/deleteCartItem?itemId=${itemId}&userId=${currentUser._id}
+        `${apiUrl}/deleteCartItem?itemId=${itemId}&userId=${currentUser.userId}
 `,
         {
           method: "DELETE",

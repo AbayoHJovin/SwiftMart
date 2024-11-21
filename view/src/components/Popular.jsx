@@ -109,7 +109,7 @@ const Popular = () => {
             modules={[Navigation, Autoplay]}
           >
             {popularProducts.map((item) => (
-              <SwiperSlide key={item._id}>
+              <SwiperSlide key={item.prodId}>
                 <div className="flex justify-center items-center w-full max-w-[300px] h-[350px] sm:h-[400px] bg-gray-100 rounded-md cursor-pointer relative group mx-auto">
                   <img
                     src={`data:${item.image.contentType};base64,${Buffer.from(
@@ -120,7 +120,7 @@ const Popular = () => {
                   />
                   <div className="absolute inset-0 bg-green-50 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <button
-                    onClick={() => navigateToProduct(item._id)}
+                    onClick={() => navigateToProduct(item.prodId)}
                     className="absolute bottom-0 w-full bg-green-600 text-white py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   >
                     View Product

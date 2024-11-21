@@ -59,7 +59,7 @@ const FavProducts = () => {
   const handleDeleteFromFav = (pantId) => {
     deleteItemFromFav(pantId);
     setLocalFav(localFav.filter((id) => id !== pantId));
-    setFavProds(Favprods.filter((product) => product._id !== pantId));
+    setFavProds(Favprods.filter((product) => product.prodId !== pantId));
   };
 
   const handlePageChange = (event, pageNumber) => {
@@ -69,7 +69,7 @@ const FavProducts = () => {
   useEffect(() => {
     if (itemsOnFav?.length > 0 && products?.length > 0) {
       const filteredFavProducts = products.filter((product) =>
-        itemsOnFav.some((favItem) => favItem.productId === product._id)
+        itemsOnFav.some((favItem) => favItem.productId === product.prodId)
       );
       setFavProds(filteredFavProducts);
     } else {
@@ -94,11 +94,11 @@ const FavProducts = () => {
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {currentProducts.map((pant) => {
-              const isOnCart = localCart.includes(pant._id);
-              const isOnFav = localFav.includes(pant._id);
+              const isOnCart = localCart.includes(pant.prodId);
+              const isOnFav = localFav.includes(pant.prodId);
 
               return (
-                <div key={pant._id}>
+                <div key={pant.prodId}>
                   <ProductCard
                     itemImage={`data:${
                       pant.image.contentType
@@ -108,12 +108,12 @@ const FavProducts = () => {
                     itemName={pant.name}
                     itemDesc={pant.description}
                     itemPrice={`RWF ${pant.price}`}
-                    handleAddToCart={() => handleAddToCart(pant._id)}
-                    deleteItem={() => handleDeleteItem(pant._id)}
+                    handleAddToCart={() => handleAddToCart(pant.prodId)}
+                    deleteItem={() => handleDeleteItem(pant.prodId)}
                     isOnCart={isOnCart}
                     isOnFav={isOnFav}
-                    addToFav={() => handleAddToFav(pant._id)}
-                    deleteFromFav={() => handleDeleteFromFav(pant._id)}
+                    addToFav={() => handleAddToFav(pant.prodId)}
+                    deleteFromFav={() => handleDeleteFromFav(pant.prodId)}
                   />
                 </div>
               );

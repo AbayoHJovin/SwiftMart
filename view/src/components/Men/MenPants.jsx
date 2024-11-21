@@ -97,11 +97,11 @@ const MenPants = () => {
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {currentProducts.map((pant) => {
-              const isOnCart = localCart.includes(pant._id);
-              const isOnFav = localFav.includes(pant._id);
+              const isOnCart = localCart.includes(pant.prodId);
+              const isOnFav = localFav.includes(pant.prodId);
 
               return (
-                <div key={pant._id} onClick={() => showProduct(pant._id)}>
+                <div key={pant.prodId} onClick={() => showProduct(pant.prodId)}>
                   <ProductCard
                     itemImage={`data:${
                       pant.image.contentType
@@ -112,13 +112,13 @@ const MenPants = () => {
                     itemDesc={pant.description}
                     itemPrice={`RWF ${pant.price}`}
                     handleAddToCart={(event) =>
-                      handleAddToCart(pant._id, event)
+                      handleAddToCart(pant.prodId, event)
                     }
-                    deleteItem={(event) => handleDeleteItem(pant._id, event)}
+                    deleteItem={(event) => handleDeleteItem(pant.prodId, event)}
                     isOnCart={isOnCart}
                     isOnFav={isOnFav}
-                    addToFav={() => handleAddToFav(pant._id)}
-                    deleteFromFav={() => handleDeleteFromFav(pant._id)}
+                    addToFav={() => handleAddToFav(pant.prodId)}
+                    deleteFromFav={() => handleDeleteFromFav(pant.prodId)}
                   />
                 </div>
               );

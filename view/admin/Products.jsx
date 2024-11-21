@@ -135,9 +135,9 @@ export default function ProductTable() {
     }
 
     try {
-      if (selectedProduct._id) {
+      if (selectedProduct.prodId) {
         await axios
-          .put(`${apiUrl}/products/${selectedProduct._id}`, formData)
+          .put(`${apiUrl}/products/${selectedProduct.prodId}`, formData)
           .then(() => {
             location.reload();
           })
@@ -216,7 +216,7 @@ export default function ProductTable() {
                   <Loader />
                 ) : filteredProducts.length > 0 ? (
                   filteredProducts.map((product) => (
-                    <TableRow key={product._id}>
+                    <TableRow key={product.prodId}>
                       <TableCell>
                         <img
                           src={`data:${
@@ -239,14 +239,14 @@ export default function ProductTable() {
                         <IconButton onClick={() => handleEdit(product)}>
                           <FaEdit />
                         </IconButton>
-                        <IconButton onClick={() => handleDelete(product._id)}>
+                        <IconButton onClick={() => handleDelete(product.prodId)}>
                           <FaTrashAlt />
                         </IconButton>
                         {product.popular ? (
                           <IconButton
                             title="remove from pupular products"
                             onClick={() =>
-                              handleAddToPopular(product._id, false)
+                              handleAddToPopular(product.prodId, false)
                             }
                           >
                             <CgMathMinus />
@@ -255,7 +255,7 @@ export default function ProductTable() {
                           <IconButton
                             title="Add to pupular products"
                             onClick={() =>
-                              handleAddToPopular(product._id, true)
+                              handleAddToPopular(product.prodId, true)
                             }
                           >
                             <CgAdd />

@@ -1,110 +1,149 @@
-const isAuth = require("../auth/isAuth");
+const isAuth = require("../auth/isAuth").default;
 const Cart = require("../model/Cart");
 exports.addCartItem = async (req, res) => {
   const { userId, prodId } = req.body;
+
   try {
     if (!userId || !prodId) {
-      throw new Error("Something went wrong!");
+      throw new Error("User ID and Product ID are required.");
     }
 
-    const userCart = await Cart.findOne({ userId });
+    // Find the user's cart
+    let userCart = await prisma.cart.findUnique({
+      where: { ownerId: userId },
+      include: { cartProducts: true },
+    });
 
     if (!userCart) {
-      const newCart = await Cart.create({
-        userId: userId,
-        products: [{ productId: prodId }],
+      // Create a new cart if it doesn't exist
+      userCart = await prisma.cart.create({
+        data: {
+          ownerId: userId,
+          cartProducts: {
+            create: [{ productId: prodId }],
+          },
+        },
       });
-      return res.status(201).json({ message: "Added to cart" });
     } else {
-      const findItem = userCart.products.find(
-        (item) => item.productId.toString() === prodId
+      // Check if the product is already in the cart
+      const existingProduct = userCart.cartProducts.find(
+        (item) => item.productId === prodId
       );
 
-      if (findItem) {
-        throw new Error("Item already in cart");
+      if (existingProduct) {
+        throw new Error("Item already in cart.");
       }
 
-      userCart.products.push({ productId: prodId });
-      await userCart.save();
-
-      return res.status(201).json({ message: "Added to cart" });
+      // Add the product to the cart
+      await prisma.cartProducts.create({
+        data: {
+          cartId: userCart.cartId,
+          productId: prodId,
+        },
+      });
     }
-  } catch (e) {
+
+    return res.status(201).json({ message: "Added to cart." });
+  } catch (error) {
     return res
       .status(400)
-      .json({ message: e.message || "Something went wrong" });
+      .json({ message: error.message || "Something went wrong." });
   }
 };
 
-
 exports.getCartItem = async (req, res) => {
-  const currentUserId = req.query.currentUser;
-  const authorization = req.headers.authorization;
+  const { currentUser } = req.query;
 
   try {
-    if (!currentUserId || !authorization) {
-      return res.status(401).json({ message: "Not authorized" });
+    if (!currentUser) {
+      return res.status(401).json({ message: "Not authorized." });
     }
 
-    const userId = isAuth(authorization);
-    if (!userId) {
-      return res.status(401).json({ message: "Not authorized" });
+    // Fetch the user's cart and associated products
+    const cart = await prisma.cart.findUnique({
+      where: { ownerId: currentUser },
+      include: {
+        cartProducts: {
+          include: {
+            product: true, // Includes product details
+          },
+        },
+      },
+    });
+
+    if (!cart || cart.cartProducts.length === 0) {
+      return res.status(404).json({ message: "No items in your cart." });
     }
 
-    const cart = await Cart.findOne({ userId: currentUserId });
-    if (!cart || cart.products.length === 0) {
-      return res.status(404).json({ message: "No items in your cart" });
-    }
-
-    return res.status(200).json({ products: cart.products });
-  } catch (e) {
-    return res.status(500).json({ message: e.message || "Something went wrong" });
+    return res.status(200).json({ products: cart.cartProducts });
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ message: error.message || "Something went wrong." });
   }
 };
 
 exports.deleteCartItem = async (req, res) => {
   const { itemId, userId } = req.query;
+
   try {
     if (!itemId || !userId) {
-      throw new Error("No item selected");
+      throw new Error("Product ID and User ID are required.");
     }
 
-    const cart = await Cart.findOne({ userId: userId });
-    if (!cart) {
-      throw new Error("Cart not found");
+    // Find the user's cart
+    const userCart = await prisma.cart.findUnique({
+      where: { ownerId: userId },
+    });
+
+    if (!userCart) {
+      throw new Error("Cart not found.");
     }
 
-    const updatedProducts = cart.products.filter(
-      (product) => product.productId.toString() !== itemId
-    );
+    // Delete the specific product from the cart
+    const deleteResult = await prisma.cartProducts.deleteMany({
+      where: {
+        cartId: userCart.cartId,
+        productId: itemId,
+      },
+    });
 
-    if (updatedProducts.length === cart.products.length) {
-      throw new Error("Item not found in cart");
+    if (deleteResult.count === 0) {
+      throw new Error("Item not found in cart.");
     }
 
-    cart.products = updatedProducts;
-    await cart.save();
-
-    return res.status(200).json({ message: "Item deleted", data: cart.products });
-  } catch (e) {
-    return res.status(401).json({ message: e.message || "Something went wrong" });
+    return res.status(200).json({ message: "Item deleted successfully." });
+  } catch (error) {
+    return res
+      .status(400)
+      .json({ message: error.message || "Something went wrong." });
   }
 };
 
-exports.deleteAllcartItems = async (req, res) => {
+exports.deleteAllCartItems = async (req, res) => {
   const { userId } = req.query;
+
   try {
     if (!userId) {
-      throw new Error("No item selected");
+      throw new Error("User ID is required.");
     }
 
-    const cart = await Cart.deleteMany({ userId: userId });
-    if (!cart) {
-      throw new Error("Cart not found");
+    const userCart = await prisma.cart.findUnique({
+      where: { ownerId: userId },
+    });
+
+    if (!userCart) {
+      throw new Error("Cart not found.");
     }
-    return res.status(200).json({ message: "Reset the cart" });
-  } catch (e) {
-    return res.status(401).json({ message: e.message || "Something went wrong" });
+
+    await prisma.cartProducts.deleteMany({
+      where: { cartId: userCart.cartId },
+    });
+
+    return res.status(200).json({ message: "Cart reset successfully." });
+  } catch (error) {
+    return res
+      .status(400)
+      .json({ message: error.message || "Something went wrong." });
   }
 };
-

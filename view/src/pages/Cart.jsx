@@ -165,7 +165,7 @@ const CartPage = () => {
                                   : (item.price * quantities[index]).toFixed(2)}
                               </td>
                               <td
-                                onClick={() => deleteItem(item._id)}
+                                onClick={() => deleteItem(item.prodId)}
                                 className="cursor-pointer"
                               >
                                 <FaTimesCircle />

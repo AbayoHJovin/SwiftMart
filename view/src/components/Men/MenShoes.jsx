@@ -76,11 +76,11 @@ const MenShoes = () => {
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {currentProducts.map((shoe) => {
-              const isOnCart = localCart.includes(shoe._id);
-              const isOnFav = localFav.includes(shoe._id);
+              const isOnCart = localCart.includes(shoe.prodId);
+              const isOnFav = localFav.includes(shoe.prodId);
 
               return (
-                <div key={shoe._id}>
+                <div key={shoe.prodId}>
                   <ProductCard
                     itemImage={`data:${
                       shoe.image.contentType
@@ -90,12 +90,12 @@ const MenShoes = () => {
                     itemName={shoe.name}
                     itemDesc={shoe.description}
                     itemPrice={`RWF ${shoe.price}`}
-                    handleAddToCart={() => handleAddToCart(shoe._id)}
-                    deleteItem={() => handleDeleteItem(shoe._id)}
+                    handleAddToCart={() => handleAddToCart(shoe.prodId)}
+                    deleteItem={() => handleDeleteItem(shoe.prodId)}
                     isOnCart={isOnCart}
                     isOnFav={isOnFav}
-                    addToFav={() => handleAddToFav(shoe._id)}
-                    deleteFromFav={() => handleDeleteFromFav(shoe._id)}
+                    addToFav={() => handleAddToFav(shoe.prodId)}
+                    deleteFromFav={() => handleDeleteFromFav(shoe.prodId)}
                   />
                 </div>
               );

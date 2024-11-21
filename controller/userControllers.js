@@ -10,7 +10,7 @@ const {
   sendAccessToken,
   sendRefreshToken,
 } = require("../auth/tokens");
-const isAuth = require("../auth/isAuth");
+const isAuth = require("../auth/isAuth").default;
 require("dotenv").config();
 const prisma = new PrismaClient();
 exports.signupUser = async (req, res) => {
@@ -59,8 +59,8 @@ exports.loginUser = async (req, res) => {
     if (user.email === process.env.AD_EMAIL) {
       isAdmin = true;
     }
-    const accessToken = createAccessToken(user._id);
-    const refreshToken = createRefreshToken(user._id);
+    const accessToken = createAccessToken(user.userId);
+    const refreshToken = createRefreshToken(user.userId);
     user.refreshToken = refreshToken;
     sendRefreshToken(res, refreshToken);
     sendAccessToken(req, res, accessToken, isAdmin);
@@ -100,12 +100,18 @@ exports.updateUserDetails = async (req, res) => {
       message: "User updated successfully",
       user: updatedUser,
     });
-
   } catch (err) {
-    if (err.code === 'P2025') {
-      return res.status(404).json({ success: false, message: "User not found" });
+    if (err.code === "P2025") {
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found" });
     }
-    res.status(500).json({ success: false, message: err.message || "Internal server error" });
+    res
+      .status(500)
+      .json({
+        success: false,
+        message: err.message || "Internal server error",
+      });
   }
 };
 exports.getCurrentUser = async (req, res) => {
@@ -117,7 +123,9 @@ exports.getCurrentUser = async (req, res) => {
     if (!userId) {
       return res.json({ user: null });
     }
-    const currentUserCredentials = await prisma.users.findFirst({data:{userId:userId}});
+    const currentUserCredentials = await prisma.users.findFirst({
+      data: { userId: userId },
+    });
     if (currentUserCredentials.email === process.env.AD_EMAIL) {
       isAdmin = true;
     }
@@ -148,19 +156,21 @@ exports.forgotPassword = async (req, res) => {
     if (!email) {
       return res.status(401).json({ message: "No email entered" });
     }
-    const doesEmailExist = await prisma.users.findFirst({data:{ email: email }});
+    const doesEmailExist = await prisma.users.findFirst({
+      data: { email: email },
+    });
     if (!doesEmailExist) {
       return res.status(401).json({ message: "The email doesn't exist" });
     }
     const newPasswordHashed = await bcrypt.hash(newPass, 5);
     const updatedPassword = await prisma.users.update({
-      where:{
-        email:email
+      where: {
+        email: email,
       },
-      data:{
-       password: newPasswordHashed ,
-      }
-   } );
+      data: {
+        password: newPasswordHashed,
+      },
+    });
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -252,7 +262,7 @@ exports.checkOldPassword = async (req, res) => {
     if (!email || !password) {
       return res.status(401).json({ message: "Missing values" });
     }
-    const user = await prisma.users.findFirst({ where:{email:email} });
+    const user = await prisma.users.findFirst({ where: { email: email } });
     if (!user) {
       return res.status(401).json({ message: "Invalid password" });
     }
@@ -271,12 +281,12 @@ exports.updatePassword = async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(newPassword, 5);
     const updatedPassword = await prisma.users.update({
-     where:{
-      email: email
-     },
-     data:{
-      password: hashedPassword
-     }
+      where: {
+        email: email,
+      },
+      data: {
+        password: hashedPassword,
+      },
     });
     if (!updatedPassword) {
       return res.status(401).json({ message: "Invalid email or password" });

@@ -10,7 +10,7 @@ export default function FavItems({ children }) {
     if (currentUser) {
       const token=localStorage.getItem("token")
       fetch(
-        `${apiUrl}/getFavItems?currentUser=${currentUser._id}`,
+        `${apiUrl}/getFavItems?currentUser=${currentUser.userId}`,
         {
           method: "GET",
           headers: {authorization:token },
@@ -29,7 +29,7 @@ export default function FavItems({ children }) {
       fetch(`${apiUrl}/addItemOnFav`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId: currentUser._id, prodId: itemId }),
+        body: JSON.stringify({ userId: currentUser.userId, prodId: itemId }),
       })
         .then((response) => response.json())
         .then((data) => console.log(data))
@@ -40,7 +40,7 @@ export default function FavItems({ children }) {
   function deleteItemFromFav(itemId) {
     if (currentUser) {
       fetch(
-        `${apiUrl}/deleteFavItem?itemId=${itemId}&userId=${currentUser._id}
+        `${apiUrl}/deleteFavItem?itemId=${itemId}&userId=${currentUser.userId}
   `,
         {
           method: "DELETE",

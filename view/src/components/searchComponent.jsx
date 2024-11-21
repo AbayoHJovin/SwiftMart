@@ -43,8 +43,8 @@ const Search = ({ isModalVisible, setIsModalVisible }) => {
           {searchResults.length > 0 ? (
             searchResults.map((result) => (
               <div
-                onClick={() => showProduct(result._id)}
-                key={result._id}
+                onClick={() => showProduct(result.prodId)}
+                key={result.prodId}
                 style={{
                   display: "flex",
                   alignItems: "center",

@@ -77,11 +77,11 @@ const MenShirts = () => {
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {currentProducts.map((shirt) => {
-              const isOnCart = localCart.includes(shirt._id);
-              const isOnFav = localFav.includes(shirt._id);
+              const isOnCart = localCart.includes(shirt.prodId);
+              const isOnFav = localFav.includes(shirt.prodId);
 
               return (
-                <div key={shirt._id}>
+                <div key={shirt.prodId}>
                   <ProductCard
                     itemImage={`data:${
                       shirt.image.contentType
@@ -91,12 +91,12 @@ const MenShirts = () => {
                     itemName={shirt.name}
                     itemDesc={shirt.description}
                     itemPrice={`RWF ${shirt.price}`}
-                    handleAddToCart={() => handleAddToCart(shirt._id)}
-                    deleteItem={() => handleDeleteItem(shirt._id)}
+                    handleAddToCart={() => handleAddToCart(shirt.prodId)}
+                    deleteItem={() => handleDeleteItem(shirt.prodId)}
                     isOnCart={isOnCart}
                     isOnFav={isOnFav}
-                    addToFav={() => handleAddToFav(shirt._id)}
-                    deleteFromFav={() => handleDeleteFromFav(shirt._id)}
+                    addToFav={() => handleAddToFav(shirt.prodId)}
+                    deleteFromFav={() => handleDeleteFromFav(shirt.prodId)}
                   />
                 </div>
               );
