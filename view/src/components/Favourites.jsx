@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import ProductCard from "./Product";
-import { Buffer } from "buffer";
 import { Pagination, Stack } from "@mui/material";
 import { ThemeContext } from "@emotion/react";
 import { FavContext } from "../../constants/favItems";
@@ -100,13 +99,9 @@ const FavProducts = () => {
               return (
                 <div key={pant.prodId}>
                   <ProductCard
-                    itemImage={`data:${
-                      pant.image.contentType
-                    };base64,${Buffer.from(pant.image.data).toString(
-                      "base64"
-                    )}`}
-                    itemName={pant.name}
-                    itemDesc={pant.description}
+                    itemImage={pant.image}
+                    itemName={pant.prodName}
+                    itemDesc={pant.prodDescription}
                     itemPrice={`RWF ${pant.price}`}
                     handleAddToCart={() => handleAddToCart(pant.prodId)}
                     deleteItem={() => handleDeleteItem(pant.prodId)}

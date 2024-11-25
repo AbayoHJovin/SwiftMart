@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
-import { Buffer } from "buffer";
 import {
   Box,
   Table,
@@ -37,8 +36,8 @@ export default function PopularProds() {
         .filter((item) => item.popular === true)
         .filter(
           (product) =>
-            product.name.toLowerCase().includes(lowercasedFilter) ||
-            product.description.toLowerCase().includes(lowercasedFilter)
+            product.prodName.toLowerCase().includes(lowercasedFilter) ||
+            product.prodDescription.toLowerCase().includes(lowercasedFilter)
         );
       setFilteredProducts(filteredData);
     };
@@ -111,17 +110,13 @@ export default function PopularProds() {
                   <TableRow key={product.prodId}>
                     <TableCell>
                       <img
-                        src={`data:${
-                          product.image.contentType
-                        };base64,${Buffer.from(product.image.data).toString(
-                          "base64"
-                        )}`}
-                        alt={product.name}
+                        src={product.image}
+                        alt={product.prodName}
                         style={{ width: "50px", height: "50px" }}
                       />
                     </TableCell>
-                    <TableCell>{product.name}</TableCell>
-                    <TableCell>{product.description}</TableCell>
+                    <TableCell>{product.prodName}</TableCell>
+                    <TableCell>{product.prodDescription}</TableCell>
                     <TableCell>{product.category}</TableCell>
                     <TableCell>{product.stock}</TableCell>
                     <TableCell>{product.sold}</TableCell>
@@ -130,7 +125,9 @@ export default function PopularProds() {
                     <TableCell>
                       <IconButton
                         title="remove from pupular products"
-                        onClick={() => handleAddToPopular(product.prodId, false)}
+                        onClick={() =>
+                          handleAddToPopular(product.prodId, false)
+                        }
                       >
                         <CgMathMinus />
                       </IconButton>

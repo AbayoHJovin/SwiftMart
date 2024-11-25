@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import useProducts from "../../../constants/products";
 import ProductCard from "../Product";
-import { Buffer } from "buffer";
 import { CartContext } from "../../../constants/cartItems";
 import { FavContext } from "../../../constants/favItems";
 import { Pagination, Stack } from "@mui/material";
@@ -103,13 +102,9 @@ const MenPants = () => {
               return (
                 <div key={pant.prodId} onClick={() => showProduct(pant.prodId)}>
                   <ProductCard
-                    itemImage={`data:${
-                      pant.image.contentType
-                    };base64,${Buffer.from(pant.image.data).toString(
-                      "base64"
-                    )}`}
-                    itemName={pant.name}
-                    itemDesc={pant.description}
+                    itemImage={pant.image}
+                    itemName={pant.prodName}
+                    itemDesc={pant.prodDescription}
                     itemPrice={`RWF ${pant.price}`}
                     handleAddToCart={(event) =>
                       handleAddToCart(pant.prodId, event)

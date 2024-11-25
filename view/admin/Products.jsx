@@ -48,7 +48,7 @@ export default function ProductTable() {
 
   const handleDelete = async (prodId) => {
     try {
-      await axios.delete(`${apiUrl}/products?id=${prodId}`);
+      await axios.delete(`${apiUrl}/products/${prodId}`);
       fetchProducts();
     } catch (error) {
       console.error("Error deleting product:", error);
@@ -69,7 +69,10 @@ export default function ProductTable() {
       console.error("Error toggling popularity:", error);
     }
   };
-
+function handleEdit(product){
+  setSelectedProduct(product)
+  setShowModal(true)
+}
   return (
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="flex flex-col sm:flex-row justify-between mb-4">
@@ -113,13 +116,15 @@ export default function ProductTable() {
               {filteredProducts.map((product, index) => (
                 <tr
                   key={index}
-                  className={`text-center border-b-2 border-black`}
+                  className={`border-b-2 border-black items-center content-center ${
+                    index % 2 == 0 ? "bg-gray-100" : "bg-gray-200"
+                  }`}
                 >
-                  <td className="p-4">
+                  <td className="p-4 flex justify-center">
                     <img
                       src={product.image}
                       alt={product.prodName}
-                      className="w-20 h-20 object-cover rounded-lg mx-auto"
+                      className="w-20 h-20 object-cover rounded-lg"
                     />
                   </td>
                   <td className="p-4">{product.prodName}</td>
@@ -129,28 +134,35 @@ export default function ProductTable() {
                   <td className="p-4">{product.sold}</td>
                   <td className="p-4">RWF {product.price}</td>
                   <td className="p-4">{product.gender}</td>
-                  <td className="p-4 flex items-center justify-center gap-2">
-                    <button onClick={() => setSelectedProduct(product)}>
-                      <FaEdit className="text-blue-500 hover:text-blue-700" />
-                    </button>
-                    <button onClick={() => handleDelete(product.prodId)}>
-                      <FaTrashAlt className="text-red-500 hover:text-red-700" />
-                    </button>
-                    <button
-                      onClick={() =>
-                        togglePopularity(product.prodId, !product.popular)
-                      }
-                    >
-                      {product.popular ? (
-                        <CgMathMinus className="text-yellow-500 hover:text-yellow-700" />
-                      ) : (
-                        <CgAdd className="text-green-500 hover:text-green-700" />
-                      )}
-                    </button>
+                  <td className="p-4">
+                    <div className="flex space-x-5 space-y-5 items-center justify-center">
+                      <button onClick={() => handleEdit(product)}>
+                        <FaEdit className="text-blue-500 hover:text-blue-700" />
+                      </button>
+                      <button onClick={() => handleDelete(product.prodId)}>
+                        <FaTrashAlt className="text-red-500 hover:text-red-700" />
+                      </button>
+                      <button
+                        onClick={() =>
+                          togglePopularity(product.prodId, !product.popular)
+                        }
+                      >
+                        {product.popular ? (
+                          <CgMathMinus
+                            className="text-yellow-500 hover:text-yellow-700"
+                            title="Remove from popular products"
+                          />
+                        ) : (
+                          <CgAdd
+                            className="text-green-500 hover:text-green-700"
+                            title="Add to popular products"
+                          />
+                        )}
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}
-              <hr />
             </tbody>
           </table>
         </div>

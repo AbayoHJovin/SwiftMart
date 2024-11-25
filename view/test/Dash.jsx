@@ -161,7 +161,7 @@ export default function Dashboard() {
               <div className="grid grid-cols-1  md:grid-cols-2 gap-6">
                 {sales.map((item) => (
                   <div
-                    key={item.name}
+                    key={item.prodName}
                     className={` flex items-center rounded-lg ${item.bgColor}`}
                   >
                     <div className={`text-4xl p-3 ${item.iconColor}`}>
@@ -169,7 +169,7 @@ export default function Dashboard() {
                     </div>
                     <div className="flex-1">
                       <h2 className="text-lg font-semibold text-gray-700">
-                        {item.name}
+                        {item.prodName}
                       </h2>
                       {loading ? (
                         <Loader3 />
@@ -190,7 +190,7 @@ export default function Dashboard() {
               <div className="grid grid-cols-1  md:grid-cols-2 gap-6">
                 {orders.map((item) => (
                   <div
-                    key={item.name}
+                    key={item.prodName}
                     className={` flex items-center rounded-lg ${item.bgColor}`}
                   >
                     <div className={`text-4xl p-3 ${item.iconColor}`}>
@@ -198,7 +198,7 @@ export default function Dashboard() {
                     </div>
                     <div className="flex-1">
                       <h2 className="text-lg font-semibold text-gray-700">
-                        {item.name}
+                        {item.prodName}
                       </h2>
                       {loading ? (
                         <Loader3 />

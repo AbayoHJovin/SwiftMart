@@ -19,7 +19,7 @@ exports.refreshToken = async (req, res) => {
   } catch (e) {
     return res.send({ accessToken: "" });
   }
-  const user = await prisma.users.findFirst({
+  const user = await prisma.users.findUnique({
     where: { userId: payload.userId },
   });
   if (!user) {

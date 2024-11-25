@@ -2,7 +2,6 @@ import { useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../../constants/ThemeContext";
 import Navbar from "../components/Navbar";
 import { CartContext } from "../../constants/cartItems";
-import { Buffer } from "buffer";
 import useProducts from "../../constants/products";
 import { useNavigate } from "react-router-dom";
 import { CurrentUserContext } from "../../constants/currentUser";
@@ -130,16 +129,12 @@ const CartPage = () => {
                             >
                               <td className="p-2 flex items-center">
                                 <img
-                                  src={`data:${
-                                    item.image.contentType
-                                  };base64,${Buffer.from(
-                                    item.image.data
-                                  ).toString("base64")}`}
-                                  alt={item.name}
+                                  src={item.image}
+                                  alt={item.prodName}
                                   className="w-16 h-16 object-cover rounded-lg"
                                 />
                                 <span className="ml-4 hidden lg:inline-block">
-                                  {item.name}
+                                  {item.prodName}
                                 </span>
                               </td>
                               <td className="p-2">${item.price.toFixed(2)}</td>

@@ -3,7 +3,6 @@
 import { useContext, useEffect, useState } from "react";
 import useProducts from "../constants/products";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { Buffer } from "buffer";
 import { CgTrash } from "react-icons/cg";
 import { toast } from "react-toastify";
 import { apiUrl } from "../src/lib/apis";
@@ -124,7 +123,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
               <div className="flex items-start justify-between">
                 <div key={selectedOrder.orderId}>
                   <h1 className="font-bold text-3xl text-green-700 mb-4">
-                    Customer Name: {selectedOrder.names}
+                    Customer Name: {selectedOrder.prodNames}
                   </h1>
                   <p className="text-lg mb-2">
                     <span className="font-semibold text-green-600">
@@ -187,18 +186,14 @@ const Orders = ({ AdminOptions, currentUser }) => {
                       >
                         <div className="flex justify-center mb-4">
                           <img
-                            src={`data:${
-                              item.image.contentType
-                            };base64,${Buffer.from(item.image.data).toString(
-                              "base64"
-                            )}`}
+                            src={item.image}
                             className="w-80 h-80 object-cover rounded-lg"
-                            alt={item.name}
+                            alt={item.prodName}
                           />
                         </div>
                         <div className="text-center">
                           <h2 className="text-2xl font-bold text-green-700">
-                            {item.name}
+                            {item.prodName}
                           </h2>
                           <p className="text-lg text-green-600 mt-2">
                             RWF {item.price.toFixed(2)}
@@ -282,7 +277,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
                           className="border hover:bg-gray-100 text-center border-gray-200 h-16 cursor-pointer bg-white dark:bg-gray-800  text-black rounded-md"
                         >
                           <td className="p-4 text-sm text-gray-700 dark:text-gray-200  truncate">
-                            {item.names}
+                            {item.prodNames}
                           </td>
                           <td className="p-4 text-sm text-gray-700 dark:text-gray-200  truncate">
                             {item.address}

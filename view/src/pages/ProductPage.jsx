@@ -2,7 +2,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useProducts from "../../constants/products";
-import { Buffer } from "buffer";
 import Navbar from "../components/Navbar";
 import { CartContext } from "../../constants/cartItems";
 import Loader2 from "../components/loader2";
@@ -41,12 +40,8 @@ const ProductPage = () => {
               <div className="flex justify-center items-center bg-gray-100 p-4 rounded-lg">
                 <div className="w-full max-w-[400px] h-[400px] sm:max-w-[500px] sm:h-[500px]">
                   <img
-                    src={`data:${
-                      realProduct.image.contentType
-                    };base64,${Buffer.from(realProduct.image.data).toString(
-                      "base64"
-                    )}`}
-                    alt={realProduct.name}
+                    src={realProduct.image}
+                    alt={realProduct.prodName}
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -54,10 +49,10 @@ const ProductPage = () => {
 
               <div>
                 <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">
-                  {realProduct.name}
+                  {realProduct.prodName}
                 </h2>
                 <p className="text-sm text-gray-500 dark:text-gray-200 mb-4">
-                  {realProduct.description}
+                  {realProduct.prodDescription}
                 </p>
 
                 <div className="flex items-center mb-4">

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import useProducts from "../../constants/products";
 import { useParams } from "react-router-dom";
-import { Buffer } from "buffer";
 import Navbar from "../components/Navbar";
 
 const ProdDescription = () => {
@@ -21,15 +20,11 @@ const ProdDescription = () => {
       <Navbar />
       {selectedProduct ? (
         <div>
-          <h1>{selectedProduct.name}</h1>
+          <h1>{selectedProduct.prodName}</h1>
           <img
             className="bg-black"
-            src={`data:${
-              selectedProduct.image.contentType
-            };base64,${Buffer.from(selectedProduct.image.data).toString(
-              "base64"
-            )}`}
-            alt={selectedProduct.name}
+            src={selectedProduct.image}
+            alt={selectedProduct.prodName}
           />
         </div>
       ) : (

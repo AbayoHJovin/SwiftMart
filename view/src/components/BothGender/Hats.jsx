@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import useProducts from "../../../constants/products";
 import ProductCard from "../Product";
-import { Buffer } from "buffer";
 import { useNavigate } from "react-router-dom";
 import { Pagination, Stack } from "@mui/material";
 import Loader3 from "../Loading3";
@@ -50,13 +49,13 @@ const Hats = () => {
   }, [products, itemsOnCart, itemsOnFav]);
 
   const handleAddToCart = (pantId, event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
     addItemOncart(pantId);
     setLocalCart([...localCart, pantId]);
   };
 
   const handleDeleteItem = (pantId, event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
     deleteItem(pantId);
     setLocalCart(localCart.filter((id) => id !== pantId));
   };
@@ -101,13 +100,9 @@ const Hats = () => {
               return (
                 <div key={pant.prodId} onClick={() => showProduct(pant.prodId)}>
                   <ProductCard
-                    itemImage={`data:${
-                      pant.image.contentType
-                    };base64,${Buffer.from(pant.image.data).toString(
-                      "base64"
-                    )}`}
-                    itemName={pant.name}
-                    itemDesc={pant.description}
+                    itemImage={pant.image}
+                    itemName={pant.prodName}
+                    itemDesc={pant.prodDescription}
                     itemPrice={`RWF ${pant.price}`}
                     handleAddToCart={(event) =>
                       handleAddToCart(pant.prodId, event)
@@ -165,5 +160,5 @@ const Hats = () => {
       )}
     </div>
   );
-}
+};
 export default Hats;

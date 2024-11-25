@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import useProducts from "../../../constants/products";
 import ProductCard from "../Product";
-import { Buffer } from "buffer";
 import { CartContext } from "../../../constants/cartItems";
 import { FavContext } from "../../../constants/favItems";
 import Loader from "../loader";
@@ -83,13 +82,9 @@ const MenShirts = () => {
               return (
                 <div key={shirt.prodId}>
                   <ProductCard
-                    itemImage={`data:${
-                      shirt.image.contentType
-                    };base64,${Buffer.from(shirt.image.data).toString(
-                      "base64"
-                    )}`}
-                    itemName={shirt.name}
-                    itemDesc={shirt.description}
+                    itemImage={shirt.image}
+                    itemName={shirt.prodName}
+                    itemDesc={shirt.prodDescription}
                     itemPrice={`RWF ${shirt.price}`}
                     handleAddToCart={() => handleAddToCart(shirt.prodId)}
                     deleteItem={() => handleDeleteItem(shirt.prodId)}

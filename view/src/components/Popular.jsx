@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import useProducts from "../../constants/products";
-import { Buffer } from "buffer";
 import Loader3 from "./Loading3";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -112,9 +111,7 @@ const Popular = () => {
               <SwiperSlide key={item.prodId}>
                 <div className="flex justify-center items-center w-full max-w-[300px] h-[350px] sm:h-[400px] bg-gray-100 rounded-md cursor-pointer relative group mx-auto">
                   <img
-                    src={`data:${item.image.contentType};base64,${Buffer.from(
-                      item.image.data
-                    ).toString("base64")}`}
+                    src={item.image}
                     alt="item"
                     className="w-full h-full object-cover rounded-md"
                   />
