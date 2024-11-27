@@ -85,8 +85,11 @@ exports.getUserDetails = async (req, res) => {
 exports.updateUserDetails = async (req, res) => {
   const userId = req.query.userId;
   const { username, email } = req.body;
-
   try {
+    console.log("file", req.file, req.body);
+    if (!username || !email) {
+      throw new Error("Please enter all credentials");
+    }
     const updatedUser = await prisma.users.update({
       where: { userId },
       data: {
@@ -130,9 +133,7 @@ exports.getCurrentUser = async (req, res) => {
     if (currentUserCredentials.email === process.env.AD_EMAIL) {
       isAdmin = true;
     }
-    const currentUser = lodash.omit(currentUserCredentials, [
-      "password",
-    ]);
+    const currentUser = lodash.omit(currentUserCredentials, ["password"]);
     return res.status(200).json({ user: currentUser, isAdmin: isAdmin });
   } catch (e) {
     console.log(e);

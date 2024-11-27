@@ -52,7 +52,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <h1
-                    onClick={() => navigate("/shop/Both/pants")}
+                    onClick={() => navigate("/shop/Unisex/pants")}
                     className="hover:underline cursor-pointer"
                   >
                     Pants
@@ -60,7 +60,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <h1
-                    onClick={() => navigate("/shop/Both/pants")}
+                    onClick={() => navigate("/shop/Unisex/pants")}
                     className="hover:underline cursor-pointer"
                   >
                     Shorts
@@ -68,7 +68,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <h1
-                    onClick={() => navigate("/shop/Both/shirts")}
+                    onClick={() => navigate("/shop/Unisex/shirts")}
                     className="hover:underline cursor-pointer"
                   >
                     Shirts
@@ -76,7 +76,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <h1
-                    onClick={() => navigate("/shop/Both/shirts")}
+                    onClick={() => navigate("/shop/Unisex/shirts")}
                     className="hover:underline cursor-pointer"
                   >
                     T-shirts
@@ -84,7 +84,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <h1
-                    onClick={() => navigate("/shop/Both/shoes")}
+                    onClick={() => navigate("/shop/Unisex/shoes")}
                     className="hover:underline cursor-pointer"
                   >
                     Shoes

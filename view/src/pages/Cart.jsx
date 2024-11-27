@@ -54,7 +54,7 @@ const CartPage = () => {
     if (isNaN(subtotal) || subtotal < 100) {
       toast.error("Please enter a valid amount");
     } else {
-      navigate(`/checkout/RWF${subtotal}`);
+      navigate(`/checkout/${subtotal}`);
     }
   }
 
@@ -65,7 +65,7 @@ const CartPage = () => {
           No item is found in your cart.
         </h1>
         <button
-          onClick={() => navigate("/shop/Both/pants")}
+          onClick={() => navigate("/shop/Unisex/pants")}
           className="bg-green-900 text-white my-2 p-3 px-5 rounded-md"
         >
           Shop Now

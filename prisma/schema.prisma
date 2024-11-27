@@ -14,22 +14,23 @@ enum Gender {
 }
 
 model Users {
-  userId    String      @id @default(uuid())
-  username  String      @db.VarChar(255)
-  email     String      @unique
-  password  String      @db.VarChar(255)
-  otp       String?     @db.VarChar(10)
-  cart      Cart[]
-  favorites Favorites[]
-  orders    Orders[]
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
+  userId         String      @id @default(uuid())
+  username       String      @db.VarChar(255)
+  email          String      @unique
+  password       String      @db.VarChar(255)
+  otp            String?     @db.VarChar(10)
+  cart           Cart[]
+  favorites      Favorites[]
+  orders         Orders[]
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+  profilePicture String?      @db.Text
 }
 
 model Cart {
   cartId       String         @id @default(cuid())
   owner        Users          @relation(fields: [ownerId], references: [userId])
-  ownerId      String
+  ownerId      String         @unique
   cartProducts CartProducts[]
 }
 
@@ -48,7 +49,7 @@ model Products {
   prodId          String         @id @default(cuid())
   prodName        String         @db.VarChar(255)
   prodDescription String         @db.Text
-  price       Int
+  price           Int
   gender          Gender
   category        String         @db.VarChar(255)
   stock           Int            @default(0)
@@ -68,7 +69,7 @@ model Orders {
   paymentMethod String      @db.VarChar(255)
   price         Decimal     @db.Decimal(10, 2)
   approved      Boolean     @default(false)
-  orderDate     DateTime?   @db.Date
+  orderDate     String?     @db.Text
   orderItems    OrderItem[]
 }
 
@@ -86,7 +87,7 @@ model OrderItem {
 model Favorites {
   favId       String        @id @default(cuid())
   user        Users         @relation(fields: [userId], references: [userId])
-  userId      String
+  userId      String        @unique
   favProducts FavProducts[]
 }
 

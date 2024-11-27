@@ -1,21 +1,20 @@
-const isAuth = require("../auth/isAuth").default;
+const isAuth = require("../auth/isAuth");
 const Cart = require("../model/Cart");
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 exports.addCartItem = async (req, res) => {
   const { userId, prodId } = req.body;
-
   try {
     if (!userId || !prodId) {
       throw new Error("User ID and Product ID are required.");
     }
 
-    // Find the user's cart
-    let userCart = await prisma.cart.findUnique({
+    let userCart = await prisma.cart.findFirst({
       where: { ownerId: userId },
       include: { cartProducts: true },
     });
 
     if (!userCart) {
-      // Create a new cart if it doesn't exist
       userCart = await prisma.cart.create({
         data: {
           ownerId: userId,
@@ -25,7 +24,6 @@ exports.addCartItem = async (req, res) => {
         },
       });
     } else {
-      // Check if the product is already in the cart
       const existingProduct = userCart.cartProducts.find(
         (item) => item.productId === prodId
       );
@@ -34,7 +32,6 @@ exports.addCartItem = async (req, res) => {
         throw new Error("Item already in cart.");
       }
 
-      // Add the product to the cart
       await prisma.cartProducts.create({
         data: {
           cartId: userCart.cartId,
@@ -59,13 +56,12 @@ exports.getCartItem = async (req, res) => {
       return res.status(401).json({ message: "Not authorized." });
     }
 
-    // Fetch the user's cart and associated products
-    const cart = await prisma.cart.findUnique({
-      where: { ownerId: currentUser },
+    const cart = await prisma.cart.findFirst({
+      where: { ownerId: currentUser }, 
       include: {
         cartProducts: {
           include: {
-            product: true, // Includes product details
+            product: true,
           },
         },
       },

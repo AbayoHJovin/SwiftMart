@@ -3,15 +3,15 @@ import { useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const categories = [
-  { name: "Pants", icon: <CircleCheck />,href:"/shop/Both/pants" },
-  { name: "Shirts", icon: <CircleCheck />,href:"/shop/Both/shirts" },
-  { name: "T-shirts", icon: <CircleCheck />,href:"/shop/Both/shirts" },
-  { name: "Shorts", icon: <CircleCheck />,href:"/shop/Both/pants" },
+  { name: "Pants", icon: <CircleCheck />,href:"/shop/Unisex/pants" },
+  { name: "Shirts", icon: <CircleCheck />,href:"/shop/Unisex/shirts" },
+  { name: "T-shirts", icon: <CircleCheck />,href:"/shop/Unisex/shirts" },
+  { name: "Shorts", icon: <CircleCheck />,href:"/shop/Unisex/pants" },
   { name: "Dresses", icon: <CircleCheck />,href:"/shop/Female/pants" },
   { name: "Skirts", icon: <CircleCheck />,href:"/shop/Female/pants" },
-  { name: "Hats", icon: <CircleCheck />,href:"/shop/Both/hats" },
-  { name: "Watches", icon: <CircleCheck />,href:"/shop/Both/watches" },
-  { name: "Shoes", icon: <CircleCheck />,href:"/shop/Both/shoes" },
+  { name: "Hats", icon: <CircleCheck />,href:"/shop/Unisex/hats" },
+  { name: "Watches", icon: <CircleCheck />,href:"/shop/Unisex/watches" },
+  { name: "Shoes", icon: <CircleCheck />,href:"/shop/Unisex/shoes" },
 ];
 
 const CategorySection = () => {

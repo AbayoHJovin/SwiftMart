@@ -12,13 +12,11 @@ io.on("connection", (socket) => {
     io.emit("receivedOffer", message);
   });
 
-  // Log when a client disconnects
   socket.on("disconnect", () => {
     console.log(`Client disconnected: ${socket.id}`);
   });
 });
 
-// Optional: Handle server errors
 io.on("error", (error) => {
   console.error("Socket.IO error:", error);
 });

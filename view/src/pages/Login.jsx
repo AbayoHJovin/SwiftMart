@@ -35,8 +35,7 @@ const Login = () => {
             localStorage.removeItem("admTokn");
           }
           if (data.message === "loggedIn") {
-            // navigate("/shop/Both/pants");
-            window.location.href = "/shop/Both/pants";
+            window.location.href = "/shop/Unisex/pants";
             const accessToken = data.accessToken;
             localStorage.setItem("token", accessToken);
           } else {

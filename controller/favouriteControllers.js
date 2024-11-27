@@ -1,14 +1,17 @@
-const isAuth = require("../auth/isAuth").default;
+const isAuth = require("../auth/isAuth");
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 exports.addFavouritesItem = async (req, res) => {
   const { userId, prodId } = req.body;
+
   try {
     if (!userId || !prodId) {
-      throw new Error("Something went wrong!");
+      return res
+        .status(400)
+        .json({ message: "User ID and Product ID are required." });
     }
 
-    const userFavourites = await prisma.favorites.findUnique({
+    let userFavourites = await prisma.favorites.findFirst({
       where: { userId },
     });
 
@@ -19,6 +22,7 @@ exports.addFavouritesItem = async (req, res) => {
         },
       });
     }
+
     const existingProduct = await prisma.favProducts.findUnique({
       where: {
         favId_productId: {
@@ -27,46 +31,50 @@ exports.addFavouritesItem = async (req, res) => {
         },
       },
     });
+
     if (existingProduct) {
-      throw new Error("Product is already in favorites");
+      return res
+        .status(400)
+        .json({ message: "Product is already in favorites." });
     }
+
     await prisma.favProducts.create({
       data: {
         favId: userFavourites.favId,
         productId: prodId,
-        quantity: 1,
+        quantity: 1, // Optional, can be omitted if the `quantity` is not relevant
       },
     });
-    res
+
+    return res
       .status(201)
       .json({ message: "Product added to Favorites successfully." });
   } catch (e) {
     return res
-      .status(400)
-      .json({ message: e.message || "Something went wrong" });
+      .status(500)
+      .json({ message: e.message || "Something went wrong." });
   }
 };
-
 exports.getFavouritesItem = async (req, res) => {
   const currentUserId = req.query.currentUser;
   const authorization = req.headers.authorization;
 
   try {
     if (!currentUserId || !authorization) {
-      return res.status(401).json({ message: "Not authorized" });
+      return res.status(401).json({ message: "Not authorized." });
     }
 
     const userId = isAuth(authorization);
     if (!userId || userId !== currentUserId) {
-      return res.status(401).json({ message: "Not authorized" });
+      return res.status(401).json({ message: "Not authorized." });
     }
 
-    const userFavorites = await prisma.favorites.findUnique({
-      where: { userId: currentUserId },
+    const userFavorites = await prisma.favorites.findFirst({
+      where: { userId },
       include: {
         favProducts: {
           include: {
-            product: true,
+            product: true, // Adjust according to your schema
           },
         },
       },
@@ -80,6 +88,7 @@ exports.getFavouritesItem = async (req, res) => {
       id: favProduct.id,
       productId: favProduct.productId,
       quantity: favProduct.quantity,
+      productDetails: favProduct.product, // Include detailed product information
     }));
 
     return res.status(200).json({ products });
@@ -89,6 +98,7 @@ exports.getFavouritesItem = async (req, res) => {
       .json({ message: e.message || "Something went wrong." });
   }
 };
+
 exports.deleteFavouritesItem = async (req, res) => {
   const { itemId, userId } = req.query;
 

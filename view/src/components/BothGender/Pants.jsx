@@ -32,7 +32,7 @@ const Pants = () => {
   
   useEffect(() => {
     const menProducts = products.filter(
-      (prod) => prod.gender == "Both" && prod.category == "pants"
+      (prod) => prod.gender == "Unisex" && prod.category == "pants"
     );
     setMenpants(menProducts);
 

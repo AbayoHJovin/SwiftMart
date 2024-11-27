@@ -13,9 +13,6 @@ const OrderForm = () => {
   const { itemsOnCart } = useContext(CartContext);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: currentUser ? currentUser.username : "",
-    lastName: "",
-    email: currentUser ? currentUser.email : "",
     phone: "",
     province: "",
     district: "",
@@ -31,18 +28,35 @@ const OrderForm = () => {
   const [cost, setCost] = useState("");
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (!currentUser || !itemsOnCart) {
+  //     navigate("/login");
+  //   }
+  //   const ids = [];
+  //   for (let i = 0; i < itemsOnCart.length; i++) {
+  //     if (itemsOnCart[i] && itemsOnCart[i].productId) {
+  //       ids.push(itemsOnCart[i].productId);
+  //     }
+  //   }
+
+  //   setProductsId(ids);
+  // }, [itemsOnCart, currentUser, navigate]);
+
   useEffect(() => {
     if (!currentUser || !itemsOnCart) {
       navigate("/login");
     }
-    const ids = [];
-    for (let i = 0; i < itemsOnCart.length; i++) {
-      if (itemsOnCart[i] && itemsOnCart[i].productId) {
-        ids.push(itemsOnCart[i].productId);
-      }
-    }
 
-    setProductsId(ids);
+    const products = itemsOnCart
+      .map((item) => {
+        if (item && item.productId && item.quantity) {
+          return { productId: item.productId, quantity: item.quantity };
+        }
+        return null;
+      })
+      .filter(Boolean);
+
+    setProductsId(products);
   }, [itemsOnCart, currentUser, navigate]);
 
   const handleChange = (e) => {
@@ -50,19 +64,10 @@ const OrderForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
   const now = new Date();
-  const daysOfWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const realTime = `${hours}:${minutes} ${hours >= 12 ? "PM" : "AM"}`;
-  const currentDay = daysOfWeek[now.getDay()];
   const currentDate = now.toISOString().split("T")[0];
   const currentTime = realTime;
   const handleCheckboxChange = (e) => {
@@ -72,9 +77,6 @@ const OrderForm = () => {
   const validateForm = () => {
     const errors = {};
     const {
-      firstName,
-      lastName,
-      email,
       phone,
       province,
       district,
@@ -85,9 +87,6 @@ const OrderForm = () => {
       termsAccepted,
     } = formData;
 
-    if (!firstName) errors.firstName = "First name is required";
-    if (!lastName) errors.lastName = "Last name is required";
-    if (!email) errors.email = "Email is required";
     if (!phone) errors.phone = "Phone number is required";
     if (!province) errors.province = "Province is required";
     if (!district) errors.district = "District is required";
@@ -109,8 +108,6 @@ const OrderForm = () => {
     } else {
       const dataToSend = {
         userId: currentUser.userId,
-        names: formData.firstName + "," + formData.lastName,
-        email: formData.email,
         address:
           formData.province +
           "," +
@@ -121,14 +118,13 @@ const OrderForm = () => {
           formData.cell +
           "," +
           formData.village,
-        phoneNumber: formData.phone,
+        phoneNo: formData.phone, // Match with backend’s `phoneNo` field
         paymentMethod: formData.paymentMethod,
-        amount: cost,
+        price: cost, // Match with backend’s `price` field
         products: productsId,
-        day: currentDay,
-        date: currentDate,
-        time: currentTime,
+        orderDate: `${currentDate} ${currentTime}`, // Combine date and time if needed or modify as required
       };
+
       setLoading(true);
       fetch(`${apiUrl}/addOffer`, {
         method: "POST",
@@ -137,20 +133,31 @@ const OrderForm = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data.message == "Offer placed") {
+          if (data.message === "Order placed successfully") {
             handleRedirect();
+          } else {
+            setFormErrors({
+              general: "An error occurred while placing the order.",
+            });
           }
         })
-        .catch((e) => console.error(e));
+        .catch((e) => {
+          console.error(e);
+          setFormErrors({
+            general: "An error occurred. Please try again later.",
+          });
+        })
+        .finally(() => setLoading(false));
     }
   };
+
   function handleRedirect() {
     fetch(`${apiUrl}/deleteAllCartItems?userId=${currentUser.userId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
       .then((message) => {
-        if (message.message == "Reset the cart") {
+        if (message.message == "Cart reset successfully.") {
           navigate("/offerComfirmation");
         }
       })
@@ -195,42 +202,6 @@ const OrderForm = () => {
               Personal Details
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input
-                className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
-                type="text"
-                placeholder="First name"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-              />
-              {formErrors.firstName && (
-                <p className="text-red-500">{formErrors.firstName}</p>
-              )}
-
-              <input
-                className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
-                type="text"
-                placeholder="Last name"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-              />
-              {formErrors.lastName && (
-                <p className="text-red-500">{formErrors.lastName}</p>
-              )}
-
-              <input
-                className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
-                type="email"
-                placeholder="Email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-              />
-              {formErrors.email && (
-                <p className="text-red-500">{formErrors.email}</p>
-              )}
-
               <input
                 className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
                 type="tel"

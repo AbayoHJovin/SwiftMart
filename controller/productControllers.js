@@ -60,31 +60,81 @@ exports.getProducts = async (req, res) => {
 
 
 exports.updateProduct = async (req, res) => {
-  try {
-    const { prodName, prodDescription, price, gender, category, stock, popular } =
-      req.body;
-    const productId = req.params.id;
+  // try {
+  //   const { prodName, prodDescription, price, gender, category, stock, popular } =
+  //     req.body;
+  //   const productId = req.params.id;
 
-    const updateData = {
-      prodName,
-      prodDescription,
-      price: parseFloat(price),
+  //   const updateData = {
+  //     prodName,
+  //     prodDescription,
+  //     price: parseFloat(price),
+  //     gender,
+  //     category,
+  //     stock: parseInt(stock, 10),
+  //     popular: popular === "true" || popular === true, // Convert to boolean
+  //   };
+
+  //   if (req.file) {
+  //     const result = await cloudinary.uploader.upload(req.file.path, {
+  //       folder: "products",
+  //     });
+  //     updateData.image = result.secure_url;
+  //   }
+
+  //   const updatedProduct = await prisma.products.update({
+  //     where: { prodId: productId },
+  //     data: updateData,
+  //   });
+
+  //   res.status(200).json(updatedProduct);
+  // } catch (error) {
+  //   console.error("Error updating product:", error);
+  //   res.status(500).json({ error: "Failed to update product" });
+  // }
+  try {
+    const { prodId } = req.params;
+    const {
+      name,
+      description,
+      price,
       gender,
       category,
-      stock: parseInt(stock, 10),
-      popular: popular === "true" || popular === true, // Convert to boolean
-    };
+      stock,
+      popular,
+    } = req.body;
 
+    let imageUrl = null;
+
+   if(!prodId){
+     throw new Error("No product id provided")
+   }
     if (req.file) {
-      const result = await cloudinary.uploader.upload(req.file.path, {
-        folder: "products",
+      const uploadResult = await new Promise((resolve, reject) => {
+        const uploadStream = cloudinary.uploader.upload_stream(
+          { resource_type: "image", folder: "products" },
+          (error, result) => {
+            if (error) reject(error);
+            else resolve(result);
+          }
+        );
+        uploadStream.end(req.file.buffer);
       });
-      updateData.image = result.secure_url;
+      imageUrl = uploadResult.secure_url;
     }
 
     const updatedProduct = await prisma.products.update({
-      where: { prodId: productId },
-      data: updateData,
+      where: { prodId: prodId},
+      data: {
+        prodName: name,
+        prodDescription: description,
+        price: parseInt(price, 10),
+        gender,
+        category,
+        stock: parseInt(stock, 10),
+        popular: popular === "true",
+        ...(imageUrl && { image: imageUrl }),
+      },
     });
 
     res.status(200).json(updatedProduct);

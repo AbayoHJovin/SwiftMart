@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { apiUrl } from "../src/lib/apis";
 import Loader2 from "../src/components/loader2";
 import { OffersContext } from "../constants/Offers";
+import { CurrentUserContext } from "../constants/currentUser";
 
 const Orders = ({ AdminOptions, currentUser }) => {
   const now = new Date();
@@ -16,9 +17,11 @@ const Orders = ({ AdminOptions, currentUser }) => {
   const [loading, setLoading] = useState(false);
   const [filteredOrders, setFilteredOrders] = useState(offers);
   const [openOfferModal, setOpenOfferModal] = useState(false);
-  const [selectedOrder, setSelectedOrder] = useState({});
+  const [selectedOrder, setSelectedOrder] = useState([]);
   const [boughtProducts, setBoughtProducts] = useState([]);
   const { products } = useProducts();
+  const { currentUser: userWithAllCredentials } =
+    useContext(CurrentUserContext);
   const { allOffers, isLoading } = useContext(OffersContext);
   useEffect(() => {
     setLoading(true);
@@ -37,7 +40,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
       })
         .then((resp) => resp.json())
         .then((message) => {
-          setOffers(message.message);
+          setOffers(message.orders);
         })
         .catch((e) => console.error(e))
         .finally(() => setLoading(false));
@@ -45,28 +48,38 @@ const Orders = ({ AdminOptions, currentUser }) => {
   }, [currentUser, allOffers]);
 
   useEffect(() => {
-    const todayOrders = offers.filter((order) => order.date === currentDate);
-    setFilteredOrders(todayOrders);
+    if (offers && currentDate) {
+      const todayOrders = offers.filter((order) => {
+        const orderDate = order.orderDate.split(" ")[0];
+        return orderDate === currentDate;
+      });
+      setFilteredOrders(todayOrders);
+    }
   }, [offers, currentDate]);
 
   const handleDate = (date) => {
-    const targetedOrders = offers.filter((order) => order.date === date);
-    setFilteredOrders(targetedOrders);
+    if (offers) {
+      const targetedOrders = offers.filter((order) => {
+        const orderDate = order.orderDate.split(" ")[0];
+        return orderDate === date;
+      });
+      setFilteredOrders(targetedOrders);
+    }
   };
 
   function handleOfferClick(item) {
     setOpenOfferModal(true);
     const prod = [];
-    for (let i = 0; i < item.products.length; i++) {
+    for (let i = 0; i < item.orderItems?.length; i++) {
       const filteredProducts = products.filter(
-        (items) => items.orderId === item.products[i]
+        (items) => items.prodId === item.orderItems[i].productId
       );
-      if (filteredProducts.length > 0) {
-        prod.push(filteredProducts[0]);
+      if (filteredProducts?.length > 0) {
+        prod.push(filteredProducts);
       }
     }
     setSelectedOrder(item);
-    setBoughtProducts(prod);
+    setBoughtProducts(prod[0]);
   }
   function handleDecline(order) {
     fetch(`${apiUrl}/removeOrder?offerId=${order.orderId}`, {
@@ -93,12 +106,16 @@ const Orders = ({ AdminOptions, currentUser }) => {
       })
       .catch((e) => console.error(e));
   }
+  useEffect(() => {
+    console.log("bought", boughtProducts);
+  }, [boughtProducts]);
   if (loading) {
     return <Loader2 />;
   }
+
   return (
     <div className="px-5 text-black dark:text-white">
-      {offers.length == 0 ? (
+      {offers?.length == 0 ? (
         <div className="flex justify-center items-center h-screen text-center content-center">
           <h1>No orders found</h1>
         </div>
@@ -108,7 +125,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
             {AdminOptions ? (
               <div className="flex flex-col">
                 <div className="font-bold text-2xl">Orders</div>
-                <div>{offers.length} Orders found</div>
+                <div>{offers?.length} Orders found</div>
               </div>
             ) : null}
             <input
@@ -123,7 +140,8 @@ const Orders = ({ AdminOptions, currentUser }) => {
               <div className="flex items-start justify-between">
                 <div key={selectedOrder.orderId}>
                   <h1 className="font-bold text-3xl text-green-700 mb-4">
-                    Customer Name: {selectedOrder.prodNames}
+                    Customer Name:{" "}
+                    {AdminOptions ? "en" : userWithAllCredentials.username}
                   </h1>
                   <p className="text-lg mb-2">
                     <span className="font-semibold text-green-600">
@@ -135,33 +153,30 @@ const Orders = ({ AdminOptions, currentUser }) => {
                     <span className="font-semibold text-green-600">
                       Email:{" "}
                     </span>
-                    {selectedOrder.email}
+                    {AdminOptions ? "" : userWithAllCredentials.email}
                   </p>
                   <p className="text-lg mb-2">
                     <span className="font-semibold text-green-600">
                       Phone No:{" "}
                     </span>
-                    {selectedOrder.phoneNumber}
+                    {AdminOptions ? "" : selectedOrder.phoneNo}
                   </p>
                   <p className="text-lg mb-2">
                     <span className="font-semibold text-green-600">
                       Ordered on:{" "}
                     </span>
-                    {selectedOrder.date}
+                    {selectedOrder.orderDate.split(" ")[0]}
                   </p>
-                  <p className="text-lg mb-2">
-                    <span className="font-semibold text-green-600">Day: </span>
-                    {selectedOrder.day}
-                  </p>
+
                   <p className="text-lg mb-2">
                     <span className="font-semibold text-green-600">At: </span>
-                    {selectedOrder.time}
+                    {selectedOrder.orderDate.split(" ")[1]}
                   </p>
                   <p className="text-lg mb-2">
                     <span className="font-semibold text-green-600">
                       Amount to pay:{" "}
                     </span>
-                    {selectedOrder.amount}
+                    RWF {selectedOrder.price}
                   </p>
                 </div>
                 <AiFillCloseCircle
@@ -175,13 +190,13 @@ const Orders = ({ AdminOptions, currentUser }) => {
                 Selected Products
               </h1>
               <div>
-                {boughtProducts.length === 0 ? (
+                {boughtProducts?.length < 1 ? (
                   <h1>Loading products ...</h1>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {boughtProducts.map((item) => (
+                    {boughtProducts?.map((item) => (
                       <div
-                        key={item.orderId}
+                        key={item.prodId}
                         className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
                       >
                         <div className="flex justify-center mb-4">
@@ -196,7 +211,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
                             {item.prodName}
                           </h2>
                           <p className="text-lg text-green-600 mt-2">
-                            RWF {item.price.toFixed(2)}
+                            RWF {item.price?.toFixed(2)}
                           </p>
                         </div>
                       </div>
@@ -236,31 +251,35 @@ const Orders = ({ AdminOptions, currentUser }) => {
           ) : (
             <div className="container mx-auto p-4">
               <div className="overflow-x-auto">
-                <table className="min-w-full table-auto">
-                  <thead className="bg-green-50">
-                    <tr>
-                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
-                        Name
-                      </th>
-                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
-                        Address
-                      </th>
-                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
+                <table className="min-w-full bg-white rounded-lg shadow-lg">
+                  <thead className="rounded-full">
+                    <tr className="bg-green-600 uppercase text-sm">
+                      {AdminOptions && (
+                        <th className="p-4 text-left text-sm font-semibold  text-white dark:text-gray-200">
+                          Name
+                        </th>
+                      )}
+                      {AdminOptions && (
+                        <th className="p-4 text-left text-sm font-semibold text-white dark:text-gray-200">
+                          Address
+                        </th>
+                      )}
+                      <th className="p-4 text-left text-sm font-semibold text-white dark:text-gray-200">
                         Number of products
                       </th>
-                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
+                      <th className="p-4 text-left text-sm font-semibold text-white dark:text-gray-200">
                         Date
                       </th>
-                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
+                      <th className="p-4 text-left text-sm font-semibold text-white dark:text-gray-200">
                         Time
                       </th>
-                      <th className="p-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-200">
+                      <th className="p-4 text-left text-sm font-semibold text-white dark:text-gray-200">
                         Actions
                       </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y-4 divide-gray-200">
-                    {filteredOrders.length === 0 ? (
+                    {filteredOrders?.length === 0 ? (
                       <tr>
                         <td
                           colSpan={6}
@@ -270,28 +289,36 @@ const Orders = ({ AdminOptions, currentUser }) => {
                         </td>
                       </tr>
                     ) : (
-                      filteredOrders.map((item) => (
+                      filteredOrders?.map((item, index) => (
                         <tr
                           onClick={() => handleOfferClick(item)}
-                          key={item.orderId}
-                          className="border hover:bg-gray-100 text-center border-gray-200 h-16 cursor-pointer bg-white dark:bg-gray-800  text-black rounded-md"
+                          key={item.index}
+                          className={`border-b-2 border-black cursor-pointer items-center content-center ${
+                            index % 2 === 0
+                              ? "bg-gray-100 hover:bg-green-500 hover:text-white"
+                              : "bg-gray-200 hover:bg-green-500 hover:text-white"
+                          }`}
                         >
-                          <td className="p-4 text-sm text-gray-700 dark:text-gray-200  truncate">
-                            {item.prodNames}
+                          {AdminOptions && (
+                            <td className="p-4 text-sm  dark:text-gray-200  truncate">
+                              {item.prodName}
+                            </td>
+                          )}
+                          {AdminOptions && (
+                            <td className="p-4 text-sm  dark:text-gray-200  truncate">
+                              {item.address}
+                            </td>
+                          )}
+                          <td className="p-4 text-sm  dark:text-gray-200  truncate">
+                            {item.orderItems?.length}
                           </td>
-                          <td className="p-4 text-sm text-gray-700 dark:text-gray-200  truncate">
-                            {item.address}
+                          <td className="p-4 text-sm dark:text-gray-200  truncate">
+                            {item.orderDate.split(" ")[0]}
                           </td>
-                          <td className="p-4 text-sm text-gray-700 dark:text-gray-200  truncate">
-                            {item.products.length}
+                          <td className="p-4 text-sm   dark:text-gray-200 truncate">
+                            {item.orderDate.split(" ")[1]}
                           </td>
-                          <td className="p-4 text-sm text-gray-700 dark:text-gray-200  truncate">
-                            {item.date}
-                          </td>
-                          <td className="p-4 text-sm text-gray-700  dark:text-gray-200 truncate">
-                            {item.time}
-                          </td>
-                          <td className="p-4 text-sm text-gray-700 dark:text-gray-200 truncate rounded-r-md">
+                          <td className="p-4 text-sm  dark:text-gray-200 truncate rounded-r-md">
                             {item.approved ? "Approved" : "Pending"}
                           </td>
                         </tr>

@@ -69,28 +69,24 @@ export default function Offers({ children }) {
         .then((message) => {
           const response = message.message;
 
-          // Store all offers
           setOffers(response);
 
-          // Separate offers based on their approval status
-          const approvedOrders = response.filter(
+          const approvedOrders = response?.filter(
             (order) => order.approved === true
           );
-          const pendingOrders = response.filter(
+          const pendingOrders = response?.filter(
             (order) => order.approved === false
           );
           setApproved(approvedOrders);
           setPending(pendingOrders);
 
-          // Initialize arrays for provinces
           const kigaliOrders = [];
           const northernOrders = [];
           const southernOrders = [];
           const easternOrders = [];
           const westernOrders = [];
 
-          // Categorize offers based on address province
-          response.forEach((order) => {
+          response?.forEach((order) => {
             const addressParts = order.address.split(","); // Split the address by commas
             const province = addressParts[0].trim(); // Get the first string and trim any whitespace
 

@@ -26,7 +26,7 @@ const MenShoes = () => {
   useEffect(() => {
     const menProducts = products.filter(
       (prod) => prod.gender == "Male" && prod.category == "shoes" ||
-      (prod.gender === "Both" && prod.category === "shoes")
+      (prod.gender === "Unisex" && prod.category === "shoes")
 
     );
     setMenshoes(menProducts);

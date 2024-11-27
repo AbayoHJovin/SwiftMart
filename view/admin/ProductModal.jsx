@@ -47,60 +47,42 @@ export default function ProductModal({
       });
     }
   }, [product]);
-  
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setFormData({ ...formData, image: file });
   };
 
-  // const handleSubmit = async () => {
-  //   const data = new FormData();
-  //   Object.keys(formData).forEach((key) => {
-  //     if (key !== "image") {
-  //       data.append(key, formData[key]);
-  //     }
-  //   });
-  // console.log(data)
-  //   try {
-  //     if (product) {
-  //       await axios.put(`${apiUrl}/products/${product.prodId}`, data);
-  //     } else {
-  //       data.append("image", formData.image);
-  //       await axios.post(`${apiUrl}/addProduct`, data);
-  //     }
-  //     refreshProducts();
-  //     onClose();
-  //   } catch (error) {
-  //     console.error("Error saving product", error);
-  //   }
-  // };
-
   const handleSubmit = async () => {
     const data = new FormData();
-  
-    Object.keys(formData).forEach((key) => {
-      if (formData[key] !== null && formData[key] !== undefined) {
-        data.append(key, formData[key]);
-      }
-    });
-  
+    data.append("name", formData.prodName);
+    data.append("description", formData.prodDescription);
+    data.append("price", formData.price);
+    data.append("gender", formData.gender);
+    data.append("category", formData.category);
+    data.append("stock", formData.stock);
+    data.append("popular", formData.popular);
+    if (formData.image) {
+      data.append("image", formData.image);
+    }
+
     try {
       if (product) {
-        if (formData.image) {
-          data.append("image", formData.image);
-        }
-        await axios.put(`${apiUrl}/products/${product.prodId}`, data);
+        await axios.patch(`${apiUrl}/products/${product.prodId}`, data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
       } else {
-        data.append("image", formData.image); 
-        await axios.post(`${apiUrl}/addProduct`, data);
+        await axios.post(`${apiUrl}/addProduct`, data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
       }
       refreshProducts();
       onClose();
     } catch (error) {
-      console.error("Error saving product", error);
+      console.error("Error saving product:", error);
     }
   };
-  
+
   return (
     <Dialog open={isOpen} onClose={onClose} fullWidth maxWidth="sm">
       <DialogTitle>{product ? "Edit Product" : "Add Product"}</DialogTitle>
@@ -219,4 +201,3 @@ export default function ProductModal({
     </Dialog>
   );
 }
-

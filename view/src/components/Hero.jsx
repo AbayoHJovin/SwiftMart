@@ -14,7 +14,7 @@ const Hero = () => {
         </p>
 
         <div className="flex justify-center lg:justify-start">
-          <a href="/shop/Both/pants">
+          <a href="/shop/Unisex/pants">
             <button className="bg-green-900 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300">
               Shop Now
             </button>

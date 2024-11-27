@@ -4,9 +4,10 @@ import { ThemeContext } from "../../constants/ThemeContext";
 import { CurrentUserContext } from "../../constants/currentUser";
 import { apiUrl } from "../lib/apis";
 import UserNav from "./UserAccountNav";
+import axios from "axios";
 
 const PersonalDetails = () => {
-  const { theme,toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const { currentUser, isAnAdmin } = useContext(CurrentUserContext);
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
@@ -41,34 +42,38 @@ const PersonalDetails = () => {
 
   const handleSave = async () => {
     try {
-      const response = await fetch(
+      const formDatas = new FormData();
+      formDatas.append("userId", formData.id);
+      formDatas.append("username", formData.name);
+      formDatas.append("email", formData.email);
+        formDatas.append("profilePicture", formData.profilePicture);
+      console.log(formDatas);
+      const response = await axios.patch(
         `${apiUrl}/user/update?userId=${formData.id}`,
+        formDatas,
         {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            profilePicture: formData.profilePicture,
-          }),
+          headers: { "Content-Type": "multipart/form-data" },
         }
       );
 
-      if (response.ok) {
-        const data = await response.json();
+      if (response.status === 200) {
+        // Check for success
+        const data = response.data;
         setIsEditing(false);
+
+        // Update session storage
         sessionStorage.setItem(
           "User",
           JSON.stringify({
             id: formData.id,
-            usernames: formData.name,
-            emails: formData.email,
+            username: formData.name,
+            email: formData.email,
           })
         );
+
+        console.log("User updated successfully:", data);
       } else {
-        console.error("Failed to update user:", await response.json());
+        console.error("Failed to update user:", response.data);
       }
     } catch (error) {
       console.error("Error updating user:", error);
@@ -98,7 +103,6 @@ const PersonalDetails = () => {
           theme === "dark" ? "text-white bg-gray-800" : "text-black bg-white"
         } rounded-lg `}
       >
-        {/* Profile Details Section */}
         <div className="w-full bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
           <h3 className="text-xl font-semibold mb-4">Profile Details</h3>
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
@@ -117,7 +121,6 @@ const PersonalDetails = () => {
                 className="hidden"
                 onChange={handleProfilePictureChange}
               />
-              {/* Hover Overlay */}
               <label
                 htmlFor="upload-profile-picture"
                 className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full cursor-pointer"

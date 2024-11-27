@@ -1,4 +1,3 @@
-(prod) => prod.gender == "Both" && prod.category == "watches";
 import { useContext, useEffect, useState } from "react";
 import useProducts from "../../../constants/products";
 import ProductCard from "../Product";
@@ -33,7 +32,7 @@ const Watches = () => {
 
   useEffect(() => {
     const menProducts = products.filter(
-      (prod) => prod.gender === "Both" && prod.category === "watches"
+      (prod) => prod.gender === "Unisex" && prod.category === "watches"
     );
     setMenpants(menProducts);
 

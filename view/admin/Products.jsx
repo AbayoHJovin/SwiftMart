@@ -16,7 +16,7 @@ export default function ProductTable() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const categories = ["shoes", "shirts", "pants", "watches", "hats"];
-  const genders = ["Male", "Female", "Both"];
+  const genders = ["Male", "Female", "Unisex"];
 
   useEffect(() => {
     fetchProducts();

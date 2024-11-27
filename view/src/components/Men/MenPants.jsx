@@ -34,7 +34,7 @@ const MenPants = () => {
     const menProducts = products.filter(
       (prod) =>
         (prod.gender === "Male" && prod.category === "pants") ||
-        (prod.gender === "Both" && prod.category === "pants")
+        (prod.gender === "Unisex" && prod.category === "pants")
     );
     setMenpants(menProducts);
 

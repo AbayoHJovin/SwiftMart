@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
-import { useNavigate, useParams } from "react-router-dom"; // Import for navigation and URL parameters
+import { useNavigate, useParams } from "react-router-dom"; 
 import MenPants from "../components/Men/MenPants";
 import MenShoes from "../components/Men/MenShoes";
 import Menshirts from "../components/Men/Menshirts";
@@ -95,7 +95,7 @@ const ShopNow = () => {
                       Female
                     </button>
                     <button
-                      onClick={() => handleGenderSelect("Both")}
+                      onClick={() => handleGenderSelect("Unisex")}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       For both genders
@@ -175,7 +175,7 @@ const ShopNow = () => {
               <WomenShirts />
             ) : (selectedGender === "Male" ||
                 selectedGender === "Female" ||
-                selectedGender === "Both") &&
+                selectedGender === "Unisex") &&
               selectType === "watches" ? (
               <Watches />
             ) : selectType === "hats" ? (
