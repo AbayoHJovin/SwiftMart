@@ -76,7 +76,6 @@ const Password = () => {
   };
   function handleContinue(e) {
     e.preventDefault();
-    console.log(oldPassword);
     setLoading(true);
     fetch(`${apiUrl}/checkPassword`, {
       method: "GET",

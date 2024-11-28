@@ -160,7 +160,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <App />
         </ThemeProvider>
       </CurrentUser>
-      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   </React.StrictMode>
 );

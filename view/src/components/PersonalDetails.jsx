@@ -5,11 +5,14 @@ import { CurrentUserContext } from "../../constants/currentUser";
 import { apiUrl } from "../lib/apis";
 import UserNav from "./UserAccountNav";
 import axios from "axios";
+import Loader3 from "./Loading3";
+import { toast, ToastContainer } from "react-toastify";
 
 const PersonalDetails = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { currentUser, isAnAdmin } = useContext(CurrentUserContext);
   const [isEditing, setIsEditing] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [formData, setFormData] = useState({
     id: "",
     name: "",
@@ -40,14 +43,32 @@ const PersonalDetails = () => {
     setIsEditing(!isEditing);
   };
 
+  const handleProfilePictureChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const imageDataUrl = e.target.result;
+        setFormData((prevData) => ({
+          ...prevData,
+          profilePicture: file, // Store file for backend
+          previewImage: imageDataUrl, // Preview in the UI
+        }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSave = async () => {
     try {
       const formDatas = new FormData();
       formDatas.append("userId", formData.id);
       formDatas.append("username", formData.name);
       formDatas.append("email", formData.email);
-        formDatas.append("profilePicture", formData.profilePicture);
-      console.log(formDatas);
+      if (formData.profilePicture instanceof File) {
+        formDatas.append("image", formData.profilePicture); // Send file to backend
+      }
+      setIsSaving(true);
       const response = await axios.patch(
         `${apiUrl}/user/update?userId=${formData.id}`,
         formDatas,
@@ -57,21 +78,19 @@ const PersonalDetails = () => {
       );
 
       if (response.status === 200) {
-        // Check for success
         const data = response.data;
         setIsEditing(false);
-
-        // Update session storage
         sessionStorage.setItem(
           "User",
           JSON.stringify({
             id: formData.id,
             username: formData.name,
             email: formData.email,
+            profilePicture: response.data.user.profilePicture,
           })
         );
-
-        console.log("User updated successfully:", data);
+        toast.success("User updated successfully!");
+        setIsSaving(false);
       } else {
         console.error("Failed to update user:", response.data);
       }
@@ -80,23 +99,9 @@ const PersonalDetails = () => {
     }
   };
 
-  const handleProfilePictureChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const imageDataUrl = e.target.result;
-        setFormData((prevData) => ({
-          ...prevData,
-          profilePicture: imageDataUrl,
-        }));
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   return (
     <div>
+      <ToastContainer />
       <UserNav />
       <div
         className={`flex flex-col bg-white text-black dark:text-white dark:bg-gray-950 items-center p-6 max-w-4xl mx-auto space-y-6 ${
@@ -109,7 +114,9 @@ const PersonalDetails = () => {
             <div className="relative group text-center">
               <img
                 src={
-                  formData.profilePicture || "https://via.placeholder.com/150"
+                  formData.previewImage ||
+                  formData.profilePicture ||
+                  "https://via.placeholder.com/150"
                 }
                 alt="Profile"
                 className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border border-gray-300"
@@ -173,7 +180,7 @@ const PersonalDetails = () => {
                     onClick={handleSave}
                     className="bg-green-500 text-white px-4 py-2 rounded-md"
                   >
-                    Save
+                    {isSaving ? <Loader3 bg={"white"} /> : "Save"}
                   </button>
                   <button
                     onClick={handleEditToggle}

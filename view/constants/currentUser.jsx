@@ -28,14 +28,12 @@ const CurrentUser = ({ children }) => {
         })
         .catch((e) => console.error(e))
         .finally(() => {
-          console.log("The received data is", isAnAdmin);
           setISLoading(false);
         });
     }
     getUser();
   }, [isAnAdmin]);
   useEffect(() => {
-    console.log(isAnAdmin);
   }, [isAnAdmin]);
   if (isLoading) {
     return <Loader2 />;

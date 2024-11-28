@@ -67,7 +67,7 @@ export default function Offers({ children }) {
       })
         .then((resp) => resp.json())
         .then((message) => {
-          const response = message.message;
+          const response = message.orders;
 
           setOffers(response);
 

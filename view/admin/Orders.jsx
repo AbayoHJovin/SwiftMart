@@ -6,9 +6,11 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { CgTrash } from "react-icons/cg";
 import { toast } from "react-toastify";
 import { apiUrl } from "../src/lib/apis";
-import Loader2 from "../src/components/loader2";
 import { OffersContext } from "../constants/Offers";
 import { CurrentUserContext } from "../constants/currentUser";
+import Loader3 from "../src/components/Loading3";
+import Loader2 from "../src/components/loader2";
+import UseUsers from "../constants/Users";
 
 const Orders = ({ AdminOptions, currentUser }) => {
   const now = new Date();
@@ -19,7 +21,9 @@ const Orders = ({ AdminOptions, currentUser }) => {
   const [openOfferModal, setOpenOfferModal] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState([]);
   const [boughtProducts, setBoughtProducts] = useState([]);
+  const [isApproving, setIsApproving] = useState(false);
   const { products } = useProducts();
+  const { users } = UseUsers();
   const { currentUser: userWithAllCredentials } =
     useContext(CurrentUserContext);
   const { allOffers, isLoading } = useContext(OffersContext);
@@ -32,7 +36,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
     }
   }, [isLoading]);
   useEffect(() => {
-    if (!currentUser) {
+    if (AdminOptions) {
       setOffers(allOffers);
     } else {
       fetch(`${apiUrl}/getOffer?userId=${currentUser}`, {
@@ -45,8 +49,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
         .catch((e) => console.error(e))
         .finally(() => setLoading(false));
     }
-  }, [currentUser, allOffers]);
-
+  }, [AdminOptions, allOffers, currentUser]);
   useEffect(() => {
     if (offers && currentDate) {
       const todayOrders = offers.filter((order) => {
@@ -75,11 +78,11 @@ const Orders = ({ AdminOptions, currentUser }) => {
         (items) => items.prodId === item.orderItems[i].productId
       );
       if (filteredProducts?.length > 0) {
-        prod.push(filteredProducts);
+        prod.push(...filteredProducts);
       }
     }
     setSelectedOrder(item);
-    setBoughtProducts(prod[0]);
+    setBoughtProducts(prod);
   }
   function handleDecline(order) {
     fetch(`${apiUrl}/removeOrder?offerId=${order.orderId}`, {
@@ -94,6 +97,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
       .catch((e) => console.error(e));
   }
   function handleApprove(order, e) {
+    setIsApproving(true);
     fetch(`${apiUrl}/updateOrder?offerId=${order.orderId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -104,17 +108,13 @@ const Orders = ({ AdminOptions, currentUser }) => {
           e.target.innerText = "Approved";
         }
       })
-      .catch((e) => console.error(e));
+      .catch((e) => console.error(e))
+      .finally(() => setIsApproving(false));
   }
   useEffect(() => {
-    console.log("bought", boughtProducts);
   }, [boughtProducts]);
-  if (loading) {
-    return <Loader2 />;
-  }
-
   return (
-    <div className="px-5 text-black dark:text-white">
+    <div className="px-0 md:px-5 mx-0 text-black dark:text-white">
       {offers?.length == 0 ? (
         <div className="flex justify-center items-center h-screen text-center content-center">
           <h1>No orders found</h1>
@@ -141,7 +141,10 @@ const Orders = ({ AdminOptions, currentUser }) => {
                 <div key={selectedOrder.orderId}>
                   <h1 className="font-bold text-3xl text-green-700 mb-4">
                     Customer Name:{" "}
-                    {AdminOptions ? "en" : userWithAllCredentials.username}
+                    {AdminOptions
+                      ? users.find((u) => u.userId === selectedOrder.ordererId)
+                          ?.username
+                      : userWithAllCredentials.username}
                   </h1>
                   <p className="text-lg mb-2">
                     <span className="font-semibold text-green-600">
@@ -153,13 +156,16 @@ const Orders = ({ AdminOptions, currentUser }) => {
                     <span className="font-semibold text-green-600">
                       Email:{" "}
                     </span>
-                    {AdminOptions ? "" : userWithAllCredentials.email}
+                    {AdminOptions
+                      ? users.find((u) => u.userId === selectedOrder.ordererId)
+                          ?.email
+                      : userWithAllCredentials.email}
                   </p>
                   <p className="text-lg mb-2">
                     <span className="font-semibold text-green-600">
                       Phone No:{" "}
                     </span>
-                    {AdminOptions ? "" : selectedOrder.phoneNo}
+                    {selectedOrder.phoneNo}
                   </p>
                   <p className="text-lg mb-2">
                     <span className="font-semibold text-green-600">
@@ -202,10 +208,12 @@ const Orders = ({ AdminOptions, currentUser }) => {
                         <div className="flex justify-center mb-4">
                           <img
                             src={item.image}
-                            className="w-80 h-80 object-cover rounded-lg"
+                            width={100}
+                            height={100}
                             alt={item.prodName}
                           />
                         </div>
+
                         <div className="text-center">
                           <h2 className="text-2xl font-bold text-green-700">
                             {item.prodName}
@@ -230,14 +238,19 @@ const Orders = ({ AdminOptions, currentUser }) => {
               <div className="my-8">
                 <h1 className="font-bold text-3xl text-green-700">Options</h1>
                 <div className="flex gap-5 mt-4">
-                  {AdminOptions && (
-                    <button
-                      onClick={(e) => handleApprove(selectedOrder, e)}
-                      className="bg-green-500 text-white hover:bg-green-600 py-3 px-6 rounded-md"
-                    >
-                      Approve
-                    </button>
-                  )}
+                  {AdminOptions &&
+                    (isApproving ? (
+                      <button className="bg-green-500 text-white hover:bg-green-600 py-3 px-6 rounded-md">
+                        <Loader3 bg={"white"} />
+                      </button>
+                    ) : (
+                      <button
+                        onClick={(e) => handleApprove(selectedOrder, e)}
+                        className="bg-green-500 text-white hover:bg-green-600 py-3 px-6 rounded-md"
+                      >
+                        Approve
+                      </button>
+                    ))}
                   <div
                     onClick={() => handleDecline(selectedOrder)}
                     className="flex items-center cursor-pointer text-red-500 hover:bg-gray-200 py-3 px-6 rounded-md"
@@ -300,8 +313,11 @@ const Orders = ({ AdminOptions, currentUser }) => {
                           }`}
                         >
                           {AdminOptions && (
-                            <td className="p-4 text-sm  dark:text-gray-200  truncate">
-                              {item.prodName}
+                            <td>
+                              {
+                                users.find((u) => u.userId === item.ordererId)
+                                  ?.username
+                              }
                             </td>
                           )}
                           {AdminOptions && (

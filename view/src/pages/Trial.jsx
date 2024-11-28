@@ -194,14 +194,6 @@ export default function AdminDashboard() {
               overflowY: "scroll",
             }}
           >
-            {/* Dark Mode Switch
-            <FormControlLabel
-              control={
-                <Switch checked={darkMode} onChange={handleThemeChange} />
-              }
-              label="Dark Mode"
-              sx={{ position: "relative", top: 10, right: 10, zIndex: 90 }}
-            /> */}
 
             {/* Tab Panels */}
             <TabPanel value={tabValue} index={0}>

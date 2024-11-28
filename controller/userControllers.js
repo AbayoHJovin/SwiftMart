@@ -4,6 +4,7 @@ const axios = require("axios");
 const otpGenerator = require("otp-generator");
 const nodemailer = require("nodemailer");
 const { PrismaClient } = require("@prisma/client");
+const cloudinary= require("cloudinary").v2
 const {
   createAccessToken,
   createRefreshToken,
@@ -82,19 +83,39 @@ exports.getUserDetails = async (req, res) => {
   }
 };
 
+const streamifier = require("streamifier"); 
+
 exports.updateUserDetails = async (req, res) => {
-  const userId = req.query.userId;
+  const userId = req.body.userId;
   const { username, email } = req.body;
+
   try {
-    console.log("file", req.file, req.body);
     if (!username || !email) {
-      throw new Error("Please enter all credentials");
+      throw new Error("Please provide both username and email");
     }
+
+    let profilePictureUrl = null;
+
+    if (req.file) {
+      profilePictureUrl = await new Promise((resolve, reject) => {
+        const uploadStream = cloudinary.uploader.upload_stream(
+          { folder: "profile_pictures" }, 
+          (error, result) => {
+            if (error) return reject(error);
+            resolve(result.secure_url); 
+          }
+        );
+
+        streamifier.createReadStream(req.file.buffer).pipe(uploadStream);
+      });
+    }
+
     const updatedUser = await prisma.users.update({
       where: { userId },
       data: {
-        ...(username && { username: username }),
-        ...(email && { email: email }),
+        ...(username && { username }),
+        ...(email && { email }),
+        ...(profilePictureUrl && { profilePicture: profilePictureUrl }),
       },
     });
 
@@ -105,9 +126,7 @@ exports.updateUserDetails = async (req, res) => {
     });
   } catch (err) {
     if (err.code === "P2025") {
-      return res
-        .status(404)
-        .json({ success: false, message: "User not found" });
+      return res.status(404).json({ success: false, message: "User not found" });
     }
     res.status(500).json({
       success: false,
@@ -115,6 +134,7 @@ exports.updateUserDetails = async (req, res) => {
     });
   }
 };
+
 exports.getCurrentUser = async (req, res) => {
   const token = req.headers.token;
   let isAdmin = false;

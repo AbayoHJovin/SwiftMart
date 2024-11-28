@@ -110,7 +110,11 @@ const UserNav = ({ currentBar }) => {
               className="flex items-center space-x-2 bg-green-200 dark:bg-green-600 px-5 p-3 rounded-full gap-3 transition-colors duration-300"
               onClick={() => setShowUserDropdown(!showUserDropdown)}
             >
-              <FaUserAlt className="h-6 w-6 text-gray-600 dark:text-gray-200" />
+              <img
+                src={currentUser.profilePicture}
+                alt="avatar"
+                className="h-6 w-6 rounded-full"
+              />
               <span className="text-gray-800 dark:text-gray-200 font-medium">
                 {currentUser.username}
               </span>
@@ -130,7 +134,10 @@ const UserNav = ({ currentBar }) => {
               >
                 <span>{theme == "dark" ? "Light Mode" : "Dark Mode"}</span>
               </button>
-              <button onClick={handleConfirmLogout} className="flex items-center p-2 space-x-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 w-full">
+              <button
+                onClick={handleConfirmLogout}
+                className="flex items-center p-2 space-x-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 w-full"
+              >
                 <FaSignOutAlt />
                 <span>Logout</span>
               </button>

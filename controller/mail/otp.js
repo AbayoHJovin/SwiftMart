@@ -60,7 +60,6 @@ exports.verifyOtp = async (req, res) => {
       // sameSite: "None",
       maxAge: 1000 * 60 * 60, // 1 hour
     });
-    console.log(req.cookies);
     res.status(200).json({ message: "OTP verified successfully" });
   } catch (error) {
     console.error(error);
@@ -70,7 +69,6 @@ exports.verifyOtp = async (req, res) => {
 
 exports.resendOtpCookie = async (req, res) => {
   const adminAuth = req.cookies.adminAuth;
-  console.log(req.cookies);
 
   try {
     if (!adminAuth) {
@@ -103,7 +101,6 @@ exports.resendOtpCookie = async (req, res) => {
 
 exports.checkAdmin = async (req, res) => {
   const adminAuth = req.cookies.adminAuth;
-  console.log(req.cookies);
   try {
     if (adminAuth) {
       return res.status(200).json({ isAdmin: true });

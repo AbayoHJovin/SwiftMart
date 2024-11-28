@@ -202,7 +202,7 @@ const Login = () => {
                       style={{ height: "3rem" }}
                     >
                       <div className="flex justify-center items-center">
-                        <Loader3 className="w-[2.5rem] h-[2.4rem] animate-spin" />{" "}
+                        <Loader3 bg={"white"} className="w-[2.5rem] h-[2.4rem]" />
                       </div>
                     </button>
                   ) : (

@@ -17,7 +17,6 @@ const AdminAuth = () => {
   const [sendOtp, setSendOtp] = useState(true);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    console.log(isAnAdmin);
     if (!isLoading && isAnAdmin == false) {
       navigate("/");
     }
@@ -60,7 +59,7 @@ const AdminAuth = () => {
       .then((message) => {
         if (message.message == "OTP verified successfully") {
           setIsAdminLoggedIn(true);
-          window.location.href="/authorized/Admin/dashboard";
+          window.location.href = "/authorized/Admin/dashboard";
         } else {
           toast.error("Invalid OTP", {
             style: { backgroundColor: "red", color: "white" },
@@ -97,15 +96,15 @@ const AdminAuth = () => {
                 <h1>Click on the button below to get an OTP on email</h1>
                 {loading ? (
                   <button
-                    className="bg-[#9ded68] p-4 px-10 rounded-md"
+                    className="bg-green-700 p-4 px-10 rounded-md"
                     disabled
                   >
-                    <Loader3 />
+                    <Loader3 bg={"white"} />
                   </button>
                 ) : (
                   <button
                     onClick={handleSendOtp}
-                    className="bg-[#9ded68] text-white p-4 px-10 rounded-md"
+                    className="bg-green-700 text-white p-4 px-10 rounded-md"
                   >
                     Send
                   </button>
@@ -130,7 +129,7 @@ const AdminAuth = () => {
                   ) : (
                     <button
                       onClick={handleCheckOtp}
-                      className="bg-[#9ded68] text-white p-4 px-10 rounded-md"
+                      className="bg-green-700 text-white p-4 px-10 rounded-md"
                     >
                       Verify
                     </button>
@@ -138,7 +137,7 @@ const AdminAuth = () => {
                 </div>
                 <h1
                   onClick={handleSendOtp}
-                  className="underline text-blue-600 cursor-pointer"
+                  className="underline text-green-600 cursor-pointer"
                 >
                   resend code
                 </h1>
@@ -146,15 +145,15 @@ const AdminAuth = () => {
             )}
           </div>
           <a href="/">
-          <div
-            className={`flex items-center gap-3 text-gray-700 text-3xl "my-2 mx-5 px-20 py-3" cursor-pointer rounded transition-colors duration-200 absolute bottom-0 left-0 p-5`}
+            <div
+              className={`flex items-center gap-3 text-gray-700 text-3xl "my-2 mx-5 px-20 py-3" cursor-pointer rounded transition-colors duration-200 absolute bottom-0 left-0 p-5`}
             >
-            <span className="mr-2">
-              <ArrowUpRight />
-            </span>
-            <h1 className="text-lg">Back</h1>
-          </div>
-              </a>
+              <span className="mr-2">
+                <ArrowUpRight />
+              </span>
+              <h1 className="text-lg">Back</h1>
+            </div>
+          </a>
         </div>
 
         <div className="hidden md:block md:w-1/2 h-screen fixed top-0 right-0">

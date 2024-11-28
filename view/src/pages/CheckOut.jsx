@@ -289,7 +289,7 @@ const OrderForm = () => {
             <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
               Amount to pay
             </h3>
-            <h1>{cost}</h1>
+            <h1>RWF {cost}</h1>
           </div>
 
           {/* Terms and Conditions */}

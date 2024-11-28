@@ -15,7 +15,6 @@ const useProducts = () => {
   });
 
   const popularProds = products.filter((product) => product.popular);
-console.log("The only popular prods are: ",popularProds)
   return { products, loading: isLoading, error, popularProds };
 };
 

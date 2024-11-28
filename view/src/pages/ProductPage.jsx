@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import useProducts from "../../constants/products";
 import Navbar from "../components/Navbar";
 import { CartContext } from "../../constants/cartItems";
-import Loader2 from "../components/loader2";
 import Loader3 from "../components/Loading3";
 
 const ProductPage = () => {
@@ -85,21 +84,21 @@ const ProductPage = () => {
                       onClick={() => deleteItem(realProduct.prodId)}
                       className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700"
                     >
-                      {loading ? <Loader3 /> : "On cart"}
+                      {loading ? <Loader3 bg={"white"} /> : "On cart"}
                     </button>
                   ) : (
                     <button
                       onClick={() => addItemOncart(realProduct.prodId)}
                       className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700"
                     >
-                      {loading ? <Loader3 /> : "Add to cart"}
+                      {loading ? <Loader3 bg={"white"} /> : "Add to cart"}
                     </button>
                   )}
                 </div>
               </div>
             </div>
           ) : (
-            <Loader2 />
+            <Loader3 />
           )}
         </div>
       ) : (

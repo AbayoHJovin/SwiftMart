@@ -1,7 +1,7 @@
-import { CheckCheckIcon, Clock, ShoppingBasket, Trash } from "lucide-react";
-import { AiOutlineOrderedList } from "react-icons/ai";
-import { CgShutterstock } from "react-icons/cg";
-import { FaMoneyCheck, FaTrophy } from "react-icons/fa";
+// import { CheckCheckIcon, Clock, ShoppingBasket, Trash } from "lucide-react";
+// import { AiOutlineOrderedList } from "react-icons/ai";
+// import { CgShutterstock } from "react-icons/cg";
+// import { FaMoneyCheck, FaTrophy } from "react-icons/fa";
 import { Bar } from "react-chartjs-2";
 
 import {
@@ -15,10 +15,10 @@ import {
 } from "chart.js";
 import Header from "../admin/AdminNav";
 import UseUsers from "../constants/Users";
-import useProducts from "../constants/products";
+// import useProducts from "../constants/products";
 import { useContext } from "react";
 import { OffersContext } from "../constants/Offers";
-import Loader3 from "../src/components/Loading3";
+// import Loader3 from "../src/components/Loading3";
 
 // Register Chart.js components
 ChartJS.register(
@@ -32,69 +32,69 @@ ChartJS.register(
 
 export default function Dashboard() {
   const { users } = UseUsers();
-  const { products, popularProds, loading } = useProducts();
-  const { allOffers, pending, approved, kigali, north, south, east, west } =
+  // const { products, popularProds, loading } = useProducts();
+  const { kigali, north, south, east, west } =
     useContext(OffersContext);
-  const sales = [
-    {
-      name: "Total Sales",
-      icon: <ShoppingBasket />,
-      amount: 7890,
-      bgColor: "bg-red-100",
-      iconColor: "text-red-500",
-    },
-    {
-      name: "Income",
-      icon: <FaMoneyCheck />,
-      amount: "1,000,000",
-      bgColor: "bg-green-100",
-      iconColor: "text-green-500",
-    },
-    {
-      name: "Products in Stock",
-      icon: <CgShutterstock />,
-      amount: products.length,
-      bgColor: "bg-yellow-100",
-      iconColor: "text-yellow-500",
-    },
-    {
-      name: "Top-Selling Products",
-      icon: <FaTrophy />,
-      amount: popularProds.length,
-      bgColor: "bg-blue-100",
-      iconColor: "text-blue-500",
-    },
-  ];
-  const orders = [
-    {
-      name: "Total Orders",
-      icon: <AiOutlineOrderedList />,
-      amount: allOffers && allOffers.length > 0 ? allOffers.length : 0,
-      bgColor: "bg-red-100",
-      iconColor: "text-red-500",
-    },
-    {
-      name: "Approved Orders",
-      icon: <CheckCheckIcon />,
-      amount: approved.length || 0,
-      bgColor: "bg-green-100",
-      iconColor: "text-green-500",
-    },
-    {
-      name: "Pending Orders",
-      icon: <Clock />,
-      amount: pending.length || 0,
-      bgColor: "bg-yellow-100",
-      iconColor: "text-yellow-500",
-    },
-    {
-      name: "Cancelled Orders",
-      icon: <Trash />,
-      amount: "12M+",
-      bgColor: "bg-red-100",
-      iconColor: "text-red-500",
-    },
-  ];
+  // const sales = [
+  //   {
+  //     name: "Total Sales",
+  //     icon: <ShoppingBasket />,
+  //     amount: 7890,
+  //     bgColor: "bg-red-100",
+  //     iconColor: "text-red-500",
+  //   },
+  //   {
+  //     name: "Income",
+  //     icon: <FaMoneyCheck />,
+  //     amount: "1,000,000",
+  //     bgColor: "bg-green-100",
+  //     iconColor: "text-green-500",
+  //   },
+  //   {
+  //     name: "Products in Stock",
+  //     icon: <CgShutterstock />,
+  //     amount: products.length,
+  //     bgColor: "bg-yellow-100",
+  //     iconColor: "text-yellow-500",
+  //   },
+  //   {
+  //     name: "Top-Selling Products",
+  //     icon: <FaTrophy />,
+  //     amount: popularProds.length,
+  //     bgColor: "bg-blue-100",
+  //     iconColor: "text-blue-500",
+  //   },
+  // ];
+  // const orders = [
+  //   {
+  //     name: "Total Orders",
+  //     icon: <AiOutlineOrderedList />,
+  //     amount: allOffers && allOffers?.length > 0 ? allOffers.length : 0,
+  //     bgColor: "bg-red-100",
+  //     iconColor: "text-red-500",
+  //   },
+  //   {
+  //     name: "Approved Orders",
+  //     icon: <CheckCheckIcon />,
+  //     amount: approved?.length || 0,
+  //     bgColor: "bg-green-100",
+  //     iconColor: "text-green-500",
+  //   },
+  //   {
+  //     name: "Pending Orders",
+  //     icon: <Clock />,
+  //     amount: pending?.length || 0,
+  //     bgColor: "bg-yellow-100",
+  //     iconColor: "text-yellow-500",
+  //   },
+  //   {
+  //     name: "Cancelled Orders",
+  //     icon: <Trash />,
+  //     amount: "12M+",
+  //     bgColor: "bg-red-100",
+  //     iconColor: "text-red-500",
+  //   },
+  // ];
   const ordersData = [
     { province: "Kigali", orders: kigali.length },
     { province: "Southern", orders: south.length },
@@ -154,7 +154,7 @@ export default function Dashboard() {
       </div>
       <hr />
       <div className="min-h-screen items-center content-center">
-        <div className=" gap-5 p-6 flex flex-col sm:flex-row justify-center">
+        {/* <div className=" gap-5 p-6 flex flex-col sm:flex-row justify-center">
           <div className="max-w-4xl">
             <div className="bg-gray-100 p-5 rounded-lg flex flex-col items-center">
               <h1 className="font-bold text-gray-800 mb-8">Sales Overview</h1>
@@ -213,7 +213,7 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="gap-6 p-6 flex flex-col sm:flex-row justify-center items-center">
           {/* Users Card */}
           <div className="bg-green-200 max-w-sm cursor-pointer w-full p-6 rounded-lg shadow-lg flex flex-col items-center">

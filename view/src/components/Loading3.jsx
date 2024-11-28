@@ -3,10 +3,8 @@ import { useContext } from "react";
 import { ThemeContext } from "../../constants/ThemeContext";
 
 const Loader3 = ({ bg }) => {
-  const { theme } = useContext(ThemeContext);
-
+  const { theme } = useContext(ThemeContext) || { theme: "light" }; 
   const strokeColor = bg || theme === "dark" ? "#ffffff" : "#000000";
-
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +38,6 @@ const Loader3 = ({ bg }) => {
         </circle>
         <g></g>
       </g>
-      {/* Additional styling or elements can go here */}
     </svg>
   );
 };

@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaBell, FaUserAlt, FaSignOutAlt, FaChevronDown } from "react-icons/fa";
 
-const Header = ({currentBar}) => {
+const Header = ({ currentBar }) => {
   const [showNotificationDropdown, setShowNotificationDropdown] =
     useState(false);
   const [showUserDropdown, setShowUserDropdown] = useState(false);
@@ -70,8 +70,12 @@ const Header = ({currentBar}) => {
             className="flex items-center space-x-2 bg-green-200 px-5 p-3 rounded-full gap-3"
             onClick={() => setShowUserDropdown(!showUserDropdown)}
           >
-            <FaUserAlt className="h-6 w-6 text-gray-600" />
-            <span className="text-gray-800 font-medium">Hachib</span>
+            <img
+              className="h-6 w-6 rounded-full"
+              src="https://res.cloudinary.com/dpxldzsp3/image/upload/v1732786183/profile_pictures/xu78klci2sdxohxaf4ze.jpg"
+              alt="avatar"
+            />
+            <span className="text-gray-800 font-medium">Jovin</span>
             <FaChevronDown />
           </button>
           {/* User Dropdown */}

@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
-import { useNavigate, useParams } from "react-router-dom"; 
+import { useNavigate, useParams } from "react-router-dom";
 import MenPants from "../components/Men/MenPants";
 import MenShoes from "../components/Men/MenShoes";
 import Menshirts from "../components/Men/Menshirts";
@@ -45,16 +45,14 @@ const ShopNow = () => {
     setShowFav(false);
   };
 
-
-
   return (
     <CartItems>
       <FavItems>
         <div className="bg-white dark:bg-black min-h-screen">
           <Navbar />
-          <div className="bg-[url('/bg-white.png')] dark:bg-black flex flex-col md:flex-row items-center justify-around h-auto min-h-[20rem] px-6 md:px-16 py-8 md:py-16">
+          <div className="bg-[url('/bg-white.png')] dark:bg-black flex flex-col md:flex-row items-center justify-around  min-h-[1rem] px-6 md:px-16 py-8 md:py-16">
             <div className="md:w-1/2 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-semibold text-black dark:text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-white dark:text-white mb-4">
                 Choose a product for a faster delivery
               </h2>
             </div>
