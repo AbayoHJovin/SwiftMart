@@ -27,6 +27,7 @@ import AuthorizedAdmin from "../constants/AuthorizedAdmin.jsx";
 import CategorySection from "./components/WhatWeSell.jsx";
 import FavItems from "../constants/favItems.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import PaymentPage from "./pages/Pay.jsx";
 // import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
 const queryClient = new QueryClient();
 
@@ -115,7 +116,7 @@ const router = createBrowserRouter([
     element: <SignupForm />,
   },
   {
-    path: "/checkout/:amount",
+    path: "/checkout",
     element: (
       <CartItems>
         <OrderForm />
@@ -139,6 +140,7 @@ const router = createBrowserRouter([
       </CartItems>
     ),
   },
+  {path:"/paymentPage",element:<PaymentPage/>},
   { path: "offerComfirmation", element: <OfferComfirmation /> },
   {
     path: "/try/admin/auth",

@@ -11,7 +11,9 @@ const tokenRoutes = require("./Routes/tokenRoutes");
 const offerRoutes = require("./Routes/offerRoutes");
 const otpRoutes=require("./Routes/otpRoutes")
 const subscriptionRoutes=require("./Routes/subscriptions")
+const Paypal = require("./Routes/PaypalRoutes");
 require("dotenv").config();
+const Mtn = require("./Routes/MTNRoutes");
 
 const app = express();
 app.use(cookieParser());
@@ -39,3 +41,5 @@ app.use(FavRoutes);
 app.use(offerRoutes);
 app.use(otpRoutes);
 app.use(subscriptionRoutes)
+app.use(Paypal);
+app.use(Mtn);

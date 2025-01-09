@@ -1,17 +1,17 @@
 import { useState, useContext, useEffect } from "react";
 import { CgInfo } from "react-icons/cg";
 import { ThemeContext } from "../../constants/ThemeContext";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { CurrentUserContext } from "../../constants/currentUser";
 import { CartContext } from "../../constants/cartItems";
-import { apiUrl } from "../lib/apis";
-import Loader3 from "../components/Loading3";
+// import Loader3 from "../components/Loading3";
+import { toast, ToastContainer } from "react-toastify";
 
 const OrderForm = () => {
   const { theme } = useContext(ThemeContext);
   const { currentUser } = useContext(CurrentUserContext);
   const { itemsOnCart } = useContext(CartContext);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     phone: "",
     province: "",
@@ -19,7 +19,6 @@ const OrderForm = () => {
     sector: "",
     cell: "",
     village: "",
-    paymentMethod: "",
     termsAccepted: false,
   });
   const provinces = ["Kigali", "Northern", "Southern", "Eastern", "Western"];
@@ -28,19 +27,7 @@ const OrderForm = () => {
   const [cost, setCost] = useState("");
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   if (!currentUser || !itemsOnCart) {
-  //     navigate("/login");
-  //   }
-  //   const ids = [];
-  //   for (let i = 0; i < itemsOnCart.length; i++) {
-  //     if (itemsOnCart[i] && itemsOnCart[i].productId) {
-  //       ids.push(itemsOnCart[i].productId);
-  //     }
-  //   }
-
-  //   setProductsId(ids);
-  // }, [itemsOnCart, currentUser, navigate]);
+  const location = useLocation();
 
   useEffect(() => {
     if (!currentUser || !itemsOnCart) {
@@ -83,7 +70,6 @@ const OrderForm = () => {
       sector,
       cell,
       village,
-      paymentMethod,
       termsAccepted,
     } = formData;
 
@@ -93,105 +79,109 @@ const OrderForm = () => {
     if (!sector) errors.sector = "Sector is required";
     if (!cell) errors.cell = "Cell is required";
     if (!village) errors.village = "Village is required";
-    if (!paymentMethod) errors.paymentMethod = "Please select a payment method";
     if (!termsAccepted)
       errors.termsAccepted = "You must accept the terms and conditions";
 
     return errors;
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
+      console.log("form error", formErrors);
     } else {
+      console.log("no error!");
+      if (!currentUser || !formData || !productsId || !subtotal) {
+        toast.error("Missing required information!");
+        return;
+      }
+
       const dataToSend = {
         userId: currentUser.userId,
-        address:
-          formData.province +
-          "," +
-          formData.district +
-          "," +
-          formData.sector +
-          "," +
-          formData.cell +
-          "," +
+        address: [
+          formData.province,
+          formData.district,
+          formData.sector,
+          formData.cell,
           formData.village,
-        phoneNo: formData.phone, // Match with backend’s `phoneNo` field
-        paymentMethod: formData.paymentMethod,
-        price: cost, // Match with backend’s `price` field
+        ].join(","),
+        phoneNo: formData.phone,
+        price: subtotal,
         products: productsId,
-        orderDate: `${currentDate} ${currentTime}`, // Combine date and time if needed or modify as required
+        orderDate: `${currentDate} ${currentTime}`,
       };
 
-      setLoading(true);
-      fetch(`${apiUrl}/addOffer`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dataToSend),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.message === "Order placed successfully") {
-            handleRedirect();
-          } else {
-            setFormErrors({
-              general: "An error occurred while placing the order.",
-            });
-          }
-        })
-        .catch((e) => {
-          console.error(e);
-          setFormErrors({
-            general: "An error occurred. Please try again later.",
-          });
-        })
-        .finally(() => setLoading(false));
+      navigate("/paymentPage", { state: { amount: subtotal, dataToSend } });
     }
   };
 
-  function handleRedirect() {
-    fetch(`${apiUrl}/deleteAllCartItems?userId=${currentUser.userId}`, {
-      method: "DELETE",
-    })
-      .then((response) => response.json())
-      .then((message) => {
-        if (message.message == "Cart reset successfully.") {
-          navigate("/offerComfirmation");
-        }
-      })
-      .catch((e) => console.error(e))
-      .finally(() => setLoading(false));
-  }
-  const { amount } = useParams();
+  //   setLoading(true);
+  //   fetch(`${apiUrl}/addOffer`, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(dataToSend),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       if (data.message === "Order placed successfully") {
+  //         handleRedirect();
+  //       } else {
+  //         setFormErrors({
+  //           general: "An error occurred while placing the order.",
+  //         });
+  //       }
+  //     })
+  //     .catch((e) => {
+  //       console.error(e);
+  //       setFormErrors({
+  //         general: "An error occurred. Please try again later.",
+  //       });
+  //     })
+  //     .finally(() => setLoading(false));
+  // }
+
+  // function handleRedirect() {
+  //   fetch(`${apiUrl}/deleteAllCartItems?userId=${currentUser.userId}`, {
+  //     method: "DELETE",
+  //   })
+  //     .then((response) => response.json())
+  //     .then((message) => {
+  //       if (message.message == "Cart reset successfully.") {
+  //         navigate("/offerComfirmation");
+  //       }
+  //     })
+  //     .catch((e) => console.error(e))
+  //     .finally(() => setLoading(false));
+  // }
+  const { subtotal } = location.state || {};
   useEffect(() => {
-    if (!amount) {
+    if (!subtotal) {
       navigate(-1);
     } else {
-      setCost(amount);
+      setCost(subtotal);
     }
-  }, [amount, navigate]);
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen content-center">
-        <Loader3 />
-        <h1 className="text-lg">Placing order</h1>
-      </div>
-    );
-  }
+  }, [subtotal, navigate]);
+  // if (loading) {
+  //   return (
+  //     <div className="flex justify-center items-center h-screen content-center">
+  //       <Loader3 />
+  //       <h1 className="text-lg">Placing order</h1>
+  //     </div>
+  //   );
+  // }
+  const formattedCost = new Intl.NumberFormat("en-US").format(cost);
+
   return (
     <div className={`${theme == "dark" ? "bg-black" : "bg-white"}`}>
+      <ToastContainer />
       <div
         className={`flex flex-col lg:flex-row items-center p-8 ${
           theme === "dark" ? "bg-black" : "bg-white"
         }`}
       >
         {/* Order Form */}
-        <form
-          className="max-w-4xl w-full flex flex-col justify-start mx-0 smm:mx-auto p-0 smm:p-8 rounded-lg "
-          onSubmit={handleSubmit}
-        >
+        <form className="max-w-4xl w-full flex flex-col justify-start mx-0 smm:mx-auto p-0 smm:p-8 rounded-lg ">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6">
             Complete your order
           </h2>
@@ -216,35 +206,6 @@ const OrderForm = () => {
               )}
             </div>
           </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
-              Transaction method
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                "Mobile Money",
-                "Cash Transaction",
-                "Card Payments",
-                "Bank Transfers",
-              ].map((method) => (
-                <div className="flex items-center space-x-3" key={method}>
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value={method}
-                    checked={formData.paymentMethod === method}
-                    onChange={handleChange}
-                  />
-                  <h1 className="font-bold dark:text-gray-100">{method}</h1>
-                </div>
-              ))}
-              {formErrors.paymentMethod && (
-                <p className="text-red-500">{formErrors.paymentMethod}</p>
-              )}
-            </div>
-          </div>
-
           <div className="mb-8">
             <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
               Delivery Address
@@ -289,7 +250,7 @@ const OrderForm = () => {
             <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
               Amount to pay
             </h3>
-            <h1>RWF {cost}</h1>
+            <h1>RWF {formattedCost}</h1>
           </div>
 
           {/* Terms and Conditions */}
@@ -318,13 +279,12 @@ const OrderForm = () => {
             </h1>
           </div>
 
-          {/* Action Buttons */}
           <div className="flex flex-col sssm:flex-row justify-between mt-8 gap-3">
             <button
-              type="submit"
+              onClick={handleSubmit}
               className="p-3 w-full sssm:order-2 sssm:w-1/3 bg-green-600 text-white rounded-lg hover:bg-green-700"
             >
-              Complete Purchase
+              Pay RWF {formattedCost}
             </button>
             <button
               onClick={() => navigate(-1)}
@@ -335,8 +295,6 @@ const OrderForm = () => {
             </button>
           </div>
         </form>
-
-        {/* Confirm Image */}
         <img
           src="/confirmImage.png"
           alt="payment"

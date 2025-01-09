@@ -8,6 +8,7 @@ import { CurrentUserContext } from "../../constants/currentUser";
 import { toast, ToastContainer } from "react-toastify";
 import { FaTimesCircle } from "react-icons/fa";
 import Loader3 from "../components/Loading3";
+
 const CartPage = () => {
   const { theme } = useContext(ThemeContext);
   const { itemsOnCart, deleteItem } = useContext(CartContext);
@@ -54,7 +55,7 @@ const CartPage = () => {
     if (isNaN(subtotal) || subtotal < 100) {
       toast.error("Please enter a valid amount");
     } else {
-      navigate(`/checkout/${subtotal}`);
+      navigate(`/checkout`, { state: { subtotal } });
     }
   }
 
@@ -73,6 +74,11 @@ const CartPage = () => {
       </div>
     );
   }
+
+  // Format numbers with commas and currency symbol (RWF)
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat("en-US").format(number);
+  };
 
   // Render the component
   return (
@@ -137,7 +143,9 @@ const CartPage = () => {
                                   {item.prodName}
                                 </span>
                               </td>
-                              <td className="p-2">${item.price.toFixed(2)}</td>
+                              <td className="p-2">
+                                RWF {item.price.toFixed(2)}
+                              </td>
                               <td className="p-2">
                                 <input
                                   type="number"
@@ -154,7 +162,7 @@ const CartPage = () => {
                                 />
                               </td>
                               <td className="p-2">
-                                $
+                                RWF{" "}
                                 {isNaN(item.price * quantities[index])
                                   ? item.price
                                   : (item.price * quantities[index]).toFixed(2)}
@@ -205,7 +213,10 @@ const CartPage = () => {
                     <div className="flex justify-between">
                       <span>Subtotal</span>
                       <span>
-                        $ {isNaN(subtotal) ? 0 : subtotal.toFixed(2)}
+                        RWF{" "}
+                        {isNaN(subtotal)
+                          ? 0
+                          : formatNumber(subtotal.toFixed(2))}
                       </span>{" "}
                     </div>
                     <div className="flex justify-between">
@@ -215,7 +226,10 @@ const CartPage = () => {
                     <div className="flex justify-between">
                       <span>Total</span>
                       <span className="text-lg font-semibold">
-                        $ {isNaN(subtotal) ? 0 : subtotal.toFixed(2)}
+                        RWF{" "}
+                        {isNaN(subtotal)
+                          ? 0
+                          : formatNumber(subtotal.toFixed(2))}
                       </span>
                     </div>
                   </div>
