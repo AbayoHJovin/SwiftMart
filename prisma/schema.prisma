@@ -22,7 +22,6 @@ model Users {
   cart           Cart[]      
   favorites      Favorites[] 
   orders         Orders[]    
-  transactions   Transactions[] // Link to transactions
   createdAt      DateTime    @default(now())
   updatedAt      DateTime    @updatedAt
   profilePicture String?     @db.Text
@@ -72,7 +71,7 @@ model Orders {
   approved      Boolean     @default(false)
   orderDate     String?     @db.Text
   orderItems    OrderItem[] 
-  transaction   Transactions? // Link to transaction for the order
+  transactionUrl String?    @db.Text
 }
 
 model OrderItem {
@@ -109,14 +108,3 @@ model Subscription {
   email          String @unique @db.VarChar(255)
 }
 
-model Transactions {
-  transactionId String      @id @default(cuid()) 
-  order        Orders      @relation(fields: [orderId], references: [orderId]) 
-  orderId      String @unique
-  user         Users       @relation(fields: [userId], references: [userId]) 
-  userId       String
-  transactionDate DateTime  @default(now()) 
-  paymentStatus String     // E.g., "SUCCESS", "PENDING", "FAILED"
-  amount        Decimal    @db.Decimal(10, 2)
-  paymentMethod String     // E.g., PayPal, MTN MoMo, etc.
-}

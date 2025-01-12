@@ -152,7 +152,7 @@ const CartPage = () => {
                                   className="p-2 border rounded-lg dark:bg-gray-600 dark:text-white bg-white text-black"
                                   min={1}
                                   max={item.stock}
-                                  value={quantities[index] || 0}
+                                  value={quantities[index] || 1}
                                   onChange={(e) =>
                                     handleQuantityChange(
                                       index,

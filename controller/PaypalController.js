@@ -1,5 +1,6 @@
 const axios = require('axios');
 const dotenv = require('dotenv');
+const changeFormatAndPushToCloudinary = require('./functions/changeFormat');
 dotenv.config();
 
 const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID;
@@ -82,7 +83,8 @@ exports.captureOrder = async (req, res) => {
     );
 
     if (response.data.status === 'COMPLETED') {
-      res.json({ success: true, message: 'Payment successful', data: response.data });
+      const result = await changeFormatAndPushToCloudinary(response.data, "Payment Details");
+      res.json({ success: true, paymentType: 'PayPal', data: response.data, cloudinaryResult: result });
     } else {
       res.status(400).json({ success: false, message: 'Payment failed' });
     }

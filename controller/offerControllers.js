@@ -2,33 +2,34 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 exports.addOffer = async (req, res) => {
+  const { orderData, paymentMethod, transactionUrl, userId } = req.body;
   const {
-    userId,
     phoneNo,
-    paymentMethod,
     price,
     address,
-    products,
+    products: orderProducts,
     orderDate,
-  } = req.body;
+  } = orderData;
+
   try {
     if (
       !userId ||
       !phoneNo ||
       !paymentMethod ||
+      !transactionUrl ||
       !price ||
       !address ||
-      !products ||
-      !Array.isArray(products) ||
-      products.length === 0
+      !orderProducts ||
+      !Array.isArray(orderProducts) ||
+      orderProducts.length === 0
     ) {
       throw new Error("Missing or invalid details!");
     }
 
-    const validProducts = products.filter(
+    const validProducts = orderProducts.filter(
       (product) => product.productId && product.quantity
     );
-    if (validProducts.length !== products.length) {
+    if (validProducts.length !== orderProducts.length) {
       throw new Error(
         "All product entries must have valid productId and quantity."
       );
@@ -42,6 +43,7 @@ exports.addOffer = async (req, res) => {
         paymentMethod,
         price,
         orderDate: orderDate,
+        transactionUrl: transactionUrl,
         orderItems: {
           create: validProducts.map((item) => ({
             productId: item.productId,
@@ -52,6 +54,28 @@ exports.addOffer = async (req, res) => {
       include: { orderItems: true },
     });
 
+    for (const item of orderProducts) {
+      const product = await prisma.products.findUnique({
+        where: { prodId: item.productId },
+      });
+
+      if (!product) {
+        throw new Error(`Product with ID ${item.productId} not found.`);
+      }
+      
+      console.log("product.stock", product.stock);
+      console.log("item.quantity", item.quantity);
+      if (product.stock < item.quantity) {
+        throw new Error(
+          `Not enough stock for product: ${product.name}. Available: ${product.stock}`
+        );
+      }
+
+      await prisma.products.update({
+        where: { prodIsd: item.productId },
+        data: { stock: product.stock - item.quantity },
+      });
+    }
     return res
       .status(201)
       .json({ message: "Order placed successfully", order: newOrder });
@@ -113,7 +137,7 @@ exports.declineOffer = async (req, res) => {
     }
     const deleteOfferDependencies = await prisma.orderItem.deleteMany({
       where: {
-        orderId:offerId
+        orderId: offerId,
       },
     });
     await prisma.orders.delete({

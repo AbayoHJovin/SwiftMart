@@ -12,14 +12,14 @@ const PaymentPage = () => {
   const [cost, setCost] = useState(0);
   const location = useLocation();
   const navigate = useNavigate();
-  const { amount } = location.state || {};
+  const { amount,dataToSend } = location.state || {};
   useEffect(() => {
-    if (!amount) {
+    if (!amount || !dataToSend) {
       navigate(-1);
     } else {
       setCost(amount);
     }
-  }, [amount, navigate]);
+  }, [amount,dataToSend, navigate]);
   useEffect(() => {
     const fetchClientId = async () => {
       try {
@@ -87,7 +87,7 @@ const PaymentPage = () => {
           <h1 className="text-2xl font-bold text-gray-800 mb-6">
             Payment page
           </h1>
-          <MtnMoMoButton amount={amount} />
+          <MtnMoMoButton amount={amount} data={dataToSend}/>
           <PayPalScriptProvider
             options={{
               clientId: clientId,

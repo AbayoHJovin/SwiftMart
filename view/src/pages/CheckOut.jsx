@@ -105,7 +105,7 @@ const OrderForm = () => {
           formData.sector,
           formData.cell,
           formData.village,
-        ].join(","),
+        ].join("-"),
         phoneNo: formData.phone,
         price: subtotal,
         products: productsId,
@@ -117,43 +117,9 @@ const OrderForm = () => {
   };
 
   //   setLoading(true);
-  //   fetch(`${apiUrl}/addOffer`, {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(dataToSend),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       if (data.message === "Order placed successfully") {
-  //         handleRedirect();
-  //       } else {
-  //         setFormErrors({
-  //           general: "An error occurred while placing the order.",
-  //         });
-  //       }
-  //     })
-  //     .catch((e) => {
-  //       console.error(e);
-  //       setFormErrors({
-  //         general: "An error occurred. Please try again later.",
-  //       });
-  //     })
-  //     .finally(() => setLoading(false));
-  // }
+  
 
-  // function handleRedirect() {
-  //   fetch(`${apiUrl}/deleteAllCartItems?userId=${currentUser.userId}`, {
-  //     method: "DELETE",
-  //   })
-  //     .then((response) => response.json())
-  //     .then((message) => {
-  //       if (message.message == "Cart reset successfully.") {
-  //         navigate("/offerComfirmation");
-  //       }
-  //     })
-  //     .catch((e) => console.error(e))
-  //     .finally(() => setLoading(false));
-  // }
+ 
   const { subtotal } = location.state || {};
   useEffect(() => {
     if (!subtotal) {

@@ -111,8 +111,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
       .catch((e) => console.error(e))
       .finally(() => setIsApproving(false));
   }
-  useEffect(() => {
-  }, [boughtProducts]);
+  useEffect(() => {}, [boughtProducts]);
   return (
     <div className="px-0 md:px-5 mx-0 text-black dark:text-white">
       {offers?.length == 0 ? (
@@ -234,7 +233,15 @@ const Orders = ({ AdminOptions, currentUser }) => {
               <p className="text-xl mb-10 text-green-600">
                 {selectedOrder.paymentMethod}
               </p>
-
+              <div>
+                <h1 className="mt-10 mb-3  font-bold text-3xl text-green-700">
+                  Receipt
+                </h1>
+                <img
+                  src={selectedOrder.transactionUrl}
+                  alt="transaction Image"
+                />
+              </div>
               <div className="my-8">
                 <h1 className="font-bold text-3xl text-green-700">Options</h1>
                 <div className="flex gap-5 mt-4">

@@ -1,16 +1,18 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Modal, Button, Input, Form, message } from "antd";
 // import { MtnMoMoOutlined } from '@ant-design/icons';
 import axios from "axios";
+import UseAddOrder from "../../constants/addOrder";
 
-const MtnMoMoButton = ({ amount }) => {
+const MtnMoMoButton = ({ amount, data: orderData }) => {
+  const { addOrder } = UseAddOrder();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const formattedAmount = new Intl.NumberFormat("en-US").format(amount);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [paymentUrl, setPaymentUrl] = useState("");
   const [form] = Form.useForm();
-  // Function to handle form submission
   const handlePaymentRequest = async (values) => {
     try {
       setIsLoading(true);
@@ -25,10 +27,15 @@ const MtnMoMoButton = ({ amount }) => {
       );
 
       if (response.data.success) {
-        message.success(
-          `Payment request sent successfully! Reference ID: ${response.data.referenceId}`
-        );
+        message.success(`Payment request sent successfully!`);
         setIsModalVisible(false);
+        const re = await addOrder(
+          response.data.data,
+          response.data.paymentType,
+          orderData
+        );
+        console.log("Response data", response.data);
+        console.log("Response", re);
       } else {
         message.error("Something went wrong. Please try again.");
         console.error(`Error: ${response.data.error || response.data.message}`);
@@ -76,7 +83,7 @@ const MtnMoMoButton = ({ amount }) => {
               style={{
                 borderColor: "#28a745",
                 color: "black",
-              }} // Green
+              }}
             >
               RWF {formattedAmount}
             </Button>

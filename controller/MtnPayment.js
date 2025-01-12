@@ -1,6 +1,7 @@
 const axios = require("axios");
 const { v4: uuidv4 } = require("uuid");
 const dotenv = require("dotenv");
+const changeFormatAndPushToCloudinary = require("./functions/changeFormat");
 
 dotenv.config();
 
@@ -114,12 +115,10 @@ const requestToPay = async (req, res) => {
   try {
     const { amount, phoneNumber } = req.body;
     if (!amount || !phoneNumber) {
-      return res
-        .status(400)
-        .json({
-          success: false,
-          error: "Please provide amount and phoneNumber",
-        });
+      return res.status(400).json({
+        success: false,
+        error: "Please provide amount and phoneNumber",
+      });
     }
     const xReferenceId = uuidv4();
     const payload = {
@@ -145,42 +144,43 @@ const requestToPay = async (req, res) => {
       { headers }
     );
     if (response.status === 202) {
-        console.log("Request accepted. Querying payment status...");
-        let statusResponse; // Declare the variable outside the if block
-        try {
-          statusResponse = await axios.get(
-            `https://sandbox.momodeveloper.mtn.com/collection/v1_0/requesttopay/${xReferenceId}`,
-            { headers }
-          );
-        } catch (statusError) {
-          console.error("Error querying payment status:", statusError.message);
-          return res.status(500).json({
-            success: false,
-            error: statusError.response?.data || statusError.message,
-          });
-        }
-      
-        res.json({
-          success: true,
-          referenceId: xReferenceId,
-          data: statusResponse?.data,
-        });
-      } else {
-        res.status(400).json({
+      console.log("Request accepted. Querying payment status...");
+      let statusResponse; // Declare the variable outside the if block
+      try {
+        statusResponse = await axios.get(
+          `https://sandbox.momodeveloper.mtn.com/collection/v1_0/requesttopay/${xReferenceId}`,
+          { headers }
+        );
+      } catch (statusError) {
+        console.error("Error querying payment status:", statusError.message);
+        return res.status(500).json({
           success: false,
-          message: "Request-to-Pay initiation failed.",
-          response: response.data,
+          error: statusError.response?.data || statusError.message,
         });
       }
-   }
-    catch (error) {
-        res.status(500).json({
-            success: false,
-            error: error.response?.data || error.message,
-        });
-        }
+      const result = await changeFormatAndPushToCloudinary(
+        statusResponse?.data,
+        "MTN"
+      );
+      res.json({
+        success: true,
+        paymentType: "MTN",
+        data: result.secure_url,
+      });
+    } else {
+      res.status(400).json({
+        success: false,
+        message: "Request-to-Pay initiation failed.",
+        response: response.data,
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.response?.data || error.message,
+    });
+  }
 };
-
 
 const getPaymentStatus = async (req, res) => {
   if (!isInitialized) {
