@@ -49,14 +49,13 @@ exports.addCartItem = async (req, res) => {
 
 exports.getCartItem = async (req, res) => {
   const { currentUser } = req.query;
-
   try {
     if (!currentUser) {
       return res.status(401).json({ message: "Not authorized." });
     }
 
     const cart = await prisma.cart.findFirst({
-      where: { ownerId: currentUser }, 
+      where: { ownerId: currentUser },
       include: {
         cartProducts: {
           include: {
@@ -137,6 +136,82 @@ exports.deleteAllCartItems = async (req, res) => {
 
     return res.status(200).json({ message: "Cart reset successfully." });
   } catch (error) {
+    return res
+      .status(400)
+      .json({ message: error.message || "Something went wrong." });
+  }
+};
+exports.updateCartItemsQuantity = async (req, res) => {
+  const { userId, items } = req.body;
+
+  try {
+    console.log(userId, items);
+    // Validate input
+    if (!userId || !Array.isArray(items) || items.length === 0) {
+      throw new Error("User   ID and a non-empty items array are required.");
+    }
+
+    // Fetch the user's cart and all products
+    const [userCart, products] = await Promise.all([
+      prisma.cart.findFirst({ where: { ownerId: userId } }),
+      prisma.products.findMany(),
+    ]);
+
+    if (!userCart) {
+      throw new Error("Cart not found.");
+    }
+
+    // Validate and update each item
+    for (const item of items) {
+      const { id, quantity } = item;
+
+      // Validate individual item
+      if (!id || quantity === undefined || quantity <= 0) {
+        throw new Error(
+          "Each item must have a valid ID and quantity greater than 0."
+        );
+      }
+
+      // Find the cart product
+      const cartProduct = await prisma.cartProducts.findFirst({
+        where: { cartId: userCart.cartId, id },
+      });
+
+      if (!cartProduct) {
+        throw new Error(`Cart product with ID ${id} not found.`);
+      }
+
+      // Match the product with the products table
+      const matchedProduct = products.find(
+        (product) => product.prodId === cartProduct.productId
+      );
+
+      if (!matchedProduct) {
+        throw new Error(
+          `Product with ID ${cartProduct.productId} does not exist.`
+        );
+      }
+
+      // Check stock availability
+      if (quantity > matchedProduct.stock) {
+        throw new Error(
+          `Insufficient stock for product "${matchedProduct.prodName}". Available stock: ${matchedProduct.stock}, requested quantity: ${quantity}.`
+        );
+      }
+
+      // Update cart product quantity
+      await prisma.cartProducts.update({
+        where: { id: cartProduct.id },
+        data: { quantity },
+      });
+    }
+
+    // Success response
+    return res
+      .status(200)
+      .json({ message: "Cart items updated successfully." });
+  } catch (error) {
+    // Handle errors
     return res
       .status(400)
       .json({ message: error.message || "Something went wrong." });

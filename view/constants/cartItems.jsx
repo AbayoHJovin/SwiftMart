@@ -75,8 +75,37 @@ export default function CartItems({ children }) {
     }
   }
 
+  function updateCart(items) {
+    console.log('Updating cart:', items);
+    setLoading(true);
+    if (currentUser && currentUser.userId) {
+      fetch(`${apiUrl}/updateCart`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: currentUser.userId, items })
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          fetchCartItems(); 
+          setLoading(false);
+        })
+        .catch(e => {
+          console.error('Error updating cart:', e);
+          setLoading(false);
+        });
+    } else {
+      console.error('User is not logged in');
+      setLoading(false);
+    }
+  }
+  
   return (
-    <CartContext.Provider value={{loading, itemsOnCart, addItemOncart, deleteItem }}>
+    <CartContext.Provider value={{loading, itemsOnCart, addItemOncart, deleteItem,updateCart }}>
       {children}
     </CartContext.Provider>
   );

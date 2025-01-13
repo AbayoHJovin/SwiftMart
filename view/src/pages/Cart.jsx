@@ -11,76 +11,88 @@ import Loader3 from "../components/Loading3";
 
 const CartPage = () => {
   const { theme } = useContext(ThemeContext);
-  const { itemsOnCart, deleteItem } = useContext(CartContext);
+  const { itemsOnCart, deleteItem, updateCart } = useContext(CartContext);
   const { currentUser } = useContext(CurrentUserContext);
-  const { products } = useProducts();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [quantities, setQuantities] = useState([]);
-  const [subtotal, setSubtotal] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
+  const [updated, setUpdated] = useState([]);
 
   useEffect(() => {
     if (itemsOnCart && itemsOnCart.length > 0) {
+      setQuantities(itemsOnCart.map((item) => item.quantity));
       setLoading(false);
     }
   }, [itemsOnCart]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 
-  const itemsInCart = products.filter((cartItem) =>
-    itemsOnCart?.some((product) => product.productId === cartItem.prodId)
-  );
+    function updateCartQuantities() {
+      const updatedArray = [];
 
-  useEffect(() => {
-    if (itemsOnCart && itemsOnCart.length === 0) {
-      goToShop();
-    } else {
-      setQuantities(itemsInCart.map(() => 1));
+      for (let i = 0; i < itemsOnCart.length; i++) {
+        updatedArray.push({
+          id: itemsOnCart[i].id,
+          quantity: quantities[i],
+        });
+      }
+
+      setUpdated(updatedArray);
+
+      for (let i = 0; i < itemsOnCart.length; i++) {
+        itemsOnCart[i].quantity = quantities[i];
+      }
     }
-  }, [itemsOnCart, loading]);
 
+  // Update cart total whenever quantities or itemsOnCart change
   useEffect(() => {
-    const newSubtotal = itemsInCart.reduce(
-      (total, item, index) => total + item.price * quantities[index],
+    const newCartTotal = itemsOnCart.reduce(
+      (total, item, index) => total + item.product.price * quantities[index],
       0
     );
-    setSubtotal(newSubtotal);
-  }, [quantities, itemsInCart]);
+    setCartTotal(newCartTotal);
+  }, [quantities, itemsOnCart]);
 
   const handleQuantityChange = (index, value) => {
+    if (value < 1) return;
     const newQuantities = [...quantities];
     newQuantities[index] = value;
     setQuantities(newQuantities);
   };
 
-  function handleCheck() {
-    if (isNaN(subtotal) || subtotal < 100) {
+  const handleCheck = () => {
+    if (isNaN(cartTotal) || cartTotal < 100) {
       toast.error("Please enter a valid amount");
     } else {
-      navigate(`/checkout`, { state: { subtotal } });
+      navigate(`/checkout`, { state: { cartTotal } });
     }
+  };
+  function handleUpdate() {
+    /*
+    Last time, i stopped here due to the error where the function didn't work for the first time
+    but worked for the next press. This is where i will continue from.
+    */
+    updateCartQuantities()
+    updateCart(updated);
   }
-
-  function goToShop() {
-    return (
-      <div className="flex h-screen flex-col justify-center items-center content-center">
-        <h1 className="text-black dark:text-white">
-          No item is found in your cart.
-        </h1>
-        <button
-          onClick={() => navigate("/shop/Unisex/pants")}
-          className="bg-green-900 text-white my-2 p-3 px-5 rounded-md"
-        >
-          Shop Now
-        </button>
-      </div>
-    );
-  }
-
-  // Format numbers with commas and currency symbol (RWF)
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
-  // Render the component
+  const goToShop = () => (
+    <div className="flex h-screen flex-col justify-center items-center content-center">
+      <h1 className="text-black dark:text-white">
+        No item is found in your cart.
+      </h1>
+      <button
+        onClick={() => navigate("/shop/Unisex/pants")}
+        className="bg-green-900 text-white my-2 p-3 px-5 rounded-md"
+      >
+        Shop Now
+      </button>
+    </div>
+  );
+
   return (
     <div className="bg-white dark:bg-black text-black dark:text-white">
       <ToastContainer />
@@ -94,15 +106,14 @@ const CartPage = () => {
           <div className="container mx-auto">
             {loading ? (
               <div className="flex justify-center">
-                <Loader3 /> {/* Display Loader3 while fetching cart items */}
+                <Loader3 />
               </div>
             ) : itemsOnCart.length === 0 ? (
-              goToShop() // If no items in cart, show 'Go to Shop' component
+              goToShop()
             ) : (
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 <div className={`lg:col-span-2 p-4 rounded-lg`}>
                   <h2 className="text-lg font-semibold mb-4">Shopping Cart</h2>
-
                   <div className="overflow-x-auto">
                     <table className="min-w-full table-auto">
                       <thead>
@@ -119,71 +130,58 @@ const CartPage = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {loading ? (
-                          <tr>
-                            <td colSpan="5" className="p-2 text-center">
-                              <Loader3 />
+                        {itemsOnCart.map((item, index) => (
+                          <tr
+                            key={index}
+                            className={`${
+                              theme === "dark" ? "bg-black" : "bg-gray-100"
+                            }`}
+                          >
+                            <td className="p-2 flex items-center">
+                              <img
+                                src={item.product.image}
+                                alt={item.product.prodName}
+                                className="w-16 h-16 object-cover rounded-lg"
+                              />
+                              <span className="ml-4 hidden lg:inline-block">
+                                {item.product.prodName}
+                              </span>
+                            </td>
+                            <td className="p-2">
+                              RWF {item.product.price.toFixed(2)}
+                            </td>
+                            <td className="p-2">
+                              <input
+                                type="number"
+                                className="p-2 border rounded-lg dark:bg-gray-600 dark:text-white bg-white text-black"
+                                min={1}
+                                max={item.product.stock}
+                                value={quantities[index]}
+                                onChange={(e) =>
+                                  handleQuantityChange(
+                                    index,
+                                    parseInt(e.target.value)
+                                  )
+                                }
+                              />
+                            </td>
+                            <td className="p-2">
+                              RWF{" "}
+                              {(item.product.price * quantities[index]).toFixed(
+                                2
+                              )}
+                            </td>
+                            <td
+                              onClick={() => deleteItem(item.prodId)}
+                              className="cursor-pointer"
+                            >
+                              <FaTimesCircle />
                             </td>
                           </tr>
-                        ) : itemsInCart.length > 0 ? (
-                          itemsInCart.map((item, index) => (
-                            <tr
-                              key={index}
-                              className={`${
-                                theme === "dark" ? "bg-black" : "bg-gray-100"
-                              }`}
-                            >
-                              <td className="p-2 flex items-center">
-                                <img
-                                  src={item.image}
-                                  alt={item.prodName}
-                                  className="w-16 h-16 object-cover rounded-lg"
-                                />
-                                <span className="ml-4 hidden lg:inline-block">
-                                  {item.prodName}
-                                </span>
-                              </td>
-                              <td className="p-2">
-                                RWF {item.price.toFixed(2)}
-                              </td>
-                              <td className="p-2">
-                                <input
-                                  type="number"
-                                  className="p-2 border rounded-lg dark:bg-gray-600 dark:text-white bg-white text-black"
-                                  min={1}
-                                  max={item.stock}
-                                  value={quantities[index] || 1}
-                                  onChange={(e) =>
-                                    handleQuantityChange(
-                                      index,
-                                      parseInt(e.target.value)
-                                    )
-                                  }
-                                />
-                              </td>
-                              <td className="p-2">
-                                RWF{" "}
-                                {isNaN(item.price * quantities[index])
-                                  ? item.price
-                                  : (item.price * quantities[index]).toFixed(2)}
-                              </td>
-                              <td
-                                onClick={() => deleteItem(item.prodId)}
-                                className="cursor-pointer"
-                              >
-                                <FaTimesCircle />
-                              </td>
-                            </tr>
-                          ))
-                        ) : (
-                          <tr>
-                            <Loader3 />
-                          </tr>
-                        )}
+                        ))}
                       </tbody>
                     </table>
                   </div>
-
                   <div className="flex flex-col items-center gap-4 smm:flex-row justify-between mt-4">
                     <button
                       onClick={() => navigate("/shop")}
@@ -195,12 +193,14 @@ const CartPage = () => {
                     >
                       Return To Shop
                     </button>
-                    <button className="px-4 py-2 bg-green-500 text-white rounded-lg">
+                    <button
+                      onClick={handleUpdate}
+                      className="px-4 py-2 bg-green-500 text-white rounded-lg"
+                    >
                       Update Cart
                     </button>
                   </div>
                 </div>
-
                 <div
                   className={`p-4 rounded-lg shadow-md ${
                     theme === "dark"
@@ -212,12 +212,7 @@ const CartPage = () => {
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span>Subtotal</span>
-                      <span>
-                        RWF{" "}
-                        {isNaN(subtotal)
-                          ? 0
-                          : formatNumber(subtotal.toFixed(2))}
-                      </span>{" "}
+                      <span>RWF {formatNumber(cartTotal.toFixed(2))}</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Delivery cost</span>
@@ -226,10 +221,7 @@ const CartPage = () => {
                     <div className="flex justify-between">
                       <span>Total</span>
                       <span className="text-lg font-semibold">
-                        RWF{" "}
-                        {isNaN(subtotal)
-                          ? 0
-                          : formatNumber(subtotal.toFixed(2))}
+                        RWF {formatNumber(cartTotal.toFixed(2))}
                       </span>
                     </div>
                   </div>
@@ -255,7 +247,6 @@ const CartPage = () => {
                 Log in or create an account to improve your shopping experience.
               </h1>
             </div>
-
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-5 mt-5">
               <a href="/signup">
                 <button className="bg-[#6ed629] text-white py-2 px-4 sm:py-3 sm:px-5 rounded-md text-sm sm:text-base">
