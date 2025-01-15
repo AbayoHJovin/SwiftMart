@@ -27,9 +27,9 @@ const MenShirts = () => {
   );
   const navigate = useNavigate();
   const { theme } = useContext(ThemeContext);
-  
+
   const totalPages = Math.ceil(Menpants.length / productsPerPage);
-  
+
   useEffect(() => {
     const menProducts = products.filter(
       (prod) => prod.gender == "Unisex" && prod.category == "shirts"
@@ -49,19 +49,19 @@ const MenShirts = () => {
   }, [products, itemsOnCart, itemsOnFav]);
 
   const handleAddToCart = (pantId, event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
     addItemOncart(pantId);
     setLocalCart([...localCart, pantId]);
   };
 
   const handleDeleteItem = (pantId, event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
     deleteItem(pantId);
     setLocalCart(localCart.filter((id) => id !== pantId));
   };
 
   const handleAddToFav = (pantId, event) => {
-    event.stopPropagation();
+    // event.stopPropagation();
     addItemOnFav(pantId);
     setLocalFav([...localFav, pantId]);
   };
@@ -110,7 +110,7 @@ const MenShirts = () => {
                     deleteItem={(event) => handleDeleteItem(pant.prodId, event)}
                     isOnCart={isOnCart}
                     isOnFav={isOnFav}
-                    addToFav={(event) => handleAddToFav(pant.prodId, event)} 
+                    addToFav={() => handleAddToFav(pant.prodId)}
                     deleteFromFav={(event) =>
                       handleDeleteFromFav(pant.prodId, event)
                     }

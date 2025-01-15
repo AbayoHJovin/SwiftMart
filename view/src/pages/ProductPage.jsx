@@ -65,7 +65,7 @@ const ProductPage = () => {
 
                 <div className="mb-6">
                   <span className="text-2xl font-bold text-gray-800 dark:text-gray-200">
-                    ${realProduct.price}
+                    RWF {realProduct.price}
                   </span>
                   <p className="text-sm text-gray-500 dark:text-gray-200">
                     You pay after getting a product

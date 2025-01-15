@@ -119,11 +119,11 @@ const Sidebar = ({
               onClick={() => onTabChange(label.value)}
               className={`flex items-center ${
                 activeTab === label.value
-                  ? "bg-green-200 dark:bg-green-700 border-l-4 text-gray-700 dark:text-gray-200 border-green-800 dark:border-green-500"
+                  ? "bg-green-600 dark:bg-green-700 border-l-4 text-white dark:text-gray-200 border-green-800 dark:border-green-500"
                   : "bg-transparent dark:bg-transparent"
-              } hover:bg-green-200 dark:hover:bg-green-700 text-3xl ${
+              } hover:bg-green-600 dark:hover:bg-green-700 text-3xl ${
                 shrink ? "my-2 mx-2 px-4 py-3" : "my-2 mx-5 px-20 py-3"
-              } text-gray-700 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-100 cursor-pointer rounded transition-colors duration-200`}
+              } text-gray-700 dark:text-gray-200 hover:text-white dark:hover:text-gray-100 cursor-pointer rounded transition-colors duration-200`}
             >
               <span className="mr-2">{label.icon}</span>
               {!shrink && <h1 className="text-lg">{label.text}</h1>}

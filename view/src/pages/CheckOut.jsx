@@ -120,7 +120,7 @@ const OrderForm = () => {
   
 
  
-  const { subtotal } = location.state || {};
+  const { cartTotal:subtotal } = location.state || {};
   useEffect(() => {
     if (!subtotal) {
       navigate(-1);

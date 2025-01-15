@@ -27,9 +27,9 @@ const Pants = () => {
   );
   const navigate = useNavigate();
   const { theme } = useContext(ThemeContext);
-  
+
   const totalPages = Math.ceil(Menpants.length / productsPerPage);
-  
+
   useEffect(() => {
     const menProducts = products.filter(
       (prod) => prod.gender == "Unisex" && prod.category == "pants"
@@ -49,13 +49,13 @@ const Pants = () => {
   }, [products, itemsOnCart, itemsOnFav]);
 
   const handleAddToCart = (pantId, event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
     addItemOncart(pantId);
     setLocalCart([...localCart, pantId]);
   };
 
   const handleDeleteItem = (pantId, event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
     deleteItem(pantId);
     setLocalCart(localCart.filter((id) => id !== pantId));
   };
@@ -67,6 +67,7 @@ const Pants = () => {
   };
 
   const handleDeleteFromFav = (pantId, event) => {
+    console.log(pantId);
     event.stopPropagation();
     deleteItemFromFav(pantId);
     setLocalFav(localFav.filter((id) => id !== pantId));

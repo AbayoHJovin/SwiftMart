@@ -21,6 +21,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
   const [openOfferModal, setOpenOfferModal] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState([]);
   const [boughtProducts, setBoughtProducts] = useState([]);
+  const [quantities, setQuantities] = useState([]);
   const [isApproving, setIsApproving] = useState(false);
   const { products } = useProducts();
   const { users } = UseUsers();
@@ -73,6 +74,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
   function handleOfferClick(item) {
     setOpenOfferModal(true);
     const prod = [];
+    setQuantities(item.orderItems.map((item) => item.quantity));
     for (let i = 0; i < item.orderItems?.length; i++) {
       const filteredProducts = products.filter(
         (items) => items.prodId === item.orderItems[i].productId
@@ -179,9 +181,10 @@ const Orders = ({ AdminOptions, currentUser }) => {
                   </p>
                   <p className="text-lg mb-2">
                     <span className="font-semibold text-green-600">
-                      Amount to pay:{" "}
+                      Amount paid:{" "}
                     </span>
-                    RWF {selectedOrder.price}
+                    RWF{" "}
+                    {new Intl.NumberFormat("en-US").format(selectedOrder.price)}
                   </p>
                 </div>
                 <AiFillCloseCircle
@@ -199,7 +202,7 @@ const Orders = ({ AdminOptions, currentUser }) => {
                   <h1>Loading products ...</h1>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {boughtProducts?.map((item) => (
+                    {boughtProducts?.map((item, index) => (
                       <div
                         key={item.prodId}
                         className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
@@ -214,11 +217,15 @@ const Orders = ({ AdminOptions, currentUser }) => {
                         </div>
 
                         <div className="text-center">
-                          <h2 className="text-2xl font-bold text-green-700">
+                          <h2 className="text-xl font-bold text-green-700">
                             {item.prodName}
+                            <span className="text-green-600 mx-2">
+                              (&times; {quantities[index]})
+                            </span>
                           </h2>
                           <p className="text-lg text-green-600 mt-2">
-                            RWF {item.price?.toFixed(2)}
+                            RWF{" "}
+                            {new Intl.NumberFormat("en-US").format(item.price)}
                           </p>
                         </div>
                       </div>

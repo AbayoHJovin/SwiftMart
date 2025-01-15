@@ -72,7 +72,7 @@ exports.addOffer = async (req, res) => {
       }
 
       await prisma.products.update({
-        where: { prodIsd: item.productId },
+        where: { prodId: item.productId },
         data: { stock: product.stock - item.quantity },
       });
     }

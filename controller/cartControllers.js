@@ -195,25 +195,21 @@ exports.updateCartItemsQuantity = async (req, res) => {
       // Check stock availability
       if (quantity > matchedProduct.stock) {
         throw new Error(
-          `Insufficient stock for product "${matchedProduct.prodName}". Available stock: ${matchedProduct.stock}, requested quantity: ${quantity}.`
+          `Insufficient stock for product.`
         );
       }
-
-      // Update cart product quantity
       await prisma.cartProducts.update({
         where: { id: cartProduct.id },
         data: { quantity },
       });
     }
 
-    // Success response
     return res
       .status(200)
       .json({ message: "Cart items updated successfully." });
   } catch (error) {
-    // Handle errors
     return res
-      .status(400)
+      .status(401)
       .json({ message: error.message || "Something went wrong." });
   }
-};
+}

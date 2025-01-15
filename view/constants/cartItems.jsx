@@ -9,25 +9,24 @@ export const CartContext = createContext();
 export default function CartItems({ children }) {
   const [itemsOnCart, setIsOnCart] = useState([]);
   const { currentUser } = useContext(CurrentUserContext);
-  const [loading,setLoading]=useState(false)
+  const [UpdateResponse, setUpdateResponse] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [isUpdating,setisUpdating]=useState(false);
   function fetchCartItems() {
     if (currentUser) {
       const token = localStorage.getItem("token");
-      fetch(
-        `${apiUrl}/getCartItems?currentUser=${currentUser.userId}`,
-        {
-          method: "GET",
-          headers: {
-            authorization: token,
-          },
-        }
-      )
+      fetch(`${apiUrl}/getCartItems?currentUser=${currentUser.userId}`, {
+        method: "GET",
+        headers: {
+          authorization: token,
+        },
+      })
         .then((response) => response.json())
         .then((data) => {
-          if(data.products){
+          if (data.products) {
             setIsOnCart(data.products);
-          }else{
-            setIsOnCart([])
+          } else {
+            setIsOnCart([]);
           }
         })
         .catch((e) => console.log("error getting products", e));
@@ -43,7 +42,7 @@ export default function CartItems({ children }) {
       navigate("/login");
       return;
     }
-    setLoading(true)
+    setLoading(true);
     fetch(`${apiUrl}/addItemOncart`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -52,12 +51,12 @@ export default function CartItems({ children }) {
       .then((response) => response.json())
       .then((data) => {
         fetchCartItems();
-        setLoading(false)
+        setLoading(false);
       })
       .catch((e) => console.error(e));
   }
   function deleteItem(itemId) {
-    setLoading(true)
+    setLoading(true);
     if (currentUser.userId) {
       fetch(
         `${apiUrl}/deleteCartItem?itemId=${itemId}&userId=${currentUser.userId}
@@ -69,43 +68,53 @@ export default function CartItems({ children }) {
         .then((response) => response.json())
         .then((data) => {
           fetchCartItems();
-          setLoading(false)
+          setLoading(false);
         })
         .catch((e) => console.error(e));
     }
   }
 
   function updateCart(items) {
-    console.log('Updating cart:', items);
-    setLoading(true);
+    console.log("isUpdating cart:", items);
+    setisUpdating(true);
     if (currentUser && currentUser.userId) {
       fetch(`${apiUrl}/updateCart`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId: currentUser.userId, items })
+        body: JSON.stringify({ userId: currentUser.userId, items }),
       })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-          return response.json();
+        .then((response) => response.json())
+        .then((data) => {
+          // if(data.message==="Insufficient stock for product."){
+            setUpdateResponse(data.message);
+          // }
+          console.log("data", data);
+          // fetchCartItems();
         })
-        .then(data => {
-          fetchCartItems(); 
-          setLoading(false);
+        .catch((e) => {
+          console.log(e);
         })
-        .catch(e => {
-          console.error('Error updating cart:', e);
-          setLoading(false);
+        .finally(() => {
+          setisUpdating(false);
         });
     } else {
-      console.error('User is not logged in');
+      console.error("User is not logged in");
       setLoading(false);
     }
   }
-  
+
   return (
-    <CartContext.Provider value={{loading, itemsOnCart, addItemOncart, deleteItem,updateCart }}>
+    <CartContext.Provider
+      value={{
+        loading,
+        itemsOnCart,  
+        addItemOncart,
+        deleteItem,
+        updateCart,
+        UpdateResponse,
+        isUpdating
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

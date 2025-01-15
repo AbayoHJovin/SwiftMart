@@ -23,7 +23,7 @@ const changeFormatAndPushToCloudinary = async (data, paymentType) => {
     if (paymentType === "MTN") {
       transformedData = {
         paidWith: "MTN MoMo",
-        amount: data.amount,
+        amount: new Intl.NumberFormat("en-US").format(data.amount),
         currency: data.currency,
         status: data.status,
         payer: data.payer.partyId,

@@ -8,10 +8,12 @@ import { CurrentUserContext } from "../../constants/currentUser";
 import { toast, ToastContainer } from "react-toastify";
 import { FaTimesCircle } from "react-icons/fa";
 import Loader3 from "../components/Loading3";
+import { message } from "antd";
 
 const CartPage = () => {
   const { theme } = useContext(ThemeContext);
-  const { itemsOnCart, deleteItem, updateCart } = useContext(CartContext);
+  const { itemsOnCart, deleteItem, updateCart, UpdateResponse, isUpdating } =
+    useContext(CartContext);
   const { currentUser } = useContext(CurrentUserContext);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
@@ -20,29 +22,32 @@ const CartPage = () => {
   const [updated, setUpdated] = useState([]);
 
   useEffect(() => {
-    if (itemsOnCart && itemsOnCart.length > 0) {
-      setQuantities(itemsOnCart.map((item) => item.quantity));
+    if (itemsOnCart) {
+      if (itemsOnCart.length > 0) {
+        setQuantities(itemsOnCart.map((item) => item.quantity));
+      }
       setLoading(false);
     }
   }, [itemsOnCart]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
-    function updateCartQuantities() {
-      const updatedArray = [];
+  function updateCartQuantities() {
+    const updatedArray = [];
 
-      for (let i = 0; i < itemsOnCart.length; i++) {
-        updatedArray.push({
-          id: itemsOnCart[i].id,
-          quantity: quantities[i],
-        });
-      }
-
-      setUpdated(updatedArray);
-
-      for (let i = 0; i < itemsOnCart.length; i++) {
-        itemsOnCart[i].quantity = quantities[i];
-      }
+    for (let i = 0; i < itemsOnCart.length; i++) {
+      updatedArray.push({
+        id: itemsOnCart[i].id,
+        quantity: quantities[i],
+      });
+      console.log(quantities[i]);
     }
+
+    setUpdated(updatedArray);
+
+    for (let i = 0; i < itemsOnCart.length; i++) {
+      itemsOnCart[i].quantity = quantities[i];
+    }
+  }
 
   // Update cart total whenever quantities or itemsOnCart change
   useEffect(() => {
@@ -57,27 +62,46 @@ const CartPage = () => {
     if (value < 1) return;
     const newQuantities = [...quantities];
     newQuantities[index] = value;
-    setQuantities(newQuantities);
+    setQuantities(newQuantities); // This will trigger the useEffect below
   };
+  // Use a useEffect to update the cart quantities whenever 'quantities' changes
+  useEffect(() => {
+    const updatedArray = itemsOnCart.map((item, index) => ({
+      id: item.id,
+      quantity: quantities[index],
+    }));
+
+    setUpdated(updatedArray);
+
+    // Update the actual quantities in the itemsOnCart (if needed elsewhere)
+    itemsOnCart.forEach((item, index) => {
+      item.quantity = quantities[index];
+    });
+  }, [quantities, itemsOnCart]);
 
   const handleCheck = () => {
-    if (isNaN(cartTotal) || cartTotal < 100) {
+    if (isNaN(cartTotal) || cartTotal < 1) {
       toast.error("Please enter a valid amount");
     } else {
+      handleUpdate();
       navigate(`/checkout`, { state: { cartTotal } });
     }
   };
   function handleUpdate() {
-    /*
-    Last time, i stopped here due to the error where the function didn't work for the first time
-    but worked for the next press. This is where i will continue from.
-    */
-    updateCartQuantities()
     updateCart(updated);
   }
   const formatNumber = (number) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
+  useEffect(() => {
+    if (UpdateResponse) {
+      if (UpdateResponse === "Insufficient stock for product.") {
+        message.error("Insufficient stock for product.");
+      } else {
+        message.success("Cart updated");
+      }
+    }
+  }, [UpdateResponse]);
 
   const goToShop = () => (
     <div className="flex h-screen flex-col justify-center items-center content-center">
@@ -108,7 +132,7 @@ const CartPage = () => {
               <div className="flex justify-center">
                 <Loader3 />
               </div>
-            ) : itemsOnCart.length === 0 ? (
+            ) : !itemsOnCart || itemsOnCart.length === 0 ? (
               goToShop()
             ) : (
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -124,6 +148,7 @@ const CartPage = () => {
                         >
                           <th className="p-2 text-left">Product</th>
                           <th className="p-2 text-left">Price</th>
+                          <th className="p-2 text-left">Quantity in Stock</th>
                           <th className="p-2 text-left">Quantity</th>
                           <th className="p-2 text-left">Subtotal</th>
                           <th className="p-2 text-left"></th>
@@ -150,6 +175,7 @@ const CartPage = () => {
                             <td className="p-2">
                               RWF {item.product.price.toFixed(2)}
                             </td>
+                            <td className="p-2">{item.product.stock}</td>
                             <td className="p-2">
                               <input
                                 type="number"
@@ -172,7 +198,7 @@ const CartPage = () => {
                               )}
                             </td>
                             <td
-                              onClick={() => deleteItem(item.prodId)}
+                              onClick={() => deleteItem(item.product.prodId)}
                               className="cursor-pointer"
                             >
                               <FaTimesCircle />
@@ -195,9 +221,12 @@ const CartPage = () => {
                     </button>
                     <button
                       onClick={handleUpdate}
-                      className="px-4 py-2 bg-green-500 text-white rounded-lg"
+                      disabled={isUpdating}
+                      className={`px-4 py-2 bg-green-500 text-white rounded-lg ${
+                        isUpdating && "cursor-not-allowed opacity-50"
+                      }`}
                     >
-                      Update Cart
+                      {isUpdating ? "Updating cart" : "Update Cart"}
                     </button>
                   </div>
                 </div>

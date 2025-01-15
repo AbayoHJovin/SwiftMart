@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { CgHeart } from "react-icons/cg";
@@ -36,7 +37,7 @@ const ProductCard = ({
             alt={itemName}
           />
         )}
-        {!loading &&
+        {/* {!loading &&
           (isOnFav ? (
             <button
               onClick={(event) => {
@@ -57,7 +58,7 @@ const ProductCard = ({
             >
               <CgHeart className="text-gray-800 hover:text-red-500" />
             </button>
-          ))}
+          ))} */}
       </div>
       <div className="flex flex-col justify-between w-full pt-4">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">

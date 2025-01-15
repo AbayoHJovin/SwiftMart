@@ -16,8 +16,8 @@ const UseAddOrder = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           orderData,
-          transactionUrl,
           paymentMethod,
+          transactionUrl,
           userId: currentUser.userId,
         }),
       });
