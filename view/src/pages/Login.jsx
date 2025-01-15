@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { apiUrl } from "../lib/apis";
@@ -214,13 +214,13 @@ const Login = () => {
                     </button>
                   )}
                 </form>
-                <h1 className="text-center text-lg">Or</h1>
+                {/* <h1 className="text-center text-lg">Or</h1>
                 <div className="flex items-center justify-center mt-4">
                   <button className="w-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 font-medium py-2 rounded-md flex items-center justify-center focus:outline-none">
                     <FcGoogle className="text-red-500 mr-2" />
                     Login with Google
                   </button>
-                </div>
+                </div> */}
                 <h1 className="text-center my-4">
                   Don&apos;t have an account?{" "}
                   <a href="/signup" className="font-semibold hover:underline">

@@ -87,7 +87,7 @@ export default function Offers({ children }) {
           const westernOrders = [];
 
           response?.forEach((order) => {
-            const addressParts = order.address.split(","); // Split the address by commas
+            const addressParts = order.address.split("-"); // Split the address by commas
             const province = addressParts[0].trim(); // Get the first string and trim any whitespace
 
             switch (province) {

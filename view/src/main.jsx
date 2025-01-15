@@ -28,6 +28,7 @@ import CategorySection from "./components/WhatWeSell.jsx";
 import FavItems from "../constants/favItems.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PaymentPage from "./pages/Pay.jsx";
+import Tabs from "./pages/Aaaa.jsx";
 // import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
 const queryClient = new QueryClient();
 
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
         <About />
       </CartItems>
     ),
+  },
+  {
+    path:"/try",
+    element:<Tabs/>
   },
   {
     path: "/shop/:gender/:product",

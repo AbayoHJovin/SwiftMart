@@ -68,7 +68,7 @@ const ProductPage = () => {
                     RWF {realProduct.price}
                   </span>
                   <p className="text-sm text-gray-500 dark:text-gray-200">
-                    You pay after getting a product
+                    You pay and we deliver a product to you.
                   </p>
                 </div>
 

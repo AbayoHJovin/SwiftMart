@@ -69,10 +69,10 @@ export default function ProductTable() {
       console.error("Error toggling popularity:", error);
     }
   };
-function handleEdit(product){
-  setSelectedProduct(product)
-  setShowModal(true)
-}
+  function handleEdit(product) {
+    setSelectedProduct(product);
+    setShowModal(true);
+  }
   return (
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="flex flex-col sm:flex-row justify-between mb-4">
@@ -116,7 +116,7 @@ function handleEdit(product){
               {filteredProducts.map((product, index) => (
                 <tr
                   key={index}
-                  className={`border-b-2 border-black items-center content-center ${
+                  className={`border-b-2 border-gray-200 items-center content-center ${
                     index % 2 == 0 ? "bg-gray-100" : "bg-gray-200"
                   }`}
                 >

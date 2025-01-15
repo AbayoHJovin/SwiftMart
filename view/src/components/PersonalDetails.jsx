@@ -7,6 +7,7 @@ import UserNav from "./UserAccountNav";
 import axios from "axios";
 import Loader3 from "./Loading3";
 import { toast, ToastContainer } from "react-toastify";
+import { message } from "antd";
 
 const PersonalDetails = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -89,7 +90,7 @@ const PersonalDetails = () => {
             profilePicture: response.data.user.profilePicture,
           })
         );
-        toast.success("User updated successfully!");
+        message.success("User updated successfully!");
         setIsSaving(false);
       } else {
         console.error("Failed to update user:", response.data);

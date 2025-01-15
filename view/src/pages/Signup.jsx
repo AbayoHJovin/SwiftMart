@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/ReactToastify.min.css";
 import { apiUrl } from "../lib/apis";
@@ -51,9 +51,9 @@ const SignupForm = () => {
     }
   };
 
-  const handleGoogleAuth = () => {
-    window.location.href = "/api/auth/google";
-  };
+  // const handleGoogleAuth = () => {
+  //   window.location.href = "/api/auth/google";
+  // };
 
   return (
     <div className="relative bg-white dark:bg-black">
@@ -161,7 +161,7 @@ const SignupForm = () => {
                 )}
               </button>
             </form>
-            <h1 className="text-center text-lg text-black dark:text-white">
+            {/* <h1 className="text-center text-lg text-black dark:text-white">
               Or
             </h1>
             <div className="flex items-center justify-center mt-4">
@@ -172,7 +172,7 @@ const SignupForm = () => {
                 <FcGoogle className="text-red-500 mr-2" />
                 Sign Up with Google
               </button>
-            </div>
+            </div> */}
             <h1 className="text-center my-4 text-black dark:text-white">
               Already have an account?{" "}
               <a href="/login" className="font-semibold hover:underline">
