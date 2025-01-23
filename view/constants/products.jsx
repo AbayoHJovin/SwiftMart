@@ -14,8 +14,10 @@ const useProducts = () => {
     staleTime: 5 * 60 * 1000,  
   });
 
-  const popularProds = products.filter((product) => product.popular);
-  return { products, loading: isLoading, error, popularProds };
+  const availableProducts = products.filter((product) => product.stock > 0);
+  const popularProds = availableProducts.filter((product) => product.popular);
+
+  return { products: availableProducts, loading: isLoading, error, popularProds };
 };
 
 export default useProducts;
