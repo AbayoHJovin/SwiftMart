@@ -1,6 +1,6 @@
-const axios = require('axios');
-const dotenv = require('dotenv');
-const changeFormatAndPushToCloudinary = require('./functions/changeFormat');
+const axios = require("axios");
+const dotenv = require("dotenv");
+const changeFormatAndPushToCloudinary = require("./functions/changeFormat");
 dotenv.config();
 
 const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID;
@@ -9,21 +9,22 @@ const PAYPAL_API_URL = process.env.PAYPAL_API_URL;
 
 // Utility function to get PayPal access token
 const getPayPalAccessToken = async () => {
-  const auth = Buffer.from(`${PAYPAL_CLIENT_ID}:${PAYPAL_CLIENT_SECRET}`).toString('base64');
+  const auth = Buffer.from(
+    `${PAYPAL_CLIENT_ID}:${PAYPAL_CLIENT_SECRET}`
+  ).toString("base64");
   const response = await axios.post(
     `${PAYPAL_API_URL}/v1/oauth2/token`,
-    'grant_type=client_credentials',
+    "grant_type=client_credentials",
     {
       headers: {
         Authorization: `Basic ${auth}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
+        "Content-Type": "application/x-www-form-urlencoded",
       },
     }
   );
   return response.data.access_token;
 };
 
-// Controller to create a PayPal order
 exports.createOrder = async (req, res) => {
   const { amount } = req.body;
 
@@ -31,18 +32,18 @@ exports.createOrder = async (req, res) => {
     const accessToken = await getPayPalAccessToken();
 
     const orderPayload = {
-      intent: 'CAPTURE',
+      intent: "CAPTURE",
       purchase_units: [
         {
           amount: {
-            currency_code: 'USD',
+            currency_code: "USD",
             value: amount,
           },
         },
       ],
       application_context: {
-        return_url: 'http://localhost:3000/success',
-        cancel_url: 'http://localhost:3000/cancel',
+        return_url: "http://localhost:3000/success",
+        cancel_url: "http://localhost:3000/cancel",
       },
     };
 
@@ -52,15 +53,18 @@ exports.createOrder = async (req, res) => {
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       }
     );
 
     res.json({ success: true, orderId: response.data.id });
   } catch (error) {
-    console.error('Error creating order:', error.response?.data || error.message);
-    res.status(500).json({ success: false, message: 'Error creating order' });
+    console.error(
+      "Error creating order:",
+      error.response?.data || error.message
+    );
+    res.status(500).json({ success: false, message: "Error creating order" });
   }
 };
 
@@ -77,20 +81,33 @@ exports.captureOrder = async (req, res) => {
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       }
     );
 
-    if (response.data.status === 'COMPLETED') {
-      const result = await changeFormatAndPushToCloudinary(response.data, "Payment Details");
-      res.json({ success: true, paymentType: 'PayPal', data: response.data, cloudinaryResult: result });
+    if (response.data.status === "COMPLETED") {
+      const result = await changeFormatAndPushToCloudinary(
+        response.data,
+        "Payment Details"
+      );
+      res.json({
+        success: true,
+        paymentType: "PayPal",
+        data: response.data,
+        cloudinaryResult: result,
+      });
     } else {
-      res.status(400).json({ success: false, message: 'Payment failed' });
+      res.status(400).json({ success: false, message: "Payment failed" });
     }
   } catch (error) {
-    console.error('Error capturing order:', error.response?.data || error.message);
-    res.status(500).json({ success: false, message: 'Error capturing payment' });
+    console.error(
+      "Error capturing order:",
+      error.response?.data || error.message
+    );
+    res
+      .status(500)
+      .json({ success: false, message: "Error capturing payment" });
   }
 };
 
