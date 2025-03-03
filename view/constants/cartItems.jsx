@@ -33,8 +33,10 @@ export default function CartItems({ children }) {
     }
   }
   useEffect(() => {
-    fetchCartItems();
-  }, []);
+    if (currentUser) {
+      fetchCartItems();
+    }
+  }, [currentUser]);
   const navigate = useNavigate();
   function addItemOncart(itemId) {
     if (!currentUser) {

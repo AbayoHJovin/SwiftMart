@@ -10,8 +10,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Popular = () => {
-  const { products } = useProducts();
-  const [loading, setLoading] = useState(false);
+  const { products, loading: productsLoading, error } = useProducts(); // Use loading and error from useProducts
   const [popularProducts, setPopularProducts] = useState([]);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -19,7 +18,6 @@ const Popular = () => {
 
   useEffect(() => {
     const filterProducts = async () => {
-      setLoading(true);
       try {
         const filteredProducts = products.filter(
           (item) => item.popular === true
@@ -27,15 +25,13 @@ const Popular = () => {
         setPopularProducts(filteredProducts);
       } catch (error) {
         console.error("Error filtering products:", error);
-      } finally {
-        setLoading(false);
       }
     };
 
-    if (products) {
+    if (products && !productsLoading) { // Only filter when products are loaded
       filterProducts();
     }
-  }, [products]);
+  }, [products, productsLoading]);
 
   return (
     <div className="text-black dark:text-white font-roboto p-2 sm:p-5 my-12 mx-0 sm:mx-5">
@@ -72,9 +68,17 @@ const Popular = () => {
         </div>
       </div>
 
-      {loading || popularProducts.length === 0 ? (
+      {productsLoading ? (
         <div className="flex justify-center items-center text-center w-full h-[300px]">
           <Loader3 />
+        </div>
+      ) : error ? (
+        <div className="flex justify-center items-center text-center w-full h-[300px] text-red-500">
+          Error loading popular products: {error.message}
+        </div>
+      ) : popularProducts.length === 0 ? (
+        <div className="flex justify-center items-center text-center w-full h-[300px]">
+          No popular products available
         </div>
       ) : (
         <div className="relative">
@@ -108,24 +112,31 @@ const Popular = () => {
             onMouseLeave={(swiper) => swiper.autoplay.start()}
             modules={[Navigation, Autoplay]}
           >
-            {popularProducts.map((item) => (
-              <SwiperSlide key={item.prodId}>
-                <div className="flex justify-center items-center w-full max-w-[300px] h-[350px] sm:h-[400px] bg-gray-100 rounded-md cursor-pointer relative group mx-auto">
-                  <img
-                    src={item.image}
-                    alt="item"
-                    className="w-full h-full object-cover rounded-md"
-                  />
-                  <div className="absolute inset-0 bg-green-50 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <button
-                    onClick={() => navigate(`/product/${item.prodId}`)}
-                    className="absolute bottom-0 w-full bg-green-600 text-white py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  >
-                    View Product
-                  </button>
-                </div>
-              </SwiperSlide>
-            ))}
+            {popularProducts.map((item) => {
+              const mainImage =
+                item.images.find((img) => img.isMain)?.imageUrl ||
+                item.images[0]?.imageUrl ||
+                "https://via.placeholder.com/300";
+
+              return (
+                <SwiperSlide key={item.prodId}>
+                  <div className="flex justify-center items-center w-full max-w-[300px] h-[350px] sm:h-[400px] bg-gray-100 rounded-md cursor-pointer relative group mx-auto">
+                    <img
+                      src={mainImage}
+                      alt={item.prodName}
+                      className="w-full h-full object-cover rounded-md"
+                    />
+                    <div className="absolute inset-0 bg-green-50 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button
+                      onClick={() => navigate(`/product/${item.prodId}`)}
+                      className="absolute bottom-0 w-full bg-green-600 text-white py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      View Product
+                    </button>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       )}

@@ -1,13 +1,13 @@
 const rwandaData = {
-  "data": [
+  data: [
     {
-      "East": [
+      East: [
         {
-          "Bugesera": [
+          Bugesera: [
             {
-              "Gashora": [
+              Gashora: [
                 {
-                  "Biryogo": [
+                  Biryogo: [
                     "Bidudu",
                     "Biryogo",
                     "Buhoro",
@@ -16,40 +16,40 @@ const rwandaData = {
                     "Kanyonyomba",
                     "Karutete",
                     "Kivugiza",
-                    "Rugunga"
-                  ]
+                    "Rugunga",
+                  ],
                 },
                 {
-                  "Kabuye": [
+                  Kabuye: [
                     "Bidudu",
                     "Kabuye",
                     "Karizinge",
                     "Rwagasiga",
-                    "Rweteto"
-                  ]
+                    "Rweteto",
+                  ],
                 },
                 {
-                  "Kagomasi": [
+                  Kagomasi: [
                     "Akagako",
                     "Kagomasi",
                     "Kiruhura",
                     "Kuruganda",
                     "Runzenze",
-                    "Rushubi"
-                  ]
+                    "Rushubi",
+                  ],
                 },
                 {
-                  "Mwendo": [
+                  Mwendo: [
                     "Gaharwa",
                     "Gisenyi",
                     "Kayovu",
                     "Ruhanga",
                     "Ruhanura",
-                    "Rutanga"
-                  ]
+                    "Rutanga",
+                  ],
                 },
                 {
-                  "Ramiro": [
+                  Ramiro: [
                     "Dihiro",
                     "Kagasa I",
                     "Kagasa II",
@@ -58,36 +58,36 @@ const rwandaData = {
                     "Migina",
                     "Munyinya",
                     "Rweru I",
-                    "Rweru II"
-                  ]
-                }
-              ]
+                    "Rweru II",
+                  ],
+                },
+              ],
             },
             {
-              "Juru": [
+              Juru: [
                 {
-                  "Juru": [
+                  Juru: [
                     "Ayabakiza",
                     "Bisagara",
                     "Nyamigende",
                     "Rugarama",
                     "Rwamakara",
-                    "Twabagarama"
-                  ]
+                    "Twabagarama",
+                  ],
                 },
                 {
-                  "Kabukuba": [
+                  Kabukuba: [
                     "Gikana",
                     "Gikurazo",
                     "Kabukuba",
                     "Kamatongo",
                     "Majanja",
                     "Mbuye",
-                    "Rushubi"
-                  ]
+                    "Rushubi",
+                  ],
                 },
                 {
-                  "Mugorore": [
+                  Mugorore: [
                     "Cyirabo",
                     "Gatora",
                     "Kajevuba",
@@ -95,56 +95,56 @@ const rwandaData = {
                     "Murambi",
                     "Rebero",
                     "Rwamurama",
-                    "Tabarari"
-                  ]
+                    "Tabarari",
+                  ],
                 },
                 {
-                  "Musovu": [
+                  Musovu: [
                     "Bitega",
                     "Cyabasonga",
                     "Cyingaju",
                     "Kabeza",
-                    "Nyaruhuru"
-                  ]
+                    "Nyaruhuru",
+                  ],
                 },
                 {
-                  "Rwinume": [
+                  Rwinume: [
                     "Gisororo",
                     "Kabeza",
                     "Katarara",
                     "Kinihira",
                     "Rwimpyisi",
-                    "Uwimpunga"
-                  ]
-                }
-              ]
+                    "Uwimpunga",
+                  ],
+                },
+              ],
             },
             {
-              "Kamabuye": [
+              Kamabuye: [
                 {
-                  "Biharagu": [
+                  Biharagu: [
                     "Akanigo",
                     "Biharagu",
                     "Kanyonyera",
                     "Munazi",
                     "Muyigi",
                     "Nyarurama",
-                    "Rubugu"
-                  ]
+                    "Rubugu",
+                  ],
                 },
                 {
-                  "Burenge": [
+                  Burenge: [
                     "Akabazeyi",
                     "Kagenge",
                     "Murambo",
                     "Nyabyondo",
                     "Nyakariba",
                     "Rebero",
-                    "Senga"
-                  ]
+                    "Senga",
+                  ],
                 },
                 {
-                  "Kampeka": [
+                  Kampeka: [
                     "Byimana",
                     "Kampeka",
                     "Mabuye",
@@ -153,22 +153,22 @@ const rwandaData = {
                     "Mparo",
                     "Ndama",
                     "Pamba I",
-                    "Pamba II"
-                  ]
+                    "Pamba II",
+                  ],
                 },
                 {
-                  "Nyakayaga": [
+                  Nyakayaga: [
                     "Akaje",
                     "Fatinkanda",
                     "Murago",
                     "Murambi",
                     "Ntungamo I",
                     "Ntungamo II",
-                    "Nyakayaga"
-                  ]
+                    "Nyakayaga",
+                  ],
                 },
                 {
-                  "Tunda": [
+                  Tunda: [
                     "Cyogamuyaga",
                     "Mububa I",
                     "Mububaya II",
@@ -178,15 +178,15 @@ const rwandaData = {
                     "Twuruziramire",
                     "Uwibiraro I",
                     "Uwibiraro II",
-                    "Uwumusave"
-                  ]
-                }
-              ]
+                    "Uwumusave",
+                  ],
+                },
+              ],
             },
             {
-              "Mareba": [
+              Mareba: [
                 {
-                  "Bushenyi": [
+                  Bushenyi: [
                     "Bigaga",
                     "Bukumba",
                     "Cyantwari",
@@ -200,11 +200,11 @@ const rwandaData = {
                     "Muyange",
                     "Rukoyoyo",
                     "Runyonza",
-                    "Rususa"
-                  ]
+                    "Rususa",
+                  ],
                 },
                 {
-                  "Gakomeye": [
+                  Gakomeye: [
                     "Gatanga",
                     "Gitwa",
                     "Kabere",
@@ -213,11 +213,11 @@ const rwandaData = {
                     "Kamunana",
                     "Kanka",
                     "Kaziranyenzi",
-                    "Rwintare"
-                  ]
+                    "Rwintare",
+                  ],
                 },
                 {
-                  "Nyamigina": [
+                  Nyamigina: [
                     "Gafunzo",
                     "Kabeza",
                     "Kabingo",
@@ -227,11 +227,11 @@ const rwandaData = {
                     "Nyamigisha",
                     "Ruhina",
                     "Rusenyi",
-                    "Ruyenzi"
-                  ]
+                    "Ruyenzi",
+                  ],
                 },
                 {
-                  "Rango": [
+                  Rango: [
                     "Gatare",
                     "Gatinza",
                     "Gihoko",
@@ -241,11 +241,11 @@ const rwandaData = {
                     "Mbuga",
                     "Rango",
                     "Rusagara",
-                    "Rwabikwano"
-                  ]
+                    "Rwabikwano",
+                  ],
                 },
                 {
-                  "Rugarama": [
+                  Rugarama: [
                     "Gasagara",
                     "Gatare",
                     "Kayonza",
@@ -254,26 +254,26 @@ const rwandaData = {
                     "Muyenzi",
                     "Ruduha",
                     "Rugarama",
-                    "Rutaka"
-                  ]
-                }
-              ]
+                    "Rutaka",
+                  ],
+                },
+              ],
             },
             {
-              "Mayange": [
+              Mayange: [
                 {
-                  "Gakamba": [
+                  Gakamba: [
                     "Gacucu",
                     "Gakamba",
                     "Gisenyi",
                     "Kamugenzi",
                     "Karambo",
                     "Kavumu",
-                    "Rukora"
-                  ]
+                    "Rukora",
+                  ],
                 },
                 {
-                  "Kagenge": [
+                  Kagenge: [
                     "Biryogo",
                     "Gakindo",
                     "Gitaramuka",
@@ -282,46 +282,46 @@ const rwandaData = {
                     "Remera",
                     "Rukindo",
                     "Taba",
-                    "Tetero"
-                  ]
+                    "Tetero",
+                  ],
                 },
                 {
-                  "Kibenga": [
+                  Kibenga: [
                     "Gahwiji I",
                     "Gahwiji II",
                     "Kindonyi",
                     "Murambi",
                     "Ruhorobero",
                     "Rwakaramira",
-                    "Rwarusaku"
-                  ]
+                    "Rwarusaku",
+                  ],
                 },
                 {
-                  "Kibirizi": [
+                  Kibirizi: [
                     "Gacyamo",
                     "Gahinga",
                     "Gisenyi",
                     "Gitera",
                     "Kibirizi",
                     "Rugazi",
-                    "Rwakibirizi"
-                  ]
+                    "Rwakibirizi",
+                  ],
                 },
                 {
-                  "Mbyo": [
+                  Mbyo: [
                     "Cyaruhiririra",
                     "Kabyo",
                     "Rugarama",
                     "Rwimikoni I",
-                    "Rwimikoni II"
-                  ]
-                }
-              ]
+                    "Rwimikoni II",
+                  ],
+                },
+              ],
             },
             {
-              "Musenyi": [
+              Musenyi: [
                 {
-                  "Gicaca": [
+                  Gicaca: [
                     "Bidudu",
                     "Cyanika",
                     "Cyarubazi",
@@ -334,11 +334,11 @@ const rwandaData = {
                     "Migina",
                     "Ngarama",
                     "Remera",
-                    "Rusagara"
-                  ]
+                    "Rusagara",
+                  ],
                 },
                 {
-                  "Musenyi": [
+                  Musenyi: [
                     "Bidudu",
                     "Bishinge",
                     "Bizenga",
@@ -352,11 +352,11 @@ const rwandaData = {
                     "Nunga",
                     "Nyagasagara",
                     "Rugando",
-                    "Rugeyo"
-                  ]
+                    "Rugeyo",
+                  ],
                 },
                 {
-                  "Nyagihunika": [
+                  Nyagihunika: [
                     "Gatoki",
                     "Gitagata",
                     "Kigusa",
@@ -365,11 +365,11 @@ const rwandaData = {
                     "Nyakajuri",
                     "Rugarama",
                     "Rushubi",
-                    "Rwankeri"
-                  ]
+                    "Rwankeri",
+                  ],
                 },
                 {
-                  "Rulindo": [
+                  Rulindo: [
                     "Kabeza",
                     "Kabuye",
                     "Kagunga",
@@ -379,60 +379,60 @@ const rwandaData = {
                     "Kinyovi",
                     "Nyamuri",
                     "Rulindo",
-                    "Runyonza"
-                  ]
-                }
-              ]
+                    "Runyonza",
+                  ],
+                },
+              ],
             },
             {
-              "Mwogo": [
+              Mwogo: [
                 {
-                  "Bitaba": [
+                  Bitaba: [
                     "Bitaba",
                     "Gatwe",
                     "Gisasa",
                     "Misatsi",
                     "Rebero",
-                    "Rukoronko"
-                  ]
+                    "Rukoronko",
+                  ],
                 },
                 {
-                  "Kagasa": [
+                  Kagasa: [
                     "Gatare",
                     "Gisenyi",
                     "Karutabana",
                     "Ngando",
                     "Rubumba",
-                    "Rwintenderi"
-                  ]
+                    "Rwintenderi",
+                  ],
                 },
                 {
-                  "Rugunga": [
+                  Rugunga: [
                     "Kagerero",
                     "Nyamabuye",
                     "Nyarukombe",
                     "Rugazi",
                     "Rukira",
                     "Rukore",
-                    "Rusagara"
-                  ]
+                    "Rusagara",
+                  ],
                 },
                 {
-                  "Rurenge": [
+                  Rurenge: [
                     "Gatoki",
                     "Gitaraga",
                     "Kaboshya",
                     "Kaziramire",
                     "Rurenge",
-                    "Rwabashenyi"
-                  ]
-                }
-              ]
+                    "Rwabashenyi",
+                  ],
+                },
+              ],
             },
             {
-              "Ngeruka": [
+              Ngeruka: [
                 {
-                  "Gihembe": [
+                  Gihembe: [
                     "Buhara",
                     "Kabaya",
                     "Kabuye",
@@ -446,11 +446,11 @@ const rwandaData = {
                     "Rusagara",
                     "Rutare",
                     "Ruzinge",
-                    "Shitwe"
-                  ]
+                    "Shitwe",
+                  ],
                 },
                 {
-                  "Murama": [
+                  Murama: [
                     "Agashyamba",
                     "Bishenyi",
                     "Fatinkanda",
@@ -466,22 +466,22 @@ const rwandaData = {
                     "Nyakagarama",
                     "Rusamaza",
                     "Rwabisheshe",
-                    "Shami"
-                  ]
+                    "Shami",
+                  ],
                 },
                 {
-                  "Ngeruka": [
+                  Ngeruka: [
                     "Binyonzwe",
                     "Kamajeri",
                     "Kamasonga",
                     "Karugondo",
                     "Kivugiza",
                     "Muyange",
-                    "Ngeruka"
-                  ]
+                    "Ngeruka",
+                  ],
                 },
                 {
-                  "Nyakayenzi": [
+                  Nyakayenzi: [
                     "Heru",
                     "Kabuye",
                     "Karama",
@@ -491,11 +491,11 @@ const rwandaData = {
                     "Kimiduha",
                     "Murambi",
                     "Nyakayenzi",
-                    "Twimpara"
-                  ]
+                    "Twimpara",
+                  ],
                 },
                 {
-                  "Rutonde": [
+                  Rutonde: [
                     "Akajuri",
                     "Kabare",
                     "Kabumbwe",
@@ -506,26 +506,26 @@ const rwandaData = {
                     "Rubirizi",
                     "Rugazi",
                     "Runyonza",
-                    "Rusibya"
-                  ]
-                }
-              ]
+                    "Rusibya",
+                  ],
+                },
+              ],
             },
             {
-              "Ntarama": [
+              Ntarama: [
                 {
-                  "Cyugaro": [
+                  Cyugaro: [
                     "Gatoro",
                     "Kayenzi",
                     "Kidudu",
                     "Kingabo",
                     "Rubomborana",
                     "Rugarama",
-                    "Rugunga"
-                  ]
+                    "Rugunga",
+                  ],
                 },
                 {
-                  "Kanzenze": [
+                  Kanzenze: [
                     "Cyeru",
                     "Gasagara",
                     "Kabaha",
@@ -533,26 +533,26 @@ const rwandaData = {
                     "Karumuna",
                     "Kurugenge",
                     "Nyamabuye",
-                    "Rwangara"
-                  ]
+                    "Rwangara",
+                  ],
                 },
                 {
-                  "Kibungo": [
+                  Kibungo: [
                     "Kagoma I",
                     "Kagoma II",
                     "Kiganwa",
                     "Nganwa",
                     "Nyarunazi",
                     "Ruhengeri",
-                    "Rusekera"
-                  ]
-                }
-              ]
+                    "Rusekera",
+                  ],
+                },
+              ],
             },
             {
-              "Nyamata": [
+              Nyamata: [
                 {
-                  "Kanazi": [
+                  Kanazi: [
                     "Bihari",
                     "Cyeru",
                     "Gitovu",
@@ -561,11 +561,11 @@ const rwandaData = {
                     "Nyarugati I",
                     "Nyarugati II",
                     "Rugando",
-                    "Sumbure"
-                  ]
+                    "Sumbure",
+                  ],
                 },
                 {
-                  "Kayumba": [
+                  Kayumba: [
                     "Gatare",
                     "Karambi",
                     "Kayenzi",
@@ -573,21 +573,21 @@ const rwandaData = {
                     "Nyagatovu",
                     "Nyakwibereka",
                     "Nyiramatuntu",
-                    "Rwanza"
-                  ]
+                    "Rwanza",
+                  ],
                 },
                 {
-                  "Maranyundo": [
+                  Maranyundo: [
                     "Gahembe",
                     "Gisunzu",
                     "Mukoma",
                     "Muyange",
                     "Rugarama",
-                    "Rusagara"
-                  ]
+                    "Rusagara",
+                  ],
                 },
                 {
-                  "Murama": [
+                  Murama: [
                     "Bishweshwe",
                     "Gataraga",
                     "Gatare",
@@ -598,8 +598,8 @@ const rwandaData = {
                     "Rucucu",
                     "Ruhanga",
                     "Rutobotobo",
-                    "Rutukura"
-                  ]
+                    "Rutukura",
+                  ],
                 },
                 {
                   "Nyamata y' Umujyi": [
@@ -615,37 +615,37 @@ const rwandaData = {
                     "Rugarama II",
                     "Rugarama III",
                     "Rwakibirizi I",
-                    "Rwakibirizi II"
-                  ]
-                }
-              ]
+                    "Rwakibirizi II",
+                  ],
+                },
+              ],
             },
             {
-              "Nyarugenge": [
+              Nyarugenge: [
                 {
-                  "Gihinga": [
+                  Gihinga: [
                     "Mabanga",
                     "Mwoshya",
                     "Ntungamo",
                     "Nyabuhoro",
                     "Nyagasozi",
                     "Nyarubande",
-                    "Rwabusoro"
-                  ]
+                    "Rwabusoro",
+                  ],
                 },
                 {
-                  "Kabuye": [
+                  Kabuye: [
                     "Cyahafi",
                     "Gateko",
                     "Gatoki",
                     "Karubagazi",
                     "Nyakabingo",
                     "Nyakabuye",
-                    "Nyarusambu"
-                  ]
+                    "Nyarusambu",
+                  ],
                 },
                 {
-                  "Murambi": [
+                  Murambi: [
                     "Cundaminega",
                     "Cyeru",
                     "Kadogori",
@@ -654,11 +654,11 @@ const rwandaData = {
                     "Nyagakombe",
                     "Rugandara",
                     "Rurama",
-                    "Rushorezo"
-                  ]
+                    "Rushorezo",
+                  ],
                 },
                 {
-                  "Ngenda": [
+                  Ngenda: [
                     "Bushonyi",
                     "Kamabare",
                     "Kamugera",
@@ -668,25 +668,25 @@ const rwandaData = {
                     "Rubona",
                     "Rugasa",
                     "Rwashangwe",
-                    "Tubumba"
-                  ]
+                    "Tubumba",
+                  ],
                 },
                 {
-                  "Rugando": [
+                  Rugando: [
                     "Bushenyi",
                     "Gako",
                     "Kamahirwe",
                     "Nsoro",
                     "Rebero",
-                    "Rugero"
-                  ]
-                }
-              ]
+                    "Rugero",
+                  ],
+                },
+              ],
             },
             {
-              "Rilima": [
+              Rilima: [
                 {
-                  "Kabeza": [
+                  Kabeza: [
                     "Bidenge",
                     "Biraro",
                     "Bwiza",
@@ -700,11 +700,11 @@ const rwandaData = {
                     "Karambo",
                     "Karirisi",
                     "Marembo",
-                    "Nyamisagara"
-                  ]
+                    "Nyamisagara",
+                  ],
                 },
                 {
-                  "Karera": [
+                  Karera: [
                     "Gakurazo",
                     "Gatare",
                     "Kamahoro",
@@ -712,11 +712,11 @@ const rwandaData = {
                     "Ruyenzi",
                     "Rwankomati",
                     "Rwavuningoma",
-                    "Rwimirama"
-                  ]
+                    "Rwimirama",
+                  ],
                 },
                 {
-                  "Kimaranzara": [
+                  Kimaranzara: [
                     "Akintwari",
                     "Akumunezero",
                     "Amizero",
@@ -727,11 +727,11 @@ const rwandaData = {
                     "Akabahaya",
                     "Kidogo",
                     "Kimaranzara",
-                    "Kivumu"
-                  ]
+                    "Kivumu",
+                  ],
                 },
                 {
-                  "Ntarama": [
+                  Ntarama: [
                     "Akabeza",
                     "Gasave",
                     "Gaseke",
@@ -743,11 +743,11 @@ const rwandaData = {
                     "Ntarama",
                     "Nyamure",
                     "Rurambo",
-                    "Saruduha"
-                  ]
+                    "Saruduha",
+                  ],
                 },
                 {
-                  "Nyabagendwa": [
+                  Nyabagendwa: [
                     "Cyoma",
                     "Gicaca",
                     "Kamabuye",
@@ -758,15 +758,15 @@ const rwandaData = {
                     "Murambi",
                     "Nyabagendwa",
                     "Nyamizi",
-                    "Rwibikara"
-                  ]
-                }
-              ]
+                    "Rwibikara",
+                  ],
+                },
+              ],
             },
             {
-              "Ruhuha": [
+              Ruhuha: [
                 {
-                  "Bihari": [
+                  Bihari: [
                     "Bihari",
                     "Busasamana",
                     "Masenga I",
@@ -774,31 +774,31 @@ const rwandaData = {
                     "Mukoma",
                     "Nyagafunzo",
                     "Rugarama",
-                    "Rwanzunga"
-                  ]
+                    "Rwanzunga",
+                  ],
                 },
                 {
-                  "Gatanga": [
+                  Gatanga: [
                     "Butereri",
                     "Kayigi",
                     "Kibaza",
                     "Nyaburiba",
                     "Nyakagarama",
-                    "Rwanika"
-                  ]
+                    "Rwanika",
+                  ],
                 },
                 {
-                  "Gikundamvura": [
+                  Gikundamvura: [
                     "Gikundamvura",
                     "Kanombe",
                     "Kazabagarura",
                     "Kiyovu",
                     "Rukurazo",
-                    "Rusenyi"
-                  ]
+                    "Rusenyi",
+                  ],
                 },
                 {
-                  "Kindama": [
+                  Kindama: [
                     "Gatare",
                     "Gatovu",
                     "Kagasera",
@@ -808,24 +808,24 @@ const rwandaData = {
                     "Rebero",
                     "Ruramba",
                     "Rutare",
-                    "Saruduha"
-                  ]
+                    "Saruduha",
+                  ],
                 },
                 {
-                  "Ruhuha": [
+                  Ruhuha: [
                     "Kimikamba",
                     "Mubano",
                     "Nyabaranga",
                     "Ruhuha I",
-                    "Ruhuha II"
-                  ]
-                }
-              ]
+                    "Ruhuha II",
+                  ],
+                },
+              ],
             },
             {
-              "Rweru": [
+              Rweru: [
                 {
-                  "Batima": [
+                  Batima: [
                     "Agahonnyo",
                     "Batima",
                     "Gasororo",
@@ -835,11 +835,11 @@ const rwandaData = {
                     "Mbuganzeri",
                     "Rubira",
                     "Ruhehe",
-                    "Twinyange"
-                  ]
+                    "Twinyange",
+                  ],
                 },
                 {
-                  "Kintambwe": [
+                  Kintambwe: [
                     "Gakindo",
                     "Gasenyi",
                     "Maburane",
@@ -848,12 +848,12 @@ const rwandaData = {
                     "Nyirakanemba",
                     "Nyirarubomboza",
                     "Nzangwa",
-                    "Ubukoroco"
-                  ]
+                    "Ubukoroco",
+                  ],
                 },
-                { "Mazane": ["Gasasa", "Rukira", "Rusenyi"] },
+                { Mazane: ["Gasasa", "Rukira", "Rusenyi"] },
                 {
-                  "Nemba": [
+                  Nemba: [
                     "Kigina",
                     "Kimpara",
                     "Kimvubu",
@@ -862,59 +862,59 @@ const rwandaData = {
                     "Nyakabingo",
                     "Rutete",
                     "Rwibinyogote",
-                    "Rwiminazi"
-                  ]
+                    "Rwiminazi",
+                  ],
                 },
                 {
-                  "Nkanga": [
+                  Nkanga: [
                     "Agashoro",
                     "Kivusha",
                     "Mujwiri",
                     "Mushyoroti",
                     "Nkanga",
-                    "Ruzo"
-                  ]
+                    "Ruzo",
+                  ],
                 },
-                { "Sharita": ["Karizinge", "Sharita"] }
-              ]
+                { Sharita: ["Karizinge", "Sharita"] },
+              ],
             },
             {
-              "Shyara": [
+              Shyara: [
                 {
-                  "Kabagugu": ["Kabagugu", "Kinteko", "Ngaruye", "Rwamanyoni"]
+                  Kabagugu: ["Kabagugu", "Kinteko", "Ngaruye", "Rwamanyoni"],
                 },
-                { "Kamabuye": ["Gakoni", "Nyabaguma", "Rubwirwa"] },
-                { "Nziranziza": ["Gahosha", "Kagarama", "Nziranziza", "Ruli"] },
-                { "Rebero": ["Gateko", "Nyamirama", "Rebero", "Rutebe"] },
+                { Kamabuye: ["Gakoni", "Nyabaguma", "Rubwirwa"] },
+                { Nziranziza: ["Gahosha", "Kagarama", "Nziranziza", "Ruli"] },
+                { Rebero: ["Gateko", "Nyamirama", "Rebero", "Rutebe"] },
                 {
-                  "Rutare": ["Gaseke", "Kamweru", "Ruhanga", "Rutare", "Shyara"]
-                }
-              ]
-            }
-          ]
+                  Rutare: ["Gaseke", "Kamweru", "Ruhanga", "Rutare", "Shyara"],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Gatsibo": [
+          Gatsibo: [
             {
-              "Gasange": [
+              Gasange: [
                 {
-                  "Kigabiro": [
+                  Kigabiro: [
                     "Kabuye",
                     "Kigabiro",
                     "Maya",
                     "Munini",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
-                { "Kimana": ["Byahi", "Kagarama", "Kimana", "Rugarama"] },
-                { "Teme": ["Buburankwi", "Giheta", "Kinunga", "Teme"] },
-                { "Viro": ["Gahara I", "Gahara II", "Kagogo", "Viro"] }
-              ]
+                { Kimana: ["Byahi", "Kagarama", "Kimana", "Rugarama"] },
+                { Teme: ["Buburankwi", "Giheta", "Kinunga", "Teme"] },
+                { Viro: ["Gahara I", "Gahara II", "Kagogo", "Viro"] },
+              ],
             },
             {
-              "Gatsibo": [
+              Gatsibo: [
                 {
-                  "Gatsibo": [
+                  Gatsibo: [
                     "Gatare",
                     "Gatsibo",
                     "Hanika",
@@ -923,20 +923,20 @@ const rwandaData = {
                     "Nyakagarama",
                     "Nyamuduha",
                     "Nyarukoni",
-                    "Rwimbogo"
-                  ]
+                    "Rwimbogo",
+                  ],
                 },
                 {
-                  "Manishya": [
+                  Manishya: [
                     "Manishya",
                     "Nyagahandagaza",
                     "Nyaruhanga",
                     "Nyarukoni",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Mugera": [
+                  Mugera: [
                     "Kabuga",
                     "Kamasapfu",
                     "Karambo I",
@@ -945,11 +945,11 @@ const rwandaData = {
                     "Kiraritsi",
                     "Mugera",
                     "Nyarukoni I",
-                    "Rurama"
-                  ]
+                    "Rurama",
+                  ],
                 },
                 {
-                  "Nyabicwamba": [
+                  Nyabicwamba: [
                     "Agakenyeri",
                     "Agakomeye",
                     "Agatoma",
@@ -962,11 +962,11 @@ const rwandaData = {
                     "Rucumbo",
                     "Rutovu",
                     "Ryabakame",
-                    "Ryebare"
-                  ]
+                    "Ryebare",
+                  ],
                 },
                 {
-                  "Nyagahanga": [
+                  Nyagahanga: [
                     "Gitega",
                     "Karama",
                     "Kizinga",
@@ -974,15 +974,15 @@ const rwandaData = {
                     "Nyagahanga",
                     "Nyakibande",
                     "Rugarama",
-                    "Rusenge"
-                  ]
-                }
-              ]
+                    "Rusenge",
+                  ],
+                },
+              ],
             },
             {
-              "Gitoki": [
+              Gitoki: [
                 {
-                  "Bukomane": [
+                  Bukomane: [
                     "Bukomane",
                     "Muburembo",
                     "Gakiri",
@@ -992,22 +992,22 @@ const rwandaData = {
                     "Nyakayaga",
                     "Mururema",
                     "Rwagitima",
-                    "Ryarukaza"
-                  ]
+                    "Ryarukaza",
+                  ],
                 },
                 {
-                  "Cyabusheshe": [
+                  Cyabusheshe: [
                     "Binunga",
                     "Cyabusheshe",
                     "Cyoto",
                     "Kigabiro",
                     "Kivuba",
                     "Nyarunazi",
-                    "Rushashi"
-                  ]
+                    "Rushashi",
+                  ],
                 },
                 {
-                  "Karubungo": [
+                  Karubungo: [
                     "Gisharara",
                     "Isangano",
                     "Kagugu",
@@ -1018,11 +1018,11 @@ const rwandaData = {
                     "Nyarugarama",
                     "Rugarama",
                     "Rwamuhinga",
-                    "Sata"
-                  ]
+                    "Sata",
+                  ],
                 },
                 {
-                  "Mpondwa": [
+                  Mpondwa: [
                     "Akibiraro",
                     "Akuruganda",
                     "Bukira",
@@ -1031,11 +1031,11 @@ const rwandaData = {
                     "Nyakabungo",
                     "Nyaruhanga",
                     "Ryabugenge",
-                    "Tsima"
-                  ]
+                    "Tsima",
+                  ],
                 },
                 {
-                  "Nyamirama": [
+                  Nyamirama: [
                     "Gahabo",
                     "Kagarama",
                     "Kinteko",
@@ -1046,11 +1046,11 @@ const rwandaData = {
                     "Nyamuraza",
                     "Nyarukombe",
                     "Rukiri",
-                    "Rwinsanga"
-                  ]
+                    "Rwinsanga",
+                  ],
                 },
                 {
-                  "Rubira": [
+                  Rubira: [
                     "Gakiri",
                     "Gikuyu",
                     "Kavumu",
@@ -1059,37 +1059,37 @@ const rwandaData = {
                     "Nyamengo",
                     "Rugarama",
                     "Rurehe",
-                    "Rwintama"
-                  ]
-                }
-              ]
+                    "Rwintama",
+                  ],
+                },
+              ],
             },
             {
-              "Kabarore": [
+              Kabarore: [
                 {
-                  "Kabarore": ["Bihinga", "Kabarore I", "Kabaroreii", "Kabingo"]
+                  Kabarore: ["Bihinga", "Kabarore I", "Kabaroreii", "Kabingo"],
                 },
-                { "Kabeza": ["Gatoki", "Kabeza", "Mishenyi", "Ryanjeru"] },
-                { "Karenge": ["Karenge", "Mutarama", "Nyarubuye"] },
+                { Kabeza: ["Gatoki", "Kabeza", "Mishenyi", "Ryanjeru"] },
+                { Karenge: ["Karenge", "Mutarama", "Nyarubuye"] },
                 {
-                  "Marimba": [
+                  Marimba: [
                     "Kabare",
                     "Kanteri",
                     "Marimba",
                     "Nyarwanya",
                     "Rebero",
                     "Rutenderi",
-                    "Rwimbogo"
-                  ]
+                    "Rwimbogo",
+                  ],
                 },
-                { "Nyabikiri": ["Kabeza", "Ngarama", "Nyabikiri"] },
-                { "Simbwa": ["Kibondo I", "Kibondo II", "Ruhuha", "Simbwa"] }
-              ]
+                { Nyabikiri: ["Kabeza", "Ngarama", "Nyabikiri"] },
+                { Simbwa: ["Kibondo I", "Kibondo II", "Ruhuha", "Simbwa"] },
+              ],
             },
             {
-              "Kageyo": [
+              Kageyo: [
                 {
-                  "Busetsa": [
+                  Busetsa: [
                     "Busetsa",
                     "Cyabuhimbiri",
                     "Cyatoko",
@@ -1101,48 +1101,48 @@ const rwandaData = {
                     "Nyarusange",
                     "Rugarama",
                     "Rwikubo",
-                    "Tsima"
-                  ]
+                    "Tsima",
+                  ],
                 },
                 {
-                  "Gituza": [
+                  Gituza: [
                     "Bugarama",
                     "Gisiza",
                     "Kabacuzi",
                     "Kigara",
                     "Mpama",
                     "Nyakabare",
-                    "Rwabihumbi"
-                  ]
+                    "Rwabihumbi",
+                  ],
                 },
                 {
-                  "Kintu": [
+                  Kintu: [
                     "Gakeri",
                     "Jabiro",
                     "Kigando",
                     "Kirara",
                     "Nyakabungo",
                     "Rutoma",
-                    "Ryabushogoro"
-                  ]
+                    "Ryabushogoro",
+                  ],
                 },
                 {
-                  "Nyagisozi": [
+                  Nyagisozi: [
                     "Agatare",
                     "Kageyo",
                     "Kashango",
                     "Kinyana",
                     "Nyabukobero",
                     "Nyagisozi",
-                    "Rukira"
-                  ]
-                }
-              ]
+                    "Rukira",
+                  ],
+                },
+              ],
             },
             {
-              "Kiramuruzi": [
+              Kiramuruzi: [
                 {
-                  "Akabuga": [
+                  Akabuga: [
                     "Akagarama",
                     "Akarambo",
                     "Amataba",
@@ -1151,11 +1151,11 @@ const rwandaData = {
                     "Kiramuruzi",
                     "Kiyogori",
                     "Nduba",
-                    "Ubuhoro"
-                  ]
+                    "Ubuhoro",
+                  ],
                 },
                 {
-                  "Gakenke": [
+                  Gakenke: [
                     "Akabingo",
                     "Akamasine",
                     "Akurusizi",
@@ -1166,21 +1166,21 @@ const rwandaData = {
                     "Nyakagarama",
                     "Nyamarebe",
                     "Rwagashyaba",
-                    "Umurehe"
-                  ]
+                    "Umurehe",
+                  ],
                 },
                 {
-                  "Gakoni": [
+                  Gakoni: [
                     "Karuhura",
                     "Kiyovu",
                     "Kumana",
                     "Kumunini",
                     "Kumwiga",
-                    "Rwajembe"
-                  ]
+                    "Rwajembe",
+                  ],
                 },
                 {
-                  "Nyabisindu": [
+                  Nyabisindu: [
                     "Akabare",
                     "Akabuga",
                     "Akantunga",
@@ -1193,15 +1193,15 @@ const rwandaData = {
                     "Nyagasambu",
                     "Nyagashenyi",
                     "Nyarusambu",
-                    "Rugenge"
-                  ]
-                }
-              ]
+                    "Rugenge",
+                  ],
+                },
+              ],
             },
             {
-              "Kiziguro": [
+              Kiziguro: [
                 {
-                  "Agakomeye": [
+                  Agakomeye: [
                     "Agatovu",
                     "Akabingo",
                     "Akingondo",
@@ -1212,22 +1212,22 @@ const rwandaData = {
                     "Munanira",
                     "Muringa",
                     "Nyungwe",
-                    "Ubutatu"
-                  ]
+                    "Ubutatu",
+                  ],
                 },
                 {
-                  "Mbogo": [
+                  Mbogo: [
                     "Akabuye",
                     "Akavumu",
                     "Nyakabungo",
                     "Nyakagarama",
                     "Rebero",
                     "Ryabihura",
-                    "Ryamuhuzi"
-                  ]
+                    "Ryamuhuzi",
+                  ],
                 },
                 {
-                  "Ndatemwa": [
+                  Ndatemwa: [
                     "Akabagendo",
                     "Akamamesa",
                     "Akarambo",
@@ -1245,11 +1245,11 @@ const rwandaData = {
                     "Nyagashenyi",
                     "Rubungo",
                     "Rukungu",
-                    "Ryarugema"
-                  ]
+                    "Ryarugema",
+                  ],
                 },
                 {
-                  "Rubona": [
+                  Rubona: [
                     "Agatare",
                     "Akagarama",
                     "Amarende",
@@ -1266,15 +1266,15 @@ const rwandaData = {
                     "Rubira",
                     "Ryakabucye",
                     "Ryanyiranyana",
-                    "Tubindi"
-                  ]
-                }
-              ]
+                    "Tubindi",
+                  ],
+                },
+              ],
             },
             {
-              "Muhura": [
+              Muhura: [
                 {
-                  "Bibare": [
+                  Bibare: [
                     "Agasharu",
                     "Akabuga",
                     "Akagasaro",
@@ -1287,11 +1287,11 @@ const rwandaData = {
                     "Mugogo",
                     "Musasa",
                     "Rutoma",
-                    "Rwangendo"
-                  ]
+                    "Rwangendo",
+                  ],
                 },
                 {
-                  "Gakorokombe": [
+                  Gakorokombe: [
                     "Agahama",
                     "Agasharu",
                     "Biniga",
@@ -1300,11 +1300,11 @@ const rwandaData = {
                     "Umunini",
                     "Urubiri",
                     "Urugarama",
-                    "Uwakibungo"
-                  ]
+                    "Uwakibungo",
+                  ],
                 },
                 {
-                  "Mamfu": [
+                  Mamfu: [
                     "Agatagara",
                     "Akabirizi",
                     "Akamamana",
@@ -1314,11 +1314,11 @@ const rwandaData = {
                     "Kaziga",
                     "Ruhinga",
                     "Rwanama",
-                    "Umunanira"
-                  ]
+                    "Umunanira",
+                  ],
                 },
                 {
-                  "Rumuli": [
+                  Rumuli: [
                     "Gihembe",
                     "Juga",
                     "Kabeza",
@@ -1328,11 +1328,11 @@ const rwandaData = {
                     "Nyange",
                     "Rwasama",
                     "Rweza",
-                    "Umurambi"
-                  ]
+                    "Umurambi",
+                  ],
                 },
                 {
-                  "Taba": [
+                  Taba: [
                     "Cyoga I",
                     "Cyoga II",
                     "Gahanga",
@@ -1347,15 +1347,15 @@ const rwandaData = {
                     "Ruhenda",
                     "Rususa",
                     "Rwangendo",
-                    "Taba"
-                  ]
-                }
-              ]
+                    "Taba",
+                  ],
+                },
+              ],
             },
             {
-              "Murambi": [
+              Murambi: [
                 {
-                  "Murambi": [
+                  Murambi: [
                     "Agacyamo",
                     "Agasharu",
                     "Agatagara",
@@ -1368,20 +1368,20 @@ const rwandaData = {
                     "Kiniga",
                     "Mataba",
                     "Ryampunga",
-                    "Urugarama"
-                  ]
+                    "Urugarama",
+                  ],
                 },
                 {
-                  "Nyamiyaga": [
+                  Nyamiyaga: [
                     "Bweranyange",
                     "Kabeza",
                     "Kagenge",
                     "Kiniga",
-                    "Runyinya"
-                  ]
+                    "Runyinya",
+                  ],
                 },
                 {
-                  "Rwankuba": [
+                  Rwankuba: [
                     "Akarambo",
                     "Akayenzi",
                     "Ikinyaga",
@@ -1389,11 +1389,11 @@ const rwandaData = {
                     "Nyagasambu",
                     "Nyagatovu",
                     "Umwiga",
-                    "Urugarama"
-                  ]
+                    "Urugarama",
+                  ],
                 },
                 {
-                  "Rwimitereri": [
+                  Rwimitereri: [
                     "Bushenyi",
                     "Bweya",
                     "Byimana",
@@ -1402,24 +1402,24 @@ const rwandaData = {
                     "Kimondo",
                     "Kinunga",
                     "Nyakabanda",
-                    "Rugarama"
-                  ]
-                }
-              ]
+                    "Rugarama",
+                  ],
+                },
+              ],
             },
             {
-              "Ngarama": [
+              Ngarama: [
                 {
-                  "Bugamba": [
+                  Bugamba: [
                     "Akagerero",
                     "Cyamuganga",
                     "Kajevuba",
                     "Kinihira",
-                    "Kinyinya"
-                  ]
+                    "Kinyinya",
+                  ],
                 },
                 {
-                  "Karambi": [
+                  Karambi: [
                     "Cyankondo",
                     "Kamuri",
                     "Karambi",
@@ -1429,11 +1429,11 @@ const rwandaData = {
                     "Rurama",
                     "Rushenyi",
                     "Ruziranyenzi",
-                    "Rwagakara"
-                  ]
+                    "Rwagakara",
+                  ],
                 },
                 {
-                  "Kigasha": [
+                  Kigasha: [
                     "Akabuga",
                     "Akabuye",
                     "Akagarama",
@@ -1453,11 +1453,11 @@ const rwandaData = {
                     "Rukombe",
                     "Rurama",
                     "Ruyonza",
-                    "Rwangingo"
-                  ]
+                    "Rwangingo",
+                  ],
                 },
                 {
-                  "Ngarama": [
+                  Ngarama: [
                     "Amahoro",
                     "Gatungo",
                     "Ibare",
@@ -1465,11 +1465,11 @@ const rwandaData = {
                     "Kabeho",
                     "Kiyovu",
                     "Rugarama",
-                    "Urukundo"
-                  ]
+                    "Urukundo",
+                  ],
                 },
                 {
-                  "Nyarubungo": [
+                  Nyarubungo: [
                     "Burambira",
                     "Kintarama",
                     "Kivumu",
@@ -1477,15 +1477,15 @@ const rwandaData = {
                     "Rugarama",
                     "Ruhengeri",
                     "Rutovu",
-                    "Rwiri"
-                  ]
-                }
-              ]
+                    "Rwiri",
+                  ],
+                },
+              ],
             },
             {
-              "Nyagihanga": [
+              Nyagihanga: [
                 {
-                  "Gitinda": [
+                  Gitinda: [
                     "Gatungo",
                     "Isangano",
                     "Kibimbiri",
@@ -1494,11 +1494,11 @@ const rwandaData = {
                     "Kiziba",
                     "Nyabukingi",
                     "Rushenyi",
-                    "Twegerane"
-                  ]
+                    "Twegerane",
+                  ],
                 },
                 {
-                  "Kibare": [
+                  Kibare: [
                     "Bitaba",
                     "Bushashari",
                     "Bwicaro",
@@ -1508,11 +1508,11 @@ const rwandaData = {
                     "Kigarama",
                     "Kukabare",
                     "Murambi",
-                    "Rugaragara"
-                  ]
+                    "Rugaragara",
+                  ],
                 },
                 {
-                  "Mayange": [
+                  Mayange: [
                     "Kabuye",
                     "Kajevuba",
                     "Kamatamu",
@@ -1520,11 +1520,11 @@ const rwandaData = {
                     "Mpangare II",
                     "Neke",
                     "Nyarubuye",
-                    "Rweza"
-                  ]
+                    "Rweza",
+                  ],
                 },
                 {
-                  "Murambi": [
+                  Murambi: [
                     "Gishikiri",
                     "Kabeza",
                     "Kagarama",
@@ -1533,11 +1533,11 @@ const rwandaData = {
                     "Munanira",
                     "Rukoma",
                     "Rusenge",
-                    "Umugamba"
-                  ]
+                    "Umugamba",
+                  ],
                 },
                 {
-                  "Nyagitabire": [
+                  Nyagitabire: [
                     "Byimana",
                     "Kabudogo",
                     "Kamiseke",
@@ -1548,11 +1548,11 @@ const rwandaData = {
                     "Mpashani",
                     "Nyamikamba",
                     "Par-chance",
-                    "Rwintare"
-                  ]
+                    "Rwintare",
+                  ],
                 },
                 {
-                  "Nyamirama": [
+                  Nyamirama: [
                     "Burembo",
                     "Butumba",
                     "Cyanyanoga",
@@ -1560,15 +1560,15 @@ const rwandaData = {
                     "Nyakabungo",
                     "Nyamiyaga",
                     "Rugarama",
-                    "Rugogwe"
-                  ]
-                }
-              ]
+                    "Rugogwe",
+                  ],
+                },
+              ],
             },
             {
-              "Remera": [
+              Remera: [
                 {
-                  "Bushobora": [
+                  Bushobora: [
                     "Abanyangeyo",
                     "Agasenga",
                     "Akagarama I",
@@ -1577,14 +1577,14 @@ const rwandaData = {
                     "Akankusi",
                     "Gumino",
                     "Nyagatabire",
-                    "Rwagitima"
-                  ]
+                    "Rwagitima",
+                  ],
                 },
                 {
-                  "Butiruka": ["Akabuga", "Gasabo", "Icyerekezo", "Urushenyi"]
+                  Butiruka: ["Akabuga", "Gasabo", "Icyerekezo", "Urushenyi"],
                 },
                 {
-                  "Kigabiro": [
+                  Kigabiro: [
                     "Akabuga",
                     "Amataba",
                     "Byimana",
@@ -1593,20 +1593,20 @@ const rwandaData = {
                     "Runyinya",
                     "Rwamusaro",
                     "Rwikubo",
-                    "Ryarutsinzi"
-                  ]
+                    "Ryarutsinzi",
+                  ],
                 },
                 {
-                  "Nyagakombe": [
+                  Nyagakombe: [
                     "Akababito",
                     "Karufuri",
                     "Nyakanga",
                     "Nyamarebe",
-                    "Nyaruhoko"
-                  ]
+                    "Nyaruhoko",
+                  ],
                 },
                 {
-                  "Rurenge": [
+                  Rurenge: [
                     "Akagarama",
                     "Butinza",
                     "Kagunga",
@@ -1614,11 +1614,11 @@ const rwandaData = {
                     "Nyagasozi",
                     "Rubare",
                     "Rugarama",
-                    "Rurenge"
-                  ]
+                    "Rurenge",
+                  ],
                 },
                 {
-                  "Rwarenga": [
+                  Rwarenga: [
                     "Cyeru",
                     "Kabuye",
                     "Kagasha",
@@ -1626,27 +1626,27 @@ const rwandaData = {
                     "Nyamugari",
                     "Nyarubuye",
                     "Rushenyi",
-                    "Umunini"
-                  ]
-                }
-              ]
+                    "Umunini",
+                  ],
+                },
+              ],
             },
             {
-              "Rugarama": [
-                { "Bugarama": ["Akenene", "Kabare", "Nyagasiga", "Rebero"] },
+              Rugarama: [
+                { Bugarama: ["Akenene", "Kabare", "Nyagasiga", "Rebero"] },
                 {
-                  "Gihuta": [
+                  Gihuta: [
                     "Agatare",
                     "Gashenyi I",
                     "Gashenyi II",
                     "Ibare",
                     "Ntende I",
                     "Ntende II",
-                    "Nyagahanga"
-                  ]
+                    "Nyagahanga",
+                  ],
                 },
                 {
-                  "Kanyangese": [
+                  Kanyangese: [
                     "Agakiri",
                     "Akazinga",
                     "Amahoro",
@@ -1662,11 +1662,11 @@ const rwandaData = {
                     "Rugazi",
                     "Rwagitima",
                     "Rwunyu",
-                    "Tetero"
-                  ]
+                    "Tetero",
+                  ],
                 },
                 {
-                  "Matare": [
+                  Matare: [
                     "Agakenyeri",
                     "Akabare",
                     "Bujumo",
@@ -1677,11 +1677,11 @@ const rwandaData = {
                     "Nyagatare",
                     "Nyarusambu",
                     "Rebero",
-                    "Rwankuba"
-                  ]
+                    "Rwankuba",
+                  ],
                 },
                 {
-                  "Matunguru": [
+                  Matunguru: [
                     "Akabasanza",
                     "Gatovu",
                     "Kabeza",
@@ -1692,34 +1692,34 @@ const rwandaData = {
                     "Nyenyeri",
                     "Rambura",
                     "Rushenyi",
-                    "Tungiro"
-                  ]
+                    "Tungiro",
+                  ],
                 },
                 {
-                  "Remera": [
+                  Remera: [
                     "Akajevuba",
                     "Gikoma",
                     "Kanyiranzage",
                     "Miko",
-                    "Rwamivu"
-                  ]
-                }
-              ]
+                    "Rwamivu",
+                  ],
+                },
+              ],
             },
             {
-              "Rwimbogo": [
+              Rwimbogo: [
                 {
-                  "Kiburara": [
+                  Kiburara: [
                     "Isangano",
                     "Kiburara",
                     "Nyacyonga",
                     "Rebero",
                     "Rubirizi",
-                    "Rugando"
-                  ]
+                    "Rugando",
+                  ],
                 },
                 {
-                  "Munini": [
+                  Munini: [
                     "Gikobwa",
                     "Humure",
                     "Kabeza",
@@ -1728,11 +1728,11 @@ const rwandaData = {
                     "Munini",
                     "Nyamwiza",
                     "Rweza",
-                    "Rwinyana"
-                  ]
+                    "Rwinyana",
+                  ],
                 },
                 {
-                  "Nyamatete": [
+                  Nyamatete: [
                     "Akajevuba",
                     "Gashenyi",
                     "Gihunika",
@@ -1745,11 +1745,11 @@ const rwandaData = {
                     "Rurembo",
                     "Rwimbogo",
                     "Rwiminazi",
-                    "Umurego"
-                  ]
+                    "Umurego",
+                  ],
                 },
                 {
-                  "Rwikiniro": [
+                  Rwikiniro: [
                     "Akamahoro",
                     "Byimana",
                     "Isangano",
@@ -1761,19 +1761,19 @@ const rwandaData = {
                     "Nyamabuye",
                     "Rukomo",
                     "Rwikiniro I",
-                    "Rwikiniro II"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Rwikiniro II",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Kayonza": [
+          Kayonza: [
             {
-              "Gahini": [
+              Gahini: [
                 {
-                  "Juru": [
+                  Juru: [
                     "Gisenga",
                     "Juru",
                     "Kamudongo",
@@ -1785,23 +1785,23 @@ const rwandaData = {
                     "Nyabombe",
                     "Nyabugogo",
                     "Nyakabungo",
-                    "Rubariro"
-                  ]
+                    "Rubariro",
+                  ],
                 },
                 {
-                  "Kahi": ["Akabare", "Nyamiyaga", "Rukore", "Tsima", "Uruhuha"]
+                  Kahi: ["Akabare", "Nyamiyaga", "Rukore", "Tsima", "Uruhuha"],
                 },
                 {
-                  "Kiyenzi": [
+                  Kiyenzi: [
                     "Kabuye",
                     "Kinyinya",
                     "Kiyenzi",
                     "Nyagahandagaza",
-                    "Nyirampaca"
-                  ]
+                    "Nyirampaca",
+                  ],
                 },
                 {
-                  "Urugarama": [
+                  Urugarama: [
                     "Akabahizi",
                     "Akabeza",
                     "Akamuyenzi",
@@ -1813,15 +1813,15 @@ const rwandaData = {
                     "Rwinkuba",
                     "Umwiga",
                     "Urugarama",
-                    "Videwo"
-                  ]
-                }
-              ]
+                    "Videwo",
+                  ],
+                },
+              ],
             },
             {
-              "Kabare": [
+              Kabare: [
                 {
-                  "Cyarubare": [
+                  Cyarubare: [
                     "Kabeza",
                     "Kacyiru",
                     "Kanyetonga",
@@ -1834,21 +1834,21 @@ const rwandaData = {
                     "Rwakavuna",
                     "Umunini",
                     "Umuremampango",
-                    "Umuyenzi"
-                  ]
+                    "Umuyenzi",
+                  ],
                 },
                 {
-                  "Gitara": [
+                  Gitara: [
                     "Gahombya",
                     "Kagumiro",
                     "Kajevuba",
                     "Kazeneza",
                     "Mubuga",
-                    "Rugunga"
-                  ]
+                    "Rugunga",
+                  ],
                 },
                 {
-                  "Kirehe": [
+                  Kirehe: [
                     "Duterimbere",
                     "Gahama",
                     "Gikombe",
@@ -1859,22 +1859,22 @@ const rwandaData = {
                     "Nyabiyenzi",
                     "Rompuwe",
                     "Rushenyi",
-                    "Rwagatera"
-                  ]
+                    "Rwagatera",
+                  ],
                 },
                 {
-                  "Rubimba": [
+                  Rubimba: [
                     "Bara",
                     "Buhabwa",
                     "Kabarungu",
                     "Kabeza",
                     "Kamuhabura",
                     "Nyarusange",
-                    "Rwamushoma"
-                  ]
+                    "Rwamushoma",
+                  ],
                 },
                 {
-                  "Rubumba": [
+                  Rubumba: [
                     "Bwatampama",
                     "Gakenyeri",
                     "Gakoma",
@@ -1882,15 +1882,15 @@ const rwandaData = {
                     "Kibimba",
                     "Kibuye",
                     "Ntungamo",
-                    "Nyabugogo"
-                  ]
-                }
-              ]
+                    "Nyabugogo",
+                  ],
+                },
+              ],
             },
             {
-              "Kabarondo": [
+              Kabarondo: [
                 {
-                  "Cyabajwa": [
+                  Cyabajwa: [
                     "Busindu",
                     "Cyabajwa",
                     "Kabarondo",
@@ -1898,11 +1898,11 @@ const rwandaData = {
                     "Nkuba I",
                     "Nkuba II",
                     "Rugwagwa",
-                    "Rutagara"
-                  ]
+                    "Rutagara",
+                  ],
                 },
                 {
-                  "Cyinzovu": [
+                  Cyinzovu: [
                     "Agashikiri",
                     "Akinyenyeri",
                     "Bitoma",
@@ -1914,11 +1914,11 @@ const rwandaData = {
                     "Rugarama",
                     "Rugazi",
                     "Rurenge",
-                    "Rwakigeri"
-                  ]
+                    "Rwakigeri",
+                  ],
                 },
                 {
-                  "Kabura": [
+                  Kabura: [
                     "Agasharu",
                     "Agatare",
                     "Akagarama",
@@ -1930,33 +1930,33 @@ const rwandaData = {
                     "Murambi",
                     "Nyabikenke I",
                     "Nyabikenke II",
-                    "Rubira"
-                  ]
+                    "Rubira",
+                  ],
                 },
                 {
-                  "Rusera": [
+                  Rusera: [
                     "Butobagire",
                     "Rurama",
                     "Rusera",
                     "Rutagara Centre",
-                    "Umucyo"
-                  ]
-                }
-              ]
+                    "Umucyo",
+                  ],
+                },
+              ],
             },
             {
-              "Mukarange": [
+              Mukarange: [
                 {
-                  "Bwiza": [
+                  Bwiza: [
                     "Abemeramahoro",
                     "Abisunganye",
                     "Amizero",
                     "Karambarara",
-                    "Kinyemera"
-                  ]
+                    "Kinyemera",
+                  ],
                 },
                 {
-                  "Kayonza": [
+                  Kayonza: [
                     "Akabuga",
                     "Buhonde",
                     "Cyeru",
@@ -1967,21 +1967,21 @@ const rwandaData = {
                     "Kayonza Centre",
                     "Kivugiza",
                     "Miyange",
-                    "Munazi"
-                  ]
+                    "Munazi",
+                  ],
                 },
                 {
-                  "Mburabuturo": [
+                  Mburabuturo: [
                     "Akabuga",
                     "Akarugangare",
                     "Bwingeyo",
                     "Gihima",
                     "Kinunga",
-                    "Mburabuturo"
-                  ]
+                    "Mburabuturo",
+                  ],
                 },
                 {
-                  "Nyagatovu": [
+                  Nyagatovu: [
                     "Akabeza",
                     "Akamarara",
                     "Akamayange",
@@ -1989,26 +1989,26 @@ const rwandaData = {
                     "Gatagara",
                     "Iragwe",
                     "Irebero",
-                    "Nyagatovu"
-                  ]
+                    "Nyagatovu",
+                  ],
                 },
                 {
-                  "Rugendabari": [
+                  Rugendabari: [
                     "Gikumba",
                     "Kanyamasha",
                     "Karambo I",
                     "Karambo II",
                     "Nyakagarama",
                     "Rugendabari",
-                    "Rutare"
-                  ]
-                }
-              ]
+                    "Rutare",
+                  ],
+                },
+              ],
             },
             {
-              "Murama": [
+              Murama: [
                 {
-                  "Bunyentongo": [
+                  Bunyentongo: [
                     "Bweramvura",
                     "Gahengeri",
                     "Gisunzu",
@@ -2016,54 +2016,54 @@ const rwandaData = {
                     "Kagarama",
                     "Mpilindi",
                     "Nyamabuye",
-                    "Shyanda"
-                  ]
+                    "Shyanda",
+                  ],
                 },
-                { "Muko": ["Gihazo", "Karama", "Ngoma", "Rebezo", "Rugarama"] },
+                { Muko: ["Gihazo", "Karama", "Ngoma", "Rebezo", "Rugarama"] },
                 {
-                  "Murama": [
+                  Murama: [
                     "Bubindi",
                     "Kajevuba",
                     "Murama",
                     "Rusaro",
-                    "Rwabugengeri"
-                  ]
+                    "Rwabugengeri",
+                  ],
                 },
                 {
-                  "Nyakanazi": [
+                  Nyakanazi: [
                     "Busasamana",
                     "Nyagahinga",
                     "Nyakanazi",
                     "Rugazi",
-                    "Rurenge"
-                  ]
+                    "Rurenge",
+                  ],
                 },
                 {
-                  "Rusave": [
+                  Rusave: [
                     "Bicumbi",
                     "Bwinyana",
                     "Byimana",
                     "Gasutamo",
                     "Kinyinya",
-                    "Seresi"
-                  ]
-                }
-              ]
+                    "Seresi",
+                  ],
+                },
+              ],
             },
             {
-              "Murundi": [
+              Murundi: [
                 {
-                  "Buhabwa": [
+                  Buhabwa: [
                     "Buhabwa",
                     "Cyamburara",
                     "Gakoma",
                     "Miyaga",
                     "Mucucu",
-                    "Murundi"
-                  ]
+                    "Murundi",
+                  ],
                 },
                 {
-                  "Karambi": [
+                  Karambi: [
                     "Akamina",
                     "Bugarura",
                     "Gafunzo",
@@ -2081,21 +2081,21 @@ const rwandaData = {
                     "Rushenyi",
                     "Rwasama",
                     "Rwinsheke I",
-                    "Rwinsheke II"
-                  ]
+                    "Rwinsheke II",
+                  ],
                 },
                 {
-                  "Murundi": [
+                  Murundi: [
                     "Kayongo",
                     "Kibari",
                     "Kinyana",
                     "Macuba",
                     "Nyanga",
-                    "Rucaca"
-                  ]
+                    "Rucaca",
+                  ],
                 },
                 {
-                  "Ryamanyoni": [
+                  Ryamanyoni: [
                     "Akanyerezo",
                     "Cyandorimana",
                     "Kabingo",
@@ -2108,69 +2108,69 @@ const rwandaData = {
                     "Ryakirenzi I",
                     "Ryakirenzi II",
                     "Ryamanyoni",
-                    "Ubwiza"
-                  ]
-                }
-              ]
+                    "Ubwiza",
+                  ],
+                },
+              ],
             },
             {
-              "Mwiri": [
+              Mwiri: [
                 {
-                  "Kageyo": [
+                  Kageyo: [
                     "Gisunzu",
                     "Kiyonza",
                     "Ndago",
                     "Rugeyo",
                     "Rwisirabo I",
                     "Rwisirabo II",
-                    "Sebasengo"
-                  ]
+                    "Sebasengo",
+                  ],
                 },
                 {
-                  "Migera": [
+                  Migera: [
                     "Agahiza",
                     "Murori",
                     "Mwiri",
                     "Nyakagarama",
-                    "Umutekano"
-                  ]
+                    "Umutekano",
+                  ],
                 },
                 {
-                  "Nyamugari": [
+                  Nyamugari: [
                     "Gasarabwayi",
                     "Kabeza",
                     "Kabukeye",
                     "Kigarama",
                     "Ruhoroba",
                     "Rwazana",
-                    "Ryamutumo"
-                  ]
+                    "Ryamutumo",
+                  ],
                 },
                 {
-                  "Nyawera": [
+                  Nyawera: [
                     "Gitega",
                     "Muhozi",
                     "Murehe",
                     "Nyakabungo",
-                    "Ryakibanda"
-                  ]
-                }
-              ]
+                    "Ryakibanda",
+                  ],
+                },
+              ],
             },
             {
-              "Ndego": [
+              Ndego: [
                 {
-                  "Byimana": [
+                  Byimana: [
                     "Busasamana",
                     "Irebero",
                     "Kabeza",
                     "Kururembo",
                     "Nyakabingo",
-                    "Nyamata"
-                  ]
+                    "Nyamata",
+                  ],
                 },
                 {
-                  "Isangano": [
+                  Isangano: [
                     "Gafunzo",
                     "Gashonga",
                     "Kabusunzu",
@@ -2178,11 +2178,11 @@ const rwandaData = {
                     "Kagoma",
                     "Kamahoro",
                     "Kanyinya",
-                    "Kibare"
-                  ]
+                    "Kibare",
+                  ],
                 },
                 {
-                  "Karambi": [
+                  Karambi: [
                     "Gasenyi",
                     "Ihema",
                     "Kagasa",
@@ -2190,24 +2190,24 @@ const rwandaData = {
                     "Kumunini",
                     "Murambi",
                     "Musenyi",
-                    "Remera"
-                  ]
+                    "Remera",
+                  ],
                 },
                 {
-                  "Kiyovu": [
+                  Kiyovu: [
                     "Gasabo",
                     "Humure",
                     "Iramiro",
                     "Mwurire",
-                    "Nyamugali"
-                  ]
-                }
-              ]
+                    "Nyamugali",
+                  ],
+                },
+              ],
             },
             {
-              "Nyamirama": [
+              Nyamirama: [
                 {
-                  "Gikaya": [
+                  Gikaya: [
                     "Gasharu",
                     "Gasogi",
                     "Gasura",
@@ -2215,22 +2215,22 @@ const rwandaData = {
                     "Kamonyi",
                     "Karambi",
                     "Kinkoronko",
-                    "Kiyanja"
-                  ]
+                    "Kiyanja",
+                  ],
                 },
                 {
-                  "Musumba": [
+                  Musumba: [
                     "Karama",
                     "Kiyovu",
                     "Musenyi",
                     "Nyabisindu",
                     "Nyagasambu",
                     "Nyarunazi",
-                    "Rusera"
-                  ]
+                    "Rusera",
+                  ],
                 },
                 {
-                  "Rurambi": [
+                  Rurambi: [
                     "Amashinge",
                     "Bwiza",
                     "Kabeza",
@@ -2240,11 +2240,11 @@ const rwandaData = {
                     "Ntintyi",
                     "Rugarama",
                     "Ruvumu",
-                    "Shirinyota"
-                  ]
+                    "Shirinyota",
+                  ],
                 },
                 {
-                  "Shyogo": [
+                  Shyogo: [
                     "Agasharu",
                     "Gatoki",
                     "Kacyiru",
@@ -2252,15 +2252,15 @@ const rwandaData = {
                     "Nyakagarama",
                     "Rugagi",
                     "Rwangabarezi",
-                    "Rwinyana"
-                  ]
-                }
-              ]
+                    "Rwinyana",
+                  ],
+                },
+              ],
             },
             {
-              "Rukara": [
+              Rukara: [
                 {
-                  "Kawangire": [
+                  Kawangire: [
                     "Butimba I",
                     "Butimba II",
                     "Gakenyeri",
@@ -2268,11 +2268,11 @@ const rwandaData = {
                     "Karama",
                     "Kidogo",
                     "Kinunga",
-                    "Rwempasha"
-                  ]
+                    "Rwempasha",
+                  ],
                 },
                 {
-                  "Rukara": [
+                  Rukara: [
                     "Butimba",
                     "Buyonza",
                     "Gitarama",
@@ -2290,11 +2290,11 @@ const rwandaData = {
                     "Muzizi",
                     "Nyagaharabuge",
                     "Nyirarukara",
-                    "Uruyenzi"
-                  ]
+                    "Uruyenzi",
+                  ],
                 },
                 {
-                  "Rwimishinya": [
+                  Rwimishinya: [
                     "Akabare I",
                     "Akabare II",
                     "Karagari I",
@@ -2307,46 +2307,46 @@ const rwandaData = {
                     "Mirambi II",
                     "Mirambi III",
                     "Nyarutunga I",
-                    "Nyarutunga II"
-                  ]
-                }
-              ]
+                    "Nyarutunga II",
+                  ],
+                },
+              ],
             },
             {
-              "Ruramira": [
+              Ruramira: [
                 {
-                  "Bugambira": [
+                  Bugambira: [
                     "Agasharu",
                     "Agatare",
                     "Amashya",
                     "Buhoro",
-                    "Murambi"
-                  ]
+                    "Murambi",
+                  ],
                 },
                 {
-                  "Nkamba": [
+                  Nkamba: [
                     "Akabarima",
                     "Akarambo",
                     "Cyabitana",
                     "Gitega",
                     "Nyagacyamu",
                     "Sabununga",
-                    "Umubuga"
-                  ]
+                    "Umubuga",
+                  ],
                 },
                 {
-                  "Ruyonza": [
+                  Ruyonza: [
                     "Gisenga",
                     "Gitoki",
                     "Gitwa",
                     "Kabeza",
                     "Kacyiru",
                     "Rukoma",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Umubuga": [
+                  Umubuga: [
                     "Agasharu",
                     "Akarugina",
                     "Amazinga",
@@ -2354,15 +2354,15 @@ const rwandaData = {
                     "Kabukara",
                     "Kabuye",
                     "Kajembe",
-                    "Kamukire"
-                  ]
-                }
-              ]
+                    "Kamukire",
+                  ],
+                },
+              ],
             },
             {
-              "Rwinkwavu": [
+              Rwinkwavu: [
                 {
-                  "Gihinga": [
+                  Gihinga: [
                     "Akajevuba",
                     "Akayebe",
                     "Gihinga",
@@ -2372,21 +2372,21 @@ const rwandaData = {
                     "Rubirizi",
                     "Rugunga",
                     "Rusera",
-                    "Uburembo"
-                  ]
+                    "Uburembo",
+                  ],
                 },
                 {
-                  "Mbarara": [
+                  Mbarara: [
                     "Gacaca",
                     "Gahushyi",
                     "Kingogo",
                     "Mbarara I",
                     "Mbarara II",
-                    "Mutembo"
-                  ]
+                    "Mutembo",
+                  ],
                 },
                 {
-                  "Mukoyoyo": [
+                  Mukoyoyo: [
                     "Bishenyi",
                     "Busasamana",
                     "Bwiza",
@@ -2402,11 +2402,11 @@ const rwandaData = {
                     "Rebero",
                     "Twibanire",
                     "Twiyunge",
-                    "Vungiro"
-                  ]
+                    "Vungiro",
+                  ],
                 },
                 {
-                  "Nkondo": [
+                  Nkondo: [
                     "Burigade",
                     "Byimana",
                     "Gasabo",
@@ -2420,19 +2420,19 @@ const rwandaData = {
                     "Rebero",
                     "Rurama",
                     "Rwinkwavu",
-                    "Seka"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Seka",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Kirehe": [
+          Kirehe: [
             {
-              "Gahara": [
+              Gahara: [
                 {
-                  "Butezi": [
+                  Butezi: [
                     "Cyamabuye",
                     "Cyasusa I",
                     "Cyasusa II",
@@ -2448,11 +2448,11 @@ const rwandaData = {
                     "Rwamuzima",
                     "Samuko",
                     "Umubano I",
-                    "Umubano II"
-                  ]
+                    "Umubano II",
+                  ],
                 },
                 {
-                  "Muhamba": [
+                  Muhamba: [
                     "Bukorasi",
                     "Cyobaharaye",
                     "Gacaca",
@@ -2464,11 +2464,11 @@ const rwandaData = {
                     "Muyange",
                     "Ntaruka",
                     "Nyabitare",
-                    "Rusisiro"
-                  ]
+                    "Rusisiro",
+                  ],
                 },
                 {
-                  "Murehe": [
+                  Murehe: [
                     "Cyasemakamba",
                     "Cyumbati",
                     "Isangano",
@@ -2481,11 +2481,11 @@ const rwandaData = {
                     "Nyamugari",
                     "Nyankurazo",
                     "Nyombe",
-                    "Village Dagaza"
-                  ]
+                    "Village Dagaza",
+                  ],
                 },
                 {
-                  "Nyagasenyi": [
+                  Nyagasenyi: [
                     "Cyabihama I",
                     "Cyabihama II",
                     "Gakurungo",
@@ -2501,11 +2501,11 @@ const rwandaData = {
                     "Rugina",
                     "Rusave",
                     "Rwabaseka",
-                    "Rwambanda"
-                  ]
+                    "Rwambanda",
+                  ],
                 },
                 {
-                  "Nyakagezi": [
+                  Nyakagezi: [
                     "Kivogo",
                     "Muguruka I",
                     "Muguruka II",
@@ -2514,11 +2514,11 @@ const rwandaData = {
                     "Rubira",
                     "Rubumba",
                     "Rurama",
-                    "Susuruka"
-                  ]
+                    "Susuruka",
+                  ],
                 },
                 {
-                  "Rubimba": [
+                  Rubimba: [
                     "Agatangaza",
                     "Byimana",
                     "Kanteyamanga",
@@ -2532,69 +2532,69 @@ const rwandaData = {
                     "Rwamaranga I",
                     "Rwamaranga II",
                     "Rwamurema",
-                    "Umubogora"
-                  ]
-                }
-              ]
+                    "Umubogora",
+                  ],
+                },
+              ],
             },
             {
-              "Gatore": [
+              Gatore: [
                 {
-                  "Curazo": [
+                  Curazo: [
                     "Gatenga",
                     "Kigarama",
                     "Mugeruko",
                     "Nyarwogo",
                     "Rugari",
                     "Runyinya",
-                    "Rutoma"
-                  ]
+                    "Rutoma",
+                  ],
                 },
                 {
-                  "Cyunuzi": [
+                  Cyunuzi: [
                     "Cyunuzi I",
                     "Cyunuzi II",
                     "Gakuyo",
                     "Kabeza",
                     "Kabungo",
                     "Nyagashyanga",
-                    "Rurenge"
-                  ]
+                    "Rurenge",
+                  ],
                 },
                 {
-                  "Muganza": [
+                  Muganza: [
                     "Kamomo",
                     "Karenge",
                     "Ntungamo",
                     "Nyarusange",
                     "Rebero",
-                    "Rwabigaro"
-                  ]
+                    "Rwabigaro",
+                  ],
                 },
                 {
-                  "Nyamiryango": [
+                  Nyamiryango: [
                     "Bwiza",
                     "Gashanga",
                     "Gasharu",
                     "Karambi",
                     "Nyagitongo",
                     "Rubuye",
-                    "Rwanyabigaba"
-                  ]
+                    "Rwanyabigaba",
+                  ],
                 },
                 {
-                  "Rwabutazi": [
+                  Rwabutazi: [
                     "Bitoma I",
                     "Bitoma II",
                     "Muyange",
                     "Rugina",
                     "Rurembo I",
                     "Samuko",
-                    "Ururembo II"
-                  ]
+                    "Ururembo II",
+                  ],
                 },
                 {
-                  "Rwantonde": [
+                  Rwantonde: [
                     "Cyiha",
                     "Karehero",
                     "Karembo",
@@ -2604,15 +2604,15 @@ const rwandaData = {
                     "Mumeya",
                     "Rubona",
                     "Rusenyi",
-                    "Rutare"
-                  ]
-                }
-              ]
+                    "Rutare",
+                  ],
+                },
+              ],
             },
             {
-              "Kigarama": [
+              Kigarama: [
                 {
-                  "Cyanya": [
+                  Cyanya: [
                     "Cyanya",
                     "Gakoni",
                     "Kabimba I",
@@ -2623,11 +2623,11 @@ const rwandaData = {
                     "Nyamirambo I",
                     "Nyamirambo II",
                     "Nyarutovu",
-                    "Rubare"
-                  ]
+                    "Rubare",
+                  ],
                 },
                 {
-                  "Kigarama": [
+                  Kigarama: [
                     "Gahindu",
                     "Humure",
                     "Kigarama",
@@ -2637,11 +2637,11 @@ const rwandaData = {
                     "Nyarutojo",
                     "Rugari",
                     "Rurenge",
-                    "Samuko"
-                  ]
+                    "Samuko",
+                  ],
                 },
                 {
-                  "Kiremera": [
+                  Kiremera: [
                     "Bweranka I",
                     "Bweranka II",
                     "Cyanika",
@@ -2656,11 +2656,11 @@ const rwandaData = {
                     "Kiremera",
                     "Nyaryenge",
                     "Rwesinge",
-                    "Umunezero"
-                  ]
+                    "Umunezero",
+                  ],
                 },
                 {
-                  "Nyakerera": [
+                  Nyakerera: [
                     "Gasenyi",
                     "Gatari",
                     "Kabare",
@@ -2669,11 +2669,11 @@ const rwandaData = {
                     "Nyabubare",
                     "Ruhandagazi",
                     "Rukiri",
-                    "Ryamukaza"
-                  ]
+                    "Ryamukaza",
+                  ],
                 },
                 {
-                  "Nyankurazo": [
+                  Nyankurazo: [
                     "Kabeza",
                     "Kivu",
                     "Marembo",
@@ -2684,15 +2684,15 @@ const rwandaData = {
                     "Nyakwisi",
                     "Rama",
                     "Ruhuha",
-                    "Rusumo"
-                  ]
-                }
-              ]
+                    "Rusumo",
+                  ],
+                },
+              ],
             },
             {
-              "Kigina": [
+              Kigina: [
                 {
-                  "Gatarama": [
+                  Gatarama: [
                     "Efemu",
                     "Gitaba",
                     "Kabimba",
@@ -2700,11 +2700,11 @@ const rwandaData = {
                     "Kanogo",
                     "Kanyabihara",
                     "Nyakizu",
-                    "Ruhama"
-                  ]
+                    "Ruhama",
+                  ],
                 },
                 {
-                  "Rugarama": [
+                  Rugarama: [
                     "Isangano",
                     "Kabeza",
                     "Kagega",
@@ -2718,11 +2718,11 @@ const rwandaData = {
                     "Rugando",
                     "Rugarama",
                     "Rujambara",
-                    "Rwakanyambo"
-                  ]
+                    "Rwakanyambo",
+                  ],
                 },
                 {
-                  "Ruhanga": [
+                  Ruhanga: [
                     "Buhwaga",
                     "Kavuzo",
                     "Ku Murenge",
@@ -2737,11 +2737,11 @@ const rwandaData = {
                     "Rwakarinda",
                     "Rwamabare",
                     "Rwamakara",
-                    "Rwanyamutara"
-                  ]
+                    "Rwanyamutara",
+                  ],
                 },
                 {
-                  "Rwanteru": [
+                  Rwanteru: [
                     "Bugarura",
                     "Gasarasi",
                     "Mugisenyi I",
@@ -2749,15 +2749,15 @@ const rwandaData = {
                     "Nyakayaga",
                     "Rusororo",
                     "Rwanteru I",
-                    "Rwanteru II"
-                  ]
-                }
-              ]
+                    "Rwanteru II",
+                  ],
+                },
+              ],
             },
             {
-              "Kirehe": [
+              Kirehe: [
                 {
-                  "Gahama": [
+                  Gahama: [
                     "Byimana",
                     "Kabeza",
                     "Kaziba",
@@ -2767,21 +2767,21 @@ const rwandaData = {
                     "Ntungamo",
                     "Nyakatsi",
                     "Nyamazi",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Kirehe": [
+                  Kirehe: [
                     "Agatwa",
                     "Byimana",
                     "Kamasaro",
                     "Kirehe",
                     "Mirambi",
-                    "Runyinya"
-                  ]
+                    "Runyinya",
+                  ],
                 },
                 {
-                  "Nyabigega": [
+                  Nyabigega: [
                     "Bugarura",
                     "Duterimbere",
                     "Gahuzamiryango",
@@ -2791,11 +2791,11 @@ const rwandaData = {
                     "Nyarurembo",
                     "Rurenge",
                     "Twizerane",
-                    "Vatikani"
-                  ]
+                    "Vatikani",
+                  ],
                 },
                 {
-                  "Nyabikokora": [
+                  Nyabikokora: [
                     "Bwiza",
                     "Byimana",
                     "Kaduha",
@@ -2810,11 +2810,11 @@ const rwandaData = {
                     "Rugero",
                     "Rurama",
                     "Rusamaza",
-                    "Rutonde"
-                  ]
+                    "Rutonde",
+                  ],
                 },
                 {
-                  "Rwesero": [
+                  Rwesero: [
                     "Bengazi",
                     "Byimana",
                     "Gahama",
@@ -2822,15 +2822,15 @@ const rwandaData = {
                     "Karuhura",
                     "Munini",
                     "Rwabikweto",
-                    "Rwesero"
-                  ]
-                }
-              ]
+                    "Rwesero",
+                  ],
+                },
+              ],
             },
             {
-              "Mahama": [
+              Mahama: [
                 {
-                  "Kamombo": [
+                  Kamombo: [
                     "Amahoro",
                     "Bwiza",
                     "Byimana",
@@ -2842,11 +2842,11 @@ const rwandaData = {
                     "Kigufi",
                     "Rumuri",
                     "Terimbere",
-                    "Umubano"
-                  ]
+                    "Umubano",
+                  ],
                 },
                 {
-                  "Munini": [
+                  Munini: [
                     "Kabeza",
                     "Kagera",
                     "Karambi",
@@ -2855,22 +2855,22 @@ const rwandaData = {
                     "Rebero",
                     "Remanyundo",
                     "Rugarama",
-                    "Ruhondo"
-                  ]
+                    "Ruhondo",
+                  ],
                 },
                 {
-                  "Mwoga": [
+                  Mwoga: [
                     "Buhaga",
                     "Cyanika",
                     "Gisanze",
                     "Isangano",
                     "Kwisha",
                     "Mwoga",
-                    "Nyarusange"
-                  ]
+                    "Nyarusange",
+                  ],
                 },
                 {
-                  "Saruhembe": [
+                  Saruhembe: [
                     "Gisenyi",
                     "Kanombe",
                     "Karebezo",
@@ -2878,16 +2878,16 @@ const rwandaData = {
                     "Nyagahanga",
                     "Nyamiyumbo",
                     "Rushonga",
-                    "Saruhembe"
-                  ]
+                    "Saruhembe",
+                  ],
                 },
-                { "Umunini": ["Ihuriro"] }
-              ]
+                { Umunini: ["Ihuriro"] },
+              ],
             },
             {
-              "Mpanga": [
+              Mpanga: [
                 {
-                  "Bwiyorere": [
+                  Bwiyorere: [
                     "Bihembe",
                     "Cyimparage",
                     "Gisenyi",
@@ -2896,40 +2896,40 @@ const rwandaData = {
                     "Kangarame",
                     "Nyagasenyi",
                     "Nyakabande",
-                    "Ruhama"
-                  ]
+                    "Ruhama",
+                  ],
                 },
                 {
-                  "Kankobwa": [
+                  Kankobwa: [
                     "Kankobwa",
                     "Murundi",
                     "Nyamiyaga",
                     "Remera",
-                    "Rusha"
-                  ]
+                    "Rusha",
+                  ],
                 },
                 {
-                  "Mpanga": [
+                  Mpanga: [
                     "Kabuye I",
                     "Kabuye II",
                     "Mpanga",
                     "Nyagatovu",
                     "Rurambi I",
-                    "Rurambi II"
-                  ]
+                    "Rurambi II",
+                  ],
                 },
                 {
-                  "Mushongi": [
+                  Mushongi: [
                     "Gitoma",
                     "Kayanga",
                     "Mishenyi",
                     "Mushongi",
                     "Ngugu I",
-                    "Ngugu II"
-                  ]
+                    "Ngugu II",
+                  ],
                 },
                 {
-                  "Nasho": [
+                  Nasho: [
                     "Agasasa",
                     "Busasamana I",
                     "Busasamana II",
@@ -2939,11 +2939,11 @@ const rwandaData = {
                     "Nyabubare II",
                     "Nyawera I",
                     "Nyawera II",
-                    "Pilote"
-                  ]
+                    "Pilote",
+                  ],
                 },
                 {
-                  "Nyakabungo": [
+                  Nyakabungo: [
                     "Cyamuhabura",
                     "Gikushya",
                     "Gitega",
@@ -2952,11 +2952,11 @@ const rwandaData = {
                     "Nyagatovu",
                     "Nyakabungo",
                     "Rudandi",
-                    "Rushenyi"
-                  ]
+                    "Rushenyi",
+                  ],
                 },
                 {
-                  "Rubaya": [
+                  Rubaya: [
                     "Akinzuki",
                     "Byimana",
                     "Gacenshero",
@@ -2965,15 +2965,15 @@ const rwandaData = {
                     "Murambi",
                     "Rubaya",
                     "Rukonji",
-                    "Rushonga"
-                  ]
-                }
-              ]
+                    "Rushonga",
+                  ],
+                },
+              ],
             },
             {
-              "Musaza": [
+              Musaza: [
                 {
-                  "Gasarabwayi": [
+                  Gasarabwayi: [
                     "Gasarabwayi",
                     "Gicuma",
                     "Kanyosha",
@@ -2981,11 +2981,11 @@ const rwandaData = {
                     "Nyakariba II",
                     "Nyakiriba",
                     "Rukumba",
-                    "Rwinyundo"
-                  ]
+                    "Rwinyundo",
+                  ],
                 },
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Gikenke",
                     "Kabuga",
                     "Kagasa",
@@ -2995,11 +2995,11 @@ const rwandaData = {
                     "Rubuye I",
                     "Rubuye II",
                     "Rugango",
-                    "Rwamurema"
-                  ]
+                    "Rwamurema",
+                  ],
                 },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Kanogo",
                     "Kanombe",
                     "Kiyovu",
@@ -3007,22 +3007,22 @@ const rwandaData = {
                     "Runyinya",
                     "Rwamuhazi",
                     "Ryabega",
-                    "Ryarugazi"
-                  ]
+                    "Ryarugazi",
+                  ],
                 },
                 {
-                  "Musaza": [
+                  Musaza: [
                     "Gatwe I",
                     "Gatwe II",
                     "Kanyinya I",
                     "Kanyinya II",
                     "Musaza",
                     "Muyoka",
-                    "Nyakariba"
-                  ]
+                    "Nyakariba",
+                  ],
                 },
                 {
-                  "Nganda": [
+                  Nganda: [
                     "Gacuba I",
                     "Gacuba II",
                     "Kamagare",
@@ -3034,15 +3034,15 @@ const rwandaData = {
                     "Nyamiyaga",
                     "Ruseke",
                     "Rwabugagara",
-                    "Rwamushongore"
-                  ]
-                }
-              ]
+                    "Rwamushongore",
+                  ],
+                },
+              ],
             },
             {
-              "Mushikiri": [
+              Mushikiri: [
                 {
-                  "Bisagara": [
+                  Bisagara: [
                     "Bingaro",
                     "Bisagara",
                     "Isangano",
@@ -3053,11 +3053,11 @@ const rwandaData = {
                     "Ruturamigina",
                     "Umunini",
                     "Umutuzo",
-                    "Umuyange"
-                  ]
+                    "Umuyange",
+                  ],
                 },
                 {
-                  "Cyamigurwa": [
+                  Cyamigurwa: [
                     "Bwiza",
                     "Impara",
                     "Isangano",
@@ -3065,11 +3065,11 @@ const rwandaData = {
                     "Karenge",
                     "Kigarama",
                     "Nyamabuye",
-                    "Rusenyi"
-                  ]
+                    "Rusenyi",
+                  ],
                 },
                 {
-                  "Rugarama": [
+                  Rugarama: [
                     "Birengero",
                     "Bugarura",
                     "Cyanjuna",
@@ -3084,11 +3084,11 @@ const rwandaData = {
                     "Rutare",
                     "Rwamunana",
                     "Ryogire",
-                    "Tomi"
-                  ]
+                    "Tomi",
+                  ],
                 },
                 {
-                  "Rwanyamuhanga": [
+                  Rwanyamuhanga: [
                     "Bweramana",
                     "Cyaka",
                     "Cyeru",
@@ -3101,11 +3101,11 @@ const rwandaData = {
                     "Rubimba",
                     "Rutare",
                     "Rutoma",
-                    "Sake"
-                  ]
+                    "Sake",
+                  ],
                 },
                 {
-                  "Rwayikona": [
+                  Rwayikona: [
                     "Barisuka",
                     "Birembo",
                     "Isangano",
@@ -3118,15 +3118,15 @@ const rwandaData = {
                     "Rwahenge",
                     "Rwakabandama",
                     "Rwayikona",
-                    "Tonero"
-                  ]
-                }
-              ]
+                    "Tonero",
+                  ],
+                },
+              ],
             },
             {
-              "Nasho": [
+              Nasho: [
                 {
-                  "Cyambwe": [
+                  Cyambwe: [
                     "Gicaca",
                     "Kagamba",
                     "Kagese I",
@@ -3134,22 +3134,22 @@ const rwandaData = {
                     "Rugwiro",
                     "Rukono",
                     "Rushoka",
-                    "Rwinyange"
-                  ]
+                    "Rwinyange",
+                  ],
                 },
                 {
-                  "Kagese": [
+                  Kagese: [
                     "Gatunguru",
                     "Kagese II",
                     "Kanamira",
                     "Kibimba",
                     "Mitsindo",
                     "Murehe",
-                    "Nyabimuri"
-                  ]
+                    "Nyabimuri",
+                  ],
                 },
                 {
-                  "Ntaruka": [
+                  Ntaruka: [
                     "Gashasha",
                     "Kabusunzu",
                     "Karenge II",
@@ -3158,11 +3158,11 @@ const rwandaData = {
                     "Nyamurindira",
                     "Ruhema",
                     "Ruseke",
-                    "Rwamuhigi"
-                  ]
+                    "Rwamuhigi",
+                  ],
                 },
                 {
-                  "Rubirizi": [
+                  Rubirizi: [
                     "Kabigembe I",
                     "Kabigembe II",
                     "Kadamu",
@@ -3171,11 +3171,11 @@ const rwandaData = {
                     "Mulindi",
                     "Nyabiyenzi",
                     "Rwandarushya I",
-                    "Rwandarushya II"
-                  ]
+                    "Rwandarushya II",
+                  ],
                 },
                 {
-                  "Rugoma": [
+                  Rugoma: [
                     "Gashiru",
                     "Gatarama",
                     "Gatare",
@@ -3184,15 +3184,15 @@ const rwandaData = {
                     "Karama",
                     "Karubare",
                     "Rebezo",
-                    "Rugoma"
-                  ]
-                }
-              ]
+                    "Rugoma",
+                  ],
+                },
+              ],
             },
             {
-              "Nyamugari": [
+              Nyamugari: [
                 {
-                  "Bukora": [
+                  Bukora: [
                     "Bukinanyana",
                     "Bukora",
                     "Busasamana",
@@ -3204,11 +3204,11 @@ const rwandaData = {
                     "Mushirarungu",
                     "Mwima",
                     "Nyabiyenzi",
-                    "Remanyundo"
-                  ]
+                    "Remanyundo",
+                  ],
                 },
                 {
-                  "Kagasa": [
+                  Kagasa: [
                     "Bwiza",
                     "Ituze",
                     "Kagasa",
@@ -3220,11 +3220,11 @@ const rwandaData = {
                     "Nyamirama",
                     "Nyarurembo",
                     "Rebero",
-                    "Urugwiro"
-                  ]
+                    "Urugwiro",
+                  ],
                 },
                 {
-                  "Kazizi": [
+                  Kazizi: [
                     "Amahoro",
                     "Byimana",
                     "Gahomvu",
@@ -3236,11 +3236,11 @@ const rwandaData = {
                     "Mucyo",
                     "Nyenyeri",
                     "Tetero",
-                    "Ururembo"
-                  ]
+                    "Ururembo",
+                  ],
                 },
                 {
-                  "Kiyanzi": [
+                  Kiyanzi: [
                     "Kabungeri",
                     "Kabuye",
                     "Kacyiru",
@@ -3256,11 +3256,11 @@ const rwandaData = {
                     "Muyinza",
                     "Nyarwamura",
                     "Remera",
-                    "Rusumo"
-                  ]
+                    "Rusumo",
+                  ],
                 },
                 {
-                  "Nyamugari": [
+                  Nyamugari: [
                     "Amahoro",
                     "Gasenyi",
                     "Ihuriro",
@@ -3278,15 +3278,15 @@ const rwandaData = {
                     "Rusozi",
                     "Ubumwe",
                     "Umubano",
-                    "Umunezero"
-                  ]
-                }
-              ]
+                    "Umunezero",
+                  ],
+                },
+              ],
             },
             {
-              "Nyarubuye": [
+              Nyarubuye: [
                 {
-                  "Mareba": [
+                  Mareba: [
                     "Burembo",
                     "Kaziba I",
                     "Kaziba II",
@@ -3294,11 +3294,11 @@ const rwandaData = {
                     "Nyacyonga II",
                     "Nyamateke",
                     "Rurenge I",
-                    "Rurenge II"
-                  ]
+                    "Rurenge II",
+                  ],
                 },
                 {
-                  "Nyabitare": [
+                  Nyabitare: [
                     "Bicumbi",
                     "Kazizi",
                     "Kazizi II",
@@ -3309,11 +3309,11 @@ const rwandaData = {
                     "Nyamisagara",
                     "Nyamugari",
                     "Rugarama",
-                    "Rwamagana"
-                  ]
+                    "Rwamagana",
+                  ],
                 },
                 {
-                  "Nyarutunga": [
+                  Nyarutunga: [
                     "Bugarura",
                     "Kagabiro",
                     "Kagorogoro",
@@ -3324,41 +3324,41 @@ const rwandaData = {
                     "Nyarutunga",
                     "Remera",
                     "Rubare",
-                    "Rutunga"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Rutunga",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Ngoma": [
+          Ngoma: [
             {
-              "Gashanda": [
+              Gashanda: [
                 {
-                  "Cyerwa": [
+                  Cyerwa: [
                     "Cyerwa",
                     "Gako",
                     "Mizibiri",
                     "Muyange",
                     "Nyamugali",
                     "Ruyema I",
-                    "Ruyema II"
-                  ]
+                    "Ruyema II",
+                  ],
                 },
                 {
-                  "Giseri": [
+                  Giseri: [
                     "Kibimba",
                     "Murambi",
                     "Nyagitabire",
                     "Rubambantare",
                     "Rwambohero",
-                    "Rwanyamigono"
-                  ]
+                    "Rwanyamigono",
+                  ],
                 },
-                { "Munege": ["Gakuto", "Kanege", "Nyagasenga", "Rugarama"] },
+                { Munege: ["Gakuto", "Kanege", "Nyagasenga", "Rugarama"] },
                 {
-                  "Mutsindo": [
+                  Mutsindo: [
                     "Cyanama",
                     "Gisenyi",
                     "Kanyinya",
@@ -3367,36 +3367,36 @@ const rwandaData = {
                     "Nyamasare",
                     "Rwakavuna",
                     "Rwinkuba",
-                    "Ryangiriye"
-                  ]
-                }
-              ]
+                    "Ryangiriye",
+                  ],
+                },
+              ],
             },
             {
-              "Jarama": [
+              Jarama: [
                 {
-                  "Ihanika": [
+                  Ihanika: [
                     "Irebero",
                     "Kabonero",
                     "Kamapfizi",
                     "Kivugiza",
                     "Nyamugari",
-                    "Umuka"
-                  ]
+                    "Umuka",
+                  ],
                 },
                 {
-                  "Jarama": [
+                  Jarama: [
                     "Abiyunze",
                     "Akabeza",
                     "Dufatanye",
                     "Duterimbere",
                     "Irarire",
                     "Twizerane",
-                    "Ubumwe"
-                  ]
+                    "Ubumwe",
+                  ],
                 },
                 {
-                  "Karenge": [
+                  Karenge: [
                     "Akabuga",
                     "Akagoma",
                     "Akajevuba",
@@ -3408,22 +3408,22 @@ const rwandaData = {
                     "Nyamirambo",
                     "Nyarurembo",
                     "Rusenyi",
-                    "Shirinyota"
-                  ]
+                    "Shirinyota",
+                  ],
                 },
                 {
-                  "Kibimba": [
+                  Kibimba: [
                     "Akabira",
                     "Akaziba",
                     "Cyahafi",
                     "Ibabiri",
                     "Murama",
                     "Uruhuha",
-                    "Urukomo"
-                  ]
+                    "Urukomo",
+                  ],
                 },
                 {
-                  "Kigoma": [
+                  Kigoma: [
                     "Icyurusambu",
                     "Iramiro",
                     "Kigoma",
@@ -3431,15 +3431,15 @@ const rwandaData = {
                     "Mubaha",
                     "Ramba",
                     "Remera",
-                    "Vunga"
-                  ]
-                }
-              ]
+                    "Vunga",
+                  ],
+                },
+              ],
             },
             {
-              "Karembo": [
+              Karembo: [
                 {
-                  "Akaziba": [
+                  Akaziba: [
                     "Impinga",
                     "Kwiperu",
                     "Kukabeza",
@@ -3450,20 +3450,20 @@ const rwandaData = {
                     "Rurenge",
                     "Rwamuhimbura",
                     "Umusebeya",
-                    "Umuyange"
-                  ]
+                    "Umuyange",
+                  ],
                 },
                 {
-                  "Karaba": [
+                  Karaba: [
                     "Kigobe",
                     "Mungoro",
                     "Rusumbantwari",
                     "Umurehe",
-                    "Urutare"
-                  ]
+                    "Urutare",
+                  ],
                 },
                 {
-                  "Nyamirambo": [
+                  Nyamirambo: [
                     "Gashekasheke I",
                     "Gashekasheke II",
                     "Gitaraga",
@@ -3473,100 +3473,100 @@ const rwandaData = {
                     "Kivugangoma II",
                     "Mumahoro",
                     "Murambi",
-                    "Rwakayango"
-                  ]
-                }
-              ]
+                    "Rwakayango",
+                  ],
+                },
+              ],
             },
             {
-              "Kazo": [
+              Kazo: [
                 {
-                  "Birenga": [
+                  Birenga: [
                     "Gahondo",
                     "Karisizo",
                     "Murindwa",
                     "Murusenyi",
-                    "Nyakagezi"
-                  ]
+                    "Nyakagezi",
+                  ],
                 },
-                { "Gahurire": ["Itambiro", "Rebero", "Rugenge", "Umuyange"] },
+                { Gahurire: ["Itambiro", "Rebero", "Rugenge", "Umuyange"] },
                 {
-                  "Karama": ["Kabimba", "Kagusa", "Karenge", "Mpandu", "Rango"]
+                  Karama: ["Kabimba", "Kagusa", "Karenge", "Mpandu", "Rango"],
                 },
-                { "Kinyonzo": ["Amabumba", "Kibimba", "Rugarama", "Tunduti"] },
-                { "Umukamba": ["Akabaya", "Kagarama", "Kazo", "Umukamba"] }
-              ]
+                { Kinyonzo: ["Amabumba", "Kibimba", "Rugarama", "Tunduti"] },
+                { Umukamba: ["Akabaya", "Kagarama", "Kazo", "Umukamba"] },
+              ],
             },
             {
-              "Kibungo": [
+              Kibungo: [
                 {
-                  "Cyasemakamba": [
+                  Cyasemakamba: [
                     "Amarembo",
                     "Bwiza",
                     "Gatoro",
                     "Kabeza",
                     "Kiruhura",
-                    "Rubimba"
-                  ]
+                    "Rubimba",
+                  ],
                 },
                 {
-                  "Gahima": [
+                  Gahima: [
                     "Gasoro",
                     "Karenge",
                     "Kazeneza",
                     "Nyamigina",
                     "Rutovu",
-                    "Rwamihuro"
-                  ]
+                    "Rwamihuro",
+                  ],
                 },
                 {
-                  "Gatonde": [
+                  Gatonde: [
                     "Karungu",
                     "Misange",
                     "Nyagakizi",
                     "Nyagatovu",
                     "Nyakabungo",
-                    "Rubona"
-                  ]
+                    "Rubona",
+                  ],
                 },
                 {
-                  "Karenge": [
+                  Karenge: [
                     "Amahoro",
                     "Gatare",
                     "Ihuriro",
                     "Isangano",
                     "Kabeza",
                     "Musamvu",
-                    "Ubumwe"
-                  ]
+                    "Ubumwe",
+                  ],
                 },
                 {
-                  "Mahango": [
+                  Mahango: [
                     "Gisaka",
                     "Kabimba",
                     "Kacyiru",
                     "Karambi",
                     "Rebezo",
-                    "Ruhinga"
-                  ]
-                }
-              ]
+                    "Ruhinga",
+                  ],
+                },
+              ],
             },
             {
-              "Mugesera": [
+              Mugesera: [
                 {
-                  "Akabungo": [
+                  Akabungo: [
                     "Agakindo",
                     "Akabingo",
                     "Kinihira",
                     "Nyamirambo",
                     "Rugarama",
                     "Rurenge",
-                    "Rwinkwavu"
-                  ]
+                    "Rwinkwavu",
+                  ],
                 },
                 {
-                  "Mugatare": [
+                  Mugatare: [
                     "Icocorero",
                     "Ikibinge",
                     "Isangano",
@@ -3574,79 +3574,79 @@ const rwandaData = {
                     "Kumunini",
                     "Kumuyange",
                     "Mumurenge",
-                    "Rwamenyo"
-                  ]
+                    "Rwamenyo",
+                  ],
                 },
                 {
-                  "Ntanga": [
+                  Ntanga: [
                     "Akabande",
                     "Akabeza",
                     "Akinteko",
                     "Ikiyovu",
                     "Murambi",
                     "Rugaju",
-                    "Urukoki"
-                  ]
+                    "Urukoki",
+                  ],
                 },
                 {
-                  "Nyamugari": [
+                  Nyamugari: [
                     "Gisenyi",
                     "Gishandaro",
                     "Kimanama",
                     "Nyamabuye",
                     "Rwarutare",
-                    "Ubuhanira"
-                  ]
+                    "Ubuhanira",
+                  ],
                 },
                 {
-                  "Nyange": [
+                  Nyange: [
                     "Agatare",
                     "Gomezo",
                     "Ntarama",
                     "Nunga",
                     "Rugazi",
                     "Rusave",
-                    "Rwamibari"
-                  ]
-                }
-              ]
+                    "Rwamibari",
+                  ],
+                },
+              ],
             },
             {
-              "Murama": [
+              Murama: [
                 {
-                  "Gitaraga": [
+                  Gitaraga: [
                     "Gitaraga",
                     "Kizenga",
                     "Ntara",
                     "Nyagahura",
                     "Nyakabanga",
                     "Rukizi",
-                    "Tonero"
-                  ]
+                    "Tonero",
+                  ],
                 },
                 {
-                  "Kigabiro": [
+                  Kigabiro: [
                     "Cyeru",
                     "Kaboza",
                     "Kigabiro",
                     "Murutare",
                     "Mutara",
-                    "Nyagasozi"
-                  ]
+                    "Nyagasozi",
+                  ],
                 },
                 {
-                  "Mvumba": [
+                  Mvumba: [
                     "Gitesanyi",
                     "Kibimba",
                     "Kiyagara",
                     "Mvumba",
                     "Nyakagezi",
                     "Nyarwanya",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Rurenge": [
+                  Rurenge: [
                     "Gashanda",
                     "Gasibya",
                     "Gatoma",
@@ -3659,11 +3659,11 @@ const rwandaData = {
                     "Muguruka",
                     "Murambi",
                     "Ruvuzi",
-                    "Ruzinga"
-                  ]
+                    "Ruzinga",
+                  ],
                 },
                 {
-                  "Sakara": [
+                  Sakara: [
                     "Agatonde",
                     "Kabahushi",
                     "Kakahi",
@@ -3674,48 +3674,48 @@ const rwandaData = {
                     "Nyamirembe",
                     "Rwabuconco",
                     "Sagatare",
-                    "Urubare"
-                  ]
-                }
-              ]
+                    "Urubare",
+                  ],
+                },
+              ],
             },
             {
-              "Mutenderi": [
-                { "Karwema": ["Cyanamo", "Gitesanyi", "Meraneza", "Musenyi"] },
+              Mutenderi: [
+                { Karwema: ["Cyanamo", "Gitesanyi", "Meraneza", "Musenyi"] },
                 {
-                  "Kibare": [
+                  Kibare: [
                     "Kabombo",
                     "Mutukura",
                     "Ndarage",
                     "Rwakaza",
-                    "Rwankamba"
-                  ]
+                    "Rwankamba",
+                  ],
                 },
                 {
-                  "Mutenderi": [
+                  Mutenderi: [
                     "Agatonde",
                     "Akarimbu",
                     "Cyanyunga",
                     "Kibaya",
-                    "Tonero"
-                  ]
+                    "Tonero",
+                  ],
                 },
                 {
-                  "Muzingira": [
+                  Muzingira: [
                     "Gatonde",
                     "Rusave",
                     "Rwakandari",
                     "Shyagashya",
-                    "Umuyange"
-                  ]
+                    "Umuyange",
+                  ],
                 },
-                { "Nyagasozi": ["Nyagasozi", "Nyamirindi", "Nyamugari"] }
-              ]
+                { Nyagasozi: ["Nyagasozi", "Nyamirindi", "Nyamugari"] },
+              ],
             },
             {
-              "Remera": [
+              Remera: [
                 {
-                  "Bugera": [
+                  Bugera: [
                     "Gasebeya",
                     "Gatare",
                     "Gisunzu",
@@ -3726,31 +3726,31 @@ const rwandaData = {
                     "Munini II",
                     "Nkenke",
                     "Rubumba",
-                    "Rwesero"
-                  ]
+                    "Rwesero",
+                  ],
                 },
                 {
-                  "Kinunga": [
+                  Kinunga: [
                     "Kabeza",
                     "Kamvumba",
                     "Kigaga",
                     "Murambi",
                     "Nyarugenge",
-                    "Urusagara"
-                  ]
+                    "Urusagara",
+                  ],
                 },
                 {
-                  "Ndekwe": [
+                  Ndekwe: [
                     "Gikomero",
                     "Icyakabiri",
                     "Rugando",
                     "Ruhuha",
                     "Rukore",
-                    "Rwamutabazi"
-                  ]
+                    "Rwamutabazi",
+                  ],
                 },
                 {
-                  "Nyamagana": [
+                  Nyamagana: [
                     "Bukiranzuki",
                     "Kabuye",
                     "Kaguruka",
@@ -3760,15 +3760,15 @@ const rwandaData = {
                     "Rubimba",
                     "Ruhama",
                     "Ryinteko",
-                    "Tonero"
-                  ]
-                }
-              ]
+                    "Tonero",
+                  ],
+                },
+              ],
             },
             {
-              "Rukira": [
+              Rukira: [
                 {
-                  "Buliba": [
+                  Buliba: [
                     "Dagaza",
                     "Gatare",
                     "Kabeza",
@@ -3779,11 +3779,11 @@ const rwandaData = {
                     "Rurama",
                     "Rwakimanzi",
                     "Rwavuguta",
-                    "Sangano"
-                  ]
+                    "Sangano",
+                  ],
                 },
                 {
-                  "Kibatsi": [
+                  Kibatsi: [
                     "Agatare",
                     "Bweranka",
                     "Gahushyi",
@@ -3796,11 +3796,11 @@ const rwandaData = {
                     "Rubagabaga",
                     "Rusenyi",
                     "Rwanyineka",
-                    "Terimbere"
-                  ]
+                    "Terimbere",
+                  ],
                 },
                 {
-                  "Nyaruvumu": [
+                  Nyaruvumu: [
                     "Amahoro",
                     "Cyamahehe",
                     "Gafunzo",
@@ -3808,11 +3808,11 @@ const rwandaData = {
                     "Isangano",
                     "Nyagataba",
                     "Rugenge",
-                    "Terimbere"
-                  ]
+                    "Terimbere",
+                  ],
                 },
                 {
-                  "Nyinya": [
+                  Nyinya: [
                     "Cyabayagara",
                     "Kabimba",
                     "Karuruma",
@@ -3822,123 +3822,123 @@ const rwandaData = {
                     "Ruhama",
                     "Rwagakobe",
                     "Rwagishanga",
-                    "Rwamukobwa"
-                  ]
-                }
-              ]
+                    "Rwamukobwa",
+                  ],
+                },
+              ],
             },
             {
-              "Rukumberi": [
-                { "Gituza": ["Gitesanyi", "Gituza", "Mfune", "Ruyenzi"] },
+              Rukumberi: [
+                { Gituza: ["Gitesanyi", "Gituza", "Mfune", "Ruyenzi"] },
                 {
-                  "Ntovi": [
+                  Ntovi: [
                     "Iyantende",
                     "Kigese",
                     "Mugwato",
                     "Ntovi",
                     "Rukumberi",
-                    "Rwamibabi"
-                  ]
+                    "Rwamibabi",
+                  ],
                 },
                 {
-                  "Rubago": [
+                  Rubago: [
                     "Akabungo",
                     "Kavumve",
                     "Nyagakizi",
                     "Nyagitabire",
-                    "Rubago"
-                  ]
+                    "Rubago",
+                  ],
                 },
                 {
-                  "Rubona": [
+                  Rubona: [
                     "Kagarama",
                     "Maswa I",
                     "Maswa II",
                     "Rugenda I",
                     "Rugenda II",
-                    "Ruyenzi I"
-                  ]
+                    "Ruyenzi I",
+                  ],
                 },
                 {
-                  "Rwintashya": [
+                  Rwintashya: [
                     "Bare",
                     "Karokora",
                     "Rwimpongo I",
                     "Rwimpongo II",
-                    "Shyembe"
-                  ]
-                }
-              ]
+                    "Shyembe",
+                  ],
+                },
+              ],
             },
             {
-              "Rurenge": [
+              Rurenge: [
                 {
-                  "Akagarama": [
+                  Akagarama: [
                     "Kuwimana",
                     "Mukibimba",
                     "Rwanyamuhinda",
                     "Umurambi",
                     "Rugazi",
-                    "Uruyenzi"
-                  ]
+                    "Uruyenzi",
+                  ],
                 },
                 {
-                  "Muhurire": [
+                  Muhurire: [
                     "Agatonero",
                     "Gashinya",
                     "Gisunzu",
                     "Gitobe",
-                    "Nyamata"
-                  ]
+                    "Nyamata",
+                  ],
                 },
                 {
-                  "Musya": [
+                  Musya: [
                     "Inteko",
                     "Kabimba",
                     "Kamugundu",
                     "Karama",
                     "Runazi",
-                    "Rwasaburo"
-                  ]
+                    "Rwasaburo",
+                  ],
                 },
                 {
-                  "Rugese": [
+                  Rugese: [
                     "Kajevuba",
                     "Kamwiru",
                     "Kiyanja",
                     "Kumunini",
                     "Nyamigende",
                     "Rugarika",
-                    "Rwakanuma"
-                  ]
+                    "Rwakanuma",
+                  ],
                 },
                 {
-                  "Rujambara": [
+                  Rujambara: [
                     "Akarambaraye",
                     "Kabeza",
                     "Mashyoza",
                     "Mbonwa",
                     "Nyabagaza",
-                    "Urusagara"
-                  ]
+                    "Urusagara",
+                  ],
                 },
                 {
-                  "Rwikubo": [
+                  Rwikubo: [
                     "Akabakanda",
                     "Amashya",
                     "Kabashumba",
                     "Kigarama",
                     "Kivugangoma",
                     "Ruhuha",
-                    "Rwaromba"
-                  ]
-                }
-              ]
+                    "Rwaromba",
+                  ],
+                },
+              ],
             },
             {
-              "Sake": [
+              Sake: [
                 {
-                  "Gafunzo": [
+                  Gafunzo: [
                     "Cyanika",
                     "Gatare",
                     "Icyizanye",
@@ -3949,33 +3949,33 @@ const rwandaData = {
                     "Mabuga II",
                     "Nyakagezi",
                     "Rwanyabiranga",
-                    "Rwumba"
-                  ]
+                    "Rwumba",
+                  ],
                 },
                 {
-                  "Kibonde": [
+                  Kibonde: [
                     "Kabare",
                     "Karenge",
                     "Kidakama",
                     "Murama",
                     "Nkingi",
                     "Nyagasani",
-                    "Umucyo"
-                  ]
+                    "Umucyo",
+                  ],
                 },
                 {
-                  "Nkanga": [
+                  Nkanga: [
                     "Agatare",
                     "Akabira",
                     "Bukokoza",
                     "Gisera",
                     "Iryarurengo",
                     "Kanazi",
-                    "Mizibiri"
-                  ]
+                    "Mizibiri",
+                  ],
                 },
                 {
-                  "Rukoma": [
+                  Rukoma: [
                     "Akagoma",
                     "Irebero",
                     "Isangano",
@@ -3984,15 +3984,15 @@ const rwandaData = {
                     "Nyagasozi",
                     "Nyakariba",
                     "Nyarurembo",
-                    "Umukoni"
-                  ]
-                }
-              ]
+                    "Umukoni",
+                  ],
+                },
+              ],
             },
             {
-              "Zaza": [
+              Zaza: [
                 {
-                  "Nyagasozi": [
+                  Nyagasozi: [
                     "Agatare",
                     "Akabeza",
                     "Akabuga",
@@ -4003,11 +4003,11 @@ const rwandaData = {
                     "Rubati",
                     "Rwanshuro",
                     "Rwimbirwa",
-                    "Sugira"
-                  ]
+                    "Sugira",
+                  ],
                 },
                 {
-                  "Nyagatugunda": [
+                  Nyagatugunda: [
                     "Akanyinya",
                     "Amahoro",
                     "Cyerwa",
@@ -4025,11 +4025,11 @@ const rwandaData = {
                     "Rebero",
                     "Rugarama",
                     "Rushubi",
-                    "Rwezibamba"
-                  ]
+                    "Rwezibamba",
+                  ],
                 },
                 {
-                  "Ruhembe": [
+                  Ruhembe: [
                     "Agasave",
                     "Ituze",
                     "Kabeza",
@@ -4042,11 +4042,11 @@ const rwandaData = {
                     "Nyaruteja",
                     "Rugarama",
                     "Rushubi",
-                    "Urutare"
-                  ]
+                    "Urutare",
+                  ],
                 },
                 {
-                  "Ruhinga": [
+                  Ruhinga: [
                     "Agataba",
                     "Akabungo",
                     "Busasamana",
@@ -4059,38 +4059,38 @@ const rwandaData = {
                     "Sangaza",
                     "Ubumwe",
                     "Umukoma",
-                    "Umuvugangoma"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Umuvugangoma",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Nyagatare": [
+          Nyagatare: [
             {
-              "Gatunda": [
+              Gatunda: [
                 {
-                  "Cyagaju": [
+                  Cyagaju: [
                     "Hanganyundo",
                     "Iramiro",
                     "Isangano",
                     "Kabeza",
-                    "Kibisabo"
-                  ]
+                    "Kibisabo",
+                  ],
                 },
                 {
-                  "Kabeza": [
+                  Kabeza: [
                     "Huriro",
                     "Kabeza",
                     "Muvumba",
                     "Muyenzi",
                     "Nyamirambo",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Nyamikamba": [
+                  Nyamikamba: [
                     "Byimana",
                     "Gikunyu",
                     "Gitega",
@@ -4100,68 +4100,68 @@ const rwandaData = {
                     "Nyamikamba",
                     "Rwebare",
                     "Ryabuvara",
-                    "Ryarukabura"
-                  ]
+                    "Ryarukabura",
+                  ],
                 },
                 {
-                  "Nyamirembe": [
+                  Nyamirembe: [
                     "Byimana",
                     "Huriro",
                     "Kajevuba",
                     "Kirindimure",
-                    "Mabare"
-                  ]
+                    "Mabare",
+                  ],
                 },
                 {
-                  "Nyangara": [
+                  Nyangara: [
                     "Bugarama",
                     "Kabeza",
                     "Mugomero",
                     "Muhambo",
                     "Mutumba",
                     "Rwimbogo",
-                    "Ryanyabugwende"
-                  ]
+                    "Ryanyabugwende",
+                  ],
                 },
                 {
-                  "Nyarurema": [
+                  Nyarurema: [
                     "Bubare",
                     "Buguma",
                     "Butimba",
                     "Kabeza",
                     "Muhabura",
                     "Nyarurema",
-                    "Shabana"
-                  ]
+                    "Shabana",
+                  ],
                 },
                 {
-                  "Rwensheke": ["Kabuye", "Kamate", "Nyiraburunga", "Rwensheke"]
-                }
-              ]
+                  Rwensheke: ["Kabuye", "Kamate", "Nyiraburunga", "Rwensheke"],
+                },
+              ],
             },
             {
-              "Karama": [
+              Karama: [
                 {
-                  "Bushara": [
+                  Bushara: [
                     "Bushara Centre",
                     "Ihuriro",
                     "Isangano",
                     "Kadendegeri",
                     "Meshero",
                     "Rurembo",
-                    "Uruyenzi"
-                  ]
+                    "Uruyenzi",
+                  ],
                 },
                 {
-                  "Cyenkwanzi": [
+                  Cyenkwanzi: [
                     "Cyenkwanzi Centre",
                     "Kabeza",
                     "Kiyovu",
-                    "Rurembo"
-                  ]
+                    "Rurembo",
+                  ],
                 },
                 {
-                  "Gikagati": [
+                  Gikagati: [
                     "Bigega",
                     "Gataba",
                     "Gikagati Centre",
@@ -4170,11 +4170,11 @@ const rwandaData = {
                     "Nyabitare",
                     "Nyakibande",
                     "Rurembo",
-                    "Rutegamatwi"
-                  ]
+                    "Rutegamatwi",
+                  ],
                 },
                 {
-                  "Gikundamvura": [
+                  Gikundamvura: [
                     "Fene",
                     "Gikundamvura I",
                     "Gikundamvura II",
@@ -4186,11 +4186,11 @@ const rwandaData = {
                     "Nyabitare",
                     "Nyagasharara",
                     "Umutara",
-                    "Urugwiro"
-                  ]
+                    "Urugwiro",
+                  ],
                 },
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Gakukuru",
                     "Kabeza",
                     "Kabuga",
@@ -4199,11 +4199,11 @@ const rwandaData = {
                     "Nyamirama",
                     "Rukamba",
                     "Rwebishirira",
-                    "Rwubuzizi"
-                  ]
+                    "Rwubuzizi",
+                  ],
                 },
                 {
-                  "Ndego": [
+                  Ndego: [
                     "Gakirage",
                     "Kababanda",
                     "Kanyami",
@@ -4214,170 +4214,170 @@ const rwandaData = {
                     "Ndego",
                     "Rubanda",
                     "Rusoroza",
-                    "Rutoma"
-                  ]
+                    "Rutoma",
+                  ],
                 },
                 {
-                  "Nyakiga": [
+                  Nyakiga: [
                     "Humure",
                     "Kabeza",
                     "Kanunga",
                     "Karama Centre",
                     "Kavumu",
                     "Kentarama",
-                    "Mabare"
-                  ]
-                }
-              ]
+                    "Mabare",
+                  ],
+                },
+              ],
             },
             {
-              "Karangazi": [
+              Karangazi: [
                 {
-                  "Kamate": [
+                  Kamate: [
                     "Bugarama",
                     "Buhongoro",
                     "Kamate",
                     "Kigazi",
-                    "Muzehe"
-                  ]
+                    "Muzehe",
+                  ],
                 },
-                { "Karama": ["Karama", "Makomo", "Rundiro"] },
-                { "Kizirakome": ["Kageyo", "Kahi", "Kizirakome", "Rurebe"] },
+                { Karama: ["Karama", "Makomo", "Rundiro"] },
+                { Kizirakome: ["Kageyo", "Kahi", "Kizirakome", "Rurebe"] },
                 {
-                  "Mbare": [
+                  Mbare: [
                     "Kabirizi",
                     "Kajumo",
                     "Karohoza",
                     "Mbare",
                     "Rwarucura",
-                    "Ryabega"
-                  ]
+                    "Ryabega",
+                  ],
                 },
                 {
-                  "Musenyi": [
+                  Musenyi: [
                     "Bwanga",
                     "Gacungiro",
                     "Kabeza",
                     "Musenyi I",
                     "Musenyi II",
                     "Rugarama",
-                    "Ruziranyenzi"
-                  ]
+                    "Ruziranyenzi",
+                  ],
                 },
-                { "Ndama": ["Akayange", "Ndama", "Rwabiharamba"] },
-                { "Nyagashanga": ["Bidudu", "Bwera", "Kabare", "Ruhita"] },
+                { Ndama: ["Akayange", "Ndama", "Rwabiharamba"] },
+                { Nyagashanga: ["Bidudu", "Bwera", "Kabare", "Ruhita"] },
                 {
-                  "Nyamirama": [
+                  Nyamirama: [
                     "Kayange I",
                     "Kayange II",
                     "Nkoma I",
                     "Nkoma II",
                     "Nyamirama I",
-                    "Nyamirama II"
-                  ]
+                    "Nyamirama II",
+                  ],
                 },
-                { "Rubagabaga": ["Iraba", "Nkuna", "Nyarutovu", "Rebero"] },
+                { Rubagabaga: ["Iraba", "Nkuna", "Nyarutovu", "Rebero"] },
                 {
-                  "Rwenyemera": [
+                  Rwenyemera: [
                     "Bwera",
                     "Imishongi",
                     "Kayishunika",
                     "Kizirakome",
                     "Rwenyana",
                     "Rwenyemera",
-                    "Rwimirama"
-                  ]
+                    "Rwimirama",
+                  ],
                 },
                 {
-                  "Rwisirabo": [
+                  Rwisirabo: [
                     "Gakoma",
                     "Humure",
                     "Karangazi",
                     "Rubona",
-                    "Rukundo"
-                  ]
-                }
-              ]
+                    "Rukundo",
+                  ],
+                },
+              ],
             },
             {
-              "Katabagemu": [
+              Katabagemu: [
                 {
-                  "Bayigaburire": [
+                  Bayigaburire: [
                     "Agasasa",
                     "Bingaro",
                     "Byimana",
                     "Gikandura",
                     "Igikorosi",
                     "Kibuye",
-                    "Nyagahandagaza"
-                  ]
+                    "Nyagahandagaza",
+                  ],
                 },
                 {
-                  "Kaduha": [
+                  Kaduha: [
                     "Kaduha I",
                     "Kaduha II",
                     "Kanyinya",
                     "Nyabiyonza",
-                    "Urumuri"
-                  ]
+                    "Urumuri",
+                  ],
                 },
                 {
-                  "Kanyeganyege": ["Kabaya", "Kabeza", "Kanyeganyege", "Rebero"]
+                  Kanyeganyege: ["Kabaya", "Kabeza", "Kanyeganyege", "Rebero"],
                 },
                 {
-                  "Katabagemu": [
+                  Katabagemu: [
                     "Gashenyi",
                     "Kagogo",
                     "Kajevuba",
                     "Kigarama",
                     "Nyabwunyu",
-                    "Umunanira"
-                  ]
+                    "Umunanira",
+                  ],
                 },
                 {
-                  "Kigarama": [
+                  Kigarama: [
                     "Kanguka",
                     "Kibuye",
                     "Kigarama",
                     "Rebero",
-                    "Shirimpumu"
-                  ]
+                    "Shirimpumu",
+                  ],
                 },
                 {
-                  "Nyakigando": [
+                  Nyakigando: [
                     "Byimana",
                     "Kabeza",
                     "Kamutara",
                     "Ntoma",
                     "Nyakigando I",
                     "Nyakigando II",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
-                { "Rubira": ["Igitego", "Isangano", "Kanyesunzu", "Rubira"] },
+                { Rubira: ["Igitego", "Isangano", "Kanyesunzu", "Rubira"] },
                 {
-                  "Rugazi": [
+                  Rugazi: [
                     "Akabira",
                     "Burera",
                     "Ishyirahamwe",
-                    "Rwagisangangabo"
-                  ]
+                    "Rwagisangangabo",
+                  ],
                 },
                 {
-                  "Rutoma": [
+                  Rutoma: [
                     "Buyugi",
                     "Kabeza",
                     "Mahoro",
                     "Rutoma",
-                    "Ryaruganzu"
-                  ]
-                }
-              ]
+                    "Ryaruganzu",
+                  ],
+                },
+              ],
             },
             {
-              "Kiyombe": [
+              Kiyombe: [
                 {
-                  "Gataba": [
+                  Gataba: [
                     "Cyemiyaga",
                     "Gahama",
                     "Gicuba",
@@ -4389,11 +4389,11 @@ const rwandaData = {
                     "Rutete",
                     "Rwabashanja",
                     "Rwakikunengwa",
-                    "Rwebare"
-                  ]
+                    "Rwebare",
+                  ],
                 },
                 {
-                  "Gitenga": [
+                  Gitenga: [
                     "Gitenga",
                     "Izinga",
                     "Kabingo",
@@ -4401,11 +4401,11 @@ const rwandaData = {
                     "Muhambo",
                     "Mukasha",
                     "Nyabubare",
-                    "Rwagakuba"
-                  ]
+                    "Rwagakuba",
+                  ],
                 },
                 {
-                  "Kabungo": [
+                  Kabungo: [
                     "Bitare",
                     "Cyondo",
                     "Gatoki",
@@ -4417,11 +4417,11 @@ const rwandaData = {
                     "Nyakabungo",
                     "Rugarama",
                     "Rwamiko",
-                    "Rwamushe"
-                  ]
+                    "Rwamushe",
+                  ],
                 },
                 {
-                  "Karambo": [
+                  Karambo: [
                     "Bureka",
                     "Butehe",
                     "Kakagaju",
@@ -4433,11 +4433,11 @@ const rwandaData = {
                     "Rugarama",
                     "Rwakashande",
                     "Rwemisavu",
-                    "Rwengugwe"
-                  ]
+                    "Rwengugwe",
+                  ],
                 },
                 {
-                  "Karujumba": [
+                  Karujumba: [
                     "Gishoro",
                     "Kabare",
                     "Kagorogoro",
@@ -4450,11 +4450,11 @@ const rwandaData = {
                     "Ngangare",
                     "Nyabwongoroka",
                     "Nyange",
-                    "Rukongoro"
-                  ]
+                    "Rukongoro",
+                  ],
                 },
                 {
-                  "Tovu": [
+                  Tovu: [
                     "Cyerero",
                     "Gashuro",
                     "Gasyata",
@@ -4464,26 +4464,26 @@ const rwandaData = {
                     "Nyamirima",
                     "Nyaruziba",
                     "Rugarama",
-                    "Rutungo"
-                  ]
-                }
-              ]
+                    "Rutungo",
+                  ],
+                },
+              ],
             },
             {
-              "Matimba": [
-                { "Bwera": ["Bwera", "Ntoma", "Rugaga"] },
+              Matimba: [
+                { Bwera: ["Bwera", "Ntoma", "Rugaga"] },
                 {
-                  "Byimana": [
+                  Byimana: [
                     "Byimana I",
                     "Byimana II",
                     "Byimana III",
                     "Kabuga I",
-                    "Kabuga II"
-                  ]
+                    "Kabuga II",
+                  ],
                 },
-                { "Cyembogo": ["Byimana", "Kabeza", "Kamahoro", "Kiyovu"] },
+                { Cyembogo: ["Byimana", "Kabeza", "Kamahoro", "Kiyovu"] },
                 {
-                  "Kagitumba": [
+                  Kagitumba: [
                     "Gishara",
                     "Kagera",
                     "Kagitumba",
@@ -4491,51 +4491,51 @@ const rwandaData = {
                     "Munini",
                     "Musenyi",
                     "Muvumba",
-                    "Nziranziza"
-                  ]
+                    "Nziranziza",
+                  ],
                 },
                 {
-                  "Kanyonza": [
+                  Kanyonza: [
                     "Gakoma",
                     "Musebeya",
                     "Musha",
                     "Nyampeke",
-                    "Rukundo"
-                  ]
+                    "Rukundo",
+                  ],
                 },
                 {
-                  "Matimba": [
+                  Matimba: [
                     "Umudugudu Wa I",
                     "Umudugudu Wa II",
                     "Umudugudu Wa III",
                     "Umudugudu Wa IV",
                     "Umudugudu Wa V",
                     "Umudugudu Wa VI",
-                    "Umudugudu Wa VII"
-                  ]
+                    "Umudugudu Wa VII",
+                  ],
                 },
                 {
-                  "Nyabwishongwezi": [
+                  Nyabwishongwezi: [
                     "Nyabwishongwezi I",
                     "Nyabwishongwezi II",
-                    "Nyabwishongwezi III"
-                  ]
+                    "Nyabwishongwezi III",
+                  ],
                 },
                 {
-                  "Rwentanga": [
+                  Rwentanga: [
                     "Kagezi I",
                     "Kagezi II",
                     "Mitayayo I",
                     "Mitayayo II",
-                    "Rwentanga"
-                  ]
-                }
-              ]
+                    "Rwentanga",
+                  ],
+                },
+              ],
             },
             {
-              "Mimuri": [
+              Mimuri: [
                 {
-                  "Bibare": [
+                  Bibare: [
                     "Bibare",
                     "Karukwanzi",
                     "Nyakagenge",
@@ -4543,22 +4543,22 @@ const rwandaData = {
                     "Nyaruziba",
                     "Rwimirama",
                     "Urugano",
-                    "Urutambi"
-                  ]
+                    "Urutambi",
+                  ],
                 },
                 {
-                  "Gakoma": [
+                  Gakoma: [
                     "Gakoma",
                     "Gisenyi",
                     "Kanyinya",
                     "Kumusaraba",
                     "Nyagahandagaza",
                     "Nyarwina",
-                    "Rusororo"
-                  ]
+                    "Rusororo",
+                  ],
                 },
                 {
-                  "Mahoro": [
+                  Mahoro: [
                     "Cyabwana",
                     "Gitwe",
                     "Iterambere",
@@ -4568,54 +4568,54 @@ const rwandaData = {
                     "Nyagahita",
                     "Rebero",
                     "Rubumba",
-                    "Shenga"
-                  ]
+                    "Shenga",
+                  ],
                 },
                 {
-                  "Mimuri": [
+                  Mimuri: [
                     "Byimana",
                     "Indahemuka",
                     "Isangano",
                     "Karukwanzi",
                     "Rebero",
-                    "Rwimirama"
-                  ]
+                    "Rwimirama",
+                  ],
                 },
                 {
-                  "Rugari": [
+                  Rugari: [
                     "Amahoro",
                     "Isangano",
                     "Nteko",
                     "Rebero",
                     "Ubumwe",
-                    "Urumuri"
-                  ]
-                }
-              ]
+                    "Urumuri",
+                  ],
+                },
+              ],
             },
             {
-              "Mukama": [
+              Mukama: [
                 {
-                  "Bufunda": [
+                  Bufunda: [
                     "Bitabo",
                     "Bufunda",
                     "Kibihanga",
                     "Nyakajeje",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Gatete": [
+                  Gatete: [
                     "Gatete I",
                     "Gatete II",
                     "Hunga",
                     "Kazinga",
                     "Rutete",
-                    "Ryandahuka"
-                  ]
+                    "Ryandahuka",
+                  ],
                 },
                 {
-                  "Gihengeri": [
+                  Gihengeri: [
                     "Butare",
                     "Butwaro",
                     "Gashahi",
@@ -4624,137 +4624,139 @@ const rwandaData = {
                     "Kabongoya I",
                     "Kabongoya II",
                     "Kigarama",
-                    "Nyarubuye"
-                  ]
+                    "Nyarubuye",
+                  ],
                 },
                 {
-                  "Gishororo": [
+                  Gishororo: [
                     "Akinyambo",
                     "Byumba",
                     "Kabeza",
                     "Kabukunzi",
-                    "Kisaro"
-                  ]
+                    "Kisaro",
+                  ],
                 },
                 {
-                  "Kagina": [
+                  Kagina: [
                     "Cyabahurura",
                     "Kagonga",
                     "Kireranyana",
                     "Ngoma",
                     "Nyagatare",
                     "Nyakagarama",
-                    "Nyakarama"
-                  ]
+                    "Nyakarama",
+                  ],
                 },
                 {
-                  "Rugarama": [
+                  Rugarama: [
                     "Bukire",
                     "Byimana",
                     "Kibondo",
                     "Kireranyana",
                     "Nyacyonga",
                     "Nyakagarama",
-                    "Sipure"
-                  ]
-                }
-              ]
+                    "Sipure",
+                  ],
+                },
+              ],
             },
             {
-              "Musheri": [
+              Musheri: [
                 {
-                  "Kibirizi": ["Kabungo", "Kibirizi", "Nyamenge", "Nyamisange"]
+                  Kibirizi: ["Kabungo", "Kibirizi", "Nyamenge", "Nyamisange"],
                 },
-                { "Kijojo": ["Kagwegwe", "Kanyinya", "Kijojo", "Rwakabungo"] },
-                { "Musheri": ["Gakiri", "Kiyaza", "Mugari", "Musheri"] },
+                { Kijojo: ["Kagwegwe", "Kanyinya", "Kijojo", "Rwakabungo"] },
+                { Musheri: ["Gakiri", "Kiyaza", "Mugari", "Musheri"] },
                 {
-                  "Ntoma": [
+                  Ntoma: [
                     "Bikonoka",
                     "Murisanga",
                     "Ntoma",
                     "Rukundo",
-                    "Rutarama"
-                  ]
+                    "Rutarama",
+                  ],
                 },
                 {
-                  "Nyagatabire": [
+                  Nyagatabire: [
                     "Gikunyu",
                     "Mushorerwa",
                     "Nyagatabire",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Nyamiyonga": [
+                  Nyamiyonga: [
                     "Cyenombe",
                     "Isangano",
                     "Nyamiyonga",
-                    "Shirimpumu"
-                  ]
+                    "Shirimpumu",
+                  ],
                 },
                 { "Rugarama I": ["Humure", "Karambi", "Karuca", "Nyabyihura"] },
-                { "Rugarama II": ["Kibitaka", "Rebero", "Rwenyana", "Umunini"] }
-              ]
+                {
+                  "Rugarama II": ["Kibitaka", "Rebero", "Rwenyana", "Umunini"],
+                },
+              ],
             },
             {
-              "Nyagatare": [
-                { "Barija": ["Barija A", "Barija B", "Burumba", "Kinihira"] },
+              Nyagatare: [
+                { Barija: ["Barija A", "Barija B", "Burumba", "Kinihira"] },
                 {
-                  "Bushoga": [
+                  Bushoga: [
                     "Bushoga",
                     "Cyabahanga",
                     "Cyonyo",
                     "Ruhuha I",
                     "Ruhuha II",
-                    "Ryinkuyu"
-                  ]
+                    "Ryinkuyu",
+                  ],
                 },
                 {
-                  "Cyabayaga": [
+                  Cyabayaga: [
                     "Akamonyi",
                     "Bihinga",
                     "Cyabayaga",
                     "Nyakabuye",
-                    "Urugero"
-                  ]
+                    "Urugero",
+                  ],
                 },
                 {
-                  "Gakirage": [
+                  Gakirage: [
                     "Gakirage",
                     "Kiboga I",
                     "Kiboga II",
                     "Mihingo",
                     "Nkongi",
-                    "Urumuri"
-                  ]
+                    "Urumuri",
+                  ],
                 },
-                { "Kamagiri": ["Kamagiri", "Karungi", "Nkerenke"] },
-                { "Nsheke": ["Kabare", "Nsheke", "Nyegeza"] },
+                { Kamagiri: ["Kamagiri", "Karungi", "Nkerenke"] },
+                { Nsheke: ["Kabare", "Nsheke", "Nyegeza"] },
                 {
-                  "Nyagatare": [
+                  Nyagatare: [
                     "Mirama I",
                     "Mirama II",
                     "Nyagatare I",
                     "Nyagatare II",
-                    "Nyagatare III"
-                  ]
+                    "Nyagatare III",
+                  ],
                 },
                 {
-                  "Rutaraka": [
+                  Rutaraka: [
                     "Gihorobwa",
                     "Mugari",
                     "Nkonji",
                     "Rutaraka",
-                    "Ryabega"
-                  ]
+                    "Ryabega",
+                  ],
                 },
-                { "Ryabega": ["Marongero", "Rugendo", "Ryabega"] }
-              ]
+                { Ryabega: ["Marongero", "Rugendo", "Ryabega"] },
+              ],
             },
             {
-              "Rukomo": [
+              Rukomo: [
                 {
-                  "Gahurura": [
+                  Gahurura: [
                     "Amahoro",
                     "Busasamana",
                     "Isangano",
@@ -4764,11 +4766,11 @@ const rwandaData = {
                     "Ubumwe",
                     "Urugwiro",
                     "Urukundo",
-                    "Urumuri"
-                  ]
+                    "Urumuri",
+                  ],
                 },
                 {
-                  "Gashenyi": [
+                  Gashenyi: [
                     "Agasasa",
                     "Bukamba",
                     "Gashenyi",
@@ -4780,11 +4782,11 @@ const rwandaData = {
                     "Nyamirambo",
                     "Rebero",
                     "Rukomo",
-                    "Rurembo"
-                  ]
+                    "Rurembo",
+                  ],
                 },
                 {
-                  "Nyakagarama": [
+                  Nyakagarama: [
                     "Akamashama",
                     "Akamasheka",
                     "Amahoro",
@@ -4796,8 +4798,8 @@ const rwandaData = {
                     "Kayenzi",
                     "Musenyi",
                     "Nyakagarama",
-                    "Nyamworoma"
-                  ]
+                    "Nyamworoma",
+                  ],
                 },
                 {
                   "Rukomo II": [
@@ -4810,11 +4812,11 @@ const rwandaData = {
                     "Nyarubuye",
                     "Nyarurama",
                     "Rebero",
-                    "Rugabano"
-                  ]
+                    "Rugabano",
+                  ],
                 },
                 {
-                  "Rurenge": [
+                  Rurenge: [
                     "Akajuka",
                     "Benishyaka",
                     "Biryogo",
@@ -4824,116 +4826,116 @@ const rwandaData = {
                     "Nyamirambo",
                     "Rurenge",
                     "Rushashi",
-                    "Rwiju"
-                  ]
-                }
-              ]
-            },
-            {
-              "Rwempasha": [
-                { "Cyenjonjo": ["Cyenjonjo I", "Cyenjonjo II", "Rutare II"] },
-                { "Gasinga": ["Gasinga", "Nyendo", "Rwibishorogoto"] },
-                { "Kabare": ["Gituro", "Kabare", "Ururimbi"] },
-                { "Kazaza": ["Gakindo", "Kazaza", "Rukiri"] },
-                { "Mishenyi": ["Gicwamba", "Kinungu", "Mishenyi"] },
-                { "Rugarama": ["Bubare", "Rugarama"] },
-                { "Rukorota": ["Bukonji", "Rukorota"] },
-                { "Rutare": ["Mashaka", "Nshuli", "Rutare"] },
-                {
-                  "Rwempasha": ["Nyarubare", "Rwahi", "Rwempasha", "Uwinkiko"]
+                    "Rwiju",
+                  ],
                 },
-                { "Ryeru": ["Bweya", "Ryeru"] }
-              ]
+              ],
             },
             {
-              "Rwimiyaga": [
+              Rwempasha: [
+                { Cyenjonjo: ["Cyenjonjo I", "Cyenjonjo II", "Rutare II"] },
+                { Gasinga: ["Gasinga", "Nyendo", "Rwibishorogoto"] },
+                { Kabare: ["Gituro", "Kabare", "Ururimbi"] },
+                { Kazaza: ["Gakindo", "Kazaza", "Rukiri"] },
+                { Mishenyi: ["Gicwamba", "Kinungu", "Mishenyi"] },
+                { Rugarama: ["Bubare", "Rugarama"] },
+                { Rukorota: ["Bukonji", "Rukorota"] },
+                { Rutare: ["Mashaka", "Nshuli", "Rutare"] },
                 {
-                  "Gacundezi": [
+                  Rwempasha: ["Nyarubare", "Rwahi", "Rwempasha", "Uwinkiko"],
+                },
+                { Ryeru: ["Bweya", "Ryeru"] },
+              ],
+            },
+            {
+              Rwimiyaga: [
+                {
+                  Gacundezi: [
                     "Bugaragara",
                     "Gacundezi I",
                     "Gacundezi II",
                     "Rukundo I",
                     "Rukundo II",
-                    "Rukundo III"
-                  ]
+                    "Rukundo III",
+                  ],
                 },
                 {
-                  "Kabeza": [
+                  Kabeza: [
                     "Gatovu",
                     "Kabeza",
                     "Kabeza Centre",
                     "Kavumu",
                     "Rugarama",
                     "Rukiri I",
-                    "Rukiri II"
-                  ]
+                    "Rukiri II",
+                  ],
                 },
-                { "Kirebe": ["Gatebe I", "Gatebe II", "Kirebe", "Rukindo"] },
+                { Kirebe: ["Gatebe I", "Gatebe II", "Kirebe", "Rukindo"] },
                 {
-                  "Ntoma": [
+                  Ntoma: [
                     "Gashwenu",
                     "Kibuye",
                     "Kimaramu",
                     "Nyampire",
-                    "Rwembogo"
-                  ]
+                    "Rwembogo",
+                  ],
                 },
                 {
-                  "Nyarupfubire": [
+                  Nyarupfubire: [
                     "Kamagiri",
                     "Nyakagando I",
                     "Nyakagando II",
                     "Nyarupfubire I",
                     "Nyarupfubire II",
                     "Rwimiyaga I",
-                    "Rwimiyaga II"
-                  ]
+                    "Rwimiyaga II",
+                  ],
                 },
-                { "Nyendo": ["Isangano", "Nyamirama", "Rebero", "Remera"] },
+                { Nyendo: ["Isangano", "Nyamirama", "Rebero", "Remera"] },
                 {
-                  "Rutungu": [
+                  Rutungu: [
                     "Bwera",
                     "Cyamunyana",
                     "Gakagati I",
                     "Gakagati II",
-                    "Rubira"
-                  ]
+                    "Rubira",
+                  ],
                 },
                 {
-                  "Rwimiyaga": [
+                  Rwimiyaga: [
                     "Byimana",
                     "Gakoma",
                     "Kizungu",
                     "Mahoro",
                     "Muyange",
                     "Rebero",
-                    "Rwinyange"
-                  ]
-                }
-              ]
+                    "Rwinyange",
+                  ],
+                },
+              ],
             },
             {
-              "Tabagwe": [
+              Tabagwe: [
                 {
-                  "Gishuro": [
+                  Gishuro: [
                     "Gatoma",
                     "Kaborogota",
                     "Kayanja",
                     "Nyagatare",
-                    "Nyasine"
-                  ]
+                    "Nyasine",
+                  ],
                 },
                 {
-                  "Gitengure": [
+                  Gitengure: [
                     "Bitibyoma",
                     "Gitengure",
                     "Kayigiro",
                     "Nshuri",
-                    "Nyagasigati"
-                  ]
+                    "Nyagasigati",
+                  ],
                 },
                 {
-                  "Nkoma": [
+                  Nkoma: [
                     "Agafaru",
                     "Ibare",
                     "Kabeza",
@@ -4942,154 +4944,154 @@ const rwandaData = {
                     "Mutozo",
                     "Nkoma",
                     "Rugabano",
-                    "Runyinya"
-                  ]
+                    "Runyinya",
+                  ],
                 },
                 {
-                  "Nyabitekeri": [
+                  Nyabitekeri: [
                     "Kabeza",
                     "Kabirizi",
                     "Kamate",
                     "Kangoma",
                     "Kiyovu",
-                    "Munini"
-                  ]
+                    "Munini",
+                  ],
                 },
                 {
-                  "Nyagatoma": [
+                  Nyagatoma: [
                     "Agafaro",
                     "Agasongero",
                     "Akajevuba",
                     "Kabusunzu",
                     "Mutungisa",
-                    "Runyeri"
-                  ]
+                    "Runyeri",
+                  ],
                 },
                 {
-                  "Shonga": [
+                  Shonga: [
                     "Gikoba",
                     "Nyakanoni",
                     "Nyakigando",
                     "Rwubuzizi",
-                    "Shonga"
-                  ]
+                    "Shonga",
+                  ],
                 },
                 {
-                  "Tabagwe": [
+                  Tabagwe: [
                     "Gakamba",
                     "Gasheshe",
                     "Kagarama",
                     "Nyenyeri",
-                    "Tabagwe"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Tabagwe",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Rwamagana": [
+          Rwamagana: [
             {
-              "Fumbwe": [
+              Fumbwe: [
                 {
-                  "Mununu": [
+                  Mununu: [
                     "Cyingara",
                     "Janjagiro",
                     "Kabeza",
                     "Kabuga",
                     "Ndinda",
-                    "Nyirabiteri"
-                  ]
+                    "Nyirabiteri",
+                  ],
                 },
                 {
-                  "Nyagasambu": [
+                  Nyagasambu: [
                     "Mataba",
                     "Rambura",
                     "Rebero",
                     "Rugarama",
-                    "Rugenge"
-                  ]
+                    "Rugenge",
+                  ],
                 },
-                { "Nyakagunga": ["Akabeza", "Kibaza", "Kirehe", "Rugarama"] },
+                { Nyakagunga: ["Akabeza", "Kibaza", "Kirehe", "Rugarama"] },
                 {
-                  "Nyamirama": [
+                  Nyamirama: [
                     "Agatare",
                     "Akagarama",
                     "Bigarama",
                     "Cyarutabana",
                     "Makwandi",
                     "Ntungamo",
-                    "Shenga"
-                  ]
+                    "Shenga",
+                  ],
                 },
                 {
-                  "Nyarubuye": [
+                  Nyarubuye: [
                     "Gihima",
                     "Gitwe",
                     "Kabirizi",
                     "Kivugiza",
                     "Murambi",
-                    "Rurembo"
-                  ]
+                    "Rurembo",
+                  ],
                 },
                 {
-                  "Sasabirago": [
+                  Sasabirago: [
                     "Birembo",
                     "Byimana",
                     "Irukwaya",
                     "Karambo",
-                    "Munini"
-                  ]
-                }
-              ]
+                    "Munini",
+                  ],
+                },
+              ],
             },
             {
-              "Gahengeri": [
+              Gahengeri: [
                 {
-                  "Gihumuza": [
+                  Gihumuza: [
                     "Cyanga",
                     "Gatare",
                     "Kabeza",
                     "Kajevuba",
                     "Nyirabujari",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
-                { "Kagezi": ["Akabuga", "Kabonero", "Rwarugaju", "Samatare"] },
-                { "Kanyangese": ["Agakari", "Gatenderi", "Ruhita", "Umunini"] },
+                { Kagezi: ["Akabuga", "Kabonero", "Rwarugaju", "Samatare"] },
+                { Kanyangese: ["Agakari", "Gatenderi", "Ruhita", "Umunini"] },
                 {
-                  "Kibare": [
+                  Kibare: [
                     "Iramiro",
                     "Kabuye",
                     "Kanserege",
                     "Karutimbo",
                     "Kinyovi",
-                    "Rurambi"
-                  ]
+                    "Rurambi",
+                  ],
                 },
                 {
-                  "Mutamwa": [
+                  Mutamwa: [
                     "Agasharu",
                     "Kamugasa",
                     "Nyabagaza",
                     "Nyirarwirungu",
                     "Rubonobono",
                     "Rugagi",
-                    "Ryasenteteri"
-                  ]
+                    "Ryasenteteri",
+                  ],
                 },
                 {
-                  "Rugarama": [
+                  Rugarama: [
                     "Amatafari",
                     "Byimana",
                     "Mataba",
                     "Nyakiri",
                     "Nyarucyamo",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Runyinya": [
+                  Runyinya: [
                     "Akamasasa",
                     "Cyeru",
                     "Gacunshu",
@@ -5097,116 +5099,111 @@ const rwandaData = {
                     "Karambo",
                     "Kiyovu",
                     "Ruyumba",
-                    "Ryamuzuka"
-                  ]
+                    "Ryamuzuka",
+                  ],
                 },
                 {
-                  "Rweri": [
+                  Rweri: [
                     "Kabigondo",
                     "Kamurindi",
                     "Akinteko",
                     "Kiruruma",
                     "Mataba",
-                    "Nyamugari"
-                  ]
-                }
-              ]
+                    "Nyamugari",
+                  ],
+                },
+              ],
             },
             {
-              "Gishali": [
-                { "Binunga": ["Busharu", "Nyakivomo", "Rurindimura"] },
+              Gishali: [
+                { Binunga: ["Busharu", "Nyakivomo", "Rurindimura"] },
                 {
-                  "Bwinsanga": [
-                    "Akanogo",
-                    "Mugusha",
-                    "Nyakabungo",
-                    "Shaburondo"
-                  ]
+                  Bwinsanga: ["Akanogo", "Mugusha", "Nyakabungo", "Shaburondo"],
                 },
-                { "Cyinyana": ["Nyagacyamo", "Nyakagarama", "Ururembo"] },
-                { "Gati": ["Agatare", "Nyamabuye", "Umunanira", "Uruhuha"] },
-                { "Kavumu": ["Akabuga", "Ingeyo", "Kibonde", "Uruyenzi"] },
+                { Cyinyana: ["Nyagacyamo", "Nyakagarama", "Ururembo"] },
+                { Gati: ["Agatare", "Nyamabuye", "Umunanira", "Uruhuha"] },
+                { Kavumu: ["Akabuga", "Ingeyo", "Kibonde", "Uruyenzi"] },
                 {
-                  "Ruhimbi": [
+                  Ruhimbi: [
                     "Abakina",
                     "Byimana",
                     "Cyiri",
                     "Rwagahaya",
-                    "Umunini"
-                  ]
+                    "Umunini",
+                  ],
                 },
-                { "Ruhunda": ["Mpungwe", "Nyagahinga", "Nyagakombe"] }
-              ]
+                { Ruhunda: ["Mpungwe", "Nyagahinga", "Nyagakombe"] },
+              ],
             },
             {
-              "Karenge": [
+              Karenge: [
                 {
-                  "Bicaca": [
+                  Bicaca: [
                     "Bicaca",
                     "Cyanyirampazi",
                     "Cyarugaju",
                     "Kabeza",
                     "Kajevuba",
                     "Karuyenzi",
-                    "Runzenze"
-                  ]
+                    "Runzenze",
+                  ],
                 },
-                { "Byimana": ["Byimana", "Karambo", "Kiyaya", "Rukori"] },
+                { Byimana: ["Byimana", "Karambo", "Kiyaya", "Rukori"] },
                 {
-                  "Kabasore": [
+                  Kabasore: [
                     "Ipide",
                     "Kabasore",
                     "Migamba",
                     "Nyagatovu",
-                    "Ruvomo"
-                  ]
+                    "Ruvomo",
+                  ],
                 },
                 {
-                  "Kangamba": [
+                  Kangamba: [
                     "Byimana",
                     "Kagese",
                     "Kangamba",
                     "Kimarambasa",
-                    "Nkongi"
-                  ]
+                    "Nkongi",
+                  ],
                 },
-                { "Karenge": ["Bwiza", "Karenge", "Ntebe", "Rebero"] },
+                { Karenge: ["Bwiza", "Karenge", "Ntebe", "Rebero"] },
                 {
-                  "Nyabubare": [
+                  Nyabubare: [
                     "Feri",
                     "Kanyangese",
                     "Nyabubare",
                     "Rwinka",
-                    "Ryamugabo"
-                  ]
+                    "Ryamugabo",
+                  ],
                 },
                 {
-                  "Nyamatete": [
+                  Nyamatete: [
                     "Cyerwa",
                     "Mutabo",
                     "Ndengo",
                     "Nyagasenyi",
                     "Nyakabuye",
-                    "Nyamatete"
-                  ]
-                }
-              ]
+                    "Nyamatete",
+                  ],
+                },
+              ],
             },
             {
-              "Kigabiro": [
+              Kigabiro: [
                 {
-                  "Bwiza": [
+                  Bwiza: [
                     "Gitega",
                     "Kagererao",
                     "Munini",
                     "Nyakabande",
                     "Rutaka",
                     "Rutonde",
-                    "Rweza"
-                  ]
+                    "Rweza",
+                  ],
                 },
                 {
-                  "Cyanya": [
+                  Cyanya: [
                     "Bigabiro",
                     "Biraro",
                     "Busanza",
@@ -5216,11 +5213,11 @@ const rwandaData = {
                     "Kamata",
                     "Karuhayi",
                     "Karutimbo",
-                    "Rurembo"
-                  ]
+                    "Rurembo",
+                  ],
                 },
                 {
-                  "Nyagasenyi": [
+                  Nyagasenyi: [
                     "Gahonogo",
                     "Kavura",
                     "Kayenzi",
@@ -5228,54 +5225,54 @@ const rwandaData = {
                     "Kirehe",
                     "Ramba",
                     "Rusave",
-                    "Umuganura"
-                  ]
+                    "Umuganura",
+                  ],
                 },
                 {
-                  "Sibagire": [
+                  Sibagire: [
                     "Bacyoro",
                     "Bugugu",
                     "Cyimpima",
                     "Gasharu",
                     "Kabuga",
                     "Kamanga",
-                    "Miyange"
-                  ]
+                    "Miyange",
+                  ],
                 },
                 {
-                  "Sovu": [
+                  Sovu: [
                     "Cyaruhogo",
                     "Gatare",
                     "Kiruhura",
                     "Nyabishunzi",
                     "Rugobagoba",
-                    "Rushangara"
-                  ]
-                }
-              ]
+                    "Rushangara",
+                  ],
+                },
+              ],
             },
             {
-              "Muhazi": [
-                { "Byeza": ["Gatobotobo", "Kabeza", "Nyarukombe"] },
-                { "Kabare": ["Birembo", "Ubwiza", "Umunini", "Uwimanzi"] },
-                { "Karambi": ["Gahengeri", "Kayenzi", "Kinunga", "Ragwe"] },
+              Muhazi: [
+                { Byeza: ["Gatobotobo", "Kabeza", "Nyarukombe"] },
+                { Kabare: ["Birembo", "Ubwiza", "Umunini", "Uwimanzi"] },
+                { Karambi: ["Gahengeri", "Kayenzi", "Kinunga", "Ragwe"] },
                 {
-                  "Karitutu": [
+                  Karitutu: [
                     "Agatare",
                     "Cyeru",
                     "Karambo",
                     "Kingondo",
-                    "Nyarugarama"
-                  ]
+                    "Nyarugarama",
+                  ],
                 },
                 {
-                  "Kitazigurwa": ["Byimana", "Gasharu", "Kabirizi", "Karwiru"]
+                  Kitazigurwa: ["Byimana", "Gasharu", "Kabirizi", "Karwiru"],
                 },
-                { "Murambi": ["Gasharu", "Kabusunzu", "Nyendo", "Yabaranda"] },
-                { "Nsinda": ["Akabeza", "Kibare", "Rubirizi"] },
-                { "Ntebe": ["Amagaju", "Urugero", "Urugwiro"] },
+                { Murambi: ["Gasharu", "Kabusunzu", "Nyendo", "Yabaranda"] },
+                { Nsinda: ["Akabeza", "Kibare", "Rubirizi"] },
+                { Ntebe: ["Amagaju", "Urugero", "Urugwiro"] },
                 {
-                  "Nyarusange": [
+                  Nyarusange: [
                     "Akagarama",
                     "Akatorero",
                     "Gahondo",
@@ -5284,15 +5281,15 @@ const rwandaData = {
                     "Kidogo",
                     "Mpinga",
                     "Plage",
-                    "Umubuga"
-                  ]
-                }
-              ]
+                    "Umubuga",
+                  ],
+                },
+              ],
             },
             {
-              "Munyaga": [
+              Munyaga: [
                 {
-                  "Kaduha": [
+                  Kaduha: [
                     "Gishike",
                     "Kababero",
                     "Kabare",
@@ -5300,135 +5297,129 @@ const rwandaData = {
                     "Kangabo",
                     "Kigabiro",
                     "Rwakigara",
-                    "Rwimbogo"
-                  ]
+                    "Rwimbogo",
+                  ],
                 },
                 {
-                  "Nkungu": [
+                  Nkungu: [
                     "Kabuye",
                     "Kiryango",
                     "Mataba",
                     "Nyagakombe",
                     "Rudashya",
-                    "Rushangara"
-                  ]
+                    "Rushangara",
+                  ],
                 },
                 {
-                  "Rweru": [
-                    "Birayi",
-                    "Gatare",
-                    "Kabingo",
-                    "Kanyegera",
-                    "Mubuga"
-                  ]
+                  Rweru: ["Birayi", "Gatare", "Kabingo", "Kanyegera", "Mubuga"],
                 },
-                { "Zinga": ["Cyinganzwa", "Kabazeyi", "Karambo", "Rwisange"] }
-              ]
+                { Zinga: ["Cyinganzwa", "Kabazeyi", "Karambo", "Rwisange"] },
+              ],
             },
             {
-              "Munyiginya": [
+              Munyiginya: [
                 {
-                  "Binunga": [
+                  Binunga: [
                     "Irebero",
                     "Isangano",
                     "Kabeza",
                     "Umuhumuro",
-                    "Urugwiza"
-                  ]
+                    "Urugwiza",
+                  ],
                 },
                 {
-                  "Bwana": [
+                  Bwana: [
                     "Kabuye",
                     "Kiruhura",
                     "Rutembo",
                     "Rwagahigi",
                     "Rwamugurusu",
                     "Rweza",
-                    "Umurinzi"
-                  ]
+                    "Umurinzi",
+                  ],
                 },
-                { "Cyarukamba": ["Kabenda", "Kagarama", "Ndago", "Rweza"] },
-                { "Cyimbazi": ["Agatare", "Akabuye", "Ntunga", "Nyagakombe"] },
+                { Cyarukamba: ["Kabenda", "Kagarama", "Ndago", "Rweza"] },
+                { Cyimbazi: ["Agatare", "Akabuye", "Ntunga", "Nyagakombe"] },
                 {
-                  "Nkomangwa": [
+                  Nkomangwa: [
                     "Bakannyi",
                     "Kabuye",
                     "Karubisha",
                     "Nyagahanga",
-                    "Ryamirenge"
-                  ]
+                    "Ryamirenge",
+                  ],
                 },
                 {
-                  "Nyarubuye": [
+                  Nyarubuye: [
                     "Babasha",
                     "Buyanja",
                     "Kabeza",
                     "Kimara",
                     "Kiyovu",
                     "Mazinga",
-                    "Nkindi"
-                  ]
-                }
-              ]
+                    "Nkindi",
+                  ],
+                },
+              ],
             },
             {
-              "Musha": [
+              Musha: [
                 {
-                  "Akabare": [
+                  Akabare: [
                     "Akabare",
                     "Binunga",
                     "Budahigwa",
                     "Duha",
                     "Gashikiri",
                     "Rugabano",
-                    "Rukombe"
-                  ]
+                    "Rukombe",
+                  ],
                 },
-                { "Budahanda": ["Karambo", "Nyantoki", "Rwabiyange"] },
+                { Budahanda: ["Karambo", "Nyantoki", "Rwabiyange"] },
                 {
-                  "Kagarama": [
+                  Kagarama: [
                     "Kagarama",
                     "Kiruhura",
                     "Muhogoto",
                     "Nyagacyamo",
-                    "Nyamigano"
-                  ]
+                    "Nyamigano",
+                  ],
                 },
                 {
-                  "Musha": [
+                  Musha: [
                     "Gatika",
                     "Kadasumbwa",
                     "Karifuru",
                     "Nyakiriba",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Nyabisindu": [
+                  Nyabisindu: [
                     "Agashuhe",
                     "Busanza",
                     "Bwiza",
                     "Nyabisindu",
                     "Rujumbura",
                     "Rwamivu",
-                    "Umunini"
-                  ]
+                    "Umunini",
+                  ],
                 },
-                { "Nyakabanda": ["Bitsibo", "Ruhita", "Rutoma"] }
-              ]
+                { Nyakabanda: ["Bitsibo", "Ruhita", "Rutoma"] },
+              ],
             },
             {
-              "Muyumbu": [
+              Muyumbu: [
                 {
-                  "Akinyambo": [
+                  Akinyambo: [
                     "Akubugingo",
                     "Kampigika",
                     "Rugarama",
-                    "Ryabaheshwa"
-                  ]
+                    "Ryabaheshwa",
+                  ],
                 },
                 {
-                  "Bujyujyu": [
+                  Bujyujyu: [
                     "Gatare",
                     "Gishaka",
                     "Kabeza",
@@ -5437,21 +5428,21 @@ const rwandaData = {
                     "Rebero",
                     "Rubaza",
                     "Rusave",
-                    "Yeruzalemu"
-                  ]
+                    "Yeruzalemu",
+                  ],
                 },
                 {
-                  "Murehe": [
+                  Murehe: [
                     "Bitega",
                     "Kajororo",
                     "Kayigi",
                     "Miyove",
                     "Murehe",
-                    "Ruvomo"
-                  ]
+                    "Ruvomo",
+                  ],
                 },
                 {
-                  "Ntebe": [
+                  Ntebe: [
                     "Gakomeye",
                     "Gasave",
                     "Gisenyi",
@@ -5459,11 +5450,11 @@ const rwandaData = {
                     "Kajevuba",
                     "Kanyinya",
                     "Nyarubambo",
-                    "Samuramba"
-                  ]
+                    "Samuramba",
+                  ],
                 },
                 {
-                  "Nyarukombe": [
+                  Nyarukombe: [
                     "Gatuza",
                     "Gitaraga",
                     "Gituza",
@@ -5471,36 +5462,36 @@ const rwandaData = {
                     "Marembo",
                     "Mugogo",
                     "Mumena",
-                    "Rubona"
-                  ]
-                }
-              ]
+                    "Rubona",
+                  ],
+                },
+              ],
             },
             {
-              "Mwulire": [
+              Mwulire: [
                 {
-                  "Bicumbi": [
+                  Bicumbi: [
                     "Bicumbi",
                     "Gasharu",
                     "Karama",
                     "Manene",
                     "Nyagihanga",
                     "Rwimbogo",
-                    "Sabusaro"
-                  ]
+                    "Sabusaro",
+                  ],
                 },
                 {
-                  "Bushenyi": [
+                  Bushenyi: [
                     "Byange",
                     "Kabahima",
                     "Kangaruye",
                     "Rebero",
                     "Rubiha",
-                    "Ruseke"
-                  ]
+                    "Ruseke",
+                  ],
                 },
                 {
-                  "Mwulire": [
+                  Mwulire: [
                     "Cyome",
                     "Gisanza",
                     "Akagarama",
@@ -5508,11 +5499,11 @@ const rwandaData = {
                     "Mpinga",
                     "Munini I",
                     "Munini II",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Ntunga": [
+                  Ntunga: [
                     "Cyimbazi",
                     "Kabacuzi",
                     "Kadasumbwa",
@@ -5521,15 +5512,15 @@ const rwandaData = {
                     "Nkira",
                     "Ntunga",
                     "Rugarama",
-                    "Rugenge"
-                  ]
-                }
-              ]
+                    "Rugenge",
+                  ],
+                },
+              ],
             },
             {
-              "Nyakaliro": [
+              Nyakaliro: [
                 {
-                  "Bihembe": [
+                  Bihembe: [
                     "Bihembe",
                     "Busimbuzi",
                     "Butare",
@@ -5537,20 +5528,20 @@ const rwandaData = {
                     "Kanyangese",
                     "Mubumbwe",
                     "Ngarama",
-                    "Rusheshe"
-                  ]
+                    "Rusheshe",
+                  ],
                 },
                 {
-                  "Gatare": [
+                  Gatare: [
                     "Gatare",
                     "Karogo",
                     "Kigina",
                     "Runzenze",
-                    "Samuduha"
-                  ]
+                    "Samuduha",
+                  ],
                 },
                 {
-                  "Gishore": [
+                  Gishore: [
                     "Gishore",
                     "Kagarama",
                     "Matyazo",
@@ -5559,11 +5550,11 @@ const rwandaData = {
                     "Ruhanika",
                     "Rusagara",
                     "Rusave",
-                    "Rususa"
-                  ]
+                    "Rususa",
+                  ],
                 },
                 {
-                  "Munini": [
+                  Munini: [
                     "Akamasatura",
                     "Munini",
                     "Nyakagarama",
@@ -5571,11 +5562,11 @@ const rwandaData = {
                     "Nyarutovu",
                     "Nyiramitemeri",
                     "Rwamibungo",
-                    "Rwankacari"
-                  ]
+                    "Rwankacari",
+                  ],
                 },
                 {
-                  "Rwimbogo": [
+                  Rwimbogo: [
                     "Cyaruhinda",
                     "Kamashaza",
                     "Kasemanyana",
@@ -5583,15 +5574,15 @@ const rwandaData = {
                     "Nduba",
                     "Nduhuye",
                     "Rwimbogo",
-                    "Ryarurindo"
-                  ]
-                }
-              ]
+                    "Ryarurindo",
+                  ],
+                },
+              ],
             },
             {
-              "Nzige": [
+              Nzige: [
                 {
-                  "Akanzu": [
+                  Akanzu: [
                     "Akanzige",
                     "Akanzu",
                     "Cyahafi",
@@ -5599,11 +5590,11 @@ const rwandaData = {
                     "Gikoni",
                     "Gitanu",
                     "Kiyovu",
-                    "Nyarugenge"
-                  ]
+                    "Nyarugenge",
+                  ],
                 },
                 {
-                  "Kigarama": [
+                  Kigarama: [
                     "Gisenyi",
                     "Kajevuba",
                     "Kamabuye",
@@ -5611,36 +5602,36 @@ const rwandaData = {
                     "Mikoni",
                     "Mubuga",
                     "Nyarutovu",
-                    "Rugunga"
-                  ]
+                    "Rugunga",
+                  ],
                 },
                 {
-                  "Murama": [
+                  Murama: [
                     "Agasharu",
                     "Gatoki",
                     "Kabeza",
                     "Kamakuka",
                     "Kibabara",
                     "Ndinda",
-                    "Nyarusange"
-                  ]
+                    "Nyarusange",
+                  ],
                 },
                 {
-                  "Rugarama": [
+                  Rugarama: [
                     "Bicaca",
                     "Bitega",
                     "Kayibanda",
                     "Nyabugogo",
                     "Ruvomo",
-                    "Rwagatsama"
-                  ]
-                }
-              ]
+                    "Rwagatsama",
+                  ],
+                },
+              ],
             },
             {
-              "Rubona": [
+              Rubona: [
                 {
-                  "Byinza": [
+                  Byinza: [
                     "Bidudu",
                     "Gitwa",
                     "Kabayange I",
@@ -5648,11 +5639,11 @@ const rwandaData = {
                     "Mumahoro",
                     "Munini",
                     "Umumeyu",
-                    "Uwadesa"
-                  ]
+                    "Uwadesa",
+                  ],
                 },
                 {
-                  "Kabatasi": [
+                  Kabatasi: [
                     "Agasharu",
                     "Gitaraga",
                     "Kabuye",
@@ -5662,21 +5653,15 @@ const rwandaData = {
                     "Mitari",
                     "Nyagatare",
                     "Rusenyi",
-                    "Umurehe"
-                  ]
+                    "Umurehe",
+                  ],
                 },
-                { "Kabuye": ["Agatare", "Cyamuyango", "Rubumba", "Rutare"] },
+                { Kabuye: ["Agatare", "Cyamuyango", "Rubumba", "Rutare"] },
                 {
-                  "Karambi": [
-                    "Bigaga",
-                    "Byobo",
-                    "Karambi",
-                    "Mataba",
-                    "Rugarama"
-                  ]
+                  Karambi: ["Bigaga", "Byobo", "Karambi", "Mataba", "Rugarama"],
                 },
                 {
-                  "Mabare": [
+                  Mabare: [
                     "Amarimba",
                     "Bitare",
                     "Gasharu",
@@ -5684,72 +5669,66 @@ const rwandaData = {
                     "Rubirizi",
                     "Rusanza",
                     "Umubuga",
-                    "Urugwiro"
-                  ]
+                    "Urugwiro",
+                  ],
                 },
-                { "Nawe": ["Cyiri", "Gaseke", "Rudashya"] }
-              ]
-            }
-          ]
-        }
-      ]
+                { Nawe: ["Cyiri", "Gaseke", "Rudashya"] },
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
-      "Kigali": [
+      Kigali: [
         {
-          "Gasabo": [
+          Gasabo: [
             {
-              "Bumbogo": [
+              Bumbogo: [
                 {
-                  "Kinyaga": [
+                  Kinyaga: [
                     "Akakaza",
                     "Kigarama",
                     "Kingabo",
                     "Muhozi",
                     "Rubungo",
                     "Ryakigogo",
-                    "Zindiro"
-                  ]
+                    "Zindiro",
+                  ],
                 },
                 {
-                  "Musave": [
-                    "Kagarama",
-                    "Kayumba",
-                    "Ramba",
-                    "Rebero",
-                    "Rugando"
-                  ]
+                  Musave: ["Kagarama", "Kayumba", "Ramba", "Rebero", "Rugando"],
                 },
                 {
-                  "Mvuzo": [
+                  Mvuzo: [
                     "Kigabiro",
                     "Kiyoro",
                     "Murarambo",
                     "Nkona",
                     "Nyakabingo",
-                    "Rukoma"
-                  ]
+                    "Rukoma",
+                  ],
                 },
                 {
-                  "Ngara": [
+                  Ngara: [
                     "Birembo",
                     "Gisasa",
                     "Munini",
                     "Ruhinga",
-                    "Uwaruraza"
-                  ]
+                    "Uwaruraza",
+                  ],
                 },
                 {
-                  "Nkuzuzu": [
+                  Nkuzuzu: [
                     "Akabenejuru",
                     "Akasedogo",
                     "Akimpama",
                     "Burima",
-                    "Kityazo"
-                  ]
+                    "Kityazo",
+                  ],
                 },
                 {
-                  "Nyabikenke": [
+                  Nyabikenke: [
                     "Bushya",
                     "Gikumba",
                     "Kamutamu",
@@ -5759,26 +5738,26 @@ const rwandaData = {
                     "Kiriza",
                     "Masizi",
                     "Mbogo",
-                    "Nyampamo"
-                  ]
+                    "Nyampamo",
+                  ],
                 },
                 {
-                  "Nyagasozi": [
+                  Nyagasozi: [
                     "Akanyiramugarura",
                     "Akigabiro",
                     "Gishaka",
                     "Kabuye",
                     "Mpabwa",
                     "Nyagasambu",
-                    "Urutarishonga"
-                  ]
-                }
-              ]
+                    "Urutarishonga",
+                  ],
+                },
+              ],
             },
             {
-              "Gatsata": [
+              Gatsata: [
                 {
-                  "Karuruma": [
+                  Karuruma: [
                     "Akamamana",
                     "Akimihigo",
                     "Bigega",
@@ -5789,11 +5768,11 @@ const rwandaData = {
                     "Nyagasozi",
                     "Rugoro",
                     "Rwesero",
-                    "Tetero"
-                  ]
+                    "Tetero",
+                  ],
                 },
                 {
-                  "Nyamabuye": [
+                  Nyamabuye: [
                     "Agakomeye",
                     "Gashubi",
                     "Gisiza",
@@ -5809,11 +5788,11 @@ const rwandaData = {
                     "Runyonza",
                     "Rusoro",
                     "Ruvumero",
-                    "Uwagatovu"
-                  ]
+                    "Uwagatovu",
+                  ],
                 },
                 {
-                  "Nyamugari": [
+                  Nyamugari: [
                     "Agataramo",
                     "Akamwunguzi",
                     "Akarubimbura",
@@ -5825,35 +5804,35 @@ const rwandaData = {
                     "Isangano",
                     "Kanyonyomba",
                     "Nyakariba",
-                    "Rwakarihejuru"
-                  ]
-                }
-              ]
+                    "Rwakarihejuru",
+                  ],
+                },
+              ],
             },
             {
-              "Gikomero": [
+              Gikomero: [
                 {
-                  "Gasagara": ["Bwimiyange", "Bwingeyo", "Gasagara", "Rugwiza"]
+                  Gasagara: ["Bwimiyange", "Bwingeyo", "Gasagara", "Rugwiza"],
                 },
                 {
-                  "Gicaca": ["Ntaganzwa", "Nyagasozi", "Nyagisozi", "Ruganda"]
+                  Gicaca: ["Ntaganzwa", "Nyagasozi", "Nyagisozi", "Ruganda"],
                 },
-                { "Kibara": ["Gahinga", "Gasharu", "Kibobo", "Nombe"] },
+                { Kibara: ["Gahinga", "Gasharu", "Kibobo", "Nombe"] },
                 {
-                  "Munini": [
+                  Munini: [
                     "Munini",
                     "Mutokerezwa",
                     "Rudakabukirwa",
-                    "Runyinya"
-                  ]
+                    "Runyinya",
+                  ],
                 },
-                { "Murambi": ["Kimisebeya", "Kivugiza", "Rugarama", "Twina"] }
-              ]
+                { Murambi: ["Kimisebeya", "Kivugiza", "Rugarama", "Twina"] },
+              ],
             },
             {
-              "Gisozi": [
+              Gisozi: [
                 {
-                  "Musezero": [
+                  Musezero: [
                     "Amajyambere",
                     "Amarembo",
                     "Byimana",
@@ -5861,35 +5840,35 @@ const rwandaData = {
                     "Gasharu",
                     "Kagara",
                     "Nyakariba",
-                    "Rwinyana"
-                  ]
+                    "Rwinyana",
+                  ],
                 },
                 {
-                  "Ruhango": [
+                  Ruhango: [
                     "Kanyinya",
                     "Kumukenke",
                     "Murambi",
                     "Ntora",
                     "Rukeri",
-                    "Umurava"
-                  ]
-                }
-              ]
+                    "Umurava",
+                  ],
+                },
+              ],
             },
             {
-              "Jabana": [
+              Jabana: [
                 {
-                  "Akamatamu": [
+                  Akamatamu: [
                     "Akamatamu",
                     "Cyeyere",
                     "Murehe",
                     "Nyacyonga",
                     "Nyagasozi",
-                    "Nyarukurazo"
-                  ]
+                    "Nyarukurazo",
+                  ],
                 },
                 {
-                  "Bweramvura": [
+                  Bweramvura: [
                     "Agakenke",
                     "Agatare",
                     "Akinyana",
@@ -5899,11 +5878,11 @@ const rwandaData = {
                     "Nyakabingo",
                     "Nyarurama",
                     "Rugogwe",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Kabuye": [
+                  Kabuye: [
                     "Amakawa",
                     "Amasangano",
                     "Buliza",
@@ -5914,20 +5893,20 @@ const rwandaData = {
                     "Nyagasozi",
                     "Rebero",
                     "Rugarama",
-                    "Tetero"
-                  ]
+                    "Tetero",
+                  ],
                 },
                 {
-                  "Kidashya": [
+                  Kidashya: [
                     "Agasekabuye",
                     "Agatare",
                     "Amasangano",
                     "Mubuga",
-                    "Nyamweru"
-                  ]
+                    "Nyamweru",
+                  ],
                 },
                 {
-                  "Ngiryi": [
+                  Ngiryi: [
                     "Agahama",
                     "Agasharu",
                     "Akabuga",
@@ -5937,60 +5916,60 @@ const rwandaData = {
                     "Nyarubuye",
                     "Rubona",
                     "Rwanyanza",
-                    "Uwanyange"
-                  ]
-                }
-              ]
+                    "Uwanyange",
+                  ],
+                },
+              ],
             },
             {
-              "Jali": [
+              Jali: [
                 {
-                  "Agateko": [
+                  Agateko: [
                     "Bugarama",
                     "Bukamba",
                     "Byimana",
                     "Kabizoza",
                     "Kinunga",
                     "Urunyinya",
-                    "Rwankuba"
-                  ]
+                    "Rwankuba",
+                  ],
                 },
-                { "Buhiza": ["Kabande", "Gatare", "Nyamugali", "Nyarubuye"] },
-                { "Muko": ["Gahinga", "Gatare", "Umunyinya"] },
+                { Buhiza: ["Kabande", "Gatare", "Nyamugali", "Nyarubuye"] },
+                { Muko: ["Gahinga", "Gatare", "Umunyinya"] },
                 {
-                  "Nkusi": [
+                  Nkusi: [
                     "Agatwa",
                     "Kabagina",
                     "Kajevuba",
                     "Kigarama",
-                    "Nyagasayo"
-                  ]
+                    "Nyagasayo",
+                  ],
                 },
                 {
-                  "Nyabuliba": [
+                  Nyabuliba: [
                     "Nyaburira",
                     "Kirehe",
                     "Mataba",
                     "Nyarurembo",
-                    "Rubona"
-                  ]
+                    "Rubona",
+                  ],
                 },
                 {
-                  "Nyakabungo": [
+                  Nyakabungo: [
                     "Bwocya",
                     "Gitaba",
                     "Karenge",
                     "Rugina",
-                    "Ruhihi"
-                  ]
+                    "Ruhihi",
+                  ],
                 },
-                { "Nyamitanga": ["Agasharu", "Agatare", "Kabuga", "Runyinya"] }
-              ]
+                { Nyamitanga: ["Agasharu", "Agatare", "Kabuga", "Runyinya"] },
+              ],
             },
             {
-              "Kacyiru": [
+              Kacyiru: [
                 {
-                  "Kamatamu": [
+                  Kamatamu: [
                     "Amajyambere",
                     "Bukinanyana",
                     "Cyimana",
@@ -6002,11 +5981,11 @@ const rwandaData = {
                     "Nyagacyamo",
                     "Rwinzovu",
                     "Urugwiro",
-                    "Uruhongore"
-                  ]
+                    "Uruhongore",
+                  ],
                 },
                 {
-                  "Kamutwa": [
+                  Kamutwa: [
                     "Agasaro",
                     "Gasharu",
                     "Inkingi",
@@ -6016,11 +5995,11 @@ const rwandaData = {
                     "Umuco",
                     "Umutekano",
                     "Urugero",
-                    "Urwibutso"
-                  ]
+                    "Urwibutso",
+                  ],
                 },
                 {
-                  "Kibaza": [
+                  Kibaza: [
                     "Amahoro",
                     "Bwiza",
                     "Ihuriro",
@@ -6031,15 +6010,15 @@ const rwandaData = {
                     "Ubumwe",
                     "Umutako",
                     "Urukundo",
-                    "Virunga"
-                  ]
-                }
-              ]
+                    "Virunga",
+                  ],
+                },
+              ],
             },
             {
-              "Kimihurura": [
+              Kimihurura: [
                 {
-                  "Kamukina": [
+                  Kamukina: [
                     "Inyamibwa",
                     "Isangano",
                     "Isano",
@@ -6048,11 +6027,11 @@ const rwandaData = {
                     "Juru",
                     "Nyenyeri",
                     "Umurava",
-                    "Urumuri"
-                  ]
+                    "Urumuri",
+                  ],
                 },
                 {
-                  "Kimihurura": [
+                  Kimihurura: [
                     "Amahoro",
                     "Amajyambere",
                     "Imihigo",
@@ -6061,18 +6040,18 @@ const rwandaData = {
                     "Rugarama",
                     "Ubumwe",
                     "Umutekano",
-                    "Urwego"
-                  ]
+                    "Urwego",
+                  ],
                 },
                 {
-                  "Rugando": ["Gasange", "Gasasa", "Marembo", "Rebero", "Taba"]
-                }
-              ]
+                  Rugando: ["Gasange", "Gasasa", "Marembo", "Rebero", "Taba"],
+                },
+              ],
             },
             {
-              "Kimironko": [
+              Kimironko: [
                 {
-                  "Bibare": [
+                  Bibare: [
                     "Abatuje",
                     "Amariza",
                     "Imanzi",
@@ -6087,11 +6066,11 @@ const rwandaData = {
                     "Inyamibwa",
                     "Inyange",
                     "Ubwiza",
-                    "Umwezi"
-                  ]
+                    "Umwezi",
+                  ],
                 },
                 {
-                  "Kibagabaga": [
+                  Kibagabaga: [
                     "Akintwari",
                     "Buranga",
                     "Gasharu",
@@ -6105,25 +6084,25 @@ const rwandaData = {
                     "Rindiro",
                     "Rugero",
                     "Rukurazo",
-                    "Urumuri"
-                  ]
+                    "Urumuri",
+                  ],
                 },
                 {
-                  "Nyagatovu": [
+                  Nyagatovu: [
                     "Ibukinanyana",
                     "Ibuhoro",
                     "Ijabiro",
                     "Isangano",
                     "Itetero",
-                    "Urugwiro"
-                  ]
-                }
-              ]
+                    "Urugwiro",
+                  ],
+                },
+              ],
             },
             {
-              "Kinyinya": [
+              Kinyinya: [
                 {
-                  "Gacuriro": [
+                  Gacuriro: [
                     "Agatare",
                     "Akanyamugabo",
                     "Akarambo",
@@ -6134,12 +6113,12 @@ const rwandaData = {
                     "Kabuhunde II",
                     "Kirira",
                     "Urubanda",
-                    "Urugarama"
-                  ]
+                    "Urugarama",
+                  ],
                 },
-                { "Gasharu": ["Agatare", "Gasharu", "Kami", "Rwankuba"] },
+                { Gasharu: ["Agatare", "Gasharu", "Kami", "Rwankuba"] },
                 {
-                  "Kagugu": [
+                  Kagugu: [
                     "Dusenyi",
                     "Gicikiza",
                     "Giheka",
@@ -6148,37 +6127,37 @@ const rwandaData = {
                     "Kagarama",
                     "Muhororo",
                     "Nyakabungo",
-                    "Rukingu"
-                  ]
+                    "Rukingu",
+                  ],
                 },
-                { "Murama": ["Binunga", "Ngaruyinka", "Rusenyi", "Taba"] }
-              ]
+                { Murama: ["Binunga", "Ngaruyinka", "Rusenyi", "Taba"] },
+              ],
             },
             {
-              "Ndera": [
+              Ndera: [
                 {
-                  "Bwiza": [
+                  Bwiza: [
                     "Akarwasa",
                     "Akasemuromba",
                     "Bucyemba",
                     "Gasharu",
                     "Mukagarama",
-                    "Ruhangare"
-                  ]
+                    "Ruhangare",
+                  ],
                 },
                 {
-                  "Cyaruzinge": [
+                  Cyaruzinge: [
                     "Ayabakora",
                     "Cyaruzinge",
                     "Gashure",
                     "Gatare",
                     "Gisura",
                     "Karubibi",
-                    "Mulindi"
-                  ]
+                    "Mulindi",
+                  ],
                 },
                 {
-                  "Kibenga": [
+                  Kibenga: [
                     "Bahoze",
                     "Berwa",
                     "Buhoro",
@@ -6189,107 +6168,107 @@ const rwandaData = {
                     "Rugazi",
                     "Runyonza",
                     "Tumurere",
-                    "Ururembo"
-                  ]
+                    "Ururembo",
+                  ],
                 },
                 {
-                  "Masoro": [
+                  Masoro: [
                     "Byimana",
                     "Kabeza",
                     "Masoro",
                     "Matwari",
                     "Mubuga",
-                    "Munini"
-                  ]
+                    "Munini",
+                  ],
                 },
                 {
-                  "Mukuyu": [
+                  Mukuyu: [
                     "Akamusare",
                     "Akimana",
                     "Gasharu",
                     "Jurwe",
                     "Karambo",
                     "Kigabiro",
-                    "Ruseno"
-                  ]
+                    "Ruseno",
+                  ],
                 },
                 {
-                  "Rudashya": [
+                  Rudashya: [
                     "Kacyinyaga",
                     "Kamahoro",
                     "Munini",
                     "Nyakagezi",
                     "Ruhangare",
-                    "Ruhogo"
-                  ]
-                }
-              ]
+                    "Ruhogo",
+                  ],
+                },
+              ],
             },
             {
-              "Nduba": [
+              Nduba: [
                 {
-                  "Butare": [
+                  Butare: [
                     "Kanani",
                     "Kidahe",
                     "Kigabiro",
                     "Nyamurambi",
                     "Nyarubuye",
-                    "Nyura"
-                  ]
+                    "Nyura",
+                  ],
                 },
                 {
-                  "Gasanze": [
+                  Gasanze: [
                     "Gatagara",
                     "Kagarama",
                     "Nyabitare",
                     "Nyakabungo",
                     "Nyarubande",
-                    "Uruhetse"
-                  ]
+                    "Uruhetse",
+                  ],
                 },
                 {
-                  "Gasura": [
+                  Gasura: [
                     "Agacyamo",
                     "Gashinya",
                     "Gikombe",
                     "Kazi",
                     "Kigufi",
                     "Nyirakibehe",
-                    "Uruhahiro"
-                  ]
+                    "Uruhahiro",
+                  ],
                 },
                 {
-                  "Gatunga": [
+                  Gatunga: [
                     "Agasharu",
                     "Amataba",
                     "Burungero",
                     "Karama",
                     "Nyange",
                     "Rebero",
-                    "Uruyange"
-                  ]
+                    "Uruyange",
+                  ],
                 },
                 {
-                  "Muremure": [
+                  Muremure: [
                     "Gatobotobo",
                     "Kibungo",
                     "Musezero",
                     "Nyaburoro",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Sha": [
+                  Sha: [
                     "Bikumba",
                     "Gakizi",
                     "Gatare",
                     "Kamuyange",
                     "Kigarama",
-                    "Ngara"
-                  ]
+                    "Ngara",
+                  ],
                 },
                 {
-                  "Shango": [
+                  Shango: [
                     "Akazi",
                     "Kaduha",
                     "Kamuhoza",
@@ -6297,34 +6276,34 @@ const rwandaData = {
                     "Munini",
                     "Ndanyoye",
                     "Nyamigina",
-                    "Rugarama"
-                  ]
-                }
-              ]
+                    "Rugarama",
+                  ],
+                },
+              ],
             },
             {
-              "Remera": [
+              Remera: [
                 {
-                  "Nyabisindu": [
+                  Nyabisindu: [
                     "Amarembo I",
                     "Amarembo II",
                     "Gihogere",
                     "Kagara",
                     "Kinunga",
                     "Nyabisindu",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Nyarutarama": [
+                  Nyarutarama: [
                     "Gishushu",
                     "Juru",
                     "Kamahwa",
                     "Kangondo I",
                     "Kangondo II",
                     "Kibiraro I",
-                    "Kibiraro II"
-                  ]
+                    "Kibiraro II",
+                  ],
                 },
                 {
                   "Rukiri I": [
@@ -6334,8 +6313,8 @@ const rwandaData = {
                     "Gisimenti",
                     "Ubumwe",
                     "Ukwezi",
-                    "Urumuri"
-                  ]
+                    "Urumuri",
+                  ],
                 },
                 {
                   "Rukiri II": [
@@ -6343,22 +6322,22 @@ const rwandaData = {
                     "Rebero",
                     "Ruturusu I",
                     "Ruturusu II",
-                    "Ubumwe"
-                  ]
-                }
-              ]
+                    "Ubumwe",
+                  ],
+                },
+              ],
             },
             {
-              "Rusororo": [
-                { "Bisenga": ["Bisenga", "Gakenyeri", "Gasiza", "Kidogo"] },
+              Rusororo: [
+                { Bisenga: ["Bisenga", "Gakenyeri", "Gasiza", "Kidogo"] },
                 {
-                  "Gasagara": [
+                  Gasagara: [
                     "Agatare",
                     "Gasagara",
                     "Kamasasa",
                     "Rugagi",
-                    "Ryabazana"
-                  ]
+                    "Ryabazana",
+                  ],
                 },
                 {
                   "Kabuga I": [
@@ -6367,8 +6346,8 @@ const rwandaData = {
                     "Isangano",
                     "Kabeza",
                     "Kalisimbi",
-                    "Masango"
-                  ]
+                    "Masango",
+                  ],
                 },
                 {
                   "Kabuga II": [
@@ -6378,105 +6357,105 @@ const rwandaData = {
                     "Kamashashi",
                     "Mataba",
                     "Nyagakombe",
-                    "Ruhangare"
-                  ]
+                    "Ruhangare",
+                  ],
                 },
-                { "Kinyana": ["Busenyi", "Kigabiro", "Kinyana", "Nyagisozi"] },
+                { Kinyana: ["Busenyi", "Kigabiro", "Kinyana", "Nyagisozi"] },
                 {
-                  "Mbandazi": [
+                  Mbandazi: [
                     "Cyeru",
                     "Karambo",
                     "Kataruha",
                     "Mugeyo",
                     "Rugarama",
-                    "Samuduha"
-                  ]
+                    "Samuduha",
+                  ],
                 },
                 {
-                  "Nyagahinga": [
+                  Nyagahinga: [
                     "Gisharara",
                     "Kabutare",
                     "Kanyinya",
                     "Kigarama",
                     "Nyarucundura",
                     "Runyonza",
-                    "Urumuri"
-                  ]
+                    "Urumuri",
+                  ],
                 },
                 {
-                  "Ruhanga": [
+                  Ruhanga: [
                     "Kinyaga",
                     "Mirama",
                     "Nyagacyamo",
                     "Rugende",
-                    "Ruhanga"
-                  ]
-                }
-              ]
+                    "Ruhanga",
+                  ],
+                },
+              ],
             },
             {
-              "Rutunga": [
-                { "Gasabo": ["Gasharu", "Mulindi", "Vugavuge"] },
+              Rutunga: [
+                { Gasabo: ["Gasharu", "Mulindi", "Vugavuge"] },
                 {
-                  "Indatemwa": [
+                  Indatemwa: [
                     "Kabarera",
                     "Kamusengo",
                     "Karekare",
                     "Karuranga",
-                    "Nyakabande"
-                  ]
+                    "Nyakabande",
+                  ],
                 },
-                { "Kabaliza": ["Kabaliza", "Nyamise", "Rwanyanza"] },
+                { Kabaliza: ["Kabaliza", "Nyamise", "Rwanyanza"] },
                 {
-                  "Kacyatwa": [
+                  Kacyatwa: [
                     "Cyili",
                     "Kacyatwa",
                     "Kandamira",
                     "Kantabana",
-                    "Munini"
-                  ]
+                    "Munini",
+                  ],
                 },
-                { "Kibenga": ["Abanyangeyo", "Kibenga", "Nyamvumvu"] },
+                { Kibenga: ["Abanyangeyo", "Kibenga", "Nyamvumvu"] },
                 {
-                  "Kigabiro": [
+                  Kigabiro: [
                     "Kamusare",
                     "Karwiru",
                     "Kigabiro",
                     "Rukerereza",
-                    "Rwintare"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Rwintare",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Kicukiro": [
+          Kicukiro: [
             {
-              "Gahanga": [
+              Gahanga: [
                 {
-                  "Gahanga": [
+                  Gahanga: [
                     "Gahanga",
                     "Gatare",
                     "Gatovu",
                     "Rinini",
                     "Rwinanka",
-                    "Ubumwe"
-                  ]
+                    "Ubumwe",
+                  ],
                 },
                 {
-                  "Kagasa": [
+                  Kagasa: [
                     "Kabeza",
                     "Kabidandi",
                     "Kiyanja",
                     "Nyacyonga",
                     "Nyagafunzo",
                     "Nyakuguma",
-                    "Rugando II"
-                  ]
+                    "Rugando II",
+                  ],
                 },
                 {
-                  "Karembure": [
+                  Karembure: [
                     "Amahoro",
                     "Bigo",
                     "Kabeza",
@@ -6484,11 +6463,11 @@ const rwandaData = {
                     "Karembure",
                     "Kimena",
                     "Mubuga",
-                    "Rwamaya"
-                  ]
+                    "Rwamaya",
+                  ],
                 },
                 {
-                  "Murinja": [
+                  Murinja: [
                     "Kampuro",
                     "Kigasa",
                     "Mashyiga",
@@ -6496,45 +6475,45 @@ const rwandaData = {
                     "Nyamuharaza",
                     "Rukore",
                     "Runyoni",
-                    "Sabununga"
-                  ]
+                    "Sabununga",
+                  ],
                 },
                 {
-                  "Nunga": [
+                  Nunga: [
                     "Kigarama",
                     "Kinyana",
                     "Mugendo",
                     "Nunga I",
                     "Nunga II",
-                    "Rugasa"
-                  ]
+                    "Rugasa",
+                  ],
                 },
                 {
-                  "Rwabutenge": [
+                  Rwabutenge: [
                     "Gahosha",
                     "Gashubi",
                     "Kaboshya",
                     "Karambo",
                     "Rebero",
-                    "Rugando I"
-                  ]
-                }
-              ]
+                    "Rugando I",
+                  ],
+                },
+              ],
             },
             {
-              "Gatenga": [
+              Gatenga: [
                 {
-                  "Gatenga": [
+                  Gatenga: [
                     "Amahoro",
                     "Gakoki",
                     "Gatenga",
                     "Ihuriro",
                     "Isangano",
-                    "Rugari"
-                  ]
+                    "Rugari",
+                  ],
                 },
                 {
-                  "Karambo": [
+                  Karambo: [
                     "Gwiza",
                     "Ihuriro",
                     "Jyambere",
@@ -6544,11 +6523,11 @@ const rwandaData = {
                     "Rebero",
                     "Rugwiro",
                     "Ruhuka",
-                    "Sangwa"
-                  ]
+                    "Sangwa",
+                  ],
                 },
                 {
-                  "Nyanza": [
+                  Nyanza: [
                     "Bwiza",
                     "Cyeza",
                     "Gasabo",
@@ -6561,75 +6540,75 @@ const rwandaData = {
                     "Rebero",
                     "Rusororo",
                     "Sabaganga",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
-                { "Nyarurama": ["Bigo", "Bisambu", "Kabeza", "Nyabikenke"] }
-              ]
+                { Nyarurama: ["Bigo", "Bisambu", "Kabeza", "Nyabikenke"] },
+              ],
             },
             {
-              "Gikondo": [
+              Gikondo: [
                 {
-                  "Kagunga": [
+                  Kagunga: [
                     "Gatare",
                     "Kabuye I",
                     "Kabuye II",
                     "Kagunga I",
                     "Kagunga II",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Kanserege": [
+                  Kanserege: [
                     "Kanserege I",
                     "Kanserege II",
                     "Kanserege III",
                     "Marembo I",
                     "Marembo II",
-                    "Marembo III"
-                  ]
+                    "Marembo III",
+                  ],
                 },
                 {
-                  "Kinunga": [
+                  Kinunga: [
                     "Kigugu I",
                     "Kigugu II",
                     "Kigugu III",
                     "Kinunga",
                     "Ruganwa I",
                     "Ruganwa II",
-                    "Ruganwa III"
-                  ]
-                }
-              ]
+                    "Ruganwa III",
+                  ],
+                },
+              ],
             },
             {
-              "Kagarama": [
+              Kagarama: [
                 {
-                  "Kanserege": [
+                  Kanserege: [
                     "Bwiza",
                     "Byimana",
                     "Ituze",
                     "Kanserege",
-                    "Kinunga"
-                  ]
+                    "Kinunga",
+                  ],
                 },
-                { "Muyange": ["Kamuna", "Mugeyo", "Muyange", "Rugunga"] },
+                { Muyange: ["Kamuna", "Mugeyo", "Muyange", "Rugunga"] },
                 {
-                  "Rukatsa": [
+                  Rukatsa: [
                     "Inshuti",
                     "Mpingayanyanza",
                     "Nyacyonga",
                     "Nyanza",
                     "Rukatsa",
-                    "Taba"
-                  ]
-                }
-              ]
+                    "Taba",
+                  ],
+                },
+              ],
             },
             {
-              "Kanombe": [
+              Kanombe: [
                 {
-                  "Busanza": [
+                  Busanza: [
                     "Amahoro",
                     "Antene",
                     "Bamporeze I",
@@ -6640,11 +6619,11 @@ const rwandaData = {
                     "Kariyeri",
                     "Nyarugugu",
                     "Radari",
-                    "Rukore"
-                  ]
+                    "Rukore",
+                  ],
                 },
                 {
-                  "Kabeza": [
+                  Kabeza: [
                     "Akagera",
                     "Bwiza",
                     "Gasabo",
@@ -6657,11 +6636,11 @@ const rwandaData = {
                     "Mulindi",
                     "Nyarurembo",
                     "Nyenyeri",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Karama": [
+                  Karama: [
                     "Bitare",
                     "Byimana",
                     "Cyurusagara",
@@ -6671,11 +6650,11 @@ const rwandaData = {
                     "Karama",
                     "Nyabyunyu",
                     "Nyarutovu",
-                    "Urukundo"
-                  ]
+                    "Urukundo",
+                  ],
                 },
                 {
-                  "Rubirizi": [
+                  Rubirizi: [
                     "Beninka",
                     "Bukunzi",
                     "Cyeru",
@@ -6686,51 +6665,51 @@ const rwandaData = {
                     "Ubumwe",
                     "Umunara",
                     "Uwabarezi",
-                    "Zirakamwa"
-                  ]
-                }
-              ]
+                    "Zirakamwa",
+                  ],
+                },
+              ],
             },
             {
-              "Kicukiro": [
+              Kicukiro: [
                 {
-                  "Gasharu": ["Amajyambere", "Gasharu", "Sakirwa", "Umunyinya"]
+                  Gasharu: ["Amajyambere", "Gasharu", "Sakirwa", "Umunyinya"],
                 },
                 {
-                  "Kagina": [
+                  Kagina: [
                     "Gashiha",
                     "Iriba",
                     "Multimedia",
                     "Umunyinya",
                     "Umuremure",
-                    "Urugero"
-                  ]
+                    "Urugero",
+                  ],
                 },
                 {
-                  "Kicukiro": [
+                  Kicukiro: [
                     "Gasave",
                     "Isoko",
                     "Karisimbi",
                     "Kicukiro",
                     "Triangle",
-                    "Ubumwe"
-                  ]
+                    "Ubumwe",
+                  ],
                 },
                 {
-                  "Ngoma": [
+                  Ngoma: [
                     "Ahitegeye",
                     "Intaho",
                     "Iriba",
                     "Isangano",
-                    "Urugero"
-                  ]
-                }
-              ]
+                    "Urugero",
+                  ],
+                },
+              ],
             },
             {
-              "Kigarama": [
+              Kigarama: [
                 {
-                  "Bwerankori": [
+                  Bwerankori: [
                     "Gakokobe",
                     "Gatare",
                     "Imena",
@@ -6738,11 +6717,11 @@ const rwandaData = {
                     "Kabutare",
                     "Kimisange",
                     "Nyenyeri",
-                    "Ubumenyi"
-                  ]
+                    "Ubumenyi",
+                  ],
                 },
                 {
-                  "Karugira": [
+                  Karugira: [
                     "Ibuga",
                     "Ihuriro",
                     "Murambi",
@@ -6750,11 +6729,11 @@ const rwandaData = {
                     "Taba",
                     "Terimbere",
                     "Ubutare",
-                    "Umurimo"
-                  ]
+                    "Umurimo",
+                  ],
                 },
                 {
-                  "Kigarama": [
+                  Kigarama: [
                     "Akimana",
                     "Amahoro",
                     "Byimana",
@@ -6763,46 +6742,46 @@ const rwandaData = {
                     "Kabeza",
                     "Karurayi",
                     "Mataba",
-                    "Umucyo"
-                  ]
+                    "Umucyo",
+                  ],
                 },
                 {
-                  "Nyarurama": [
+                  Nyarurama: [
                     "Kamabuye",
                     "Karuyenzi",
                     "Kivu",
                     "Rebero",
                     "Twishorezo",
-                    "Zuba"
-                  ]
+                    "Zuba",
+                  ],
                 },
                 {
-                  "Rwampara": [
+                  Rwampara: [
                     "Amajyambere",
                     "Bwiza",
                     "Nyarurembo",
                     "Ubumwe",
                     "Umutekano",
                     "Urumuri",
-                    "Uwateke"
-                  ]
-                }
-              ]
+                    "Uwateke",
+                  ],
+                },
+              ],
             },
             {
-              "Masaka": [
+              Masaka: [
                 {
-                  "Ayabaraya": [
+                  Ayabaraya: [
                     "Kababyeyi",
                     "Ayabaraya",
                     "Nyamico",
                     "Nyamyijima",
                     "Nyirakavomo",
-                    "Rususa"
-                  ]
+                    "Rususa",
+                  ],
                 },
                 {
-                  "Cyimo": [
+                  Cyimo: [
                     "Biryogo",
                     "Bwiza",
                     "Cyimo",
@@ -6811,11 +6790,11 @@ const rwandaData = {
                     "Masaka",
                     "Murambi",
                     "Nyakagunga",
-                    "Urugwiro"
-                  ]
+                    "Urugwiro",
+                  ],
                 },
                 {
-                  "Gako": [
+                  Gako: [
                     "Bamporeze",
                     "Butangampundu",
                     "Butare",
@@ -6826,47 +6805,47 @@ const rwandaData = {
                     "Kibande",
                     "Rebero",
                     "Rugende",
-                    "Ruyaga"
-                  ]
+                    "Ruyaga",
+                  ],
                 },
                 {
-                  "Gitaraga": [
+                  Gitaraga: [
                     "Gitaraga",
                     "Kabeza",
                     "Kajevuba",
                     "Nyakarambi",
                     "Nyange",
                     "Ruhanga",
-                    "Rwintare"
-                  ]
+                    "Rwintare",
+                  ],
                 },
                 {
-                  "Mbabe": [
+                  Mbabe: [
                     "Kabeza",
                     "Kamashashi",
                     "Mbabe",
                     "Murambi",
                     "Ngarama",
-                    "Sangano"
-                  ]
+                    "Sangano",
+                  ],
                 },
                 {
-                  "Rusheshe": [
+                  Rusheshe: [
                     "Cyankongi",
                     "Cyeru",
                     "Gatare",
                     "Kagese",
                     "Kanyetabi",
                     "Mubano",
-                    "Ruhosha"
-                  ]
-                }
-              ]
+                    "Ruhosha",
+                  ],
+                },
+              ],
             },
             {
-              "Niboye": [
+              Niboye: [
                 {
-                  "Gatare": [
+                  Gatare: [
                     "Byimana",
                     "Gatare",
                     "Imena",
@@ -6874,11 +6853,11 @@ const rwandaData = {
                     "Kigarama",
                     "Rugunga",
                     "Rurembo",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Niboye": [
+                  Niboye: [
                     "Buhoro",
                     "Gaseke",
                     "Gateke",
@@ -6893,11 +6872,11 @@ const rwandaData = {
                     "Nyarubande",
                     "Rwezamenyo",
                     "Sovu",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Nyakabanda": [
+                  Nyakabanda: [
                     "Amahoro",
                     "Amarebe",
                     "Amarembo",
@@ -6915,15 +6894,15 @@ const rwandaData = {
                     "Karama",
                     "Kinyana",
                     "Rugwiro",
-                    "Umurava"
-                  ]
-                }
-              ]
+                    "Umurava",
+                  ],
+                },
+              ],
             },
             {
-              "Nyarugunga": [
+              Nyarugunga: [
                 {
-                  "Kamashashi": [
+                  Kamashashi: [
                     "Akindege",
                     "Indatwa",
                     "Intwari",
@@ -6932,11 +6911,11 @@ const rwandaData = {
                     "Mukoni",
                     "Mulindi",
                     "Umucyo",
-                    "Uruhongore"
-                  ]
+                    "Uruhongore",
+                  ],
                 },
                 {
-                  "Nonko": [
+                  Nonko: [
                     "Gasaraba",
                     "Gihanga",
                     "Gitara",
@@ -6944,11 +6923,11 @@ const rwandaData = {
                     "Mahoro",
                     "Nyarutovu",
                     "Rugali",
-                    "Runyonza"
-                  ]
+                    "Runyonza",
+                  ],
                 },
                 {
-                  "Rwimbogo": [
+                  Rwimbogo: [
                     "Gabiro",
                     "Kabaya",
                     "Kanogo",
@@ -6959,19 +6938,19 @@ const rwandaData = {
                     "Rwinyana",
                     "Rwinyange",
                     "Rwiza",
-                    "Urwibutso"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Urwibutso",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Nyarugenge": [
+          Nyarugenge: [
             {
-              "Gitega": [
+              Gitega: [
                 {
-                  "Akabahizi": [
+                  Akabahizi: [
                     "Gihanga",
                     "Iterambere",
                     "Izuba",
@@ -6983,35 +6962,35 @@ const rwandaData = {
                     "Umucyo",
                     "Umurabyo",
                     "Umuseke",
-                    "Vugizo"
-                  ]
+                    "Vugizo",
+                  ],
                 },
                 {
-                  "Akabeza": ["Akinyambo", "Amayaga", "Gitwa", "Ituze", "Mpazi"]
+                  Akabeza: ["Akinyambo", "Amayaga", "Gitwa", "Ituze", "Mpazi"],
                 },
                 {
-                  "Gacyamo": [
+                  Gacyamo: [
                     "Amahoro",
                     "Impuhwe",
                     "Intsinzi",
                     "Kivumu",
                     "Ubumwe",
                     "Urukundo",
-                    "Ururembo"
-                  ]
+                    "Ururembo",
+                  ],
                 },
                 {
-                  "Kigarama": [
+                  Kigarama: [
                     "Ingenzi",
                     "Sangwa",
                     "Umubano",
                     "Umucyo",
                     "Umuhoza",
-                    "Umurava"
-                  ]
+                    "Umurava",
+                  ],
                 },
                 {
-                  "Kinyange": [
+                  Kinyange: [
                     "Akabugenewe",
                     "Ihuriro",
                     "Isangano",
@@ -7022,11 +7001,11 @@ const rwandaData = {
                     "Ubwiza",
                     "Umucyo",
                     "Umwembe",
-                    "Urugano"
-                  ]
+                    "Urugano",
+                  ],
                 },
                 {
-                  "Kora": [
+                  Kora: [
                     "Isangano",
                     "Kanunga",
                     "Kinyambo",
@@ -7035,25 +7014,25 @@ const rwandaData = {
                     "Mpazi",
                     "Rugano",
                     "Rugari",
-                    "Ubumwe"
-                  ]
-                }
-              ]
+                    "Ubumwe",
+                  ],
+                },
+              ],
             },
             {
-              "Kanyinya": [
+              Kanyinya: [
                 {
-                  "Nyamweru": [
+                  Nyamweru: [
                     "Bwimo",
                     "Gatare",
                     "Mubuga",
                     "Nyakirambi",
                     "Nyamweru",
-                    "Ruhengeri"
-                  ]
+                    "Ruhengeri",
+                  ],
                 },
                 {
-                  "Nzove": [
+                  Nzove: [
                     "Bibungo",
                     "Bwiza",
                     "Gateko",
@@ -7061,25 +7040,25 @@ const rwandaData = {
                     "Nyabihu",
                     "Rutagara I",
                     "Rutagara II",
-                    "Ruyenzi"
-                  ]
+                    "Ruyenzi",
+                  ],
                 },
                 {
-                  "Taba": [
+                  Taba: [
                     "Kagaramira",
                     "Ngendo",
                     "Nyarurama",
                     "Nyarusange",
                     "Rwakivumu",
-                    "Taba"
-                  ]
-                }
-              ]
+                    "Taba",
+                  ],
+                },
+              ],
             },
             {
-              "Kigali": [
+              Kigali: [
                 {
-                  "Kigali": [
+                  Kigali: [
                     "Akirwanda",
                     "Gisenga",
                     "Kadobogo",
@@ -7089,11 +7068,11 @@ const rwandaData = {
                     "Murama",
                     "Rubuye",
                     "Ruhango",
-                    "Ryasharangabo"
-                  ]
+                    "Ryasharangabo",
+                  ],
                 },
                 {
-                  "Mwendo": [
+                  Mwendo: [
                     "Agakomeye",
                     "Akagugu",
                     "Amahoro",
@@ -7105,11 +7084,11 @@ const rwandaData = {
                     "Mwendo",
                     "Ruhuha",
                     "Ubuzima",
-                    "Umutekano"
-                  ]
+                    "Umutekano",
+                  ],
                 },
                 {
-                  "Nyabugogo": [
+                  Nyabugogo: [
                     "Gakoni",
                     "Gatare",
                     "Giticyinyoni",
@@ -7119,11 +7098,11 @@ const rwandaData = {
                     "Kiruhura",
                     "Nyabikoni",
                     "Nyabugogo",
-                    "Ruhondo"
-                  ]
+                    "Ruhondo",
+                  ],
                 },
                 {
-                  "Ruriba": [
+                  Ruriba: [
                     "Misibya",
                     "Nyabitare",
                     "Ruhango",
@@ -7131,11 +7110,11 @@ const rwandaData = {
                     "Ruriba",
                     "Ruzigimbogo",
                     "Ryamakomari",
-                    "Tubungo"
-                  ]
+                    "Tubungo",
+                  ],
                 },
                 {
-                  "Rwesero": [
+                  Rwesero: [
                     "Akanyamirambo",
                     "Akinama",
                     "Makaga",
@@ -7143,15 +7122,15 @@ const rwandaData = {
                     "Ruhogo",
                     "Rwesero",
                     "Rweza",
-                    "Vuganyana"
-                  ]
-                }
-              ]
+                    "Vuganyana",
+                  ],
+                },
+              ],
             },
             {
-              "Kimisagara": [
+              Kimisagara: [
                 {
-                  "Kamuhoza": [
+                  Kamuhoza: [
                     "Buhoro",
                     "Busasamana",
                     "Isimbi",
@@ -7165,11 +7144,11 @@ const rwandaData = {
                     "Nunga",
                     "Rurama",
                     "Rutunga",
-                    "Tetero"
-                  ]
+                    "Tetero",
+                  ],
                 },
                 {
-                  "Katabaro": [
+                  Katabaro: [
                     "Akamahoro",
                     "Akishinge",
                     "Akishuri",
@@ -7182,11 +7161,11 @@ const rwandaData = {
                     "Ubusabane",
                     "Umubano",
                     "Umurinzi",
-                    "Uruyange"
-                  ]
+                    "Uruyange",
+                  ],
                 },
                 {
-                  "Kimisagara": [
+                  Kimisagara: [
                     "Akabeza",
                     "Amahoro",
                     "Birama",
@@ -7207,36 +7186,36 @@ const rwandaData = {
                     "Nyakabingo",
                     "Nyamabuye",
                     "Sangwa",
-                    "Sano"
-                  ]
-                }
-              ]
+                    "Sano",
+                  ],
+                },
+              ],
             },
             {
-              "Mageregere": [
+              Mageregere: [
                 {
-                  "Kankuba": [
+                  Kankuba: [
                     "Kamatamu",
                     "Kankuba",
                     "Karukina",
                     "Musave",
                     "Nyarumanga",
-                    "Rugendabari"
-                  ]
+                    "Rugendabari",
+                  ],
                 },
                 {
-                  "Kavumu": [
+                  Kavumu: [
                     "Ayabatanga",
                     "Kankurimba",
                     "Kavumu",
                     "Mubura",
                     "Murondo",
                     "Nyakabingo",
-                    "Nyarubuye"
-                  ]
+                    "Nyarubuye",
+                  ],
                 },
                 {
-                  "Mataba": [
+                  Mataba: [
                     "Burema",
                     "Gahombo",
                     "Kabeza",
@@ -7244,124 +7223,124 @@ const rwandaData = {
                     "Kwisanga",
                     "Mageragere",
                     "Mataba",
-                    "Rushubi"
-                  ]
+                    "Rushubi",
+                  ],
                 },
                 {
-                  "Ntungamo": [
+                  Ntungamo: [
                     "Akanakamageragere",
                     "Gatovu",
                     "Nyabitare",
                     "Nyarubande",
                     "Rubungo",
-                    "Rwindonyi"
-                  ]
+                    "Rwindonyi",
+                  ],
                 },
                 {
-                  "Nyarufunzo": [
+                  Nyarufunzo: [
                     "Akabungo",
                     "Akamashinge",
                     "Maya",
                     "Nyarufunzo",
                     "Nyarurama",
-                    "Rubete"
-                  ]
+                    "Rubete",
+                  ],
                 },
                 {
-                  "Nyarurenzi": [
+                  Nyarurenzi: [
                     "Amahoro",
                     "Ayabaramba",
                     "Gikuyu",
                     "Iterambere",
                     "Nyabirondo",
-                    "Nyarurenzi"
-                  ]
+                    "Nyarurenzi",
+                  ],
                 },
                 {
-                  "Runzenze": [
+                  Runzenze: [
                     "Gisunzu",
                     "Mpanga",
                     "Nkomero",
                     "Runzenze",
-                    "Uwurugenge"
-                  ]
-                }
-              ]
+                    "Uwurugenge",
+                  ],
+                },
+              ],
             },
             {
-              "Muhima": [
+              Muhima: [
                 {
-                  "Amahoro": [
+                  Amahoro: [
                     "Amahoro",
                     "Amizero",
                     "Inyarurembo",
                     "Kabirizi",
                     "Ubuzima",
-                    "Uruhimbi"
-                  ]
+                    "Uruhimbi",
+                  ],
                 },
                 {
-                  "Kabasengerezi": [
+                  Kabasengerezi: [
                     "Icyeza",
                     "Ikana",
                     "Intwari",
-                    "Kabasengerezi"
-                  ]
+                    "Kabasengerezi",
+                  ],
                 },
                 {
-                  "Kabeza": [
+                  Kabeza: [
                     "Hirwa",
                     "Ikaze",
                     "Imanzi",
                     "Ingenzi",
                     "Ituze",
                     "Sangwa",
-                    "Umwezi"
-                  ]
+                    "Umwezi",
+                  ],
                 },
                 {
-                  "Nyabugogo": [
+                  Nyabugogo: [
                     "Abeza",
                     "Icyerekezo",
                     "Indatwa",
                     "Rwezangoro",
                     "Ubucuruzi",
-                    "Umutekano"
-                  ]
+                    "Umutekano",
+                  ],
                 },
-                { "Rugenge": ["Imihigo", "Impala", "Rugenge", "Ubumanzi"] },
+                { Rugenge: ["Imihigo", "Impala", "Rugenge", "Ubumanzi"] },
                 {
-                  "Tetero": [
+                  Tetero: [
                     "Indamutsa",
                     "Ingoro",
                     "Inkingi",
                     "Intiganda",
                     "Iwacu",
-                    "Tetero"
-                  ]
+                    "Tetero",
+                  ],
                 },
                 {
-                  "Ubumwe": [
+                  Ubumwe: [
                     "Bwahirimba",
                     "Duterimbere",
                     "Isangano",
                     "Nyanza",
                     "Urugwiro",
-                    "Urwego"
-                  ]
-                }
-              ]
+                    "Urwego",
+                  ],
+                },
+              ],
             },
             {
-              "Nyakabanda": [
+              Nyakabanda: [
                 {
                   "Munanira I": [
                     "Kabusunzu",
                     "Munanira",
                     "Ntaraga",
                     "Nyagasozi",
-                    "Rurembo"
-                  ]
+                    "Rurembo",
+                  ],
                 },
                 {
                   "Munanira II": [
@@ -7372,8 +7351,8 @@ const rwandaData = {
                     "Kigabiro",
                     "Kokobe",
                     "Mucyuranyana",
-                    "Nkundumurimbo"
-                  ]
+                    "Nkundumurimbo",
+                  ],
                 },
                 {
                   "Nyakabanda I": [
@@ -7384,8 +7363,8 @@ const rwandaData = {
                     "Kokobe",
                     "Munini",
                     "Nyakabanda",
-                    "Rwagitanga"
-                  ]
+                    "Rwagitanga",
+                  ],
                 },
                 {
                   "Nyakabanda II": [
@@ -7394,15 +7373,15 @@ const rwandaData = {
                     "Kanyiranganji",
                     "Karujongi",
                     "Kigarama",
-                    "Kirwa"
-                  ]
-                }
-              ]
+                    "Kirwa",
+                  ],
+                },
+              ],
             },
             {
-              "Nyamirambo": [
+              Nyamirambo: [
                 {
-                  "Cyivugiza": [
+                  Cyivugiza: [
                     "Amizero",
                     "Gabiro",
                     "Imanzi",
@@ -7415,12 +7394,12 @@ const rwandaData = {
                     "Muhoza",
                     "Munini",
                     "Rugero",
-                    "Shema"
-                  ]
+                    "Shema",
+                  ],
                 },
-                { "Gasharu": ["Kagunga", "Karukoro", "Rwintare"] },
+                { Gasharu: ["Kagunga", "Karukoro", "Rwintare"] },
                 {
-                  "Mumena": [
+                  Mumena: [
                     "Akanyana",
                     "Akanyirazaninka",
                     "Akarekare",
@@ -7429,11 +7408,11 @@ const rwandaData = {
                     "Itaba",
                     "Kiberinka",
                     "Mumena",
-                    "Rwampara"
-                  ]
+                    "Rwampara",
+                  ],
                 },
                 {
-                  "Rugarama": [
+                  Rugarama: [
                     "Gatare",
                     "Kiberinka",
                     "Munanira",
@@ -7442,35 +7421,35 @@ const rwandaData = {
                     "Rugarama",
                     "Runyinya",
                     "Rusisiro",
-                    "Tetero"
-                  ]
-                }
-              ]
+                    "Tetero",
+                  ],
+                },
+              ],
             },
             {
-              "Nyarugenge": [
+              Nyarugenge: [
                 {
-                  "Agatare": [
+                  Agatare: [
                     "Agatare",
                     "Amajyambere",
                     "Inyambo",
                     "Meraneza",
                     "Uburezi",
                     "Umucyo",
-                    "Umurava"
-                  ]
+                    "Umurava",
+                  ],
                 },
                 {
-                  "Biryogo": [
+                  Biryogo: [
                     "Biryogo",
                     "Gabiro",
                     "Isoko",
                     "Nyiranuma",
-                    "Umurimo"
-                  ]
+                    "Umurimo",
+                  ],
                 },
                 {
-                  "Kiyovu": [
+                  Kiyovu: [
                     "Amizero",
                     "Cercle Sportif",
                     "Ganza",
@@ -7482,25 +7461,25 @@ const rwandaData = {
                     "Isibo",
                     "Muhabura",
                     "Rugunga",
-                    "Sugira"
-                  ]
+                    "Sugira",
+                  ],
                 },
                 {
-                  "Rwampara": [
+                  Rwampara: [
                     "Amahoro",
                     "Gacaca",
                     "Intwari",
                     "Rwampara",
                     "Umucyo",
-                    "Umuganda"
-                  ]
-                }
-              ]
+                    "Umuganda",
+                  ],
+                },
+              ],
             },
             {
-              "Rwezamenyo": [
+              Rwezamenyo: [
                 {
-                  "Kabuguru I": ["Muhoza", "Muhuza", "Mumararungu", "Murambi"]
+                  "Kabuguru I": ["Muhoza", "Muhuza", "Mumararungu", "Murambi"],
                 },
                 { "Kabuguru II": ["Buhoro", "Gasabo", "Mutara", "Ubusabane"] },
                 {
@@ -7508,54 +7487,54 @@ const rwandaData = {
                     "Abatarushwa",
                     "Indatwa",
                     "Inkerakubanza",
-                    "Intwari"
-                  ]
+                    "Intwari",
+                  ],
                 },
-                { "Rwezamenyo II": ["Amahoro", "Umucyo", "Urumuri"] }
-              ]
-            }
-          ]
-        }
-      ]
+                { "Rwezamenyo II": ["Amahoro", "Umucyo", "Urumuri"] },
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
-      "North": [
+      North: [
         {
-          "Burera": [
+          Burera: [
             {
-              "Bungwe": [
+              Bungwe: [
                 {
-                  "Bungwe": [
+                  Bungwe: [
                     "Bungwe",
                     "Gakeri",
                     "Gatenga",
                     "Kinihira",
                     "Nyabyondo",
                     "Rweru",
-                    "Zaneza"
-                  ]
+                    "Zaneza",
+                  ],
                 },
                 {
-                  "Bushenya": [
+                  Bushenya: [
                     "Buhinga",
                     "Bushenya",
                     "Gifumba",
                     "Mbuga",
-                    "Ryamayaya"
-                  ]
+                    "Ryamayaya",
+                  ],
                 },
                 {
-                  "Mudugari": [
+                  Mudugari: [
                     "Buzaniro",
                     "Kivumo",
                     "Mubuga",
                     "Rubayo",
                     "Sangabuzi",
-                    "Vunga"
-                  ]
+                    "Vunga",
+                  ],
                 },
                 {
-                  "Tumba": [
+                  Tumba: [
                     "Byorera",
                     "Karwema",
                     "Mubuga",
@@ -7563,15 +7542,15 @@ const rwandaData = {
                     "Mutungo",
                     "Nama",
                     "Nyarukore",
-                    "Tumba"
-                  ]
-                }
-              ]
+                    "Tumba",
+                  ],
+                },
+              ],
             },
             {
-              "Butaro": [
+              Butaro: [
                 {
-                  "Gatsibo": [
+                  Gatsibo: [
                     "Gafumba",
                     "Gahuye",
                     "Gasebeya",
@@ -7585,11 +7564,11 @@ const rwandaData = {
                     "Murambi",
                     "Rubonobono",
                     "Rwabutama",
-                    "Rweru"
-                  ]
+                    "Rweru",
+                  ],
                 },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Biyove",
                     "Bugeme",
                     "Gacyamo",
@@ -7600,11 +7579,11 @@ const rwandaData = {
                     "Nyanamo",
                     "Rupangu",
                     "Ryakagundu",
-                    "Ryanturege"
-                  ]
+                    "Ryanturege",
+                  ],
                 },
                 {
-                  "Muhotora": [
+                  Muhotora: [
                     "Bukaragata",
                     "Cyahera",
                     "Gahunge",
@@ -7615,11 +7594,11 @@ const rwandaData = {
                     "Murambo",
                     "Murwa",
                     "Rugandu",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Nyamicucu": [
+                  Nyamicucu: [
                     "Burambira",
                     "Gacereri",
                     "Gahira",
@@ -7635,11 +7614,11 @@ const rwandaData = {
                     "Nyamiyaga",
                     "Rubaya",
                     "Rugeshi",
-                    "Rwemikore"
-                  ]
+                    "Rwemikore",
+                  ],
                 },
                 {
-                  "Rusumo": [
+                  Rusumo: [
                     "Budogoro",
                     "Butaro",
                     "Buyanga",
@@ -7655,15 +7634,15 @@ const rwandaData = {
                     "Mukeri",
                     "Musongati",
                     "Nyamiyaga",
-                    "Runaba"
-                  ]
-                }
-              ]
+                    "Runaba",
+                  ],
+                },
+              ],
             },
             {
-              "Cyanika": [
+              Cyanika: [
                 {
-                  "Gasiza": [
+                  Gasiza: [
                     "Bahimba",
                     "Gahirikiro",
                     "Gashunguru",
@@ -7671,11 +7650,11 @@ const rwandaData = {
                     "Karisimbi",
                     "Kaziguro",
                     "Nyamiyaga",
-                    "Rwankongi"
-                  ]
+                    "Rwankongi",
+                  ],
                 },
                 {
-                  "Gisovu": [
+                  Gisovu: [
                     "Gisovu",
                     "Hanika",
                     "Kamegeri",
@@ -7683,11 +7662,11 @@ const rwandaData = {
                     "Ruhimbi",
                     "Rusenyi",
                     "Rutango",
-                    "Samiro"
-                  ]
+                    "Samiro",
+                  ],
                 },
                 {
-                  "Kabyiniro": [
+                  Kabyiniro: [
                     "Butete",
                     "Kabadari",
                     "Mbonabose",
@@ -7695,11 +7674,11 @@ const rwandaData = {
                     "Mugeshi",
                     "Nkiriza",
                     "Nyagisenyi",
-                    "Zindiro"
-                  ]
+                    "Zindiro",
+                  ],
                 },
                 {
-                  "Kagitega": [
+                  Kagitega: [
                     "Gasebeya",
                     "Kabaya",
                     "Kagerero",
@@ -7707,11 +7686,11 @@ const rwandaData = {
                     "Kidaho",
                     "Munini",
                     "Ntarama",
-                    "Sirwa"
-                  ]
+                    "Sirwa",
+                  ],
                 },
                 {
-                  "Kamanyana": [
+                  Kamanyana: [
                     "Gasiza",
                     "Gasovu",
                     "Kabira",
@@ -7720,11 +7699,11 @@ const rwandaData = {
                     "Majyambere",
                     "Nyarutosho",
                     "Runyenkanda",
-                    "Ryabiteyi"
-                  ]
+                    "Ryabiteyi",
+                  ],
                 },
                 {
-                  "Nyagahinga": [
+                  Nyagahinga: [
                     "Bisura",
                     "Gahama",
                     "Gahonga",
@@ -7735,37 +7714,37 @@ const rwandaData = {
                     "Kebero",
                     "Mashango",
                     "Musave",
-                    "Ruko"
-                  ]
-                }
-              ]
+                    "Ruko",
+                  ],
+                },
+              ],
             },
             {
-              "Cyeru": [
+              Cyeru: [
                 {
-                  "Butare": [
+                  Butare: [
                     "Butare",
                     "Gatare",
                     "Kamata",
                     "Kamonyi",
                     "Musama",
                     "Nyaruyove",
-                    "Ryandahagaze"
-                  ]
+                    "Ryandahagaze",
+                  ],
                 },
                 {
-                  "Ndongozi": [
+                  Ndongozi: [
                     "Kabagenza",
                     "Ntazi",
                     "Nterura",
                     "Nyagisozi",
                     "Nyamusanze",
                     "Rujanja",
-                    "Ryaruhirima"
-                  ]
+                    "Ryaruhirima",
+                  ],
                 },
                 {
-                  "Ruyange": [
+                  Ruyange: [
                     "Bitagara",
                     "Burabwa",
                     "Gatagara-jite",
@@ -7774,36 +7753,36 @@ const rwandaData = {
                     "Rihiro",
                     "Rugarama",
                     "Runyenyeri",
-                    "Susa"
-                  ]
-                }
-              ]
+                    "Susa",
+                  ],
+                },
+              ],
             },
             {
-              "Gahunga": [
+              Gahunga: [
                 {
-                  "Buramba": [
+                  Buramba: [
                     "Buramba",
                     "Gafatangwe",
                     "Gasenyi",
                     "Kagoma",
                     "Karuheshyi",
                     "Murambi",
-                    "Musanzu"
-                  ]
+                    "Musanzu",
+                  ],
                 },
                 {
-                  "Gisizi": [
+                  Gisizi: [
                     "Gisizi",
                     "Kabagabo",
                     "Kanaba",
                     "Kigote",
                     "Nyagasozi",
-                    "Ruri"
-                  ]
+                    "Ruri",
+                  ],
                 },
                 {
-                  "Kidakama": [
+                  Kidakama: [
                     "Bahenga",
                     "Kabarima",
                     "Kabindi",
@@ -7814,11 +7793,11 @@ const rwandaData = {
                     "Mubuga",
                     "Nangimbibi",
                     "Rusenyi",
-                    "Songa"
-                  ]
+                    "Songa",
+                  ],
                 },
                 {
-                  "Nyangwe": [
+                  Nyangwe: [
                     "Bihanga",
                     "Gasagara",
                     "Gikoro",
@@ -7826,26 +7805,26 @@ const rwandaData = {
                     "Mubibi",
                     "Ntenyo",
                     "Nyangwe",
-                    "Remera"
-                  ]
+                    "Remera",
+                  ],
                 },
                 {
-                  "Rwasa": [
+                  Rwasa: [
                     "Gitagata",
                     "Kabanga",
                     "Kangoboka",
                     "Kanyiramusengo",
                     "Mirigari",
                     "Mutara",
-                    "Nyangezi"
-                  ]
-                }
-              ]
+                    "Nyangezi",
+                  ],
+                },
+              ],
             },
             {
-              "Gatebe": [
+              Gatebe: [
                 {
-                  "Gabiro": [
+                  Gabiro: [
                     "Gatebe",
                     "Ginga",
                     "Kabuga",
@@ -7854,11 +7833,11 @@ const rwandaData = {
                     "Nyakabungo",
                     "Rugarama",
                     "Ryaruyumbu",
-                    "Zihare"
-                  ]
+                    "Zihare",
+                  ],
                 },
                 {
-                  "Musenda": [
+                  Musenda: [
                     "Bikumba",
                     "Cyankaranka",
                     "Kabayoboke",
@@ -7867,46 +7846,46 @@ const rwandaData = {
                     "Nyamahunge",
                     "Rushaki",
                     "Sabukima",
-                    "Sunzu"
-                  ]
+                    "Sunzu",
+                  ],
                 },
                 {
-                  "Rwambogo": [
+                  Rwambogo: [
                     "Cyili",
                     "Mubuga",
                     "Murambo",
                     "Ruhinga",
                     "Rutete",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Rwasa": [
+                  Rwasa: [
                     "Karambi",
                     "Kiyogera",
                     "Murambo",
                     "Nganzo",
                     "Rugarama",
-                    "Rutovu"
-                  ]
-                }
-              ]
+                    "Rutovu",
+                  ],
+                },
+              ],
             },
             {
-              "Gitovu": [
+              Gitovu: [
                 {
-                  "Mariba": [
+                  Mariba: [
                     "Buhembe",
                     "Cyogo",
                     "Kiboga",
                     "Mariba",
                     "Musekera",
                     "Mwungura",
-                    "Rusuzuma"
-                  ]
+                    "Rusuzuma",
+                  ],
                 },
                 {
-                  "Musasa": [
+                  Musasa: [
                     "Butanga",
                     "Gashiru",
                     "Gicura",
@@ -7916,34 +7895,28 @@ const rwandaData = {
                     "Mutara",
                     "Ruhombo",
                     "Shyamba",
-                    "Sina"
-                  ]
+                    "Sina",
+                  ],
                 },
                 {
-                  "Runoga": [
+                  Runoga: [
                     "Gitwe",
                     "Kiraro",
                     "Mubuga",
                     "Musekera",
                     "Mutungu",
-                    "Siganiro"
-                  ]
-                }
-              ]
+                    "Siganiro",
+                  ],
+                },
+              ],
             },
             {
-              "Kagogo": [
+              Kagogo: [
                 {
-                  "Kabaya": [
-                    "Bihanga",
-                    "Butare",
-                    "Kanaba",
-                    "Murambi",
-                    "Rukenke"
-                  ]
+                  Kabaya: ["Bihanga", "Butare", "Kanaba", "Murambi", "Rukenke"],
                 },
                 {
-                  "Kayenzi": [
+                  Kayenzi: [
                     "Gatare",
                     "Kaguriro",
                     "Kiyira",
@@ -7951,11 +7924,11 @@ const rwandaData = {
                     "Ngobori",
                     "Rukoro",
                     "Rusisiro",
-                    "Rwitongo"
-                  ]
+                    "Rwitongo",
+                  ],
                 },
                 {
-                  "Kiringa": [
+                  Kiringa: [
                     "Gisanze",
                     "Karambi",
                     "Kariba",
@@ -7966,11 +7939,11 @@ const rwandaData = {
                     "Nyamuha",
                     "Rusenyi",
                     "Rwabageni",
-                    "Ryangarama"
-                  ]
+                    "Ryangarama",
+                  ],
                 },
                 {
-                  "Nyamabuye": [
+                  Nyamabuye: [
                     "Gitare",
                     "Kabana",
                     "Kabashotsi",
@@ -7979,40 +7952,40 @@ const rwandaData = {
                     "Musarara",
                     "Nyamabuye",
                     "Nyarubuye",
-                    "Nyarugina"
-                  ]
-                }
-              ]
+                    "Nyarugina",
+                  ],
+                },
+              ],
             },
             {
-              "Kinoni": [
+              Kinoni: [
                 {
-                  "Gafuka": [
+                  Gafuka: [
                     "Basumba",
                     "Bugeyo",
                     "Buharo",
                     "Kabeza",
                     "Kanoni",
                     "Ntwana",
-                    "Nyagafunzo"
-                  ]
+                    "Nyagafunzo",
+                  ],
                 },
                 {
-                  "Nkenke": ["Birwa", "Kigina", "Kigugu", "Nyagatoki", "Sunzu"]
+                  Nkenke: ["Birwa", "Kigina", "Kigugu", "Nyagatoki", "Sunzu"],
                 },
                 {
-                  "Nkumba": [
+                  Nkumba: [
                     "Cyanya",
                     "Cyivugiza",
                     "Kabaguma",
                     "Karambo",
                     "Mbaya",
                     "Mubuga",
-                    "Mutabo"
-                  ]
+                    "Mutabo",
+                  ],
                 },
                 {
-                  "Ntaruka": [
+                  Ntaruka: [
                     "Cyamabuye",
                     "Gikoro",
                     "Kabaya",
@@ -8021,15 +7994,15 @@ const rwandaData = {
                     "Nyarubuye",
                     "Nyarurembo",
                     "Ryamakoro",
-                    "Shenyi"
-                  ]
-                }
-              ]
+                    "Shenyi",
+                  ],
+                },
+              ],
             },
             {
-              "Kinyababa": [
+              Kinyababa: [
                 {
-                  "Bugamba": [
+                  Bugamba: [
                     "Cyogo",
                     "Gacaca",
                     "Gako",
@@ -8038,31 +8011,31 @@ const rwandaData = {
                     "Kirwa",
                     "Matyazo",
                     "Ndabizi",
-                    "Rukore"
-                  ]
+                    "Rukore",
+                  ],
                 },
                 {
-                  "Kaganda": [
+                  Kaganda: [
                     "Gisirwe",
                     "Kiraro",
                     "Mariko",
                     "Murambo",
                     "Ruhinga",
                     "Rusebeya",
-                    "Rwahondo"
-                  ]
+                    "Rwahondo",
+                  ],
                 },
                 {
-                  "Musasa": [
+                  Musasa: [
                     "Gitoma",
                     "Kabarore",
                     "Kanyaminyinya",
                     "Murambo",
-                    "Rukaya"
-                  ]
+                    "Rukaya",
+                  ],
                 },
                 {
-                  "Rutovu": [
+                  Rutovu: [
                     "Gisiriri",
                     "Gitenge",
                     "Karambo",
@@ -8073,36 +8046,36 @@ const rwandaData = {
                     "Nyabizi III",
                     "Rubayu",
                     "Ryatamba",
-                    "Shaga"
-                  ]
-                }
-              ]
+                    "Shaga",
+                  ],
+                },
+              ],
             },
             {
-              "Kivuye": [
+              Kivuye: [
                 {
-                  "Bukwashuri": [
+                  Bukwashuri: [
                     "Buhita",
                     "Gitovu",
                     "Murambo",
                     "Nyakira",
                     "Nyamisare",
-                    "Nyarutovu"
-                  ]
+                    "Nyarutovu",
+                  ],
                 },
                 {
-                  "Gashanje": [
+                  Gashanje: [
                     "Bitukura",
                     "Burango",
                     "Gafumba",
                     "Gashiru",
                     "Karambo",
                     "Nyakabungo",
-                    "Rugarambiro"
-                  ]
+                    "Rugarambiro",
+                  ],
                 },
                 {
-                  "Murwa": [
+                  Murwa: [
                     "Gasiza",
                     "Gatare",
                     "Kabaya",
@@ -8110,35 +8083,35 @@ const rwandaData = {
                     "Rubara",
                     "Rucyamo",
                     "Rusasa",
-                    "Vumage"
-                  ]
+                    "Vumage",
+                  ],
                 },
                 {
-                  "Nyirataba": [
+                  Nyirataba: [
                     "Buganza",
                     "Bukumbi",
                     "Kabasha",
                     "Kanyenzugi",
                     "Kivumo",
                     "Mushunga",
-                    "Shanja"
-                  ]
-                }
-              ]
+                    "Shanja",
+                  ],
+                },
+              ],
             },
             {
-              "Nemba": [
+              Nemba: [
                 {
-                  "Kivumu": [
+                  Kivumu: [
                     "Gashushura",
                     "Kigeyo",
                     "Mugano",
                     "Nyamusanze",
-                    "Songorero"
-                  ]
+                    "Songorero",
+                  ],
                 },
                 {
-                  "Nyamugari": [
+                  Nyamugari: [
                     "Cyabami",
                     "Kagihanga",
                     "Karyango",
@@ -8146,11 +8119,11 @@ const rwandaData = {
                     "Nyagahondo",
                     "Nyiraruhuha",
                     "Ryaruhirima",
-                    "Shorezo"
-                  ]
+                    "Shorezo",
+                  ],
                 },
                 {
-                  "Rubona": [
+                  Rubona: [
                     "Bugarigari",
                     "Bukenyeye",
                     "Butunda",
@@ -8160,25 +8133,25 @@ const rwandaData = {
                     "Murandamo",
                     "Ngongwe",
                     "Nyantweri",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Rushara": [
+                  Rushara: [
                     "Bishingwe",
                     "Bugondo",
                     "Cyave",
                     "Kagesera",
                     "Mugomero",
-                    "Nyabitare"
-                  ]
-                }
-              ]
+                    "Nyabitare",
+                  ],
+                },
+              ],
             },
             {
-              "Rugarama": [
+              Rugarama: [
                 {
-                  "Cyahi": [
+                  Cyahi: [
                     "Busura",
                     "Gakore",
                     "Hanika",
@@ -8187,11 +8160,11 @@ const rwandaData = {
                     "Nyabiho",
                     "Rubeja",
                     "Ruganda",
-                    "Tatiro"
-                  ]
+                    "Tatiro",
+                  ],
                 },
                 {
-                  "Gafumba": [
+                  Gafumba: [
                     "Bambiro",
                     "Basumba",
                     "Gacyogo",
@@ -8201,11 +8174,11 @@ const rwandaData = {
                     "Muturirwa",
                     "Nyarwondo",
                     "Rugarama",
-                    "Rutamba"
-                  ]
+                    "Rutamba",
+                  ],
                 },
                 {
-                  "Karangara": [
+                  Karangara: [
                     "Gahama",
                     "Gasiza",
                     "Kabaya",
@@ -8214,35 +8187,35 @@ const rwandaData = {
                     "Muhabura",
                     "Rugwiro",
                     "Rukiko",
-                    "Sasa"
-                  ]
+                    "Sasa",
+                  ],
                 },
                 {
-                  "Rurembo": [
+                  Rurembo: [
                     "Birwa",
                     "Gashore",
                     "Mpinga",
                     "Nyakiriba",
                     "Rwambeho",
-                    "Rwinkuba"
-                  ]
-                }
-              ]
+                    "Rwinkuba",
+                  ],
+                },
+              ],
             },
             {
-              "Rugengabari": [
+              Rugengabari: [
                 {
-                  "Kilibata": [
+                  Kilibata: [
                     "Bushima",
                     "Cyogo",
                     "Murungu",
                     "Musheke",
                     "Remera",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Mucaca": [
+                  Mucaca: [
                     "Burago",
                     "Burande",
                     "Gahinga",
@@ -8251,11 +8224,11 @@ const rwandaData = {
                     "Mugina",
                     "Nkoto",
                     "Nyabikungu",
-                    "Rihiro"
-                  ]
+                    "Rihiro",
+                  ],
                 },
                 {
-                  "Nyanamo": [
+                  Nyanamo: [
                     "Bwenjeli",
                     "Kabira",
                     "Kabukoko",
@@ -8263,11 +8236,11 @@ const rwandaData = {
                     "Kamonyi",
                     "Kiziba",
                     "Murambo",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Rukandabyuma": [
+                  Rukandabyuma: [
                     "Gatenga",
                     "Kinyefurwe",
                     "Mubuga",
@@ -8276,15 +8249,15 @@ const rwandaData = {
                     "Nyansyo",
                     "Remya",
                     "Rugandu",
-                    "Seta"
-                  ]
-                }
-              ]
+                    "Seta",
+                  ],
+                },
+              ],
             },
             {
-              "Ruhunde": [
+              Ruhunde: [
                 {
-                  "Gaseke": [
+                  Gaseke: [
                     "Gahe",
                     "Gatare",
                     "Kanyoni",
@@ -8293,11 +8266,11 @@ const rwandaData = {
                     "Murambo",
                     "Rugaragara",
                     "Rukiniro",
-                    "Rukwavu"
-                  ]
+                    "Rukwavu",
+                  ],
                 },
                 {
-                  "Gatare": [
+                  Gatare: [
                     "Gashinge",
                     "Gashishori",
                     "Gatete",
@@ -8305,11 +8278,11 @@ const rwandaData = {
                     "Nganzo",
                     "Ruganda",
                     "Rukingu",
-                    "Terimbere"
-                  ]
+                    "Terimbere",
+                  ],
                 },
                 {
-                  "Gitovu": [
+                  Gitovu: [
                     "Cyasuri",
                     "Genda",
                     "Kaberano",
@@ -8317,26 +8290,26 @@ const rwandaData = {
                     "Muremure",
                     "Mweru",
                     "Ngoma",
-                    "Tetero"
-                  ]
+                    "Tetero",
+                  ],
                 },
                 {
-                  "Rusekera": [
+                  Rusekera: [
                     "Bugambanyoni",
                     "Gasura",
                     "Gatokezo",
                     "Matyazo",
                     "Rubyiniro",
                     "Rusenge",
-                    "Tarasi"
-                  ]
-                }
-              ]
+                    "Tarasi",
+                  ],
+                },
+              ],
             },
             {
-              "Rusarabuye": [
+              Rusarabuye: [
                 {
-                  "Kabona": [
+                  Kabona: [
                     "Bucyaba",
                     "Busutamo",
                     "Buzamuye",
@@ -8349,11 +8322,11 @@ const rwandaData = {
                     "Murambo",
                     "Musebeya",
                     "Ntagara",
-                    "Rutuku"
-                  ]
+                    "Rutuku",
+                  ],
                 },
                 {
-                  "Ndago": [
+                  Ndago: [
                     "Burehe",
                     "Gacaca",
                     "Gaseke",
@@ -8362,11 +8335,11 @@ const rwandaData = {
                     "Karorero",
                     "Kirambo",
                     "Ndago",
-                    "Nyarungu"
-                  ]
+                    "Nyarungu",
+                  ],
                 },
                 {
-                  "Ruhanga": [
+                  Ruhanga: [
                     "Bisayu I",
                     "Bisayu II",
                     "Bumba",
@@ -8378,15 +8351,15 @@ const rwandaData = {
                     "Ruhanga",
                     "Ruhurura I",
                     "Ruhurura II",
-                    "Rutoro"
-                  ]
-                }
-              ]
+                    "Rutoro",
+                  ],
+                },
+              ],
             },
             {
-              "Rwerere": [
+              Rwerere: [
                 {
-                  "Gacundura": [
+                  Gacundura: [
                     "Burindwa",
                     "Gacundura",
                     "Kanigo",
@@ -8394,114 +8367,108 @@ const rwandaData = {
                     "Moma",
                     "Rugaragara",
                     "Rugarambiro",
-                    "Sarambwe"
-                  ]
+                    "Sarambwe",
+                  ],
                 },
                 {
-                  "Gashoro": [
+                  Gashoro: [
                     "Bisaga",
                     "Cyapa",
                     "Gashoro",
                     "Kibuye",
                     "Ngonya",
                     "Rugezi",
-                    "Rwerere"
-                  ]
+                    "Rwerere",
+                  ],
                 },
                 {
-                  "Ruconsho": [
+                  Ruconsho: [
                     "Buhore",
                     "Gakenke",
                     "Kamatengu",
                     "Kinkware",
                     "Mugera",
                     "Ngoma",
-                    "Ruconsho"
-                  ]
+                    "Ruconsho",
+                  ],
                 },
                 {
-                  "Rugari": [
+                  Rugari: [
                     "Gacyamu",
                     "Gatovu",
                     "Mucaca",
                     "Murambo",
                     "Mushubi",
-                    "Tangata"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Tangata",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Gakenke": [
+          Gakenke: [
             {
-              "Busengo": [
-                { "Birambo": ["Birambo", "Gitwa", "Kirwa", "Nyarubande"] },
+              Busengo: [
+                { Birambo: ["Birambo", "Gitwa", "Kirwa", "Nyarubande"] },
                 {
-                  "Butereri": [
+                  Butereri: [
                     "Buhuga",
                     "Butereri",
                     "Gasakuza",
                     "Kirwa",
                     "Rubaga",
                     "Rugendabari",
-                    "Rwinkuba"
-                  ]
+                    "Rwinkuba",
+                  ],
                 },
                 {
-                  "Byibuhiro": [
+                  Byibuhiro: [
                     "Gatoke",
                     "Kamina",
                     "Karambi",
                     "Nyagasozi",
-                    "Ruboza"
-                  ]
+                    "Ruboza",
+                  ],
                 },
                 {
-                  "Kamina": [
+                  Kamina: [
                     "Bunyangezi",
                     "Kajereri",
                     "Kamina",
                     "Mwendo",
                     "Nyarubuye",
-                    "Rwankuba"
-                  ]
+                    "Rwankuba",
+                  ],
                 },
                 {
-                  "Kirabo": [
+                  Kirabo: [
                     "Gasaso",
                     "Kirabo",
                     "Munyinya",
                     "Ngezi",
                     "Rusebeya",
-                    "Wimfizi"
-                  ]
+                    "Wimfizi",
+                  ],
                 },
                 {
-                  "Mwumba": [
-                    "Kabuga",
-                    "Kamonyi",
-                    "Karaba",
-                    "Mugunga",
-                    "Rutenga"
-                  ]
+                  Mwumba: ["Kabuga", "Kamonyi", "Karaba", "Mugunga", "Rutenga"],
                 },
                 {
-                  "Ruhanga": [
+                  Ruhanga: [
                     "Bukinga",
                     "Gashirwe",
                     "Kabaya",
                     "Kabugiri",
-                    "Rurangara"
-                  ]
-                }
-              ]
+                    "Rurangara",
+                  ],
+                },
+              ],
             },
             {
-              "Coko": [
+              Coko: [
                 {
-                  "Kiruku": [
+                  Kiruku: [
                     "Buhuri",
                     "Bukamba",
                     "Bushagashi",
@@ -8509,11 +8476,11 @@ const rwandaData = {
                     "Mucumazo",
                     "Ntarabana",
                     "Nyamasuka",
-                    "Rubuguma"
-                  ]
+                    "Rubuguma",
+                  ],
                 },
                 {
-                  "Mbirima": [
+                  Mbirima: [
                     "Akanduga",
                     "Burengo",
                     "Bushyama",
@@ -8521,40 +8488,40 @@ const rwandaData = {
                     "Mbogo",
                     "Murambi",
                     "Rwahi",
-                    "Shyunga"
-                  ]
+                    "Shyunga",
+                  ],
                 },
                 {
-                  "Nyange": [
+                  Nyange: [
                     "Buhara",
                     "Gaseke",
                     "Karambo",
                     "Karoli",
                     "Musasa",
                     "Ntobwe",
-                    "Vumandi"
-                  ]
+                    "Vumandi",
+                  ],
                 },
                 {
-                  "Nyanza": ["Baramba", "Gikamba", "Gitaba", "Kavumu", "Tumba"]
-                }
-              ]
+                  Nyanza: ["Baramba", "Gikamba", "Gitaba", "Kavumu", "Tumba"],
+                },
+              ],
             },
             {
-              "Cyabingo": [
+              Cyabingo: [
                 {
-                  "Muhaza": [
+                  Muhaza: [
                     "Buraza",
                     "Busoga",
                     "Karombero",
                     "Muhaza",
                     "Mushirarungu",
                     "Ntaraga",
-                    "Rutaramiro"
-                  ]
+                    "Rutaramiro",
+                  ],
                 },
                 {
-                  "Muhororo": [
+                  Muhororo: [
                     "Butaraga",
                     "Gatoki",
                     "Gatorero",
@@ -8562,46 +8529,46 @@ const rwandaData = {
                     "Karenge",
                     "Muhororo",
                     "Musebeya",
-                    "Tongoburo"
-                  ]
+                    "Tongoburo",
+                  ],
                 },
                 {
-                  "Muramba": [
+                  Muramba: [
                     "Bukuba",
                     "Gahama",
                     "Gatare",
                     "Musebeya",
                     "Rugaragara",
-                    "Rwobe"
-                  ]
+                    "Rwobe",
+                  ],
                 },
                 {
-                  "Mutanda": [
+                  Mutanda: [
                     "Cyabingo",
                     "Gishubi",
                     "Kambare",
                     "Kanyamukenke",
                     "Mucaca",
-                    "Mutanda"
-                  ]
+                    "Mutanda",
+                  ],
                 },
                 {
-                  "Rukore": [
+                  Rukore: [
                     "Kigote",
                     "Muramba",
                     "Murehe",
                     "Nyabisika",
                     "Nyamugali",
                     "Rugendabare",
-                    "Rukore"
-                  ]
-                }
-              ]
+                    "Rukore",
+                  ],
+                },
+              ],
             },
             {
-              "Gakenke": [
+              Gakenke: [
                 {
-                  "Buheta": [
+                  Buheta: [
                     "Buyagiro",
                     "Gatwa",
                     "Gihemba",
@@ -8611,11 +8578,11 @@ const rwandaData = {
                     "Mucuro",
                     "Murambi",
                     "Ndora",
-                    "Rusebeya"
-                  ]
+                    "Rusebeya",
+                  ],
                 },
                 {
-                  "Kagoma": [
+                  Kagoma: [
                     "Bukanka",
                     "Cyandago",
                     "Gitenga",
@@ -8625,11 +8592,11 @@ const rwandaData = {
                     "Musave",
                     "Ntobwe",
                     "Rurambi",
-                    "Rusuri"
-                  ]
+                    "Rusuri",
+                  ],
                 },
                 {
-                  "Nganzo": [
+                  Nganzo: [
                     "Bwimba",
                     "Gahondo",
                     "Gashigwe",
@@ -8642,11 +8609,11 @@ const rwandaData = {
                     "Mbizi",
                     "Mbogo",
                     "Muyira",
-                    "Ryabazungu"
-                  ]
+                    "Ryabazungu",
+                  ],
                 },
                 {
-                  "Rusagara": [
+                  Rusagara: [
                     "Akarugamba",
                     "Busingiryi",
                     "Kabaya",
@@ -8659,15 +8626,15 @@ const rwandaData = {
                     "Nyamabuye",
                     "Ruberano",
                     "Sitwe",
-                    "Umujyi Wa Gakenke"
-                  ]
-                }
-              ]
+                    "Umujyi Wa Gakenke",
+                  ],
+                },
+              ],
             },
             {
-              "Gashenyi": [
+              Gashenyi: [
                 {
-                  "Nyacyina": [
+                  Nyacyina: [
                     "Bwiyando",
                     "Gashinge",
                     "Kadehero",
@@ -8676,43 +8643,43 @@ const rwandaData = {
                     "Nyamure",
                     "Rugarama",
                     "Rugendabari",
-                    "Ruhore"
-                  ]
+                    "Ruhore",
+                  ],
                 },
                 {
-                  "Rukura": [
+                  Rukura: [
                     "Gahihi",
                     "Gikoro",
                     "Kara",
                     "Kirambo",
                     "Murandi",
-                    "Nyamataha"
-                  ]
+                    "Nyamataha",
+                  ],
                 },
                 {
-                  "Rutabo": [
+                  Rutabo: [
                     "Buhira",
                     "Buturuba",
                     "Gasanzwe",
                     "Kabwika",
                     "Kamurambo",
                     "Kanwa",
-                    "Rubuga"
-                  ]
+                    "Rubuga",
+                  ],
                 },
                 {
-                  "Rutenderi": [
+                  Rutenderi: [
                     "Gaseke",
                     "Gatwa",
                     "Gitaba",
                     "Kabere",
                     "Kabugomba",
                     "Kibara",
-                    "Murambo"
-                  ]
+                    "Murambo",
+                  ],
                 },
                 {
-                  "Taba": [
+                  Taba: [
                     "Busaro",
                     "Bushita",
                     "Gasharu",
@@ -8721,45 +8688,45 @@ const rwandaData = {
                     "Kanteko",
                     "Murambi",
                     "Mwisha",
-                    "Rutenderi"
-                  ]
-                }
-              ]
+                    "Rutenderi",
+                  ],
+                },
+              ],
             },
             {
-              "Janja": [
+              Janja: [
                 {
-                  "Gakindo": [
+                  Gakindo: [
                     "Bukerera",
                     "Bunyironko",
                     "Kabusoro",
                     "Kibonwa",
                     "Rubona",
-                    "Rurumbya"
-                  ]
+                    "Rurumbya",
+                  ],
                 },
                 {
-                  "Gashyamba": [
+                  Gashyamba: [
                     "Burega",
                     "Gatongo",
                     "Gitovu",
                     "Nyabikenke",
-                    "Rwampali"
-                  ]
+                    "Rwampali",
+                  ],
                 },
                 {
-                  "Gatwa": [
+                  Gatwa: [
                     "Buhanga",
                     "Gitega",
                     "Kinoko",
                     "Murambi",
                     "Mwanza",
                     "Nyabushishiri",
-                    "Nyagisozi"
-                  ]
+                    "Nyagisozi",
+                  ],
                 },
                 {
-                  "Karukungu": [
+                  Karukungu: [
                     "Buhimbi",
                     "Cyifuzo",
                     "Gitaba",
@@ -8767,15 +8734,15 @@ const rwandaData = {
                     "Mugandu",
                     "Rugeshi",
                     "Rusasa",
-                    "Rutake"
-                  ]
-                }
-              ]
+                    "Rutake",
+                  ],
+                },
+              ],
             },
             {
-              "Kamubuga": [
+              Kamubuga: [
                 {
-                  "Kamubuga": [
+                  Kamubuga: [
                     "Gasebeya",
                     "Gashishi",
                     "Gitwe",
@@ -8787,11 +8754,11 @@ const rwandaData = {
                     "Raro",
                     "Rugari",
                     "Ruhehe",
-                    "Runeka"
-                  ]
+                    "Runeka",
+                  ],
                 },
                 {
-                  "Kidomo": [
+                  Kidomo: [
                     "Bucyaba",
                     "Bugogo",
                     "Kidomo",
@@ -8799,11 +8766,11 @@ const rwandaData = {
                     "Njugi",
                     "Nyamusongati",
                     "Rugeshi",
-                    "Rutagara"
-                  ]
+                    "Rutagara",
+                  ],
                 },
                 {
-                  "Mbatabata": [
+                  Mbatabata: [
                     "Buhinda",
                     "Gatare",
                     "Horero",
@@ -8811,11 +8778,11 @@ const rwandaData = {
                     "Karingorera",
                     "Mbatabata",
                     "Mwasha",
-                    "Ryabirere"
-                  ]
+                    "Ryabirere",
+                  ],
                 },
                 {
-                  "Rukore": [
+                  Rukore: [
                     "Kabutwa",
                     "Karangara",
                     "Kinyababa",
@@ -8823,26 +8790,26 @@ const rwandaData = {
                     "Rusasa",
                     "Rusumo",
                     "Rwata",
-                    "Taba"
-                  ]
-                }
-              ]
+                    "Taba",
+                  ],
+                },
+              ],
             },
             {
-              "Karambo": [
+              Karambo: [
                 {
-                  "Kanyanza": [
+                  Kanyanza: [
                     "Gatembe",
                     "Kabuhunu",
                     "Kabutare",
                     "Karambi",
                     "Karenge",
                     "Marembo",
-                    "Nyiramisabike"
-                  ]
+                    "Nyiramisabike",
+                  ],
                 },
                 {
-                  "Karambo": [
+                  Karambo: [
                     "Bataga",
                     "Bumbeja",
                     "Bushumba",
@@ -8855,11 +8822,11 @@ const rwandaData = {
                     "Mugamba",
                     "Nyiramuhimba",
                     "Rwamiko",
-                    "Ryarurimbura"
-                  ]
+                    "Ryarurimbura",
+                  ],
                 },
                 {
-                  "Kirebe": [
+                  Kirebe: [
                     "Bukondo",
                     "Bukunga",
                     "Bukweto",
@@ -8867,60 +8834,60 @@ const rwandaData = {
                     "Kavumu",
                     "Mubuga",
                     "Mwiyanike",
-                    "Nyabigugu"
-                  ]
-                }
-              ]
+                    "Nyabigugu",
+                  ],
+                },
+              ],
             },
             {
-              "Kivuruga": [
-                { "Cyintare": ["Bigogwe", "Buhuga", "Cyintare", "Nyarubuye"] },
+              Kivuruga: [
+                { Cyintare: ["Bigogwe", "Buhuga", "Cyintare", "Nyarubuye"] },
                 {
-                  "Gasiza": [
+                  Gasiza: [
                     "Bushoka",
                     "Kabuhoma",
                     "Kamwumba",
                     "Nturo",
-                    "Nyarungu"
-                  ]
+                    "Nyarungu",
+                  ],
                 },
                 {
-                  "Rugimbu": [
+                  Rugimbu: [
                     "Gasave",
                     "Karuhunge",
                     "Mugali",
                     "Rurambo",
                     "Rutamba",
-                    "Rwamabare"
-                  ]
+                    "Rwamabare",
+                  ],
                 },
                 {
-                  "Ruhinga": [
+                  Ruhinga: [
                     "Buranga",
                     "Kamomo",
                     "Kavumu",
                     "Kintarure",
                     "Munyege",
                     "Rugeshi",
-                    "Rwakirari"
-                  ]
+                    "Rwakirari",
+                  ],
                 },
                 {
-                  "Sereri": [
+                  Sereri: [
                     "Buhayo",
                     "Kabara",
                     "Kivuruga",
                     "Masoro",
                     "Musekera",
-                    "Ngarama"
-                  ]
-                }
-              ]
+                    "Ngarama",
+                  ],
+                },
+              ],
             },
             {
-              "Mataba": [
+              Mataba: [
                 {
-                  "Buyange": [
+                  Buyange: [
                     "Gabiro",
                     "Gashingiro",
                     "Kabeza",
@@ -8929,11 +8896,11 @@ const rwandaData = {
                     "Mubuga",
                     "Nyamiyaga",
                     "Rugendabari",
-                    "Ryarugema"
-                  ]
+                    "Ryarugema",
+                  ],
                 },
                 {
-                  "Gikombe": [
+                  Gikombe: [
                     "Bugari",
                     "Bweramana",
                     "Gashyushya",
@@ -8943,11 +8910,11 @@ const rwandaData = {
                     "Muyaga",
                     "Nyangoma",
                     "Ruganda",
-                    "Ruhanga"
-                  ]
+                    "Ruhanga",
+                  ],
                 },
                 {
-                  "Nyundo": [
+                  Nyundo: [
                     "Gihita",
                     "Gitaba",
                     "Kabuyora",
@@ -8955,230 +8922,218 @@ const rwandaData = {
                     "Karambi",
                     "Mataba",
                     "Mwanza",
-                    "Nkurazo"
-                  ]
-                }
-              ]
+                    "Nkurazo",
+                  ],
+                },
+              ],
             },
             {
-              "Minazi": [
+              Minazi: [
                 {
-                  "Gasiho": [
+                  Gasiho: [
                     "Gahombo",
                     "Gahunda",
                     "Gasangwa",
                     "Gihinga",
                     "Kabarima",
                     "Kigeyo",
-                    "Mbogo"
-                  ]
+                    "Mbogo",
+                  ],
                 },
                 {
-                  "Munyana": [
+                  Munyana: [
                     "Gihororo",
                     "Gitwa",
                     "Kanka",
                     "Kivuba",
-                    "Nyabitare"
-                  ]
+                    "Nyabitare",
+                  ],
                 },
                 {
-                  "Murambi": [
+                  Murambi: [
                     "Gisovu",
                     "Kabuga",
                     "Musave",
                     "Nyanza",
-                    "Nyarubuye"
-                  ]
+                    "Nyarubuye",
+                  ],
                 },
                 {
-                  "Raba": [
+                  Raba: [
                     "Bukonde",
                     "Gaharo",
                     "Gitaragwe",
                     "Munihi",
                     "Mutara",
                     "Ndegamire",
-                    "Sarabuye"
-                  ]
-                }
-              ]
+                    "Sarabuye",
+                  ],
+                },
+              ],
             },
             {
-              "Mugunga": [
+              Mugunga: [
                 {
-                  "Gahinga": [
+                  Gahinga: [
                     "Cyinama",
                     "Giheta",
                     "Nyagahondo",
                     "Nyakagezi",
-                    "Rwimpiri"
-                  ]
+                    "Rwimpiri",
+                  ],
                 },
                 {
-                  "Munyana": [
+                  Munyana: [
                     "Cyarubayi",
                     "Karambi",
                     "Muhororo",
                     "Nturo",
-                    "Rwezamenyo"
-                  ]
+                    "Rwezamenyo",
+                  ],
                 },
                 {
-                  "Mutego": [
+                  Mutego: [
                     "Kamasanze",
                     "Kamunyana",
                     "Karambo",
                     "Nganzo",
-                    "Rutaraga"
-                  ]
+                    "Rutaraga",
+                  ],
                 },
                 {
-                  "Nkomane": [
+                  Nkomane: [
                     "Kabuga",
                     "Kanaba",
                     "Nemba",
                     "Nyagasozi",
-                    "Rusebeya"
-                  ]
+                    "Rusebeya",
+                  ],
                 },
                 {
-                  "Rutabo": [
+                  Rutabo: [
                     "Gacemeri",
                     "Gasovu",
                     "Gatonde",
                     "Kabuhoro",
-                    "Muhororo"
-                  ]
+                    "Muhororo",
+                  ],
                 },
-                { "Rutenderi": ["Kiraro", "Nyakazenga", "Nyundo", "Rubona"] },
+                { Rutenderi: ["Kiraro", "Nyakazenga", "Nyundo", "Rubona"] },
                 {
-                  "Rwamambe": [
+                  Rwamambe: [
                     "Biraro",
                     "Bushoka",
                     "Gashubi",
                     "Kabiganda",
-                    "Kanyinya"
-                  ]
-                }
-              ]
+                    "Kanyinya",
+                  ],
+                },
+              ],
             },
             {
-              "Muhondo": [
-                { "Busake": ["Busake", "Gikikira", "Kibirizi", "Nyakabanda"] },
+              Muhondo: [
+                { Busake: ["Busake", "Gikikira", "Kibirizi", "Nyakabanda"] },
                 {
-                  "Bwenda": ["Gahama", "Gatare", "Gitaba", "Kimanama", "Nketsi"]
+                  Bwenda: ["Gahama", "Gatare", "Gitaba", "Kimanama", "Nketsi"],
                 },
                 {
-                  "Gasiza": [
-                    "Gahabwa",
-                    "Gahinga",
-                    "Gahondo",
-                    "Gasiza",
-                    "Kabeza"
-                  ]
+                  Gasiza: ["Gahabwa", "Gahinga", "Gahondo", "Gasiza", "Kabeza"],
                 },
                 {
-                  "Gihinga": ["Base", "Gihinga", "Karehe", "Samuduha", "Taba"]
+                  Gihinga: ["Base", "Gihinga", "Karehe", "Samuduha", "Taba"],
                 },
-                { "Huro": ["Cura", "Gitwa", "Huro", "Kabuga", "Rubona"] },
-                { "Musagara": ["Akara", "Cyenda", "Giteme", "Karobagire"] },
-                { "Musenyi": ["Buhinya", "Gakuyu", "Kigali", "Musenyi"] },
+                { Huro: ["Cura", "Gitwa", "Huro", "Kabuga", "Rubona"] },
+                { Musagara: ["Akara", "Cyenda", "Giteme", "Karobagire"] },
+                { Musenyi: ["Buhinya", "Gakuyu", "Kigali", "Musenyi"] },
                 {
-                  "Ruganda": [
-                    "Gisozi",
-                    "Kinyonzo",
-                    "Mubuga",
-                    "Ranzi",
-                    "Ruganda"
-                  ]
+                  Ruganda: ["Gisozi", "Kinyonzo", "Mubuga", "Ranzi", "Ruganda"],
                 },
-                { "Rwinkuba": ["Cyimbogo", "Kanyana", "Ruhorobero"] }
-              ]
+                { Rwinkuba: ["Cyimbogo", "Kanyana", "Ruhorobero"] },
+              ],
             },
             {
-              "Muyongwe": [
+              Muyongwe: [
                 {
-                  "Bumba": [
+                  Bumba: [
                     "Bumba",
                     "Buzu",
                     "Gikoro",
                     "Gitovu",
                     "Gitwe",
                     "Mataba",
-                    "Shiru"
-                  ]
+                    "Shiru",
+                  ],
                 },
                 {
-                  "Gisiza": [
+                  Gisiza: [
                     "Gitanda",
                     "Kabingo",
                     "Kiyebe",
                     "Muramba",
                     "Ruhoko",
-                    "Sanzare"
-                  ]
+                    "Sanzare",
+                  ],
                 },
-                { "Karyango": ["Gikombe", "Kibingo", "Mahaha", "Mugera"] },
+                { Karyango: ["Gikombe", "Kibingo", "Mahaha", "Mugera"] },
                 {
-                  "Nganzo": [
+                  Nganzo: [
                     "Muhororo",
                     "Nganzo",
                     "Ngoma",
                     "Nyarubuye",
-                    "Vugangoma"
-                  ]
+                    "Vugangoma",
+                  ],
                 },
-                { "Va": ["Bukwera", "Businde", "Gikombe", "Mutoyi", "Ranzi"] }
-              ]
+                { Va: ["Bukwera", "Businde", "Gikombe", "Mutoyi", "Ranzi"] },
+              ],
             },
             {
-              "Muzo": [
+              Muzo: [
                 {
-                  "Kabatezi": [
+                  Kabatezi: [
                     "Curugusi",
                     "Gasave",
                     "Gitabi",
                     "Kabatezi",
                     "Kasheshe",
                     "Runyinya",
-                    "Rusororo"
-                  ]
+                    "Rusororo",
+                  ],
                 },
                 {
-                  "Kiryamo": [
+                  Kiryamo: [
                     "Akamagaju",
                     "Gahondo",
                     "Munyinya",
                     "Murambi",
                     "Rugarama",
                     "Rugege",
-                    "Sezuku"
-                  ]
+                    "Sezuku",
+                  ],
                 },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Butambwe",
                     "Kanini",
                     "Kavuza",
                     "Mubuga",
                     "Mwirika",
-                    "Mwurire"
-                  ]
+                    "Mwurire",
+                  ],
                 },
                 {
-                  "Mwiyando": [
+                  Mwiyando: [
                     "Gitabi",
                     "Gitoke",
                     "Kagano",
                     "Muguguri",
                     "Nyagasozi",
                     "Rubayo",
-                    "Ruhondo"
-                  ]
+                    "Ruhondo",
+                  ],
                 },
                 {
-                  "Rwa": [
+                  Rwa: [
                     "Bitaba",
                     "Cyinturo",
                     "Gacaca",
@@ -9186,27 +9141,27 @@ const rwandaData = {
                     "Kabere",
                     "Mafubo",
                     "Nyagahondo",
-                    "Nyarubande"
-                  ]
-                }
-              ]
+                    "Nyarubande",
+                  ],
+                },
+              ],
             },
             {
-              "Nemba": [
+              Nemba: [
                 {
-                  "Buranga": [
+                  Buranga: [
                     "Buranga",
                     "Burego",
                     "Butare",
                     "Kanyansyo",
                     "Muganwa",
                     "Mukaka",
-                    "Rukoji"
-                  ]
+                    "Rukoji",
+                  ],
                 },
-                { "Gahinga": ["Bitare", "Bukurura", "Kabaya", "Kilimbi"] },
+                { Gahinga: ["Bitare", "Bukurura", "Kabaya", "Kilimbi"] },
                 {
-                  "Gisozi": [
+                  Gisozi: [
                     "Gisagara",
                     "Kabushara",
                     "Kamatete",
@@ -9216,11 +9171,11 @@ const rwandaData = {
                     "Karukara",
                     "Kirehe",
                     "Mushubi",
-                    "Nyamyumba"
-                  ]
+                    "Nyamyumba",
+                  ],
                 },
                 {
-                  "Mucaca": [
+                  Mucaca: [
                     "Cyahafi",
                     "Gatare",
                     "Kabingo",
@@ -9231,194 +9186,188 @@ const rwandaData = {
                     "Munyege",
                     "Musange",
                     "Ntakabavu",
-                    "Nyamiyaga"
-                  ]
-                }
-              ]
+                    "Nyamiyaga",
+                  ],
+                },
+              ],
             },
             {
-              "Ruli": [
+              Ruli: [
                 {
-                  "Busoro": [
+                  Busoro: [
                     "Congoli",
                     "Cyoganyoni",
                     "Gitaba",
                     "Kabare",
                     "Kibirizi",
                     "Nkoto",
-                    "Rugaragara"
-                  ]
+                    "Rugaragara",
+                  ],
                 },
                 {
-                  "Gikingo": [
+                  Gikingo: [
                     "Bushoka",
                     "Gatwa",
                     "Kabingo",
                     "Karango",
                     "Nyamugari",
-                    "Rumasa"
-                  ]
+                    "Rumasa",
+                  ],
                 },
                 {
-                  "Jango": [
+                  Jango: [
                     "Gatagara",
                     "Gihura",
                     "Gitonde",
                     "Kinyonzo",
                     "Mubuga",
-                    "Murehe"
-                  ]
+                    "Murehe",
+                  ],
                 },
                 {
-                  "Ruli": [
+                  Ruli: [
                     "Bariza",
                     "Gahondo",
                     "Gataba",
                     "Mugambazi",
                     "Ngayake",
-                    "Nyakarambi"
-                  ]
+                    "Nyakarambi",
+                  ],
                 },
                 {
-                  "Rwesero": [
+                  Rwesero: [
                     "Gatare",
                     "Gisizi",
                     "Mabago",
                     "Mugwato",
-                    "Nyarunyinya"
-                  ]
-                }
-              ]
+                    "Nyarunyinya",
+                  ],
+                },
+              ],
             },
             {
-              "Rusasa": [
+              Rusasa: [
                 {
-                  "Gataba": [
-                    "Bumonyo A",
-                    "Gahama",
-                    "Gataba",
-                    "Kebero",
-                    "Kibaya"
-                  ]
+                  Gataba: ["Bumonyo A", "Gahama", "Gataba", "Kebero", "Kibaya"],
                 },
                 {
-                  "Kamonyi": [
+                  Kamonyi: [
                     "Burinda",
                     "Gakindo",
                     "Gapfura",
                     "Gitwe",
                     "Kidomo",
                     "Nyagahama",
-                    "Rurambi"
-                  ]
+                    "Rurambi",
+                  ],
                 },
-                { "Murambi": ["Buharabuye", "Karuhunge", "Kirehe", "Nyange"] },
+                { Murambi: ["Buharabuye", "Karuhunge", "Kirehe", "Nyange"] },
                 {
-                  "Nyundo": ["Bukingo", "Bumonyo B", "Gisovu", "Nyundo", "Tane"]
+                  Nyundo: ["Bukingo", "Bumonyo B", "Gisovu", "Nyundo", "Tane"],
                 },
-                { "Rumbi": ["Bukiza", "Buyora", "Bwanamo", "Ninda"] },
+                { Rumbi: ["Bukiza", "Buyora", "Bwanamo", "Ninda"] },
                 {
-                  "Rurembo": [
+                  Rurembo: [
                     "Bushoka",
                     "Mazinga",
                     "Murori",
                     "Nyakabungo",
-                    "Rugamba"
-                  ]
-                }
-              ]
+                    "Rugamba",
+                  ],
+                },
+              ],
             },
             {
-              "Rushashi": [
-                { "Burimba": ["Kabuye", "Kara", "Kivumu"] },
-                { "Busanane": ["Gisenyi", "Gisiza", "Kanzuki", "Nyakagezi"] },
+              Rushashi: [
+                { Burimba: ["Kabuye", "Kara", "Kivumu"] },
+                { Busanane: ["Gisenyi", "Gisiza", "Kanzuki", "Nyakagezi"] },
                 {
-                  "Joma": [
+                  Joma: [
                     "Kineza",
                     "Mataba",
                     "Mwifuzo",
                     "Nyagasozi",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Kageyo": ["Kabeza", "Kabona", "Karambi", "Murambi", "Nganzo"]
+                  Kageyo: ["Kabeza", "Kabona", "Karambi", "Murambi", "Nganzo"],
                 },
                 {
-                  "Mbogo": [
+                  Mbogo: [
                     "Bushoka",
                     "Buzoza",
                     "Gisanze",
                     "Gitongo",
-                    "Nyabitare"
-                  ]
+                    "Nyabitare",
+                  ],
                 },
                 {
-                  "Razi": ["Gahinga", "Gikongoro", "Kirwa", "Nkoto", "Nyangoyi"]
+                  Razi: ["Gahinga", "Gikongoro", "Kirwa", "Nkoto", "Nyangoyi"],
                 },
                 {
-                  "Rwankuba": [
+                  Rwankuba: [
                     "Giheta",
                     "Karushashi",
                     "Ngambi",
                     "Ruganda",
-                    "Rwamabega"
-                  ]
+                    "Rwamabega",
+                  ],
                 },
-                { "Shyombwe": ["Gatare", "Gatwa", "Gihororo", "Murara"] }
-              ]
-            }
-          ]
+                { Shyombwe: ["Gatare", "Gatwa", "Gihororo", "Murara"] },
+              ],
+            },
+          ],
         },
         {
-          "Gicumbi": [
+          Gicumbi: [
             {
-              "Bukure": [
+              Bukure: [
                 {
-                  "Karenge": [
+                  Karenge: [
                     "Gasharu",
                     "Kabuga",
                     "Kagarama",
                     "Karenge",
                     "Muguruka",
                     "Nyarutovu",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Kigabiro": [
+                  Kigabiro: [
                     "Gabiro",
                     "Kanyogote",
                     "Rugogwe",
                     "Rurama",
-                    "Rwarenga"
-                  ]
+                    "Rwarenga",
+                  ],
                 },
                 {
-                  "Kivumu": [
+                  Kivumu: [
                     "Butare",
                     "Karambo",
                     "Karushya",
                     "Kivugiza",
                     "Kivumu",
-                    "Ruyange"
-                  ]
+                    "Ruyange",
+                  ],
                 },
                 {
-                  "Rwesero": [
+                  Rwesero: [
                     "Gicaca",
                     "Karagari",
                     "Mugorore",
                     "Ntarama",
-                    "Nyarubira"
-                  ]
-                }
-              ]
+                    "Nyarubira",
+                  ],
+                },
+              ],
             },
             {
-              "Bwisige": [
+              Bwisige: [
                 {
-                  "Bwisige": [
+                  Bwisige: [
                     "Kabuye",
                     "Kavuruga",
                     "Kidandali",
@@ -9427,11 +9376,11 @@ const rwandaData = {
                     "Nyarubuye",
                     "Nyarwina",
                     "Rutoma",
-                    "Rwarurema"
-                  ]
+                    "Rwarurema",
+                  ],
                 },
                 {
-                  "Gihuke": [
+                  Gihuke: [
                     "Cyamukanya",
                     "Kumana",
                     "Kumunini",
@@ -9441,46 +9390,46 @@ const rwandaData = {
                     "Nyagakizi",
                     "Nyakagera",
                     "Nyamugari",
-                    "Rurenge"
-                  ]
+                    "Rurenge",
+                  ],
                 },
                 {
-                  "Mukono": [
+                  Mukono: [
                     "Akavuza",
                     "Murambi",
                     "Nyarumba",
                     "Nyirantungu",
                     "Rwebisheke",
                     "Rwondo",
-                    "Ryakirayi"
-                  ]
+                    "Ryakirayi",
+                  ],
                 },
                 {
-                  "Nyabushingitwa": [
+                  Nyabushingitwa: [
                     "Gahondo",
                     "Musayo",
                     "Ndayabana",
                     "Nyagatoma",
                     "Ruhuha",
-                    "Warufu"
-                  ]
-                }
-              ]
+                    "Warufu",
+                  ],
+                },
+              ],
             },
             {
-              "Byumba": [
+              Byumba: [
                 {
-                  "Gacurabwenge": [
+                  Gacurabwenge: [
                     "Gacurabwenge",
                     "Gasharu",
                     "Gashirwe",
                     "Rubyiniro",
                     "Ruyaga",
-                    "Rwasama"
-                  ]
+                    "Rwasama",
+                  ],
                 },
                 {
-                  "Gisuna": [
+                  Gisuna: [
                     "Bereshi",
                     "Gatare",
                     "Gisuna",
@@ -9488,29 +9437,29 @@ const rwandaData = {
                     "Kinihira II",
                     "Rebero",
                     "Ruhashya",
-                    "Rwiri"
-                  ]
+                    "Rwiri",
+                  ],
                 },
-                { "Kibali": ["Gakenke", "Mugorore", "Rugarama", "Ruzo"] },
-                { "Kivugiza": ["Kabingo", "Karambi", "Kivugiza", "Mugandu"] },
-                { "Murama": ["Gacaca", "Rukereza", "Rurambi", "Taba"] },
-                { "Ngondore": ["Bukamba", "Gitovu", "Karambo", "Kimirimo"] },
+                { Kibali: ["Gakenke", "Mugorore", "Rugarama", "Ruzo"] },
+                { Kivugiza: ["Kabingo", "Karambi", "Kivugiza", "Mugandu"] },
+                { Murama: ["Gacaca", "Rukereza", "Rurambi", "Taba"] },
+                { Ngondore: ["Bukamba", "Gitovu", "Karambo", "Kimirimo"] },
                 {
-                  "Nyakabungo": ["Gacyamo", "Kabuga", "Kanunga", "Rugaragara"]
+                  Nyakabungo: ["Gacyamo", "Kabuga", "Kanunga", "Rugaragara"],
                 },
                 {
-                  "Nyamabuye": [
+                  Nyamabuye: [
                     "Gasiza",
                     "Gatete",
                     "Kumana",
                     "Mugomero",
                     "Nyiragasuruba",
                     "Rwabukoko",
-                    "Umurara"
-                  ]
+                    "Umurara",
+                  ],
                 },
                 {
-                  "Nyarutarama": [
+                  Nyarutarama: [
                     "Kagarama",
                     "Mukeri",
                     "Muriza",
@@ -9520,101 +9469,101 @@ const rwandaData = {
                     "Nyarubande",
                     "Rugandu",
                     "Rugarama",
-                    "Rwamuhuba"
-                  ]
-                }
-              ]
+                    "Rwamuhuba",
+                  ],
+                },
+              ],
             },
             {
-              "Cyumba": [
-                { "Gasunzu": ["Mubuga", "Mugera", "Ryamuromba", "Zihare"] },
-                { "Muhambo": ["Kiliba", "Nyamabare", "Rugerero"] },
+              Cyumba: [
+                { Gasunzu: ["Mubuga", "Mugera", "Ryamuromba", "Zihare"] },
+                { Muhambo: ["Kiliba", "Nyamabare", "Rugerero"] },
                 {
-                  "Nyakabungo": [
+                  Nyakabungo: [
                     "Burambira",
                     "Gashija",
                     "Gatoki",
                     "Kabare",
                     "Kigombe",
                     "Remera",
-                    "Ryaruhumba"
-                  ]
+                    "Ryaruhumba",
+                  ],
                 },
-                { "Nyambare": ["Burambira", "Gipandi", "Remera", "Rusebeya"] },
+                { Nyambare: ["Burambira", "Gipandi", "Remera", "Rusebeya"] },
                 {
-                  "Nyaruka": ["Burindi", "Humura", "Maya", "Murore", "Rusambya"]
+                  Nyaruka: ["Burindi", "Humura", "Maya", "Murore", "Rusambya"],
                 },
                 {
-                  "Rwankonjo": [
+                  Rwankonjo: [
                     "Gatuna",
                     "Kagera",
                     "Keyebe",
                     "Kivuruga",
-                    "Rukizi"
-                  ]
-                }
-              ]
+                    "Rukizi",
+                  ],
+                },
+              ],
             },
             {
-              "Giti": [
+              Giti: [
                 {
-                  "Gatobotobo": [
+                  Gatobotobo: [
                     "Kababito",
                     "Kabacuzi",
                     "Kagahumbi",
                     "Matyazo",
                     "Nyamirambo",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Murehe": [
+                  Murehe: [
                     "Bisika",
                     "Bushiranyota",
                     "Butare",
                     "Cyamabano",
                     "Gatare",
                     "Kabeza",
-                    "Kigabiro"
-                  ]
+                    "Kigabiro",
+                  ],
                 },
                 {
-                  "Tanda": [
+                  Tanda: [
                     "Gasharu",
                     "Mashyoza",
                     "Nganwa",
                     "Nyakabungo",
                     "Ruzizi",
-                    "Tanda"
-                  ]
-                }
-              ]
+                    "Tanda",
+                  ],
+                },
+              ],
             },
             {
-              "Kageyo": [
+              Kageyo: [
                 {
-                  "Gihembe": [
+                  Gihembe: [
                     "Gitaba",
                     "Karihira",
                     "Munini",
                     "Muyange",
                     "Nyaruvumu",
-                    "Nyirabadugu"
-                  ]
+                    "Nyirabadugu",
+                  ],
                 },
-                { "Horezo": ["Kigoma", "Musetsa", "Nyirangoga", "Rukongi"] },
+                { Horezo: ["Kigoma", "Musetsa", "Nyirangoga", "Rukongi"] },
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Gatobotobo",
                     "Gicumbi",
                     "Maya",
                     "Mukenke",
-                    "Murama"
-                  ]
+                    "Murama",
+                  ],
                 },
-                { "Muhondo": ["Kagwa", "Kamanyundo", "Kamwumba", "Mwange"] },
+                { Muhondo: ["Kagwa", "Kamanyundo", "Kamwumba", "Mwange"] },
                 {
-                  "Nyamiyaga": [
+                  Nyamiyaga: [
                     "Gatare",
                     "Gatiba",
                     "Kabare",
@@ -9622,36 +9571,36 @@ const rwandaData = {
                     "Mugomero",
                     "Musura",
                     "Mutobo",
-                    "Rukomo"
-                  ]
-                }
-              ]
+                    "Rukomo",
+                  ],
+                },
+              ],
             },
             {
-              "Kaniga": [
+              Kaniga: [
                 {
-                  "Bugomba": [
+                  Bugomba: [
                     "Gatare",
                     "Kabungo",
                     "Kajevuba",
                     "Nyaruhanga",
                     "Rugarama",
                     "Rugari",
-                    "Ryakabanda"
-                  ]
+                    "Ryakabanda",
+                  ],
                 },
                 {
-                  "Gatoma": [
+                  Gatoma: [
                     "Gashiru",
                     "Kamabare",
                     "Nyakagera",
                     "Nyakara",
                     "Nyakibande",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Mulindi": [
+                  Mulindi: [
                     "Centre Mulindi",
                     "Gisunzu",
                     "Kagorogoro",
@@ -9661,56 +9610,56 @@ const rwandaData = {
                     "Ruhita",
                     "Rukizi",
                     "Runyinya",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Nyarwambu": [
+                  Nyarwambu: [
                     "Cyasaku",
                     "Kabeza",
                     "Kanyaruyonga",
                     "Kinnyogo",
                     "Mushunga",
-                    "Nyamabare"
-                  ]
+                    "Nyamabare",
+                  ],
                 },
                 {
-                  "Rukurura": [
+                  Rukurura: [
                     "Kabare",
                     "Kamushure",
                     "Karambo",
                     "Ngabira",
-                    "Nyagatare"
-                  ]
-                }
-              ]
+                    "Nyagatare",
+                  ],
+                },
+              ],
             },
             {
-              "Manyagiro": [
+              Manyagiro: [
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Gabiro",
                     "Kigarama",
                     "Mugera",
                     "Murehe",
                     "Mutara",
-                    "Rubindi"
-                  ]
+                    "Rubindi",
+                  ],
                 },
                 {
-                  "Nyiragifumba": [
+                  Nyiragifumba: [
                     "Gacyamo",
                     "Kiyovu",
                     "Murambo",
                     "Rurambi",
-                    "Rwamazi"
-                  ]
+                    "Rwamazi",
+                  ],
                 },
                 {
-                  "Nyiravugiza": ["Bugibwa", "Kajevuba", "Rurembo", "Rusebeya"]
+                  Nyiravugiza: ["Bugibwa", "Kajevuba", "Rurembo", "Rusebeya"],
                 },
                 {
-                  "Remera": [
+                  Remera: [
                     "Busa",
                     "Bushinga",
                     "Gasiza",
@@ -9718,20 +9667,20 @@ const rwandaData = {
                     "Kabeza",
                     "Rugasa",
                     "Sangano",
-                    "Shyigura"
-                  ]
+                    "Shyigura",
+                  ],
                 },
                 {
-                  "Rusekera": [
+                  Rusekera: [
                     "Gakubo",
                     "Kavure",
                     "Kiyovu",
                     "Nyamyumba",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Ryaruyumba": [
+                  Ryaruyumba: [
                     "Gatsyata",
                     "Gatungo",
                     "Muturirwa",
@@ -9739,26 +9688,26 @@ const rwandaData = {
                     "Nyarukombe",
                     "Rugasa",
                     "Rusabira",
-                    "Taba"
-                  ]
-                }
-              ]
+                    "Taba",
+                  ],
+                },
+              ],
             },
             {
-              "Miyove": [
+              Miyove: [
                 {
-                  "Gakenke": [
+                  Gakenke: [
                     "Gisiza",
                     "Karwanira",
                     "Kirwa",
                     "Kivomo",
                     "Museke",
                     "Nyarurambi",
-                    "Rugandu"
-                  ]
+                    "Rugandu",
+                  ],
                 },
                 {
-                  "Miyove": [
+                  Miyove: [
                     "Kamonyi",
                     "Karambo",
                     "Mpinga",
@@ -9768,11 +9717,11 @@ const rwandaData = {
                     "Nyamiyaga",
                     "Nyarubuye",
                     "Rebero",
-                    "Remera"
-                  ]
+                    "Remera",
+                  ],
                 },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Gatare",
                     "Gitsimbura",
                     "Kabuga",
@@ -9784,102 +9733,96 @@ const rwandaData = {
                     "Mubuga",
                     "Murambo",
                     "Rutovu",
-                    "Tetero"
-                  ]
-                }
-              ]
+                    "Tetero",
+                  ],
+                },
+              ],
             },
             {
-              "Mukarange": [
+              Mukarange: [
                 {
-                  "Cyamuganga": [
+                  Cyamuganga: [
                     "Burambira",
                     "Ndarama",
                     "Nyakabungo",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Gatenga": [
+                  Gatenga: [
                     "Ibereshi",
                     "Kagunga",
                     "Kiyorwa",
                     "Mugina",
                     "Nyacyoroma",
-                    "Nyange"
-                  ]
+                    "Nyange",
+                  ],
                 },
-                { "Kiruhura": ["Burembo", "Gacwamba", "Kariba", "Nyamutoko"] },
+                { Kiruhura: ["Burembo", "Gacwamba", "Kariba", "Nyamutoko"] },
                 {
-                  "Mutarama": [
+                  Mutarama: [
                     "Gikore",
                     "Kaziba",
                     "Mafumirwa",
                     "Murara",
-                    "Rugeshi"
-                  ]
+                    "Rugeshi",
+                  ],
                 },
                 {
-                  "Rugerero": [
+                  Rugerero: [
                     "Gakizi",
                     "Kagarama",
                     "Kinnyogo",
                     "Munyege",
                     "Rurembo",
                     "Rushasha",
-                    "Ruziku"
-                  ]
+                    "Ruziku",
+                  ],
                 },
-                { "Rusambya": ["Kabungo", "Kagane", "Nyagakizi", "Rusambya"] }
-              ]
+                { Rusambya: ["Kabungo", "Kagane", "Nyagakizi", "Rusambya"] },
+              ],
             },
             {
-              "Muko": [
+              Muko: [
                 {
-                  "Cyamuhinda": [
+                  Cyamuhinda: [
                     "Gicuregenya",
                     "Ntonyanga",
                     "Rugaragara",
                     "Rukazire",
-                    "Rwamitembe"
-                  ]
+                    "Rwamitembe",
+                  ],
                 },
                 {
-                  "Kigoma": [
+                  Kigoma: [
                     "Cyerere",
                     "Gatobotobo",
                     "Karambi",
                     "Karumuli",
-                    "Ryarwoga"
-                  ]
+                    "Ryarwoga",
+                  ],
                 },
-                { "Mwendo": ["Gikumba", "Kabuye", "Kagogo", "Kirengo"] },
+                { Mwendo: ["Gikumba", "Kabuye", "Kagogo", "Kirengo"] },
                 {
-                  "Ngange": [
-                    "Gasharu",
-                    "Kabare",
-                    "Kimpongo",
-                    "Mayora",
-                    "Rudogo"
-                  ]
+                  Ngange: ["Gasharu", "Kabare", "Kimpongo", "Mayora", "Rudogo"],
                 },
                 {
-                  "Rebero": [
+                  Rebero: [
                     "Gasizi",
                     "Karundi",
                     "Kirara",
                     "Kirwanirwa",
                     "Mayogi",
                     "Nyampundu",
-                    "Ryagashaka"
-                  ]
-                }
-              ]
+                    "Ryagashaka",
+                  ],
+                },
+              ],
             },
             {
-              "Mutete": [
+              Mutete: [
                 {
-                  "Gaseke": [
+                  Gaseke: [
                     "Gasharu",
                     "Gihira",
                     "Irasaniro",
@@ -9887,33 +9830,33 @@ const rwandaData = {
                     "Nyamabuye",
                     "Nyamiryango",
                     "Nyamugari",
-                    "Runyinya"
-                  ]
+                    "Runyinya",
+                  ],
                 },
                 {
-                  "Kabeza": [
+                  Kabeza: [
                     "Busabira",
                     "Kabasega",
                     "Kagarama",
                     "Merezo",
                     "Minanire",
                     "Nyagasozi",
-                    "Rusebeya"
-                  ]
+                    "Rusebeya",
+                  ],
                 },
                 {
-                  "Musenyi": [
+                  Musenyi: [
                     "Gataba",
                     "Karambi",
                     "Kimisugi",
                     "Muhororo",
                     "Rukondo",
                     "Rurama",
-                    "Rutongo"
-                  ]
+                    "Rutongo",
+                  ],
                 },
                 {
-                  "Mutandi": [
+                  Mutandi: [
                     "Gatare",
                     "Gihangara",
                     "Kamaganga",
@@ -9921,11 +9864,11 @@ const rwandaData = {
                     "Karambi",
                     "Kariku",
                     "Muhengeri",
-                    "Nyarubande"
-                  ]
+                    "Nyarubande",
+                  ],
                 },
                 {
-                  "Nyarubuye": [
+                  Nyarubuye: [
                     "Gitega",
                     "Kajwejwe",
                     "Kavumu",
@@ -9933,181 +9876,181 @@ const rwandaData = {
                     "Nkenzi",
                     "Rugarama",
                     "Ruhondo",
-                    "Rusumo"
-                  ]
-                }
-              ]
+                    "Rusumo",
+                  ],
+                },
+              ],
             },
             {
-              "Nyamiyaga": [
-                { "Gahumuliza": ["Majyambere", "Maya", "Ruhango"] },
-                { "Jamba": ["Byimana", "Kamabuye", "Kumuremure", "Rugarama"] },
-                { "Kabeza": ["Karambo", "Mataba", "Mugorore", "Rugari"] },
-                { "Kabuga": ["Kabeza", "Kaduha", "Mubuga", "Nyarubuye"] },
-                { "Karambo": ["Gaseke", "Gatare", "Kinyinya", "Murama"] },
-                { "Kiziba": ["Gasave", "Karambi", "Nyirakagamba", "Rwingwe"] },
-                { "Mataba": ["Mataba", "Miyange", "Rugarama", "Ruyaga"] }
-              ]
+              Nyamiyaga: [
+                { Gahumuliza: ["Majyambere", "Maya", "Ruhango"] },
+                { Jamba: ["Byimana", "Kamabuye", "Kumuremure", "Rugarama"] },
+                { Kabeza: ["Karambo", "Mataba", "Mugorore", "Rugari"] },
+                { Kabuga: ["Kabeza", "Kaduha", "Mubuga", "Nyarubuye"] },
+                { Karambo: ["Gaseke", "Gatare", "Kinyinya", "Murama"] },
+                { Kiziba: ["Gasave", "Karambi", "Nyirakagamba", "Rwingwe"] },
+                { Mataba: ["Mataba", "Miyange", "Rugarama", "Ruyaga"] },
+              ],
             },
             {
-              "Nyankenke": [
+              Nyankenke: [
                 {
-                  "Butare": [
+                  Butare: [
                     "Gikombe",
                     "Kabere",
                     "Rwambeho",
                     "Rwirute",
-                    "Ryabishanga"
-                  ]
+                    "Ryabishanga",
+                  ],
                 },
                 {
-                  "Kigogo": [
+                  Kigogo: [
                     "Gakoma",
                     "Gasake",
                     "Gatare",
                     "Kiyovu",
                     "Ntabangira",
-                    "Rusayu"
-                  ]
+                    "Rusayu",
+                  ],
                 },
                 {
-                  "Kinishya": [
+                  Kinishya: [
                     "Gashiru",
                     "Kabuga",
                     "Nyagafunzo",
                     "Nyirantarengwa",
-                    "Rwata"
-                  ]
+                    "Rwata",
+                  ],
                 },
                 {
-                  "Rusasa": [
+                  Rusasa: [
                     "Birumba",
                     "Mashyiga",
                     "Nyangezi",
                     "Rembero",
-                    "Ruhoho"
-                  ]
+                    "Ruhoho",
+                  ],
                 },
                 {
-                  "Rutete": [
+                  Rutete: [
                     "Kabingo",
                     "Kageje",
                     "Nyamugali",
                     "Ruhinga",
                     "Ryanterura",
-                    "Shokero"
-                  ]
+                    "Shokero",
+                  ],
                 },
                 {
-                  "Rwagihura": [
+                  Rwagihura: [
                     "Gacaca",
                     "Kabahura",
                     "Kagogo",
                     "Mwendo",
-                    "Rwagihura"
-                  ]
+                    "Rwagihura",
+                  ],
                 },
                 {
-                  "Yaramba": [
+                  Yaramba: [
                     "Cyankaranka",
                     "Mwenyi",
                     "Nturo",
                     "Nyarubuye",
-                    "Nyirakazo"
-                  ]
-                }
-              ]
+                    "Nyirakazo",
+                  ],
+                },
+              ],
             },
             {
-              "Rubaya": [
+              Rubaya: [
                 {
-                  "Gihanga": [
+                  Gihanga: [
                     "Gomba",
                     "Kirimbi",
                     "Nkurura",
                     "Runaba",
-                    "Rusambya"
-                  ]
+                    "Rusambya",
+                  ],
                 },
-                { "Gishambashayo": ["Gashiru", "Karambo"] },
-                { "Gishari": ["Kabaya", "Kagugo", "Mugote", "Nyakesha"] },
+                { Gishambashayo: ["Gashiru", "Karambo"] },
+                { Gishari: ["Kabaya", "Kagugo", "Mugote", "Nyakesha"] },
                 {
-                  "Muguramo": ["Centre Rubaya", "Gasheke", "Mabare", "Ngange"]
+                  Muguramo: ["Centre Rubaya", "Gasheke", "Mabare", "Ngange"],
                 },
-                { "Nyamiyaga": ["Kabeza", "Kiriba", "Mariba"] }
-              ]
+                { Nyamiyaga: ["Kabeza", "Kiriba", "Mariba"] },
+              ],
             },
             {
-              "Rukomo": [
+              Rukomo: [
                 {
-                  "Cyeya": [
+                  Cyeya: [
                     "Birambo",
                     "Bisika",
                     "Bwuhira",
                     "Gateke",
                     "Kanombe",
-                    "Rwambungo"
-                  ]
+                    "Rwambungo",
+                  ],
                 },
                 {
-                  "Cyuru": [
+                  Cyuru: [
                     "Bukamba",
                     "Kabuga",
                     "Karengo",
                     "Kimiko",
                     "Muhama",
                     "Nyamutezi",
-                    "Sabiro"
-                  ]
+                    "Sabiro",
+                  ],
                 },
                 {
-                  "Gisiza": [
+                  Gisiza: [
                     "Gatare",
                     "Gitaba",
                     "Karambi",
                     "Nyarubuye",
                     "Rushubi",
-                    "Rusumo"
-                  ]
+                    "Rusumo",
+                  ],
                 },
                 {
-                  "Kinyami": [
+                  Kinyami: [
                     "Gahondo",
                     "Gasharara",
                     "Kariba",
                     "Kivugiza",
                     "Meshero",
                     "Rukomo",
-                    "Ryarubanza"
-                  ]
+                    "Ryarubanza",
+                  ],
                 },
                 {
-                  "Mabare": [
+                  Mabare: [
                     "Cyingoma",
                     "Kanyiramana",
                     "Kararama",
                     "Kayungwe",
                     "Mburamazi",
                     "Murambo",
-                    "Ryandinda"
-                  ]
+                    "Ryandinda",
+                  ],
                 },
                 {
-                  "Munyinya": [
+                  Munyinya: [
                     "Kabeza",
                     "Kabuga",
                     "Mataba",
                     "Munyinya",
                     "Nyankokoma",
-                    "Rwamushumba"
-                  ]
-                }
-              ]
+                    "Rwamushumba",
+                  ],
+                },
+              ],
             },
             {
-              "Rushaki": [
+              Rushaki: [
                 {
-                  "Gitega": [
+                  Gitega: [
                     "Bugwe",
                     "Gisiza",
                     "Gitega",
@@ -10115,11 +10058,11 @@ const rwandaData = {
                     "Karambi",
                     "Karambo",
                     "Rubyiro",
-                    "Ryaruganzu"
-                  ]
+                    "Ryaruganzu",
+                  ],
                 },
                 {
-                  "Kamutora": [
+                  Kamutora: [
                     "Gashinge",
                     "Kabuga",
                     "Kamutora",
@@ -10127,11 +10070,11 @@ const rwandaData = {
                     "Mabare",
                     "Nkamba",
                     "Nyamyumba",
-                    "Remera"
-                  ]
+                    "Remera",
+                  ],
                 },
                 {
-                  "Karurama": [
+                  Karurama: [
                     "C. Rushaki",
                     "Gatonde",
                     "Izinga",
@@ -10139,96 +10082,96 @@ const rwandaData = {
                     "Ngabira",
                     "Nyaruhanga",
                     "Rumuri",
-                    "Rwaranda"
-                  ]
-                }
-              ]
+                    "Rwaranda",
+                  ],
+                },
+              ],
             },
             {
-              "Rutare": [
+              Rutare: [
                 {
-                  "Bikumba": [
+                  Bikumba: [
                     "Karugeyo",
                     "Kintaganirwa",
                     "Marembo",
                     "Matyazo",
-                    "Nyabisindu"
-                  ]
+                    "Nyabisindu",
+                  ],
                 },
                 {
-                  "Gasharu": [
+                  Gasharu: [
                     "Buyegero",
                     "Kabagabo",
                     "Kabusunzu",
                     "Kagarama",
                     "Rwimbogo",
-                    "Yogi"
-                  ]
+                    "Yogi",
+                  ],
                 },
-                { "Gatwaro": ["Bureranyana", "Gashinya", "Kabira", "Kanaba"] },
+                { Gatwaro: ["Bureranyana", "Gashinya", "Kabira", "Kanaba"] },
                 {
-                  "Kigabiro": [
+                  Kigabiro: [
                     "Kabuye",
                     "Munini",
                     "Nyakabingo",
                     "Nyakavunga",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Munanira": [
+                  Munanira: [
                     "Bushokanyambo",
                     "Gasharu",
                     "Kirwa",
                     "Mataba",
-                    "Ruti"
-                  ]
+                    "Ruti",
+                  ],
                 },
                 {
-                  "Nkoto": [
+                  Nkoto: [
                     "Bariza",
                     "Bwangamwanda",
                     "Murehe",
                     "Nyagatoma",
-                    "Nyansenge"
-                  ]
-                }
-              ]
+                    "Nyansenge",
+                  ],
+                },
+              ],
             },
             {
-              "Ruvune": [
+              Ruvune: [
                 {
-                  "Cyandaro": [
+                  Cyandaro: [
                     "Karambo",
                     "Kigarama",
                     "Mushesho",
                     "Nyankokoma",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Gasambya": [
+                  Gasambya: [
                     "Karambi",
                     "Kirara",
                     "Mataba",
                     "Nyamirama",
                     "Ruhete",
-                    "Ryasunzu"
-                  ]
+                    "Ryasunzu",
+                  ],
                 },
                 {
-                  "Gashirira": [
+                  Gashirira: [
                     "Kagasha",
                     "Nyarubuye",
                     "Nyarurama",
                     "Nyarwina",
                     "Remera",
-                    "Rugerero"
-                  ]
+                    "Rugerero",
+                  ],
                 },
-                { "Kabare": ["Buyanja", "Murehe", "Nyarusange", "Taba"] },
+                { Kabare: ["Buyanja", "Murehe", "Nyarusange", "Taba"] },
                 {
-                  "Rebero": [
+                  Rebero: [
                     "Bitoma",
                     "Burambo",
                     "Gatare",
@@ -10236,26 +10179,26 @@ const rwandaData = {
                     "Mwanza",
                     "Rwaburegeya",
                     "Rwamiko",
-                    "Sunzu"
-                  ]
+                    "Sunzu",
+                  ],
                 },
                 {
-                  "Ruhondo": [
+                  Ruhondo: [
                     "Gatoki",
                     "Karambo",
                     "Kirwa",
                     "Mugorore",
                     "Nyagakizi",
                     "Nyakaju",
-                    "Rwinyana"
-                  ]
-                }
-              ]
+                    "Rwinyana",
+                  ],
+                },
+              ],
             },
             {
-              "Rwamiko": [
+              Rwamiko: [
                 {
-                  "Cyeru": [
+                  Cyeru: [
                     "Bugarura",
                     "Gabiro",
                     "Kamurenzi",
@@ -10263,126 +10206,126 @@ const rwandaData = {
                     "Mukuyu",
                     "Murambi",
                     "Nyagasozi",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Kigabiro": [
+                  Kigabiro: [
                     "Cyiri",
                     "Kabira",
                     "Kanyove",
                     "Karangara",
                     "Mutambiko",
-                    "Rubuye"
-                  ]
+                    "Rubuye",
+                  ],
                 },
                 {
-                  "Nyagahinga": [
+                  Nyagahinga: [
                     "Kabusunzu",
                     "Kibiraro",
                     "Kigaga",
                     "Ntaremba",
-                    "Rugarama"
-                  ]
-                }
-              ]
+                    "Rugarama",
+                  ],
+                },
+              ],
             },
             {
-              "Shangasha": [
-                { "Bushara": ["Bushara", "Gasura", "Gatare", "Nganzo"] },
+              Shangasha: [
+                { Bushara: ["Bushara", "Gasura", "Gatare", "Nganzo"] },
                 {
-                  "Kitazigurwa": [
+                  Kitazigurwa: [
                     "Gacyamo",
                     "Iharama",
                     "Mubuga",
                     "Ntomvu",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Nyabishambi": [
+                  Nyabishambi: [
                     "Gasiza",
                     "Kagali",
                     "Karambo",
                     "Matyazo",
                     "Murambo",
                     "Rukiniro",
-                    "Rutete"
-                  ]
+                    "Rutete",
+                  ],
                 },
                 {
-                  "Nyabubare": [
+                  Nyabubare: [
                     "Bikumba",
                     "Irembo",
                     "Karuhanga",
                     "Nyakabingo",
-                    "Nyamiyaga"
-                  ]
+                    "Nyamiyaga",
+                  ],
                 },
                 {
-                  "Shangasha": [
+                  Shangasha: [
                     "Ituze",
                     "Kabeza",
                     "Kajyanjyali",
                     "Rugali",
                     "Runaba",
-                    "Ryamatebura"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Ryamatebura",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Musanze": [
+          Musanze: [
             {
-              "Busogo": [
-                { "Gisesero": ["Gahanga", "Jabiro", "Kabaya", "Nengo"] },
+              Busogo: [
+                { Gisesero: ["Gahanga", "Jabiro", "Kabaya", "Nengo"] },
                 {
-                  "Kavumu": [
+                  Kavumu: [
                     "Gatovu",
                     "Karema",
                     "Karuriza",
                     "Mutaboneka",
-                    "Rugeshi"
-                  ]
+                    "Rugeshi",
+                  ],
                 },
                 {
-                  "Nyagisozi": [
+                  Nyagisozi: [
                     "Cyasure",
                     "Gora",
                     "Kabwenge",
                     "Kirezi",
-                    "Rurembo"
-                  ]
+                    "Rurembo",
+                  ],
                 },
-                { "Sahara": ["Nyarubuye", "Nyiragaju", "Rubaya", "Ryamukutsi"] }
-              ]
+                { Sahara: ["Nyarubuye", "Nyiragaju", "Rubaya", "Ryamukutsi"] },
+              ],
             },
             {
-              "Cyuve": [
+              Cyuve: [
                 {
-                  "Bukinanyana": [
+                  Bukinanyana: [
                     "Bubandu",
                     "Mubwiza",
                     "Murambi",
                     "Mwidagaduro",
                     "Mwirongi",
-                    "Rugeshi"
-                  ]
+                    "Rugeshi",
+                  ],
                 },
                 {
-                  "Buruba": [
+                  Buruba: [
                     "Bazizana",
                     "Kabahama",
                     "Kamenantare",
                     "Ruhindinka",
                     "Rutemba",
-                    "Ruvumu"
-                  ]
+                    "Ruvumu",
+                  ],
                 },
                 {
-                  "Cyanya": [
+                  Cyanya: [
                     "Kabaya",
                     "Karugabanya",
                     "Kayange",
@@ -10391,21 +10334,21 @@ const rwandaData = {
                     "Mubuga",
                     "Mugarama",
                     "Rebero",
-                    "Ruhehe"
-                  ]
+                    "Ruhehe",
+                  ],
                 },
                 {
-                  "Kabeza": [
+                  Kabeza: [
                     "Bucuzi",
                     "Gashangiro",
                     "Kareba",
                     "Karinzi",
                     "Karunyura",
-                    "Kungo"
-                  ]
+                    "Kungo",
+                  ],
                 },
                 {
-                  "Migeshi": [
+                  Migeshi: [
                     "Buremu",
                     "Gakenke",
                     "Kabaya",
@@ -10413,193 +10356,193 @@ const rwandaData = {
                     "Kiviriza",
                     "Mugari",
                     "Nyaruyaga",
-                    "Rabika"
-                  ]
+                    "Rabika",
+                  ],
                 },
                 {
-                  "Rwebeya": [
+                  Rwebeya: [
                     "Marantima",
                     "Mubuga",
                     "Nganzo",
                     "Nyarubande",
-                    "Nyiraruhengeri"
-                  ]
-                }
-              ]
+                    "Nyiraruhengeri",
+                  ],
+                },
+              ],
             },
             {
-              "Gacaca": [
+              Gacaca: [
                 {
-                  "Gakoro": [
+                  Gakoro: [
                     "Butunda",
                     "Cyiri",
                     "Gahama",
                     "Murora",
                     "Murundo",
-                    "Nkomero"
-                  ]
+                    "Nkomero",
+                  ],
                 },
                 {
-                  "Gasakuza": [
+                  Gasakuza: [
                     "Gasenyi",
                     "Gataba",
                     "Karushenyi",
                     "Nyamugari",
                     "Ruhasa",
-                    "Rurambo"
-                  ]
+                    "Rurambo",
+                  ],
                 },
                 {
-                  "Kabirizi": [
+                  Kabirizi: [
                     "Gitovu",
                     "Kabushanda",
                     "Kanama",
                     "Karama",
                     "Mata",
                     "Mukungwa",
-                    "Rungu"
-                  ]
+                    "Rungu",
+                  ],
                 },
                 {
-                  "Karwasa": [
+                  Karwasa: [
                     "Burengo",
                     "Kabukende",
                     "Karambi",
                     "Kavumu",
-                    "Sarazi"
-                  ]
-                }
-              ]
+                    "Sarazi",
+                  ],
+                },
+              ],
             },
             {
-              "Gashaki": [
+              Gashaki: [
                 {
-                  "Kigabiro": [
+                  Kigabiro: [
                     "Birwa",
                     "Butate",
                     "Buzoza",
                     "Kavumu",
                     "Musekera",
-                    "Shanga"
-                  ]
+                    "Shanga",
+                  ],
                 },
                 {
-                  "Kivumu": [
+                  Kivumu: [
                     "Burango",
                     "Kamatete",
                     "Makara",
                     "Nyakariba",
-                    "Ruhehe"
-                  ]
+                    "Ruhehe",
+                  ],
                 },
                 {
-                  "Mbwe": [
+                  Mbwe: [
                     "Budiho",
                     "Gatete",
                     "Kamato",
                     "Kanzo",
                     "Ngambi",
-                    "Raro"
-                  ]
+                    "Raro",
+                  ],
                 },
                 {
-                  "Muharuro": [
+                  Muharuro: [
                     "Bugabo",
                     "Karuganda",
                     "Kibinyogote",
                     "Mucaca",
-                    "Murandi"
-                  ]
-                }
-              ]
+                    "Murandi",
+                  ],
+                },
+              ],
             },
             {
-              "Gataraga": [
+              Gataraga: [
                 {
-                  "Mudakama": [
+                  Mudakama: [
                     "Gakuku",
                     "Kagongo",
                     "Kararo",
                     "Mikingo",
-                    "Rubaka"
-                  ]
+                    "Rubaka",
+                  ],
                 },
                 {
-                  "Murago": [
+                  Murago: [
                     "Karurambi",
                     "Manjari",
                     "Rukingo",
                     "Rusambu",
-                    "Rwinzovu"
-                  ]
+                    "Rwinzovu",
+                  ],
                 },
                 {
-                  "Rubindi": [
+                  Rubindi: [
                     "Butakanyundo",
                     "Gacondo",
                     "Gataraga",
                     "Kabaya",
-                    "Kaberege"
-                  ]
+                    "Kaberege",
+                  ],
                 },
                 {
-                  "Rungu": [
+                  Rungu: [
                     "Gahira",
                     "Gatondori",
                     "Gatovu",
                     "Kampande",
-                    "Nyarubande"
-                  ]
-                }
-              ]
+                    "Nyarubande",
+                  ],
+                },
+              ],
             },
             {
-              "Kimonyi": [
+              Kimonyi: [
                 {
-                  "Birira": [
+                  Birira: [
                     "Gakoro",
                     "Kabagoyi",
                     "Kadahenda",
                     "Mbugayera",
-                    "Rurembo"
-                  ]
+                    "Rurembo",
+                  ],
                 },
                 {
-                  "Buramira": [
+                  Buramira: [
                     "Kabaya",
                     "Kagwene",
                     "Kamugeni",
                     "Nyiramuyenzi",
-                    "Ruhinga"
-                  ]
+                    "Ruhinga",
+                  ],
                 },
                 {
-                  "Kivumu": [
+                  Kivumu: [
                     "Masoro",
                     "Muregeya",
                     "Musezero",
                     "Ndorahe",
-                    "Nyamugari"
-                  ]
+                    "Nyamugari",
+                  ],
                 },
-                { "Mbizi": ["Buhuma", "Bushubi", "Gatumo", "Rugondo"] }
-              ]
+                { Mbizi: ["Buhuma", "Bushubi", "Gatumo", "Rugondo"] },
+              ],
             },
             {
-              "Kinigi": [
+              Kinigi: [
                 {
-                  "Bisoke": [
+                  Bisoke: [
                     "Bunyenyeri",
                     "Kamata",
                     "Karambi",
                     "Kazi",
                     "Kumazi",
                     "Shonero",
-                    "Susa"
-                  ]
+                    "Susa",
+                  ],
                 },
                 {
-                  "Kaguhu": [
+                  Kaguhu: [
                     "Kabeza",
                     "Kaniga",
                     "Impano",
@@ -10609,22 +10552,22 @@ const rwandaData = {
                     "Nyundo",
                     "Rugeshi",
                     "Ruginga",
-                    "Rurembo"
-                  ]
+                    "Rurembo",
+                  ],
                 },
                 {
-                  "Kampanga": [
+                  Kampanga: [
                     "Kamakara",
                     "Muhe",
                     "Nyarubande",
                     "Nyejoro",
                     "Rubara",
                     "Rugi",
-                    "Rutindo"
-                  ]
+                    "Rutindo",
+                  ],
                 },
                 {
-                  "Nyabigoma": [
+                  Nyabigoma: [
                     "Cyabirego",
                     "Gahura",
                     "Gasizi",
@@ -10633,11 +10576,11 @@ const rwandaData = {
                     "Mitobo",
                     "Nyakagezi",
                     "Nyakigina",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Nyonirima": [
+                  Nyonirima: [
                     "Bazizana",
                     "Butorwa I",
                     "Butorwa II",
@@ -10645,61 +10588,61 @@ const rwandaData = {
                     "Gasura",
                     "Kansoro",
                     "Kanyampereri",
-                    "Nyagisenyi"
-                  ]
-                }
-              ]
+                    "Nyagisenyi",
+                  ],
+                },
+              ],
             },
             {
-              "Muhoza": [
+              Muhoza: [
                 {
-                  "Cyabararika": [
+                  Cyabararika: [
                     "Buhuye",
                     "Bwuzuri",
                     "Gasanze",
                     "Gatare",
                     "Gatorwa",
                     "Kabogobogo",
-                    "Yorodani"
-                  ]
+                    "Yorodani",
+                  ],
                 },
                 {
-                  "Kigombe": [
+                  Kigombe: [
                     "Kavumu",
                     "Kiryi",
                     "Mugara",
                     "Nduruma",
                     "Nyamagumba",
                     "Nyamuremure",
-                    "Rukereza"
-                  ]
+                    "Rukereza",
+                  ],
                 },
                 {
-                  "Mpenge": [
+                  Mpenge: [
                     "Gikwege",
                     "Giramahoro",
                     "Mpenge",
                     "Rukoro",
-                    "Rusagara"
-                  ]
+                    "Rusagara",
+                  ],
                 },
                 {
-                  "Ruhengeri": [
+                  Ruhengeri: [
                     "Buhoro",
                     "Burera",
                     "Bushozi",
                     "Byimana",
                     "Kabaya",
                     "Muhe",
-                    "Susa"
-                  ]
-                }
-              ]
+                    "Susa",
+                  ],
+                },
+              ],
             },
             {
-              "Muko": [
+              Muko: [
                 {
-                  "Cyivugiza": [
+                  Cyivugiza: [
                     "Gakoro",
                     "Kabudundu",
                     "Kamutara",
@@ -10709,47 +10652,47 @@ const rwandaData = {
                     "Nyakanama",
                     "Nyiramuko",
                     "Sangano",
-                    "Susa"
-                  ]
+                    "Susa",
+                  ],
                 },
                 {
-                  "Cyogo": [
+                  Cyogo: [
                     "Kabere",
                     "Kadahenda",
                     "Karabiro",
                     "Karuyege",
                     "Nyagasambu",
-                    "Rubanga"
-                  ]
+                    "Rubanga",
+                  ],
                 },
                 {
-                  "Mburabuturo": [
+                  Mburabuturo: [
                     "Bugese",
                     "Kabindi",
                     "Kigasa",
                     "Musenyi",
                     "Mwanganzara",
                     "Ngabane",
-                    "Ntindo"
-                  ]
+                    "Ntindo",
+                  ],
                 },
                 {
-                  "Songa": [
+                  Songa: [
                     "Buhano",
                     "Butare",
                     "Kamaheke",
                     "Karambo",
                     "Kavumu",
                     "Kibuye",
-                    "Mubago"
-                  ]
-                }
-              ]
+                    "Mubago",
+                  ],
+                },
+              ],
             },
             {
-              "Musanze": [
+              Musanze: [
                 {
-                  "Cyabagarura": [
+                  Cyabagarura: [
                     "Bitare",
                     "Bukane",
                     "Gaturo",
@@ -10759,54 +10702,54 @@ const rwandaData = {
                     "Kanyabirayi",
                     "Kiroba",
                     "Rugeyo",
-                    "Ruvumu"
-                  ]
+                    "Ruvumu",
+                  ],
                 },
                 {
-                  "Garuka": [
+                  Garuka: [
                     "Cyanturo",
                     "Gacinyiro",
                     "Gapfuro",
                     "Kanganwa",
-                    "Kanyaminaba"
-                  ]
+                    "Kanyaminaba",
+                  ],
                 },
                 {
-                  "Kabazungu": [
+                  Kabazungu: [
                     "Bihinga",
                     "Kidendezi",
                     "Mufukuro",
                     "Nyabageni",
                     "Rucumu",
-                    "Rwunga"
-                  ]
+                    "Rwunga",
+                  ],
                 },
                 {
-                  "Nyarubuye": [
+                  Nyarubuye: [
                     "Bannyisuka",
                     "Kareba",
                     "Kavumbu",
                     "Murenzi",
                     "Nturo",
-                    "Tero"
-                  ]
+                    "Tero",
+                  ],
                 },
                 {
-                  "Rwambogo": [
+                  Rwambogo: [
                     "Buhunge",
                     "Gakoro",
                     "Kirerema",
                     "Nyarubande",
                     "Runyangwe",
-                    "Rwunga"
-                  ]
-                }
-              ]
+                    "Rwunga",
+                  ],
+                },
+              ],
             },
             {
-              "Nkotsi": [
+              Nkotsi: [
                 {
-                  "Bikara": [
+                  Bikara: [
                     "Barizo",
                     "Kabaya",
                     "Karambi",
@@ -10814,44 +10757,44 @@ const rwandaData = {
                     "Kinkware",
                     "Kiruhura",
                     "Nyakinama",
-                    "Rubindi"
-                  ]
+                    "Rubindi",
+                  ],
                 },
-                { "Gashinga": ["Buhanga", "Gitaraga", "Kabasaza", "Musebeya"] },
+                { Gashinga: ["Buhanga", "Gitaraga", "Kabasaza", "Musebeya"] },
                 {
-                  "Mubago": [
+                  Mubago: [
                     "Bugugu",
                     "Buhamo",
                     "Musembe",
                     "Nyagahondo",
-                    "Nyarubingo"
-                  ]
+                    "Nyarubingo",
+                  ],
                 },
                 {
-                  "Rugeshi": [
+                  Rugeshi: [
                     "Bigabiro",
                     "Gahanga",
                     "Gasebeya",
                     "Karambo",
                     "Mucyamo",
-                    "Mutuzo"
-                  ]
+                    "Mutuzo",
+                  ],
                 },
                 {
-                  "Ruyumba": [
+                  Ruyumba: [
                     "Cyivugiza",
                     "Gasiza",
                     "Kamusheshe",
                     "Murindi",
-                    "Nyakigezi"
-                  ]
-                }
-              ]
+                    "Nyakigezi",
+                  ],
+                },
+              ],
             },
             {
-              "Nyange": [
+              Nyange: [
                 {
-                  "Cyivugiza": [
+                  Cyivugiza: [
                     "Gasoroza",
                     "Kagano",
                     "Kageshi",
@@ -10860,32 +10803,32 @@ const rwandaData = {
                     "Nyabitare",
                     "Rugarama",
                     "Rusenge",
-                    "Terimbere"
-                  ]
+                    "Terimbere",
+                  ],
                 },
                 {
-                  "Kabeza": [
+                  Kabeza: [
                     "Gahama",
                     "Kansoro",
                     "Kibingo",
                     "Ntamiziro",
                     "Nyarubuye",
                     "Riboneye",
-                    "Rwebeya"
-                  ]
+                    "Rwebeya",
+                  ],
                 },
                 {
-                  "Kamwumba": [
+                  Kamwumba: [
                     "Kabaya",
                     "Kamajaga",
                     "Kamicaca",
                     "Musenyi",
                     "Ntarama",
-                    "Rugari"
-                  ]
+                    "Rugari",
+                  ],
                 },
                 {
-                  "Muhabura": [
+                  Muhabura: [
                     "Bazizana",
                     "Bihinga",
                     "Bukingo",
@@ -10895,11 +10838,11 @@ const rwandaData = {
                     "Nkogote",
                     "Ntarama",
                     "Ntebe",
-                    "Rugwiro"
-                  ]
+                    "Rugwiro",
+                  ],
                 },
                 {
-                  "Ninda": [
+                  Ninda: [
                     "Garuka",
                     "Gisigwa",
                     "Kabagorozi",
@@ -10910,77 +10853,77 @@ const rwandaData = {
                     "Nyabutaka",
                     "Nyakagezi",
                     "Nyamiyaga",
-                    "Nyarubande"
-                  ]
-                }
-              ]
+                    "Nyarubande",
+                  ],
+                },
+              ],
             },
             {
-              "Remera": [
+              Remera: [
                 {
-                  "Gasongero": [
+                  Gasongero: [
                     "Bukara",
                     "Gitega",
                     "Mugogo",
                     "Nyakibande",
-                    "Rususa"
-                  ]
+                    "Rususa",
+                  ],
                 },
                 {
-                  "Kamisave": [
+                  Kamisave: [
                     "Kabara",
                     "Kamurera",
                     "Mikamo",
                     "Mukinga",
                     "Rugari",
-                    "Ryampunga"
-                  ]
+                    "Ryampunga",
+                  ],
                 },
                 {
-                  "Murandi": [
+                  Murandi: [
                     "Buhogo",
                     "Kabagora",
                     "Karuruma",
                     "Muganda",
                     "Nyirabisekuro",
-                    "Nyundo"
-                  ]
+                    "Nyundo",
+                  ],
                 },
                 {
-                  "Murwa": [
+                  Murwa: [
                     "Giseke",
                     "Gitwa",
                     "Kabashima",
                     "Kamanga",
                     "Mwiyandiro",
-                    "Ngenzi"
-                  ]
+                    "Ngenzi",
+                  ],
                 },
                 {
-                  "Rurambo": [
+                  Rurambo: [
                     "Bitsibo",
                     "Gatare",
                     "Kabusozo",
                     "Kintashya",
                     "Mugeshi",
-                    "Nyanza"
-                  ]
-                }
-              ]
+                    "Nyanza",
+                  ],
+                },
+              ],
             },
             {
-              "Rwaza": [
+              Rwaza: [
                 {
-                  "Bumara": [
+                  Bumara: [
                     "Gisorora",
                     "Kabuye",
                     "Kavumu",
                     "Muheta",
-                    "Nyakarambi II"
-                  ]
+                    "Nyakarambi II",
+                  ],
                 },
                 {
-                  "Kabushinge": [
+                  Kabushinge: [
                     "Busana",
                     "Gihango",
                     "Kabuga",
@@ -10988,47 +10931,47 @@ const rwandaData = {
                     "Nyagisozi",
                     "Nyarugando",
                     "Ramba",
-                    "Rwamigimbu"
-                  ]
+                    "Rwamigimbu",
+                  ],
                 },
                 {
-                  "Musezero": [
+                  Musezero: [
                     "Kamabuye",
                     "Kansenda",
                     "Kibingo",
                     "Kiganda",
                     "Mataba",
                     "Mutara",
-                    "Nyakarambi I"
-                  ]
+                    "Nyakarambi I",
+                  ],
                 },
                 {
-                  "Nturo": [
+                  Nturo: [
                     "Gakenke",
                     "Mugogo",
                     "Rubabi",
                     "Rugari",
                     "Rugogwe",
-                    "Ruvumu"
-                  ]
+                    "Ruvumu",
+                  ],
                 },
                 {
-                  "Nyarubuye": [
+                  Nyarubuye: [
                     "Buhama",
                     "Bukoro",
                     "Kanama",
                     "Murambi",
                     "Ngege",
                     "Rusaki",
-                    "Sayo"
-                  ]
-                }
-              ]
+                    "Sayo",
+                  ],
+                },
+              ],
             },
             {
-              "Shingiro": [
+              Shingiro: [
                 {
-                  "Gakingo": [
+                  Gakingo: [
                     "Burengo",
                     "Bwamazi",
                     "Gasura",
@@ -11036,49 +10979,49 @@ const rwandaData = {
                     "Kadahenda",
                     "Karwesero",
                     "Mutuzo",
-                    "Ryambungira"
-                  ]
+                    "Ryambungira",
+                  ],
                 },
                 {
-                  "Kibuguzo": [
+                  Kibuguzo: [
                     "Bikereri",
                     "Byimana",
                     "Cyimbazi",
                     "Mutuzo",
                     "Nyundo",
-                    "Rwinuma"
-                  ]
+                    "Rwinuma",
+                  ],
                 },
                 {
-                  "Mudende": [
+                  Mudende: [
                     "Budasubira",
                     "Nyamiyaga",
                     "Nyarutembe",
                     "Rubagara",
                     "Rutagara",
-                    "Vubiro"
-                  ]
+                    "Vubiro",
+                  ],
                 },
                 {
-                  "Mugari": [
+                  Mugari: [
                     "Kabagabo",
                     "Kabeza",
                     "Kimanzi",
                     "Nyakagezi",
                     "Rebero",
-                    "Terimbere"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Terimbere",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Rulindo": [
+          Rulindo: [
             {
-              "Base": [
+              Base: [
                 {
-                  "Cyohoha": [
+                  Cyohoha: [
                     "Bukangano",
                     "Buramba",
                     "Gihemba",
@@ -11088,11 +11031,11 @@ const rwandaData = {
                     "Musenyi",
                     "Mushongi",
                     "Nyangoyi",
-                    "Rubanda"
-                  ]
+                    "Rubanda",
+                  ],
                 },
                 {
-                  "Gitare": [
+                  Gitare: [
                     "Bushyiga",
                     "Gatete",
                     "Gihora",
@@ -11102,11 +11045,11 @@ const rwandaData = {
                     "Mugenda II",
                     "Nyamugali",
                     "Rugaragara",
-                    "Rugerero"
-                  ]
+                    "Rugerero",
+                  ],
                 },
                 {
-                  "Rwamahwa": [
+                  Rwamahwa: [
                     "Base",
                     "Cyondo",
                     "Gitovu",
@@ -11114,15 +11057,15 @@ const rwandaData = {
                     "Kabeza",
                     "Karambi",
                     "Kiruli",
-                    "Mutima"
-                  ]
-                }
-              ]
+                    "Mutima",
+                  ],
+                },
+              ],
             },
             {
-              "Burega": [
+              Burega: [
                 {
-                  "Butangampundu": [
+                  Butangampundu: [
                     "Gacyamo",
                     "Gashinge",
                     "Karambi",
@@ -11136,11 +11079,11 @@ const rwandaData = {
                     "Muduha",
                     "Muhondo",
                     "Nyamiyaga",
-                    "Runyinya"
-                  ]
+                    "Runyinya",
+                  ],
                 },
                 {
-                  "Karengeri": [
+                  Karengeri: [
                     "Bugoboka",
                     "Byerwa",
                     "Gasare",
@@ -11154,11 +11097,11 @@ const rwandaData = {
                     "Mataba",
                     "Mitabi",
                     "Mukarange",
-                    "Rwamiko"
-                  ]
+                    "Rwamiko",
+                  ],
                 },
                 {
-                  "Taba": [
+                  Taba: [
                     "Bugarama",
                     "Cyinzuzi",
                     "Gasango",
@@ -11170,26 +11113,26 @@ const rwandaData = {
                     "Nyagisozi",
                     "Rubara",
                     "Rusine",
-                    "Ryinzovu"
-                  ]
-                }
-              ]
+                    "Ryinzovu",
+                  ],
+                },
+              ],
             },
             {
-              "Bushoki": [
+              Bushoki: [
                 {
-                  "Gasiza": [
+                  Gasiza: [
                     "Budaha",
                     "Buhande",
                     "Gitwa",
                     "Karambi",
                     "Remera",
                     "Ruhanga",
-                    "Rulindo"
-                  ]
+                    "Rulindo",
+                  ],
                 },
                 {
-                  "Giko": [
+                  Giko: [
                     "Buramira",
                     "Cyiri",
                     "Gashiru",
@@ -11197,25 +11140,25 @@ const rwandaData = {
                     "Kigamba",
                     "Kivomo",
                     "Ngarama",
-                    "Rugote"
-                  ]
+                    "Rugote",
+                  ],
                 },
                 {
-                  "Kayenzi": ["Gitaba", "Muduha", "Murambo", "Rebero", "Rwanzu"]
+                  Kayenzi: ["Gitaba", "Muduha", "Murambo", "Rebero", "Rwanzu"],
                 },
                 {
-                  "Mukoto": [
+                  Mukoto: [
                     "Buvumo",
                     "Buyogoma",
                     "Gatare",
                     "Marembo",
                     "Muko",
                     "Mukoto",
-                    "Rusave"
-                  ]
+                    "Rusave",
+                  ],
                 },
                 {
-                  "Nyirangarama": [
+                  Nyirangarama: [
                     "Bubiro",
                     "Byimana",
                     "Gatenga",
@@ -11225,84 +11168,84 @@ const rwandaData = {
                     "Nyirangarama",
                     "Remera",
                     "Tare",
-                    "Terambere"
-                  ]
-                }
-              ]
+                    "Terambere",
+                  ],
+                },
+              ],
             },
             {
-              "Buyoga": [
+              Buyoga: [
                 {
-                  "Busoro": [
+                  Busoro: [
                     "Gashana",
                     "Gatwa",
                     "Karambo",
                     "Kibanda",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Butare": [
+                  Butare: [
                     "Gasave",
                     "Giko",
                     "Kankanga",
                     "Karambi",
-                    "Ryanyirakayobe"
-                  ]
+                    "Ryanyirakayobe",
+                  ],
                 },
                 {
-                  "Gahororo": [
+                  Gahororo: [
                     "Bunyana",
                     "Gatare",
                     "Gatenderi",
                     "Gipfundo",
                     "Gitabura",
-                    "Shagasha"
-                  ]
+                    "Shagasha",
+                  ],
                 },
                 {
-                  "Gitumba": [
+                  Gitumba: [
                     "Gitaba",
                     "Munini",
                     "Nyarubuye",
                     "Remera",
-                    "Rutabo"
-                  ]
+                    "Rutabo",
+                  ],
                 },
                 {
-                  "Karama": [
+                  Karama: [
                     "Cyasenge",
                     "Kajeneni",
                     "Karambi",
                     "Karambo",
                     "Kavumo",
-                    "Kigarama"
-                  ]
+                    "Kigarama",
+                  ],
                 },
                 {
-                  "Mwumba": [
+                  Mwumba: [
                     "Gakoma",
                     "Mataba",
                     "Murambo",
                     "Nyamwiza",
-                    "Nyarubuye"
-                  ]
+                    "Nyarubuye",
+                  ],
                 },
                 {
-                  "Ndarage": [
+                  Ndarage: [
                     "Gahondo",
                     "Gikingo",
                     "Kagozi",
                     "Karambi",
-                    "Kimagali"
-                  ]
-                }
-              ]
+                    "Kimagali",
+                  ],
+                },
+              ],
             },
             {
-              "Cyinzuzi": [
+              Cyinzuzi: [
                 {
-                  "Budakiranya": [
+                  Budakiranya: [
                     "Gatagara",
                     "Gihinga",
                     "Kamatongo",
@@ -11310,11 +11253,11 @@ const rwandaData = {
                     "Kavumu",
                     "Kigarama",
                     "Nyakabanga",
-                    "Rugaragara"
-                  ]
+                    "Rugaragara",
+                  ],
                 },
                 {
-                  "Migendezo": [
+                  Migendezo: [
                     "Cyanya",
                     "Gitabage",
                     "Karambo",
@@ -11322,11 +11265,11 @@ const rwandaData = {
                     "Ngabitsinze",
                     "Nyamugali",
                     "Remera",
-                    "Rusagara"
-                  ]
+                    "Rusagara",
+                  ],
                 },
                 {
-                  "Rudogo": [
+                  Rudogo: [
                     "Gasekabuye",
                     "Gaseke",
                     "Gasizi",
@@ -11334,26 +11277,26 @@ const rwandaData = {
                     "Kirambo",
                     "Munini",
                     "Munoga",
-                    "Musenyi"
-                  ]
-                }
-              ]
+                    "Musenyi",
+                  ],
+                },
+              ],
             },
             {
-              "Cyungo": [
+              Cyungo: [
                 {
-                  "Burehe": [
+                  Burehe: [
                     "Gitandi",
                     "Karambo",
                     "Karengeri",
                     "Kibande",
                     "Kibogora",
                     "Nyagatovu",
-                    "Sove"
-                  ]
+                    "Sove",
+                  ],
                 },
                 {
-                  "Marembo": [
+                  Marembo: [
                     "Buyaga",
                     "Gahinga",
                     "Kibuye",
@@ -11361,156 +11304,156 @@ const rwandaData = {
                     "Murambo",
                     "Nganzo",
                     "Rugaragara",
-                    "Rusayu"
-                  ]
+                    "Rusayu",
+                  ],
                 },
                 {
-                  "Rwili": [
+                  Rwili: [
                     "Kabanda",
                     "Karambi",
                     "Kirwa",
                     "Kivumu",
                     "Nturo",
                     "Nyabisasa",
-                    "Sakara"
-                  ]
-                }
-              ]
+                    "Sakara",
+                  ],
+                },
+              ],
             },
             {
-              "Kinihira": [
+              Kinihira: [
                 {
-                  "Butunzi": [
+                  Butunzi: [
                     "Akamiyove",
                     "Barayi",
                     "Bunahi",
                     "Gisekuru",
                     "Kinihira",
-                    "Ndorandi"
-                  ]
+                    "Ndorandi",
+                  ],
                 },
                 {
-                  "Karegamazi": [
+                  Karegamazi: [
                     "Buhita",
                     "Bwishya",
                     "Gatembe",
                     "Magezi",
                     "Mutoyi",
-                    "Ntunguru"
-                  ]
+                    "Ntunguru",
+                  ],
                 },
                 {
-                  "Marembo": ["Buhunde", "Cyogo", "Gatare", "Kigali", "Kiyebe"]
+                  Marembo: ["Buhunde", "Cyogo", "Gatare", "Kigali", "Kiyebe"],
                 },
                 {
-                  "Rebero": [
+                  Rebero: [
                     "Kabuga",
                     "Karambi",
                     "Kirwa",
                     "Ndusu",
                     "Rugundu",
-                    "Taba"
-                  ]
-                }
-              ]
+                    "Taba",
+                  ],
+                },
+              ],
             },
             {
-              "Kisaro": [
-                { "Gitatsa": ["Kabere", "Ndago", "Ruberano", "Rwili"] },
+              Kisaro: [
+                { Gitatsa: ["Kabere", "Ndago", "Ruberano", "Rwili"] },
                 {
-                  "Kamushenyi": [
+                  Kamushenyi: [
                     "Gakenke",
                     "Gatete",
                     "Gatovu",
                     "Kabeza",
                     "Karambi",
                     "Songa",
-                    "Wamahoro"
-                  ]
+                    "Wamahoro",
+                  ],
                 },
                 {
-                  "Kigarama": [
+                  Kigarama: [
                     "Gaseke",
                     "Gasharu",
                     "Nyantabo",
                     "Runyinya",
-                    "Rwintare"
-                  ]
+                    "Rwintare",
+                  ],
                 },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Gako",
                     "Kibuye",
                     "Kirenge",
                     "Murambi",
                     "Nyakarekare",
-                    "Rutabo"
-                  ]
+                    "Rutabo",
+                  ],
                 },
                 {
-                  "Murama": [
+                  Murama: [
                     "Akamanama",
                     "Gishinge",
                     "Karambi",
                     "Kibingwe",
                     "Mugomero",
-                    "Ryarubuguza"
-                  ]
+                    "Ryarubuguza",
+                  ],
                 },
                 {
-                  "Sayo": [
+                  Sayo: [
                     "Cyasuri",
                     "Kibanda",
                     "Nyamiyaga",
                     "Rugarama",
                     "Rusongati",
-                    "Rusumo"
-                  ]
-                }
-              ]
+                    "Rusumo",
+                  ],
+                },
+              ],
             },
             {
-              "Masoro": [
+              Masoro: [
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Gisiza",
                     "Kanunga",
                     "Karambi",
                     "Kigarama",
                     "Nyakibande",
                     "Nyakizu",
-                    "Rubaya"
-                  ]
+                    "Rubaya",
+                  ],
                 },
                 {
-                  "Kigarama": ["Gacyamo", "Marenge", "Nyakabungo", "Rukurazo"]
+                  Kigarama: ["Gacyamo", "Marenge", "Nyakabungo", "Rukurazo"],
                 },
-                { "Kivugiza": ["Gasenga", "Musega", "Nyarurembo", "Rebero"] },
+                { Kivugiza: ["Gasenga", "Musega", "Nyarurembo", "Rebero"] },
                 {
-                  "Nyamyumba": [
+                  Nyamyumba: [
                     "Kabeza",
                     "Kabuga",
                     "Kigomwa",
                     "Marembo",
-                    "Rusenyi"
-                  ]
+                    "Rusenyi",
+                  ],
                 },
                 {
-                  "Shengampuli": [
+                  Shengampuli: [
                     "Agasharu",
                     "Amataba",
                     "Nyabinyana",
                     "Rusine",
                     "Umubuga",
-                    "Umutagata"
-                  ]
-                }
-              ]
+                    "Umutagata",
+                  ],
+                },
+              ],
             },
             {
-              "Mbogo": [
+              Mbogo: [
                 {
-                  "Bukoro": [
+                  Bukoro: [
                     "Buhira",
                     "Bukoro",
                     "Gasama",
@@ -11520,33 +11463,33 @@ const rwandaData = {
                     "Kibaya",
                     "Kinini Ya Mbogo",
                     "Ruhanya",
-                    "Rwambogo"
-                  ]
+                    "Rwambogo",
+                  ],
                 },
                 {
-                  "Mushari": [
+                  Mushari: [
                     "Bukongi",
                     "Buraro",
                     "Buyanja",
                     "Gitaba",
                     "Nkurura",
                     "Nyakabuye",
-                    "Rwambogo"
-                  ]
+                    "Rwambogo",
+                  ],
                 },
                 {
-                  "Ngiramazi": [
+                  Ngiramazi: [
                     "Gasovu",
                     "Gikombe",
                     "Gisha",
                     "Kibungo",
                     "Muhora",
                     "Nyakabembe",
-                    "Yaramba"
-                  ]
+                    "Yaramba",
+                  ],
                 },
                 {
-                  "Rurenge": [
+                  Rurenge: [
                     "Gakoma",
                     "Gicumbi",
                     "Gitaba",
@@ -11554,15 +11497,15 @@ const rwandaData = {
                     "Munini",
                     "Ruhondo",
                     "Rurenge",
-                    "Rutonde"
-                  ]
-                }
-              ]
+                    "Rutonde",
+                  ],
+                },
+              ],
             },
             {
-              "Murambi": [
+              Murambi: [
                 {
-                  "Bubangu": [
+                  Bubangu: [
                     "Gashubi",
                     "Karambo",
                     "Karwa",
@@ -11570,68 +11513,68 @@ const rwandaData = {
                     "Nyagisozi",
                     "Rebero",
                     "Ruhunga",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Gatwa": [
+                  Gatwa: [
                     "Agatare",
                     "Akarambi",
                     "Amataba",
                     "Gisiza",
                     "Kabeza",
                     "Karambo",
-                    "Kigarama"
-                  ]
+                    "Kigarama",
+                  ],
                 },
                 {
-                  "Mugambazi": [
+                  Mugambazi: [
                     "Amahoro",
                     "Buliza",
                     "Gahama",
                     "Gashinge",
                     "Kigarama",
                     "Nyarurembo",
-                    "Ruri"
-                  ]
+                    "Ruri",
+                  ],
                 },
                 {
-                  "Mvuzo": [
+                  Mvuzo: [
                     "Iraro",
                     "Kabeza",
                     "Kabuga",
                     "Munyinya",
                     "Mutabo",
                     "Ntyaba",
-                    "Rurama"
-                  ]
-                }
-              ]
+                    "Rurama",
+                  ],
+                },
+              ],
             },
             {
-              "Ngoma": [
+              Ngoma: [
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Gatete",
                     "Kagarama",
                     "Kirambo",
                     "Kiruli",
                     "Nyabuko",
-                    "Rubona"
-                  ]
+                    "Rubona",
+                  ],
                 },
                 {
-                  "Karambo": [
+                  Karambo: [
                     "Butare",
                     "Jyambere",
                     "Kagwa",
                     "Karambi",
                     "Marebe",
-                    "Nyakagezi"
-                  ]
+                    "Nyakagezi",
+                  ],
                 },
                 {
-                  "Mugote": [
+                  Mugote: [
                     "Cyabasigi",
                     "Kiboha",
                     "Kigina",
@@ -11639,11 +11582,11 @@ const rwandaData = {
                     "Nyakibyeyi",
                     "Riryi",
                     "Rukoma",
-                    "Sakara"
-                  ]
+                    "Sakara",
+                  ],
                 },
                 {
-                  "Munyarwanda": [
+                  Munyarwanda: [
                     "Busizi",
                     "Gaseke",
                     "Kirungu",
@@ -11651,15 +11594,15 @@ const rwandaData = {
                     "Ngaru",
                     "Nyaruvumu",
                     "Rushayu",
-                    "Rushubi"
-                  ]
-                }
-              ]
+                    "Rushubi",
+                  ],
+                },
+              ],
             },
             {
-              "Ntarabana": [
+              Ntarabana: [
                 {
-                  "Kajevuba": [
+                  Kajevuba: [
                     "Bikamba",
                     "Cyamutara",
                     "Gitambi",
@@ -11667,11 +11610,11 @@ const rwandaData = {
                     "Nyakambu",
                     "Nyarubuye",
                     "Rukore",
-                    "Rusasa"
-                  ]
+                    "Rusasa",
+                  ],
                 },
                 {
-                  "Kiyanza": [
+                  Kiyanza: [
                     "Gatobotobo",
                     "Kabirizi",
                     "Kivubwe",
@@ -11679,11 +11622,11 @@ const rwandaData = {
                     "Nombe",
                     "Nyagisozi",
                     "Nyamurema",
-                    "Nyarurama"
-                  ]
+                    "Nyarurama",
+                  ],
                 },
                 {
-                  "Mahaza": [
+                  Mahaza: [
                     "Burambi",
                     "Gitwa",
                     "Kamuhororo",
@@ -11691,15 +11634,15 @@ const rwandaData = {
                     "Kayenzi",
                     "Kibeho",
                     "Rugogwe",
-                    "Rusekabuye"
-                  ]
-                }
-              ]
+                    "Rusekabuye",
+                  ],
+                },
+              ],
             },
             {
-              "Rukozo": [
+              Rukozo: [
                 {
-                  "Buraro": [
+                  Buraro: [
                     "Kabgayi",
                     "Kabingo",
                     "Kamiyove",
@@ -11707,70 +11650,64 @@ const rwandaData = {
                     "Murwa",
                     "Nyenyeri",
                     "Rukingu",
-                    "Shyondwe"
-                  ]
+                    "Shyondwe",
+                  ],
                 },
                 {
-                  "Bwimo": [
+                  Bwimo: [
                     "Bushyana",
                     "Gatiba",
                     "Gatwa",
                     "Kadendegeri",
                     "Kavumo",
-                    "Mwana"
-                  ]
+                    "Mwana",
+                  ],
                 },
                 {
-                  "Mberuka": [
-                    "Gahwazi",
-                    "Gakubo",
-                    "Kabera",
-                    "Mataba",
-                    "Mutungo"
-                  ]
+                  Mberuka: ["Gahwazi", "Gakubo", "Kabera", "Mataba", "Mutungo"],
                 },
                 {
-                  "Mbuye": [
+                  Mbuye: [
                     "Kibare",
                     "Mujebe",
                     "Musave",
                     "Nyarusebeya",
-                    "Ruhanga"
-                  ]
-                }
-              ]
+                    "Ruhanga",
+                  ],
+                },
+              ],
             },
             {
-              "Rusiga": [
+              Rusiga: [
                 {
-                  "Gako": [
+                  Gako: [
                     "Gifumba",
                     "Kabunigu",
                     "Kabuye",
                     "Nkanga",
                     "Ntakara",
-                    "Rwintare"
-                  ]
+                    "Rwintare",
+                  ],
                 },
                 {
-                  "Kirenge": ["Kigarama", "Kinini-rusiga", "Ntaruka", "Rebero"]
+                  Kirenge: ["Kigarama", "Kinini-rusiga", "Ntaruka", "Rebero"],
                 },
                 {
-                  "Taba": [
+                  Taba: [
                     "Bitare",
                     "Gahondo",
                     "Karambi",
                     "Karenge",
                     "Kingazi",
-                    "Nyakarama"
-                  ]
-                }
-              ]
+                    "Nyakarama",
+                  ],
+                },
+              ],
             },
             {
-              "Shyorongi": [
+              Shyorongi: [
                 {
-                  "Bugaragara": [
+                  Bugaragara: [
                     "Gatimba",
                     "Gatwa",
                     "Gisiza",
@@ -11778,21 +11715,21 @@ const rwandaData = {
                     "Kigarama",
                     "Kiziranyenzi",
                     "Nyakaruri",
-                    "Nyarushinya"
-                  ]
+                    "Nyarushinya",
+                  ],
                 },
                 {
-                  "Kijabagwe": [
+                  Kijabagwe: [
                     "Gaseke",
                     "Kabagabaga",
                     "Kabakene",
                     "Nyamugari",
                     "Rimwe",
-                    "Rugendabari"
-                  ]
+                    "Rugendabari",
+                  ],
                 },
                 {
-                  "Muvumu": [
+                  Muvumu: [
                     "Cyikera",
                     "Kagunda",
                     "Karama",
@@ -11802,11 +11739,11 @@ const rwandaData = {
                     "Mukumba",
                     "Muvumu",
                     "Nyabubare",
-                    "Ruhanga"
-                  ]
+                    "Ruhanga",
+                  ],
                 },
                 {
-                  "Rubona": [
+                  Rubona: [
                     "Bwimo",
                     "Gishyita",
                     "Kigali",
@@ -11814,11 +11751,11 @@ const rwandaData = {
                     "Nyabitare",
                     "Nyarunyinya",
                     "Nyarusange",
-                    "Rwahi"
-                  ]
+                    "Rwahi",
+                  ],
                 },
                 {
-                  "Rutonde": [
+                  Rutonde: [
                     "Bugarura",
                     "Mwagiro",
                     "Ngendo",
@@ -11826,77 +11763,77 @@ const rwandaData = {
                     "Nyabyondo",
                     "Nyamirembe",
                     "Rutonde",
-                    "Rweya"
-                  ]
-                }
-              ]
+                    "Rweya",
+                  ],
+                },
+              ],
             },
             {
-              "Tumba": [
+              Tumba: [
                 {
-                  "Barari": [
+                  Barari: [
                     "Gaseke",
                     "Gashoro",
                     "Karambi",
                     "Kigarama",
-                    "Rukore"
-                  ]
+                    "Rukore",
+                  ],
                 },
                 {
-                  "Gahabwa": [
+                  Gahabwa: [
                     "Kabuga",
                     "Kagusa",
                     "Mafene",
                     "Munyinya",
-                    "Rushaki"
-                  ]
+                    "Rushaki",
+                  ],
                 },
                 {
-                  "Misezero": [
+                  Misezero: [
                     "Kanaba",
                     "Karambi",
                     "Kavumu",
                     "Marembo",
                     "Misezero",
                     "Rurambo",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Nyirabirori": [
+                  Nyirabirori: [
                     "Bukinga",
                     "Gatare",
                     "Gatsinde",
                     "Gihanga",
                     "Murambi",
                     "Rugando",
-                    "Rusura"
-                  ]
+                    "Rusura",
+                  ],
                 },
                 {
-                  "Taba": [
+                  Taba: [
                     "Kamuragi",
                     "Mwili",
                     "Nkinda",
                     "Nyirambuga",
                     "Nyirataba",
-                    "Ruvumba"
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+                    "Ruvumba",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
-      "South": [
+      South: [
         {
-          "Gisagara": [
+          Gisagara: [
             {
-              "Gikonko": [
+              Gikonko: [
                 {
-                  "Cyiri": [
+                  Cyiri: [
                     "Curusi",
                     "Cyendajuru",
                     "Cyimpuga",
@@ -11905,11 +11842,11 @@ const rwandaData = {
                     "Kinyana",
                     "Murambi",
                     "Musambi",
-                    "Sanzu"
-                  ]
+                    "Sanzu",
+                  ],
                 },
                 {
-                  "Gasagara": [
+                  Gasagara: [
                     "Agasenyi",
                     "Karukambira",
                     "Bibungo",
@@ -11917,20 +11854,20 @@ const rwandaData = {
                     "Karehe",
                     "Mugusa",
                     "Remera",
-                    "Mubezi"
-                  ]
+                    "Mubezi",
+                  ],
                 },
                 {
-                  "Gikonko": [
+                  Gikonko: [
                     "Gahabwa",
                     "Karubondo",
                     "Manyinya",
                     "Rugarama",
-                    "Runyinya"
-                  ]
+                    "Runyinya",
+                  ],
                 },
                 {
-                  "Mbogo": [
+                  Mbogo: [
                     "Bukorota",
                     "Buremera",
                     "Kirivuga",
@@ -11938,15 +11875,15 @@ const rwandaData = {
                     "Nyakabuye",
                     "Nyiramageni",
                     "Rwatano",
-                    "Rwintare"
-                  ]
-                }
-              ]
+                    "Rwintare",
+                  ],
+                },
+              ],
             },
             {
-              "Gishubi": [
+              Gishubi: [
                 {
-                  "Gabiro": [
+                  Gabiro: [
                     "Busave",
                     "Kigozi",
                     "Kivugiza",
@@ -11957,11 +11894,11 @@ const rwandaData = {
                     "Kurutare",
                     "Rweza",
                     "Tamba",
-                    "Zamwe"
-                  ]
+                    "Zamwe",
+                  ],
                 },
                 {
-                  "Nyabitare": [
+                  Nyabitare: [
                     "Hemba",
                     "Kabuga",
                     "Kanombe",
@@ -11971,11 +11908,11 @@ const rwandaData = {
                     "Nyabisindu",
                     "Nyirakanywero",
                     "Rwinkwavu",
-                    "Ryarugaju"
-                  ]
+                    "Ryarugaju",
+                  ],
                 },
                 {
-                  "Nyakibungo": [
+                  Nyakibungo: [
                     "Banga",
                     "Gicaca",
                     "Kavumu",
@@ -11986,11 +11923,11 @@ const rwandaData = {
                     "Nyarurama",
                     "Rebero",
                     "Rugarama",
-                    "Rusasa"
-                  ]
+                    "Rusasa",
+                  ],
                 },
                 {
-                  "Nyeranzi": [
+                  Nyeranzi: [
                     "Cyamanyeri",
                     "Gikuyo",
                     "Gishya",
@@ -12006,15 +11943,15 @@ const rwandaData = {
                     "Rugogwe",
                     "Rwanza",
                     "Rwegura",
-                    "Sakara"
-                  ]
-                }
-              ]
+                    "Sakara",
+                  ],
+                },
+              ],
             },
             {
-              "Kansi": [
+              Kansi: [
                 {
-                  "Akaboti": [
+                  Akaboti: [
                     "Agacyamu",
                     "Agataba",
                     "Akabuga",
@@ -12022,32 +11959,32 @@ const rwandaData = {
                     "Gatare",
                     "Impinga",
                     "Rugarama",
-                    "Ruhuha"
-                  ]
+                    "Ruhuha",
+                  ],
                 },
                 {
-                  "Bwiza": [
+                  Bwiza: [
                     "Akakinka",
                     "Akambogo",
                     "Gitwa",
                     "Kimanama",
                     "Mbeho",
                     "Nyakibungo",
-                    "Nyaruhengeri"
-                  ]
+                    "Nyaruhengeri",
+                  ],
                 },
                 {
-                  "Sabusaro": [
+                  Sabusaro: [
                     "Akayenzi",
                     "Gikore",
                     "Muhororo",
                     "Nyamure",
                     "Nyarunazi",
-                    "Ruhangaye"
-                  ]
+                    "Ruhangaye",
+                  ],
                 },
                 {
-                  "Umunini": [
+                  Umunini: [
                     "Agatare",
                     "Akabagari",
                     "Gisororo",
@@ -12055,15 +11992,15 @@ const rwandaData = {
                     "Kaduha",
                     "Kamugani",
                     "Kigarama",
-                    "Nyange"
-                  ]
-                }
-              ]
+                    "Nyange",
+                  ],
+                },
+              ],
             },
             {
-              "Kibirizi": [
+              Kibirizi: [
                 {
-                  "Duwani": [
+                  Duwani: [
                     "Buhoro",
                     "Burashi",
                     "Cyahafi",
@@ -12074,11 +12011,11 @@ const rwandaData = {
                     "Mubuga",
                     "Murambi",
                     "Rwuya",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Kibirizi": [
+                  Kibirizi: [
                     "Burashi",
                     "Gasagara",
                     "Kabakobwa",
@@ -12087,11 +12024,11 @@ const rwandaData = {
                     "Mbeho",
                     "Ruhuha",
                     "Shenyeri",
-                    "Torero"
-                  ]
+                    "Torero",
+                  ],
                 },
                 {
-                  "Muyira": [
+                  Muyira: [
                     "Agahumiro",
                     "Agasharu",
                     "Akagarama",
@@ -12102,11 +12039,11 @@ const rwandaData = {
                     "Nyagisasa",
                     "Rwinzuki",
                     "Itaba",
-                    "Zihare"
-                  ]
+                    "Zihare",
+                  ],
                 },
                 {
-                  "Ruturo": [
+                  Ruturo: [
                     "Agatongati",
                     "Akabuhuzu",
                     "Akamuzenga",
@@ -12117,47 +12054,47 @@ const rwandaData = {
                     "Kigarama",
                     "Ntobo",
                     "Nyabununi",
-                    "Rubazi"
-                  ]
-                }
-              ]
+                    "Rubazi",
+                  ],
+                },
+              ],
             },
             {
-              "Kigembe": [
+              Kigembe: [
                 {
-                  "Agahabwa": [
+                  Agahabwa: [
                     "Agahehe",
                     "Kabacuzi",
                     "Kamutozo",
                     "Kamweko",
                     "Nyamabuye",
                     "Ruhuha",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Gatovu": [
+                  Gatovu: [
                     "Agasharu",
                     "Agatare",
                     "Akamana",
                     "Gitozo",
                     "Janja",
                     "Kigarama",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Impinga": [
+                  Impinga: [
                     "Akadogo",
                     "Akakijugujugu",
                     "Ikidashya",
                     "Icyijana",
                     "Nyamirama",
-                    "Rugeragere"
-                  ]
+                    "Rugeragere",
+                  ],
                 },
                 {
-                  "Nyabikenke": [
+                  Nyabikenke: [
                     "Akabahizi",
                     "Akimbaka",
                     "Impinga",
@@ -12165,35 +12102,35 @@ const rwandaData = {
                     "Rutaza",
                     "Shyombo",
                     "Umurangara",
-                    "Ruyenzi"
-                  ]
+                    "Ruyenzi",
+                  ],
                 },
                 {
-                  "Rubona": [
+                  Rubona: [
                     "Akadogo",
                     "Kashyaga",
                     "Gaharanyonga",
                     "Gatongati",
                     "Murehe",
-                    "Nyakabuye"
-                  ]
+                    "Nyakabuye",
+                  ],
                 },
                 {
-                  "Rusagara": [
+                  Rusagara: [
                     "Agasharu",
                     "Akajwiga",
                     "Akatera",
                     "Kigarama",
                     "Nyarukurazo",
-                    "Nyarunyinya"
-                  ]
-                }
-              ]
+                    "Nyarunyinya",
+                  ],
+                },
+              ],
             },
             {
-              "Mamba": [
+              Mamba: [
                 {
-                  "Gakoma": [
+                  Gakoma: [
                     "Gakomeye",
                     "Gatare",
                     "Kinamba",
@@ -12203,11 +12140,11 @@ const rwandaData = {
                     "Rugenge",
                     "Rugwiza",
                     "Ruhuha",
-                    "Sokofi"
-                  ]
+                    "Sokofi",
+                  ],
                 },
                 {
-                  "Kabumbwe": [
+                  Kabumbwe: [
                     "Buye",
                     "Gahararo",
                     "Kabuga",
@@ -12215,11 +12152,11 @@ const rwandaData = {
                     "Muhabura",
                     "Munopfu",
                     "Nunga",
-                    "Nyarugenge"
-                  ]
+                    "Nyarugenge",
+                  ],
                 },
                 {
-                  "Mamba": [
+                  Mamba: [
                     "Buhima",
                     "Gakoma",
                     "Gatovu",
@@ -12228,11 +12165,11 @@ const rwandaData = {
                     "Kirase",
                     "Mashenyi",
                     "Nyarugenge",
-                    "Rugunga"
-                  ]
+                    "Rugunga",
+                  ],
                 },
                 {
-                  "Muyaga": [
+                  Muyaga: [
                     "Butezi",
                     "Cadi",
                     "Cyarwa",
@@ -12241,11 +12178,11 @@ const rwandaData = {
                     "Mutori",
                     "Nyamirama",
                     "Ruhamagariro",
-                    "Shyembe"
-                  ]
+                    "Shyembe",
+                  ],
                 },
                 {
-                  "Ramba": [
+                  Ramba: [
                     "Gatare",
                     "Gatoke",
                     "Kayenzi",
@@ -12256,15 +12193,15 @@ const rwandaData = {
                     "Runazi",
                     "Rurama",
                     "Rusave",
-                    "Rwimvubu"
-                  ]
-                }
-              ]
+                    "Rwimvubu",
+                  ],
+                },
+              ],
             },
             {
-              "Muganza": [
+              Muganza: [
                 {
-                  "Cyumba": [
+                  Cyumba: [
                     "Byiza",
                     "Cyumba",
                     "Gitwa",
@@ -12276,11 +12213,11 @@ const rwandaData = {
                     "Nyiraburiba",
                     "Rugantete",
                     "Rutare",
-                    "Rwimisambi"
-                  ]
+                    "Rwimisambi",
+                  ],
                 },
                 {
-                  "Muganza": [
+                  Muganza: [
                     "Agasharu",
                     "Agatongati",
                     "Amajuri",
@@ -12289,21 +12226,21 @@ const rwandaData = {
                     "Rwamugoyi",
                     "Rwinkuba",
                     "Ubusenyi",
-                    "Urusaro"
-                  ]
+                    "Urusaro",
+                  ],
                 },
                 {
-                  "Remera": [
+                  Remera: [
                     "Agakurwe",
                     "Agaseke",
                     "Akarambo",
                     "Butare",
                     "Akajyanama",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Rwamiko": [
+                  Rwamiko: [
                     "Agasharu",
                     "Agatovu",
                     "Akarubumba",
@@ -12320,11 +12257,11 @@ const rwandaData = {
                     "Nyagatovu",
                     "Nyamagana",
                     "Ryarumenangiga",
-                    "Umunazi"
-                  ]
+                    "Umunazi",
+                  ],
                 },
                 {
-                  "Saga": [
+                  Saga: [
                     "Akabacuzi",
                     "Bucaya",
                     "Buhiza",
@@ -12338,56 +12275,56 @@ const rwandaData = {
                     "Nyakagezi",
                     "Nyamiheto I",
                     "Nyamiheto II",
-                    "Rwinkuba"
-                  ]
-                }
-              ]
+                    "Rwinkuba",
+                  ],
+                },
+              ],
             },
             {
-              "Mugombwa": [
+              Mugombwa: [
                 {
-                  "Baziro": [
+                  Baziro: [
                     "Banzankuru",
                     "Gitungwa",
                     "Nyabinyenga",
                     "Nyagatovu",
                     "Nyamirama",
                     "Nyarukeri",
-                    "Nyesumo"
-                  ]
+                    "Nyesumo",
+                  ],
                 },
                 {
-                  "Kibayi": [
+                  Kibayi: [
                     "Agakanka",
                     "Akarutsibuka",
                     "Akashyamba",
                     "Akabuga",
                     "Rinda",
                     "Rwahambi",
-                    "Udukoni"
-                  ]
+                    "Udukoni",
+                  ],
                 },
                 {
-                  "Kibu": [
+                  Kibu: [
                     "Agasharu",
                     "Akabugabo",
                     "Akagashuma",
                     "Mushongi",
-                    "Rurenge"
-                  ]
+                    "Rurenge",
+                  ],
                 },
                 {
-                  "Mugombwa": [
+                  Mugombwa: [
                     "Agasharu",
                     "Akagarama",
                     "Akarambo",
                     "Bishya",
                     "Impinga",
-                    "Migina"
-                  ]
+                    "Migina",
+                  ],
                 },
                 {
-                  "Mukomacara": [
+                  Mukomacara: [
                     "Agakomansyo",
                     "Akanyamirama",
                     "Akarangabo",
@@ -12396,15 +12333,15 @@ const rwandaData = {
                     "Kabuye",
                     "Nyabisonga",
                     "Nyarusange",
-                    "Umukungu"
-                  ]
-                }
-              ]
+                    "Umukungu",
+                  ],
+                },
+              ],
             },
             {
-              "Mukindo": [
+              Mukindo: [
                 {
-                  "Gitega": [
+                  Gitega: [
                     "Agasharu",
                     "Akazenga",
                     "Gatunda",
@@ -12414,11 +12351,11 @@ const rwandaData = {
                     "Nyabikoni",
                     "Nyamabuye",
                     "Rebero",
-                    "Ruko"
-                  ]
+                    "Ruko",
+                  ],
                 },
                 {
-                  "Mukiza": [
+                  Mukiza: [
                     "Akagarama",
                     "Bukamba",
                     "Cyimana",
@@ -12428,11 +12365,11 @@ const rwandaData = {
                     "Nyabiryo",
                     "Nyakazana",
                     "Nyarutovu",
-                    "Rusumba"
-                  ]
+                    "Rusumba",
+                  ],
                 },
                 {
-                  "Nyabisagara": [
+                  Nyabisagara: [
                     "Agatare",
                     "Kabuga",
                     "Akanage",
@@ -12444,11 +12381,11 @@ const rwandaData = {
                     "Nkurubuye",
                     "Nyabihama",
                     "Rurimbi",
-                    "Rususa"
-                  ]
+                    "Rususa",
+                  ],
                 },
                 {
-                  "Runyinya": [
+                  Runyinya: [
                     "Agakomeye",
                     "Agasharu",
                     "Akakarinda",
@@ -12460,15 +12397,15 @@ const rwandaData = {
                     "Itaba",
                     "Mpungwe",
                     "Munyegera",
-                    "Nyiranguri"
-                  ]
-                }
-              ]
+                    "Nyiranguri",
+                  ],
+                },
+              ],
             },
             {
-              "Musha": [
+              Musha: [
                 {
-                  "Bukinanyana": [
+                  Bukinanyana: [
                     "Agatega",
                     "Akagarama",
                     "Bukinanyana",
@@ -12480,11 +12417,11 @@ const rwandaData = {
                     "Rugarama",
                     "Rukoni",
                     "Rwabuhanga",
-                    "Rwatano"
-                  ]
+                    "Rwatano",
+                  ],
                 },
                 {
-                  "Gatovu": [
+                  Gatovu: [
                     "Cyayi",
                     "Gaseke",
                     "Gasura",
@@ -12494,11 +12431,11 @@ const rwandaData = {
                     "Mutarama",
                     "Nyabitare",
                     "Nyagasambu",
-                    "Ryamugunga"
-                  ]
+                    "Ryamugunga",
+                  ],
                 },
                 {
-                  "Kigarama": [
+                  Kigarama: [
                     "Bugagiro",
                     "Buremera",
                     "Kabusenda",
@@ -12508,11 +12445,11 @@ const rwandaData = {
                     "Murama",
                     "Nyesonga",
                     "Rugara",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Kimana": [
+                  Kimana: [
                     "Akabanga",
                     "Kamabuye",
                     "Kamutabazi",
@@ -12522,45 +12459,45 @@ const rwandaData = {
                     "Nyamiyaga",
                     "Ramba",
                     "Rurama",
-                    "Rusenyi"
-                  ]
-                }
-              ]
+                    "Rusenyi",
+                  ],
+                },
+              ],
             },
             {
-              "Ndora": [
+              Ndora: [
                 {
-                  "Bweya": [
+                  Bweya: [
                     "Akiminazi",
                     "Gatobotobo",
                     "Kamahembe",
                     "Kantabana",
                     "Mirayi",
-                    "Sabudari"
-                  ]
+                    "Sabudari",
+                  ],
                 },
                 {
-                  "Cyamukuza": [
+                  Cyamukuza: [
                     "Giseke",
                     "Nyaburondwe",
                     "Nyarubari",
                     "Ryabiyaga",
                     "Sagahungu",
-                    "Urusenyi"
-                  ]
+                    "Urusenyi",
+                  ],
                 },
                 {
-                  "Dahwe": [
+                  Dahwe: [
                     "Agasharu",
                     "Gahondo",
                     "Gitwa",
                     "Kigarama",
                     "Ndatemwa",
-                    "Twarubona"
-                  ]
+                    "Twarubona",
+                  ],
                 },
                 {
-                  "Gisagara": [
+                  Gisagara: [
                     "Gisagara",
                     "Kabuga",
                     "Kabuye",
@@ -12569,25 +12506,25 @@ const rwandaData = {
                     "Nyamigango",
                     "Nyarunazi",
                     "Rugara",
-                    "Rutonde"
-                  ]
+                    "Rutonde",
+                  ],
                 },
                 {
-                  "Mukande": [
+                  Mukande: [
                     "Bugarama",
                     "Kidwange",
                     "Nkinda I",
                     "Nkinda II",
                     "Nyarunyinya",
-                    "Nyarusange"
-                  ]
-                }
-              ]
+                    "Nyarusange",
+                  ],
+                },
+              ],
             },
             {
-              "Nyanza": [
+              Nyanza: [
                 {
-                  "Higiro": [
+                  Higiro: [
                     "Agatare",
                     "Kabakene",
                     "Akagarama",
@@ -12595,11 +12532,11 @@ const rwandaData = {
                     "Impinga II",
                     "Rama",
                     "Ruvugizo",
-                    "Uruvumvuti"
-                  ]
+                    "Uruvumvuti",
+                  ],
                 },
                 {
-                  "Nyamugari": [
+                  Nyamugari: [
                     "Akayange",
                     "Cyumba",
                     "Gatarinzira",
@@ -12607,11 +12544,11 @@ const rwandaData = {
                     "Rwamiko",
                     "Sare",
                     "Urugogwe",
-                    "Urutoyi"
-                  ]
+                    "Urutoyi",
+                  ],
                 },
                 {
-                  "Nyaruteja": [
+                  Nyaruteja: [
                     "Agahehe",
                     "Akamerwe",
                     "Akasemabondi",
@@ -12620,11 +12557,11 @@ const rwandaData = {
                     "Impinga I",
                     "Intuntu",
                     "Rugayantete",
-                    "Rugomero"
-                  ]
+                    "Rugomero",
+                  ],
                 },
                 {
-                  "Umubanga": [
+                  Umubanga: [
                     "Akamabuye",
                     "Akarwishyura",
                     "Akinyana",
@@ -12632,26 +12569,26 @@ const rwandaData = {
                     "Manyoni",
                     "Remera",
                     "Tundiro",
-                    "Urukeri"
-                  ]
-                }
-              ]
+                    "Urukeri",
+                  ],
+                },
+              ],
             },
             {
-              "Save": [
+              Save: [
                 {
-                  "Gatoki": [
+                  Gatoki: [
                     "Gasambu",
                     "Gashubi",
                     "Kampuro",
                     "Kaneke",
                     "Kavumu",
                     "Nyarigina",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Munazi": [
+                  Munazi: [
                     "Kadurumba",
                     "Gakombe",
                     "Gitwa",
@@ -12659,11 +12596,11 @@ const rwandaData = {
                     "Kigwa",
                     "Nyarure",
                     "Rwoserezo",
-                    "Zihare"
-                  ]
+                    "Zihare",
+                  ],
                 },
                 {
-                  "Rwanza": [
+                  Rwanza: [
                     "Akarambo",
                     "Bazenga",
                     "Bitabire",
@@ -12675,11 +12612,11 @@ const rwandaData = {
                     "Kivumu",
                     "Nyabitare",
                     "Nyagacyamu",
-                    "Ryamaguri"
-                  ]
+                    "Ryamaguri",
+                  ],
                 },
                 {
-                  "Shyanda": [
+                  Shyanda: [
                     "Gahora",
                     "Kagende",
                     "Kirehe",
@@ -12689,54 +12626,54 @@ const rwandaData = {
                     "Rugori",
                     "Ryakabuye",
                     "Ryamutabazi",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Zivu": [
+                  Zivu: [
                     "Kinyonzwe",
                     "Musekera",
                     "Nyagasozi",
                     "Rugogwe",
                     "Rwanzana",
                     "Ryamurongo",
-                    "Ryarubayi"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Ryarubayi",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Huye": [
+          Huye: [
             {
-              "Gishamvu": [
+              Gishamvu: [
                 {
-                  "Nyakibanda": ["Byimana", "Kamabuye", "Karambo", "Kigarama"]
+                  Nyakibanda: ["Byimana", "Kamabuye", "Karambo", "Kigarama"],
                 },
                 {
-                  "Nyumba": [
+                  Nyumba: [
                     "Akagahaya",
                     "Busoro",
                     "Gasyankingi",
                     "Gishamvu",
                     "Mirambi",
-                    "Nyagatama"
-                  ]
+                    "Nyagatama",
+                  ],
                 },
                 {
-                  "Ryakibogo": [
+                  Ryakibogo: [
                     "Gakombe",
                     "Gasekebuye",
                     "Gitwa",
                     "Impinga",
                     "Kadahokwa",
                     "Kidahire",
-                    "Kiduha"
-                  ]
+                    "Kiduha",
+                  ],
                 },
                 {
-                  "Shori": [
+                  Shori: [
                     "Akabere",
                     "Cyambwe",
                     "Kabeza",
@@ -12744,15 +12681,15 @@ const rwandaData = {
                     "Kinyovi",
                     "Rebero",
                     "Rusasa",
-                    "Umunyinya"
-                  ]
-                }
-              ]
+                    "Umunyinya",
+                  ],
+                },
+              ],
             },
             {
-              "Huye": [
+              Huye: [
                 {
-                  "Muyogoro": [
+                  Muyogoro: [
                     "Agacyamu",
                     "Agasharu",
                     "Akagarama",
@@ -12765,11 +12702,11 @@ const rwandaData = {
                     "Rugerero",
                     "Rwankoni",
                     "Rwaza",
-                    "Shuni"
-                  ]
+                    "Shuni",
+                  ],
                 },
                 {
-                  "Nyakagezi": [
+                  Nyakagezi: [
                     "Gatongati",
                     "Kamutima",
                     "Karuhinda",
@@ -12779,11 +12716,11 @@ const rwandaData = {
                     "Mbuba",
                     "Munanira",
                     "Nyarunazi",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Rukira": [
+                  Rukira: [
                     "Agacyamu",
                     "Agahenerezo",
                     "Agakombe",
@@ -12796,11 +12733,11 @@ const rwandaData = {
                     "Nyagasambu",
                     "Nyanza",
                     "Rugarama",
-                    "Sabaderi"
-                  ]
+                    "Sabaderi",
+                  ],
                 },
                 {
-                  "Sovu": [
+                  Sovu: [
                     "Gako",
                     "Gasongati",
                     "Gikombe",
@@ -12809,67 +12746,67 @@ const rwandaData = {
                     "Karuhayi",
                     "Kigarama",
                     "Ngobagoba",
-                    "Rwezamenyo"
-                  ]
-                }
-              ]
+                    "Rwezamenyo",
+                  ],
+                },
+              ],
             },
             {
-              "Karama": [
+              Karama: [
                 {
-                  "Buhoro": [
+                  Buhoro: [
                     "Kibingo",
                     "Mataba",
                     "Mitsinda",
                     "Nyamapfunda",
-                    "Nyamikaba"
-                  ]
+                    "Nyamikaba",
+                  ],
                 },
                 {
-                  "Bunazi": [
+                  Bunazi: [
                     "Agatenderi",
                     "Akarehe",
                     "Ikigarama",
                     "Kinani",
-                    "Rwezamenyo"
-                  ]
+                    "Rwezamenyo",
+                  ],
                 },
                 {
-                  "Gahororo": [
+                  Gahororo: [
                     "Akarambo",
                     "Mavumba",
                     "Mukongoro",
                     "Nyarusange",
                     "Sangano",
                     "Umuyange",
-                    "Uwarugondo"
-                  ]
+                    "Uwarugondo",
+                  ],
                 },
                 {
-                  "Kibingo": [
+                  Kibingo: [
                     "Agasharu",
                     "Agatovu",
                     "Mukimba",
                     "Nkoto",
                     "Nyesonga",
-                    "Zaga"
-                  ]
+                    "Zaga",
+                  ],
                 },
                 {
-                  "Muhembe": [
+                  Muhembe: [
                     "Butare",
                     "Cyetete",
                     "Kaburemera",
                     "Rugege",
-                    "Uwimpundu"
-                  ]
-                }
-              ]
+                    "Uwimpundu",
+                  ],
+                },
+              ],
             },
             {
-              "Kigoma": [
+              Kigoma: [
                 {
-                  "Gishihe": [
+                  Gishihe: [
                     "Birambo",
                     "Gihanda",
                     "Gishihe",
@@ -12877,11 +12814,11 @@ const rwandaData = {
                     "Kabingo",
                     "Kamyuga",
                     "Karambi",
-                    "Kavumu"
-                  ]
+                    "Kavumu",
+                  ],
                 },
                 {
-                  "Kabatwa": [
+                  Kabatwa: [
                     "Bande",
                     "Buremera",
                     "Kamihuro",
@@ -12889,43 +12826,43 @@ const rwandaData = {
                     "Kinyata",
                     "Mahwa",
                     "Mbogo",
-                    "Sekera"
-                  ]
+                    "Sekera",
+                  ],
                 },
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Kabingo",
                     "Kagina",
                     "Kanyamugira",
                     "Nyarunazi",
                     "Ruhungu",
                     "Rwabuye",
-                    "Sanzu"
-                  ]
+                    "Sanzu",
+                  ],
                 },
                 {
-                  "Karambi": [
+                  Karambi: [
                     "Gasura",
                     "Gituntu",
                     "Gitwa",
                     "Kagarama",
                     "Kigarama",
                     "Nyarunyinya",
-                    "Rebo"
-                  ]
+                    "Rebo",
+                  ],
                 },
                 {
-                  "Musebeya": [
+                  Musebeya: [
                     "Gatovu",
                     "Kabacuzi",
                     "Kabakobwa",
                     "Nyagasozi",
                     "Nyarurembo",
-                    "Rusenyi"
-                  ]
+                    "Rusenyi",
+                  ],
                 },
                 {
-                  "Nyabisindu": [
+                  Nyabisindu: [
                     "Kabugabo",
                     "Kabumba",
                     "Karambi",
@@ -12933,11 +12870,11 @@ const rwandaData = {
                     "Nkenke",
                     "Nyanzamura",
                     "Rugarama",
-                    "Shaba"
-                  ]
+                    "Shaba",
+                  ],
                 },
                 {
-                  "Rugarama": [
+                  Rugarama: [
                     "Birembo",
                     "Birinjo",
                     "Gasharu",
@@ -12946,30 +12883,30 @@ const rwandaData = {
                     "Kanyurapfundo",
                     "Nyagahinga",
                     "Ruhinga",
-                    "Ryaruhimbya"
-                  ]
+                    "Ryaruhimbya",
+                  ],
                 },
                 {
-                  "Shanga": [
+                  Shanga: [
                     "Gasharu",
                     "Akaderege",
                     "Gaseke",
                     "Kabicuki",
                     "Ntuntu",
                     "Nyamirama",
-                    "Serugenzi"
-                  ]
-                }
-              ]
+                    "Serugenzi",
+                  ],
+                },
+              ],
             },
             {
-              "Kinazi": [
-                { "Byinza": ["Buremera", "Gakoni", "Nyarurama", "Rwerinka"] },
+              Kinazi: [
+                { Byinza: ["Buremera", "Gakoni", "Nyarurama", "Rwerinka"] },
                 {
-                  "Gahana": ["Cyegera", "Gasaka", "Gihana", "Rugarama", "Sogwe"]
+                  Gahana: ["Cyegera", "Gasaka", "Gihana", "Rugarama", "Sogwe"],
                 },
                 {
-                  "Gitovu": [
+                  Gitovu: [
                     "Hanika",
                     "Karambo",
                     "Kinazi",
@@ -12977,46 +12914,46 @@ const rwandaData = {
                     "Nyarugunga",
                     "Nyarusange",
                     "Rubona",
-                    "Ruvugizo"
-                  ]
+                    "Ruvugizo",
+                  ],
                 },
                 {
-                  "Kabona": [
+                  Kabona: [
                     "Kibiraro",
                     "Mujyejuru",
                     "Munyu",
                     "Remera",
-                    "Rwambariro"
-                  ]
+                    "Rwambariro",
+                  ],
                 },
                 {
-                  "Sazange": [
+                  Sazange: [
                     "Butare",
                     "Gahondo",
                     "Giseke",
                     "Kigarama",
                     "Mukuzanyana",
-                    "Nyabisindu"
-                  ]
-                }
-              ]
+                    "Nyabisindu",
+                  ],
+                },
+              ],
             },
             {
-              "Maraba": [
-                { "Buremera": ["Buremera", "Gasarabuye", "Kinazi", "Nkorwe"] },
-                { "Gasumba": ["Gitabure", "Gitwa", "Kinombe", "Taba"] },
+              Maraba: [
+                { Buremera: ["Buremera", "Gasarabuye", "Kinazi", "Nkorwe"] },
+                { Gasumba: ["Gitabure", "Gitwa", "Kinombe", "Taba"] },
                 {
-                  "Kabuye": [
+                  Kabuye: [
                     "Gasharu",
                     "Murama",
                     "Nyamvumba",
                     "Nyarusange",
-                    "Rukeri"
-                  ]
+                    "Rukeri",
+                  ],
                 },
-                { "Kanyinya": ["Bwegera", "Gikomero", "Kabirombe", "Kayeye"] },
+                { Kanyinya: ["Bwegera", "Gikomero", "Kabirombe", "Kayeye"] },
                 {
-                  "Shanga": [
+                  Shanga: [
                     "Gasororo",
                     "Gatyazo",
                     "Kabirizi",
@@ -13024,66 +12961,66 @@ const rwandaData = {
                     "Nyamiyaga",
                     "Nyantende",
                     "Rutontwe",
-                    "Shyinga"
-                  ]
+                    "Shyinga",
+                  ],
                 },
                 {
-                  "Shyembe": [
+                  Shyembe: [
                     "Gisagara",
                     "Kagoma",
                     "Karambi",
                     "Karambo",
                     "Kigarama",
-                    "Kizi"
-                  ]
-                }
-              ]
+                    "Kizi",
+                  ],
+                },
+              ],
             },
             {
-              "Mbazi": [
+              Mbazi: [
                 {
-                  "Gatobotobo": [
+                  Gatobotobo: [
                     "Agasharu",
                     "Akanyinya",
                     "Bigangara",
                     "Kanyaruhinda",
                     "Mpinga",
                     "Rubona",
-                    "Rwabuye"
-                  ]
+                    "Rwabuye",
+                  ],
                 },
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Gakombe",
                     "Gasharu",
                     "Gicubuka",
                     "Mpinga",
                     "Ndobogo",
-                    "Rwezamenyo"
-                  ]
+                    "Rwezamenyo",
+                  ],
                 },
                 {
-                  "Mutunda": [
+                  Mutunda: [
                     "Kagera",
                     "Kigusa",
                     "Kimuna",
                     "Kinyana",
                     "Rugarama",
-                    "Ruryango"
-                  ]
+                    "Ruryango",
+                  ],
                 },
                 {
-                  "Mwulire": [
+                  Mwulire: [
                     "Bumbogo",
                     "Cyayove",
                     "Gitwa",
                     "Kaburuba",
                     "Murambi",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Rugango": [
+                  Rugango: [
                     "Gahanga",
                     "Kabakono",
                     "Kamunyinya",
@@ -13093,34 +13030,34 @@ const rwandaData = {
                     "Mpinga",
                     "Ngeri",
                     "Nyabisindu",
-                    "Nyamirundi"
-                  ]
+                    "Nyamirundi",
+                  ],
                 },
                 {
-                  "Rusagara": [
+                  Rusagara: [
                     "Buhoro",
                     "Gitwa",
                     "Kibirizi",
                     "Cyingoma",
-                    "Ruhuha"
-                  ]
+                    "Ruhuha",
+                  ],
                 },
                 {
-                  "Tare": [
+                  Tare: [
                     "Cyahafi",
                     "Gashikiri",
                     "Kagarama",
                     "Kavumu",
                     "Kigwene",
-                    "Rupango"
-                  ]
-                }
-              ]
+                    "Rupango",
+                  ],
+                },
+              ],
             },
             {
-              "Mukura": [
+              Mukura: [
                 {
-                  "Bukomeye": [
+                  Bukomeye: [
                     "Bweramana",
                     "Cyiri",
                     "Gahanga",
@@ -13130,11 +13067,11 @@ const rwandaData = {
                     "Nyagakingi",
                     "Sata",
                     "Shingangabo",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Buvumu": [
+                  Buvumu: [
                     "Akagarama",
                     "Akayenzi",
                     "Akogo",
@@ -13146,17 +13083,17 @@ const rwandaData = {
                     "Remera",
                     "Rujumbura",
                     "Rusenyi",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Icyeru": [
+                  Icyeru: [
                     "Akabuga",
                     "Akamahinda",
                     "Gakombe",
                     "Nyagisenyi",
-                    "Nyarusambu"
-                  ]
+                    "Nyarusambu",
+                  ],
                 },
                 {
                   "Rango A": [
@@ -13166,15 +13103,15 @@ const rwandaData = {
                     "Kabahora",
                     "Mpaza",
                     "Nyamata",
-                    "Rwinuma"
-                  ]
-                }
-              ]
+                    "Rwinuma",
+                  ],
+                },
+              ],
             },
             {
-              "Ngoma": [
+              Ngoma: [
                 {
-                  "Butare": [
+                  Butare: [
                     "Akabuye",
                     "Bukinanyana",
                     "Buye",
@@ -13183,101 +13120,101 @@ const rwandaData = {
                     "Karubanda",
                     "Mamba",
                     "Busenyi",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Kaburemera": [
+                  Kaburemera: [
                     "Gatoki",
                     "Kaguhu",
                     "Karambi",
                     "Nyabubare",
                     "Nyagapfizi",
                     "Rugarama",
-                    "Runga"
-                  ]
+                    "Runga",
+                  ],
                 },
                 {
-                  "Matyazo": [
+                  Matyazo: [
                     "Gafurwe",
                     "Kabeza",
                     "Kamucuzi",
                     "Nyabitare",
                     "Rurenda",
                     "Rusisiro",
-                    "Ruvuzo"
-                  ]
+                    "Ruvuzo",
+                  ],
                 },
                 {
-                  "Ngoma": [
+                  Ngoma: [
                     "Ngoma V",
                     "Ngoma I",
                     "Ngoma III",
                     "Ngoma IV",
                     "Ngoma VI",
-                    "Ngoma II"
-                  ]
-                }
-              ]
+                    "Ngoma II",
+                  ],
+                },
+              ],
             },
             {
-              "Ruhashya": [
+              Ruhashya: [
                 {
-                  "Busheshi": [
+                  Busheshi: [
                     "Kamuhoza",
                     "Kibyagira",
                     "Nyabijyo",
                     "Nyagatovu",
-                    "Umuyange"
-                  ]
+                    "Umuyange",
+                  ],
                 },
                 {
-                  "Gatovu": ["Dutare", "Karambo", "Kigoma", "Kiyanza", "Murama"]
+                  Gatovu: ["Dutare", "Karambo", "Kigoma", "Kiyanza", "Murama"],
                 },
                 {
-                  "Karama": [
+                  Karama: [
                     "Gakoni",
                     "Kampogo",
                     "Nyakigezi",
                     "Rukubiro",
-                    "Umuyinza"
-                  ]
+                    "Umuyinza",
+                  ],
                 },
                 {
-                  "Mara": [
+                  Mara: [
                     "Bwankusi",
                     "Gashikiri",
                     "Gitwa",
                     "Karambo",
-                    "Rwamara"
-                  ]
+                    "Rwamara",
+                  ],
                 },
                 {
-                  "Muhororo": [
+                  Muhororo: [
                     "Agasharu",
                     "Kinziramuhindo",
                     "Nyakabingo",
                     "Shyara",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
-                { "Rugogwe": ["Agasharu", "Akanyana", "Umurambi"] },
+                { Rugogwe: ["Agasharu", "Akanyana", "Umurambi"] },
                 {
-                  "Ruhashya": [
+                  Ruhashya: [
                     "Igerero",
                     "Kigarama",
                     "Mbagabaga",
                     "Muginga",
                     "Rugarama",
-                    "Rwamabare"
-                  ]
-                }
-              ]
+                    "Rwamabare",
+                  ],
+                },
+              ],
             },
             {
-              "Rusatira": [
+              Rusatira: [
                 {
-                  "Buhimba": [
+                  Buhimba: [
                     "Gasaka",
                     "Agasharu",
                     "Impinga",
@@ -13285,20 +13222,20 @@ const rwandaData = {
                     "Karubona",
                     "Kinkanga",
                     "Mucunda",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Gafumba": [
+                  Gafumba: [
                     "Kabuga",
                     "Kigarama",
                     "Kigari",
                     "Mubuga",
-                    "Ruvugizo"
-                  ]
+                    "Ruvugizo",
+                  ],
                 },
                 {
-                  "Kimirehe": [
+                  Kimirehe: [
                     "Gakomeye",
                     "Kagasa",
                     "Kavumu",
@@ -13306,21 +13243,21 @@ const rwandaData = {
                     "Ndyome",
                     "Nyakabuye",
                     "Nyarutovu",
-                    "Rubanga"
-                  ]
+                    "Rubanga",
+                  ],
                 },
                 {
-                  "Kimuna": [
+                  Kimuna: [
                     "Kamabuye",
                     "Kimigo",
                     "Murambi",
                     "Nyabusunzu",
                     "Rushikiri",
-                    "Rwamuganda"
-                  ]
+                    "Rwamuganda",
+                  ],
                 },
                 {
-                  "Kiruhura": [
+                  Kiruhura: [
                     "Agasharu",
                     "Impinga",
                     "Nyagasozi",
@@ -13330,96 +13267,96 @@ const rwandaData = {
                     "Rubona",
                     "Rugarama",
                     "Tumba",
-                    "Umuremera"
-                  ]
+                    "Umuremera",
+                  ],
                 },
                 {
-                  "Mugogwe": [
+                  Mugogwe: [
                     "Gicubuka",
                     "Kabeza",
                     "Kibiraro",
                     "Mubuga",
-                    "Murambi"
-                  ]
-                }
-              ]
+                    "Murambi",
+                  ],
+                },
+              ],
             },
             {
-              "Rwaniro": [
-                { "Gatwaro": ["Amarongi", "Gatwaro", "Nyakabuye", "Rumana"] },
+              Rwaniro: [
+                { Gatwaro: ["Amarongi", "Gatwaro", "Nyakabuye", "Rumana"] },
                 {
-                  "Kamwambi": [
+                  Kamwambi: [
                     "Gakomeye",
                     "Kamwambi",
                     "Karambo",
                     "Remera",
-                    "Rurembo"
-                  ]
+                    "Rurembo",
+                  ],
                 },
                 {
-                  "Kibiraro": [
+                  Kibiraro: [
                     "Murehe",
                     "Nyabisindu",
                     "Nyamivumu",
-                    "Nyarunyinya"
-                  ]
+                    "Nyarunyinya",
+                  ],
                 },
-                { "Mwendo": ["Birambo", "Cyarera", "Murango", "Rugerero"] },
+                { Mwendo: ["Birambo", "Cyarera", "Murango", "Rugerero"] },
                 {
-                  "Nyamabuye": [
+                  Nyamabuye: [
                     "Bweramana",
                     "Kigarama",
                     "Munanira",
                     "Nyagacyamu",
-                    "Nyamabuye"
-                  ]
+                    "Nyamabuye",
+                  ],
                 },
                 {
-                  "Nyaruhombo": [
+                  Nyaruhombo: [
                     "Gasharu",
                     "Kibara",
                     "Kigarama",
                     "Murambi",
                     "Mwezi",
                     "Nyabujengwe",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Shyunga": [
+                  Shyunga: [
                     "Karama",
                     "Karugumya",
                     "Kiboga",
                     "Kigarama",
-                    "Rugarama"
-                  ]
-                }
-              ]
+                    "Rugarama",
+                  ],
+                },
+              ],
             },
             {
-              "Simbi": [
+              Simbi: [
                 {
-                  "Cyendajuru": [
+                  Cyendajuru: [
                     "Bisambu",
                     "Cyendajuru",
                     "Kigarama",
                     "Matyazo",
                     "Rugarama",
                     "Ruhinga",
-                    "Rwatsi"
-                  ]
+                    "Rwatsi",
+                  ],
                 },
                 {
-                  "Gisakura": [
+                  Gisakura: [
                     "Bambiro",
                     "Gasharu",
                     "Kigarama",
                     "Kirarambogo",
-                    "Nyabisindu"
-                  ]
+                    "Nyabisindu",
+                  ],
                 },
                 {
-                  "Kabusanza": [
+                  Kabusanza: [
                     "Bwiza",
                     "Gihinga",
                     "Kigarama",
@@ -13428,11 +13365,11 @@ const rwandaData = {
                     "Ndago",
                     "Ntobwe",
                     "Rusuma",
-                    "Umurera"
-                  ]
+                    "Umurera",
+                  ],
                 },
                 {
-                  "Mugobore": [
+                  Mugobore: [
                     "Kigarama",
                     "Mugobore",
                     "Nyagasozi",
@@ -13440,11 +13377,11 @@ const rwandaData = {
                     "Nyamiyaga",
                     "Nyarurembo",
                     "Rugarama",
-                    "Ryasebiganza"
-                  ]
+                    "Ryasebiganza",
+                  ],
                 },
                 {
-                  "Nyangazi": [
+                  Nyangazi: [
                     "Igonde",
                     "Kabakobwa",
                     "Kanyiramana",
@@ -13454,15 +13391,15 @@ const rwandaData = {
                     "Nyarukurazo",
                     "Remera",
                     "Shunga",
-                    "Umuyange"
-                  ]
-                }
-              ]
+                    "Umuyange",
+                  ],
+                },
+              ],
             },
             {
-              "Tumba": [
+              Tumba: [
                 {
-                  "Cyarwa": [
+                  Cyarwa: [
                     "Agahora",
                     "Agasengasenge",
                     "Agasharu",
@@ -13471,31 +13408,31 @@ const rwandaData = {
                     "Kabeza",
                     "Kigarama",
                     "Mukoni",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Cyimana": [
+                  Cyimana: [
                     "Abizerwa",
                     "Akamuhoza",
                     "Amahoro",
                     "Ubumwe",
-                    "Ubwiyunge"
-                  ]
+                    "Ubwiyunge",
+                  ],
                 },
                 {
-                  "Gitwa": ["Gasenyi", "Berwa", "Nyarurembo", "Rebero", "Rimba"]
+                  Gitwa: ["Gasenyi", "Berwa", "Nyarurembo", "Rebero", "Rimba"],
                 },
                 {
-                  "Mpare": [
+                  Mpare: [
                     "Agasharu",
                     "Akabuga",
                     "Akarugiranka",
                     "Kigarama",
                     "Musange",
                     "Runyinya",
-                    "Rwanyanza"
-                  ]
+                    "Rwanyanza",
+                  ],
                 },
                 {
                   "Rango B": [
@@ -13505,242 +13442,236 @@ const rwandaData = {
                     "Impuhwe",
                     "Kigarama",
                     "Ntangarugero",
-                    "Urugwiro"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Urugwiro",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Kamonyi": [
+          Kamonyi: [
             {
-              "Gacurabwenge": [
+              Gacurabwenge: [
                 {
-                  "Gihinga": [
+                  Gihinga: [
                     "Kagarama",
                     "Kambyeyi",
                     "Karama",
                     "Nyagasozi",
                     "Nyarunyinya",
-                    "Ryabitana"
-                  ]
+                    "Ryabitana",
+                  ],
                 },
                 {
-                  "Gihira": [
+                  Gihira: [
                     "Bugaba",
                     "Kibanza",
                     "Kidaturwa",
                     "Migina",
-                    "Nyabitare"
-                  ]
+                    "Nyabitare",
+                  ],
                 },
                 {
-                  "Kigembe": [
+                  Kigembe: [
                     "Buhoro",
                     "Kabatsi",
                     "Kagarama",
                     "Mushimba",
                     "Nyakabungo",
-                    "Rugobagoba"
-                  ]
+                    "Rugobagoba",
+                  ],
                 },
                 {
-                  "Nkingo": [
+                  Nkingo: [
                     "Juru",
                     "Kamonyi",
                     "Mataba",
                     "Nyamiryango",
                     "Nyamugari",
-                    "Rubona"
-                  ]
-                }
-              ]
+                    "Rubona",
+                  ],
+                },
+              ],
             },
             {
-              "Karama": [
+              Karama: [
                 {
-                  "Bitare": [
+                  Bitare: [
                     "Gisanze",
                     "Kabuga",
                     "Kajevuba",
                     "Kinkeri",
-                    "Kokobe"
-                  ]
+                    "Kokobe",
+                  ],
                 },
                 {
-                  "Bunyonga": [
+                  Bunyonga: [
                     "Bunyonga",
                     "Nyarurembo",
                     "Nyenyeri",
-                    "Ryagashaza"
-                  ]
+                    "Ryagashaza",
+                  ],
                 },
                 {
-                  "Muganza": [
+                  Muganza: [
                     "Bitagata",
                     "Gatare",
                     "Ngoma",
                     "Nyamitanga",
-                    "Nyaruteja"
-                  ]
+                    "Nyaruteja",
+                  ],
                 },
                 {
-                  "Nyamirembe": [
+                  Nyamirembe: [
                     "Gaji",
                     "Gasharu",
                     "Kavumu",
                     "Kigabiro",
-                    "Nyakizu"
-                  ]
-                }
-              ]
+                    "Nyakizu",
+                  ],
+                },
+              ],
             },
             {
-              "Kayenzi": [
+              Kayenzi: [
                 {
-                  "Bugarama": ["Buhurura", "Munyegera", "Nyarurama", "Remera"]
+                  Bugarama: ["Buhurura", "Munyegera", "Nyarurama", "Remera"],
                 },
                 {
-                  "Cubi": [
+                  Cubi: [
                     "Gitwa",
                     "Kamabuye",
                     "Ntwari",
                     "Nyakigezi",
-                    "Rwishywa"
-                  ]
+                    "Rwishywa",
+                  ],
                 },
-                { "Kayonza": ["Kigwene", "Muza", "Nyabubare"] },
+                { Kayonza: ["Kigwene", "Muza", "Nyabubare"] },
                 {
-                  "Kirwa": ["Gasamba", "Gisizi", "Gitwa", "Kigunga", "Ruheka"]
+                  Kirwa: ["Gasamba", "Gisizi", "Gitwa", "Kigunga", "Ruheka"],
                 },
                 {
-                  "Mataba": [
+                  Mataba: [
                     "Gasasa",
                     "Gikurubuye",
                     "Kabana",
                     "Nyarubaya",
-                    "Rugoma"
-                  ]
+                    "Rugoma",
+                  ],
                 },
-                { "Nyamirama": ["Bushara", "Kibuye", "Rugaragara"] }
-              ]
+                { Nyamirama: ["Bushara", "Kibuye", "Rugaragara"] },
+              ],
             },
             {
-              "Kayumbu": [
-                { "Busoro": ["Buramba", "Manyana", "Nyabuhoro", "Nyarugenge"] },
-                { "Gaseke": ["Gasiza", "Kigarama", "Nyarunyinya"] },
-                { "Giko": ["Gasharu", "Mirehe", "Nyarusange", "Ryamanywa"] },
-                { "Muyange": ["Kaje", "Kangenzi", "Murambi", "Nyarurembo"] }
-              ]
+              Kayumbu: [
+                { Busoro: ["Buramba", "Manyana", "Nyabuhoro", "Nyarugenge"] },
+                { Gaseke: ["Gasiza", "Kigarama", "Nyarunyinya"] },
+                { Giko: ["Gasharu", "Mirehe", "Nyarusange", "Ryamanywa"] },
+                { Muyange: ["Kaje", "Kangenzi", "Murambi", "Nyarurembo"] },
+              ],
             },
             {
-              "Mugina": [
+              Mugina: [
                 {
-                  "Jenda": [
+                  Jenda: [
                     "Kigarama",
                     "Kiyonza",
                     "Mataba Nord",
                     "Munini",
-                    "Nyamurenga"
-                  ]
+                    "Nyamurenga",
+                  ],
                 },
-                { "Kabugondo": ["Bihenga", "Cyeru", "Mataba Sud", "Runzenzi"] },
+                { Kabugondo: ["Bihenga", "Cyeru", "Mataba Sud", "Runzenzi"] },
                 {
-                  "Mbati": [
-                    "Kansoro",
-                    "Kigorora",
-                    "Mbati",
-                    "Mikamba",
-                    "Murambi"
-                  ]
+                  Mbati: ["Kansoro", "Kigorora", "Mbati", "Mikamba", "Murambi"],
                 },
-                { "Mugina": ["Kagasa", "Kireka", "Mparo", "Mugina"] },
-                { "Nteko": ["Gishari", "Kona", "Ntasi", "Nyagisozi", "Rusoro"] }
-              ]
+                { Mugina: ["Kagasa", "Kireka", "Mparo", "Mugina"] },
+                { Nteko: ["Gishari", "Kona", "Ntasi", "Nyagisozi", "Rusoro"] },
+              ],
             },
             {
-              "Musambira": [
-                { "Buhoro": ["Busasamana", "Gihembe", "Gihogwe", "Reramacu"] },
+              Musambira: [
+                { Buhoro: ["Busasamana", "Gihembe", "Gihogwe", "Reramacu"] },
                 {
-                  "Cyambwe": [
+                  Cyambwe: [
                     "Bimomwe",
                     "Gacaca",
                     "Giheta",
                     "Rugarama",
                     "Ruvumura",
-                    "Shaka"
-                  ]
+                    "Shaka",
+                  ],
                 },
                 {
-                  "Karengera": [
+                  Karengera: [
                     "Kamayanja",
                     "Mbari",
                     "Nyarusange",
                     "Nyarutovu",
-                    "Rubanga"
-                  ]
+                    "Rubanga",
+                  ],
                 },
                 {
-                  "Kivumu": [
+                  Kivumu: [
                     "Gahondo",
                     "Gitega",
                     "Munazi",
                     "Nyagisozi",
                     "Nyerenga",
-                    "Wimana"
-                  ]
+                    "Wimana",
+                  ],
                 },
                 {
-                  "Mpushi": [
+                  Mpushi: [
                     "Gitwiko",
                     "Kabere",
                     "Kamashashi",
                     "Kingoma",
                     "Nyarubuye",
-                    "Nyarurama"
-                  ]
+                    "Nyarurama",
+                  ],
                 },
-                { "Rukambura": ["Bitsibo", "Ngoma", "Nkomane", "Nyamirembe"] }
-              ]
+                { Rukambura: ["Bitsibo", "Ngoma", "Nkomane", "Nyamirembe"] },
+              ],
             },
             {
-              "Ngamba": [
+              Ngamba: [
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Cyimigenge",
                     "Fukwe",
                     "Musenyi",
                     "Nyagasozi",
                     "Nyamugari",
-                    "Raro"
-                  ]
+                    "Raro",
+                  ],
                 },
                 {
-                  "Kazirabonde": [
+                  Kazirabonde: [
                     "Bigobe",
                     "Gatare",
                     "Gatwa",
                     "Kabande",
                     "Kajevuba",
-                    "Munoga"
-                  ]
+                    "Munoga",
+                  ],
                 },
                 {
-                  "Marembo": [
+                  Marembo: [
                     "Gahinga",
                     "Kabagogo",
                     "Kigina",
                     "Nyabitare",
-                    "Rugarama"
-                  ]
-                }
-              ]
+                    "Rugarama",
+                  ],
+                },
+              ],
             },
             {
-              "Nyamiyaga": [
+              Nyamiyaga: [
                 {
-                  "Bibungo": [
+                  Bibungo: [
                     "Byenene",
                     "Karubanda",
                     "Murambi",
@@ -13748,11 +13679,11 @@ const rwandaData = {
                     "Nyamabere",
                     "Nyamurasa",
                     "Nyamweru",
-                    "Rwabinagu"
-                  ]
+                    "Rwabinagu",
+                  ],
                 },
                 {
-                  "Kabashumba": [
+                  Kabashumba: [
                     "Bumbogo",
                     "Buye",
                     "Gacumu",
@@ -13762,11 +13693,11 @@ const rwandaData = {
                     "Nkoto",
                     "Ruvugizo",
                     "Ruyumba",
-                    "Umugarama"
-                  ]
+                    "Umugarama",
+                  ],
                 },
                 {
-                  "Kidahwe": [
+                  Kidahwe: [
                     "Kiranzi",
                     "Kirehe",
                     "Magu",
@@ -13775,11 +13706,11 @@ const rwandaData = {
                     "Rugarama",
                     "Rugwiro",
                     "Rwezamenyo",
-                    "Sabununga"
-                  ]
+                    "Sabununga",
+                  ],
                 },
                 {
-                  "Mukinga": [
+                  Mukinga: [
                     "Birembo",
                     "Kabeza",
                     "Kayenzi",
@@ -13788,11 +13719,11 @@ const rwandaData = {
                     "Nyamahuru",
                     "Nyarugenge",
                     "Nyaruhengeri",
-                    "Wimana"
-                  ]
+                    "Wimana",
+                  ],
                 },
                 {
-                  "Ngoma": [
+                  Ngoma: [
                     "Buhoro",
                     "Gitega",
                     "Kabahazi",
@@ -13800,441 +13731,423 @@ const rwandaData = {
                     "Kinanira",
                     "Kivugiza",
                     "Munyinya",
-                    "Rwankeke"
-                  ]
-                }
-              ]
+                    "Rwankeke",
+                  ],
+                },
+              ],
             },
             {
-              "Nyarubaka": [
+              Nyarubaka: [
                 {
-                  "Gitare": [
+                  Gitare: [
                     "Karora",
                     "Kibingo",
                     "Mugereke",
                     "Nyabitare",
                     "Remera",
-                    "Rwigerero"
-                  ]
+                    "Rwigerero",
+                  ],
                 },
                 {
-                  "Kambyeyi": [
+                  Kambyeyi: [
                     "Kabungo",
                     "Kigwene",
                     "Kirwa",
                     "Nyagihamba",
                     "Ruhuha",
-                    "Ruseke"
-                  ]
+                    "Ruseke",
+                  ],
                 },
                 {
-                  "Kigusa": [
+                  Kigusa: [
                     "Birembo",
                     "Gaserege",
                     "Kigarama",
                     "Kintama",
                     "Rugarama",
-                    "Rwinanka"
-                  ]
+                    "Rwinanka",
+                  ],
                 },
                 {
-                  "Nyagishubi": [
+                  Nyagishubi: [
                     "Kabere",
                     "Ngendo",
                     "Nombe",
                     "Nyagasozi",
-                    "Tare"
-                  ]
+                    "Tare",
+                  ],
                 },
                 {
-                  "Ruyanza": [
+                  Ruyanza: [
                     "Buhunga",
                     "Gatagara",
                     "Gitega",
                     "Kanombe",
                     "Kavumu",
-                    "Ngarama"
-                  ]
-                }
-              ]
+                    "Ngarama",
+                  ],
+                },
+              ],
             },
             {
-              "Rugarika": [
+              Rugarika: [
                 {
-                  "Bihembe": [
+                  Bihembe: [
                     "Gitwa",
                     "Kadasaya",
                     "Karama",
                     "Rubona",
                     "Rutovu",
-                    "Rwabayanga"
-                  ]
+                    "Rwabayanga",
+                  ],
                 },
                 {
-                  "Kigese": [
+                  Kigese: [
                     "Bikamba",
                     "Kigese",
                     "Kirega",
                     "Mibirizi",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Masaka": ["Masaka", "Mpungwe", "Ruramba", "Rwimondo", "Taba"]
+                  Masaka: ["Masaka", "Mpungwe", "Ruramba", "Rwimondo", "Taba"],
                 },
                 {
-                  "Nyarubuye": [
+                  Nyarubuye: [
                     "Kabarama",
                     "Musave",
                     "Nzagwa",
                     "Remera",
                     "Ruhogo",
-                    "Samuduha"
-                  ]
+                    "Samuduha",
+                  ],
                 },
                 {
-                  "Sheli": [
+                  Sheli: [
                     "Sheli",
                     "Gatovu",
                     "Kagangayire",
                     "Karehe",
                     "Kigarama",
-                    "Ntebe"
-                  ]
-                }
-              ]
+                    "Ntebe",
+                  ],
+                },
+              ],
             },
             {
-              "Rukoma": [
+              Rukoma: [
                 {
-                  "Bugoba": [
-                    "Bugoba",
-                    "Gatare",
-                    "Kabuga",
-                    "Nyarurama",
-                    "Nyenge"
-                  ]
+                  Bugoba: ["Bugoba", "Gatare", "Kabuga", "Nyarurama", "Nyenge"],
                 },
                 {
-                  "Buguri": [
+                  Buguri: [
                     "Buguri",
                     "Nyabuvomo",
                     "Nyagasozi",
                     "Nyakabande",
                     "Ruzege",
-                    "Tunza"
-                  ]
+                    "Tunza",
+                  ],
                 },
                 {
-                  "Gishyeshye": [
+                  Gishyeshye: [
                     "Gahungeri",
                     "Gishyeshye",
                     "Murambi",
                     "Nyamabuye",
-                    "Rubare"
-                  ]
+                    "Rubare",
+                  ],
                 },
                 {
-                  "Murehe": [
+                  Murehe: [
                     "Kabagabo",
                     "Kamuzi",
                     "Mubuga",
                     "Rushikiri",
-                    "Uwingando"
-                  ]
+                    "Uwingando",
+                  ],
                 },
                 {
-                  "Mwirute": [
+                  Mwirute: [
                     "Gafonogo",
                     "Mwirute",
                     "Nyarusave",
                     "Rubuye",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Remera": [
+                  Remera: [
                     "Gisenyi",
                     "Kabande",
                     "Kanyinya",
                     "Kigarama",
                     "Mbizi",
-                    "Remera"
-                  ]
+                    "Remera",
+                  ],
                 },
                 {
-                  "Taba": [
+                  Taba: [
                     "Bukokora",
                     "Karuri",
                     "Nyarusange",
                     "Nyirabihanya",
-                    "Taba"
-                  ]
-                }
-              ]
+                    "Taba",
+                  ],
+                },
+              ],
             },
             {
-              "Runda": [
+              Runda: [
                 {
-                  "Gihara": [
+                  Gihara: [
                     "Bikimba",
                     "Bimba",
                     "Kabasanza",
                     "Nyagatare",
                     "Rukaragata",
-                    "Ruyigi"
-                  ]
+                    "Ruyigi",
+                  ],
                 },
                 {
-                  "Kabagesera": [
+                  Kabagesera: [
                     "Bwirabo",
                     "Kabagesera",
                     "Muhambara",
                     "Rubuye",
-                    "Rugogwe"
-                  ]
+                    "Rugogwe",
+                  ],
                 },
                 {
-                  "Kagina": [
+                  Kagina: [
                     "Gasharara",
                     "Kagina",
                     "Kamuhoza",
                     "Kigusa",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Muganza": [
+                  Muganza: [
                     "Kigabiro",
                     "Musebeya",
                     "Nyagacyamu",
                     "Nyaruhoko",
-                    "Rubona"
-                  ]
+                    "Rubona",
+                  ],
                 },
                 {
-                  "Ruyenzi": [
+                  Ruyenzi: [
                     "Kibaya",
                     "Nyabitare",
                     "Nyagacaca",
                     "Rubumba",
-                    "Rugazi"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Rugazi",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Muhanga": [
+          Muhanga: [
             {
-              "Cyeza": [
+              Cyeza: [
                 {
-                  "Biringaga": [
+                  Biringaga: [
                     "Gatare",
                     "Karama",
                     "Kuwimana",
                     "Munini",
-                    "Nyabisindu"
-                  ]
+                    "Nyabisindu",
+                  ],
                 },
                 {
-                  "Kigarama": [
+                  Kigarama: [
                     "Cyanika",
                     "Kajeje",
                     "Mataba",
                     "Mbirizi",
                     "Nyagatovu",
-                    "Rwinkuba"
-                  ]
+                    "Rwinkuba",
+                  ],
                 },
                 {
-                  "Kivumu": [
+                  Kivumu: [
                     "Buruba",
                     "Busozi",
                     "Bwirika",
                     "Bwiza",
                     "Kamonyi",
                     "Musengo",
-                    "Takwe"
-                  ]
+                    "Takwe",
+                  ],
                 },
                 {
-                  "Makera": [
+                  Makera: [
                     "Binunga",
                     "Kanyanza",
                     "Kigaga",
                     "Nyagatovu",
-                    "Rwamugoroba"
-                  ]
+                    "Rwamugoroba",
+                  ],
                 },
                 {
-                  "Nyarunyinya": [
+                  Nyarunyinya: [
                     "Bishike",
                     "Bucyeye",
                     "Buhoro",
                     "Gasovu",
                     "Gatete",
-                    "Rusave"
-                  ]
+                    "Rusave",
+                  ],
                 },
                 {
-                  "Shori": [
-                    "Sholi",
-                    "Karehe",
-                    "Kibumba",
-                    "Nyarubuye",
-                    "Rubimba"
-                  ]
-                }
-              ]
+                  Shori: ["Sholi", "Karehe", "Kibumba", "Nyarubuye", "Rubimba"],
+                },
+              ],
             },
             {
-              "Kabacuzi": [
+              Kabacuzi: [
                 {
-                  "Buramba": [
+                  Buramba: [
                     "Gahembe",
                     "Gahinga",
                     "Kabayaza",
                     "Kirambo",
-                    "Musasa"
-                  ]
+                    "Musasa",
+                  ],
                 },
-                { "Butare": ["Buyoga", "Gihinga", "Karambo", "Nyirabwayi"] },
-                { "Kabuye": ["Kabuga", "Peru"] },
+                { Butare: ["Buyoga", "Gihinga", "Karambo", "Nyirabwayi"] },
+                { Kabuye: ["Kabuga", "Peru"] },
                 {
-                  "Kavumu": ["Gasave", "Gasiza", "Kabuga", "Rebero", "Rukoma"]
+                  Kavumu: ["Gasave", "Gasiza", "Kabuga", "Rebero", "Rukoma"],
                 },
-                { "Kibyimba": ["Gasharu", "Kamiranzogera", "Kanka", "Kibaya"] },
-                { "Ngarama": ["Kabuga", "Karambo", "Mpanga", "Nzovi"] },
+                { Kibyimba: ["Gasharu", "Kamiranzogera", "Kanka", "Kibaya"] },
+                { Ngarama: ["Kabuga", "Karambo", "Mpanga", "Nzovi"] },
                 {
-                  "Ngoma": [
+                  Ngoma: [
                     "Cyambari",
                     "Gitwa",
                     "Nkegete",
                     "Nyarunyinya",
-                    "Peru"
-                  ]
+                    "Peru",
+                  ],
                 },
                 {
-                  "Sholi": [
+                  Sholi: [
                     "Gakondokondo",
                     "Gitwa",
                     "Jandari",
                     "Kinyoni",
-                    "Mucyamo"
-                  ]
-                }
-              ]
+                    "Mucyamo",
+                  ],
+                },
+              ],
             },
             {
-              "Kibangu": [
+              Kibangu: [
                 {
-                  "Gisharu": [
+                  Gisharu: [
                     "Buhoro",
                     "Kirehe",
                     "Murandi",
                     "Musezero",
                     "Remera",
-                    "Rwesero"
-                  ]
+                    "Rwesero",
+                  ],
                 },
                 {
-                  "Gitega": [
+                  Gitega: [
                     "Cyuzu",
                     "Kaziba",
                     "Muhororo",
                     "Musambagiro",
                     "Musarara",
-                    "Nkondo"
-                  ]
+                    "Nkondo",
+                  ],
                 },
                 {
-                  "Jurwe": [
+                  Jurwe: [
                     "Bukiro",
                     "Kimisange",
                     "Murambi",
                     "Nzarwa",
                     "Rubona",
-                    "Ruminantege"
-                  ]
+                    "Ruminantege",
+                  ],
                 },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Jarama",
                     "Matoshya",
                     "Mubuga",
                     "Nyarubuye",
-                    "Nyaruvumu"
-                  ]
+                    "Nyaruvumu",
+                  ],
                 },
                 {
-                  "Rubyiniro": [
+                  Rubyiniro: [
                     "Butare",
                     "Gakurwe",
                     "Mucyamo",
                     "Mugari",
-                    "Murehe"
-                  ]
+                    "Murehe",
+                  ],
                 },
                 {
-                  "Ryakanimba": [
+                  Ryakanimba: [
                     "Kinogi",
                     "Musekera",
                     "Mushubaguriko",
                     "Mwumba",
-                    "Nyamugari"
-                  ]
-                }
-              ]
+                    "Nyamugari",
+                  ],
+                },
+              ],
             },
             {
-              "Kiyumba": [
-                { "Budende": ["Karambi", "Muduha", "Musenyi", "Ruramba"] },
-                { "Ndago": ["Mataba", "Rwezamenyo", "Sovu"] },
+              Kiyumba: [
+                { Budende: ["Karambi", "Muduha", "Musenyi", "Ruramba"] },
+                { Ndago: ["Mataba", "Rwezamenyo", "Sovu"] },
                 {
-                  "Remera": [
+                  Remera: [
                     "Cyakabiri",
                     "Kagahina",
                     "Kagitaba",
                     "Nyanza",
-                    "Sabusaro"
-                  ]
+                    "Sabusaro",
+                  ],
                 },
                 {
-                  "Ruhina": [
-                    "Busumba",
-                    "Gatwa",
-                    "Kabimbura",
-                    "Mubuga",
-                    "Nundwe"
-                  ]
+                  Ruhina: ["Busumba", "Gatwa", "Kabimbura", "Mubuga", "Nundwe"],
                 },
                 {
-                  "Rukeri": [
+                  Rukeri: [
                     "Busindi",
                     "Kabuga",
                     "Matovu",
                     "Munini",
                     "Musagara",
-                    "Nyamirambo"
-                  ]
-                }
-              ]
+                    "Nyamirambo",
+                  ],
+                },
+              ],
             },
             {
-              "Muhanga": [
+              Muhanga: [
                 {
-                  "Kanyinya": [
+                  Kanyinya: [
                     "Gakomeye",
                     "Kanyungura",
                     "Mataba",
                     "Nyabugwiza",
-                    "Nyamitanga"
-                  ]
+                    "Nyamitanga",
+                  ],
                 },
                 {
-                  "Nganzo": [
+                  Nganzo: [
                     "Gasenyi",
                     "Gitongati",
                     "Kabingo",
@@ -14242,106 +14155,106 @@ const rwandaData = {
                     "Kamazu",
                     "Karama",
                     "Kumukenke",
-                    "Masumo"
-                  ]
+                    "Masumo",
+                  ],
                 },
                 {
-                  "Nyamirama": [
+                  Nyamirama: [
                     "Cyurutare",
                     "Gahabwa",
                     "Kantonganiye",
                     "Namankurwe",
                     "Nyiramarangara",
-                    "Rwabagenzi"
-                  ]
+                    "Rwabagenzi",
+                  ],
                 },
                 {
-                  "Remera": [
+                  Remera: [
                     "Gisiza",
                     "Kiyoro",
                     "Muhanga",
                     "Munzereri",
                     "Murama",
-                    "Naganiro"
-                  ]
+                    "Naganiro",
+                  ],
                 },
                 {
-                  "Tyazo": ["Gasaka", "Gitima", "Kivomo", "Nyahinda", "Ruhuha"]
-                }
-              ]
+                  Tyazo: ["Gasaka", "Gitima", "Kivomo", "Nyahinda", "Ruhuha"],
+                },
+              ],
             },
             {
-              "Mushishiro": [
+              Mushishiro: [
                 {
-                  "Matyazo": [
+                  Matyazo: [
                     "Cyarubambire",
                     "Gataba",
                     "Gitwa",
                     "Kabeza",
-                    "Nyagasozi"
-                  ]
+                    "Nyagasozi",
+                  ],
                 },
-                { "Munazi": ["Kabadaha", "Kabare", "Kiyoro", "Rwinkindi"] },
+                { Munazi: ["Kabadaha", "Kabare", "Kiyoro", "Rwinkindi"] },
                 {
-                  "Nyagasozi": [
+                  Nyagasozi: [
                     "Bandora",
                     "Gasharu",
                     "Gihara",
                     "Gisovu",
                     "Kanombe",
-                    "Kibonwa"
-                  ]
+                    "Kibonwa",
+                  ],
                 },
                 {
-                  "Rukaragata": [
+                  Rukaragata: [
                     "Bitsibo",
                     "Hanika",
                     "Kamurekezi",
                     "Kivumu",
-                    "Rugerero"
-                  ]
+                    "Rugerero",
+                  ],
                 },
-                { "Rwasare": ["Bahimba", "Kanyinya", "Karucura", "Rubona"] },
-                { "Rwigerero": ["Nyamasheke", "Nyanza", "Rwuki", "Ryaruyange"] }
-              ]
+                { Rwasare: ["Bahimba", "Kanyinya", "Karucura", "Rubona"] },
+                { Rwigerero: ["Nyamasheke", "Nyanza", "Rwuki", "Ryaruyange"] },
+              ],
             },
             {
-              "Nyabinoni": [
+              Nyabinoni: [
                 {
-                  "Gashorera": [
+                  Gashorera: [
                     "Munyinya",
                     "Muzamuzi",
                     "Ndaragati",
-                    "Ryakiyange"
-                  ]
+                    "Ryakiyange",
+                  ],
                 },
-                { "Masangano": ["Cyanika", "Murambi", "Ngaru"] },
+                { Masangano: ["Cyanika", "Murambi", "Ngaru"] },
                 {
-                  "Mbuga": [
+                  Mbuga: [
                     "Gitaba",
                     "Karengeri",
                     "Munini",
                     "Murama",
-                    "Nyarusange"
-                  ]
+                    "Nyarusange",
+                  ],
                 },
-                { "Muvumba": ["Nyamugari", "Nyamure", "Nyanza"] },
+                { Muvumba: ["Nyamugari", "Nyamure", "Nyanza"] },
                 {
-                  "Nyarusozi": [
+                  Nyarusozi: [
                     "Gitwa",
                     "Kamahoro",
                     "Kanombe",
                     "Kanyamizo",
                     "Mugeni",
-                    "Rusenge"
-                  ]
-                }
-              ]
+                    "Rusenge",
+                  ],
+                },
+              ],
             },
             {
-              "Nyamabuye": [
+              Nyamabuye: [
                 {
-                  "Gahogo": [
+                  Gahogo: [
                     "Gihuma",
                     "Kamazuru",
                     "Kamugina",
@@ -14350,31 +14263,31 @@ const rwandaData = {
                     "Nyarucyamu II",
                     "Nyarucyamu III",
                     "Rutenga",
-                    "Ruvumera"
-                  ]
+                    "Ruvumera",
+                  ],
                 },
                 {
-                  "Gifumba": [
+                  Gifumba: [
                     "Gifumba",
                     "Gisiza",
                     "Kirebe",
                     "Rugarama",
                     "Rutarabana",
-                    "Samuduha"
-                  ]
+                    "Samuduha",
+                  ],
                 },
                 {
-                  "Gitarama": [
+                  Gitarama: [
                     "Gatika",
                     "Kagitarama",
                     "Kavumu",
                     "Nyabisindu",
                     "Nyarusiza",
-                    "Nyarutovu"
-                  ]
+                    "Nyarutovu",
+                  ],
                 },
                 {
-                  "Remera": [
+                  Remera: [
                     "Biti",
                     "Gasenyi",
                     "Gasharu",
@@ -14382,71 +14295,71 @@ const rwandaData = {
                     "Kirenge",
                     "Munini",
                     "Nete",
-                    "Nyakabingo"
-                  ]
-                }
-              ]
+                    "Nyakabingo",
+                  ],
+                },
+              ],
             },
             {
-              "Nyarusange": [
+              Nyarusange: [
                 {
-                  "Mbiriri": [
+                  Mbiriri: [
                     "Gasave",
                     "Gasharu",
                     "Gisasa",
                     "Karehe",
                     "Kintobo",
                     "Ntenderi",
-                    "Nyarushora"
-                  ]
+                    "Nyarushora",
+                  ],
                 },
                 {
-                  "Musongati": [
+                  Musongati: [
                     "Cyiciro",
                     "Jabiro",
                     "Kagarama",
                     "Kamanga",
                     "Murambi",
-                    "Ngororano"
-                  ]
+                    "Ngororano",
+                  ],
                 },
-                { "Ngaru": ["Gitega", "Kibirizi", "Remera", "Rukamiro"] },
-                { "Rusovu": ["Mututu", "Rukurazo", "Rwambariro", "Vugo"] }
-              ]
+                { Ngaru: ["Gitega", "Kibirizi", "Remera", "Rukamiro"] },
+                { Rusovu: ["Mututu", "Rukurazo", "Rwambariro", "Vugo"] },
+              ],
             },
             {
-              "Rongi": [
+              Rongi: [
                 {
-                  "Gasagara": [
+                  Gasagara: [
                     "Fumbwe",
                     "Gasharu",
                     "Kidahwe",
                     "Murehe",
                     "Musenyi",
-                    "Nyabugombe"
-                  ]
+                    "Nyabugombe",
+                  ],
                 },
                 {
-                  "Gasharu": [
+                  Gasharu: [
                     "Birehe",
                     "Gituza",
                     "Kabirizi",
                     "Kabuga",
                     "Karama",
-                    "Nyamiyaga"
-                  ]
+                    "Nyamiyaga",
+                  ],
                 },
                 {
-                  "Karambo": [
+                  Karambo: [
                     "Gifurwe",
                     "Gitwa",
                     "Nyabikenke",
                     "Nyagasozi",
-                    "Rushenyi"
-                  ]
+                    "Rushenyi",
+                  ],
                 },
                 {
-                  "Nyamirambo": [
+                  Nyamirambo: [
                     "Gisoro",
                     "Kabakungu",
                     "Karambi",
@@ -14454,63 +14367,63 @@ const rwandaData = {
                     "Mugwato",
                     "Ntarabana",
                     "Rugogwe",
-                    "Rwamure"
-                  ]
+                    "Rwamure",
+                  ],
                 },
-                { "Ruhango": ["Burerabana", "Kondo", "Muyebe", "Rukoma"] }
-              ]
+                { Ruhango: ["Burerabana", "Kondo", "Muyebe", "Rukoma"] },
+              ],
             },
             {
-              "Rugendabari": [
+              Rugendabari: [
                 {
-                  "Gasave": [
+                  Gasave: [
                     "Gakoma",
                     "Gasharu",
                     "Giturwa",
                     "Nyagasozi",
                     "Nyakibuye",
-                    "Nyamatete"
-                  ]
+                    "Nyamatete",
+                  ],
                 },
-                { "Kanyana": ["Gasovu", "Kabuba", "Muheta", "Ntonde"] },
-                { "Kibaga": ["Kiduha", "Mataba", "Njamena"] },
-                { "Mpinga": ["Buganda", "Gisiza"] },
+                { Kanyana: ["Gasovu", "Kabuba", "Muheta", "Ntonde"] },
+                { Kibaga: ["Kiduha", "Mataba", "Njamena"] },
+                { Mpinga: ["Buganda", "Gisiza"] },
                 {
-                  "Nsanga": [
+                  Nsanga: [
                     "Mpongo",
                     "Ngando",
                     "Nyundo",
                     "Rugwiza",
-                    "Twabumbogo"
-                  ]
-                }
-              ]
+                    "Twabumbogo",
+                  ],
+                },
+              ],
             },
             {
-              "Shyogwe": [
+              Shyogwe: [
                 {
-                  "Kinini": [
+                  Kinini: [
                     "Gatare",
                     "Kabungo",
                     "Kinyami",
                     "Musezero",
                     "Nyakabingo",
-                    "Nyakaguhu"
-                  ]
+                    "Nyakaguhu",
+                  ],
                 },
                 {
-                  "Mbare": [
+                  Mbare: [
                     "Buriza",
                     "Muremberi",
                     "Nyabisindu",
                     "Rubugurizo",
                     "Rubuye",
                     "Songa",
-                    "Vunga"
-                  ]
+                    "Vunga",
+                  ],
                 },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Gakomeye",
                     "Gasharu",
                     "Kigarama",
@@ -14518,11 +14431,11 @@ const rwandaData = {
                     "Matsinsi",
                     "Nyamaganda",
                     "Nyarucyamu",
-                    "Rwamaraba"
-                  ]
+                    "Rwamaraba",
+                  ],
                 },
                 {
-                  "Ruli": [
+                  Ruli: [
                     "Gakombe",
                     "Kabeza",
                     "Karama",
@@ -14530,46 +14443,46 @@ const rwandaData = {
                     "Munyinya",
                     "Murambi",
                     "Nyagacyamu",
-                    "Ruhina"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Ruhina",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Nyamagabe": [
+          Nyamagabe: [
             {
-              "Buruhukiro": [
+              Buruhukiro: [
                 {
-                  "Bushigishigi": [
+                  Bushigishigi: [
                     "Bushigishigi",
                     "Giharayumbu",
                     "Mugote",
-                    "Rusekera"
-                  ]
+                    "Rusekera",
+                  ],
                 },
                 {
-                  "Byimana": [
+                  Byimana: [
                     "Bishyiga",
                     "Buhoro",
                     "Gakangaga",
                     "Gihumo",
-                    "Rukeri"
-                  ]
+                    "Rukeri",
+                  ],
                 },
                 {
-                  "Gifurwe": [
+                  Gifurwe: [
                     "Bitaba",
                     "Gifurwe",
                     "Nganzo",
                     "Nyamaberi",
                     "Ruronzi",
-                    "Uwankiriye"
-                  ]
+                    "Uwankiriye",
+                  ],
                 },
                 {
-                  "Kizimyamuriro": [
+                  Kizimyamuriro: [
                     "Gikungu",
                     "Gishwati",
                     "Kagano",
@@ -14577,35 +14490,35 @@ const rwandaData = {
                     "Minaga",
                     "Mujerenge",
                     "Tantamara",
-                    "Uwinzira"
-                  ]
+                    "Uwinzira",
+                  ],
                 },
                 {
-                  "Munini": [
+                  Munini: [
                     "Cyinyonza",
                     "Gitovu",
                     "Magumira",
                     "Matsinda",
                     "Munini",
                     "Rukwandu",
-                    "Uwinzovu"
-                  ]
+                    "Uwinzovu",
+                  ],
                 },
                 {
-                  "Rambya": [
+                  Rambya: [
                     "Buruhukiro",
                     "Kibuburo",
                     "Mpanga",
                     "Nkamba",
-                    "Ruseke"
-                  ]
-                }
-              ]
+                    "Ruseke",
+                  ],
+                },
+              ],
             },
             {
-              "Cyanika": [
+              Cyanika: [
                 {
-                  "Gitega": [
+                  Gitega: [
                     "Butare",
                     "Gaseke",
                     "Gasharu",
@@ -14615,11 +14528,11 @@ const rwandaData = {
                     "Munyereri",
                     "Musasa",
                     "Rusarasi",
-                    "Rwingoma"
-                  ]
+                    "Rwingoma",
+                  ],
                 },
                 {
-                  "Karama": [
+                  Karama: [
                     "Birambo",
                     "Karaba",
                     "Karama",
@@ -14627,42 +14540,42 @@ const rwandaData = {
                     "Munyinya",
                     "Nyamisave",
                     "Nyanza",
-                    "Rwamagana"
-                  ]
+                    "Rwamagana",
+                  ],
                 },
                 {
-                  "Kiyumba": [
+                  Kiyumba: [
                     "Gatare",
                     "Gatentwe",
                     "Gikomero",
                     "Gishike",
                     "Kagarama",
                     "Kaviri",
-                    "Nyarucyamu"
-                  ]
+                    "Nyarucyamu",
+                  ],
                 },
                 {
-                  "Ngoma": [
+                  Ngoma: [
                     "Kabarera",
                     "Kamuhirwa",
                     "Kavumu",
                     "Kinga",
                     "Murama",
-                    "Nyamirambo"
-                  ]
+                    "Nyamirambo",
+                  ],
                 },
                 {
-                  "Nyanza": [
+                  Nyanza: [
                     "Buhiga",
                     "Kibingo",
                     "Mirama",
                     "Mugombwa",
                     "Nyabisindu",
-                    "Rugaragara"
-                  ]
+                    "Rugaragara",
+                  ],
                 },
                 {
-                  "Nyanzoga": [
+                  Nyanzoga: [
                     "Bigazi",
                     "Gafuhisha",
                     "Kagarama",
@@ -14670,93 +14583,93 @@ const rwandaData = {
                     "Mbeho",
                     "Mugari",
                     "Nyamirama",
-                    "Rusenyi"
-                  ]
-                }
-              ]
+                    "Rusenyi",
+                  ],
+                },
+              ],
             },
             {
-              "Gasaka": [
-                { "Kigeme": ["Gakoma", "Gitaba", "Munombe", "Nyentanga"] },
+              Gasaka: [
+                { Kigeme: ["Gakoma", "Gitaba", "Munombe", "Nyentanga"] },
                 {
-                  "Ngiryi": [
+                  Ngiryi: [
                     "Karambi",
                     "Kibanda",
                     "Kitazigurwa",
                     "Munyege",
                     "Ngiryi",
-                    "Sumba"
-                  ]
+                    "Sumba",
+                  ],
                 },
-                { "Nyabivumu": ["Dusego", "Gasharu", "Nyabivumu", "Raro"] },
+                { Nyabivumu: ["Dusego", "Gasharu", "Nyabivumu", "Raro"] },
                 {
-                  "Nyamugari": [
+                  Nyamugari: [
                     "Kabacuzi",
                     "Kabajogo",
                     "Karama",
                     "Kigarama",
                     "Nyamugari",
-                    "Nyarusange"
-                  ]
+                    "Nyarusange",
+                  ],
                 },
-                { "Nzega": ["Gasaka", "Gitantu", "Kadoma", "Nzega"] },
+                { Nzega: ["Gasaka", "Gitantu", "Kadoma", "Nzega"] },
                 {
-                  "Remera": [
+                  Remera: [
                     "Gitwa",
                     "Kabeza",
                     "Murambi",
                     "Muriro",
-                    "Nyamifumba"
-                  ]
-                }
-              ]
+                    "Nyamifumba",
+                  ],
+                },
+              ],
             },
             {
-              "Gatare": [
-                { "Bakopfu": ["Karambo", "Karumbi", "Muhingo", "Twiya"] },
+              Gatare: [
+                { Bakopfu: ["Karambo", "Karumbi", "Muhingo", "Twiya"] },
                 {
-                  "Gatare": [
+                  Gatare: [
                     "Gashasha",
                     "Kiyovu",
                     "Murembo",
                     "Rwamakara",
-                    "Uwisuri"
-                  ]
+                    "Uwisuri",
+                  ],
                 },
                 {
-                  "Mukongoro": [
+                  Mukongoro: [
                     "Gikungu",
                     "Kagano",
                     "Kageyo",
                     "Nyakabuye",
-                    "Rukereko"
-                  ]
+                    "Rukereko",
+                  ],
                 },
                 {
-                  "Ruganda": [
+                  Ruganda: [
                     "Gasharu",
                     "Gituntu",
                     "Kamamara",
                     "Masangano",
                     "Runaba",
-                    "Rwangambibi"
-                  ]
+                    "Rwangambibi",
+                  ],
                 },
                 {
-                  "Shyeru": [
+                  Shyeru: [
                     "Baziro",
                     "Bimba",
                     "Kagusa",
                     "Ruhanga",
-                    "Rushyarara"
-                  ]
-                }
-              ]
+                    "Rushyarara",
+                  ],
+                },
+              ],
             },
             {
-              "Kaduha": [
+              Kaduha: [
                 {
-                  "Kavumu": [
+                  Kavumu: [
                     "Bamba",
                     "Biziguro",
                     "Gahama",
@@ -14766,19 +14679,14 @@ const rwandaData = {
                     "Kabuga",
                     "Kamonyi",
                     "Karehe",
-                    "Kavumu"
-                  ]
+                    "Kavumu",
+                  ],
                 },
                 {
-                  "Murambi": [
-                    "Kasemanyana",
-                    "Kibiraro",
-                    "Nyaruryango",
-                    "Rebero"
-                  ]
+                  Murambi: ["Kasemanyana", "Kibiraro", "Nyaruryango", "Rebero"],
                 },
                 {
-                  "Musenyi": [
+                  Musenyi: [
                     "Burengo",
                     "Gasovu",
                     "Gatoki",
@@ -14786,11 +14694,11 @@ const rwandaData = {
                     "Munini",
                     "Nganzo",
                     "Nyakirambi",
-                    "Ruganda"
-                  ]
+                    "Ruganda",
+                  ],
                 },
                 {
-                  "Nyabisindu": [
+                  Nyabisindu: [
                     "Gitabage",
                     "Kabaziro",
                     "Kanyege",
@@ -14798,351 +14706,345 @@ const rwandaData = {
                     "Kirehe",
                     "Kivumu",
                     "Muduha",
-                    "Mukongoro"
-                  ]
+                    "Mukongoro",
+                  ],
                 },
                 {
-                  "Nyamiyaga": [
+                  Nyamiyaga: [
                     "Cyugaro",
                     "Gashiru",
                     "Nkomero",
                     "Nyakabingo",
                     "Ruhuha",
-                    "Rukeri"
-                  ]
-                }
-              ]
+                    "Rukeri",
+                  ],
+                },
+              ],
             },
             {
-              "Kamegeri": [
-                { "Bwama": ["Gitwa", "Kamiro", "Kigarama"] },
-                { "Kamegeri": ["Kinyovu", "Ntaruka", "Rweru", "Sovu"] },
-                { "Kirehe": ["Gasharu", "Kigarama", "Ryanyirataba"] },
-                { "Kizi": ["Gakomeye", "Kagarama", "Kinyana"] },
-                { "Nyarusiza": ["Bande", "Nyarusange", "Nyarusiza", "Rutuna"] },
-                { "Rususa": ["Bahina", "Baro", "Kigarama", "Muhembe"] }
-              ]
+              Kamegeri: [
+                { Bwama: ["Gitwa", "Kamiro", "Kigarama"] },
+                { Kamegeri: ["Kinyovu", "Ntaruka", "Rweru", "Sovu"] },
+                { Kirehe: ["Gasharu", "Kigarama", "Ryanyirataba"] },
+                { Kizi: ["Gakomeye", "Kagarama", "Kinyana"] },
+                { Nyarusiza: ["Bande", "Nyarusange", "Nyarusiza", "Rutuna"] },
+                { Rususa: ["Bahina", "Baro", "Kigarama", "Muhembe"] },
+              ],
             },
             {
-              "Kibirizi": [
+              Kibirizi: [
                 {
-                  "Bugarama": [
+                  Bugarama: [
                     "Kabarera",
                     "Kamina",
                     "Karandura",
                     "Kivumu",
                     "Munazi",
-                    "Nyabusozi"
-                  ]
+                    "Nyabusozi",
+                  ],
                 },
                 {
-                  "Bugarura": [
+                  Bugarura: [
                     "Kasebuturanyi",
                     "Kirwa",
                     "Muyange",
                     "Nyakibyeyi",
-                    "Uwinyana"
-                  ]
+                    "Uwinyana",
+                  ],
                 },
                 {
-                  "Gashiha": [
+                  Gashiha: [
                     "Gasharu",
                     "Muduha",
                     "Muganza",
                     "Nyabubare",
-                    "Rukamiro"
-                  ]
+                    "Rukamiro",
+                  ],
                 },
                 {
-                  "Karambo": [
+                  Karambo: [
                     "Gisoro",
                     "Gitwa",
                     "Kavumu",
                     "Nyamirama",
-                    "Nyirakiraro"
-                  ]
+                    "Nyirakiraro",
+                  ],
                 },
                 {
-                  "Ruhunga": [
+                  Ruhunga: [
                     "Cyamashya",
                     "Gakoma",
                     "Kabuga",
                     "Munombe",
                     "Nyagishubi",
-                    "Ruhurura"
-                  ]
+                    "Ruhurura",
+                  ],
                 },
                 {
-                  "Uwindekezi": [
+                  Uwindekezi: [
                     "Birembo",
                     "Gatovu",
                     "Karumbi",
                     "Kigarama",
                     "Mugote",
-                    "Uwamataba"
-                  ]
-                }
-              ]
+                    "Uwamataba",
+                  ],
+                },
+              ],
             },
             {
-              "Kibumbwe": [
+              Kibumbwe: [
                 {
-                  "Bwenda": [
+                  Bwenda: [
                     "Munyinya",
                     "Murambi",
                     "Murwa",
                     "Nyagatovu",
-                    "Nyamirama"
-                  ]
+                    "Nyamirama",
+                  ],
                 },
                 {
-                  "Gakanka": [
+                  Gakanka: [
                     "Cyeru",
                     "Gikomero",
                     "Munini",
                     "Nkurubuye",
                     "Nyarubuye",
-                    "Rambya"
-                  ]
+                    "Rambya",
+                  ],
                 },
                 {
-                  "Kibibi": [
+                  Kibibi: [
                     "Gatandaganya",
                     "Kabere",
                     "Kanyege",
                     "Kirwa",
                     "Rwezamenyo",
-                    "Ryingarura"
-                  ]
+                    "Ryingarura",
+                  ],
                 },
                 {
-                  "Nyakiza": [
+                  Nyakiza: [
                     "Dusenyi",
                     "Karambo",
                     "Kinyana",
                     "Murambi",
                     "Nyakizu",
-                    "Zigati"
-                  ]
-                }
-              ]
+                    "Zigati",
+                  ],
+                },
+              ],
             },
             {
-              "Kitabi": [
+              Kitabi: [
                 {
-                  "Kagano": [
+                  Kagano: [
                     "Bususuruke",
                     "Kintobo",
                     "Turonzi",
                     "Uwabumenyi",
                     "Uwarwubatsi",
-                    "Uwintyabire"
-                  ]
+                    "Uwintyabire",
+                  ],
                 },
                 {
-                  "Mujuga": [
+                  Mujuga: [
                     "Gahande",
                     "Gasasa",
                     "Mujuga",
                     "Mukaka",
                     "Rwufe",
                     "Uwanyakanyeri",
-                    "Uwinka"
-                  ]
+                    "Uwinka",
+                  ],
                 },
                 {
-                  "Mukungu": [
+                  Mukungu: [
                     "Gahira",
                     "Gatare",
                     "Karambi",
                     "Uwicurangiro",
-                    "Uwurunazi"
-                  ]
+                    "Uwurunazi",
+                  ],
                 },
                 {
-                  "Shaba": [
+                  Shaba: [
                     "Bitaba",
                     "Gakoko",
                     "Muganza",
                     "Muyange",
                     "Uwakagoro",
-                    "Uwinka"
-                  ]
+                    "Uwinka",
+                  ],
                 },
                 {
-                  "Uwingugu": [
+                  Uwingugu: [
                     "Gisarenda",
                     "Kigari",
                     "Rubuye",
                     "Ruhanga",
                     "Uwimisigati",
-                    "Uwurunazi"
-                  ]
-                }
-              ]
+                    "Uwurunazi",
+                  ],
+                },
+              ],
             },
             {
-              "Mbazi": [
-                { "Manwari": ["Karambi", "Kibumba", "Kigarama", "Muhororo"] },
+              Mbazi: [
+                { Manwari: ["Karambi", "Kibumba", "Kigarama", "Muhororo"] },
                 {
-                  "Mutiwingoma": [
+                  Mutiwingoma: [
                     "Gatwa",
                     "Kabere",
                     "Kabuga",
                     "Muduha",
-                    "Nyamirama"
-                  ]
+                    "Nyamirama",
+                  ],
                 },
                 {
-                  "Ngambi": [
+                  Ngambi: [
                     "Gaseke",
                     "Kabeza",
                     "Kivomo",
                     "Maheresho",
-                    "Munanira"
-                  ]
+                    "Munanira",
+                  ],
                 },
                 {
-                  "Ngara": [
+                  Ngara: [
                     "Butare",
                     "Gasharu",
                     "Gisiza",
                     "Gituntu",
                     "Nyagishumbu",
-                    "Ruseke"
-                  ]
-                }
-              ]
+                    "Ruseke",
+                  ],
+                },
+              ],
             },
             {
-              "Mugano": [
+              Mugano: [
                 {
-                  "Gitondorero": [
+                  Gitondorero: [
                     "Gakomeye",
                     "Gitondorero",
                     "Gituntu",
                     "Karambi",
-                    "Maso"
-                  ]
+                    "Maso",
+                  ],
                 },
                 {
-                  "Gitwa": [
+                  Gitwa: [
                     "Kabuhoro",
                     "Kirenzi I",
                     "Kirenzi II",
                     "Nyakibingo",
                     "Rutabo",
-                    "Ryamigabo"
-                  ]
+                    "Ryamigabo",
+                  ],
                 },
                 {
-                  "Ruhinga": [
+                  Ruhinga: [
                     "Cyibande",
                     "Gitarama",
                     "Kabuye",
                     "Karambi",
                     "Kinzira",
-                    "Runyinya"
-                  ]
+                    "Runyinya",
+                  ],
                 },
                 {
-                  "Sovu": [
+                  Sovu: [
                     "Kigarama",
                     "Nziranziza",
                     "Rugarama I",
                     "Rugarama II",
-                    "Ruhanga"
-                  ]
+                    "Ruhanga",
+                  ],
                 },
                 {
-                  "Suti": [
-                    "Cyabute",
-                    "Gasiza",
-                    "Matyazo",
-                    "Rwamiko",
-                    "Turyango"
-                  ]
+                  Suti: ["Cyabute", "Gasiza", "Matyazo", "Rwamiko", "Turyango"],
                 },
                 {
-                  "Yonde": [
+                  Yonde: [
                     "Gisovu",
                     "Kanyegenyege",
                     "Nyarusazi",
                     "Ruhamira I",
-                    "Ruhamira II"
-                  ]
-                }
-              ]
+                    "Ruhamira II",
+                  ],
+                },
+              ],
             },
             {
-              "Musange": [
+              Musange: [
                 {
-                  "Gasave": [
+                  Gasave: [
                     "Gasura",
                     "Kabingo",
                     "Murambi",
                     "Nyabivumu",
-                    "Nyakabuye"
-                  ]
+                    "Nyakabuye",
+                  ],
                 },
                 {
-                  "Jenda": [
+                  Jenda: [
                     "Cyabagomba",
                     "Kabakannyi",
                     "Kavumu",
                     "Kayogoro",
                     "Nyakibungo",
-                    "Nyakirambi"
-                  ]
+                    "Nyakirambi",
+                  ],
                 },
                 {
-                  "Masagara": [
+                  Masagara: [
                     "Cyabasana",
                     "Cyaruvunge",
                     "Gituntu",
                     "Muhororo",
                     "Mutakara",
                     "Mutuntu",
-                    "Nyagihima"
-                  ]
+                    "Nyagihima",
+                  ],
                 },
                 {
-                  "Masangano": [
+                  Masangano: [
                     "Gasagara",
                     "Kibumba",
                     "Mubuga",
                     "Nyakabuye",
-                    "Rutuntu"
-                  ]
+                    "Rutuntu",
+                  ],
                 },
                 {
-                  "Masizi": ["Karama", "Munini", "Murehe", "Rwankango", "Rwina"]
+                  Masizi: ["Karama", "Munini", "Murehe", "Rwankango", "Rwina"],
                 },
                 {
-                  "Nyagisozi": [
+                  Nyagisozi: [
                     "Dusenyi",
                     "Kibaga",
                     "Remera",
                     "Ruhuga",
-                    "Uwabarashi"
-                  ]
-                }
-              ]
+                    "Uwabarashi",
+                  ],
+                },
+              ],
             },
             {
-              "Musebeya": [
+              Musebeya: [
                 {
-                  "Gatovu": [
+                  Gatovu: [
                     "Bisereganya",
                     "Gatovu",
                     "Gitovu",
                     "Kanyiranzoga",
                     "Nyarubande",
-                    "Ryanyakayaga"
-                  ]
+                    "Ryanyakayaga",
+                  ],
                 },
                 {
-                  "Nyarurambi": [
+                  Nyarurambi: [
                     "Cyabwimba",
                     "Cyarwa",
                     "Gatiti",
@@ -15150,55 +15052,55 @@ const rwandaData = {
                     "Kabere",
                     "Mujyejuru",
                     "Nyarurambi",
-                    "Rwabigeyo"
-                  ]
+                    "Rwabigeyo",
+                  ],
                 },
                 {
-                  "Rugano": [
+                  Rugano: [
                     "Bugarama",
                     "Busanza",
                     "Gisiza",
                     "Kibandirwa",
                     "Rugano",
-                    "Rukungu"
-                  ]
+                    "Rukungu",
+                  ],
                 },
                 {
-                  "Runege": [
+                  Runege: [
                     "Bigugu",
                     "Bitaba",
                     "Gacundura",
                     "Gakereko",
                     "Ndogondwe",
                     "Ruganza",
-                    "Rukaranka"
-                  ]
+                    "Rukaranka",
+                  ],
                 },
                 {
-                  "Rusekera": [
+                  Rusekera: [
                     "Karambo",
                     "Ngoma",
                     "Rebero",
                     "Shaki",
-                    "Uwimituza"
-                  ]
+                    "Uwimituza",
+                  ],
                 },
                 {
-                  "Sekera": [
+                  Sekera: [
                     "Masinde",
                     "Mugano",
                     "Nkomero",
                     "Nyaruhura",
                     "Rubumburi",
-                    "Rugazi"
-                  ]
-                }
-              ]
+                    "Rugazi",
+                  ],
+                },
+              ],
             },
             {
-              "Mushubi": [
+              Mushubi: [
                 {
-                  "Buteteri": [
+                  Buteteri: [
                     "Gorwe",
                     "Kagorwe",
                     "Kizanganya",
@@ -15208,11 +15110,11 @@ const rwandaData = {
                     "Nyakibande",
                     "Remera",
                     "Rusoyo",
-                    "Rwamiko"
-                  ]
+                    "Rwamiko",
+                  ],
                 },
                 {
-                  "Cyobe": [
+                  Cyobe: [
                     "Cyobe",
                     "Gaseke",
                     "Gitikirema",
@@ -15220,123 +15122,117 @@ const rwandaData = {
                     "Nyakabingo",
                     "Nyakirambi",
                     "Nyarushike",
-                    "Rutoyi"
-                  ]
+                    "Rutoyi",
+                  ],
                 },
                 {
-                  "Gashwati": [
+                  Gashwati: [
                     "Bweramana",
                     "Gashwati",
                     "Muhembe",
                     "Muko",
                     "Mushubi",
                     "Rucunda",
-                    "Ruhinga"
-                  ]
-                }
-              ]
+                    "Ruhinga",
+                  ],
+                },
+              ],
             },
             {
-              "Nkomane": [
+              Nkomane: [
                 {
-                  "Bitandara": [
+                  Bitandara: [
                     "Bitandara",
                     "Buhanzi",
                     "Munanira",
                     "Muyange",
-                    "Rugeyo"
-                  ]
+                    "Rugeyo",
+                  ],
                 },
                 {
-                  "Musaraba": [
+                  Musaraba: [
                     "Gatorove",
                     "Gihunga",
                     "Kimbogo",
                     "Musaraba",
                     "Rusoyo",
                     "Rutare",
-                    "Rwimpiri"
-                  ]
+                    "Rwimpiri",
+                  ],
                 },
                 {
-                  "Mutengeri": [
+                  Mutengeri: [
                     "Cyurwufe",
                     "Gihwahwa",
                     "Kavumu",
                     "Kivumu",
                     "Mutengeri",
-                    "Tubuye"
-                  ]
+                    "Tubuye",
+                  ],
                 },
                 {
-                  "Nkomane": [
-                    "Banda",
-                    "Kagano",
-                    "Mugari",
-                    "Mutarama",
-                    "Ruhinga"
-                  ]
+                  Nkomane: ["Banda", "Kagano", "Mugari", "Mutarama", "Ruhinga"],
                 },
                 {
-                  "Nyarwungo": [
+                  Nyarwungo: [
                     "Bisharara",
                     "Bucyero",
                     "Marambo",
                     "Nyaruhombo",
                     "Nyarwungo",
                     "Rangi",
-                    "Rutoyi"
-                  ]
+                    "Rutoyi",
+                  ],
                 },
                 {
-                  "Twiya": [
+                  Twiya: [
                     "Gakomeye",
                     "Gishenge",
                     "Karukoma",
                     "Kibuga",
-                    "Twiya"
-                  ]
-                }
-              ]
+                    "Twiya",
+                  ],
+                },
+              ],
             },
             {
-              "Tare": [
+              Tare: [
                 {
-                  "Buhoro": [
+                  Buhoro: [
                     "Gisanze",
                     "Gitovu",
                     "Kanserege",
                     "Kirwa",
                     "Nyabwoma",
                     "Rwufe",
-                    "Ryarubondo"
-                  ]
+                    "Ryarubondo",
+                  ],
                 },
                 {
-                  "Gasarenda": [
+                  Gasarenda: [
                     "Kagarama",
                     "Kiminazi",
                     "Kivuruga",
                     "Murangara",
                     "Muse",
                     "Mwufe",
-                    "Uwinkomo"
-                  ]
+                    "Uwinkomo",
+                  ],
                 },
                 {
-                  "Gatovu": ["Gasenge", "Kigusa", "Kimina", "Muhati", "Ruziba"]
+                  Gatovu: ["Gasenge", "Kigusa", "Kimina", "Muhati", "Ruziba"],
                 },
                 {
-                  "Kaganza": [
+                  Kaganza: [
                     "Akanyirandori",
                     "Bivumu",
                     "Buremera",
                     "Cyimicanga",
-                    "Ruganza"
-                  ]
+                    "Ruganza",
+                  ],
                 },
                 {
-                  "Nkumbure": [
+                  Nkumbure: [
                     "Biraro",
                     "Bireka",
                     "Gahembe",
@@ -15346,88 +15242,88 @@ const rwandaData = {
                     "Rugeti",
                     "Rukereko",
                     "Uwumugeti",
-                    "Vumwe"
-                  ]
+                    "Vumwe",
+                  ],
                 },
                 {
-                  "Nyamigina": [
+                  Nyamigina: [
                     "Gakoma",
                     "Maryohe",
                     "Ngororero",
                     "Nkomero",
                     "Nyarugeti",
                     "Rukoko",
-                    "Uwinyana"
-                  ]
-                }
-              ]
+                    "Uwinyana",
+                  ],
+                },
+              ],
             },
             {
-              "Uwinkingi": [
+              Uwinkingi: [
                 {
-                  "Bigumira": ["Bigumira", "Cyumuganza", "Gakoko", "Magumira"]
+                  Bigumira: ["Bigumira", "Cyumuganza", "Gakoko", "Magumira"],
                 },
                 {
-                  "Gahira": [
+                  Gahira: [
                     "Bunyunyu",
                     "Gahira",
                     "Gititi",
                     "Kibugazi",
                     "Kunyu",
                     "Rugeyo",
-                    "Uwinkingi"
-                  ]
+                    "Uwinkingi",
+                  ],
                 },
                 {
-                  "Kibyagira": [
+                  Kibyagira: [
                     "Bishya",
                     "Cyumuganza",
                     "Kabuga",
                     "Kabusekuru",
                     "Kagano",
                     "Sabake",
-                    "Sekera"
-                  ]
+                    "Sekera",
+                  ],
                 },
                 {
-                  "Mudasomwa": [
+                  Mudasomwa: [
                     "Gicaca",
                     "Karambo",
                     "Nsinduka",
                     "Rushubi",
-                    "Uwanjyogoro"
-                  ]
+                    "Uwanjyogoro",
+                  ],
                 },
                 {
-                  "Munyege": [
+                  Munyege: [
                     "Bitaba",
                     "Gahango",
                     "Kanyampongo",
                     "Kimina",
                     "Munyege",
-                    "Nyarurambi"
-                  ]
+                    "Nyarurambi",
+                  ],
                 },
                 {
-                  "Rugogwe": [
+                  Rugogwe: [
                     "Mabende",
                     "Munini",
                     "Mwishogwe",
                     "Nyamugari",
                     "Rugeti",
-                    "Subukiniro"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Subukiniro",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Nyanza": [
+          Nyanza: [
             {
-              "Busasamana": [
+              Busasamana: [
                 {
-                  "Gahondo": [
+                  Gahondo: [
                     "Bigega",
                     "Bugura",
                     "Kamatovu",
@@ -15436,11 +15332,11 @@ const rwandaData = {
                     "Kibaga",
                     "Kiberinka",
                     "Nyakwibereka",
-                    "Nyarutovu"
-                  ]
+                    "Nyarutovu",
+                  ],
                 },
                 {
-                  "Kavumu": [
+                  Kavumu: [
                     "Akirabo",
                     "Gihisi A",
                     "Gihisi B",
@@ -15455,11 +15351,11 @@ const rwandaData = {
                     "Rukandiro",
                     "Ruvumera",
                     "Kavumu",
-                    "Nyamagana A"
-                  ]
+                    "Nyamagana A",
+                  ],
                 },
                 {
-                  "Kibinja": [
+                  Kibinja: [
                     "Kabuzuru",
                     "Kigarama",
                     "Mukindo",
@@ -15467,11 +15363,11 @@ const rwandaData = {
                     "Rebero",
                     "Rugarama",
                     "Rugari A",
-                    "Rugari B"
-                  ]
+                    "Rugari B",
+                  ],
                 },
                 {
-                  "Nyanza": [
+                  Nyanza: [
                     "Bunyeshywa",
                     "Gakenyeri A",
                     "Gakenyeri B",
@@ -15485,11 +15381,11 @@ const rwandaData = {
                     "Mugonzi",
                     "Nyanza",
                     "Nyarunyinya",
-                    "Rubona"
-                  ]
+                    "Rubona",
+                  ],
                 },
                 {
-                  "Rwesero": [
+                  Rwesero: [
                     "Bukinankwavu",
                     "Gahanda",
                     "Gisando",
@@ -15501,15 +15397,15 @@ const rwandaData = {
                     "Rugarama",
                     "Rukari",
                     "Rwesero",
-                    "Taba"
-                  ]
-                }
-              ]
+                    "Taba",
+                  ],
+                },
+              ],
             },
             {
-              "Busoro": [
+              Busoro: [
                 {
-                  "Gitovu": [
+                  Gitovu: [
                     "Gitega",
                     "Kabeza",
                     "Kayenzi",
@@ -15518,22 +15414,22 @@ const rwandaData = {
                     "Nazareti",
                     "Nyacyonga",
                     "Nyagasambu",
-                    "Rushoka"
-                  ]
+                    "Rushoka",
+                  ],
                 },
                 {
-                  "Kimirama": [
+                  Kimirama: [
                     "Gitwa",
                     "Kimirama",
                     "Kireranyana",
                     "Ndamira",
                     "Nyamiyonga",
                     "Nyarugenge",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Masangano": [
+                  Masangano: [
                     "Busoro",
                     "Bweramana",
                     "Gikombe",
@@ -15541,44 +15437,44 @@ const rwandaData = {
                     "Murambi",
                     "Nyarugunga",
                     "Runyonza",
-                    "Shinga"
-                  ]
+                    "Shinga",
+                  ],
                 },
                 {
-                  "Munyinya": [
+                  Munyinya: [
                     "Kagarama",
                     "Karambi",
                     "Kigali",
                     "Kivugiza",
-                    "Rwara"
-                  ]
+                    "Rwara",
+                  ],
                 },
                 {
-                  "Rukingiro": [
+                  Rukingiro: [
                     "Cyamugani",
                     "Cyuriro",
                     "Gasambu",
                     "Runazi",
                     "Rwanamiza",
-                    "Rwangoga"
-                  ]
+                    "Rwangoga",
+                  ],
                 },
                 {
-                  "Shyira": [
+                  Shyira: [
                     "Gahogo",
                     "Kinkanga",
                     "Nyamoyaga",
                     "Rucyamo",
                     "Rusharu",
-                    "Saruduha"
-                  ]
-                }
-              ]
+                    "Saruduha",
+                  ],
+                },
+              ],
             },
             {
-              "Cyabakamyi": [
+              Cyabakamyi: [
                 {
-                  "Kadaho": [
+                  Kadaho: [
                     "Gahengeri",
                     "Gasenyi",
                     "Gataba",
@@ -15587,11 +15483,11 @@ const rwandaData = {
                     "Kabeza",
                     "Kadaho",
                     "Nyabisazi",
-                    "Nyabyiyoni"
-                  ]
+                    "Nyabyiyoni",
+                  ],
                 },
                 {
-                  "Karama": [
+                  Karama: [
                     "Butembo",
                     "Cyarera",
                     "Gahondo",
@@ -15599,11 +15495,11 @@ const rwandaData = {
                     "Kamabuye",
                     "Kamonyi",
                     "Karama",
-                    "Nyabinombe"
-                  ]
+                    "Nyabinombe",
+                  ],
                 },
                 {
-                  "Nyabinyenga": [
+                  Nyabinyenga: [
                     "Kabuga",
                     "Kandihe",
                     "Karehe",
@@ -15611,11 +15507,11 @@ const rwandaData = {
                     "Nyabinyenga",
                     "Rugwa",
                     "Rwamagana",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Nyarurama": [
+                  Nyarurama: [
                     "Kabyuma",
                     "Kigarama",
                     "Kirombozi",
@@ -15623,11 +15519,11 @@ const rwandaData = {
                     "Rugote",
                     "Ruvuzo",
                     "Rwabatwa",
-                    "Rwamiko"
-                  ]
+                    "Rwamiko",
+                  ],
                 },
                 {
-                  "Rubona": [
+                  Rubona: [
                     "Bikombe",
                     "Bugarama",
                     "Gahunga",
@@ -15637,15 +15533,15 @@ const rwandaData = {
                     "Nyabishike",
                     "Nyaminazi",
                     "Nyarutovu",
-                    "Rugendabari"
-                  ]
-                }
-              ]
+                    "Rugendabari",
+                  ],
+                },
+              ],
             },
             {
-              "Kibilizi": [
+              Kibilizi: [
                 {
-                  "Cyeru": [
+                  Cyeru: [
                     "Gasagara",
                     "Gisika",
                     "Kamatamu",
@@ -15653,11 +15549,11 @@ const rwandaData = {
                     "Matara",
                     "Muyebe",
                     "Nyamunini",
-                    "Rutete"
-                  ]
+                    "Rutete",
+                  ],
                 },
                 {
-                  "Mbuye": [
+                  Mbuye: [
                     "Binyana",
                     "Gako",
                     "Gihama",
@@ -15665,21 +15561,21 @@ const rwandaData = {
                     "Karehe",
                     "Kigarama",
                     "Mukoni",
-                    "Rukore"
-                  ]
+                    "Rukore",
+                  ],
                 },
                 {
-                  "Mututu": [
+                  Mututu: [
                     "Gatongati",
                     "Gicumbi",
                     "Kabeza",
                     "Kanyinya",
                     "Kivugiza",
-                    "Masangano"
-                  ]
+                    "Masangano",
+                  ],
                 },
                 {
-                  "Rwotso": [
+                  Rwotso: [
                     "Bigarama",
                     "Kabuga",
                     "Kibilizi",
@@ -15689,15 +15585,15 @@ const rwandaData = {
                     "Nyarurama",
                     "Runyonza",
                     "Rusagara",
-                    "Saruhembe"
-                  ]
-                }
-              ]
+                    "Saruhembe",
+                  ],
+                },
+              ],
             },
             {
-              "Kigoma": [
+              Kigoma: [
                 {
-                  "Butansinda": [
+                  Butansinda: [
                     "Butatsinda",
                     "Gitare",
                     "Shusho",
@@ -15708,11 +15604,11 @@ const rwandaData = {
                     "Kigoma",
                     "Marongi",
                     "Mataba",
-                    "Nyesonga"
-                  ]
+                    "Nyesonga",
+                  ],
                 },
                 {
-                  "Butara": [
+                  Butara: [
                     "Buruba",
                     "Butara",
                     "Gasharu",
@@ -15720,11 +15616,11 @@ const rwandaData = {
                     "Kigufi",
                     "Kirundo",
                     "Nyabusheshe",
-                    "Runyinya"
-                  ]
+                    "Runyinya",
+                  ],
                 },
                 {
-                  "Gahombo": [
+                  Gahombo: [
                     "Birembo",
                     "Cyingina",
                     "Gashikiri",
@@ -15735,11 +15631,11 @@ const rwandaData = {
                     "Kirerabana",
                     "Nyagacyamo",
                     "Rugarama",
-                    "Serivise"
-                  ]
+                    "Serivise",
+                  ],
                 },
                 {
-                  "Gasoro": [
+                  Gasoro: [
                     "Bugarura",
                     "Bwambika",
                     "Gisoro",
@@ -15751,11 +15647,11 @@ const rwandaData = {
                     "Nyabubare",
                     "Nyakabungo",
                     "Runyanzige",
-                    "Sholi"
-                  ]
+                    "Sholi",
+                  ],
                 },
                 {
-                  "Mulinja": [
+                  Mulinja: [
                     "Akana Ka Mulinja",
                     "Akintare",
                     "Buharankakara",
@@ -15765,15 +15661,15 @@ const rwandaData = {
                     "Kigarama",
                     "Muramba",
                     "Nyarukurazo",
-                    "Sabununga"
-                  ]
-                }
-              ]
+                    "Sabununga",
+                  ],
+                },
+              ],
             },
             {
-              "Mukingo": [
+              Mukingo: [
                 {
-                  "Cyerezo": [
+                  Cyerezo: [
                     "Birambo",
                     "Bweramana",
                     "Cyerezo",
@@ -15782,11 +15678,11 @@ const rwandaData = {
                     "Gasharu",
                     "Kamabuye",
                     "Karambi",
-                    "Nyarutovu"
-                  ]
+                    "Nyarutovu",
+                  ],
                 },
                 {
-                  "Gatagara": [
+                  Gatagara: [
                     "Cyahafi",
                     "Gatagara",
                     "Kamushatsi",
@@ -15795,11 +15691,11 @@ const rwandaData = {
                     "Kinyogoto",
                     "Muhororo",
                     "Nyamiyaga",
-                    "Nyamuko"
-                  ]
+                    "Nyamuko",
+                  ],
                 },
                 {
-                  "Kiruli": [
+                  Kiruli: [
                     "Gahoko",
                     "Kaganza",
                     "Kiganda",
@@ -15810,11 +15706,11 @@ const rwandaData = {
                     "Muturirwa",
                     "Nkiko",
                     "Nyabishinge",
-                    "Nyankunamirwa"
-                  ]
+                    "Nyankunamirwa",
+                  ],
                 },
                 {
-                  "Mpanga": [
+                  Mpanga: [
                     "Birembo",
                     "Karambi",
                     "Kinyinya",
@@ -15822,11 +15718,11 @@ const rwandaData = {
                     "Nkinda",
                     "Nyakabuye",
                     "Nyamazi",
-                    "Remera"
-                  ]
+                    "Remera",
+                  ],
                 },
                 {
-                  "Ngwa": [
+                  Ngwa: [
                     "Bikire",
                     "Biroro",
                     "Gasiza",
@@ -15837,11 +15733,11 @@ const rwandaData = {
                     "Kigarama",
                     "Mwanabiri",
                     "Nyarunyinya A",
-                    "Rutete"
-                  ]
+                    "Rutete",
+                  ],
                 },
                 {
-                  "Nkomero": [
+                  Nkomero: [
                     "Cyimana",
                     "Gisuma",
                     "Kabarima",
@@ -15851,50 +15747,50 @@ const rwandaData = {
                     "Nyakabungo",
                     "Nyankokoma",
                     "Nzuki",
-                    "Ruhosha"
-                  ]
-                }
-              ]
+                    "Ruhosha",
+                  ],
+                },
+              ],
             },
             {
-              "Muyira": [
+              Muyira: [
                 {
-                  "Gati": [
+                  Gati: [
                     "Buhaza",
                     "Kimfizi",
                     "Kinyoni",
                     "Ruyenzi",
-                    "Rwabihanga"
-                  ]
+                    "Rwabihanga",
+                  ],
                 },
                 {
-                  "Migina": [
+                  Migina: [
                     "Bugina",
                     "Kalilisi",
                     "Kavumu",
                     "Kinyana",
-                    "Musenyi"
-                  ]
+                    "Musenyi",
+                  ],
                 },
                 {
-                  "Nyamiyaga": ["Gihama", "Kabuye", "Kiniga", "Nzovi", "Rugese"]
+                  Nyamiyaga: ["Gihama", "Kabuye", "Kiniga", "Nzovi", "Rugese"],
                 },
                 {
-                  "Nyamure": [
+                  Nyamure: [
                     "Cyegera",
                     "Gatare",
                     "Gituza",
                     "Kanyundo",
-                    "Nyarugunga"
-                  ]
+                    "Nyarugunga",
+                  ],
                 },
-                { "Nyundo": ["Jari", "Nyundo", "Mugari", "Muyira", "Nzoga"] }
-              ]
+                { Nyundo: ["Jari", "Nyundo", "Mugari", "Muyira", "Nzoga"] },
+              ],
             },
             {
-              "Ntyazo": [
+              Ntyazo: [
                 {
-                  "Bugali": [
+                  Bugali: [
                     "Gakindo",
                     "Gisayura",
                     "Kabusheja",
@@ -15903,11 +15799,11 @@ const rwandaData = {
                     "Ndago",
                     "Nkomane",
                     "Nyabitare",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Cyotamakara": [
+                  Cyotamakara: [
                     "Bayi",
                     "Kankima",
                     "Karuyumbo",
@@ -15916,11 +15812,11 @@ const rwandaData = {
                     "Nyabigugu",
                     "Nyarutovu",
                     "Ruyenzi",
-                    "Rwimpundu"
-                  ]
+                    "Rwimpundu",
+                  ],
                 },
                 {
-                  "Kagunga": [
+                  Kagunga: [
                     "Bukinanyana",
                     "Kamabuye",
                     "Kimigunga",
@@ -15931,11 +15827,11 @@ const rwandaData = {
                     "Nyamizi",
                     "Nyarubuye",
                     "Rusasa",
-                    "Samuduha"
-                  ]
+                    "Samuduha",
+                  ],
                 },
                 {
-                  "Katarara": [
+                  Katarara: [
                     "Gasharu",
                     "Kagarama",
                     "Kamabuye",
@@ -15945,15 +15841,15 @@ const rwandaData = {
                     "Nkombe",
                     "Rebero",
                     "Rukoma",
-                    "Rusebeya"
-                  ]
-                }
-              ]
+                    "Rusebeya",
+                  ],
+                },
+              ],
             },
             {
-              "Nyagisozi": [
+              Nyagisozi: [
                 {
-                  "Gahunga": [
+                  Gahunga: [
                     "Gatare",
                     "Gihara",
                     "Gituntu",
@@ -15961,22 +15857,22 @@ const rwandaData = {
                     "Kigohe",
                     "Mweya",
                     "Nyamugari",
-                    "Uwarukara"
-                  ]
+                    "Uwarukara",
+                  ],
                 },
                 {
-                  "Kabirizi": [
+                  Kabirizi: [
                     "Cyahafi",
                     "Gihimbi",
                     "Kabuye",
                     "Muhaga",
                     "Nyagatovu",
                     "Nyamabuye",
-                    "Nyaruvumu"
-                  ]
+                    "Nyaruvumu",
+                  ],
                 },
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Gatoki",
                     "Mirehe",
                     "Murandaryi",
@@ -15984,11 +15880,11 @@ const rwandaData = {
                     "Nyamitobo",
                     "Uwabushingwe",
                     "Uwagisozi",
-                    "Uwimpura"
-                  ]
+                    "Uwimpura",
+                  ],
                 },
                 {
-                  "Kirambi": [
+                  Kirambi: [
                     "Busenyeye",
                     "Bweru",
                     "Gasharu",
@@ -15998,11 +15894,11 @@ const rwandaData = {
                     "Murende",
                     "Mwezi",
                     "Rwankuba",
-                    "Rwimbazi"
-                  ]
+                    "Rwimbazi",
+                  ],
                 },
                 {
-                  "Rurangazi": [
+                  Rurangazi: [
                     "Gashyenzi",
                     "Kami",
                     "Kigarama",
@@ -16010,505 +15906,505 @@ const rwandaData = {
                     "Nyamagana",
                     "Nyarutovu",
                     "Nyaruvumu",
-                    "Rugarama"
-                  ]
-                }
-              ]
+                    "Rugarama",
+                  ],
+                },
+              ],
             },
             {
-              "Rwabicuma": [
-                { "Gacu": ["Bisambu", "Gisake", "Karehe", "Nyamiyaga"] },
+              Rwabicuma: [
+                { Gacu: ["Bisambu", "Gisake", "Karehe", "Nyamiyaga"] },
                 {
-                  "Gishike": [
+                  Gishike: [
                     "Gakoni",
                     "Gasiza A",
                     "Gasiza B",
                     "Karambo A",
                     "Karambo B",
                     "Karusimbi",
-                    "Rwamushumba"
-                  ]
+                    "Rwamushumba",
+                  ],
                 },
-                { "Mubuga": ["Kabisine", "Kadusenyi", "Karwiru", "Nyamiseke"] },
+                { Mubuga: ["Kabisine", "Kadusenyi", "Karwiru", "Nyamiseke"] },
                 {
-                  "Mushirarungu": [
+                  Mushirarungu: [
                     "Kirwa",
                     "Nyabubare",
                     "Nyamivumu A",
-                    "Nyamuvumu B"
-                  ]
+                    "Nyamuvumu B",
+                  ],
                 },
                 {
-                  "Nyarusange": [
+                  Nyarusange: [
                     "Cyarwa",
                     "Kamushi",
                     "Kamuvunyi A",
                     "Kamuvunyi B",
                     "Karambi",
                     "Kavumu A",
-                    "Kavumu B"
-                  ]
+                    "Kavumu B",
+                  ],
                 },
                 {
-                  "Runga": [
+                  Runga: [
                     "Kigarama",
                     "Murambi",
                     "Ndago",
                     "Rugarama A",
-                    "Rugarama B"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Rugarama B",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Nyaruguru": [
+          Nyaruguru: [
             {
-              "Busanze": [
+              Busanze: [
                 {
-                  "Kirarangombe": [
+                  Kirarangombe: [
                     "Bukinanyana",
                     "Gisenyi",
                     "Gitwe",
                     "Kinyinya",
                     "Masiga",
-                    "Uwindava"
-                  ]
+                    "Uwindava",
+                  ],
                 },
                 {
-                  "Nkanda": [
+                  Nkanda: [
                     "Bitare",
                     "Mutarama",
                     "Mutobo",
                     "Nkanda",
-                    "Uwamakumba"
-                  ]
+                    "Uwamakumba",
+                  ],
                 },
                 {
-                  "Nteko": [
+                  Nteko: [
                     "Gisoro",
                     "Kabavomo",
                     "Ndatemwa",
                     "Nteko",
                     "Nyarukeri",
-                    "Nyarusange"
-                  ]
+                    "Nyarusange",
+                  ],
                 },
                 {
-                  "Runyombyi": [
+                  Runyombyi: [
                     "Bugina",
                     "Gabiro",
                     "Musebeya",
                     "Rango",
                     "Ryabusagara",
-                    "Shwima"
-                  ]
+                    "Shwima",
+                  ],
                 },
                 {
-                  "Shororo": [
+                  Shororo: [
                     "Bukinga",
                     "Mirindi",
                     "Murambi",
                     "Runyami",
                     "Rutabo",
-                    "Uwinteko"
-                  ]
-                }
-              ]
+                    "Uwinteko",
+                  ],
+                },
+              ],
             },
             {
-              "Cyahinda": [
-                { "Coko": ["Agasharu", "Coko", "Gitara", "Ruko"] },
+              Cyahinda: [
+                { Coko: ["Agasharu", "Coko", "Gitara", "Ruko"] },
                 {
-                  "Cyahinda": [
+                  Cyahinda: [
                     "Cyahinda",
                     "Cyanwa",
                     "Kinyaga",
                     "Saburunduru",
-                    "Rutega"
-                  ]
+                    "Rutega",
+                  ],
                 },
-                { "Gasasa": ["Gasasa", "Kavumu", "Mugari", "Ryamarembo"] },
+                { Gasasa: ["Gasasa", "Kavumu", "Mugari", "Ryamarembo"] },
                 {
-                  "Muhambara": [
+                  Muhambara: [
                     "Busanza",
                     "Byanone",
                     "Gasharu",
                     "Kubitiro",
                     "Nyagatovu",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Rutobwe": [
+                  Rutobwe: [
                     "Kanyinya",
                     "Kibumba",
                     "Ngobyi",
                     "Rubona",
                     "Rugarama",
-                    "Rutobwe"
-                  ]
-                }
-              ]
+                    "Rutobwe",
+                  ],
+                },
+              ],
             },
             {
-              "Kibeho": [
-                { "Gakoma": ["Nyagishayo", "Rurembo", "Viro"] },
-                { "Kibeho": ["Agateko", "Akajonge", "Sinayi"] },
-                { "Mbasa": ["Kinazi", "Migina", "Rwimbogo"] },
-                { "Mpanda": ["Banga", "Kibayi", "Mpanda", "Munege"] },
+              Kibeho: [
+                { Gakoma: ["Nyagishayo", "Rurembo", "Viro"] },
+                { Kibeho: ["Agateko", "Akajonge", "Sinayi"] },
+                { Mbasa: ["Kinazi", "Migina", "Rwimbogo"] },
+                { Mpanda: ["Banga", "Kibayi", "Mpanda", "Munege"] },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Mubuga",
                     "Nyarusovu",
                     "Nyarwumba",
                     "Umurambi",
-                    "Uwintobo"
-                  ]
+                    "Uwintobo",
+                  ],
                 },
-                { "Nyange": ["Agateko", "Kigona", "Mpatswe", "Nkomero"] }
-              ]
+                { Nyange: ["Agateko", "Kigona", "Mpatswe", "Nkomero"] },
+              ],
             },
             {
-              "Kivu": [
+              Kivu: [
                 {
-                  "Cyanyirankora": [
+                  Cyanyirankora: [
                     "Businde",
                     "Cyanyirankora",
                     "Gakuta",
-                    "Ruganza"
-                  ]
+                    "Ruganza",
+                  ],
                 },
                 {
-                  "Gahurizo": ["Gasezo", "Kintama", "Kintare", "Uwamizirikano"]
+                  Gahurizo: ["Gasezo", "Kintama", "Kintare", "Uwamizirikano"],
                 },
-                { "Kimina": ["Kabeza", "Kabingo", "Kimina", "Uwisaga"] },
+                { Kimina: ["Kabeza", "Kabingo", "Kimina", "Uwisaga"] },
                 {
-                  "Kivu": [
+                  Kivu: [
                     "Kavumu",
                     "Kivu",
                     "Murambi",
                     "Rubumburi",
-                    "Rusuzumiro"
-                  ]
+                    "Rusuzumiro",
+                  ],
                 },
-                { "Rugerero": ["Kivumu", "Misundwe", "Nyarwotsi", "Rugerero"] }
-              ]
+                { Rugerero: ["Kivumu", "Misundwe", "Nyarwotsi", "Rugerero"] },
+              ],
             },
             {
-              "Mata": [
-                { "Gorwe": ["Mataba", "Rimbanya", "Ruhunga"] },
-                { "Murambi": ["Mata", "Murambi", "Nyamyumba", "Runono"] },
-                { "Nyamabuye": ["Nyacyondo", "Rwinanka", "Tububuru"] },
-                { "Ramba": ["Cyafurwe", "Gasasa", "Ramba"] },
-                { "Rwamiko": ["Matyazo", "Rwamiko", "Taba"] }
-              ]
+              Mata: [
+                { Gorwe: ["Mataba", "Rimbanya", "Ruhunga"] },
+                { Murambi: ["Mata", "Murambi", "Nyamyumba", "Runono"] },
+                { Nyamabuye: ["Nyacyondo", "Rwinanka", "Tububuru"] },
+                { Ramba: ["Cyafurwe", "Gasasa", "Ramba"] },
+                { Rwamiko: ["Matyazo", "Rwamiko", "Taba"] },
+              ],
             },
             {
-              "Muganza": [
+              Muganza: [
                 {
-                  "Muganza": [
+                  Muganza: [
                     "Gashinge",
                     "Mubazi",
                     "Muganza",
                     "Ngara",
                     "Nyabirondo",
-                    "Rambyanyana"
-                  ]
+                    "Rambyanyana",
+                  ],
                 },
                 {
-                  "Rukore": [
+                  Rukore: [
                     "Kanazi",
                     "Karanka",
                     "Nyagisenyi",
                     "Remera",
                     "Rwishywa",
-                    "Uwinzira"
-                  ]
+                    "Uwinzira",
+                  ],
                 },
                 {
-                  "Samiyonga": [
+                  Samiyonga: [
                     "Bigugu",
                     "Cyurukore",
                     "Gituntu",
                     "Kigwene",
                     "Mazimeru",
                     "Murambi",
-                    "Tangabo"
-                  ]
+                    "Tangabo",
+                  ],
                 },
                 {
-                  "Uwacyiza": [
+                  Uwacyiza: [
                     "Bitaba",
                     "Migendo",
                     "Mukongoro",
                     "Murambya",
                     "Mutovu",
-                    "Sekera"
-                  ]
-                }
-              ]
+                    "Sekera",
+                  ],
+                },
+              ],
             },
             {
-              "Munini": [
+              Munini: [
                 {
-                  "Giheta": ["Gacumu", "Gahango", "Gasare", "Giheta", "Mashya"]
+                  Giheta: ["Gacumu", "Gahango", "Gasare", "Giheta", "Mashya"],
                 },
                 {
-                  "Ngarurira": [
+                  Ngarurira: [
                     "Agatare",
                     "Akarehe",
                     "Gisizi",
                     "Gitega",
-                    "Uwumuko"
-                  ]
+                    "Uwumuko",
+                  ],
                 },
                 {
-                  "Ngeri": [
+                  Ngeri: [
                     "Akagera",
                     "Mushwati",
                     "Ndago",
                     "Rubona",
                     "Ruseke",
-                    "Rushubi"
-                  ]
+                    "Rushubi",
+                  ],
                 },
                 {
-                  "Ntwali": [
+                  Ntwali: [
                     "Kabirizi",
                     "Ntwari",
                     "Nyambaragasa",
                     "Rwinanka",
-                    "Umurambi"
-                  ]
+                    "Umurambi",
+                  ],
                 },
                 {
-                  "Nyarure": [
+                  Nyarure: [
                     "Kamana",
                     "Kimena",
                     "Muhororo",
                     "Munanira",
                     "Nyarure",
-                    "Sheke"
-                  ]
-                }
-              ]
+                    "Sheke",
+                  ],
+                },
+              ],
             },
             {
-              "Ngera": [
-                { "Bitare": ["Bitare", "Gashiru", "Sheke"] },
-                { "Mukuge": ["Cyamutumba", "Cyaratsi", "Mukuge"] },
-                { "Murama": ["Kaganda", "Mbogo", "Nyarugano", "Runyami"] },
-                { "Nyamirama": ["Kinteko", "Mubuga", "Nyamirama"] },
-                { "Nyanza": ["Gisozi", "Kibingo", "Mpinga", "Nyanza"] },
-                { "Yaramba": ["Buhunga", "Kirwa", "Musumba", "Yaramba"] }
-              ]
+              Ngera: [
+                { Bitare: ["Bitare", "Gashiru", "Sheke"] },
+                { Mukuge: ["Cyamutumba", "Cyaratsi", "Mukuge"] },
+                { Murama: ["Kaganda", "Mbogo", "Nyarugano", "Runyami"] },
+                { Nyamirama: ["Kinteko", "Mubuga", "Nyamirama"] },
+                { Nyanza: ["Gisozi", "Kibingo", "Mpinga", "Nyanza"] },
+                { Yaramba: ["Buhunga", "Kirwa", "Musumba", "Yaramba"] },
+              ],
             },
             {
-              "Ngoma": [
+              Ngoma: [
                 {
-                  "Fugi": [
+                  Fugi: [
                     "Akanyaru",
                     "Gasha",
                     "Mutakwa",
                     "Nteko",
                     "Ruli",
-                    "Urugeyo"
-                  ]
+                    "Urugeyo",
+                  ],
                 },
                 {
-                  "Kibangu": ["Gituramigina", "Kirehe", "Kiriro", "Nyarukeri"]
+                  Kibangu: ["Gituramigina", "Kirehe", "Kiriro", "Nyarukeri"],
                 },
                 {
-                  "Kiyonza": [
+                  Kiyonza: [
                     "Akagano",
                     "Gacumbi",
                     "Maraba",
                     "Munini",
                     "Mwumba",
-                    "Nyagahinga"
-                  ]
+                    "Nyagahinga",
+                  ],
                 },
                 {
-                  "Mbuye": [
+                  Mbuye: [
                     "Gihishabwenge",
                     "Kigarama",
                     "Mugobe",
                     "Mujahu",
-                    "Ururambo"
-                  ]
+                    "Ururambo",
+                  ],
                 },
                 {
-                  "Nyamirama": [
+                  Nyamirama: [
                     "Akabuye",
                     "Bihembe",
                     "Nyagasozi",
                     "Rushubi",
-                    "Ryakanyamiganda"
-                  ]
+                    "Ryakanyamiganda",
+                  ],
                 },
                 {
-                  "Rubona": [
+                  Rubona: [
                     "Agasaka",
                     "Agatovu",
                     "Akarambo",
                     "Nyamirama",
                     "Ryarugarama",
-                    "Shyoko"
-                  ]
-                }
-              ]
+                    "Shyoko",
+                  ],
+                },
+              ],
             },
             {
-              "Nyabimata": [
-                { "Gihemvu": ["Bihembe", "Bugina", "Gihemvu", "Rugarama"] },
-                { "Kabere": ["Kabere", "Nyarunazi", "Uwurusugi"] },
+              Nyabimata: [
+                { Gihemvu: ["Bihembe", "Bugina", "Gihemvu", "Rugarama"] },
+                { Kabere: ["Kabere", "Nyarunazi", "Uwurusugi"] },
                 {
-                  "Mishungero": [
+                  Mishungero: [
                     "Mishungero",
                     "Muyira",
                     "Ngarama",
                     "Rubindi",
-                    "Uwaruhigi"
-                  ]
+                    "Uwaruhigi",
+                  ],
                 },
-                { "Nyabimata": ["Murambi", "Mutobwe", "Nyabimata", "Rwerere"] },
-                { "Ruhinga": ["Agasugi", "Cyumuzi", "Ndaro", "Ruhinga"] }
-              ]
+                { Nyabimata: ["Murambi", "Mutobwe", "Nyabimata", "Rwerere"] },
+                { Ruhinga: ["Agasugi", "Cyumuzi", "Ndaro", "Ruhinga"] },
+              ],
             },
             {
-              "Nyagisozi": [
-                { "Maraba": ["Bugarama", "Maraba", "Nkima", "Rushunguriro"] },
+              Nyagisozi: [
+                { Maraba: ["Bugarama", "Maraba", "Nkima", "Rushunguriro"] },
                 {
-                  "Mwoya": [
+                  Mwoya: [
                     "Agatovu",
                     "Bwerankori",
                     "Muhombo",
                     "Mwoya",
                     "Nkomero",
-                    "Nyagashubi"
-                  ]
+                    "Nyagashubi",
+                  ],
                 },
                 {
-                  "Nkakwa": [
+                  Nkakwa: [
                     "Bihembe",
                     "Kaduha",
                     "Nkakwa",
                     "Nyarubuye",
                     "Rarire",
-                    "Rubuga"
-                  ]
+                    "Rubuga",
+                  ],
                 },
                 {
-                  "Nyagisozi": [
+                  Nyagisozi: [
                     "Muriza",
                     "Nyagishayo",
                     "Nyamiyaga",
                     "Ryabidandi",
-                    "Uwimfizi"
-                  ]
-                }
-              ]
+                    "Uwimfizi",
+                  ],
+                },
+              ],
             },
             {
-              "Ruheru": [
+              Ruheru: [
                 {
-                  "Gitita": [
+                  Gitita: [
                     "Gahotora",
                     "Kibyibushye",
                     "Nyacyonga",
                     "Ruganza",
                     "Rusagara",
-                    "Ryanyaruja"
-                  ]
+                    "Ryanyaruja",
+                  ],
                 },
                 {
-                  "Kabere": [
+                  Kabere: [
                     "Busenyi",
                     "Gambiriro",
                     "Mukaka",
                     "Murambi",
                     "Nshenyi",
-                    "Uwigisura"
-                  ]
+                    "Uwigisura",
+                  ],
                 },
                 {
-                  "Remera": [
+                  Remera: [
                     "Cyivugiza",
                     "Gitwa",
                     "Kirwa",
                     "Mutumba",
-                    "Uwinyana"
-                  ]
+                    "Uwinyana",
+                  ],
                 },
                 {
-                  "Ruyenzi": [
+                  Ruyenzi: [
                     "Rukarakara",
                     "Ruvuru",
                     "Ruyenzi",
                     "Tambananga",
-                    "Zirambi"
-                  ]
+                    "Zirambi",
+                  ],
                 },
                 {
-                  "Uwumusebeya": [
+                  Uwumusebeya: [
                     "Gakaranka",
                     "Mubuga",
                     "Rugote",
                     "Uwimbogo",
-                    "Yanza"
-                  ]
-                }
-              ]
+                    "Yanza",
+                  ],
+                },
+              ],
             },
             {
-              "Ruramba": [
+              Ruramba: [
                 {
-                  "Gabiro": [
+                  Gabiro: [
                     "Bukoro",
                     "Kageyo",
                     "Kansi",
                     "Nyamirambo",
-                    "Ryamuhumbi"
-                  ]
+                    "Ryamuhumbi",
+                  ],
                 },
                 {
-                  "Giseke": ["Giseke", "Kabari", "Kidogo", "Matyazo", "Tugogo"]
+                  Giseke: ["Giseke", "Kabari", "Kidogo", "Matyazo", "Tugogo"],
                 },
                 {
-                  "Nyarugano": ["Gisorora", "Kinyonyo", "Nyarugano", "Uruyange"]
+                  Nyarugano: ["Gisorora", "Kinyonyo", "Nyarugano", "Uruyange"],
                 },
-                { "Rugogwe": ["Rugogwe", "Rugusa", "Titi"] },
-                { "Ruramba": ["Bugizi", "Busasamana", "Karambi", "Ruramba"] }
-              ]
+                { Rugogwe: ["Rugogwe", "Rugusa", "Titi"] },
+                { Ruramba: ["Bugizi", "Busasamana", "Karambi", "Ruramba"] },
+              ],
             },
             {
-              "Rusenge": [
-                { "Bunge": ["Bunge", "Jali", "Nyanzoga", "Toraniro"] },
-                { "Cyuna": ["Cyuna", "Kiramutse", "Remera", "Uwamuhizi"] },
-                { "Gikunzi": ["Jali", "Kibu", "Munanira", "Rwabujagi"] },
-                { "Mariba": ["Gihango", "Kabuye", "Miko", "Rasaniro"] },
+              Rusenge: [
+                { Bunge: ["Bunge", "Jali", "Nyanzoga", "Toraniro"] },
+                { Cyuna: ["Cyuna", "Kiramutse", "Remera", "Uwamuhizi"] },
+                { Gikunzi: ["Jali", "Kibu", "Munanira", "Rwabujagi"] },
+                { Mariba: ["Gihango", "Kabuye", "Miko", "Rasaniro"] },
                 {
-                  "Raranzige": [
+                  Raranzige: [
                     "Akabacura",
                     "Gasave",
                     "Karimba",
                     "Ntanda",
-                    "Nyamugari"
-                  ]
+                    "Nyamugari",
+                  ],
                 },
-                { "Rusenge": ["Kabacuzi", "Kamusindi", "Kavumu", "Runyinya"] }
-              ]
-            }
-          ]
+                { Rusenge: ["Kabacuzi", "Kamusindi", "Kavumu", "Runyinya"] },
+              ],
+            },
+          ],
         },
         {
-          "Ruhango": [
+          Ruhango: [
             {
-              "Bweramana": [
+              Bweramana: [
                 {
-                  "Buhanda": [
+                  Buhanda: [
                     "Bugufi",
                     "Gakongoro",
                     "Gikarabiro",
@@ -16519,20 +16415,20 @@ const rwandaData = {
                     "Munini",
                     "Nyakidahe",
                     "Nyarubuye",
-                    "Rutarabana"
-                  ]
+                    "Rutarabana",
+                  ],
                 },
                 {
-                  "Gitisi": [
+                  Gitisi: [
                     "Kabugusu",
                     "Nyamaraba",
                     "Nyarugenge",
                     "Nyarunyinya",
-                    "Ruvugizo"
-                  ]
+                    "Ruvugizo",
+                  ],
                 },
                 {
-                  "Murama": [
+                  Murama: [
                     "Duwane",
                     "Gasharu",
                     "Gisagara",
@@ -16544,11 +16440,11 @@ const rwandaData = {
                     "Kivomo",
                     "Rusororo",
                     "Rwavuningoma",
-                    "Rwingwe"
-                  ]
+                    "Rwingwe",
+                  ],
                 },
                 {
-                  "Rubona": [
+                  Rubona: [
                     "Birambo",
                     "Bugari",
                     "Gasharu",
@@ -16561,11 +16457,11 @@ const rwandaData = {
                     "Nyagasozi",
                     "Nyakabanda",
                     "Nyamuko",
-                    "Rugogwe"
-                  ]
+                    "Rugogwe",
+                  ],
                 },
                 {
-                  "Rwinyana": [
+                  Rwinyana: [
                     "Karambi",
                     "Kumunyinya",
                     "Mubuga",
@@ -16577,15 +16473,15 @@ const rwandaData = {
                     "Rugarama",
                     "Rugogwe",
                     "Rwinyana",
-                    "Samba"
-                  ]
-                }
-              ]
+                    "Samba",
+                  ],
+                },
+              ],
             },
             {
-              "Byimana": [
+              Byimana: [
                 {
-                  "Kamusenyi": [
+                  Kamusenyi: [
                     "Gahama",
                     "Gakomeye",
                     "Gakurazo",
@@ -16597,11 +16493,11 @@ const rwandaData = {
                     "Mayebe",
                     "Nyakabungo",
                     "Nyarusange",
-                    "Rugerero"
-                  ]
+                    "Rugerero",
+                  ],
                 },
                 {
-                  "Kirengeri": [
+                  Kirengeri: [
                     "Gahengeri",
                     "Gatoki",
                     "Kamonyi",
@@ -16609,22 +16505,22 @@ const rwandaData = {
                     "Masaka",
                     "Nyabizenga",
                     "Nyamirambo",
-                    "Rusororo"
-                  ]
+                    "Rusororo",
+                  ],
                 },
                 {
-                  "Mahembe": [
+                  Mahembe: [
                     "Akabere",
                     "Kavumu",
                     "Muhororo",
                     "Mujyejuru",
                     "Mutobo",
                     "Nyabisindu",
-                    "Nyagisozi"
-                  ]
+                    "Nyagisozi",
+                  ],
                 },
                 {
-                  "Mpanda": [
+                  Mpanda: [
                     "Bisika",
                     "Gatwa",
                     "Gitega",
@@ -16633,11 +16529,11 @@ const rwandaData = {
                     "Kibande",
                     "Mpanda",
                     "Nyaburondwe",
-                    "Nyagahinga"
-                  ]
+                    "Nyagahinga",
+                  ],
                 },
                 {
-                  "Muhororo": [
+                  Muhororo: [
                     "Bukomero",
                     "Karama",
                     "Karenge",
@@ -16647,11 +16543,11 @@ const rwandaData = {
                     "Nyarunyinya",
                     "Remera",
                     "Rukuro",
-                    "Rutembo"
-                  ]
+                    "Rutembo",
+                  ],
                 },
                 {
-                  "Ntenyo": [
+                  Ntenyo: [
                     "Bugarura",
                     "Gihinga",
                     "Kageyo",
@@ -16661,48 +16557,48 @@ const rwandaData = {
                     "Ngando",
                     "Ntenyo",
                     "Nyabisindu",
-                    "Rukiriza"
-                  ]
+                    "Rukiriza",
+                  ],
                 },
                 {
-                  "Nyakabuye": [
+                  Nyakabuye: [
                     "Gasasa",
                     "Gatobotobo",
                     "Kizibaziba",
                     "Muhororo",
                     "Ndago",
                     "Nyarubumbiro",
-                    "Nyarutovu"
-                  ]
-                }
-              ]
+                    "Nyarutovu",
+                  ],
+                },
+              ],
             },
             {
-              "Kabagali": [
+              Kabagali: [
                 {
-                  "Bihembe": [
+                  Bihembe: [
                     "Bihembe",
                     "Bwama",
                     "Kanyinya",
                     "Kirwa",
                     "Misambagiro",
                     "Nyagatovu",
-                    "Rusisiro"
-                  ]
+                    "Rusisiro",
+                  ],
                 },
                 {
-                  "Karambi": [
+                  Karambi: [
                     "Bugaramantare",
                     "Karambi",
                     "Karurara",
                     "Kashyamba",
                     "Mbuye",
                     "Muhoza",
-                    "Rambyanyana"
-                  ]
+                    "Rambyanyana",
+                  ],
                 },
                 {
-                  "Munanira": [
+                  Munanira: [
                     "Byimana",
                     "Kagitare",
                     "Kavumu",
@@ -16711,32 +16607,32 @@ const rwandaData = {
                     "Musekera",
                     "Nyabyunyu",
                     "Remera",
-                    "Ruyogoro"
-                  ]
+                    "Ruyogoro",
+                  ],
                 },
                 {
-                  "Remera": [
+                  Remera: [
                     "Birambo",
                     "Kabacuzi",
                     "Kamuhirwa",
                     "Muhororo",
                     "Nyarusange",
                     "Ruhare",
-                    "Rwankuba"
-                  ]
+                    "Rwankuba",
+                  ],
                 },
                 {
-                  "Rwesero": [
+                  Rwesero: [
                     "Bugaramantare",
                     "Mayebe",
                     "Nyabivumu",
                     "Remera",
                     "Rwesero",
-                    "Serugeme"
-                  ]
+                    "Serugeme",
+                  ],
                 },
                 {
-                  "Rwoga": [
+                  Rwoga: [
                     "Cyunyu",
                     "Gasharu",
                     "Gitwa",
@@ -16747,25 +16643,25 @@ const rwandaData = {
                     "Nyabitare",
                     "Nyagisenyi",
                     "Nyarushishi",
-                    "Rusebeya"
-                  ]
-                }
-              ]
+                    "Rusebeya",
+                  ],
+                },
+              ],
             },
             {
-              "Kinazi": [
+              Kinazi: [
                 {
-                  "Burima": [
+                  Burima: [
                     "Burima",
                     "Mirambi",
                     "Nyagahama",
                     "Nyamiyaga",
                     "Nyarugenge",
-                    "Nyaruteja"
-                  ]
+                    "Nyaruteja",
+                  ],
                 },
                 {
-                  "Gisali": [
+                  Gisali: [
                     "Gisari",
                     "Kabeza",
                     "Kaduha",
@@ -16776,11 +16672,11 @@ const rwandaData = {
                     "Matara",
                     "Nyabusunzu",
                     "Nyiranduga",
-                    "Remera"
-                  ]
+                    "Remera",
+                  ],
                 },
                 {
-                  "Kinazi": [
+                  Kinazi: [
                     "Gasiza",
                     "Impara",
                     "Kabuga",
@@ -16795,11 +16691,11 @@ const rwandaData = {
                     "Nyabisindu",
                     "Nyiraruhinga",
                     "Rebero",
-                    "Ruhuha"
-                  ]
+                    "Ruhuha",
+                  ],
                 },
                 {
-                  "Rubona": [
+                  Rubona: [
                     "Buhanika",
                     "Gafumba",
                     "Gako",
@@ -16807,11 +16703,11 @@ const rwandaData = {
                     "Kagazi",
                     "Kigarama",
                     "Rubona",
-                    "Susa"
-                  ]
+                    "Susa",
+                  ],
                 },
                 {
-                  "Rutabo": [
+                  Rutabo: [
                     "Bugiranteko",
                     "Gatonde",
                     "Gitwa",
@@ -16821,25 +16717,25 @@ const rwandaData = {
                     "Nyarunazi",
                     "Nyirarubayi",
                     "Runzenze",
-                    "Rutabo"
-                  ]
-                }
-              ]
+                    "Rutabo",
+                  ],
+                },
+              ],
             },
             {
-              "Kinihira": [
+              Kinihira: [
                 {
-                  "Bweramvura": [
+                  Bweramvura: [
                     "Bugarura",
                     "Gahororo",
                     "Gihororo",
                     "Kabadende",
                     "Nyabivumu",
-                    "Nyagisenyi"
-                  ]
+                    "Nyagisenyi",
+                  ],
                 },
                 {
-                  "Gitinda": [
+                  Gitinda: [
                     "Kabasanzu",
                     "Muremure",
                     "Nyagatovu",
@@ -16848,65 +16744,65 @@ const rwandaData = {
                     "Nyarusange",
                     "Remera",
                     "Rubona",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Kirwa": [
+                  Kirwa: [
                     "Gasharu",
                     "Kabareshya",
                     "Muyange",
                     "Nyarubuye",
                     "Rukeri",
                     "Sunzu",
-                    "Wimana"
-                  ]
+                    "Wimana",
+                  ],
                 },
                 {
-                  "Muyunzwe": [
+                  Muyunzwe: [
                     "Gasiza",
                     "Muyunzwe",
                     "Nyamirambo",
                     "Nyarubumbiro",
                     "Nyarutovu",
-                    "Ruhuha"
-                  ]
+                    "Ruhuha",
+                  ],
                 },
                 {
-                  "Nyakogo": [
+                  Nyakogo: [
                     "Buhanda",
                     "Bweramana",
                     "Gashirabwoba",
                     "Kibirizi",
                     "Rusizi",
-                    "Shamba"
-                  ]
+                    "Shamba",
+                  ],
                 },
                 {
-                  "Rukina": [
+                  Rukina: [
                     "Dusenyi",
                     "Kabacuzi",
                     "Kabirizi",
                     "Kabuga",
                     "Munini",
-                    "Murinzi"
-                  ]
-                }
-              ]
+                    "Murinzi",
+                  ],
+                },
+              ],
             },
             {
-              "Mbuye": [
+              Mbuye: [
                 {
-                  "Cyanza": [
+                  Cyanza: [
                     "Kabungo",
                     "Murambi",
                     "Nyamikoni",
                     "Rwamiko",
-                    "Wimana"
-                  ]
+                    "Wimana",
+                  ],
                 },
                 {
-                  "Gisanga": [
+                  Gisanga: [
                     "Bienvenue",
                     "Gisanga",
                     "Gishari",
@@ -16914,11 +16810,11 @@ const rwandaData = {
                     "Kavumu",
                     "Nyarugenge",
                     "Sabudari",
-                    "Sahara"
-                  ]
+                    "Sahara",
+                  ],
                 },
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Kabuga",
                     "Kinyinya",
                     "Kirwa",
@@ -16928,11 +16824,11 @@ const rwandaData = {
                     "Nyakabanda",
                     "Nyamutarama",
                     "Rugarama",
-                    "Rwinkuba"
-                  ]
+                    "Rwinkuba",
+                  ],
                 },
                 {
-                  "Kizibere": [
+                  Kizibere: [
                     "Bereshi",
                     "Biraro",
                     "Bunyeshywa",
@@ -16942,11 +16838,11 @@ const rwandaData = {
                     "Mayunzwe",
                     "Nyamiyaga",
                     "Rebero",
-                    "Ruhuha"
-                  ]
+                    "Ruhuha",
+                  ],
                 },
                 {
-                  "Mbuye": [
+                  Mbuye: [
                     "Buremera",
                     "Cyeru",
                     "Cyobe",
@@ -16954,11 +16850,11 @@ const rwandaData = {
                     "Kanyinya",
                     "Kinyambo",
                     "Ruyenzi",
-                    "Rwimposha"
-                  ]
+                    "Rwimposha",
+                  ],
                 },
                 {
-                  "Mwendo": [
+                  Mwendo: [
                     "Cyanika",
                     "Gafunzo",
                     "Gasanganya",
@@ -16971,11 +16867,11 @@ const rwandaData = {
                     "Kavumu",
                     "Kidoma",
                     "Mataba",
-                    "Vunga"
-                  ]
+                    "Vunga",
+                  ],
                 },
                 {
-                  "Nyakarekare": [
+                  Nyakarekare: [
                     "Bereshi",
                     "Jari",
                     "Kigabiro",
@@ -16983,122 +16879,122 @@ const rwandaData = {
                     "Nyaruyonga",
                     "Rubona",
                     "Ruyenzi",
-                    "Vugiza"
-                  ]
-                }
-              ]
+                    "Vugiza",
+                  ],
+                },
+              ],
             },
             {
-              "Mwendo": [
+              Mwendo: [
                 {
-                  "Gafunzo": [
+                  Gafunzo: [
                     "Kagarama",
                     "Kajevuba",
                     "Kimburu",
                     "Nyamigina",
                     "Nyamugari",
                     "Ruhamagariro",
-                    "Rutagara"
-                  ]
+                    "Rutagara",
+                  ],
                 },
                 {
-                  "Gishweru": [
+                  Gishweru: [
                     "Kanzu",
                     "Mabanza",
                     "Nyakabuye",
                     "Nyakizu",
-                    "Rubona"
-                  ]
+                    "Rubona",
+                  ],
                 },
                 {
-                  "Kamujisho": [
+                  Kamujisho: [
                     "Bugaramantare",
                     "Gakomeye",
                     "Gitwa",
-                    "Nyarusange"
-                  ]
+                    "Nyarusange",
+                  ],
                 },
                 {
-                  "Kigarama": [
+                  Kigarama: [
                     "Gisiza",
                     "Gitaraga",
                     "Kabacuzi",
                     "Kaburinga",
                     "Kamuganga",
                     "Kamuzimanganya",
-                    "Kivumu"
-                  ]
+                    "Kivumu",
+                  ],
                 },
-                { "Kubutare": ["Buhoro", "Dusego", "Gasyogogo", "Karambo"] },
+                { Kubutare: ["Buhoro", "Dusego", "Gasyogogo", "Karambo"] },
                 {
-                  "Mutara": [
+                  Mutara: [
                     "Bunyankungu",
                     "Gashiru",
                     "Kabiha",
                     "Kakarima",
                     "Mbunduye",
                     "Murambi",
-                    "Nyabisindu"
-                  ]
+                    "Nyabisindu",
+                  ],
                 },
                 {
-                  "Nyabibugu": [
+                  Nyabibugu: [
                     "Kiganira",
                     "Ntongwe",
                     "Nyarutovu",
                     "Nyaruvumu",
                     "Rukeri",
-                    "Ryakabunga"
-                  ]
+                    "Ryakabunga",
+                  ],
                 },
                 {
-                  "Saruheshyi": [
+                  Saruheshyi: [
                     "Buhigiro",
                     "Gaseke",
                     "Gasharu",
                     "Rugasari",
-                    "Ruhondo"
-                  ]
-                }
-              ]
+                    "Ruhondo",
+                  ],
+                },
+              ],
             },
             {
-              "Ntongwe": [
+              Ntongwe: [
                 {
-                  "Gako": [
+                  Gako: [
                     "Cyimana",
                     "Gikoma",
                     "Kamakara",
                     "Kantwari",
                     "Nyabuhuzu",
                     "Nyabyugi",
-                    "Nyamahwa"
-                  ]
+                    "Nyamahwa",
+                  ],
                 },
-                { "Kareba": ["Kavumu", "Kibatsi", "Marimba", "Ruko"] },
+                { Kareba: ["Kavumu", "Kibatsi", "Marimba", "Ruko"] },
                 {
-                  "Kayenzi": [
+                  Kayenzi: [
                     "Kanyete",
                     "Kirwa",
                     "Ntungamo",
                     "Nyagatovu",
-                    "Nyamigende"
-                  ]
+                    "Nyamigende",
+                  ],
                 },
                 {
-                  "Kebero": [
+                  Kebero: [
                     "Cyeru",
                     "Gasuna",
                     "Kaburanjwiri",
                     "Nyabigunzu",
                     "Nyabitare",
                     "Nyacyonga",
-                    "Ruko"
-                  ]
+                    "Ruko",
+                  ],
                 },
-                { "Nyagisozi": ["Karama", "Nyamirama", "Nyarusange"] },
+                { Nyagisozi: ["Karama", "Nyamirama", "Nyarusange"] },
                 {
-                  "Nyakabungo": [
+                  Nyakabungo: [
                     "Byimana",
                     "Gacuriro",
                     "Kamaraba",
@@ -17106,11 +17002,11 @@ const rwandaData = {
                     "Kigabiro",
                     "Kintore",
                     "Mutima",
-                    "Nyamirama"
-                  ]
+                    "Nyamirama",
+                  ],
                 },
                 {
-                  "Nyarurama": [
+                  Nyarurama: [
                     "Gahunga",
                     "Gikoni",
                     "Kamaraba",
@@ -17122,15 +17018,15 @@ const rwandaData = {
                     "Nyarwahi",
                     "Ruhuha",
                     "Rwakajuju",
-                    "Rwintama"
-                  ]
-                }
-              ]
+                    "Rwintama",
+                  ],
+                },
+              ],
             },
             {
-              "Ruhango": [
+              Ruhango: [
                 {
-                  "Buhoro": [
+                  Buhoro: [
                     "Buhoro",
                     "Gako",
                     "Kabeza",
@@ -17142,11 +17038,11 @@ const rwandaData = {
                     "Nyagasozi",
                     "Nyangandika",
                     "Nyarutovu",
-                    "Rwinkuba"
-                  ]
+                    "Rwinkuba",
+                  ],
                 },
                 {
-                  "Bunyogombe": [
+                  Bunyogombe: [
                     "Bugarura",
                     "Busego",
                     "Gacoko",
@@ -17165,11 +17061,11 @@ const rwandaData = {
                     "Remera",
                     "Rubazi",
                     "Rusebeya",
-                    "Rwankuba"
-                  ]
+                    "Rwankuba",
+                  ],
                 },
                 {
-                  "Gikoma": [
+                  Gikoma: [
                     "Gatengeri",
                     "Gikumba",
                     "Karama",
@@ -17180,11 +17076,11 @@ const rwandaData = {
                     "Rubiha",
                     "Rurembo",
                     "Ryabonyinka",
-                    "Wimana"
-                  ]
+                    "Wimana",
+                  ],
                 },
                 {
-                  "Munini": [
+                  Munini: [
                     "Bisambu",
                     "Bugari",
                     "Bwiza",
@@ -17205,11 +17101,11 @@ const rwandaData = {
                     "Nyabinyenga",
                     "Nyinya",
                     "Ruhuha",
-                    "Rwezamenyo"
-                  ]
+                    "Rwezamenyo",
+                  ],
                 },
                 {
-                  "Musamo": [
+                  Musamo: [
                     "Cana",
                     "Gaseke",
                     "Jokoma",
@@ -17222,11 +17118,11 @@ const rwandaData = {
                     "Rwinkuba",
                     "Rwinyege",
                     "Ryanyiranda",
-                    "Wimana"
-                  ]
+                    "Wimana",
+                  ],
                 },
                 {
-                  "Nyamagana": [
+                  Nyamagana: [
                     "Bumbogo",
                     "Butare I",
                     "Butare II",
@@ -17251,11 +17147,11 @@ const rwandaData = {
                     "Nyarusange I",
                     "Nyarusange II",
                     "Ruhango",
-                    "Ruhuha"
-                  ]
+                    "Ruhuha",
+                  ],
                 },
                 {
-                  "Rwoga": [
+                  Rwoga: [
                     "Bihome",
                     "Bugarama",
                     "Bunyogombe",
@@ -17271,11 +17167,11 @@ const rwandaData = {
                     "Nyabisindu",
                     "Ruhango",
                     "Rwinkuba",
-                    "Rwoga"
-                  ]
+                    "Rwoga",
+                  ],
                 },
                 {
-                  "Tambwe": [
+                  Tambwe: [
                     "Buterana",
                     "Mubuga",
                     "Nyamugari I",
@@ -17285,34 +17181,34 @@ const rwandaData = {
                     "Ruduha II",
                     "Rugarama",
                     "Rugondo",
-                    "Tambwe"
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+                    "Tambwe",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
-      "West": [
+      West: [
         {
-          "Karongi": [
+          Karongi: [
             {
-              "Bwishyura": [
+              Bwishyura: [
                 {
-                  "Burunga": [
+                  Burunga: [
                     "Kabuga",
                     "Majuri",
                     "Matyazo",
                     "Nyabikenke",
                     "Nyamarebe",
                     "Ruyenzi",
-                    "Twimbogo"
-                  ]
+                    "Twimbogo",
+                  ],
                 },
                 {
-                  "Gasura": [
+                  Gasura: [
                     "Gafuruguto",
                     "Gatare",
                     "Gatoki",
@@ -17320,11 +17216,11 @@ const rwandaData = {
                     "Nyabihanga",
                     "Nyagahinga",
                     "Nyarusange",
-                    "Ruganda"
-                  ]
+                    "Ruganda",
+                  ],
                 },
                 {
-                  "Gitarama": [
+                  Gitarama: [
                     "Gitarama",
                     "Gomba",
                     "Josi",
@@ -17332,22 +17228,22 @@ const rwandaData = {
                     "Kigezi",
                     "Kirambo",
                     "Kivomo",
-                    "Nyamigina"
-                  ]
+                    "Nyamigina",
+                  ],
                 },
                 {
-                  "Kayenzi": [
+                  Kayenzi: [
                     "Buhoro",
                     "Gitega",
                     "Mugomba",
                     "Nyabikenke",
                     "Ruhande",
-                    "Sakinnyaga"
-                  ]
+                    "Sakinnyaga",
+                  ],
                 },
-                { "Kibuye": ["Gacumba", "Gatwaro", "Rurembo"] },
+                { Kibuye: ["Gacumba", "Gatwaro", "Rurembo"] },
                 {
-                  "Kiniha": [
+                  Kiniha: [
                     "Karutete",
                     "Kiyovu",
                     "Maryohe",
@@ -17355,25 +17251,25 @@ const rwandaData = {
                     "Nyakigezi",
                     "Nyarurembo",
                     "Nyegabo",
-                    "Ruganda"
-                  ]
+                    "Ruganda",
+                  ],
                 },
                 {
-                  "Nyarusazi": [
+                  Nyarusazi: [
                     "Birembo",
                     "Bupfune",
                     "Bwishyura",
                     "Kanyabusage",
                     "Karongi",
-                    "Nyarusozi"
-                  ]
-                }
-              ]
+                    "Nyarusozi",
+                  ],
+                },
+              ],
             },
             {
-              "Gashari": [
+              Gashari: [
                 {
-                  "Birambo": [
+                  Birambo: [
                     "Birambo",
                     "Gashari",
                     "Kabirizi",
@@ -17383,68 +17279,68 @@ const rwandaData = {
                     "Nyabikenke",
                     "Nyakibuguma",
                     "Nyarusange",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Musasa": [
+                  Musasa: [
                     "Kabasare",
                     "Kaduha",
                     "Kagangare",
                     "Kigarama",
                     "Musasa",
-                    "Rasaniro"
-                  ]
+                    "Rasaniro",
+                  ],
                 },
                 {
-                  "Mwendo": [
+                  Mwendo: [
                     "Gakurwe",
                     "Gataba",
                     "Gihororo",
                     "Kabageni",
                     "Kayogoro",
-                    "Nyamigina"
-                  ]
+                    "Nyamigina",
+                  ],
                 },
                 {
-                  "Rugobagoba": [
+                  Rugobagoba: [
                     "Karambo",
                     "Karutare",
                     "Kibingo",
                     "Musongati",
                     "Nkingo",
-                    "Shungwe"
-                  ]
+                    "Shungwe",
+                  ],
                 },
-                { "Tongati": ["Kayonga", "Nyabivumu", "Nyagisozi", "Rubona"] }
-              ]
+                { Tongati: ["Kayonga", "Nyabivumu", "Nyagisozi", "Rubona"] },
+              ],
             },
             {
-              "Gishyita": [
-                { "Buhoro": ["Buhire", "Mboneko", "Mweya", "Ruhunde", "Tura"] },
+              Gishyita: [
+                { Buhoro: ["Buhire", "Mboneko", "Mweya", "Ruhunde", "Tura"] },
                 {
-                  "Cyanya": [
+                  Cyanya: [
                     "Gataba",
                     "Gatare",
                     "Gisiza",
                     "Gitovu",
                     "Kabuga",
                     "Kagano",
-                    "Mpatsi"
-                  ]
+                    "Mpatsi",
+                  ],
                 },
-                { "Kigarama": ["Gitwa", "Kabwenge", "Karenge", "Kubutare"] },
+                { Kigarama: ["Gitwa", "Kabwenge", "Karenge", "Kubutare"] },
                 {
-                  "Munanira": [
+                  Munanira: [
                     "Butare",
                     "Bweramvura",
                     "Gisoro",
                     "Ngugu",
-                    "Nyakabuye"
-                  ]
+                    "Nyakabuye",
+                  ],
                 },
                 {
-                  "Musasa": [
+                  Musasa: [
                     "Cyimbo",
                     "Gasharu",
                     "Kabuga",
@@ -17452,107 +17348,107 @@ const rwandaData = {
                     "Kibaya",
                     "Kirunga",
                     "Musebeya",
-                    "Rwagisasa"
-                  ]
+                    "Rwagisasa",
+                  ],
                 },
                 {
-                  "Ngoma": [
+                  Ngoma: [
                     "Kanyinya",
                     "Magarama",
                     "Mataba",
                     "Murambi",
                     "Rufumberi",
-                    "Uwingabo"
-                  ]
-                }
-              ]
+                    "Uwingabo",
+                  ],
+                },
+              ],
             },
             {
-              "Gitesi": [
+              Gitesi: [
                 {
-                  "Gasharu": [
+                  Gasharu: [
                     "Gasharu",
                     "Kinyami",
                     "Nyarukeri",
                     "Nyaruvumu",
-                    "Rwintare"
-                  ]
+                    "Rwintare",
+                  ],
                 },
                 {
-                  "Gitega": [
+                  Gitega: [
                     "Bugoberi",
                     "Kagari",
                     "Kamihaho",
                     "Muvungu",
-                    "Senga"
-                  ]
+                    "Senga",
+                  ],
                 },
                 {
-                  "Kanunga": [
+                  Kanunga: [
                     "Giticyuma",
                     "Karongi",
                     "Nemba",
                     "Nyabitare",
                     "Nyagisozi",
-                    "Nyarugenge"
-                  ]
+                    "Nyarugenge",
+                  ],
                 },
                 {
-                  "Kirambo": [
+                  Kirambo: [
                     "Buye",
                     "Karongi",
                     "Kirambo",
                     "Nyarusange",
-                    "Nzabuhara"
-                  ]
+                    "Nzabuhara",
+                  ],
                 },
                 {
-                  "Munanira": [
+                  Munanira: [
                     "Gahigiro",
                     "Gatare",
                     "Kinama",
                     "Munanira",
                     "Nyabigugu",
                     "Nyarucyamo",
-                    "Ruhundo"
-                  ]
+                    "Ruhundo",
+                  ],
                 },
                 {
-                  "Nyamiringa": [
+                  Nyamiringa: [
                     "Burega",
                     "Cyimba",
                     "Gisasa",
                     "Kagari",
-                    "Kivuruga"
-                  ]
+                    "Kivuruga",
+                  ],
                 },
                 {
-                  "Ruhinga": [
+                  Ruhinga: [
                     "Gasayo",
                     "Muramba",
                     "Nyabikati",
                     "Nyagahinga",
                     "Nyamiyaga",
                     "Nyarubuye",
-                    "Ruhondo"
-                  ]
+                    "Ruhondo",
+                  ],
                 },
                 {
-                  "Rwariro": [
+                  Rwariro: [
                     "Karwiru",
                     "Kigarama",
                     "Kirwa",
                     "Rurumbu",
                     "Rusekera",
-                    "Rwariro"
-                  ]
-                }
-              ]
+                    "Rwariro",
+                  ],
+                },
+              ],
             },
             {
-              "Mubuga": [
+              Mubuga: [
                 {
-                  "Kagabiro": [
+                  Kagabiro: [
                     "Bitaba",
                     "Buhari",
                     "Kagabiro",
@@ -17562,11 +17458,11 @@ const rwandaData = {
                     "Nyakabande",
                     "Nyakagezi",
                     "Rubondo",
-                    "Runyinya"
-                  ]
+                    "Runyinya",
+                  ],
                 },
                 {
-                  "Murangara": [
+                  Murangara: [
                     "Gisunzu",
                     "Kabuga",
                     "Kaduha",
@@ -17574,79 +17470,79 @@ const rwandaData = {
                     "Murangara",
                     "Nyabitare",
                     "Rubyiro",
-                    "Rwakamuri"
-                  ]
+                    "Rwakamuri",
+                  ],
                 },
                 {
-                  "Nyagatovu": [
+                  Nyagatovu: [
                     "Bikomero",
                     "Gisizi",
                     "Karora",
                     "Mara",
                     "Nyagatovu",
                     "Nyankira",
-                    "Ryarugenzi"
-                  ]
+                    "Ryarugenzi",
+                  ],
                 },
                 {
-                  "Ryaruhanga": [
+                  Ryaruhanga: [
                     "Bikenke",
                     "Gihira",
                     "Jurwe",
                     "Kizibaziba",
                     "Mubuga",
                     "Rwamiko",
-                    "Ryaruhanga"
-                  ]
-                }
-              ]
+                    "Ryaruhanga",
+                  ],
+                },
+              ],
             },
             {
-              "Murambi": [
+              Murambi: [
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Cyamatare",
                     "Gasebeya",
                     "Kazibaziba",
                     "Migina",
                     "Nyabivumu",
                     "Nyabwoma",
-                    "Nyaruvumu"
-                  ]
+                    "Nyaruvumu",
+                  ],
                 },
                 {
-                  "Muhororo": [
+                  Muhororo: [
                     "Birambo",
                     "Bwakira",
                     "Kananira",
                     "Ndago",
                     "Nyabiranga",
                     "Nyakabuye",
-                    "Tariro"
-                  ]
+                    "Tariro",
+                  ],
                 },
                 {
-                  "Nkoto": [
+                  Nkoto: [
                     "Gakoma",
                     "Gisovu",
                     "Kakirinda",
                     "Kibamba",
                     "Mataba",
-                    "Muramba"
-                  ]
+                    "Muramba",
+                  ],
                 },
                 {
-                  "Nyarunyinya": [
+                  Nyarunyinya: [
                     "Gituntu",
                     "Kamasambu",
                     "Karambo",
                     "Kigandaro",
                     "Murambi",
-                    "Nyarusave"
-                  ]
+                    "Nyarusave",
+                  ],
                 },
                 {
-                  "Shyembe": [
+                  Shyembe: [
                     "Bugaramantare",
                     "Gitwa",
                     "Kaburega",
@@ -17656,188 +17552,188 @@ const rwandaData = {
                     "Nyabisindu",
                     "Nyamagana",
                     "Nyamugari",
-                    "Nyaruhanga"
-                  ]
-                }
-              ]
+                    "Nyaruhanga",
+                  ],
+                },
+              ],
             },
             {
-              "Murundi": [
+              Murundi: [
                 {
-                  "Bukiro": [
+                  Bukiro: [
                     "Bugeni",
                     "Bukiro",
                     "Gitwa",
                     "Munzanga",
                     "Nyamabuye",
-                    "Nyamyumba"
-                  ]
+                    "Nyamyumba",
+                  ],
                 },
                 {
-                  "Kabaya": [
+                  Kabaya: [
                     "Burwi",
                     "Gakomeye",
                     "Karambo",
                     "Mujyojyo",
                     "Murambi",
-                    "Mwumba"
-                  ]
+                    "Mwumba",
+                  ],
                 },
                 {
-                  "Kamina": [
+                  Kamina: [
                     "Kiraro",
                     "Kirehe",
                     "Murehe",
                     "Mwunguzi",
                     "Nyakarambi",
-                    "Nzobe"
-                  ]
+                    "Nzobe",
+                  ],
                 },
                 {
-                  "Kareba": [
+                  Kareba: [
                     "Bwenda",
                     "Gasave",
                     "Gasharu",
                     "Gisebeya",
                     "Kibingo",
                     "Kuruganda",
-                    "Ruhungamiyaga"
-                  ]
+                    "Ruhungamiyaga",
+                  ],
                 },
                 {
-                  "Nyamushishi": [
+                  Nyamushishi: [
                     "Gasharu",
                     "Gitwa",
                     "Kisenge",
                     "Ngoma",
                     "Nyarurembo",
                     "Remera",
-                    "Rubona"
-                  ]
+                    "Rubona",
+                  ],
                 },
                 {
-                  "Nzaratsi": [
+                  Nzaratsi: [
                     "Gatwaro",
                     "Gishyikiro",
                     "Nyabinombe",
                     "Nyamabuye",
                     "Remera",
                     "Ruhondo",
-                    "Rusovu"
-                  ]
-                }
-              ]
+                    "Rusovu",
+                  ],
+                },
+              ],
             },
             {
-              "Mutuntu": [
+              Mutuntu: [
                 {
-                  "Byogo": [
+                  Byogo: [
                     "Gasenyi",
                     "Gititi",
                     "Kivumu",
                     "Muhondo",
                     "Murambi",
                     "Musango",
-                    "Rugogo"
-                  ]
+                    "Rugogo",
+                  ],
                 },
                 {
-                  "Gasharu": [
+                  Gasharu: [
                     "Gashanga",
                     "Gasharu",
                     "Gituntu",
                     "Mukungu",
                     "Mutuntu",
-                    "Nyabiguri"
-                  ]
+                    "Nyabiguri",
+                  ],
                 },
                 {
-                  "Gisayura": [
+                  Gisayura: [
                     "Gashubi",
                     "Gatwa",
                     "Kabariro",
                     "Mayombo",
                     "Ryarugango",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Kanyege": [
+                  Kanyege: [
                     "Gitumba",
                     "Kanyege",
                     "Kavumu",
                     "Manji",
                     "Mukongoro",
                     "Nyarubuye",
-                    "Rugogwe"
-                  ]
+                    "Rugogwe",
+                  ],
                 },
                 {
-                  "Kinyonzwe": [
+                  Kinyonzwe: [
                     "Kadehero",
                     "Kinyonzwe",
                     "Matyazo",
                     "Ruhindiro",
                     "Uwabashi",
-                    "Uwibumba"
-                  ]
+                    "Uwibumba",
+                  ],
                 },
                 {
-                  "Murengezo": [
+                  Murengezo: [
                     "Cyamakamba",
                     "Karambo",
                     "Ngundusi",
                     "Nyarutovu",
-                    "Uwiraro"
-                  ]
+                    "Uwiraro",
+                  ],
                 },
                 {
-                  "Rwufi": [
+                  Rwufi: [
                     "Cyiha",
                     "Gatiti",
                     "Mwumba",
                     "Rasaniro",
                     "Rugusa",
-                    "Ruhuha"
-                  ]
-                }
-              ]
+                    "Ruhuha",
+                  ],
+                },
+              ],
             },
             {
-              "Rubengera": [
+              Rubengera: [
                 {
-                  "Bubazi": [
+                  Bubazi: [
                     "Gakomeye",
                     "Gitwa",
                     "Kabuga",
                     "Kavumu",
                     "Kigarama",
                     "Makurungwe",
-                    "Nyagahinga"
-                  ]
+                    "Nyagahinga",
+                  ],
                 },
                 {
-                  "Gacaca": [
+                  Gacaca: [
                     "Gakomeye",
                     "Gasharu",
                     "Kamuvunyi",
                     "Kamwijagi",
                     "Karehe",
                     "Nyarubuye",
-                    "Remera"
-                  ]
+                    "Remera",
+                  ],
                 },
                 {
-                  "Gisanze": [
+                  Gisanze: [
                     "Kabatara",
                     "Kibande",
                     "Kigabiro",
                     "Nyabitare",
-                    "Nyamagana"
-                  ]
+                    "Nyamagana",
+                  ],
                 },
                 {
-                  "Gitwa": [
+                  Gitwa: [
                     "Bizu",
                     "Gaseke",
                     "Gitega",
@@ -17845,11 +17741,11 @@ const rwandaData = {
                     "Muremera",
                     "Rubona",
                     "Rusebeya",
-                    "Rwakigarati"
-                  ]
+                    "Rwakigarati",
+                  ],
                 },
                 {
-                  "Kibirizi": [
+                  Kibirizi: [
                     "Buhoro",
                     "Cyimana",
                     "Kabeza",
@@ -17857,31 +17753,31 @@ const rwandaData = {
                     "Kamusanganya",
                     "Kimigenge",
                     "Ndengwa",
-                    "Rubona"
-                  ]
+                    "Rubona",
+                  ],
                 },
                 {
-                  "Mataba": [
+                  Mataba: [
                     "Gitwa",
                     "Kabahizi",
                     "Mufumbezi",
                     "Nyagisozi",
-                    "Ruvumbu"
-                  ]
+                    "Ruvumbu",
+                  ],
                 },
                 {
-                  "Nyarugenge": [
+                  Nyarugenge: [
                     "Bigugu",
                     "Gatare",
                     "Kabazi",
                     "Kambogo",
                     "Karusha",
                     "Nkomagurwa",
-                    "Rukaragata"
-                  ]
+                    "Rukaragata",
+                  ],
                 },
                 {
-                  "Ruragwe": [
+                  Ruragwe: [
                     "Bunyankungu",
                     "Kabeza",
                     "Nyagahinga",
@@ -17889,25 +17785,25 @@ const rwandaData = {
                     "Nyagatovu",
                     "Nyakabungo",
                     "Rutabo",
-                    "Rwimpongo"
-                  ]
-                }
-              ]
+                    "Rwimpongo",
+                  ],
+                },
+              ],
             },
             {
-              "Rugabano": [
+              Rugabano: [
                 {
-                  "Gisiza": [
+                  Gisiza: [
                     "Gitwa",
                     "Kamina",
                     "Muciro",
                     "Rubona",
                     "Rugabano",
-                    "Winyambo"
-                  ]
+                    "Winyambo",
+                  ],
                 },
                 {
-                  "Gitega": [
+                  Gitega: [
                     "Cyarubariro",
                     "Kabyaza",
                     "Kigarama",
@@ -17915,22 +17811,22 @@ const rwandaData = {
                     "Misagara",
                     "Mutotozi",
                     "Ngoma",
-                    "Rwesero"
-                  ]
+                    "Rwesero",
+                  ],
                 },
                 {
-                  "Gitovu": [
+                  Gitovu: [
                     "Bisusa",
                     "Gatobo",
                     "Matyazo",
                     "Nganzo",
                     "Nyabagoyi",
                     "Rugabe",
-                    "Rutoyi"
-                  ]
+                    "Rutoyi",
+                  ],
                 },
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Bihembe",
                     "Kamata",
                     "Karambo",
@@ -17938,183 +17834,183 @@ const rwandaData = {
                     "Migina",
                     "Nyabitare",
                     "Nyagasozi",
-                    "Simbi"
-                  ]
+                    "Simbi",
+                  ],
                 },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Gatwaro",
                     "Kabyigo",
                     "Karumbi",
                     "Kavumu",
                     "Mataba",
-                    "Uwigiti"
-                  ]
+                    "Uwigiti",
+                  ],
                 },
                 {
-                  "Mucyimba": [
+                  Mucyimba: [
                     "Gihara",
                     "Kagombyi",
                     "Kamonyi",
                     "Kigarama",
                     "Kivumu",
                     "Rwagisozi",
-                    "Ryangondo"
-                  ]
+                    "Ryangondo",
+                  ],
                 },
                 {
-                  "Rufungo": [
+                  Rufungo: [
                     "Bucensha",
                     "Bwihe",
                     "Gitabi",
                     "Karambo",
                     "Kavumu",
-                    "Rukoko"
-                  ]
+                    "Rukoko",
+                  ],
                 },
                 {
-                  "Rwungo": [
+                  Rwungo: [
                     "Gahengeri",
                     "Gasharu",
                     "Kabuye",
                     "Rwungo",
-                    "Wisazi"
-                  ]
+                    "Wisazi",
+                  ],
                 },
                 {
-                  "Tyazo": [
+                  Tyazo: [
                     "Karambi",
                     "Kirabo",
                     "Nyakabingo",
                     "Rubatura",
                     "Winzira",
-                    "Wurugogwe"
-                  ]
-                }
-              ]
+                    "Wurugogwe",
+                  ],
+                },
+              ],
             },
             {
-              "Ruganda": [
+              Ruganda: [
                 {
-                  "Biguhu": [
+                  Biguhu: [
                     "Gitwa",
                     "Murambi",
                     "Muremure",
                     "Ngange",
-                    "Nyagasozi"
-                  ]
+                    "Nyagasozi",
+                  ],
                 },
-                { "Kabingo": ["Bugarura", "Kabingo", "Nyagisozi"] },
-                { "Kinyovu": ["Bizitiro", "Kabaranda", "Kanyegenyege"] },
-                { "Kivumu": ["Birambo", "Kagorora", "Murambi", "Nyarusange"] },
-                { "Nyabikeri": ["Dusasa", "Gahororo", "Kiguhu", "Nyabikeri"] },
+                { Kabingo: ["Bugarura", "Kabingo", "Nyagisozi"] },
+                { Kinyovu: ["Bizitiro", "Kabaranda", "Kanyegenyege"] },
+                { Kivumu: ["Birambo", "Kagorora", "Murambi", "Nyarusange"] },
+                { Nyabikeri: ["Dusasa", "Gahororo", "Kiguhu", "Nyabikeri"] },
                 {
-                  "Nyamugwagwa": ["Burango", "Kaduha", "Kibari", "Nyamugwagwa"]
+                  Nyamugwagwa: ["Burango", "Kaduha", "Kibari", "Nyamugwagwa"],
                 },
-                { "Rubona": ["Gahunduguru", "Maryohe", "Muciro", "Rubona"] },
+                { Rubona: ["Gahunduguru", "Maryohe", "Muciro", "Rubona"] },
                 {
-                  "Rugobagoba": [
+                  Rugobagoba: [
                     "Gatare",
                     "Karambo",
                     "Nyabisiga",
                     "Nyagasambu",
                     "Nyakivumba",
-                    "Nyarutembe"
-                  ]
-                }
-              ]
+                    "Nyarutembe",
+                  ],
+                },
+              ],
             },
             {
-              "Rwankuba": [
+              Rwankuba: [
                 {
-                  "Bigugu": [
+                  Bigugu: [
                     "Kagusa",
                     "Kavumu",
                     "Mifuba",
                     "Nyantwa",
                     "Ruhondo",
-                    "Ruhuha"
-                  ]
+                    "Ruhuha",
+                  ],
                 },
-                { "Bisesero": ["Bisesero", "Jurwe", "Kigarama", "Uwingabo"] },
+                { Bisesero: ["Bisesero", "Jurwe", "Kigarama", "Uwingabo"] },
                 {
-                  "Gasata": [
+                  Gasata: [
                     "Cyabahanga",
                     "Muhingo",
                     "Nyagafumba",
                     "Rugeti",
                     "Rurebero",
                     "Rutiti",
-                    "Rwasheke"
-                  ]
+                    "Rwasheke",
+                  ],
                 },
                 {
-                  "Munini": [
+                  Munini: [
                     "Bweramana",
                     "Byimana",
                     "Gakangaga",
                     "Kinaba",
                     "Muvumba",
                     "Muyira",
-                    "Winzira"
-                  ]
+                    "Winzira",
+                  ],
                 },
-                { "Nyakamira": ["Mahembe", "Musango", "Nyarushekera"] },
+                { Nyakamira: ["Mahembe", "Musango", "Nyarushekera"] },
                 {
-                  "Nyarusanga": [
+                  Nyarusanga: [
                     "Gasharu",
                     "Karambo",
                     "Kigogwe",
                     "Kanyege",
-                    "Wingwa"
-                  ]
+                    "Wingwa",
+                  ],
                 },
                 {
-                  "Rubazo": [
+                  Rubazo: [
                     "Bucyurabuhoro",
                     "Kanyarusanga",
                     "Nyaruyaga",
                     "Ruhinga",
-                    "Wamahoro"
-                  ]
+                    "Wamahoro",
+                  ],
                 },
-                { "Rubumba": ["Gishwati", "Himbo", "Rukore", "Ryampande"] }
-              ]
+                { Rubumba: ["Gishwati", "Himbo", "Rukore", "Ryampande"] },
+              ],
             },
             {
-              "Twumba": [
+              Twumba: [
                 {
-                  "Bihumbe": [
+                  Bihumbe: [
                     "Bihumbe",
                     "Bivumu",
                     "Gikaranka",
                     "Nyabubare",
                     "Rushishi",
-                    "Uwintobo"
-                  ]
+                    "Uwintobo",
+                  ],
                 },
                 {
-                  "Gakuta": [
+                  Gakuta: [
                     "Gakoko",
                     "Karumbi",
                     "Nyamiryango",
                     "Rugogwe",
-                    "Twumba"
-                  ]
+                    "Twumba",
+                  ],
                 },
                 {
-                  "Gisovu": [
+                  Gisovu: [
                     "Bikunda",
                     "Gashihe",
                     "Kanyovu",
                     "Karambo",
                     "Kibuburo",
                     "Mwumba",
-                    "Nyakabingo"
-                  ]
+                    "Nyakabingo",
+                  ],
                 },
                 {
-                  "Gitabura": [
+                  Gitabura: [
                     "Gatare",
                     "Kibingo",
                     "Mataba",
@@ -18122,117 +18018,117 @@ const rwandaData = {
                     "Nyarubuye",
                     "Nyaruyaga",
                     "Rugeyo",
-                    "Tuvunasogi"
-                  ]
+                    "Tuvunasogi",
+                  ],
                 },
                 {
-                  "Kavumu": [
+                  Kavumu: [
                     "Gasharu",
                     "Kaganda",
                     "Kavumu",
                     "Muhira",
                     "Murambi",
                     "Muronzi",
-                    "Nyarutagara"
-                  ]
+                    "Nyarutagara",
+                  ],
                 },
-                { "Murehe": ["Duhati", "Gatema", "Kaganda", "Murehe"] },
-                { "Rutabi": ["Gahondo", "Nyirabununu", "Rutabi", "Wintobo"] }
-              ]
-            }
-          ]
+                { Murehe: ["Duhati", "Gatema", "Kaganda", "Murehe"] },
+                { Rutabi: ["Gahondo", "Nyirabununu", "Rutabi", "Wintobo"] },
+              ],
+            },
+          ],
         },
         {
-          "Ngororero": [
+          Ngororero: [
             {
-              "Bwira": [
-                { "Bungwe": ["Gasura", "Kirwa", "Nkuri", "Rutembo", "Rutoyi"] },
-                { "Cyahafi": ["Bushyogero", "Cyahafi", "Kamina", "Rushubi"] },
+              Bwira: [
+                { Bungwe: ["Gasura", "Kirwa", "Nkuri", "Rutembo", "Rutoyi"] },
+                { Cyahafi: ["Bushyogero", "Cyahafi", "Kamina", "Rushubi"] },
                 {
-                  "Gashubi": [
+                  Gashubi: [
                     "Gasasa",
                     "Gitonde",
                     "Rugeshi",
                     "Rukeri",
-                    "Rwamakara"
-                  ]
+                    "Rwamakara",
+                  ],
                 },
                 {
-                  "Kabarondo": [
+                  Kabarondo: [
                     "Bereshi",
                     "Gitarama",
                     "Kurushishi",
                     "Mukingi",
-                    "Nyakarambi"
-                  ]
+                    "Nyakarambi",
+                  ],
                 },
                 {
-                  "Ruhindage": ["Kabirizi", "Kiregamazi", "Mwiha", "Nyabitare"]
-                }
-              ]
+                  Ruhindage: ["Kabirizi", "Kiregamazi", "Mwiha", "Nyabitare"],
+                },
+              ],
             },
             {
-              "Gatumba": [
+              Gatumba: [
                 {
-                  "Cyome": [
+                  Cyome: [
                     "Birambo",
                     "Mpara",
                     "Musagara",
                     "Nyakagezi",
                     "Ruvumu",
-                    "Rwasare"
-                  ]
+                    "Rwasare",
+                  ],
                 },
                 {
-                  "Gatsibo": [
+                  Gatsibo: [
                     "Gasave",
                     "Gatongo",
                     "Gatsibo",
                     "Gatwa",
                     "Kimirama",
                     "Rutabataba",
-                    "Shyogi"
-                  ]
+                    "Shyogi",
+                  ],
                 },
                 {
-                  "Kamasiga": [
+                  Kamasiga: [
                     "Byimana",
                     "Gasave",
                     "Karehe",
                     "Kavumu",
                     "Nsyabire",
-                    "Nyenyeri"
-                  ]
+                    "Nyenyeri",
+                  ],
                 },
                 {
-                  "Karambo": [
+                  Karambo: [
                     "Gahinga",
                     "Gitega",
                     "Kabarore",
                     "Karehe",
                     "Kimisagara",
                     "Nteko",
-                    "Rugara"
-                  ]
+                    "Rugara",
+                  ],
                 },
                 {
-                  "Ruhanga": [
+                  Ruhanga: [
                     "Butare",
                     "Gasagara",
                     "Jimbu",
                     "Kabeza",
                     "Kadehero",
-                    "Kamina"
-                  ]
+                    "Kamina",
+                  ],
                 },
-                { "Rusumo": ["Kagarama", "Mataba", "Mukaragata", "Rusumo"] }
-              ]
+                { Rusumo: ["Kagarama", "Mataba", "Mukaragata", "Rusumo"] },
+              ],
             },
             {
-              "Hindiro": [
-                { "Gatare": ["Buyungu", "Kigarama", "Muhororo", "Nyagasozi"] },
+              Hindiro: [
+                { Gatare: ["Buyungu", "Kigarama", "Muhororo", "Nyagasozi"] },
                 {
-                  "Gatega": [
+                  Gatega: [
                     "Cyahafi",
                     "Gapfura",
                     "Gasharu",
@@ -18241,49 +18137,49 @@ const rwandaData = {
                     "Kabenge",
                     "Kagarama",
                     "Rutsiro",
-                    "Sereri"
-                  ]
+                    "Sereri",
+                  ],
                 },
-                { "Kajinge": ["Bwoga", "Kamana", "Rugari", "Rugeshi"] },
+                { Kajinge: ["Bwoga", "Kamana", "Rugari", "Rugeshi"] },
                 {
-                  "Marantima": [
+                  Marantima: [
                     "Kagugu",
                     "Karambo",
                     "Kiribata",
                     "Munyegera",
                     "Muvugangoma",
-                    "Rugarika"
-                  ]
+                    "Rugarika",
+                  ],
                 },
-                { "Rugendabari": ["Kabuga", "Kamonyi", "Mituga", "Mukoni"] },
-                { "Runyinya": ["Marembo", "Murambi", "Rugarambiro", "Rwamiko"] }
-              ]
+                { Rugendabari: ["Kabuga", "Kamonyi", "Mituga", "Mukoni"] },
+                { Runyinya: ["Marembo", "Murambi", "Rugarambiro", "Rwamiko"] },
+              ],
             },
             {
-              "Kabaya": [
+              Kabaya: [
                 {
-                  "Busunzu": [
+                  Busunzu: [
                     "Gitaba",
                     "Kabarenzi",
                     "Kabere",
                     "Kabuganza",
                     "Kabusizi",
-                    "Kinyamiyaga"
-                  ]
+                    "Kinyamiyaga",
+                  ],
                 },
                 {
-                  "Gaseke": [
+                  Gaseke: [
                     "Mbandari",
                     "Mitabo",
                     "Mizingo",
                     "Muturagara",
                     "Nyamugari",
                     "Nyamweru",
-                    "Rugari"
-                  ]
+                    "Rugari",
+                  ],
                 },
                 {
-                  "Kabaya": [
+                  Kabaya: [
                     "Bitare",
                     "Kimisagara",
                     "Kiyovu",
@@ -18291,234 +18187,222 @@ const rwandaData = {
                     "Nyanza",
                     "Rebero",
                     "Rurembo",
-                    "Rwantozi"
-                  ]
+                    "Rwantozi",
+                  ],
                 },
                 {
-                  "Mwendo": [
+                  Mwendo: [
                     "Bukonde",
                     "Butare",
                     "Kabeza",
                     "Karambi",
                     "Merabuye",
                     "Nyabarinda",
-                    "Rubambiro"
-                  ]
+                    "Rubambiro",
+                  ],
                 },
                 {
-                  "Ngoma": [
+                  Ngoma: [
                     "Gisebeya",
                     "Gitumba",
                     "Hanika",
                     "Ngoma",
                     "Nyamugeyo",
                     "Rukorati",
-                    "Rutoyi"
-                  ]
+                    "Rutoyi",
+                  ],
                 },
                 {
-                  "Nyenyeri": [
+                  Nyenyeri: [
                     "Bukonde",
                     "Gashyitsi",
                     "Kabasare",
                     "Kimiramba",
                     "Kirwa",
                     "Nyamugari",
-                    "Nyasenge"
-                  ]
-                }
-              ]
+                    "Nyasenge",
+                  ],
+                },
+              ],
             },
             {
-              "Kageyo": [
+              Kageyo: [
                 {
-                  "Kageshi": [
-                    "Cyungo",
-                    "Kantara",
-                    "Kariha",
-                    "Mukaka",
-                    "Ruganda"
-                  ]
+                  Kageshi: ["Cyungo", "Kantara", "Kariha", "Mukaka", "Ruganda"],
                 },
-                { "Kirwa": ["Gatovu", "Gihonga", "Kabagari", "Nyaruzenga"] },
+                { Kirwa: ["Gatovu", "Gihonga", "Kabagari", "Nyaruzenga"] },
                 {
-                  "Mukore": [
+                  Mukore: [
                     "Gaseke",
                     "Gitongo",
                     "Kabuhake",
                     "Nyamatanga",
-                    "Rusenyi"
-                  ]
+                    "Rusenyi",
+                  ],
                 },
-                { "Muramba": ["Gashinge", "Kabyaza", "Murangara", "Rurambo"] },
+                { Muramba: ["Gashinge", "Kabyaza", "Murangara", "Rurambo"] },
                 {
-                  "Nyamata": [
+                  Nyamata: [
                     "Bereshi",
                     "Kabuga",
                     "Kagarama",
                     "Kibanda",
-                    "Nyamutuku"
-                  ]
+                    "Nyamutuku",
+                  ],
                 },
-                { "Rwamamara": ["Gaseke", "Gasiza", "Giseke", "Mubuga"] }
-              ]
+                { Rwamamara: ["Gaseke", "Gasiza", "Giseke", "Mubuga"] },
+              ],
             },
             {
-              "Kavumu": [
+              Kavumu: [
                 {
-                  "Birembo": [
+                  Birembo: [
                     "Buhuma",
                     "Gashaki",
                     "Kantobo",
                     "Nyabitsina",
-                    "Rwanamiza"
-                  ]
+                    "Rwanamiza",
+                  ],
                 },
                 {
-                  "Gitwa": [
+                  Gitwa: [
                     "Biraro",
                     "Karambi",
                     "Kaziba",
                     "Nyamugari",
-                    "Nyarukara"
-                  ]
+                    "Nyarukara",
+                  ],
                 },
                 {
-                  "Murinzi": [
+                  Murinzi: [
                     "Cyasenge",
                     "Gasibya",
                     "Ntebeyinuma",
                     "Nyaramba",
-                    "Ruhurura"
-                  ]
+                    "Ruhurura",
+                  ],
                 },
                 {
-                  "Nyamugeyo": [
+                  Nyamugeyo: [
                     "Gatovu",
                     "Kabere",
                     "Karambo",
                     "Murimba",
-                    "Nyabubanda"
-                  ]
+                    "Nyabubanda",
+                  ],
                 },
                 {
-                  "Rugeshi": [
+                  Rugeshi: [
                     "Cyuzi",
                     "Gasumo",
                     "Kabeza",
                     "Karambi",
-                    "Mwiyanike"
-                  ]
+                    "Mwiyanike",
+                  ],
                 },
                 {
-                  "Tetero": [
+                  Tetero: [
                     "Bereshi",
                     "Gatsibo",
                     "Kasumo",
                     "Mizingo",
-                    "Ruherahere"
-                  ]
-                }
-              ]
+                    "Ruherahere",
+                  ],
+                },
+              ],
             },
             {
-              "Matyazo": [
+              Matyazo: [
                 {
-                  "Binana": [
-                    "Busoro",
-                    "Kabuye",
-                    "Kaseke",
-                    "Kavumu",
-                    "Nyagisozi"
-                  ]
+                  Binana: ["Busoro", "Kabuye", "Kaseke", "Kavumu", "Nyagisozi"],
                 },
                 {
-                  "Gitega": [
+                  Gitega: [
                     "Barama",
                     "Gahanda",
                     "Gasayo",
                     "Gataka",
                     "Kabara",
-                    "Rwankenke"
-                  ]
+                    "Rwankenke",
+                  ],
                 },
                 {
-                  "Matare": [
+                  Matare: [
                     "Gako",
                     "Gitega",
                     "Kamasorori",
                     "Munyinya",
                     "Mwumba",
-                    "Nyenyeri"
-                  ]
+                    "Nyenyeri",
+                  ],
                 },
                 {
-                  "Rutare": [
+                  Rutare: [
                     "Kabingo",
                     "Nyakiliba",
                     "Ruhurura",
                     "Rwamabuye",
-                    "Shori"
-                  ]
+                    "Shori",
+                  ],
                 },
-                { "Rwamiko": ["Butare", "Nyakibande", "Rusororo", "Rwamiko"] }
-              ]
+                { Rwamiko: ["Butare", "Nyakibande", "Rusororo", "Rwamiko"] },
+              ],
             },
             {
-              "Muhanda": [
+              Muhanda: [
                 {
-                  "Bugarura": [
+                  Bugarura: [
                     "Bugarura",
                     "Burorero",
                     "Gatomvu",
                     "Ngando",
                     "Nkongora",
-                    "Runayu"
-                  ]
+                    "Runayu",
+                  ],
                 },
                 {
-                  "Gasiza": [
+                  Gasiza: [
                     "Gasiza",
                     "Kabeza",
                     "Kigina",
                     "Nyenyeri",
                     "Rukobora",
                     "Rurandama",
-                    "Rwantobotobo"
-                  ]
+                    "Rwantobotobo",
+                  ],
                 },
                 {
-                  "Mashya": [
+                  Mashya: [
                     "Byerezo",
                     "Kagano",
                     "Karuhindura",
                     "Kazuba",
                     "Maryoha",
-                    "Rubaya"
-                  ]
+                    "Rubaya",
+                  ],
                 },
                 {
-                  "Nganzo": [
+                  Nganzo: [
                     "Gisebeya",
                     "Gisiza",
                     "Gisunzu",
                     "Misemburo",
                     "Murehe",
-                    "Ntaruko"
-                  ]
+                    "Ntaruko",
+                  ],
                 },
                 {
-                  "Ngoma": [
+                  Ngoma: [
                     "Bugobora",
                     "Gacaca",
                     "Karambi",
                     "Ntendure",
                     "Rucano",
-                    "Ruganda"
-                  ]
+                    "Ruganda",
+                  ],
                 },
                 {
-                  "Rutagara": [
+                  Rutagara: [
                     "Bambiro",
                     "Gaseke",
                     "Kabari",
@@ -18527,60 +18411,60 @@ const rwandaData = {
                     "Nyamutoni",
                     "Nyanshundura",
                     "Rukondo",
-                    "Rurambo"
-                  ]
-                }
-              ]
+                    "Rurambo",
+                  ],
+                },
+              ],
             },
             {
-              "Muhororo": [
+              Muhororo: [
                 {
-                  "Bweramana": [
+                  Bweramana: [
                     "Buyenzi",
                     "Gasave",
                     "Musanzubize",
                     "Nyagaseke",
-                    "Ruhanga"
-                  ]
+                    "Ruhanga",
+                  ],
                 },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Burengo",
                     "Gashonyi",
                     "Gasovu",
                     "Mitsimbi",
                     "Murambi",
                     "Nyabigogoro",
-                    "Nyamirama"
-                  ]
+                    "Nyamirama",
+                  ],
                 },
-                { "Myiha": ["Kabyiniro", "Myiha", "Shori"] },
-                { "Rugogwe": ["Butinza", "Kibingo", "Murambi", "Nganzo"] },
+                { Myiha: ["Kabyiniro", "Myiha", "Shori"] },
+                { Rugogwe: ["Butinza", "Kibingo", "Murambi", "Nganzo"] },
                 {
-                  "Rusororo": [
+                  Rusororo: [
                     "Buhiro",
                     "Gapfura",
                     "Gisovu",
                     "Kagunga",
                     "Rongi",
-                    "Ryabadanga"
-                  ]
+                    "Ryabadanga",
+                  ],
                 },
                 {
-                  "Sanza": [
+                  Sanza: [
                     "Gashyushya",
                     "Kansi",
                     "Mubuga",
                     "Nyaruhondo",
-                    "Sanza"
-                  ]
-                }
-              ]
+                    "Sanza",
+                  ],
+                },
+              ],
             },
             {
-              "Ndaro": [
+              Ndaro: [
                 {
-                  "Bijyojyo": [
+                  Bijyojyo: [
                     "Bijyojyo",
                     "Birima",
                     "Cyajongo",
@@ -18588,11 +18472,11 @@ const rwandaData = {
                     "Kavumu",
                     "Kibuga",
                     "Runyoni",
-                    "Rutonde"
-                  ]
+                    "Rutonde",
+                  ],
                 },
                 {
-                  "Bitabage": [
+                  Bitabage: [
                     "Gasharu",
                     "Gituza",
                     "Kamuyobora",
@@ -18600,20 +18484,20 @@ const rwandaData = {
                     "Nganzo",
                     "Ngugu",
                     "Nyamugari",
-                    "Rwamikeri"
-                  ]
+                    "Rwamikeri",
+                  ],
                 },
                 {
-                  "Kabageshi": [
+                  Kabageshi: [
                     "Gasharu",
                     "Kabuga",
                     "Kandamira",
                     "Masoro",
-                    "Ruhanga"
-                  ]
+                    "Ruhanga",
+                  ],
                 },
                 {
-                  "Kibanda": [
+                  Kibanda: [
                     "Kamina",
                     "Kideberi",
                     "Kimirehe",
@@ -18621,16 +18505,16 @@ const rwandaData = {
                     "Ruhuha",
                     "Rutambiro",
                     "Rwamateke",
-                    "Rwambogo"
-                  ]
+                    "Rwambogo",
+                  ],
                 },
-                { "Kinyovi": ["Gahunga", "Giseke", "Rugeyo", "Rusebeya"] }
-              ]
+                { Kinyovi: ["Gahunga", "Giseke", "Rugeyo", "Rusebeya"] },
+              ],
             },
             {
-              "Ngororero": [
+              Ngororero: [
                 {
-                  "Kaseke": [
+                  Kaseke: [
                     "Cyandago",
                     "Gatare",
                     "Kabeza",
@@ -18638,20 +18522,20 @@ const rwandaData = {
                     "Kanyinya",
                     "Nyabisindu",
                     "Nyamabuye",
-                    "Nyarubari"
-                  ]
+                    "Nyarubari",
+                  ],
                 },
                 {
-                  "Kazabe": [
+                  Kazabe: [
                     "Butezi",
                     "Cyansi",
                     "Kazabe",
                     "Murambi",
-                    "Ngororero"
-                  ]
+                    "Ngororero",
+                  ],
                 },
                 {
-                  "Mugano": [
+                  Mugano: [
                     "Gashinya",
                     "Kabuga",
                     "Mana",
@@ -18659,11 +18543,11 @@ const rwandaData = {
                     "Mpara",
                     "Nyabisindu",
                     "Nyenyeri",
-                    "Ruhuha"
-                  ]
+                    "Ruhuha",
+                  ],
                 },
                 {
-                  "Nyange": [
+                  Nyange: [
                     "Gatare",
                     "Gihe",
                     "Kabeza",
@@ -18671,49 +18555,49 @@ const rwandaData = {
                     "Mazimeru",
                     "Nyakaganzo",
                     "Nyange",
-                    "Turamigina"
-                  ]
+                    "Turamigina",
+                  ],
                 },
                 {
-                  "Rususa": [
+                  Rususa: [
                     "Cyumba",
                     "Gasarara",
                     "Kabagari",
                     "Nyarubingo",
                     "Rukaragata",
-                    "Rususa"
-                  ]
+                    "Rususa",
+                  ],
                 },
                 {
-                  "Torero": [
+                  Torero: [
                     "Gatare",
                     "Kanama",
                     "Karera",
                     "Nyakariba",
                     "Nyamabuye",
                     "Nyamiyaga",
-                    "Rwambariro"
-                  ]
-                }
-              ]
+                    "Rwambariro",
+                  ],
+                },
+              ],
             },
             {
-              "Nyange": [
+              Nyange: [
                 {
-                  "Bambiro": [
+                  Bambiro: [
                     "Bugabe",
                     "Butare",
                     "Gakoma",
                     "Muzi",
                     "Nyarushubi",
-                    "Rwasankuba"
-                  ]
+                    "Rwasankuba",
+                  ],
                 },
                 {
-                  "Gaseke": ["Birambo", "Dutwe", "Gaseke", "Giko", "Ngobagoba"]
+                  Gaseke: ["Birambo", "Dutwe", "Gaseke", "Giko", "Ngobagoba"],
                 },
                 {
-                  "Nsibo": [
+                  Nsibo: [
                     "Cyambogo",
                     "Kanyinya",
                     "Muganza",
@@ -18721,11 +18605,11 @@ const rwandaData = {
                     "Nyange",
                     "Nyarusange",
                     "Vungu",
-                    "Zegenya"
-                  ]
+                    "Zegenya",
+                  ],
                 },
                 {
-                  "Vuganyana": [
+                  Vuganyana: [
                     "Kakinyoni",
                     "Kamuriza",
                     "Karambo",
@@ -18733,100 +18617,100 @@ const rwandaData = {
                     "Mbobo",
                     "Ngorore",
                     "Nyagatama",
-                    "Nyamyungo"
-                  ]
-                }
-              ]
+                    "Nyamyungo",
+                  ],
+                },
+              ],
             },
             {
-              "Sovu": [
+              Sovu: [
                 {
-                  "Birembo": [
+                  Birembo: [
                     "Kabayengo",
                     "Mahembe",
                     "Muyange",
                     "Nshano",
-                    "Ruseke"
-                  ]
+                    "Ruseke",
+                  ],
                 },
                 {
-                  "Kagano": [
+                  Kagano: [
                     "Gitabage",
                     "Karambo",
                     "Ndagarago",
                     "Nyamuza",
-                    "Rusenge"
-                  ]
+                    "Rusenge",
+                  ],
                 },
                 {
-                  "Kanyana": [
+                  Kanyana: [
                     "Bitaba",
                     "Gahombo",
                     "Gashihe",
                     "Mugobati",
                     "Ruganda",
-                    "Rusebeya"
-                  ]
+                    "Rusebeya",
+                  ],
                 },
                 {
-                  "Musenyi": [
+                  Musenyi: [
                     "Gihonga",
                     "Gisakavu",
                     "Gisiza",
                     "Kabuga",
-                    "Rubindi"
-                  ]
+                    "Rubindi",
+                  ],
                 },
                 {
-                  "Nyabipfura": [
+                  Nyabipfura: [
                     "Butenga",
                     "Gatare",
                     "Migendezo",
                     "Nyirabwina",
-                    "Sanzare"
-                  ]
+                    "Sanzare",
+                  ],
                 },
                 {
-                  "Rutovu": [
+                  Rutovu: [
                     "Gasiza",
                     "Kanyirajana",
                     "Kigusa",
                     "Ngaza",
                     "Ngugu",
-                    "Rukeri"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Rukeri",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Nyabihu": [
+          Nyabihu: [
             {
-              "Bigogwe": [
+              Bigogwe: [
                 {
-                  "Arusha": [
+                  Arusha: [
                     "Arusha",
                     "Bukinanyana",
                     "Busasamana",
                     "Ngamba",
                     "Ngandu",
                     "Nyabishunguru",
-                    "Nyagihinga"
-                  ]
+                    "Nyagihinga",
+                  ],
                 },
                 {
-                  "Basumba": [
+                  Basumba: [
                     "Buheke",
                     "Gasizi",
                     "Giticyinyoni",
                     "Ngando",
                     "Rusenge",
-                    "Vuga"
-                  ]
+                    "Vuga",
+                  ],
                 },
                 {
-                  "Kijote": [
+                  Kijote: [
                     "Bikingi",
                     "Bukinanyana",
                     "Busasamana",
@@ -18836,31 +18720,31 @@ const rwandaData = {
                     "Kazuba",
                     "Kijote",
                     "Shaba",
-                    "Zihari"
-                  ]
+                    "Zihari",
+                  ],
                 },
                 {
-                  "Kora": [
+                  Kora: [
                     "Bweramana",
                     "Kabatezi",
                     "Kabuga",
                     "Kageli",
                     "Ruhinga",
                     "Rukore",
-                    "Rwankuba"
-                  ]
+                    "Rwankuba",
+                  ],
                 },
                 {
-                  "Muhe": [
+                  Muhe: [
                     "Bihangara",
                     "Kananira",
                     "Kirandaryi",
                     "Murambi",
-                    "Rusogo"
-                  ]
+                    "Rusogo",
+                  ],
                 },
                 {
-                  "Rega": [
+                  Rega: [
                     "Gaturo",
                     "Kabaya",
                     "Kagano",
@@ -18868,127 +18752,127 @@ const rwandaData = {
                     "Kinamba",
                     "Mizingo",
                     "Ngangare",
-                    "Nyagafumberi"
-                  ]
-                }
-              ]
+                    "Nyagafumberi",
+                  ],
+                },
+              ],
             },
             {
-              "Jenda": [
+              Jenda: [
                 {
-                  "Bukinanyana": [
+                  Bukinanyana: [
                     "Bibanza",
                     "Bugarama",
                     "Bukinanyana",
                     "Kageri",
                     "Karuhirwa",
                     "Kibaya",
-                    "Nsakira"
-                  ]
+                    "Nsakira",
+                  ],
                 },
                 {
-                  "Gasizi": [
+                  Gasizi: [
                     "Kagano",
                     "Kanyaru",
                     "Kanzenze",
                     "Kinyengagi",
                     "Mikingo",
                     "Munanira",
-                    "Rwanamiza"
-                  ]
+                    "Rwanamiza",
+                  ],
                 },
                 {
-                  "Kabatezi": [
+                  Kabatezi: [
                     "Gitambuko",
                     "Kagaga",
                     "Kibuye",
                     "Musumba",
                     "Ndorwa",
-                    "Runyanja"
-                  ]
+                    "Runyanja",
+                  ],
                 },
                 {
-                  "Kareba": [
+                  Kareba: [
                     "Bizu",
                     "Gikombe",
                     "Kamatenge",
                     "Kareba",
                     "Nyacyonga",
                     "Rebero",
-                    "Rubare"
-                  ]
+                    "Rubare",
+                  ],
                 },
                 {
-                  "Nyirakigugu": [
+                  Nyirakigugu: [
                     "Cyamabuye",
                     "Gisozi",
                     "Jenda",
                     "Nteranya",
                     "Nyamutukura",
-                    "Rushunguru"
-                  ]
+                    "Rushunguru",
+                  ],
                 },
                 {
-                  "Rega": [
+                  Rega: [
                     "Bihinga",
                     "Gakarara",
                     "Gasesero",
                     "Kajebeshi",
                     "Rega",
                     "Rubare",
-                    "Terimbere"
-                  ]
-                }
-              ]
+                    "Terimbere",
+                  ],
+                },
+              ],
             },
             {
-              "Jomba": [
+              Jomba: [
                 {
-                  "Gasiza": [
+                  Gasiza: [
                     "Cyumba",
                     "Gahama",
                     "Gasiza",
                     "Isangano",
                     "Kabingo",
                     "Kanama",
-                    "Nyundo"
-                  ]
+                    "Nyundo",
+                  ],
                 },
                 {
-                  "Gasura": [
+                  Gasura: [
                     "Gasura",
                     "Gisoro",
                     "Kagano",
                     "Rwandarugari",
                     "Ryabasenge",
-                    "Ryabirumba"
-                  ]
+                    "Ryabirumba",
+                  ],
                 },
                 {
-                  "Gisizi": ["Futi", "Gahanga", "Gikaranka", "Gisizi", "Kagege"]
+                  Gisizi: ["Futi", "Gahanga", "Gikaranka", "Gisizi", "Kagege"],
                 },
                 {
-                  "Guriro": [
+                  Guriro: [
                     "Guriro",
                     "Kabari",
                     "Misegwibiri",
                     "Ngabo",
                     "Nyarusongati",
-                    "Ruhunga"
-                  ]
+                    "Ruhunga",
+                  ],
                 },
                 {
-                  "Kavumu": [
+                  Kavumu: [
                     "Gasanze",
                     "Kavumu",
                     "Muhare",
                     "Munyege",
                     "Rugerero",
-                    "Rushubi"
-                  ]
+                    "Rushubi",
+                  ],
                 },
                 {
-                  "Nyamitanzi": [
+                  Nyamitanzi: [
                     "Bihinga",
                     "Kivumu",
                     "Ntwaro",
@@ -18996,60 +18880,60 @@ const rwandaData = {
                     "Rubavu",
                     "Rugera",
                     "Ruhongore",
-                    "Rutabu"
-                  ]
-                }
-              ]
+                    "Rutabu",
+                  ],
+                },
+              ],
             },
             {
-              "Kabatwa": [
-                { "Batikoti": ["Batikoti", "Kamuhe", "Rubare", "Sake"] },
-                { "Cyamvumba": ["Kabagabo", "Murambi", "Nyabitembo"] },
-                { "Gihorwe": ["Bisukiro", "Kaminuza", "Kinyababa", "Rushubi"] },
+              Kabatwa: [
+                { Batikoti: ["Batikoti", "Kamuhe", "Rubare", "Sake"] },
+                { Cyamvumba: ["Kabagabo", "Murambi", "Nyabitembo"] },
+                { Gihorwe: ["Bisukiro", "Kaminuza", "Kinyababa", "Rushubi"] },
                 {
-                  "Myuga": [
+                  Myuga: [
                     "Akabeza",
                     "Akimitoni",
                     "Butaka",
                     "Myuga",
-                    "Rugendabari"
-                  ]
+                    "Rugendabari",
+                  ],
                 },
                 {
-                  "Ngando": [
+                  Ngando: [
                     "Gaharawe",
                     "Kiramira",
                     "Mahurura",
                     "Ngando",
-                    "Ruhango"
-                  ]
+                    "Ruhango",
+                  ],
                 },
                 {
-                  "Rugarama": [
+                  Rugarama: [
                     "Karambi",
                     "Kinkware",
                     "Masasa",
                     "Rebero",
-                    "Remera"
-                  ]
-                }
-              ]
+                    "Remera",
+                  ],
+                },
+              ],
             },
             {
-              "Karago": [
+              Karago: [
                 {
-                  "Busoro": [
+                  Busoro: [
                     "Gasasa",
                     "Gatagara",
                     "Gisesa",
                     "Kageshi",
                     "Kagohe",
                     "Rebero",
-                    "Ruhigiro"
-                  ]
+                    "Ruhigiro",
+                  ],
                 },
                 {
-                  "Cyamabuye": [
+                  Cyamabuye: [
                     "Buremera",
                     "Kinyanja",
                     "Matyazo",
@@ -19057,32 +18941,32 @@ const rwandaData = {
                     "Muremure",
                     "Nanga",
                     "Nkomane",
-                    "Rubare"
-                  ]
+                    "Rubare",
+                  ],
                 },
                 {
-                  "Gatagara": [
+                  Gatagara: [
                     "Bikereri",
                     "Budacya",
                     "Gatwe",
                     "Gisunzu",
                     "Karambi",
                     "Kinanira",
-                    "Muvure"
-                  ]
+                    "Muvure",
+                  ],
                 },
                 {
-                  "Gihirwa": [
+                  Gihirwa: [
                     "Biseke",
                     "Gifumba",
                     "Kanombe",
                     "Nyagasozi",
                     "Rugarambiro",
-                    "Rurambo"
-                  ]
+                    "Rurambo",
+                  ],
                 },
                 {
-                  "Kadahenda": [
+                  Kadahenda: [
                     "Bukongora",
                     "Gakoma",
                     "Gihira",
@@ -19091,135 +18975,135 @@ const rwandaData = {
                     "Muremure",
                     "Mwiyanike",
                     "Nkomane",
-                    "Nyaburaro"
-                  ]
+                    "Nyaburaro",
+                  ],
                 },
                 {
-                  "Karengera": [
+                  Karengera: [
                     "Hanika",
                     "Kirwa",
                     "Mashyuza",
                     "Remera",
                     "Ruyebe",
-                    "Rwumuyaga"
-                  ]
-                }
-              ]
+                    "Rwumuyaga",
+                  ],
+                },
+              ],
             },
             {
-              "Kintobo": [
+              Kintobo: [
                 {
-                  "Gatovu": [
+                  Gatovu: [
                     "Gatovu Centre",
                     "Giharo",
                     "Nyagitaba",
                     "Nyarusekera",
-                    "Rubande"
-                  ]
+                    "Rubande",
+                  ],
                 },
                 {
-                  "Kintobo": ["Bikingi", "Gakoro", "Gasura", "Gasyo", "Kansesa"]
+                  Kintobo: ["Bikingi", "Gakoro", "Gasura", "Gasyo", "Kansesa"],
                 },
                 {
-                  "Nyagisozi": [
+                  Nyagisozi: [
                     "Dehero",
                     "Hungiro",
                     "Nyanshundura",
                     "Rutoyi",
-                    "Sinayi"
-                  ]
+                    "Sinayi",
+                  ],
                 },
                 {
-                  "Nyamugari": [
+                  Nyamugari: [
                     "Kabagundu",
                     "Kariyeri",
                     "Karucuranya",
                     "Kiyumba",
-                    "Kizunga"
-                  ]
+                    "Kizunga",
+                  ],
                 },
-                { "Rukondo": ["Kamanga", "Kankima", "Kimpundu", "Mugogo"] },
+                { Rukondo: ["Kamanga", "Kankima", "Kimpundu", "Mugogo"] },
                 {
-                  "Ryinyo": [
+                  Ryinyo: [
                     "Gahwege",
                     "Gasenyi",
                     "Humiro",
                     "Kabashumba Centre",
                     "Kadaterurwa",
                     "Kirwa",
-                    "Rwamikeri"
-                  ]
-                }
-              ]
+                    "Rwamikeri",
+                  ],
+                },
+              ],
             },
             {
-              "Mukamira": [
-                { "Gasizi": ["Kamiro", "Sasangabo"] },
+              Mukamira: [
+                { Gasizi: ["Kamiro", "Sasangabo"] },
                 {
-                  "Jaba": [
+                  Jaba: [
                     "Biriba",
                     "Butondwe",
                     "Gisenyi",
                     "Hesha",
                     "Nyirabashenyi",
-                    "Rwanyirangeni"
-                  ]
+                    "Rwanyirangeni",
+                  ],
                 },
-                { "Kanyove": ["Kabere", "Kanyove", "Musumba", "Rwaseka"] },
+                { Kanyove: ["Kabere", "Kanyove", "Musumba", "Rwaseka"] },
                 {
-                  "Rubaya": [
+                  Rubaya: [
                     "Cyivugiza",
                     "Gashonero",
                     "Kaburende",
                     "Karandaryi",
                     "Kinyababa",
-                    "Rwamikeri"
-                  ]
+                    "Rwamikeri",
+                  ],
                 },
                 {
-                  "Rugeshi": [
+                  Rugeshi: [
                     "Cyinkenke",
                     "Cyumukenke",
                     "Kamenyo",
                     "Karama",
                     "Kazibake",
-                    "Kazuba"
-                  ]
+                    "Kazuba",
+                  ],
                 },
                 {
-                  "Rukoma": [
+                  Rukoma: [
                     "Bihinga",
                     "Gatare",
                     "Gitete",
                     "Pfunda",
-                    "Rugaragara"
-                  ]
+                    "Rugaragara",
+                  ],
                 },
                 {
-                  "Rurengeri": [
+                  Rurengeri: [
                     "Kabyaza",
                     "Kibugazi",
                     "Maziba",
                     "Rugarambiro",
                     "Rutovu",
-                    "Rwankeri"
-                  ]
-                }
-              ]
+                    "Rwankeri",
+                  ],
+                },
+              ],
             },
             {
-              "Muringa": [
+              Muringa: [
                 {
-                  "Gisizi": [
+                  Gisizi: [
                     "Kabyuma",
                     "Kinihira",
                     "Kinyasenge",
                     "Munini",
-                    "Muremure"
-                  ]
+                    "Muremure",
+                  ],
                 },
                 {
-                  "Mulinga": [
+                  Mulinga: [
                     "Bunywero",
                     "Gakamba",
                     "Gora",
@@ -19228,11 +19112,11 @@ const rwandaData = {
                     "Kivugiza",
                     "Migongo",
                     "Ruganda",
-                    "Rurambo"
-                  ]
+                    "Rurambo",
+                  ],
                 },
                 {
-                  "Mwiyanike": [
+                  Mwiyanike: [
                     "Gitebe",
                     "Kayanza",
                     "Kivuruga",
@@ -19240,75 +19124,75 @@ const rwandaData = {
                     "Musaraba",
                     "Nyankukuma",
                     "Ryamwana",
-                    "Ryanyirandaba"
-                  ]
+                    "Ryanyirandaba",
+                  ],
                 },
                 {
-                  "Nkomane": [
+                  Nkomane: [
                     "Kamajanga",
                     "Kigusa",
                     "Kinaba",
                     "Mabare",
-                    "Muremure"
-                  ]
+                    "Muremure",
+                  ],
                 },
                 {
-                  "Nyamasheke": [
+                  Nyamasheke: [
                     "Bambiro",
                     "Kanwiri",
                     "Muyange",
                     "Nyamasheke",
-                    "Rubare"
-                  ]
+                    "Rubare",
+                  ],
                 },
                 {
-                  "Rwantobo": [
+                  Rwantobo: [
                     "Gasura",
                     "Karambi",
                     "Musenyi",
                     "Ntango",
                     "Rurembo",
-                    "Rwandarugari"
-                  ]
-                }
-              ]
+                    "Rwandarugari",
+                  ],
+                },
+              ],
             },
             {
-              "Rambura": [
+              Rambura: [
                 {
-                  "Birembo": [
+                  Birembo: [
                     "Birembo",
                     "Cyugi",
                     "Kimisebeya",
                     "Mariba",
                     "Munyangari",
                     "Nyavuvu",
-                    "Rugarambiro"
-                  ]
+                    "Rugarambiro",
+                  ],
                 },
                 {
-                  "Guriro": [
+                  Guriro: [
                     "Cyanika",
                     "Kimisebeya",
                     "Nteko",
                     "Nyanguragura",
                     "Raro",
-                    "Rusogo"
-                  ]
+                    "Rusogo",
+                  ],
                 },
                 {
-                  "Kibisabo": [
+                  Kibisabo: [
                     "Bugonde",
                     "Gatare",
                     "Kabeza",
                     "Karambi",
                     "Kinihira",
                     "Nyampuhu",
-                    "Rwenzo"
-                  ]
+                    "Rwenzo",
+                  ],
                 },
                 {
-                  "Mutaho": [
+                  Mutaho: [
                     "Bihangara",
                     "Bukinanyana",
                     "Kiraza",
@@ -19316,11 +19200,11 @@ const rwandaData = {
                     "Nyiragikokora",
                     "Rusekera",
                     "Rutazigurwa",
-                    "Sukiro"
-                  ]
+                    "Sukiro",
+                  ],
                 },
                 {
-                  "Nyundo": [
+                  Nyundo: [
                     "Gasiza",
                     "Kamifuho",
                     "Myumba",
@@ -19328,35 +19212,35 @@ const rwandaData = {
                     "Ntagihendo",
                     "Nyempanika",
                     "Rusereka",
-                    "Rwinkingi"
-                  ]
+                    "Rwinkingi",
+                  ],
                 },
                 {
-                  "Rugamba": [
+                  Rugamba: [
                     "Giharo",
                     "Kamiro",
                     "Kibumbiro",
                     "Muturagara",
                     "Muturirwa",
-                    "Nkomane"
-                  ]
-                }
-              ]
+                    "Nkomane",
+                  ],
+                },
+              ],
             },
             {
-              "Rugera": [
+              Rugera: [
                 {
-                  "Gakoro": [
+                  Gakoro: [
                     "Bweru",
                     "Kintore",
                     "Mubuga",
                     "Nyakigezi",
                     "Nyarubingo",
-                    "Nyarusange"
-                  ]
+                    "Nyarusange",
+                  ],
                 },
                 {
-                  "Marangara": [
+                  Marangara: [
                     "Bwumba",
                     "Gasayo",
                     "Gasiza",
@@ -19365,22 +19249,22 @@ const rwandaData = {
                     "Kagano",
                     "Nyagasozi",
                     "Rwangege",
-                    "Tetero"
-                  ]
+                    "Tetero",
+                  ],
                 },
                 {
-                  "Nyagahondo": [
+                  Nyagahondo: [
                     "Buhete",
                     "Gitotsi",
                     "Kabyaza",
                     "Muhare",
                     "Munyinya",
                     "Musenyi",
-                    "Nganzo"
-                  ]
+                    "Nganzo",
+                  ],
                 },
                 {
-                  "Nyarutembe": [
+                  Nyarutembe: [
                     "Gatyazo",
                     "Gisenyi",
                     "Jari",
@@ -19388,11 +19272,11 @@ const rwandaData = {
                     "Kibumba",
                     "Kirebe",
                     "Mwambi",
-                    "Nyamugari"
-                  ]
+                    "Nyamugari",
+                  ],
                 },
                 {
-                  "Rurembo": [
+                  Rurembo: [
                     "Bihe",
                     "Bukango",
                     "Cyasenge",
@@ -19400,26 +19284,26 @@ const rwandaData = {
                     "Gaseke",
                     "Gihuri",
                     "Karambi",
-                    "Murama"
-                  ]
+                    "Murama",
+                  ],
                 },
                 {
-                  "Tyazo": [
+                  Tyazo: [
                     "Harabana",
                     "Kabuye",
                     "Kingona",
                     "Kiyanza",
                     "Mucaca",
                     "Murengeri",
-                    "Nyakiriba"
-                  ]
-                }
-              ]
+                    "Nyakiriba",
+                  ],
+                },
+              ],
             },
             {
-              "Rurembo": [
+              Rurembo: [
                 {
-                  "Gahondo": [
+                  Gahondo: [
                     "Bihira",
                     "Gahoko",
                     "Gitega",
@@ -19429,22 +19313,22 @@ const rwandaData = {
                     "Murungu",
                     "Musenyi",
                     "Rugendabari",
-                    "Rwamigega"
-                  ]
+                    "Rwamigega",
+                  ],
                 },
                 {
-                  "Gitega": [
+                  Gitega: [
                     "Bukangano",
                     "Cyanika",
                     "Cyivugiza",
                     "Cyuve",
                     "Gitega",
                     "Kagusa",
-                    "Rurambo"
-                  ]
+                    "Rurambo",
+                  ],
                 },
                 {
-                  "Kirimbogo": [
+                  Kirimbogo: [
                     "Cyayu",
                     "Cyinkware",
                     "Cyogo",
@@ -19453,11 +19337,11 @@ const rwandaData = {
                     "Karuhara",
                     "Kinaba",
                     "Nturo",
-                    "Nturoy Inkoko"
-                  ]
+                    "Nturoy Inkoko",
+                  ],
                 },
                 {
-                  "Murambi": [
+                  Murambi: [
                     "Bugeshi",
                     "Gahondo",
                     "Gisoro",
@@ -19469,22 +19353,22 @@ const rwandaData = {
                     "Muremure",
                     "Nyarukangaga",
                     "Rubavu",
-                    "Rubona I"
-                  ]
+                    "Rubona I",
+                  ],
                 },
                 {
-                  "Mwana": [
+                  Mwana: [
                     "Busenge",
                     "Kamugarura",
                     "Karukungu",
                     "Murama",
                     "Mwana",
                     "Nemba",
-                    "Nyagahangara"
-                  ]
+                    "Nyagahangara",
+                  ],
                 },
                 {
-                  "Rwaza": [
+                  Rwaza: [
                     "Gatobo",
                     "Gifunzo",
                     "Kabutozi",
@@ -19500,71 +19384,71 @@ const rwandaData = {
                     "Rugarambiro",
                     "Rugote",
                     "Rwanika",
-                    "Tubuye"
-                  ]
-                }
-              ]
+                    "Tubuye",
+                  ],
+                },
+              ],
             },
             {
-              "Shyira": [
+              Shyira: [
                 {
-                  "Cyimanzovu": [
+                  Cyimanzovu: [
                     "Bihembe",
                     "Cyinyana",
                     "Kabuga",
                     "Mugwato",
-                    "Murikwa"
-                  ]
+                    "Murikwa",
+                  ],
                 },
                 {
-                  "Kanyamitana": [
+                  Kanyamitana: [
                     "Kamahoro",
                     "Kazirankara",
                     "Kibuye",
                     "Kigabiro",
                     "Mataba",
-                    "Rubaba"
-                  ]
+                    "Rubaba",
+                  ],
                 },
                 {
-                  "Kintarure": [
+                  Kintarure: [
                     "Kabagabo",
                     "Kabuguzo",
                     "Mabare",
                     "Munanira",
-                    "Remera"
-                  ]
+                    "Remera",
+                  ],
                 },
                 {
-                  "Mpinga": [
+                  Mpinga: [
                     "Gacurabwenge",
                     "Kagongo",
                     "Mukaka",
                     "Rwabahungu",
-                    "Vunga"
-                  ]
+                    "Vunga",
+                  ],
                 },
-                { "Mutanda": ["Kaziba", "Kidandari", "Murambi", "Ntende"] },
+                { Mutanda: ["Kaziba", "Kidandari", "Murambi", "Ntende"] },
                 {
-                  "Shaki": [
+                  Shaki: [
                     "Gitega",
                     "Kabuga",
                     "Karambi",
                     "Kirwa",
                     "Kiyovu",
-                    "Rutoyi"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Rutoyi",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Nyamasheke": [
+          Nyamasheke: [
             {
-              "Bushekeri": [
+              Bushekeri: [
                 {
-                  "Buvungira": [
+                  Buvungira: [
                     "Buhinga",
                     "Bushekeri",
                     "Buvungira",
@@ -19576,20 +19460,14 @@ const rwandaData = {
                     "Ruvumbu",
                     "Rwumba",
                     "Winkamba",
-                    "Yove"
-                  ]
+                    "Yove",
+                  ],
                 },
                 {
-                  "Mpumbu": [
-                    "Bona",
-                    "Gahondo",
-                    "Kamina",
-                    "Karambi",
-                    "Kirombozi"
-                  ]
+                  Mpumbu: ["Bona", "Gahondo", "Kamina", "Karambi", "Kirombozi"],
                 },
                 {
-                  "Ngoma": [
+                  Ngoma: [
                     "Bitare",
                     "Buhembe",
                     "Bukiro",
@@ -19597,26 +19475,26 @@ const rwandaData = {
                     "Kagarama",
                     "Kanyovu",
                     "Mashuhira",
-                    "Rugeregere"
-                  ]
+                    "Rugeregere",
+                  ],
                 },
                 {
-                  "Nyarusange": [
+                  Nyarusange: [
                     "Butangata",
                     "Gatoki",
                     "Kinini",
                     "Mubuga",
                     "Nyanza",
                     "Rundwe",
-                    "Rweza"
-                  ]
-                }
-              ]
+                    "Rweza",
+                  ],
+                },
+              ],
             },
             {
-              "Bushenge": [
+              Bushenge: [
                 {
-                  "Gasheke": [
+                  Gasheke: [
                     "Bagiramenyo",
                     "Biguzi",
                     "Bugungu",
@@ -19629,11 +19507,11 @@ const rwandaData = {
                     "Kigenge",
                     "Kivoga",
                     "Nyamikingo",
-                    "Rwashyamba"
-                  ]
+                    "Rwashyamba",
+                  ],
                 },
                 {
-                  "Impala": [
+                  Impala: [
                     "Birava",
                     "Buninda",
                     "Bushenge",
@@ -19642,11 +19520,11 @@ const rwandaData = {
                     "Kabeza",
                     "Mucuzi",
                     "Rumanga",
-                    "Runyinya"
-                  ]
+                    "Runyinya",
+                  ],
                 },
                 {
-                  "Kagatamu": [
+                  Kagatamu: [
                     "Gashirabwoba",
                     "Gasura",
                     "Gatare",
@@ -19656,11 +19534,11 @@ const rwandaData = {
                     "Maherero",
                     "Ruhinamavi",
                     "Ruhinga I",
-                    "Ruhinga II"
-                  ]
+                    "Ruhinga II",
+                  ],
                 },
                 {
-                  "Karusimbi": [
+                  Karusimbi: [
                     "Gahongo",
                     "Gakombe",
                     "Gasharu",
@@ -19669,15 +19547,15 @@ const rwandaData = {
                     "Kigaga",
                     "Nyakagezi",
                     "Remera",
-                    "Rwumuyaga"
-                  ]
-                }
-              ]
+                    "Rwumuyaga",
+                  ],
+                },
+              ],
             },
             {
-              "Cyato": [
+              Cyato: [
                 {
-                  "Bisumo": [
+                  Bisumo: [
                     "Gasasa",
                     "Hangari",
                     "Kabuga",
@@ -19687,11 +19565,11 @@ const rwandaData = {
                     "Rugabe",
                     "Rugarama",
                     "Ruhengeri",
-                    "Rwaramba"
-                  ]
+                    "Rwaramba",
+                  ],
                 },
                 {
-                  "Murambi": [
+                  Murambi: [
                     "Bigeyo",
                     "Cyato",
                     "Kamonyi",
@@ -19702,11 +19580,11 @@ const rwandaData = {
                     "Murenge",
                     "Mutiti",
                     "Nkomero",
-                    "Nyakabingo"
-                  ]
+                    "Nyakabingo",
+                  ],
                 },
                 {
-                  "Mutongo": [
+                  Mutongo: [
                     "Bwanama",
                     "Kavumu",
                     "Kizinga",
@@ -19714,26 +19592,26 @@ const rwandaData = {
                     "Rushahaga",
                     "Rusi",
                     "Rutiritiri",
-                    "Yove"
-                  ]
+                    "Yove",
+                  ],
                 },
                 {
-                  "Rugari": [
+                  Rugari: [
                     "Gakenke",
                     "Gashihe",
                     "Gituntu",
                     "Karambo",
                     "Ntsinduka",
                     "Rubeho",
-                    "Rwumba"
-                  ]
-                }
-              ]
+                    "Rwumba",
+                  ],
+                },
+              ],
             },
             {
-              "Gihombo": [
+              Gihombo: [
                 {
-                  "Butare": [
+                  Butare: [
                     "Butare",
                     "Gahanda",
                     "Gasharu",
@@ -19741,11 +19619,11 @@ const rwandaData = {
                     "Nyakabungo",
                     "Rugaragara",
                     "Rwamatamu",
-                    "Rwatsi"
-                  ]
+                    "Rwatsi",
+                  ],
                 },
                 {
-                  "Gitwa": [
+                  Gitwa: [
                     "Birehe",
                     "Bwerankori",
                     "Doga",
@@ -19754,21 +19632,21 @@ const rwandaData = {
                     "Gasharu",
                     "Kinanira",
                     "Nyagahinga",
-                    "Ruboreza"
-                  ]
+                    "Ruboreza",
+                  ],
                 },
                 {
-                  "Jarama": [
+                  Jarama: [
                     "Bigabiro",
                     "Buseso",
                     "Kadobogo",
                     "Karehe",
                     "Kibirizi",
-                    "Ruvumbu"
-                  ]
+                    "Ruvumbu",
+                  ],
                 },
                 {
-                  "Kibingo": [
+                  Kibingo: [
                     "Gituruka",
                     "Kigarama",
                     "Mataba",
@@ -19777,25 +19655,25 @@ const rwandaData = {
                     "Rushoka",
                     "Rusuzumiro",
                     "Rwabisindu",
-                    "Rwanyundo"
-                  ]
+                    "Rwanyundo",
+                  ],
                 },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Bungo",
                     "Butembo",
                     "Mubuga",
                     "Muhavu",
                     "Muhororo",
-                    "Ruhingo"
-                  ]
-                }
-              ]
+                    "Ruhingo",
+                  ],
+                },
+              ],
             },
             {
-              "Kagano": [
+              Kagano: [
                 {
-                  "Gako": [
+                  Gako: [
                     "Bagarama",
                     "Gasharu",
                     "Gitwa",
@@ -19806,11 +19684,11 @@ const rwandaData = {
                     "Rushondi",
                     "Rwangoma",
                     "Rwisovu",
-                    "Ryarutungura"
-                  ]
+                    "Ryarutungura",
+                  ],
                 },
                 {
-                  "Mubumbano": [
+                  Mubumbano: [
                     "Bisoro",
                     "Gikomero",
                     "Gitanga",
@@ -19821,11 +19699,11 @@ const rwandaData = {
                     "Mikingo",
                     "Murambi",
                     "Nyagashinge",
-                    "Nyamirambo"
-                  ]
+                    "Nyamirambo",
+                  ],
                 },
                 {
-                  "Ninzi": [
+                  Ninzi: [
                     "Gasayo",
                     "Gikuyu",
                     "Kavune",
@@ -19833,22 +19711,22 @@ const rwandaData = {
                     "Murwa",
                     "Ninzi",
                     "Nyabageni",
-                    "Rugabano"
-                  ]
+                    "Rugabano",
+                  ],
                 },
                 {
-                  "Rwesero": [
+                  Rwesero: [
                     "Gasharu",
                     "Gitaba",
                     "Kamasera",
                     "Kijibamba",
                     "Kirehe",
                     "Mutusa",
-                    "Rwesero"
-                  ]
+                    "Rwesero",
+                  ],
                 },
                 {
-                  "Shara": [
+                  Shara: [
                     "Byahi",
                     "Gahumba",
                     "Gihinga",
@@ -19861,15 +19739,15 @@ const rwandaData = {
                     "Mugohe",
                     "Murambi",
                     "Ntumba",
-                    "Rambira"
-                  ]
-                }
-              ]
+                    "Rambira",
+                  ],
+                },
+              ],
             },
             {
-              "Kanjongo": [
+              Kanjongo: [
                 {
-                  "Kibogora": [
+                  Kibogora: [
                     "Bizenga",
                     "Gataba",
                     "Kabuyaga",
@@ -19880,11 +19758,11 @@ const rwandaData = {
                     "Nyagacaca",
                     "Nyarusange",
                     "Nyenyeri",
-                    "Rwakagaju"
-                  ]
+                    "Rwakagaju",
+                  ],
                 },
                 {
-                  "Kigarama": [
+                  Kigarama: [
                     "Gakomeye",
                     "Gatare",
                     "Gisagara",
@@ -19892,22 +19770,22 @@ const rwandaData = {
                     "Kajumiro",
                     "Karambi",
                     "Karehe",
-                    "Murambi"
-                  ]
+                    "Murambi",
+                  ],
                 },
                 {
-                  "Kigoya": [
+                  Kigoya: [
                     "Bujanga",
                     "Kabaga",
                     "Kigugu",
                     "Kirambo",
                     "Museke",
                     "Nkero",
-                    "Ruganzu"
-                  ]
+                    "Ruganzu",
+                  ],
                 },
                 {
-                  "Raro": [
+                  Raro: [
                     "Baraguma",
                     "Gasihe",
                     "Gasumo",
@@ -19915,11 +19793,11 @@ const rwandaData = {
                     "Kamina",
                     "Musasa",
                     "Rambura",
-                    "Rugeyo"
-                  ]
+                    "Rugeyo",
+                  ],
                 },
                 {
-                  "Susa": [
+                  Susa: [
                     "Gakenke",
                     "Gatebe",
                     "Kamuramira",
@@ -19927,15 +19805,15 @@ const rwandaData = {
                     "Marongi",
                     "Nyarubura",
                     "Ruganda",
-                    "Wamugeyo"
-                  ]
-                }
-              ]
+                    "Wamugeyo",
+                  ],
+                },
+              ],
             },
             {
-              "Karambi": [
+              Karambi: [
                 {
-                  "Gasovu": [
+                  Gasovu: [
                     "Bitare",
                     "Gasamba",
                     "Gikangaga",
@@ -19944,11 +19822,11 @@ const rwandaData = {
                     "Murambi",
                     "Nyarugenge",
                     "Rurembo",
-                    "Ryanyagahangara"
-                  ]
+                    "Ryanyagahangara",
+                  ],
                 },
                 {
-                  "Gitwe": [
+                  Gitwe: [
                     "Giti",
                     "Gitwe",
                     "Kamina",
@@ -19956,11 +19834,11 @@ const rwandaData = {
                     "Kibiko",
                     "Mburabuturo",
                     "Rubingo",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Kabuga": [
+                  Kabuga: [
                     "Bugarama",
                     "Gaseke",
                     "Kamukiza",
@@ -19970,11 +19848,11 @@ const rwandaData = {
                     "Nyabitare",
                     "Nyarusovu",
                     "Rugano",
-                    "Rutiti"
-                  ]
+                    "Rutiti",
+                  ],
                 },
                 {
-                  "Kagarama": [
+                  Kagarama: [
                     "Bizimba",
                     "Cyankuba",
                     "Gituntu",
@@ -19984,11 +19862,11 @@ const rwandaData = {
                     "Misirimbo",
                     "Rubona",
                     "Tetero",
-                    "Wibungo"
-                  ]
+                    "Wibungo",
+                  ],
                 },
                 {
-                  "Rushyarara": [
+                  Rushyarara: [
                     "Amizero",
                     "Cyivugiza",
                     "Kageyo",
@@ -19997,43 +19875,43 @@ const rwandaData = {
                     "Rudaga",
                     "Ruzibira",
                     "Rwunamuka",
-                    "Tyazo"
-                  ]
-                }
-              ]
+                    "Tyazo",
+                  ],
+                },
+              ],
             },
             {
-              "Karengera": [
+              Karengera: [
                 {
-                  "Gasayo": [
+                  Gasayo: [
                     "Gitwa",
                     "Muganza",
                     "Nyamugari",
                     "Nyamurira",
-                    "Rubona"
-                  ]
+                    "Rubona",
+                  ],
                 },
                 {
-                  "Gashashi": [
+                  Gashashi: [
                     "Kabuye",
                     "Kanenge",
                     "Karangiro",
                     "Mwiyando",
-                    "Rwinkuba"
-                  ]
+                    "Rwinkuba",
+                  ],
                 },
                 {
-                  "Higiro": [
+                  Higiro: [
                     "Gihaya",
                     "Gitunda",
                     "Mpinga",
                     "Muhora",
                     "Rujeberi",
-                    "Rukunguri"
-                  ]
+                    "Rukunguri",
+                  ],
                 },
                 {
-                  "Miko": [
+                  Miko: [
                     "Boli",
                     "Kabisheshe",
                     "Karehe",
@@ -20041,11 +19919,11 @@ const rwandaData = {
                     "Nyabwinshi",
                     "Nyagisozi",
                     "Nyamiyaga",
-                    "Rutare"
-                  ]
+                    "Rutare",
+                  ],
                 },
                 {
-                  "Mwezi": [
+                  Mwezi: [
                     "Gakeri",
                     "Gatagara",
                     "Kamanu",
@@ -20053,15 +19931,15 @@ const rwandaData = {
                     "Nyagashikura",
                     "Nyarusange",
                     "Ruhabwa",
-                    "Ruhinga"
-                  ]
-                }
-              ]
+                    "Ruhinga",
+                  ],
+                },
+              ],
             },
             {
-              "Kirimbi": [
+              Kirimbi: [
                 {
-                  "Cyimpindu": [
+                  Cyimpindu: [
                     "Buha",
                     "Gitwa",
                     "Kamatare",
@@ -20069,11 +19947,11 @@ const rwandaData = {
                     "Rugeregere",
                     "Uwakibaba",
                     "Uwamuduru",
-                    "Uwamugisha"
-                  ]
+                    "Uwamugisha",
+                  ],
                 },
                 {
-                  "Karengera": [
+                  Karengera: [
                     "Gisenyi",
                     "Kabuga",
                     "Kaburiro",
@@ -20082,11 +19960,11 @@ const rwandaData = {
                     "Mukoto",
                     "Nduba",
                     "Rubumba",
-                    "Rugote"
-                  ]
+                    "Rugote",
+                  ],
                 },
                 {
-                  "Muhororo": [
+                  Muhororo: [
                     "Gabiro",
                     "Gacumbi",
                     "Giseke",
@@ -20094,26 +19972,26 @@ const rwandaData = {
                     "Kigarama",
                     "Nyagacaca",
                     "Nyakabingo",
-                    "Rusebeya"
-                  ]
+                    "Rusebeya",
+                  ],
                 },
                 {
-                  "Nyarusange": [
+                  Nyarusange: [
                     "Bunyamanza",
                     "Gisheke",
                     "Gitsimbwe",
                     "Mushungo",
                     "Nyabinaga",
                     "Rubona",
-                    "Rwamiko"
-                  ]
-                }
-              ]
+                    "Rwamiko",
+                  ],
+                },
+              ],
             },
             {
-              "Macuba": [
+              Macuba: [
                 {
-                  "Gatare": [
+                  Gatare: [
                     "Buhoro",
                     "Gaseke",
                     "Gasharu",
@@ -20125,22 +20003,22 @@ const rwandaData = {
                     "Rugarama",
                     "Ryasagahara",
                     "Wimana",
-                    "Wingabe"
-                  ]
+                    "Wingabe",
+                  ],
                 },
                 {
-                  "Mutongo": [
+                  Mutongo: [
                     "Kamina",
                     "Kanyenkondo",
                     "Karamba",
                     "Nyabihanga",
                     "Rupango",
                     "Ryagatari",
-                    "Ryarugamba"
-                  ]
+                    "Ryarugamba",
+                  ],
                 },
                 {
-                  "Nyakabingo": [
+                  Nyakabingo: [
                     "Kajumiro",
                     "Kanyege",
                     "Mataba",
@@ -20149,11 +20027,11 @@ const rwandaData = {
                     "Nyarunombe",
                     "Rugote",
                     "Rumamfu",
-                    "Rwankuba"
-                  ]
+                    "Rwankuba",
+                  ],
                 },
                 {
-                  "Rugari": [
+                  Rugari: [
                     "Bitaba",
                     "Bunyamanza",
                     "Butare",
@@ -20168,11 +20046,11 @@ const rwandaData = {
                     "Rusozi",
                     "Rutaragwe",
                     "Rwambogo",
-                    "Rwamiko"
-                  ]
+                    "Rwamiko",
+                  ],
                 },
                 {
-                  "Vugangoma": [
+                  Vugangoma: [
                     "Bitega",
                     "Bizi",
                     "Cyijima",
@@ -20182,15 +20060,15 @@ const rwandaData = {
                     "Nkuro",
                     "Nyagahinga",
                     "Nyarusange",
-                    "Wisovu"
-                  ]
-                }
-              ]
+                    "Wisovu",
+                  ],
+                },
+              ],
             },
             {
-              "Mahembe": [
+              Mahembe: [
                 {
-                  "Gisoke": [
+                  Gisoke: [
                     "Fumba",
                     "Giko",
                     "Gisebeya",
@@ -20198,11 +20076,11 @@ const rwandaData = {
                     "Kanyoni",
                     "Kivumu",
                     "Muramba",
-                    "Nyabumera"
-                  ]
+                    "Nyabumera",
+                  ],
                 },
                 {
-                  "Kagarama": [
+                  Kagarama: [
                     "Gabiro",
                     "Gasharu",
                     "Giti",
@@ -20211,37 +20089,37 @@ const rwandaData = {
                     "Mikingo",
                     "Nyamiheha",
                     "Ruhanga",
-                    "Rukaragata"
-                  ]
+                    "Rukaragata",
+                  ],
                 },
                 {
-                  "Nyagatare": [
+                  Nyagatare: [
                     "Gatare",
                     "Karambo",
                     "Kizenga",
                     "Murundo",
                     "Nyagahima",
                     "Nyakabande",
-                    "Uwamaheke"
-                  ]
+                    "Uwamaheke",
+                  ],
                 },
                 {
-                  "Nyakavumu": [
+                  Nyakavumu: [
                     "Bigali",
                     "Bisharara",
                     "Bungo",
                     "Cyinjira",
                     "Cyiya",
                     "Gitwa",
-                    "Nyarusiza"
-                  ]
-                }
-              ]
+                    "Nyarusiza",
+                  ],
+                },
+              ],
             },
             {
-              "Nyabitekeri": [
+              Nyabitekeri: [
                 {
-                  "Kigabiro": [
+                  Kigabiro: [
                     "Bunyenga",
                     "Butsure",
                     "Cyamuti",
@@ -20251,11 +20129,11 @@ const rwandaData = {
                     "Mariba",
                     "Murambi",
                     "Ruginga",
-                    "Rweru"
-                  ]
+                    "Rweru",
+                  ],
                 },
                 {
-                  "Kinunga": [
+                  Kinunga: [
                     "Gahwazi",
                     "Gasebeya",
                     "Gashashi",
@@ -20266,11 +20144,11 @@ const rwandaData = {
                     "Mukarange",
                     "Muremure",
                     "Rugarama",
-                    "Shenyeri"
-                  ]
+                    "Shenyeri",
+                  ],
                 },
                 {
-                  "Mariba": [
+                  Mariba: [
                     "Buhinga",
                     "Gahuhezi",
                     "Gakoma",
@@ -20281,11 +20159,11 @@ const rwandaData = {
                     "Karango",
                     "Mataba",
                     "Murenge",
-                    "Nyarusange"
-                  ]
+                    "Nyarusange",
+                  ],
                 },
                 {
-                  "Muyange": [
+                  Muyange: [
                     "Buhokoro",
                     "Bukiro",
                     "Bukuri",
@@ -20295,11 +20173,11 @@ const rwandaData = {
                     "Kazibo",
                     "Nyange",
                     "Taba",
-                    "Tundwe"
-                  ]
+                    "Tundwe",
+                  ],
                 },
                 {
-                  "Ntango": [
+                  Ntango: [
                     "Bugiga",
                     "Buhinga",
                     "Kankoni",
@@ -20309,52 +20187,46 @@ const rwandaData = {
                     "Nyamirundi",
                     "Rebero",
                     "Ruhonga",
-                    "Taba"
-                  ]
-                }
-              ]
+                    "Taba",
+                  ],
+                },
+              ],
             },
             {
-              "Rangiro": [
+              Rangiro: [
                 {
-                  "Banda": ["Bururi", "Gahira", "Gasumo", "Nkamba", "Uwakagano"]
+                  Banda: ["Bururi", "Gahira", "Gasumo", "Nkamba", "Uwakagano"],
                 },
                 {
-                  "Gakenke": [
-                    "Gahisi",
-                    "Gasovu",
-                    "Kamatsira",
-                    "Ruhana",
-                    "Rwasa"
-                  ]
+                  Gakenke: ["Gahisi", "Gasovu", "Kamatsira", "Ruhana", "Rwasa"],
                 },
                 {
-                  "Jurwe": [
+                  Jurwe: [
                     "Gasebeya",
                     "Gatagara",
                     "Kaneke",
                     "Kibavu",
                     "Rudehero",
-                    "Rugomero"
-                  ]
+                    "Rugomero",
+                  ],
                 },
                 {
-                  "Murambi": [
+                  Murambi: [
                     "Bigeyo",
                     "Bunyenyezi",
                     "Munini",
                     "Murambi",
                     "Nyakabingo",
                     "Nyarwungo",
-                    "Ryarubasha"
-                  ]
-                }
-              ]
+                    "Ryarubasha",
+                  ],
+                },
+              ],
             },
             {
-              "Ruharambuga": [
+              Ruharambuga: [
                 {
-                  "Kanazi": [
+                  Kanazi: [
                     "Gashwati",
                     "Gitaba",
                     "Kadashya",
@@ -20364,11 +20236,11 @@ const rwandaData = {
                     "Rukerereza",
                     "Rusambu",
                     "Rwamahwa",
-                    "Ryamashuri"
-                  ]
+                    "Ryamashuri",
+                  ],
                 },
                 {
-                  "Ntendezi": [
+                  Ntendezi: [
                     "Gasharu",
                     "Kacyiru",
                     "Kagarama",
@@ -20381,11 +20253,11 @@ const rwandaData = {
                     "Nganzo",
                     "Risansi",
                     "Rukoma",
-                    "Wimpundu"
-                  ]
+                    "Wimpundu",
+                  ],
                 },
                 {
-                  "Save": [
+                  Save: [
                     "Bigutu",
                     "Gihinga",
                     "Giko",
@@ -20394,11 +20266,11 @@ const rwandaData = {
                     "Munini",
                     "Nkomero",
                     "Nyamuhunga",
-                    "Save"
-                  ]
+                    "Save",
+                  ],
                 },
                 {
-                  "Wimana": [
+                  Wimana: [
                     "Gacyamo",
                     "Gakomeye",
                     "Gasumo",
@@ -20413,97 +20285,97 @@ const rwandaData = {
                     "Nyarushwati",
                     "Rugabano",
                     "Rumuna",
-                    "Ryangange"
-                  ]
-                }
-              ]
+                    "Ryangange",
+                  ],
+                },
+              ],
             },
             {
-              "Shangi": [
+              Shangi: [
                 {
-                  "Burimba": [
+                  Burimba: [
                     "Busangati",
                     "Gikombe",
                     "Kabahande",
                     "Nyakagano",
                     "Nyakibingo",
                     "Rubayi",
-                    "Rukohwa"
-                  ]
+                    "Rukohwa",
+                  ],
                 },
                 {
-                  "Mataba": [
+                  Mataba: [
                     "Gabiro",
                     "Gasumo",
                     "Mataba",
                     "Mpishyi",
                     "Ruzinga",
-                    "Rwabagoyi"
-                  ]
+                    "Rwabagoyi",
+                  ],
                 },
                 {
-                  "Mugera": [
+                  Mugera: [
                     "Bweranyange",
                     "Karugero",
                     "Karuhatana",
                     "Karuhigi",
                     "Kavo",
-                    "Rwonga"
-                  ]
+                    "Rwonga",
+                  ],
                 },
                 {
-                  "Nyamugari": [
+                  Nyamugari: [
                     "Amahoro",
                     "Bitaba",
                     "Kabare",
                     "Mpande",
                     "Nyamateke",
                     "Nyamihondo",
-                    "Rubavu"
-                  ]
+                    "Rubavu",
+                  ],
                 },
                 {
-                  "Shangi": [
+                  Shangi: [
                     "Bugomba",
                     "Busasamana",
                     "Gasharu",
                     "Kabere",
                     "Karambo",
                     "Ngoboka",
-                    "Taba"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Taba",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Rubavu": [
+          Rubavu: [
             {
-              "Bugeshi": [
+              Bugeshi: [
                 {
-                  "Buringo": [
+                  Buringo: [
                     "Bugeshi",
                     "Buringo",
                     "Butaka",
                     "Gaharawe",
                     "Gahira",
                     "Jenda",
-                    "Mutegengeri"
-                  ]
+                    "Mutegengeri",
+                  ],
                 },
                 {
-                  "Butaka": [
+                  Butaka: [
                     "Akabajara",
                     "Akimitoni",
                     "Gaheriheri",
                     "Kabingo",
                     "Kinyamuhanga",
-                    "Muremure"
-                  ]
+                    "Muremure",
+                  ],
                 },
                 {
-                  "Hehu": [
+                  Hehu: [
                     "Bereshi",
                     "Bweramana",
                     "Gasizi",
@@ -20511,11 +20383,11 @@ const rwandaData = {
                     "Hangari",
                     "Humure",
                     "Kabeza",
-                    "Ngando"
-                  ]
+                    "Ngando",
+                  ],
                 },
                 {
-                  "Kabumba": [
+                  Kabumba: [
                     "Bonde",
                     "Bugeshi",
                     "Gashaka",
@@ -20523,46 +20395,46 @@ const rwandaData = {
                     "Gihira",
                     "Kabumba",
                     "Mweya",
-                    "Ryarukara"
-                  ]
+                    "Ryarukara",
+                  ],
                 },
                 {
-                  "Mutovu": [
+                  Mutovu: [
                     "Bigaragara",
                     "Bugeshi",
                     "Kabuhanga",
                     "Kimpongo",
                     "Mburamazi",
                     "Rindiro",
-                    "Vuna"
-                  ]
+                    "Vuna",
+                  ],
                 },
                 {
-                  "Nsherima": [
+                  Nsherima: [
                     "Batikoti",
                     "Bipfura",
                     "Bweza",
                     "Cyumba",
                     "Gaheriheri",
-                    "Murangara"
-                  ]
+                    "Murangara",
+                  ],
                 },
                 {
-                  "Rusiza": [
+                  Rusiza: [
                     "Bihe",
                     "Bunjuri",
                     "Kabarore",
                     "Kitagabwa",
                     "Nyacyonga",
-                    "Ryarugamba"
-                  ]
-                }
-              ]
+                    "Ryarugamba",
+                  ],
+                },
+              ],
             },
             {
-              "Busasamana": [
+              Busasamana: [
                 {
-                  "Gacurabwenge": [
+                  Gacurabwenge: [
                     "Biziguro",
                     "Bukumu",
                     "Busanganya",
@@ -20572,11 +20444,11 @@ const rwandaData = {
                     "Kanyabijumba",
                     "Nyamyenge",
                     "Nyarubuye",
-                    "Nyarusozi"
-                  ]
+                    "Nyarusozi",
+                  ],
                 },
                 {
-                  "Gasiza": [
+                  Gasiza: [
                     "Bunyogwe",
                     "Gisura",
                     "Kibavu",
@@ -20586,41 +20458,41 @@ const rwandaData = {
                     "Mashinga",
                     "Munanira",
                     "Nyarunembwe",
-                    "Rwagare"
-                  ]
+                    "Rwagare",
+                  ],
                 },
-                { "Gihonga": ["Marumba", "Mubona", "Nyamyumba", "Sabushengo"] },
+                { Gihonga: ["Marumba", "Mubona", "Nyamyumba", "Sabushengo"] },
                 {
-                  "Kageshi": [
+                  Kageshi: [
                     "Gasenyi",
                     "Kigezi",
                     "Mufumba",
                     "Ruhara",
                     "Rwamigega",
-                    "Rwankuba"
-                  ]
+                    "Rwankuba",
+                  ],
                 },
                 {
-                  "Makoro": [
+                  Makoro: [
                     "Gakuta",
                     "Hanika",
                     "Kamuzamuzi",
                     "Karambi",
-                    "Kidadi"
-                  ]
+                    "Kidadi",
+                  ],
                 },
                 {
-                  "Nyacyonga": [
+                  Nyacyonga: [
                     "Cyanika",
                     "Kacyiru",
                     "Kamiro",
                     "Kingogo",
                     "Kitagabwa",
-                    "Nyarurembo"
-                  ]
+                    "Nyarurembo",
+                  ],
                 },
                 {
-                  "Rusura": [
+                  Rusura: [
                     "Cyamabuye",
                     "Kabagoyi",
                     "Kageyo",
@@ -20628,76 +20500,71 @@ const rwandaData = {
                     "Kamivumba",
                     "Kinogo",
                     "Munege",
-                    "Rebero"
-                  ]
-                }
-              ]
+                    "Rebero",
+                  ],
+                },
+              ],
             },
             {
-              "Cyanzarwe": [
-                { "Busigari": ["Bisizi", "Bugu", "Kanembwe", "Rwashungwe"] },
+              Cyanzarwe: [
+                { Busigari: ["Bisizi", "Bugu", "Kanembwe", "Rwashungwe"] },
                 {
-                  "Cyanzarwe": [
+                  Cyanzarwe: [
                     "Butango",
                     "Cyanzarwe",
                     "Gasenyi",
                     "Karangara",
                     "Kiruhura",
-                    "Rushura"
-                  ]
+                    "Rushura",
+                  ],
                 },
-                { "Gora": ["Burima", "Gora", "Kabere"] },
+                { Gora: ["Burima", "Gora", "Kabere"] },
                 {
-                  "Kinyanzovu": [
-                    "Bushanga",
-                    "Kanyentambi",
-                    "Kibaya",
-                    "Muhororo"
-                  ]
+                  Kinyanzovu: ["Bushanga", "Kanyentambi", "Kibaya", "Muhororo"],
                 },
                 {
-                  "Makurizo": [
+                  Makurizo: [
                     "Gashuha",
                     "Makurizo",
                     "Mukingo",
                     "Nyamugari",
-                    "Ruhuranda"
-                  ]
+                    "Ruhuranda",
+                  ],
                 },
                 {
-                  "Rwangara": [
+                  Rwangara: [
                     "Buramazi",
                     "Hanika",
                     "Muti",
                     "Nyakabanda",
-                    "Nyakabungo"
-                  ]
+                    "Nyakabungo",
+                  ],
                 },
                 {
-                  "Rwanzekuma": [
+                  Rwanzekuma: [
                     "Kabirizi",
                     "Karambi",
                     "Kinyamiyaga",
                     "Munaba",
-                    "Rukorakore"
-                  ]
+                    "Rukorakore",
+                  ],
                 },
                 {
-                  "Ryabizige": [
+                  Ryabizige: [
                     "Burere",
                     "Kanyamagare",
                     "Kavumu",
                     "Muhuhuri",
                     "Musene",
-                    "Nganzo"
-                  ]
-                }
-              ]
+                    "Nganzo",
+                  ],
+                },
+              ],
             },
             {
-              "Gisenyi": [
+              Gisenyi: [
                 {
-                  "Amahoro": [
+                  Amahoro: [
                     "Amahoro",
                     "Isangano",
                     "Kitagabwa",
@@ -20706,11 +20573,11 @@ const rwandaData = {
                     "Murisanga",
                     "Terimbere",
                     "Umunezero",
-                    "Urugwiro"
-                  ]
+                    "Urugwiro",
+                  ],
                 },
                 {
-                  "Bugoyi": [
+                  Bugoyi: [
                     "Amataba",
                     "Bugoyi",
                     "Giraneza",
@@ -20720,11 +20587,11 @@ const rwandaData = {
                     "Kaminuza",
                     "Nyakabungo",
                     "Ubutabera",
-                    "Ubwiza"
-                  ]
+                    "Ubwiza",
+                  ],
                 },
                 {
-                  "Kivumu": [
+                  Kivumu: [
                     "Giponda",
                     "Igisubizo",
                     "Itangazamakuru",
@@ -20736,11 +20603,11 @@ const rwandaData = {
                     "Ubumwe",
                     "Ubutabazi",
                     "Umurava",
-                    "Urumuri"
-                  ]
+                    "Urumuri",
+                  ],
                 },
                 {
-                  "Mbugangari": [
+                  Mbugangari: [
                     "Abahuje",
                     "Amajyambere",
                     "Gasutamo",
@@ -20758,32 +20625,32 @@ const rwandaData = {
                     "Uburezi",
                     "Ubwiyunge",
                     "Umubano",
-                    "Umutekano"
-                  ]
+                    "Umutekano",
+                  ],
                 },
                 {
-                  "Nengo": [
+                  Nengo: [
                     "Gacuba",
                     "Gikarani",
                     "Kivu",
                     "Nyabagobe",
                     "Nyaburanga",
                     "Ubucuruzi",
-                    "Urubyiruko"
-                  ]
+                    "Urubyiruko",
+                  ],
                 },
                 {
-                  "Rubavu": [
+                  Rubavu: [
                     "Gahojo",
                     "Kamayugi",
                     "Kanyarutambi",
                     "Munini",
                     "Rubavu",
-                    "Ruliba"
-                  ]
+                    "Ruliba",
+                  ],
                 },
                 {
-                  "Umuganda": [
+                  Umuganda: [
                     "Bonde",
                     "Dukore",
                     "Ihuriro",
@@ -20792,26 +20659,26 @@ const rwandaData = {
                     "Muhato",
                     "Umucyo",
                     "Umuganda",
-                    "Umunyinya"
-                  ]
-                }
-              ]
+                    "Umunyinya",
+                  ],
+                },
+              ],
             },
             {
-              "Kanama": [
+              Kanama: [
                 {
-                  "Kamuhoza": [
+                  Kamuhoza: [
                     "Bambiro",
                     "Kagarama",
                     "Nyamigogo",
                     "Nyanshundura",
                     "Rukoro",
-                    "Rwankomo"
-                  ]
+                    "Rwankomo",
+                  ],
                 },
-                { "Karambo": ["Gahunga", "Mariba", "Mutanda", "Ndongoshori"] },
+                { Karambo: ["Gahunga", "Mariba", "Mutanda", "Ndongoshori"] },
                 {
-                  "Mahoko": [
+                  Mahoko: [
                     "Bikuka",
                     "Kabeza",
                     "Kabindi",
@@ -20823,129 +20690,129 @@ const rwandaData = {
                     "Nyamugari",
                     "Nyamuremure",
                     "Rubare",
-                    "Shusho"
-                  ]
+                    "Shusho",
+                  ],
                 },
                 {
-                  "Musabike": [
+                  Musabike: [
                     "Kabingo",
                     "Kagano",
                     "Kaje",
                     "Nteranya",
                     "Nyakibande",
-                    "Ryamibungo"
-                  ]
+                    "Ryamibungo",
+                  ],
                 },
                 {
-                  "Nkomane": [
+                  Nkomane: [
                     "Gashasho",
                     "Gatsina",
                     "Nkomane",
                     "Nyabishongo",
-                    "Rwanzuki"
-                  ]
+                    "Rwanzuki",
+                  ],
                 },
                 {
-                  "Rusongati": [
+                  Rusongati: [
                     "Busesa",
                     "Gihurizo",
                     "Kabere",
                     "Kibuga",
                     "Mashyoza",
                     "Muvebwa",
-                    "Nyabitunda"
-                  ]
+                    "Nyabitunda",
+                  ],
                 },
                 {
-                  "Yungwe": [
+                  Yungwe: [
                     "Bwikurure",
                     "Gikomero",
                     "Rugege",
                     "Rugogwe",
                     "Rutagara",
-                    "Yungwe"
-                  ]
-                }
-              ]
+                    "Yungwe",
+                  ],
+                },
+              ],
             },
             {
-              "Kanzenze": [
+              Kanzenze: [
                 {
-                  "Kanyirabigogo": ["Giramata", "Kabana", "Mizingo", "Murambi"]
+                  Kanyirabigogo: ["Giramata", "Kabana", "Mizingo", "Murambi"],
                 },
-                { "Kirerema": ["Bisesero", "Kirerema", "Rushasho"] },
-                { "Muramba": ["Kanya", "Muramba", "Rubara", "Tubindi"] },
+                { Kirerema: ["Bisesero", "Kirerema", "Rushasho"] },
+                { Muramba: ["Kanya", "Muramba", "Rubara", "Tubindi"] },
                 {
-                  "Nyamikongi": [
+                  Nyamikongi: [
                     "Cyivugiza",
                     "Kabari",
                     "Nyamikongi",
-                    "Rwamikungu"
-                  ]
+                    "Rwamikungu",
+                  ],
                 },
-                { "Nyamirango": ["Gasizi", "Mareru", "Mizingo", "Nyamirango"] },
-                { "Nyaruteme": ["Kabere", "Karagarago", "Rugali"] }
-              ]
+                { Nyamirango: ["Gasizi", "Mareru", "Mizingo", "Nyamirango"] },
+                { Nyaruteme: ["Kabere", "Karagarago", "Rugali"] },
+              ],
             },
             {
-              "Mudende": [
+              Mudende: [
                 {
-                  "Bihungwe": [
+                  Bihungwe: [
                     "Bihungwe",
                     "Bivumu",
                     "Bunyove",
                     "Mwirima",
-                    "Rukeri"
-                  ]
+                    "Rukeri",
+                  ],
                 },
                 {
-                  "Kanyundo": [
+                  Kanyundo: [
                     "Gahanika",
                     "Mugongo",
                     "Murambi",
                     "Mutura",
                     "Nyamirama",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Micinyiro": [
+                  Micinyiro: [
                     "Gasiza",
                     "Kanombe",
                     "Kanyamitura",
                     "Micinyiro",
                     "Nyagisozi",
-                    "Tetero"
-                  ]
+                    "Tetero",
+                  ],
                 },
-                { "Mirindi": ["Gasumba", "Kiryoha", "Mirindi", "Tamira"] },
+                { Mirindi: ["Gasumba", "Kiryoha", "Mirindi", "Tamira"] },
                 {
-                  "Ndoranyi": [
+                  Ndoranyi: [
                     "Gaharawe",
                     "Gikuyu",
                     "Gitega",
                     "Karandaryi",
                     "Kinyangwe",
-                    "Nyabishongo"
-                  ]
+                    "Nyabishongo",
+                  ],
                 },
                 {
-                  "Rungu": ["Bihe", "Gahenerezo", "Ndiza", "Rungu", "Rwangara"]
+                  Rungu: ["Bihe", "Gahenerezo", "Ndiza", "Rungu", "Rwangara"],
                 },
                 {
-                  "Rwanyakayaga": [
+                  Rwanyakayaga: [
                     "Kabunoni",
                     "Muyange",
                     "Nangurubibi",
-                    "Nyamugari"
-                  ]
-                }
-              ]
+                    "Nyamugari",
+                  ],
+                },
+              ],
             },
             {
-              "Nyakiriba": [
+              Nyakiriba: [
                 {
-                  "Bisizi": [
+                  Bisizi: [
                     "Bweza",
                     "Gisangani",
                     "Kamakinga",
@@ -20953,57 +20820,57 @@ const rwandaData = {
                     "Kingoma",
                     "Mwumba",
                     "Nyamwishyura",
-                    "Runaba"
-                  ]
+                    "Runaba",
+                  ],
                 },
                 {
-                  "Gikombe": [
+                  Gikombe: [
                     "Kitarimwa",
                     "Nyabibuye",
                     "Nyabirezi",
                     "Nyakibande",
                     "Rugerero",
-                    "Rushubi"
-                  ]
+                    "Rushubi",
+                  ],
                 },
                 {
-                  "Kanyefurwe": [
+                  Kanyefurwe: [
                     "Kayove",
                     "Kiyovu",
                     "Muhira",
                     "Nyakabungo",
                     "Rebero",
-                    "Rukoro"
-                  ]
+                    "Rukoro",
+                  ],
                 },
                 {
-                  "Nyarushyamba": [
+                  Nyarushyamba: [
                     "Bazirete",
                     "Kivumu",
                     "Makoro",
                     "Nyonirima",
                     "Ruhangiro",
                     "Runyeheri",
-                    "Ruvuzananga"
-                  ]
-                }
-              ]
+                    "Ruvuzananga",
+                  ],
+                },
+              ],
             },
             {
-              "Nyamyumba": [
+              Nyamyumba: [
                 {
-                  "Burushya": [
+                  Burushya: [
                     "Kaberamo",
                     "Kabuyekera",
                     "Karuvugiro",
                     "Muhingo",
                     "Mutembe",
                     "Nganzo",
-                    "Wintwari"
-                  ]
+                    "Wintwari",
+                  ],
                 },
                 {
-                  "Busoro": [
+                  Busoro: [
                     "Bugoma",
                     "Buhanga",
                     "Bujenje",
@@ -21012,32 +20879,32 @@ const rwandaData = {
                     "Gateko",
                     "Kabushongo",
                     "Kanajana",
-                    "Kiguri"
-                  ]
+                    "Kiguri",
+                  ],
                 },
                 {
-                  "Kinigi": [
+                  Kinigi: [
                     "Burevu",
                     "Byima",
                     "Gatyazo",
                     "Karambi",
                     "Nyabisusa",
                     "Nyamiko",
-                    "Pfunda"
-                  ]
+                    "Pfunda",
+                  ],
                 },
                 {
-                  "Kiraga": [
+                  Kiraga: [
                     "Buhogo",
                     "Bukiro",
                     "Kigufi",
                     "Mukondo",
                     "Nyaruhonga",
-                    "Rambo"
-                  ]
+                    "Rambo",
+                  ],
                 },
                 {
-                  "Munanira": [
+                  Munanira: [
                     "Bugarura",
                     "Busumba",
                     "Cyeya",
@@ -21045,11 +20912,11 @@ const rwandaData = {
                     "Nyamirambo",
                     "Rebero",
                     "Ruhondo",
-                    "Shusho"
-                  ]
+                    "Shusho",
+                  ],
                 },
                 {
-                  "Rubona": [
+                  Rubona: [
                     "Bugasha",
                     "Buharara",
                     "Bunyago",
@@ -21060,57 +20927,57 @@ const rwandaData = {
                     "Remera",
                     "Rurembo",
                     "Rushagara",
-                    "Tagaza"
-                  ]
-                }
-              ]
+                    "Tagaza",
+                  ],
+                },
+              ],
             },
             {
-              "Nyundo": [
+              Nyundo: [
                 {
-                  "Bahimba": [
+                  Bahimba: [
                     "Bahimba",
                     "Buhozi",
                     "Gatuntu",
                     "Kagera",
                     "Kanyiraruhindu",
                     "Ngege",
-                    "Rurembo"
-                  ]
+                    "Rurembo",
+                  ],
                 },
                 {
-                  "Gatovu": [
+                  Gatovu: [
                     "Budaha",
                     "Busheru",
                     "Cyima",
                     "Kanyahene",
                     "Murambi",
-                    "Ruhanga"
-                  ]
+                    "Ruhanga",
+                  ],
                 },
                 {
-                  "Kavomo": [
+                  Kavomo: [
                     "Bahimba",
                     "Burambo",
                     "Gitwa",
                     "Kavumu",
                     "Kinihira",
                     "Kinyendaro",
-                    "Shonyi"
-                  ]
+                    "Shonyi",
+                  ],
                 },
                 {
-                  "Kigarama": [
+                  Kigarama: [
                     "Busesa",
                     "Kazabe",
                     "Mwali",
                     "Ndamiye",
                     "Rukore",
-                    "Rwantobo"
-                  ]
+                    "Rwantobo",
+                  ],
                 },
                 {
-                  "Mukondo": [
+                  Mukondo: [
                     "Buroha",
                     "Busogo",
                     "Byiniro",
@@ -21120,11 +20987,11 @@ const rwandaData = {
                     "Kashumba",
                     "Nkora",
                     "Remera",
-                    "Tanda"
-                  ]
+                    "Tanda",
+                  ],
                 },
                 {
-                  "Nyundo": [
+                  Nyundo: [
                     "Birembo",
                     "Gasenyi",
                     "Huye",
@@ -21134,11 +21001,11 @@ const rwandaData = {
                     "Kiziguro",
                     "Nyakagezi",
                     "Rumbati",
-                    "Runandi"
-                  ]
+                    "Runandi",
+                  ],
                 },
                 {
-                  "Terimbere": [
+                  Terimbere: [
                     "Gahama",
                     "Hanika",
                     "Kanyamatembe",
@@ -21146,81 +21013,75 @@ const rwandaData = {
                     "Nombe",
                     "Rambura",
                     "Ruhango",
-                    "Terimbere"
-                  ]
-                }
-              ]
+                    "Terimbere",
+                  ],
+                },
+              ],
             },
             {
-              "Rubavu": [
-                { "Buhaza": ["Dufatanye", "Gabiro", "Murambi"] },
+              Rubavu: [
+                { Buhaza: ["Dufatanye", "Gabiro", "Murambi"] },
                 {
-                  "Burinda": [
+                  Burinda: [
                     "Akasengore",
                     "Bubaji",
                     "Gasenyi",
                     "Nyabantu",
                     "Nyamwinshi",
-                    "Rwezamenyo"
-                  ]
+                    "Rwezamenyo",
+                  ],
                 },
                 {
-                  "Byahi": ["Buhuru", "Isangano", "Mikingo", "Ngugo", "Rurembo"]
+                  Byahi: ["Buhuru", "Isangano", "Mikingo", "Ngugo", "Rurembo"],
                 },
                 {
-                  "Gikombe": [
+                  Gikombe: [
                     "Bambiro",
                     "Bushengo I",
                     "Gafuku",
                     "Mubuga",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Murambi": [
+                  Murambi: [
                     "Bushengo",
                     "Buzuta",
                     "Bwiru",
                     "Kabere II",
                     "Ruvumbu",
-                    "Rwangara"
-                  ]
+                    "Rwangara",
+                  ],
                 },
                 {
-                  "Murara": [
-                    "Bugesera",
-                    "Gahinga",
-                    "Gasayo",
-                    "Kabere",
-                    "Kiroji"
-                  ]
+                  Murara: ["Bugesera", "Gahinga", "Gasayo", "Kabere", "Kiroji"],
                 },
                 {
-                  "Rukoko": [
+                  Rukoko: [
                     "Bisizi",
                     "Isangano",
                     "Karukogo",
                     "Kitarimwa",
-                    "Rutagara"
-                  ]
-                }
-              ]
+                    "Rutagara",
+                  ],
+                },
+              ],
             },
             {
-              "Rugerero": [
+              Rugerero: [
                 {
-                  "Basa": [
+                  Basa: [
                     "Buranga",
                     "Gahinga",
                     "Kabeza",
                     "Kanyukiro",
                     "Mukumya",
                     "Nyaruhengeri",
-                    "Tagaza"
-                  ]
+                    "Tagaza",
+                  ],
                 },
                 {
-                  "Gisa": [
+                  Gisa: [
                     "Gatangare",
                     "Gihira",
                     "Gisa",
@@ -21228,53 +21089,53 @@ const rwandaData = {
                     "Kaniga",
                     "Ndobogo",
                     "Rusongati",
-                    "Shwemu"
-                  ]
+                    "Shwemu",
+                  ],
                 },
                 {
-                  "Kabilizi": [
+                  Kabilizi: [
                     "Amahoro",
                     "Gakoro",
                     "Nkama",
                     "Nyamyiri",
                     "Ruhangiro",
-                    "Rukukumbo"
-                  ]
+                    "Rukukumbo",
+                  ],
                 },
                 {
-                  "Muhira": [
+                  Muhira: [
                     "Gatebe I",
                     "Gatebe II",
                     "Gitebe I",
                     "Gitebe II",
                     "Kasonga",
                     "Kizi",
-                    "Rusamaza"
-                  ]
+                    "Rusamaza",
+                  ],
                 },
                 {
-                  "Rugerero": [
+                  Rugerero: [
                     "Kabarora",
                     "Kibaya",
                     "Nyantomvu",
                     "Nyarurembo",
                     "Rukingo",
-                    "Ruranga"
-                  ]
+                    "Ruranga",
+                  ],
                 },
                 {
-                  "Rushubi": [
+                  Rushubi: [
                     "Busheke",
                     "Butangi",
                     "Butumba",
                     "Kabashara",
                     "Kazika",
                     "Kimina",
-                    "Muhingo"
-                  ]
+                    "Muhingo",
+                  ],
                 },
                 {
-                  "Rwaza": [
+                  Rwaza: [
                     "Byima",
                     "Cyanika",
                     "Gashovu",
@@ -21284,19 +21145,19 @@ const rwandaData = {
                     "Rebero",
                     "Rohero",
                     "Rucyamo",
-                    "Rwaza"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Rwaza",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Rutsiro": [
+          Rutsiro: [
             {
-              "Boneza": [
+              Boneza: [
                 {
-                  "Bushaka": [
+                  Bushaka: [
                     "Bikono",
                     "Bugarura",
                     "Gaseke",
@@ -21304,100 +21165,100 @@ const rwandaData = {
                     "Kinunu",
                     "Muramba",
                     "Rutagara",
-                    "Rwimbogo"
-                  ]
+                    "Rwimbogo",
+                  ],
                 },
                 {
-                  "Kabihogo": [
+                  Kabihogo: [
                     "Buhonongo",
                     "Bweramana",
                     "Gashoko",
                     "Kamuyaga",
                     "Rugamba",
-                    "Rwabisururu"
-                  ]
+                    "Rwabisururu",
+                  ],
                 },
                 {
-                  "Nkira": [
+                  Nkira: [
                     "Gisiza",
                     "Gisoro",
                     "Kabuga",
                     "Karukamba",
                     "Kigarama",
                     "Munanira",
-                    "Murambi"
-                  ]
+                    "Murambi",
+                  ],
                 },
                 {
-                  "Remera": [
+                  Remera: [
                     "Bigabiro",
                     "Buhoro",
                     "Kaganza",
                     "Kamuzigura",
                     "Kinunga",
                     "Muyange",
-                    "Rusororo"
-                  ]
-                }
-              ]
+                    "Rusororo",
+                  ],
+                },
+              ],
             },
             {
-              "Gihango": [
-                { "Bugina": ["Gishushu", "Gitarama", "Kagarama", "Karambi"] },
+              Gihango: [
+                { Bugina: ["Gishushu", "Gitarama", "Kagarama", "Karambi"] },
                 {
                   "Congo-nil": [
                     "Kandahura",
                     "Kindoyi",
                     "Mukebera",
                     "Nduba",
-                    "Nkwiro"
-                  ]
+                    "Nkwiro",
+                  ],
                 },
                 {
-                  "Mataba": [
+                  Mataba: [
                     "Butare",
                     "Kabeza",
                     "Kamutambiro",
                     "Muyange",
                     "Nganzo",
-                    "Terimbere"
-                  ]
+                    "Terimbere",
+                  ],
                 },
                 {
-                  "Murambi": [
+                  Murambi: [
                     "Gashihe",
                     "Gatomvu",
                     "Karugaju",
                     "Muhora",
-                    "Nyagahinga"
-                  ]
+                    "Nyagahinga",
+                  ],
                 },
-                { "Ruhingo": ["Gasharu", "Kabuga", "Nyagahinga"] },
+                { Ruhingo: ["Gasharu", "Kabuga", "Nyagahinga"] },
                 {
-                  "Shyembe": [
+                  Shyembe: [
                     "Gisunzu",
                     "Karambo",
                     "Karongi",
                     "Rugote",
                     "Rwamiyaga",
-                    "Shyembe"
-                  ]
+                    "Shyembe",
+                  ],
                 },
                 {
-                  "Teba": [
+                  Teba: [
                     "Bweramana",
                     "Gasave",
                     "Gateja",
                     "Kanembwe",
-                    "Rasaniro"
-                  ]
-                }
-              ]
+                    "Rasaniro",
+                  ],
+                },
+              ],
             },
             {
-              "Kigeyo": [
+              Kigeyo: [
                 {
-                  "Buhindure": [
+                  Buhindure: [
                     "Burambo",
                     "Bushaka",
                     "Gacaca",
@@ -21405,11 +21266,11 @@ const rwandaData = {
                     "Gisiza",
                     "Nkamba",
                     "Nkomero",
-                    "Nturo"
-                  ]
+                    "Nturo",
+                  ],
                 },
                 {
-                  "Nkora": [
+                  Nkora: [
                     "Buhimba",
                     "Gahotora",
                     "Gasagara",
@@ -21420,11 +21281,11 @@ const rwandaData = {
                     "Karambi",
                     "Kigugu",
                     "Muhora",
-                    "Rukundo"
-                  ]
+                    "Rukundo",
+                  ],
                 },
                 {
-                  "Nyagahinika": [
+                  Nyagahinika: [
                     "Bukungu",
                     "Kampi",
                     "Nteko",
@@ -21433,11 +21294,11 @@ const rwandaData = {
                     "Rukombe",
                     "Rupango",
                     "Rusisiro",
-                    "Ruvumu"
-                  ]
+                    "Ruvumu",
+                  ],
                 },
                 {
-                  "Rukaragata": [
+                  Rukaragata: [
                     "Gahunga",
                     "Gasenyi",
                     "Kagondero",
@@ -21447,47 +21308,47 @@ const rwandaData = {
                     "Nganzo",
                     "Rwambeho",
                     "Rwamiyaga",
-                    "Tagaza"
-                  ]
-                }
-              ]
+                    "Tagaza",
+                  ],
+                },
+              ],
             },
             {
-              "Kivumu": [
+              Kivumu: [
                 {
-                  "Bunyoni": [
+                  Bunyoni: [
                     "Bureke",
                     "Gashinga",
                     "Gihari",
                     "Gitwa",
                     "Kabigabiro",
                     "Kanyempanga",
-                    "Nyarubuye"
-                  ]
+                    "Nyarubuye",
+                  ],
                 },
                 {
-                  "Bunyunju": [
+                  Bunyunju: [
                     "Cyivugiza",
                     "Kamabuye",
                     "Karungu",
                     "Mpinga",
                     "Rwamvura",
-                    "Tarafiporo"
-                  ]
+                    "Tarafiporo",
+                  ],
                 },
                 {
-                  "Kabere": [
+                  Kabere: [
                     "Burambo",
                     "Burango",
                     "Cyato",
                     "Kabitara",
                     "Kabusagara",
                     "Kagera",
-                    "Mushubati"
-                  ]
+                    "Mushubati",
+                  ],
                 },
                 {
-                  "Kabujenje": [
+                  Kabujenje: [
                     "Bitare",
                     "Buhogo",
                     "Kabagwe",
@@ -21496,11 +21357,11 @@ const rwandaData = {
                     "Rurembo",
                     "Rusisiro",
                     "Rutambi",
-                    "Tarasi"
-                  ]
+                    "Tarasi",
+                  ],
                 },
                 {
-                  "Karambi": [
+                  Karambi: [
                     "Bukiro",
                     "Bukumba",
                     "Buroha",
@@ -21508,11 +21369,11 @@ const rwandaData = {
                     "Gateko",
                     "Kabuga",
                     "Nyundo",
-                    "Rusumo"
-                  ]
+                    "Rusumo",
+                  ],
                 },
                 {
-                  "Nganzo": [
+                  Nganzo: [
                     "Bubira",
                     "Bugarishya",
                     "Kamwimba",
@@ -21520,15 +21381,15 @@ const rwandaData = {
                     "Nyabiti",
                     "Remera",
                     "Rwinyoni",
-                    "Tawuni"
-                  ]
-                }
-              ]
+                    "Tawuni",
+                  ],
+                },
+              ],
             },
             {
-              "Manihira": [
+              Manihira: [
                 {
-                  "Haniro": [
+                  Haniro: [
                     "Bitabaro",
                     "Gisunzu",
                     "Gitwe",
@@ -21536,11 +21397,11 @@ const rwandaData = {
                     "Kivumu",
                     "Mifu",
                     "Rukondo",
-                    "Runaba"
-                  ]
+                    "Runaba",
+                  ],
                 },
                 {
-                  "Muyira": [
+                  Muyira: [
                     "Birambo",
                     "Kagarama",
                     "Kamishunguro",
@@ -21551,29 +21412,29 @@ const rwandaData = {
                     "Nyakarambi",
                     "Rufungo",
                     "Rutangaza",
-                    "Rutare"
-                  ]
+                    "Rutare",
+                  ],
                 },
                 {
-                  "Tangabo": [
+                  Tangabo: [
                     "Kabeza",
                     "Kadehero",
                     "Kanama",
                     "Karambo",
                     "Munini",
                     "Nyarushogwe",
-                    "Rugano"
-                  ]
-                }
-              ]
+                    "Rugano",
+                  ],
+                },
+              ],
             },
             {
-              "Mukura": [
+              Mukura: [
                 {
-                  "Kabuga": ["Kabahigi", "Karambo Ya 1", "Miraramo", "Sanzare"]
+                  Kabuga: ["Kabahigi", "Karambo Ya 1", "Miraramo", "Sanzare"],
                 },
                 {
-                  "Kagano": [
+                  Kagano: [
                     "Cyabatsinga",
                     "Gakeri",
                     "Kabacuzi",
@@ -21585,11 +21446,11 @@ const rwandaData = {
                     "Ntobo",
                     "Nyaburama",
                     "Rugomero",
-                    "Tumba"
-                  ]
+                    "Tumba",
+                  ],
                 },
                 {
-                  "Kageyo": [
+                  Kageyo: [
                     "Bitura",
                     "Karumbi",
                     "Kigeyo",
@@ -21600,25 +21461,25 @@ const rwandaData = {
                     "Rukeri",
                     "Rukondo",
                     "Site Mukura Ya 1",
-                    "Site Mukura Ya 2"
-                  ]
+                    "Site Mukura Ya 2",
+                  ],
                 },
                 {
-                  "Kagusa": ["Bucyeye", "Gako", "Gasharu", "Muhindo", "Rusasa"]
+                  Kagusa: ["Bucyeye", "Gako", "Gasharu", "Muhindo", "Rusasa"],
                 },
                 {
-                  "Karambo": [
+                  Karambo: [
                     "Bandamiko",
                     "Dehero",
                     "Gasambi",
                     "Gihumo",
                     "Gituntu",
                     "Karambo Ya 2",
-                    "Terimbere"
-                  ]
+                    "Terimbere",
+                  ],
                 },
                 {
-                  "Mwendo": [
+                  Mwendo: [
                     "Bitenga",
                     "Gafu",
                     "Gako",
@@ -21632,15 +21493,15 @@ const rwandaData = {
                     "Nyarubande",
                     "Nyarusongati",
                     "Nyove",
-                    "Rugari"
-                  ]
-                }
-              ]
+                    "Rugari",
+                  ],
+                },
+              ],
             },
             {
-              "Murunda": [
+              Murunda: [
                 {
-                  "Kirwa": [
+                  Kirwa: [
                     "Bukongora",
                     "Gasasa",
                     "Kabatemba",
@@ -21651,44 +21512,44 @@ const rwandaData = {
                     "Nyenyeri",
                     "Ruhanga",
                     "Rusisiro",
-                    "Satinsyi"
-                  ]
+                    "Satinsyi",
+                  ],
                 },
                 {
-                  "Mburamazi": [
+                  Mburamazi: [
                     "Gatoki",
                     "Kamuhoza",
                     "Kariba",
                     "Murunda",
                     "Rukingu",
                     "Rurimba",
-                    "Rwamiko"
-                  ]
+                    "Rwamiko",
+                  ],
                 },
                 {
-                  "Rugeyo": [
+                  Rugeyo: [
                     "Kabeza",
                     "Kamabuye",
                     "Kamusambi",
                     "Karambo",
-                    "Musongati"
-                  ]
+                    "Musongati",
+                  ],
                 },
                 {
-                  "Twabugezi": [
+                  Twabugezi: [
                     "Bweramana",
                     "Gatare",
                     "Nyarucundura",
                     "Rwanika",
-                    "Rwoza"
-                  ]
-                }
-              ]
+                    "Rwoza",
+                  ],
+                },
+              ],
             },
             {
-              "Musasa": [
+              Musasa: [
                 {
-                  "Gabiro": [
+                  Gabiro: [
                     "Gabiro",
                     "Gitwa",
                     "Murama",
@@ -21696,11 +21557,11 @@ const rwandaData = {
                     "Nyarugenge",
                     "Rugarambiro",
                     "Rwagatoki",
-                    "Rwangoma"
-                  ]
+                    "Rwangoma",
+                  ],
                 },
                 {
-                  "Gisiza": [
+                  Gisiza: [
                     "Bweramana",
                     "Gasharu",
                     "Gihinga",
@@ -21710,11 +21571,11 @@ const rwandaData = {
                     "Karambo",
                     "Ngoma",
                     "Nyagafurwe",
-                    "Rubaya"
-                  ]
+                    "Rubaya",
+                  ],
                 },
                 {
-                  "Murambi": [
+                  Murambi: [
                     "Bunnyari",
                     "Buruseri",
                     "Kabatoni",
@@ -21723,26 +21584,26 @@ const rwandaData = {
                     "Nyamasheke",
                     "Rwintanga",
                     "Rwumba",
-                    "Syiki"
-                  ]
+                    "Syiki",
+                  ],
                 },
                 {
-                  "Nyarubuye": [
+                  Nyarubuye: [
                     "Bwinyana",
                     "Gataka",
                     "Gitete",
                     "Kabuga",
                     "Mirambi",
                     "Muhororo",
-                    "Rebero"
-                  ]
-                }
-              ]
+                    "Rebero",
+                  ],
+                },
+              ],
             },
             {
-              "Mushonyi": [
+              Mushonyi: [
                 {
-                  "Biruyi": [
+                  Biruyi: [
                     "Buhunde",
                     "Bushunga",
                     "Buzukira",
@@ -21750,11 +21611,11 @@ const rwandaData = {
                     "Kamaranzara",
                     "Karengera",
                     "Mugara",
-                    "Rurimba"
-                  ]
+                    "Rurimba",
+                  ],
                 },
                 {
-                  "Kaguriro": [
+                  Kaguriro: [
                     "Cyondo",
                     "Gakenke",
                     "Kabere",
@@ -21763,22 +21624,22 @@ const rwandaData = {
                     "Mubuga",
                     "Rugerero",
                     "Rwesero",
-                    "Ryarwasa"
-                  ]
+                    "Ryarwasa",
+                  ],
                 },
                 {
-                  "Magaba": [
+                  Magaba: [
                     "Gakomeye",
                     "Gasave",
                     "Gihumba",
                     "Kakibaba",
                     "Kariba",
                     "Nkomero",
-                    "Ruyogoro"
-                  ]
+                    "Ruyogoro",
+                  ],
                 },
                 {
-                  "Rurara": [
+                  Rurara: [
                     "Gasoro",
                     "Gisunzu",
                     "Kaboneye",
@@ -21788,36 +21649,36 @@ const rwandaData = {
                     "Mukati",
                     "Ngunguru",
                     "Rugaragara",
-                    "Ruhengeri"
-                  ]
-                }
-              ]
+                    "Ruhengeri",
+                  ],
+                },
+              ],
             },
             {
-              "Mushubati": [
+              Mushubati: [
                 {
-                  "Bumba": [
+                  Bumba: [
                     "Bisyo",
                     "Kabiraho",
                     "Kamushozi",
                     "Karambi",
                     "Mataba",
                     "Rugote",
-                    "Ruhinga"
-                  ]
+                    "Ruhinga",
+                  ],
                 },
                 {
-                  "Cyarusera": [
+                  Cyarusera: [
                     "Bivumu",
                     "Cyahafi",
                     "Gasharu",
                     "Kigarama",
                     "Kunini",
-                    "Mugeri"
-                  ]
+                    "Mugeri",
+                  ],
                 },
                 {
-                  "Gitwa": [
+                  Gitwa: [
                     "Gakoma",
                     "Gashinge",
                     "Karambira",
@@ -21828,36 +21689,36 @@ const rwandaData = {
                     "Rububa",
                     "Ruhinga",
                     "Rwintore",
-                    "Taba"
-                  ]
+                    "Taba",
+                  ],
                 },
                 {
-                  "Mageragere": [
+                  Mageragere: [
                     "Gitega",
                     "Murambi",
                     "Nyakabuye",
                     "Nyarusange",
                     "Rarankuba",
-                    "Rushikiri"
-                  ]
+                    "Rushikiri",
+                  ],
                 },
                 {
-                  "Sure": [
+                  Sure: [
                     "Kabuga",
                     "Kaduha",
                     "Kagugu",
                     "Kanyinya",
                     "Kivumu",
                     "Nyagahinga",
-                    "Nyamahuru"
-                  ]
-                }
-              ]
+                    "Nyamahuru",
+                  ],
+                },
+              ],
             },
             {
-              "Nyabirasi": [
+              Nyabirasi: [
                 {
-                  "Busuku": [
+                  Busuku: [
                     "Bishami",
                     "Busuku",
                     "Busuti",
@@ -21868,11 +21729,11 @@ const rwandaData = {
                     "Nyakibande",
                     "Rwamigega",
                     "Torwe",
-                    "Tsindiro"
-                  ]
+                    "Tsindiro",
+                  ],
                 },
                 {
-                  "Cyivugiza": [
+                  Cyivugiza: [
                     "Cyubi",
                     "Gakumba",
                     "Gishahaga",
@@ -21880,11 +21741,11 @@ const rwandaData = {
                     "Kamananga",
                     "Mukungu",
                     "Nyabishongo",
-                    "Rukomero"
-                  ]
+                    "Rukomero",
+                  ],
                 },
                 {
-                  "Mubuga": [
+                  Mubuga: [
                     "Bugorozi",
                     "Buryoshya",
                     "Gakararanka",
@@ -21896,11 +21757,11 @@ const rwandaData = {
                     "Pfunda",
                     "Rushubi",
                     "Rutovu",
-                    "Rwankuba"
-                  ]
+                    "Rwankuba",
+                  ],
                 },
                 {
-                  "Ngoma": [
+                  Ngoma: [
                     "Bukanda",
                     "Bushoga",
                     "Cyeshero",
@@ -21912,11 +21773,11 @@ const rwandaData = {
                     "Kazo",
                     "Mpati",
                     "Ngoma",
-                    "Nkuna"
-                  ]
+                    "Nkuna",
+                  ],
                 },
                 {
-                  "Terimbere": [
+                  Terimbere: [
                     "Gihinga",
                     "Kageshi",
                     "Kanombe",
@@ -21929,26 +21790,26 @@ const rwandaData = {
                     "Ruraji",
                     "Rwandozi",
                     "Rwangambuto",
-                    "Ryanyiramunonko"
-                  ]
-                }
-              ]
+                    "Ryanyiramunonko",
+                  ],
+                },
+              ],
             },
             {
-              "Ruhango": [
+              Ruhango: [
                 {
-                  "Gatare": [
+                  Gatare: [
                     "Gasovu",
                     "Gasoyo",
                     "Kamuramira",
                     "Kirinja",
                     "Mwurire",
                     "Ruhimbi",
-                    "Rukenesha"
-                  ]
+                    "Rukenesha",
+                  ],
                 },
                 {
-                  "Gihira": [
+                  Gihira: [
                     "Bitenga",
                     "Busenda",
                     "Karambagiro",
@@ -21956,55 +21817,55 @@ const rwandaData = {
                     "Kinyenkanda",
                     "Murambi",
                     "Rukoko",
-                    "Tara"
-                  ]
+                    "Tara",
+                  ],
                 },
                 {
-                  "Kavumu": [
+                  Kavumu: [
                     "Gakeri",
                     "Gasasa",
                     "Gasunzu",
                     "Mubirizi",
                     "Muhingo",
-                    "Nyundo"
-                  ]
+                    "Nyundo",
+                  ],
                 },
                 {
-                  "Nyakarera": [
+                  Nyakarera: [
                     "Buzeyi",
                     "Kabeza",
                     "Kagogo",
                     "Kayove",
                     "Marabuye",
-                    "Mugali"
-                  ]
+                    "Mugali",
+                  ],
                 },
                 {
-                  "Rugasa": [
+                  Rugasa: [
                     "Cyashenge",
                     "Gicaca",
                     "Kabitovu",
                     "Kiraza",
                     "Murambi",
-                    "Nyakagezi"
-                  ]
+                    "Nyakagezi",
+                  ],
                 },
                 {
-                  "Rundoyi": [
+                  Rundoyi: [
                     "Gakararanka",
                     "Karebero",
                     "Kaziga",
                     "Matyazo",
                     "Rugaragara",
-                    "Rushasho"
-                  ]
-                }
-              ]
+                    "Rushasho",
+                  ],
+                },
+              ],
             },
             {
-              "Rusebeya": [
+              Rusebeya: [
                 {
-                  "Kabona": [
+                  Kabona: [
                     "Byiniro",
                     "Kibara",
                     "Munini",
@@ -22012,11 +21873,11 @@ const rwandaData = {
                     "Ntereye",
                     "Nyagasambu",
                     "Rusheshi",
-                    "Rwamvura"
-                  ]
+                    "Rwamvura",
+                  ],
                 },
                 {
-                  "Mberi": [
+                  Mberi: [
                     "Bungwe",
                     "Gakeri",
                     "Gashihe",
@@ -22027,11 +21888,11 @@ const rwandaData = {
                     "Kagano",
                     "Marimba",
                     "Ruganda",
-                    "Rurimba"
-                  ]
+                    "Rurimba",
+                  ],
                 },
                 {
-                  "Remera": [
+                  Remera: [
                     "Bihira",
                     "Bweramana",
                     "Gahunga",
@@ -22040,28 +21901,28 @@ const rwandaData = {
                     "Nturo",
                     "Ruhuha",
                     "Rurambo",
-                    "Shyembe"
-                  ]
+                    "Shyembe",
+                  ],
                 },
                 {
-                  "Ruronde": [
+                  Ruronde: [
                     "Gisozi",
                     "Kigali",
                     "Kirumbi",
                     "Mubuga",
-                    "Nyamibombwe"
-                  ]
-                }
-              ]
-            }
-          ]
+                    "Nyamibombwe",
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "Rusizi": [
+          Rusizi: [
             {
-              "Bugarama": [
+              Bugarama: [
                 {
-                  "Nyange": [
+                  Nyange: [
                     "Cité",
                     "Cyagara",
                     "Gatebe",
@@ -22074,11 +21935,11 @@ const rwandaData = {
                     "Munini",
                     "Nyange",
                     "Rubumba",
-                    "Rusayo"
-                  ]
+                    "Rusayo",
+                  ],
                 },
                 {
-                  "Pera": [
+                  Pera: [
                     "Buhanga",
                     "Isangano",
                     "Ituze",
@@ -22090,11 +21951,11 @@ const rwandaData = {
                     "Murambi",
                     "Murwa",
                     "Mwaro",
-                    "Pera"
-                  ]
+                    "Pera",
+                  ],
                 },
                 {
-                  "Ryankana": [
+                  Ryankana: [
                     "Gihigano",
                     "Gombaniro",
                     "Kabuga",
@@ -22106,26 +21967,26 @@ const rwandaData = {
                     "Nyehonga",
                     "Rubyiro",
                     "Ruhwa",
-                    "Rusizi"
-                  ]
-                }
-              ]
+                    "Rusizi",
+                  ],
+                },
+              ],
             },
             {
-              "Butare": [
+              Butare: [
                 {
-                  "Butanda": [
+                  Butanda: [
                     "Buganzo",
                     "Gasihe",
                     "Gitega",
                     "Murambi",
                     "Mwoya",
                     "Rugera",
-                    "Rujagi"
-                  ]
+                    "Rujagi",
+                  ],
                 },
                 {
-                  "Gatereri": [
+                  Gatereri: [
                     "Giciramata",
                     "Gisovu",
                     "Kabuga",
@@ -22136,21 +21997,21 @@ const rwandaData = {
                     "Nyakibanda",
                     "Nyambeho",
                     "Ruhinga",
-                    "Rwibutso"
-                  ]
+                    "Rwibutso",
+                  ],
                 },
                 {
-                  "Nyamihanda": [
+                  Nyamihanda: [
                     "Kenya",
                     "Kirwano",
                     "Munkamba",
                     "Mwimerere",
                     "Ndengerezi",
-                    "Rushwati"
-                  ]
+                    "Rushwati",
+                  ],
                 },
                 {
-                  "Rwambogo": [
+                  Rwambogo: [
                     "Bisengo",
                     "Buye",
                     "Byimana",
@@ -22160,16 +22021,16 @@ const rwandaData = {
                     "Karambo",
                     "Kigarama",
                     "Nyaruteja",
-                    "Rutovu"
-                  ]
-                }
-              ]
+                    "Rutovu",
+                  ],
+                },
+              ],
             },
             {
-              "Bweyeye": [
-                { "Gikungu": ["Kibonajoro", "Rwamagare"] },
+              Bweyeye: [
+                { Gikungu: ["Kibonajoro", "Rwamagare"] },
                 {
-                  "Kiyabo": [
+                  Kiyabo: [
                     "Bunyagiro",
                     "Matyazo",
                     "Mbisabasaba",
@@ -22177,40 +22038,40 @@ const rwandaData = {
                     "Mutara",
                     "Ruhondo",
                     "Runege",
-                    "Rutobo"
-                  ]
+                    "Rutobo",
+                  ],
                 },
-                { "Murwa": ["Muyebe", "Nyabigoma"] },
-                { "Nyamuzi": ["Gakopfo", "Kigobe", "Muhiza", "Rwamisave"] },
+                { Murwa: ["Muyebe", "Nyabigoma"] },
+                { Nyamuzi: ["Gakopfo", "Kigobe", "Muhiza", "Rwamisave"] },
                 {
-                  "Rasano": [
+                  Rasano: [
                     "Banamba",
                     "Kabuga",
                     "Nyamirambo",
                     "Nyamutake",
                     "Runyami",
                     "Runyovu",
-                    "Uwinzovu"
-                  ]
-                }
-              ]
+                    "Uwinzovu",
+                  ],
+                },
+              ],
             },
             {
-              "Gashonga": [
-                { "Birembo": ["Mariba", "Burama"] },
+              Gashonga: [
+                { Birembo: ["Mariba", "Burama"] },
                 {
-                  "Buhokoro": [
+                  Buhokoro: [
                     "Busekera",
                     "Cyimbazi",
                     "Gahinga",
                     "Kabahizi",
-                    "Ryagacece"
-                  ]
+                    "Ryagacece",
+                  ],
                 },
-                { "Kabakobwa": ["Gatare", "Munini", "Rango", "Rwesero"] },
-                { "Kacyuma": ["Mubuga", "Mukaba", "Rango", "Torero"] },
+                { Kabakobwa: ["Gatare", "Munini", "Rango", "Rwesero"] },
+                { Kacyuma: ["Mubuga", "Mukaba", "Rango", "Torero"] },
                 {
-                  "Kamurehe": [
+                  Kamurehe: [
                     "Gacyamo",
                     "Gasharu",
                     "Kamonyi",
@@ -22218,59 +22079,59 @@ const rwandaData = {
                     "Murehe",
                     "Nyabihanga",
                     "Rebero",
-                    "Shara"
-                  ]
+                    "Shara",
+                  ],
                 },
                 {
-                  "Karemereye": [
+                  Karemereye: [
                     "Kabaha",
                     "Kabahinda",
                     "Kagikongoro",
                     "Mibirizi",
-                    "Rugarama"
-                  ]
+                    "Rugarama",
+                  ],
                 },
                 {
-                  "Muti": ["Gakombe", "Kabeza", "Karenge", "Marebe", "Rugende"]
+                  Muti: ["Gakombe", "Kabeza", "Karenge", "Marebe", "Rugende"],
                 },
                 {
-                  "Rusayo": [
+                  Rusayo: [
                     "Bitaba",
                     "Kamuhana",
                     "Kibombwe",
                     "Kiremereye",
                     "Misave",
                     "Nyamutarama",
-                    "Ryagatebe"
-                  ]
-                }
-              ]
+                    "Ryagatebe",
+                  ],
+                },
+              ],
             },
             {
-              "Giheke": [
-                { "Cyendajuru": ["Burembo", "Kabeza", "Kibakure", "Murinzi"] },
+              Giheke: [
+                { Cyendajuru: ["Burembo", "Kabeza", "Kibakure", "Murinzi"] },
                 {
-                  "Gakomeye": [
+                  Gakomeye: [
                     "Buzi",
                     "Gacyamo",
                     "Kabuga",
                     "Kagarama",
-                    "Ruvumbu"
-                  ]
+                    "Ruvumbu",
+                  ],
                 },
                 {
-                  "Giheke": [
+                  Giheke: [
                     "Karambo",
                     "Murambi",
                     "Rugombo",
                     "Rwumvangoma",
-                    "Wimana"
-                  ]
+                    "Wimana",
+                  ],
                 },
-                { "Kamashangi": ["Gitwa", "Isha", "Kamuhozi", "Rukombe"] },
-                { "Kigenge": ["Gahinga", "Gahurubuka", "Rwamiko"] },
+                { Kamashangi: ["Gitwa", "Isha", "Kamuhozi", "Rukombe"] },
+                { Kigenge: ["Gahinga", "Gahurubuka", "Rwamiko"] },
                 {
-                  "Ntura": [
+                  Ntura: [
                     "Bubanga",
                     "Kabujyogoro",
                     "Kabyuma",
@@ -22278,17 +22139,17 @@ const rwandaData = {
                     "Kavuye",
                     "Kigenge",
                     "Ntura",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
-                { "Rwega": ["Impala", "Kanoga", "Rwega"] },
-                { "Turambi": ["Kamuhoza", "Munyove", "Rwinkwavu", "Turambi"] }
-              ]
+                { Rwega: ["Impala", "Kanoga", "Rwega"] },
+                { Turambi: ["Kamuhoza", "Munyove", "Rwinkwavu", "Turambi"] },
+              ],
             },
             {
-              "Gihundwe": [
+              Gihundwe: [
                 {
-                  "Burunga": [
+                  Burunga: [
                     "Burunga",
                     "Cyapa",
                     "Cyunyu",
@@ -22298,58 +22159,58 @@ const rwandaData = {
                     "Karangiro",
                     "Karitasi",
                     "Karorabose",
-                    "Karushaririza"
-                  ]
+                    "Karushaririza",
+                  ],
                 },
                 {
-                  "Gatsiro": [
+                  Gatsiro: [
                     "Gahinga",
                     "Gikombe",
                     "Kavumu",
                     "Kinyereri",
                     "Mpongora",
                     "Rwahi",
-                    "Tuwonane"
-                  ]
+                    "Tuwonane",
+                  ],
                 },
-                { "Gihaya": ["Budorozo", "Kinyaga"] },
+                { Gihaya: ["Budorozo", "Kinyaga"] },
                 {
-                  "Kagara": [
+                  Kagara: [
                     "Bahemba",
                     "Kivoga",
                     "Nyandarama",
                     "Rubenga I",
                     "Rubenga II",
-                    "Rukohwa"
-                  ]
+                    "Rukohwa",
+                  ],
                 },
                 {
-                  "Kamatita": [
+                  Kamatita: [
                     "Cyinzovu",
                     "Gahwazi",
                     "Kamanyenga",
                     "Muhari",
                     "Munyana",
-                    "Ngoma"
-                  ]
+                    "Ngoma",
+                  ],
                 },
                 {
-                  "Shagasha": [
+                  Shagasha: [
                     "Bisanganira",
                     "Gasharu",
                     "Gitwa",
                     "Kanoga",
                     "Karambo",
                     "Nyagatare",
-                    "Shagasha"
-                  ]
-                }
-              ]
+                    "Shagasha",
+                  ],
+                },
+              ],
             },
             {
-              "Gikundamvura": [
+              Gikundamvura: [
                 {
-                  "Kizura": [
+                  Kizura: [
                     "Gasharu",
                     "Gitambi",
                     "Hinduka",
@@ -22359,11 +22220,11 @@ const rwandaData = {
                     "Mutonga",
                     "Ruhango",
                     "Rukuraza",
-                    "Shanike"
-                  ]
+                    "Shanike",
+                  ],
                 },
                 {
-                  "Mpinga": [
+                  Mpinga: [
                     "Birindiro",
                     "Busarabuye",
                     "Bushenge",
@@ -22376,35 +22237,35 @@ const rwandaData = {
                     "Mubuga",
                     "Mugerero",
                     "Nyabihanga",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Nyamigina": [
+                  Nyamigina: [
                     "Binyaburanga",
                     "Buhinga",
                     "Bumaranyota",
                     "Bwiza",
                     "Jyambere",
                     "Kanoga",
-                    "Kariba"
-                  ]
-                }
-              ]
+                    "Kariba",
+                  ],
+                },
+              ],
             },
             {
-              "Gitambi": [
+              Gitambi: [
                 {
-                  "Cyingwa": [
+                  Cyingwa: [
                     "Kabucuku",
                     "Kabugarama",
                     "Mpinga",
                     "Mugenge",
-                    "Rwihene"
-                  ]
+                    "Rwihene",
+                  ],
                 },
                 {
-                  "Gahungeri": [
+                  Gahungeri: [
                     "Kamagaju",
                     "Kamonyi",
                     "Kaninda",
@@ -22414,56 +22275,56 @@ const rwandaData = {
                     "Njambwe",
                     "Nyakibingo",
                     "Nyamaganda",
-                    "Nyantaba"
-                  ]
+                    "Nyantaba",
+                  ],
                 },
                 {
-                  "Hangabashi": [
+                  Hangabashi: [
                     "Kabonabose",
                     "Kabuga",
                     "Karambo",
                     "Kirehe",
                     "Nzabuhaha",
-                    "Runanira"
-                  ]
+                    "Runanira",
+                  ],
                 },
                 {
-                  "Mashesha": [
+                  Mashesha: [
                     "Busasamana",
                     "Idaga",
                     "Kankuba",
                     "Karama",
                     "Nyakivomero",
-                    "Ruvuruga"
-                  ]
-                }
-              ]
+                    "Ruvuruga",
+                  ],
+                },
+              ],
             },
             {
-              "Kamembe": [
+              Kamembe: [
                 {
-                  "Cyangugu": [
+                  Cyangugu: [
                     "Gatovu",
                     "Karambo",
                     "Karangiro",
                     "Mont Cyangugu",
                     "Mundima",
                     "Ngoma",
-                    "Ntwari"
-                  ]
+                    "Ntwari",
+                  ],
                 },
                 {
-                  "Gihundwe": [
+                  Gihundwe: [
                     "Batero",
                     "Burunga",
                     "Kabeza",
                     "Munyinya",
                     "Murambi",
-                    "Nkurunziza"
-                  ]
+                    "Nkurunziza",
+                  ],
                 },
                 {
-                  "Kamashangi": [
+                  Kamashangi: [
                     "Amahoro",
                     "Badura",
                     "Gitinda",
@@ -22474,17 +22335,17 @@ const rwandaData = {
                     "Ntemabiti",
                     "Nyakayonga",
                     "Rushakamba",
-                    "Umuganda"
-                  ]
+                    "Umuganda",
+                  ],
                 },
-                { "Kamurera": ["Cyapa", "Gikombe", "Kamuhirwa", "Murangi"] },
-                { "Ruganda": ["Kadashya", "Kamubaji", "Murindi", "Ruhimbi"] }
-              ]
+                { Kamurera: ["Cyapa", "Gikombe", "Kamuhirwa", "Murangi"] },
+                { Ruganda: ["Kadashya", "Kamubaji", "Murindi", "Ruhimbi"] },
+              ],
             },
             {
-              "Muganza": [
+              Muganza: [
                 {
-                  "Cyarukara": [
+                  Cyarukara: [
                     "Gashinjano",
                     "Gashisha",
                     "Gisozi",
@@ -22493,11 +22354,11 @@ const rwandaData = {
                     "Nyakagoma",
                     "Rubumba",
                     "Rubyiro",
-                    "Rungunga"
-                  ]
+                    "Rungunga",
+                  ],
                 },
                 {
-                  "Gakoni": [
+                  Gakoni: [
                     "Gatabuvuga",
                     "Gatanga",
                     "Kabeza",
@@ -22509,11 +22370,11 @@ const rwandaData = {
                     "Rugaragara",
                     "Sanganiro",
                     "Sano",
-                    "Umutuzo"
-                  ]
+                    "Umutuzo",
+                  ],
                 },
                 {
-                  "Shara": [
+                  Shara: [
                     "Busasamana",
                     "Gakenke",
                     "Kabarore",
@@ -22522,15 +22383,15 @@ const rwandaData = {
                     "Nyabishunju",
                     "Nyenyeri",
                     "Ramiro",
-                    "Rubeho"
-                  ]
-                }
-              ]
+                    "Rubeho",
+                  ],
+                },
+              ],
             },
             {
-              "Mururu": [
+              Mururu: [
                 {
-                  "Gahinga": [
+                  Gahinga: [
                     "Birogo",
                     "Buremera",
                     "Cyirabyo A",
@@ -22540,16 +22401,16 @@ const rwandaData = {
                     "Kamarebe",
                     "Kanunga",
                     "Mutara",
-                    "Ryabadugu"
-                  ]
+                    "Ryabadugu",
+                  ],
                 },
-                { "Kabahinda": ["Kabahire", "Karambo", "Winteko"] },
-                { "Kabasigirira": ["Bitongo", "Butazigurwa", "Mutimasi"] },
-                { "Kagarama": ["Cyete", "Gikungwe", "Gitwa", "Kamatene"] },
-                { "Karambi": ["Bugayi", "Gihango", "Kagarama"] },
-                { "Miko": ["Kabageni", "Nyakanyinya", "Ruhimbi"] },
+                { Kabahinda: ["Kabahire", "Karambo", "Winteko"] },
+                { Kabasigirira: ["Bitongo", "Butazigurwa", "Mutimasi"] },
+                { Kagarama: ["Cyete", "Gikungwe", "Gitwa", "Kamatene"] },
+                { Karambi: ["Bugayi", "Gihango", "Kagarama"] },
+                { Miko: ["Kabageni", "Nyakanyinya", "Ruhimbi"] },
                 {
-                  "Tara": [
+                  Tara: [
                     "Byangoma",
                     "Cyandarama",
                     "Gatimbwa",
@@ -22557,97 +22418,97 @@ const rwandaData = {
                     "Karanjwa",
                     "Mukorazuba",
                     "Mutongo",
-                    "Rugerero"
-                  ]
-                }
-              ]
+                    "Rugerero",
+                  ],
+                },
+              ],
             },
             {
-              "Nkanka": [
+              Nkanka: [
                 {
-                  "Gitwa": [
+                  Gitwa: [
                     "Buganda",
                     "Burege",
                     "Kanyombya",
                     "Karama",
                     "Muhonga",
-                    "Rugarika"
-                  ]
+                    "Rugarika",
+                  ],
                 },
                 {
-                  "Kamanyenga": [
+                  Kamanyenga: [
                     "Gatebe",
                     "Hepfo",
                     "Kavogo",
                     "Muramba",
                     "Nyabiranga",
-                    "Rweya"
-                  ]
+                    "Rweya",
+                  ],
                 },
                 {
-                  "Kangazi": [
+                  Kangazi: [
                     "Bahemba",
                     "Busekanka",
                     "Gafoka",
                     "Muyange",
-                    "Rusunyu"
-                  ]
+                    "Rusunyu",
+                  ],
                 },
                 {
-                  "Kinyaga": [
+                  Kinyaga: [
                     "Kabutimbiri",
                     "Kinyaga",
                     "Miramba",
                     "Rugaragara",
-                    "Sumoyamana"
-                  ]
+                    "Sumoyamana",
+                  ],
                 },
                 {
-                  "Rugabano": [
+                  Rugabano: [
                     "Bitaba",
                     "Kagarama",
                     "Kamahoro",
                     "Karambo",
                     "Rebero",
-                    "Rurembo"
-                  ]
-                }
-              ]
+                    "Rurembo",
+                  ],
+                },
+              ],
             },
             {
-              "Nkombo": [
+              Nkombo: [
                 {
-                  "Bigoga": [
+                  Bigoga: [
                     "Gisunyu",
                     "Giteme",
                     "Kabashinga",
                     "Ngoma",
                     "Nyawenya",
-                    "Rebero"
-                  ]
+                    "Rebero",
+                  ],
                 },
                 {
-                  "Bugarura": ["Gaturo", "Nyakabanda", "Nyankumbira", "Rurembo"]
+                  Bugarura: ["Gaturo", "Nyakabanda", "Nyankumbira", "Rurembo"],
                 },
-                { "Ishywa": ["Biraro", "Kaboneke", "Kabuga", "Mapfura"] },
+                { Ishywa: ["Biraro", "Kaboneke", "Kabuga", "Mapfura"] },
                 {
-                  "Kamagimbo": [
+                  Kamagimbo: [
                     "Gashara",
                     "Gitwa",
                     "Kabuye",
                     "Kanyinya",
                     "Karenge",
                     "Mbuga",
-                    "Muhora"
-                  ]
+                    "Muhora",
+                  ],
                 },
-                { "Rwenje": ["Gituro", "Mirara", "Nyabintare", "Rutarakiro"] }
-              ]
+                { Rwenje: ["Gituro", "Mirara", "Nyabintare", "Rutarakiro"] },
+              ],
             },
             {
-              "Nkungu": [
+              Nkungu: [
                 {
-                  "Gatare": [
+                  Gatare: [
                     "Bahuro",
                     "Cyandarama",
                     "Kimpundu",
@@ -22655,11 +22516,11 @@ const rwandaData = {
                     "Madaho",
                     "Njambwe",
                     "Rubona",
-                    "Rutegamatwi"
-                  ]
+                    "Rutegamatwi",
+                  ],
                 },
                 {
-                  "Kiziguro": [
+                  Kiziguro: [
                     "Byugaro",
                     "Gasarabuye",
                     "Kabigohe",
@@ -22671,11 +22532,11 @@ const rwandaData = {
                     "Mpinga",
                     "Mukenke",
                     "Rebero",
-                    "Ryamibuga"
-                  ]
+                    "Ryamibuga",
+                  ],
                 },
                 {
-                  "Mataba": [
+                  Mataba: [
                     "Gashashi",
                     "Gatagara",
                     "Gatondo",
@@ -22686,11 +22547,11 @@ const rwandaData = {
                     "Migazo",
                     "Muhora",
                     "Rubona",
-                    "Rwamaraba"
-                  ]
+                    "Rwamaraba",
+                  ],
                 },
                 {
-                  "Ryamuhirwa": [
+                  Ryamuhirwa: [
                     "Gako",
                     "Gatarange",
                     "Kigurwe",
@@ -22699,15 +22560,15 @@ const rwandaData = {
                     "Nyarushishi",
                     "Rugabe",
                     "Rususa",
-                    "Ryamaraza"
-                  ]
-                }
-              ]
+                    "Ryamaraza",
+                  ],
+                },
+              ],
             },
             {
-              "Nyakabuye": [
+              Nyakabuye: [
                 {
-                  "Gasebeya": [
+                  Gasebeya: [
                     "Biteri",
                     "Gacyamo",
                     "Gahuna",
@@ -22716,22 +22577,22 @@ const rwandaData = {
                     "Kabuye",
                     "Kanoga",
                     "Karambi",
-                    "Kaveya"
-                  ]
+                    "Kaveya",
+                  ],
                 },
                 {
-                  "Gaseke": [
+                  Gaseke: [
                     "Bitendezi",
                     "Gatambamo",
                     "Kagabiro",
                     "Kagenge",
                     "Kinunga",
                     "Muyange",
-                    "Rubona"
-                  ]
+                    "Rubona",
+                  ],
                 },
                 {
-                  "Kamanu": [
+                  Kamanu: [
                     "Bikinga",
                     "Bugumya",
                     "Gatare",
@@ -22747,30 +22608,30 @@ const rwandaData = {
                     "Ryamberu",
                     "Segege",
                     "Shaba",
-                    "Site"
-                  ]
+                    "Site",
+                  ],
                 },
                 {
-                  "Kiziho": [
+                  Kiziho: [
                     "Bunyereri",
                     "Kamagerero",
                     "Makoko",
                     "Nkanga",
                     "Ruhinga",
-                    "Rwimbogo"
-                  ]
+                    "Rwimbogo",
+                  ],
                 },
                 {
-                  "Mashyuza": [
+                  Mashyuza: [
                     "Cyamura",
                     "Kibirizi",
                     "Nyamaronko",
                     "Ruganzu",
-                    "Rukamba"
-                  ]
+                    "Rukamba",
+                  ],
                 },
                 {
-                  "Nyabintare": [
+                  Nyabintare: [
                     "Barenga",
                     "Gakungu",
                     "Gatanga",
@@ -22778,56 +22639,56 @@ const rwandaData = {
                     "Mabuye",
                     "Mizibira",
                     "Peru",
-                    "Ryarubaka"
-                  ]
-                }
-              ]
+                    "Ryarubaka",
+                  ],
+                },
+              ],
             },
             {
-              "Nyakarenzo": [
-                { "Gatare": ["Bigando", "Kabumbwe", "Rwindare"] },
+              Nyakarenzo: [
+                { Gatare: ["Bigando", "Kabumbwe", "Rwindare"] },
                 {
-                  "Kabagina": [
+                  Kabagina: [
                     "Bitaba",
                     "Gacyamo",
                     "Gitovu",
                     "Karambi",
-                    "Nyamugari"
-                  ]
+                    "Nyamugari",
+                  ],
                 },
                 {
-                  "Kabuye": [
+                  Kabuye: [
                     "Bisenyi",
                     "Kazuba",
                     "Kigarama",
                     "Mashya",
                     "Mugerero",
                     "Nyamagana",
-                    "Nyungu"
-                  ]
+                    "Nyungu",
+                  ],
                 },
-                { "Kanoga": ["Kamanura", "Kanoga", "Kanyovu", "Kumana"] },
-                { "Karangiro": ["Cyimbogo", "Gihusi", "Gituza", "Kabayego"] },
-                { "Murambi": ["Gisovu", "Njambwe", "Runyanzovu"] },
-                { "Rusambu": ["Gataramo", "Karambi", "Mugongo", "Rusambu"] }
-              ]
+                { Kanoga: ["Kamanura", "Kanoga", "Kanyovu", "Kumana"] },
+                { Karangiro: ["Cyimbogo", "Gihusi", "Gituza", "Kabayego"] },
+                { Murambi: ["Gisovu", "Njambwe", "Runyanzovu"] },
+                { Rusambu: ["Gataramo", "Karambi", "Mugongo", "Rusambu"] },
+              ],
             },
             {
-              "Nzahaha": [
+              Nzahaha: [
                 {
-                  "Butambamo": [
+                  Butambamo: [
                     "Gashagwa",
                     "Karunyerera",
                     "Muguri",
                     "Ngoma",
-                    "Ryarusaro"
-                  ]
+                    "Ryarusaro",
+                  ],
                 },
                 {
-                  "Kigenge": ["Gihungwe", "Kacyiru", "Karagizwa", "Ndabereye"]
+                  Kigenge: ["Gihungwe", "Kacyiru", "Karagizwa", "Ndabereye"],
                 },
                 {
-                  "Murya": [
+                  Murya: [
                     "Buganza",
                     "Gacuriro",
                     "Gisheke",
@@ -22835,83 +22696,83 @@ const rwandaData = {
                     "Nyagahanga",
                     "Nyagasozi",
                     "Ryagashyitsi",
-                    "Tare"
-                  ]
+                    "Tare",
+                  ],
                 },
                 {
-                  "Nyenji": [
+                  Nyenji: [
                     "Gasharu",
                     "Gatare",
                     "Kinengwe",
                     "Murindi",
                     "Ruganzu",
-                    "Rugunga"
-                  ]
+                    "Rugunga",
+                  ],
                 },
                 {
-                  "Rebero": ["Gatovu", "Giti", "Kabuyange", "Rukoro", "Shariyo"]
+                  Rebero: ["Gatovu", "Giti", "Kabuyange", "Rukoro", "Shariyo"],
                 },
                 {
-                  "Rwinzuki": [
+                  Rwinzuki: [
                     "Gasave",
                     "Kabugabo",
                     "Kibirezi",
                     "Kiranga",
                     "Murambi",
                     "Nyagahinga",
-                    "Peru"
-                  ]
-                }
-              ]
+                    "Peru",
+                  ],
+                },
+              ],
             },
             {
-              "Rwimbogo": [
+              Rwimbogo: [
                 {
-                  "Karenge": [
+                  Karenge: [
                     "Batura",
                     "Gatanga",
                     "Gishoma",
                     "Makambi",
                     "Nyabihanga",
-                    "Ruzeneko"
-                  ]
+                    "Ruzeneko",
+                  ],
                 },
                 {
-                  "Muhehwe": [
+                  Muhehwe: [
                     "Kibare",
                     "Murama",
                     "Musigiti",
                     "Nyarusebeya",
                     "Renga",
-                    "Rungunga"
-                  ]
+                    "Rungunga",
+                  ],
                 },
                 {
-                  "Mushaka": [
+                  Mushaka: [
                     "Gakombe",
                     "Gatambamo",
                     "Kabajoba",
                     "Kamabuye",
-                    "Nyagashora"
-                  ]
+                    "Nyagashora",
+                  ],
                 },
-                { "Rubugu": ["Gatare", "Ntenyi", "Nyange", "Rukombe"] },
+                { Rubugu: ["Gatare", "Ntenyi", "Nyange", "Rukombe"] },
                 {
-                  "Ruganda": [
+                  Ruganda: [
                     "Cyunguriro",
                     "Musumba",
                     "Rubamba",
                     "Rubuye",
-                    "Ruhinga"
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+                    "Ruhinga",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
 
 export default rwandaData;

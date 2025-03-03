@@ -69,10 +69,12 @@ export default function ProductTable() {
       console.error("Error toggling popularity:", error);
     }
   };
-  function handleEdit(product) {
+
+  const handleEdit = (product) => {
     setSelectedProduct(product);
     setShowModal(true);
-  }
+  };
+
   return (
     <div className="p-5 bg-gray-100 min-h-screen">
       <div className="flex flex-col sm:flex-row justify-between mb-4">
@@ -85,7 +87,10 @@ export default function ProductTable() {
         />
         <button
           style={{ backgroundColor: "#0e8c2b" }}
-          onClick={() => setShowModal(true)}
+          onClick={() => {
+            setSelectedProduct(null); // Reset for new product
+            setShowModal(true);
+          }}
           className="bg-blue-600 text-white px-4 py-2 rounded"
         >
           Add Product
@@ -113,56 +118,61 @@ export default function ProductTable() {
               </tr>
             </thead>
             <tbody>
-              {filteredProducts.map((product, index) => (
-                <tr
-                  key={index}
-                  className={`border-b-2 border-gray-200 items-center content-center ${
-                    index % 2 == 0 ? "bg-gray-100" : "bg-gray-200"
-                  }`}
-                >
-                  <td className="p-4 flex justify-center">
-                    <img
-                      src={product.image}
-                      alt={product.prodName}
-                      className="w-20 h-20 object-cover rounded-lg"
-                    />
-                  </td>
-                  <td className="p-4">{product.prodName}</td>
-                  <td className="p-4">{product.prodDescription}</td>
-                  <td className="p-4">{product.category}</td>
-                  <td className="p-4">{product.stock}</td>
-                  <td className="p-4">{product.sold}</td>
-                  <td className="p-4">RWF {product.price}</td>
-                  <td className="p-4">{product.gender}</td>
-                  <td className="p-4">
-                    <div className="flex space-x-5 space-y-5 items-center justify-center">
-                      <button onClick={() => handleEdit(product)}>
-                        <FaEdit className="text-blue-500 hover:text-blue-700" />
-                      </button>
-                      <button onClick={() => handleDelete(product.prodId)}>
-                        <FaTrashAlt className="text-red-500 hover:text-red-700" />
-                      </button>
-                      <button
-                        onClick={() =>
-                          togglePopularity(product.prodId, !product.popular)
-                        }
-                      >
-                        {product.popular ? (
-                          <CgMathMinus
-                            className="text-yellow-500 hover:text-yellow-700"
-                            title="Remove from popular products"
-                          />
-                        ) : (
-                          <CgAdd
-                            className="text-green-500 hover:text-green-700"
-                            title="Add to popular products"
-                          />
-                        )}
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
+              {filteredProducts.map((product, index) => {
+                const mainImage = product.images.find((img) => img.isMain)?.imageUrl || 
+                                 product.images[0]?.imageUrl || "https://via.placeholder.com/100";
+
+                return (
+                  <tr
+                    key={index}
+                    className={`border-b-2 border-gray-200 items-center content-center ${
+                      index % 2 === 0 ? "bg-gray-100" : "bg-gray-200"
+                    }`}
+                  >
+                    <td className="p-4 flex justify-center">
+                      <img
+                        src={mainImage}
+                        alt={product.prodName}
+                        className="w-20 h-20 object-cover rounded-lg"
+                      />
+                    </td>
+                    <td className="p-4">{product.prodName}</td>
+                    <td className="p-4">{product.prodDescription}</td>
+                    <td className="p-4">{product.category}</td>
+                    <td className="p-4">{product.stock}</td>
+                    <td className="p-4">{product.sold || 0}</td> {/* Assuming sold isn't in schema yet */}
+                    <td className="p-4">RWF {product.price}</td>
+                    <td className="p-4">{product.gender}</td>
+                    <td className="p-4">
+                      <div className="flex space-x-5 space-y-5 items-center justify-center">
+                        <button onClick={() => handleEdit(product)}>
+                          <FaEdit className="text-blue-500 hover:text-blue-700" />
+                        </button>
+                        <button onClick={() => handleDelete(product.prodId)}>
+                          <FaTrashAlt className="text-red-500 hover:text-red-700" />
+                        </button>
+                        <button
+                          onClick={() =>
+                            togglePopularity(product.prodId, !product.popular)
+                          }
+                        >
+                          {product.popular ? (
+                            <CgMathMinus
+                              className="text-yellow-500 hover:text-yellow-700"
+                              title="Remove from popular products"
+                            />
+                          ) : (
+                            <CgAdd
+                              className="text-green-500 hover:text-green-700"
+                              title="Add to popular products"
+                            />
+                          )}
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

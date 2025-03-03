@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, memo } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
 import { CgClose, CgShoppingCart } from "react-icons/cg";
@@ -8,6 +8,8 @@ import CartItems, { CartContext } from "../../constants/cartItems"; // Import Ca
 import Search from "./searchComponent";
 import { SearchIcon, ShoppingCart, UserPlus } from "lucide-react";
 import { ThemeContext } from "../../constants/ThemeContext";
+
+const MemoizedSearch = memo(Search);
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -168,7 +170,7 @@ export default function Navbar() {
           </Drawer>
         </div>
       </nav>
-      <Search
+      <MemoizedSearch
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
       />

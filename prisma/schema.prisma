@@ -54,10 +54,19 @@ model Products {
   category        String         @db.VarChar(255)
   stock           Int            @default(0)
   popular         Boolean        @default(false)
-  image           String         @db.Text
+  images          ProductImages[] // New relation to ProductImages
   cartProducts    CartProducts[] 
   orderItems      OrderItem[]   
   favProducts     FavProducts[] 
+}
+
+model ProductImages {
+  imageId   String   @id @default(cuid())
+  product   Products @relation(fields: [productId], references: [prodId])
+  productId String
+  imageUrl  String   @db.Text // Stores the path or URL of the image
+  isMain    Boolean  @default(false) // Indicates if this is the main image
+  position  Int      @default(0) // Controls the order of sub-images
 }
 
 model Orders {
@@ -107,4 +116,3 @@ model Subscription {
   subscriptionId String @id @default(uuid())
   email          String @unique @db.VarChar(255)
 }
-
