@@ -1,146 +1,75 @@
-import { useEffect, useRef, useState } from "react";
-import useProducts from "../../constants/products";
-import Loader3 from "./Loading3";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/autoplay";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useProducts from "../../constants/products";
+import PopularProductCard from "./PopularProductCard";
 
 const Popular = () => {
-  const { products, loading: productsLoading, error } = useProducts(); // Use loading and error from useProducts
-  const [popularProducts, setPopularProducts] = useState([]);
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
   const navigate = useNavigate();
+  const { products, loading } = useProducts();
+  const [displayedProducts, setDisplayedProducts] = useState([]);
 
   useEffect(() => {
-    const filterProducts = async () => {
-      try {
-        const filteredProducts = products.filter(
-          (item) => item.popular === true
-        );
-        setPopularProducts(filteredProducts);
-      } catch (error) {
-        console.error("Error filtering products:", error);
+    if (products && !loading) {
+      // Filter popular products
+      const popularProducts = products.filter(product => product.popular);
+      
+      // If we have more than 4 popular products, randomly select 4
+      if (popularProducts.length > 4) {
+        const randomProducts = [];
+        const tempProducts = [...popularProducts];
+        
+        for (let i = 0; i < 4; i++) {
+          const randomIndex = Math.floor(Math.random() * tempProducts.length);
+          randomProducts.push(tempProducts[randomIndex]);
+          tempProducts.splice(randomIndex, 1);
+        }
+        
+        setDisplayedProducts(randomProducts);
+      } else {
+        // If 4 or fewer products, show all of them
+        setDisplayedProducts(popularProducts);
       }
-    };
-
-    if (products && !productsLoading) { // Only filter when products are loaded
-      filterProducts();
     }
-  }, [products, productsLoading]);
+  }, [products, loading]);
 
   return (
-    <div className="text-black dark:text-white font-roboto p-2 sm:p-5 my-12 mx-0 sm:mx-5">
-      <div className="text-[20px] ssm:text-[30px] text-start sssm:text-center sm:text-[3rem] space-y-2 font-extrabold mb-4">
-        <h1>Find innovations</h1>
-        <h1>Only here</h1>
-      </div>
-      <div className="text-start sssm:text-center">
-        <h1>Our goal is to supply all new collections in fashion to you</h1>
-        <button
-          onClick={() => navigate("/shop/Unisex/pants")}
-          className="bg-green-900 text-white my-2 p-3 px-5 rounded-md"
-        >
-          Shop Now
-        </button>
-      </div>
-      <div className="flex flex-col md:flex-row items-center justify-center md:justify-between px-2 sm:px-5 my-5">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
-          Popular products
-        </h2>
-        <div className="flex space-x-2">
-          <div
-            ref={prevRef}
-            className="cursor-pointer bg-green-700 p-2 rounded-full text-white flex justify-center items-center"
+    <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+            Popular Products
+          </h2>
+          <button 
+            onClick={() => navigate('/shop/Unisex/pants')}
+            className="text-green-600 hover:text-green-700 font-medium flex items-center gap-2"
           >
-            <FaChevronLeft className="w-6 h-6" />
-          </div>
-          <div
-            ref={nextRef}
-            className="cursor-pointer bg-green-700 p-2 rounded-full text-white flex justify-center items-center"
-          >
-            <FaChevronRight className="w-6 h-6" />
-          </div>
+            View All
+            <span className="text-xl">→</span>
+          </button>
         </div>
-      </div>
 
-      {productsLoading ? (
-        <div className="flex justify-center items-center text-center w-full h-[300px]">
-          <Loader3 />
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {displayedProducts.map((product) => (
+            <PopularProductCard
+              key={product.prodId}
+              product={product}
+              onClick={() => navigate(`/product/${product.prodId}`)}
+            />
+          ))}
         </div>
-      ) : error ? (
-        <div className="flex justify-center items-center text-center w-full h-[300px] text-red-500">
-          Error loading popular products: {error.message}
-        </div>
-      ) : popularProducts.length === 0 ? (
-        <div className="flex justify-center items-center text-center w-full h-[300px]">
-          No popular products available
-        </div>
-      ) : (
-        <div className="relative">
-          <Swiper
-            spaceBetween={10}
-            slidesPerView={1}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2, spaceBetween: 15 },
-              1024: { slidesPerView: 3, spaceBetween: 20 },
-              1280: { slidesPerView: 4, spaceBetween: 20 },
-            }}
-            loop={true}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: true,
-            }}
-            onSwiper={(swiper) => {
-              if (!swiper.navigation.initialized) {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-                swiper.navigation.init();
-                swiper.navigation.update();
-              }
-            }}
-            onMouseEnter={(swiper) => swiper.autoplay.stop()}
-            onMouseLeave={(swiper) => swiper.autoplay.start()}
-            modules={[Navigation, Autoplay]}
-          >
-            {popularProducts.map((item) => {
-              const mainImage =
-                item.images.find((img) => img.isMain)?.imageUrl ||
-                item.images[0]?.imageUrl ||
-                "https://via.placeholder.com/300";
 
-              return (
-                <SwiperSlide key={item.prodId}>
-                  <div className="flex justify-center items-center w-full max-w-[300px] h-[350px] sm:h-[400px] bg-gray-100 rounded-md cursor-pointer relative group mx-auto">
-                    <img
-                      src={mainImage}
-                      alt={item.prodName}
-                      className="w-full h-full object-cover rounded-md"
-                    />
-                    <div className="absolute inset-0 bg-green-50 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <button
-                      onClick={() => navigate(`/product/${item.prodId}`)}
-                      className="absolute bottom-0 w-full bg-green-600 text-white py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    >
-                      View Product
-                    </button>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
-      )}
-    </div>
+        {/* Empty State */}
+        {displayedProducts.length === 0 && !loading && (
+          <div className="text-center py-12">
+            <p className="text-gray-600 dark:text-gray-400">
+              No new arrivals at the moment. Check back soon!
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
   );
 };
 

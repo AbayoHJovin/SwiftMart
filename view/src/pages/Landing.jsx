@@ -8,13 +8,15 @@ import WhatWeSell from "../components/WhatWeSell";
 
 const LandingPage = () => {
   return (
-    <div className="gap-5 bg-white dark:bg-black">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       <Navbar />
-      <Hero />
-      <WhatWeSell />
-      <Popular />
-      <Review />
-      <Locations />
+      <main className="space-y-16 md:space-y-24">
+        <Hero />
+        <WhatWeSell />
+        <Popular />
+        <Review />
+        <Locations />
+      </main>
       <Footer />
     </div>
   );

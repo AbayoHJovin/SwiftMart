@@ -28,6 +28,8 @@ import CategorySection from "./components/WhatWeSell.jsx";
 import FavItems from "../constants/favItems.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PaymentPage from "./pages/Pay.jsx";
+import UpdatePassword from "./pages/UpdatePassword.jsx";
+import SecurityAlert from "./pages/SecurityAlert.jsx";
 // import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
 const queryClient = new QueryClient();
 
@@ -151,6 +153,14 @@ const router = createBrowserRouter([
     ),
   },
   { path: "/try", element: <CategorySection /> },
+  {
+    path: "/update-password",
+    element: <UpdatePassword />,
+  },
+  {
+    path: "/cancel-reset",
+    element: <SecurityAlert />,
+  },
   { path: "*", element: <NotFound /> },
 ]);
 

@@ -1,96 +1,69 @@
 import { CircleCheck } from "lucide-react";
-import { useState } from "react";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const categories = [
-  { name: "Pants", icon: <CircleCheck />,href:"/shop/Unisex/pants" },
-  { name: "Shirts", icon: <CircleCheck />,href:"/shop/Unisex/shirts" },
-  { name: "T-shirts", icon: <CircleCheck />,href:"/shop/Unisex/shirts" },
-  { name: "Shorts", icon: <CircleCheck />,href:"/shop/Unisex/pants" },
-  { name: "Dresses", icon: <CircleCheck />,href:"/shop/Female/pants" },
-  { name: "Skirts", icon: <CircleCheck />,href:"/shop/Female/pants" },
-  { name: "Hats", icon: <CircleCheck />,href:"/shop/Unisex/hats" },
-  { name: "Watches", icon: <CircleCheck />,href:"/shop/Unisex/watches" },
-  { name: "Shoes", icon: <CircleCheck />,href:"/shop/Unisex/shoes" },
+  { name: "Pants", icon: <CircleCheck />, href: "/shop/Unisex/pants" },
+  { name: "Shirts", icon: <CircleCheck />, href: "/shop/Unisex/shirts" },
+  { name: "T-shirts", icon: <CircleCheck />, href: "/shop/Unisex/shirts" },
+  { name: "Shorts", icon: <CircleCheck />, href: "/shop/Unisex/pants" },
+  { name: "Dresses", icon: <CircleCheck />, href: "/shop/Female/pants" },
+  { name: "Skirts", icon: <CircleCheck />, href: "/shop/Female/pants" },
+  { name: "Hats", icon: <CircleCheck />, href: "/shop/Unisex/hats" },
+  { name: "Watches", icon: <CircleCheck />, href: "/shop/Unisex/watches" },
+  { name: "Shoes", icon: <CircleCheck />, href: "/shop/Unisex/shoes" },
 ];
 
 const CategorySection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCategories, setVisibleCategories] = useState([]);
 
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) setVisibleCategories(categories.slice(0, 6));
+      else if (width < 1024) setVisibleCategories(categories.slice(0, 8));
+      else setVisibleCategories(categories);
+    };
 
-  const handleNext = () => {
-    if (currentIndex < categories.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <div className="p-10 items-center  m-3 text-black dark:text-white">
-      <div className="text-left">
-        <h2 className="text-2xl font-bold text-center my-9 font-lato">
+    <section className="py-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Browse by Categories
         </h2>
+        <p className="text-lg text-gray-600 dark:text-gray-300">
+          Discover our wide range of fashion categories
+        </p>
       </div>
 
-      {/* Desktop and Tablet View */}
-      <div className="hidden md:flex items-center">
-        <button
-          className={`p-2 border border-gray-300 rounded-full ${
-            currentIndex === 0 ? "opacity-50" : ""
-          }`}
-          onClick={handlePrev}
-          disabled={currentIndex === 0}
-        >
-          <AiOutlineLeft />
-        </button>
-        <div className="overflow-hidden flex">
-          <div
-            className="flex space-x-4 transition-transform"
-            style={{ transform: `translateX(-${currentIndex * 200}px)` }}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6">
+        {visibleCategories.map((category, index) => (
+          <motion.a
+            href={category.href}
+            key={category.name}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: index * 0.1 }}
+            className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300"
           >
-            {categories.map((category, index) => (
-                <a href={category.href} key={category.name}>
-              <div
-                key={index}
-                className="flex flex-col items-center p-4 border-2 border-gray-200 hover:text-white hover:bg-green-500 cursor-pointer hover:border-none rounded-lg"
-                style={{ minWidth: "200px" }}
-                >
-                <span className="text-4xl">{category.icon}</span>
-                <p className="mt-2 text-lg">{category.name}</p>
-              </div>
-                  </a>
-            ))}
-          </div>
-        </div>
-        <button
-          className={`p-2 bg-gray-200 rounded-full ${
-            currentIndex === categories.length - 1 ? "opacity-50" : ""
-          }`}
-          onClick={handleNext}
-          disabled={currentIndex === categories.length - 1}
-        >
-          <AiOutlineRight />
-        </button>
-      </div>
-
-      {/* Mobile View */}
-      <div className="grid grid-cols-2 gap-4 md:hidden mt-6">
-        {categories.map((category, index) => (
-          <div
-            key={index}
-            className="flex flex-col border-2 border-gray-200 hover:text-white hover:bg-green-500 cursor-pointer hover:border-none items-center p-4  rounded-lg"
-          >
-            <span className="text-4xl">{category.icon}</span>
-            <p className="mt-2 text-lg">{category.name}</p>
-          </div>
+            <div className="flex flex-col items-center gap-4">
+              <span className="text-4xl text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300">
+                {category.icon}
+              </span>
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                {category.name}
+              </h3>
+            </div>
+            <div className="absolute inset-0 bg-green-50 dark:bg-green-900/20 opacity-0 transition-opacity duration-300" />
+          </motion.a>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

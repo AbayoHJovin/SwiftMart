@@ -12,6 +12,7 @@ const {
   forgotPassword,
   checkOldPassword,
   updatePassword,
+  checkUserEmail,
 } = require("../userControllers");
 
 cloudinary.config({
@@ -29,8 +30,9 @@ router.get("/users", getUserDetails);
 router.patch("/user/update",upload.single('image'), updateUserDetails);
 router.post("/logout", logOut);
 router.get("/currentUser", getCurrentUser);
-router.patch("/forgotPass",forgotPassword)
-router.get("/checkPassword",checkOldPassword)
-router.patch("/updatePassword",updatePassword)
+router.post("/check-email", checkUserEmail);
+router.patch("/forgotPass", forgotPassword);
+router.get("/checkPassword", checkOldPassword);
+router.patch("/updatePassword", updatePassword);
 
 module.exports = router;

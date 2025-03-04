@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const lodash = require("lodash");
+const crypto = require('crypto');
 const axios = require("axios");
 const otpGenerator = require("otp-generator");
 const nodemailer = require("nodemailer");
@@ -166,33 +167,62 @@ exports.logOut = (req, res) => {
   return res.send({ message: "Logged out" });
 };
 
-exports.forgotPassword = async (req, res) => {
+exports.checkUserEmail = async (req, res) => {
   const { email } = req.body;
-  const newPass = otpGenerator.generate(8, {
-    digits: true,
-    lowerCaseAlphabets: true,
-    upperCaseAlphabets: true,
-    specialChars: true,
-  });
   try {
     if (!email) {
-      return res.status(401).json({ message: "No email entered" });
+      return res.status(400).json({ message: "Email is required" });
     }
-    const doesEmailExist = await prisma.users.findFirst({
-      data: { email: email },
+
+    const user = await prisma.users.findFirst({
+      where: { email: email },
     });
-    if (!doesEmailExist) {
-      return res.status(401).json({ message: "The email doesn't exist" });
+
+    if (!user) {
+      return res.status(404).json({ message: "Email not found" });
     }
-    const newPasswordHashed = await bcrypt.hash(newPass, 5);
-    const updatedPassword = await prisma.users.update({
-      where: {
-        email: email,
+
+    return res.status(200).json({ 
+      success: true, 
+      message: "Email verified" 
+    });
+  } catch (error) {
+    return res.status(500).json({ 
+      message: "Error checking email" 
+    });
+  }
+};
+
+exports.forgotPassword = async (req, res) => {
+  const { email } = req.body;
+  try {
+    const user = await prisma.users.findFirst({
+      where: { email: email },
+    });
+
+    if (!user) {
+      return res.status(404).json({ message: "Email not found" });
+    }
+
+    // Generate reset token
+    const resetToken = crypto.randomBytes(32).toString('hex');
+    const resetTokenExpiry = new Date(Date.now() + 3600000); // 1 hour validity
+
+    // Update user with reset token
+    await prisma.users.update({
+      where: { 
+        email: email // Using email since it's @unique
       },
       data: {
-        password: newPasswordHashed,
-      },
+        resetToken: resetToken,
+        resetTokenExpiry: resetTokenExpiry
+      }
     });
+
+    const resetUrl = `http://localhost:5173/update-password?token=${resetToken}&email=${encodeURIComponent(email)}`;
+    const cancelUrl = `http://localhost:5173/cancel-reset?token=${resetToken}`;
+
+    // Email configuration
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -200,81 +230,47 @@ exports.forgotPassword = async (req, res) => {
         pass: process.env.COMPANY_PASSWORD,
       },
     });
+
+    // Send email
     await transporter.sendMail({
       from: process.env.COMPANY_EMAIL,
       to: email,
-      subject: "Resetting your homedel Password",
-      text: `How can you reset your homedel password ?`,
+      subject: "Password Reset Request",
       html: `
-      <div
-      style="
-        font-family: Arial, sans-serif;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #f4f4f4;
-      "
-    >
-      <div
-        style="
-          background-color: #fff;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        "
-      >
-        <h2 style="text-align: center; color: #4caf50">
-          Password Reset Request
-        </h2>
-        <p>Hello <strong>${doesEmailExist.username}</strong>,</p>
-        <p>
-          We have generated a new password for your account. Please use the
-          password below to log in:
-        </p>
-        <p
-          style="
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px;
-            background-color: #e6fad9;
-            border: 1px solid #4caf50;
-            border-radius: 4px;
-            color: #333;
-          "
-        >
-          ${newPass}
-        </p>
-        <p>
-          After logging in, it is highly recommended that you reset your
-          password to something more secure and memorable.
-        </p>
-        <h4>To reset your password:</h4>
-        <ol>
-          <li>Log in to your account using the new password.</li>
-          <li>Navigate to the "Account"</li>
-          <li>
-            Click on "Password (On the sidebar)" and follow the instructions.
-          </li>
-        </ol>
-        <p>
-          Else if you chose the password we've generated for you, you may
-          continue with it
-        </p>
-        <p>
-          If you encounter any issues, feel free to contact our support team.
-        </p>
-        <p>Best regards,</p>
-        <p><strong>The Company Team</strong></p>
-      </div>
-    </div>
-    `,
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f4;">
+          <div style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+            <h2 style="text-align: center; color: #22c55e;">Password Reset Request</h2>
+            <p>Hello ${user.username},</p>
+            <p>We received a request to reset your password. If this wasn't you, please click "This is not me" to secure your account.</p>
+            
+            <div style="text-align: center; margin: 30px 0;">
+              <a href="${resetUrl}" 
+                 style="background-color: #22c55e; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 0 10px;">
+                Change Password
+              </a>
+              <a href="${cancelUrl}" 
+                 style="background-color: #ef4444; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 0 10px;">
+                This is not me
+              </a>
+            </div>
+            
+            <p>If you didn't request this, please ignore this email and make sure your account is secure.</p>
+            <p style="color: #666; font-size: 14px; margin-top: 20px;">
+              This link will expire in 1 hour for security reasons.
+            </p>
+          </div>
+        </div>
+      `,
     });
-    return res
-      .status(200)
-      .json({ message: "Password reset instructions sent to your email" });
-  } catch (e) {
-    return res.status(500).json({ error: "Something went wrong" });
+
+    return res.status(200).json({ 
+      message: "Password reset instructions sent to your email" 
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ 
+      message: "Failed to send reset instructions" 
+    });
   }
 };
 
@@ -299,24 +295,45 @@ exports.checkOldPassword = async (req, res) => {
 };
 
 exports.updatePassword = async (req, res) => {
-  const { email, newPassword } = req.body;
+  const { token, email, newPassword } = req.body;
+
   try {
-    const hashedPassword = await bcrypt.hash(newPassword, 5);
-    const updatedPassword = await prisma.users.update({
+    const user = await prisma.users.findFirst({
       where: {
-        email: email,
+        email,
+        resetToken: token,
+        resetTokenExpiry: {
+          gt: new Date() // Check if token hasn't expired
+        }
+      }
+    });
+
+    if (!user) {
+      return res.status(400).json({ 
+        message: "Invalid or expired reset token" 
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    await prisma.users.update({
+      where: { 
+        email: email 
       },
       data: {
         password: hashedPassword,
-      },
+        resetToken: null,
+        resetTokenExpiry: null
+      }
     });
-    if (!updatedPassword) {
-      return res.status(401).json({ message: "Invalid email or password" });
-    }
-    return res.status(200).json({ message: "Password updated successfully" });
-  } catch (e) {
-    return res
-      .status(200)
-      .json({ message: e.message || "Something went wrong" });
+
+    return res.status(200).json({ 
+      message: "Password updated successfully" 
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ 
+      message: "Error updating password" 
+    });
   }
 };
