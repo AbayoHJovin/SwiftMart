@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { ArrowUpRight, LogOut, SidebarIcon } from "lucide-react";
-import { AiOutlineMenu } from "react-icons/ai";
+import { ArrowUpRight, LogOut, Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 
@@ -12,160 +11,169 @@ const Sidebar = ({
   activeTab,
   onTabChange,
 }) => {
-  // const [tabValue, setTabValue] = useState(1);
-  const [shrink, setShrink] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const [currentLabel, setCurrentLabel] = useState(null);
-  const [openDrawer, setOpenDrawer] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
-  function triggerShrink() {
-    setShrink(!shrink);
-  }
-
+  // Handle window resize
   useEffect(() => {
-    function handleResize() {
+    const handleResize = () => {
       const width = window.innerWidth;
-      setIsMobile(width < 960);
-    }
+      setIsMobile(width < 1024);
+      if (width >= 1024) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    
     handleResize();
     window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
+  // Update current label
   useEffect(() => {
-    const selectedLabel = labels.find((item) => item.value === activeTab);
-    setCurrentLabel(selectedLabel || null);
+    setCurrentLabel(labels.find((item) => item.value === activeTab) || null);
   }, [labels, activeTab]);
 
-  const navigate = useNavigate();
+  const toggleSidebar = () => setIsCollapsed(!isCollapsed);
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   if (isLoggingOut) {
     return (
-      <div className="text-lg flex justify-center tex-center min-h-screen">
-        Signing out ...
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+          Signing out...
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="z-40">
-      {isMobile && (
-        <div className="flex xmd:hidden p-3 items-center justify-between px-10">
-          <a href="/">
-            <img
-              onClick={() => navigate("/")}
-              src="/mobileLogo.svg"
-              alt="logo"
-              width={80}
-            />
-          </a>
-          <div>
-            <AiOutlineMenu
-              size={30}
-              onClick={() => setOpenDrawer(!openDrawer)}
-              className="cursor-pointer text-black dark:text-white"
-            />
-          </div>
-        </div>
-      )}
-
-      <div className="bg-gray-50 flex">
-        <div
-          className={`bg-white dark:bg-[#424447]  fixed h-screen z-30 xmd:relative xmd:translate-x-0 xmd:flex flex-col top-0 left-0 transform transition-all duration-300 ease-in-out ${
-            openDrawer ? "translate-x-0" : "-translate-x-full"
-          } ${shrink ? "w-20" : "w-72"} ${isMobile ? "absolute" : "relative"}`}
+    <div className="relative min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Mobile Header */}
+      <div className="lg:hidden flex items-center justify-between px-4 py-3 bg-white dark:bg-gray-800 shadow-sm">
+        <img
+          src="/logo.svg"
+          alt="logo"
+          className="h-8 cursor-pointer"
+          onClick={() => navigate("/")}
+        />
+        <button
+          onClick={toggleMobileMenu}
+          className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
         >
-          <div
-            onClick={triggerShrink}
-            className="w-full flex justify-end p-5 cursor-pointer"
-          >
-            <SidebarIcon className="flex justify-end text-black dark:text-white" />
-          </div>
-
-          {shrink ? (
-            <a href="/">
-              <img
-                onClick={() => navigate("/")}
-                src="/mobileLogo.svg"
-                alt="logo"
-                className="py-12 w-20 cursor-pointer"
-              />
-            </a>
+          {isMobileMenuOpen ? (
+            <X className="h-6 w-6 text-gray-600 dark:text-gray-300" />
           ) : (
-            <a href="/">
-              <img
-                onClick={() => navigate("/")}
-                src="/logo.svg"
-                alt="logo"
-                className="p-12 cursor-pointer"
-              />
-            </a>
+            <Menu className="h-6 w-6 text-gray-600 dark:text-gray-300" />
           )}
+        </button>
+      </div>
 
-          {labels.map((label) => (
-            <div
-              key={label.value}
-              onClick={() => onTabChange(label.value)}
-              className={`flex items-center ${
-                activeTab === label.value
-                  ? "bg-green-600 dark:bg-green-700 border-l-4 text-white dark:text-gray-200 border-green-800 dark:border-green-500"
-                  : "bg-transparent dark:bg-transparent"
-              } hover:bg-green-600 dark:hover:bg-green-700 text-3xl ${
-                shrink ? "my-2 mx-2 px-4 py-3" : "my-2 mx-5 px-20 py-3"
-              } text-gray-700 dark:text-gray-200 hover:text-white dark:hover:text-gray-100 cursor-pointer rounded transition-colors duration-200`}
-            >
-              <span className="mr-2">{label.icon}</span>
-              {!shrink && <h1 className="text-lg">{label.text}</h1>}
+      {/* Sidebar */}
+      <div className={`flex h-[calc(100vh-56px)] lg:h-screen`}>
+        <div
+          className={`
+            fixed lg:static inset-0 z-40
+            ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+            transition-all duration-300 ease-in-out
+            ${isCollapsed ? 'w-20' : 'w-72'}
+            bg-white dark:bg-gray-800 shadow-xl
+          `}
+        >
+          {/* Sidebar Header */}
+          <div className="flex flex-col h-full">
+            <div className="flex items-center justify-between p-4">
+              {!isCollapsed && (
+                <img
+                  src="/logo.svg"
+                  alt="logo"
+                  className="h-8 cursor-pointer"
+                  onClick={() => navigate("/")}
+                />
+              )}
+              <button
+                onClick={toggleSidebar}
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors hidden lg:block"
+              >
+                <Menu className="h-5 w-5 text-gray-600 dark:text-gray-300" />
+              </button>
             </div>
-          ))}
 
-          <div
-            onClick={openModal}
-            className={`flex items-center hover:bg-green-200 dark:hover:bg-green-700 text-gray-700 dark:text-gray-200 hover:text-gray-800 text-3xl ${
-              shrink ? "my-2 mx-2 px-4 py-3" : "my-2 mx-5 px-20 py-3"
-            } cursor-pointer rounded transition-colors duration-200`}
-          >
-            <span className="mr-2">
-              <LogOut />
-            </span>
-            {!shrink && <h1 className="text-lg">Logout</h1>}
+            {/* Navigation Items */}
+            <div className="flex-1 overflow-y-auto py-4">
+              <nav className="space-y-1 px-3">
+                {labels.map((label) => (
+                  <button
+                    key={label.value}
+                    onClick={() => {
+                      onTabChange(label.value);
+                      if (isMobile) setIsMobileMenuOpen(false);
+                    }}
+                    className={`
+                      w-full flex items-center px-4 py-3 rounded-lg
+                      transition-colors duration-200
+                      ${activeTab === label.value
+                        ? 'bg-green-600 text-white'
+                        : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
+                      }
+                    `}
+                  >
+                    <span className="flex-shrink-0">{label.icon}</span>
+                    {!isCollapsed && (
+                      <span className="ml-3 text-sm font-medium">{label.text}</span>
+                    )}
+                  </button>
+                ))}
+              </nav>
+            </div>
+
+            {/* Bottom Actions */}
+            <div className="p-4 space-y-2">
+              <button
+                onClick={openModal}
+                className="w-full flex items-center px-4 py-3 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              >
+                <LogOut className="flex-shrink-0" />
+                {!isCollapsed && (
+                  <span className="ml-3 text-sm font-medium">Logout</span>
+                )}
+              </button>
+              <button
+                onClick={() => navigate("/")}
+                className="w-full flex items-center px-4 py-3 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              >
+                <ArrowUpRight className="flex-shrink-0" />
+                {!isCollapsed && (
+                  <span className="ml-3 text-sm font-medium">Back to Store</span>
+                )}
+              </button>
+            </div>
           </div>
-          <a href="/">
-            <div
-              className={`flex items-center gap-3 hover:bg-green-200 dark:hover:bg-green-700 text-gray-700 dark:text-gray-200 hover:text-gray-800 text-3xl ${
-                shrink ? "my-2 mx-2 px-4 py-3" : "my-2 mx-5 px-20 py-3"
-              } cursor-pointer rounded transition-colors duration-200 absolute bottom-0 left-0 p-5`}
-            >
-              <span className="mr-2">
-                <ArrowUpRight />
-              </span>
-              {!shrink && <h1 className="text-lg">Back</h1>}
-            </div>
-          </a>
         </div>
 
-        {isMobile && openDrawer && (
+        {/* Mobile Overlay */}
+        {isMobileMenuOpen && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-20"
-            onClick={() => setOpenDrawer(false)}
-          ></div>
+            className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
         )}
 
-        <div className="flex-1 overflow-y-scroll h-screen bg-white dark:bg-black">
-          {currentLabel?.page}
+        {/* Main Content */}
+        <div className="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900">
+          <div className="container mx-auto p-6">
+            {currentLabel?.page}
+          </div>
         </div>
       </div>
+
+      {/* Logout Modal */}
       <Modal
         isModalOpen={isModalOpen}
         handleConfirmLogout={handleConfirmLogout}

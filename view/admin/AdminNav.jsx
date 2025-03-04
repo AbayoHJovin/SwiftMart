@@ -1,96 +1,206 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useState, useRef, useEffect } from "react";
-import { FaBell, FaUserAlt, FaSignOutAlt, FaChevronDown } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Bell,
+  User,
+  LogOut,
+  ChevronDown,
+  Settings,
+  Search,
+  X,
+} from "lucide-react";
 
-const Header = ({ currentBar }) => {
-  const [showNotificationDropdown, setShowNotificationDropdown] =
-    useState(false);
+const AdminNav = ({ currentBar }) => {
+  const [showNotifications, setShowNotifications] = useState(false);
   const [showUserDropdown, setShowUserDropdown] = useState(false);
-  const [hasNewNotifications, setHasNewNotifications] = useState(true);
+  const [hasNewNotifications] = useState(true);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const notificationRef = useRef();
   const userRef = useRef();
 
-  // Handle clicking outside the dropdowns
+  // Mock notifications
+  const notifications = [
+    {
+      id: 1,
+      title: "New Order",
+      message: "New order #1234 received",
+      time: "2 minutes ago",
+      isUnread: true,
+    },
+    {
+      id: 2,
+      title: "Stock Alert",
+      message: "Product 'Nike Air Max' is low in stock",
+      time: "1 hour ago",
+      isUnread: false,
+    },
+  ];
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
         notificationRef.current &&
         !notificationRef.current.contains(event.target)
       ) {
-        setShowNotificationDropdown(false);
+        setShowNotifications(false);
       }
       if (userRef.current && !userRef.current.contains(event.target)) {
         setShowUserDropdown(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
-    <header className="flex items-center justify-between bg-gray-100 p-4">
-      {/* Search Bar */}
-      <div className="flex-1 font-bold text-lg max-w-md">
-        <h1>{currentBar}</h1>
-      </div>
+    <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Left side - Title */}
+          <div className="flex-1 min-w-0">
+            <h1 className="text-xl font-semibold text-gray-900 dark:text-white truncate">
+              {currentBar}
+            </h1>
+          </div>
 
-      {/* Notification and User Profile */}
-      <div className="flex items-center space-x-4">
-        {/* Notification Icon */}
-        <div className="relative" ref={notificationRef}>
-          <button
-            className="relative"
-            onClick={() =>
-              setShowNotificationDropdown(!showNotificationDropdown)
-            }
-          >
-            <FaBell className="h-6 w-6 text-gray-600" />
-            {/* Show badge if there are new notifications */}
-            {hasNewNotifications && (
-              <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-600"></span>
-            )}
-          </button>
-          {/* Notification Dropdown */}
-          {showNotificationDropdown && (
-            <div className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg">
-              <div className="p-2 text-sm text-gray-600">
-                No new notifications
-              </div>
+          {/* Right side - Actions */}
+          <div className="flex items-center space-x-4">
+            {/* Search Bar */}
+            <div className="relative flex-1 md:flex-none">
+              <motion.div
+                initial={false}
+                animate={{ width: isSearchOpen ? "100%" : "240px" }}
+                transition={{ duration: 0.2 }}
+                className="relative"
+              >
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="w-full bg-gray-100 dark:bg-gray-700 border-0 rounded-lg pl-4 pr-10 py-2 focus:ring-2 focus:ring-green-500 dark:text-white text-sm"
+                  onFocus={() => setIsSearchOpen(true)}
+                  onBlur={() => setIsSearchOpen(false)}
+                />
+                <Search className="absolute right-3 top-2.5 h-4 w-4 text-gray-400" />
+              </motion.div>
             </div>
-          )}
-        </div>
 
-        {/* User Profile */}
-        <div className="top-0 sticky" ref={userRef}>
-          <button
-            className="flex items-center space-x-2 bg-green-200 px-5 p-3 rounded-full gap-3"
-            onClick={() => setShowUserDropdown(!showUserDropdown)}
-          >
-            <img
-              className="h-6 w-6 rounded-full"
-              src="https://res.cloudinary.com/dpxldzsp3/image/upload/v1732786183/profile_pictures/xu78klci2sdxohxaf4ze.jpg"
-              alt="avatar"
-            />
-            <span className="text-gray-800 font-medium">Jovin</span>
-            <FaChevronDown />
-          </button>
-          {/* User Dropdown */}
-          {showUserDropdown && (
-            <div className="absolute right-0 mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg">
-              <button className="flex items-center p-2 space-x-2 text-gray-600 hover:bg-gray-100 w-full">
-                <FaSignOutAlt />
-                <span>Logout</span>
+            {/* Notifications */}
+            <div className="relative" ref={notificationRef}>
+              <button
+                className="relative p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
+                onClick={() => setShowNotifications(!showNotifications)}
+              >
+                <Bell className="h-6 w-6" />
+                {hasNewNotifications && (
+                  <span className="absolute top-2 right-2 h-2 w-2 bg-red-500 rounded-full" />
+                )}
               </button>
+
+              <AnimatePresence>
+                {showNotifications && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute right-0 mt-3 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
+                  >
+                    <div className="p-4">
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                          Notifications
+                        </h3>
+                        <button className="text-sm text-green-600 hover:text-green-700 dark:text-green-400">
+                          Mark all as read
+                        </button>
+                      </div>
+                      <div className="space-y-3">
+                        {notifications.map((notification) => (
+                          <div
+                            key={notification.id}
+                            className={`p-3 rounded-lg transition-colors duration-200 ${
+                              notification.isUnread
+                                ? "bg-green-50 dark:bg-gray-700"
+                                : "hover:bg-gray-50 dark:hover:bg-gray-700"
+                            }`}
+                          >
+                            <div className="flex justify-between items-start">
+                              <h4 className="text-sm font-medium text-gray-900 dark:text-white">
+                                {notification.title}
+                              </h4>
+                              <span className="text-xs text-gray-500 dark:text-gray-400">
+                                {notification.time}
+                              </span>
+                            </div>
+                            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                              {notification.message}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          )}
+
+            {/* User Profile */}
+            <div className="relative" ref={userRef}>
+              <button
+                onClick={() => setShowUserDropdown(!showUserDropdown)}
+                className="flex items-center space-x-3 p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
+              >
+                <img
+                  className="h-8 w-8 rounded-full object-cover"
+                  src="https://res.cloudinary.com/dpxldzsp3/image/upload/v1732786183/profile_pictures/xu78klci2sdxohxaf4ze.jpg"
+                  alt="Admin"
+                />
+                <div className="hidden md:block text-left">
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                    Jovin
+                  </p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    Administrator
+                  </p>
+                </div>
+                <ChevronDown className="h-4 w-4 text-gray-500 dark:text-gray-400" />
+              </button>
+
+              <AnimatePresence>
+                {showUserDropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
+                  >
+                    <div className="p-2 space-y-1">
+                      <button className="w-full flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-200">
+                        <User className="h-4 w-4 mr-3" />
+                        Profile
+                      </button>
+                      <button className="w-full flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-200">
+                        <Settings className="h-4 w-4 mr-3" />
+                        Settings
+                      </button>
+                      <button className="w-full flex items-center px-3 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-md transition-colors duration-200">
+                        <LogOut className="h-4 w-4 mr-3" />
+                        Logout
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
       </div>
     </header>
   );
 };
 
-export default Header;
+export default AdminNav;

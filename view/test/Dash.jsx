@@ -32,69 +32,8 @@ ChartJS.register(
 
 export default function Dashboard() {
   const { users } = UseUsers();
-  // const { products, popularProds, loading } = useProducts();
   const { kigali, north, south, east, west } =
     useContext(OffersContext);
-  // const sales = [
-  //   {
-  //     name: "Total Sales",
-  //     icon: <ShoppingBasket />,
-  //     amount: 7890,
-  //     bgColor: "bg-red-100",
-  //     iconColor: "text-red-500",
-  //   },
-  //   {
-  //     name: "Income",
-  //     icon: <FaMoneyCheck />,
-  //     amount: "1,000,000",
-  //     bgColor: "bg-green-100",
-  //     iconColor: "text-green-500",
-  //   },
-  //   {
-  //     name: "Products in Stock",
-  //     icon: <CgShutterstock />,
-  //     amount: products.length,
-  //     bgColor: "bg-yellow-100",
-  //     iconColor: "text-yellow-500",
-  //   },
-  //   {
-  //     name: "Top-Selling Products",
-  //     icon: <FaTrophy />,
-  //     amount: popularProds.length,
-  //     bgColor: "bg-blue-100",
-  //     iconColor: "text-blue-500",
-  //   },
-  // ];
-  // const orders = [
-  //   {
-  //     name: "Total Orders",
-  //     icon: <AiOutlineOrderedList />,
-  //     amount: allOffers && allOffers?.length > 0 ? allOffers.length : 0,
-  //     bgColor: "bg-red-100",
-  //     iconColor: "text-red-500",
-  //   },
-  //   {
-  //     name: "Approved Orders",
-  //     icon: <CheckCheckIcon />,
-  //     amount: approved?.length || 0,
-  //     bgColor: "bg-green-100",
-  //     iconColor: "text-green-500",
-  //   },
-  //   {
-  //     name: "Pending Orders",
-  //     icon: <Clock />,
-  //     amount: pending?.length || 0,
-  //     bgColor: "bg-yellow-100",
-  //     iconColor: "text-yellow-500",
-  //   },
-  //   {
-  //     name: "Cancelled Orders",
-  //     icon: <Trash />,
-  //     amount: "12M+",
-  //     bgColor: "bg-red-100",
-  //     iconColor: "text-red-500",
-  //   },
-  // ];
   const ordersData = [
     { province: "Kigali", orders: kigali.length },
     { province: "Southern", orders: south.length },
@@ -154,66 +93,6 @@ export default function Dashboard() {
       </div>
       <hr />
       <div className="min-h-screen items-center content-center">
-        {/* <div className=" gap-5 p-6 flex flex-col sm:flex-row justify-center">
-          <div className="max-w-4xl">
-            <div className="bg-gray-100 p-5 rounded-lg flex flex-col items-center">
-              <h1 className="font-bold text-gray-800 mb-8">Sales Overview</h1>
-              <div className="grid grid-cols-1  md:grid-cols-2 gap-6">
-                {sales.map((item) => (
-                  <div
-                    key={item.prodName}
-                    className={` flex items-center rounded-lg ${item.bgColor}`}
-                  >
-                    <div className={`text-4xl p-3 ${item.iconColor}`}>
-                      {item.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-lg font-semibold text-gray-700">
-                        {item.prodName}
-                      </h2>
-                      {loading ? (
-                        <Loader3 />
-                      ) : (
-                        <p className="text-2xl font-bold text-gray-900">
-                          {item.amount}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="max-w-4xl">
-            <div className="bg-gray-100 p-5 rounded-lg flex flex-col items-center">
-              <h1 className="font-bold text-gray-800 mb-8">Orders info</h1>
-              <div className="grid grid-cols-1  md:grid-cols-2 gap-6">
-                {orders.map((item) => (
-                  <div
-                    key={item.prodName}
-                    className={` flex items-center rounded-lg ${item.bgColor}`}
-                  >
-                    <div className={`text-4xl p-3 ${item.iconColor}`}>
-                      {item.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h2 className="text-lg font-semibold text-gray-700">
-                        {item.prodName}
-                      </h2>
-                      {loading ? (
-                        <Loader3 />
-                      ) : (
-                        <p className="text-2xl font-bold text-gray-900">
-                          {item.amount}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div> */}
         <div className="gap-6 p-6 flex flex-col sm:flex-row justify-center items-center">
           {/* Users Card */}
           <div className="bg-green-200 max-w-sm cursor-pointer w-full p-6 rounded-lg shadow-lg flex flex-col items-center">
