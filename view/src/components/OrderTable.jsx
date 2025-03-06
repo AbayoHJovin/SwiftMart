@@ -1,15 +1,4 @@
 /* eslint-disable react/prop-types */
-// import PropTypes from "prop-types"
-// OrderTable.propTypes = {
-//     filteredOrders: PropTypes.arrayOf(
-//       PropTypes.shape({
-//         id: PropTypes.string.isRequired,
-//         customer: PropTypes.string.isRequired,
-//         status: PropTypes.string.isRequired,
-//       })
-//     ).isRequired,
-//     AdminOptions: PropTypes.bool.isRequired,
-//   };
 export default function OrderTable({
   filteredOrders,
   AdminOptions,
@@ -17,81 +6,93 @@ export default function OrderTable({
   users,
 }) {
   return (
-    <div className="container mx-auto p-4">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white rounded-lg shadow-lg">
-          <thead className="rounded-full">
-            <tr className="bg-white dark:bg-gray-800 uppercase text-sm border border-gray-200">
-              <th className="p-4 text-left text-sm font-semibold  text-black dark:text-gray-200">
+        <table className="w-full">
+          <thead>
+            <tr className="bg-gray-50 dark:bg-gray-700/50">
+              <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 No
               </th>
               {AdminOptions && (
-                <th className="p-4 text-left text-sm font-semibold  text-black dark:text-gray-200">
-                  Name
-                </th>
+                <>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                    Customer
+                  </th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                    Shipping Address
+                  </th>
+                </>
               )}
-              {AdminOptions && (
-                <th className="p-4 text-left text-sm font-semibold text-black dark:text-gray-200">
-                  Address
-                </th>
-              )}
-              <th className="p-4 text-left text-sm font-semibold text-black dark:text-gray-200">
-                Number of products
+              <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                Items
               </th>
-              <th className="p-4 text-left text-sm font-semibold text-black dark:text-gray-200">
-                Date
+              <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                Order Date
               </th>
-              <th className="p-4 text-left text-sm font-semibold text-black dark:text-gray-200">
+              <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Time
               </th>
-              <th className="p-4 text-left text-sm font-semibold text-black dark:text-gray-200">
-                Actions
+              <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                Status
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y-4 divide-gray-200 border border-gray-200">
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {filteredOrders?.length === 0 ? (
               <tr>
-                <td
-                  colSpan={6}
-                  className="text-center content-center p-4 border-b text-sm truncate"
-                >
-                  No orders available on the selected date
+                <td colSpan={7} className="px-6 py-8 text-center">
+                  <div className="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400">
+                    <p className="text-sm">No orders found for the selected criteria</p>
+                  </div>
                 </td>
               </tr>
             ) : (
               filteredOrders?.map((item, index) => (
                 <tr
+                  key={item.orderId}
                   onClick={() => handleOfferClick(item)}
-                  key={item.index}
-                  className={`border-b-2 p-5 border-gray-200 cursor-pointer items-center content-center text-left ${
-                    index % 2 === 0
-                      ? "bg-gray-100 dark:bg-gray-700 hover:bg-gray-50 hover:text-black"
-                      : "bg-gray-200 dark:bg-gray-600 hover:bg-gray-100 hover:text-black"
-                  }`}
+                  className="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200 cursor-pointer"
                 >
-                  <td>{index + 1}</td>
-                  {AdminOptions && (
-                    <td>
-                      {users.find((u) => u.userId === item.ordererId)?.username}
-                    </td>
-                  )}
-                  {AdminOptions && (
-                    <td className="p-4 text-sm  dark:text-gray-200  truncate">
-                      {item.address}
-                    </td>
-                  )}
-                  <td className="p-4 text-sm  dark:text-gray-200  truncate">
-                    {item.orderItems?.length}
+                  <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-200">
+                    {index + 1}
                   </td>
-                  <td className="p-4 text-sm dark:text-gray-200  truncate">
+                  {AdminOptions && (
+                    <>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center">
+                          <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                            <span className="text-sm font-medium text-green-600 dark:text-green-400">
+                              {users.find((u) => u.userId === item.ordererId)?.username.charAt(0)}
+                            </span>
+                          </div>
+                          <span className="ml-3 text-sm text-gray-900 dark:text-gray-200">
+                            {users.find((u) => u.userId === item.ordererId)?.username}
+                          </span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-500 dark:text-gray-400 max-w-xs truncate">
+                        {item.address}
+                      </td>
+                    </>
+                  )}
+                  <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-200">
+                    {item.orderItems?.length} items
+                  </td>
+                  <td className="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
                     {item.orderDate.split(" ")[0]}
                   </td>
-                  <td className="p-4 text-sm   dark:text-gray-200 truncate">
+                  <td className="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
                     {item.orderDate.split(" ")[1]}
                   </td>
-                  <td className="p-4 text-sm  dark:text-gray-200 truncate rounded-r-md">
-                    {item.approved ? "Approved" : "Pending"}
+                  <td className="px-6 py-4">
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                      item.approved
+                        ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
+                        : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400'
+                    }`}>
+                      {item.approved ? 'Approved' : 'Pending'}
+                    </span>
                   </td>
                 </tr>
               ))

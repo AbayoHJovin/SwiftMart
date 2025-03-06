@@ -45,44 +45,89 @@ const changeFormatAndPushToCloudinary = async (data, paymentType) => {
       throw new Error("Unsupported payment type");
     }
 
-    // Create an image using Canvas
-    const canvas = createCanvas(800, 600);
+    // Enhanced canvas styling
+    const canvas = createCanvas(800, 1000);
     const ctx = canvas.getContext("2d");
 
-    // Set background color
-    ctx.fillStyle = "#ffffff";
+    // Background with subtle gradient
+    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    gradient.addColorStop(0, "#ffffff");
+    gradient.addColorStop(1, "#f8f9fa");
+    ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Add header
-    ctx.fillStyle = "#28a745"; // Green color for the header
-    ctx.fillRect(0, 0, canvas.width, 100);
+    // Header with logo and company name
+    ctx.fillStyle = "#28a745";
+    ctx.fillRect(0, 0, canvas.width, 120);
+    
+    // Add company logo or icon
     ctx.fillStyle = "#ffffff";
-    ctx.font = "30px Arial bold";
+    ctx.font = "bold 40px Arial";
     ctx.textAlign = "center";
-    ctx.fillText("Payment Receipt", canvas.width / 2, 60);
-
-    // Set text styles for content
-    ctx.fillStyle = "#000000";
+    ctx.fillText("Payment Receipt", canvas.width / 2, 50);
     ctx.font = "20px Arial";
+    ctx.fillText(new Date().toLocaleDateString(), canvas.width / 2, 80);
+
+    // Receipt content with improved styling
+    ctx.fillStyle = "#000000";
+    ctx.font = "18px Arial";
     ctx.textAlign = "left";
 
-    // Write data to the canvas
-    let y = 150;
+    let y = 180;
+    const leftMargin = 50;
+    const labelWidth = 200;
+
+    // Add decorative line
+    ctx.strokeStyle = "#e0e0e0";
+    ctx.beginPath();
+    ctx.moveTo(leftMargin, y - 30);
+    ctx.lineTo(canvas.width - leftMargin, y - 30);
+    ctx.stroke();
+
+    // Content with improved layout
     for (const [key, value] of Object.entries(transformedData)) {
-      ctx.fillStyle = "#28a745"; // Green color for labels
-      ctx.fillText(`${key.charAt(0).toUpperCase() + key.slice(1)}:`, 50, y);
-      ctx.fillStyle = "#000000"; // Black color for values
-      ctx.fillText(`${value}`, 300, y);
-      y += 40;
+      // Label background
+      ctx.fillStyle = "#f8f9fa";
+      ctx.fillRect(leftMargin - 10, y - 25, labelWidth, 35);
+      
+      // Label
+      ctx.fillStyle = "#28a745";
+      ctx.font = "bold 18px Arial";
+      ctx.fillText(
+        `${key.charAt(0).toUpperCase() + key.slice(1)}:`,
+        leftMargin,
+        y
+      );
+
+      // Value
+      ctx.fillStyle = "#000000";
+      ctx.font = "18px Arial";
+      ctx.fillText(`${value}`, leftMargin + labelWidth + 20, y);
+
+      y += 50;
     }
 
-    // Add footer
-    ctx.fillStyle = "#28a745"; // Green footer background
-    ctx.fillRect(0, canvas.height - 50, canvas.width, 50);
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "18px Arial";
+    // Add QR Code placeholder
+    ctx.strokeStyle = "#28a745";
+    ctx.strokeRect(canvas.width - 150, canvas.height - 150, 100, 100);
+    ctx.font = "14px Arial";
+    ctx.fillStyle = "#666666";
     ctx.textAlign = "center";
-    ctx.fillText("Thank you for your purchase!", canvas.width / 2, canvas.height - 20);
+    ctx.fillText("Scan for", canvas.width - 100, canvas.height - 170);
+    ctx.fillText("verification", canvas.width - 100, canvas.height - 155);
+
+    // Footer
+    const footerY = canvas.height - 50;
+    ctx.fillStyle = "#28a745";
+    ctx.fillRect(0, footerY, canvas.width, 50);
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "16px Arial";
+    ctx.textAlign = "center";
+    ctx.fillText(
+      "Thank you for your business!",
+      canvas.width / 2,
+      footerY + 30
+    );
 
     // Convert the canvas to a buffer
     const buffer = canvas.toBuffer("image/png");

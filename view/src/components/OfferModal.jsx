@@ -1,6 +1,7 @@
 import { AiFillCloseCircle } from "react-icons/ai";
 import { CgTrash } from "react-icons/cg";
 import Loader3 from "./Loading3";
+import { Download } from "lucide-react";
 
 /* eslint-disable react/prop-types */
 export default function OfferModal({
@@ -15,126 +16,184 @@ export default function OfferModal({
   handleApprove,
   handleDecline,
 }) {
+  const handleDownloadReceipt = async () => {
+    try {
+      const response = await fetch(selectedOrder.transactionUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `receipt-${selectedOrder.orderId}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading receipt:', error);
+    }
+  };
+
   return (
-    <div className="p-6  rounded-lg shadow-lg">
-      <div className="flex items-start justify-between">
-        <div key={selectedOrder.orderId}>
-          <h1 className="font-bold text-3xl text-green-700 mb-4">
-            Customer Name:{" "}
-            {AdminOptions
-              ? users.find((u) => u.userId === selectedOrder.ordererId)
-                  ?.username
-              : userWithAllCredentials.username}
-          </h1>
-          <p className="text-lg mb-2">
-            <span className="font-semibold text-green-600">Address: </span>
-            {selectedOrder.address}
-          </p>
-          <p className="text-lg mb-2">
-            <span className="font-semibold text-green-600">Email: </span>
-            {AdminOptions
-              ? users.find((u) => u.userId === selectedOrder.ordererId)?.email
-              : userWithAllCredentials.email}
-          </p>
-          <p className="text-lg mb-2">
-            <span className="font-semibold text-green-600">Phone No: </span>
-            {selectedOrder.phoneNo}
-          </p>
-          <p className="text-lg mb-2">
-            <span className="font-semibold text-green-600">Ordered on: </span>
-            {selectedOrder.orderDate.split(" ")[0]}
-          </p>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="p-6 space-y-8">
+          {/* Header */}
+          <div className="flex items-start justify-between">
+            <div className="space-y-1">
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                Order Details
+              </h2>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Review and manage order information
+              </p>
+            </div>
+            <button
+              onClick={() => setOpenOfferModal(false)}
+              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors duration-200"
+            >
+              <AiFillCloseCircle className="w-6 h-6 text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300" />
+            </button>
+          </div>
 
-          <p className="text-lg mb-2">
-            <span className="font-semibold text-green-600">At: </span>
-            {selectedOrder.orderDate.split(" ")[1]}
-          </p>
-          <p className="text-lg mb-2">
-            <span className="font-semibold text-green-600">Amount paid: </span>
-            RWF {new Intl.NumberFormat("en-US").format(selectedOrder.price)}
-          </p>
-        </div>
-        <AiFillCloseCircle
-          onClick={() => setOpenOfferModal(false)}
-          className="text-4xl text-red-500 hover:text-red-700 cursor-pointer"
-          size={30}
-        />
-      </div>
+          {/* Customer Information */}
+          <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6 space-y-4">
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+              Customer Information
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Name</p>
+                <p className="text-base text-gray-900 dark:text-white">
+                  {AdminOptions
+                    ? users.find((u) => u.userId === selectedOrder.ordererId)?.username
+                    : userWithAllCredentials.username}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
+                <p className="text-base text-gray-900 dark:text-white">
+                  {AdminOptions
+                    ? users.find((u) => u.userId === selectedOrder.ordererId)?.email
+                    : userWithAllCredentials.email}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Phone</p>
+                <p className="text-base text-gray-900 dark:text-white">
+                  {selectedOrder.phoneNo}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Address</p>
+                <p className="text-base text-gray-900 dark:text-white">
+                  {selectedOrder.address}
+                </p>
+              </div>
+            </div>
+          </div>
 
-      <h1 className="my-6 font-bold text-4xl text-green-700">
-        Selected Products
-      </h1>
-      <div>
-        {boughtProducts?.length < 1 ? (
-          <h1>Loading products ...</h1>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {boughtProducts?.map((item, index) => (
-              <div
-                key={item.prodId}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="flex justify-center mb-4">
-                  <img
-                    src={item.image}
-                    width={100}
-                    height={100}
-                    alt={item.prodName}
-                  />
+          {/* Order Items */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+              Ordered Items
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {boughtProducts?.map((item, index) => (
+                <div
+                  key={item.prodId}
+                  className="bg-white dark:bg-gray-700/50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-200"
+                >
+                  <div className="aspect-square relative">
+                    <img
+                      src={item.mainImage || item.images?.[0]?.imageUrl || '/placeholder.png'}
+                      alt={item.prodName}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4 space-y-2">
+                    <h4 className="font-medium text-gray-900 dark:text-white line-clamp-2">
+                      {item.prodName}
+                    </h4>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-500 dark:text-gray-400">
+                        Qty: {quantities[index]}
+                      </span>
+                      <span className="text-sm font-medium text-green-600 dark:text-green-400">
+                        RWF {new Intl.NumberFormat("en-US").format(item.price)}
+                      </span>
+                    </div>
+                  </div>
                 </div>
+              ))}
+            </div>
+          </div>
 
-                <div className="text-center">
-                  <h2 className="text-xl font-bold text-green-700">
-                    {item.prodName}
-                    <span className="text-green-600 mx-2">
-                      (&times; {quantities[index]})
-                    </span>
-                  </h2>
-                  <p className="text-lg text-green-600 mt-2">
-                    RWF {new Intl.NumberFormat("en-US").format(item.price)}
+          {/* Transaction Receipt Section */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                Payment Receipt
+              </h3>
+              <button
+                onClick={handleDownloadReceipt}
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300"
+              >
+                <Download className="w-4 h-4" />
+                Download Receipt
+              </button>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-700/50 rounded-xl overflow-hidden">
+              <img
+                src={selectedOrder.transactionUrl}
+                alt="Payment Receipt"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          {/* Payment Information */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+              Payment Details
+            </h3>
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Method</p>
+                  <p className="text-base text-gray-900 dark:text-white">
+                    {selectedOrder.paymentMethod}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Total Amount</p>
+                  <p className="text-base font-medium text-green-600 dark:text-green-400">
+                    RWF {new Intl.NumberFormat("en-US").format(selectedOrder.price)}
                   </p>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        )}
-      </div>
 
-      <h1 className="mt-10 mb-3 font-bold text-3xl text-green-700">
-        Transaction Method
-      </h1>
-      <p className="text-xl mb-10 text-green-600">
-        {selectedOrder.paymentMethod}
-      </p>
-      <div>
-        <h1 className="mt-10 mb-3  font-bold text-3xl text-green-700">
-          Receipt
-        </h1>
-        <img src={selectedOrder.transactionUrl} alt="transaction Image" />
-      </div>
-      <div className="my-8">
-        <h1 className="font-bold text-3xl text-green-700">Options</h1>
-        <div className="flex gap-5 mt-4">
-          {AdminOptions &&
-            (isApproving ? (
-              <button className="bg-green-500 text-white hover:bg-green-600 py-3 px-6 rounded-md">
-                <Loader3 bg={"white"} />
+          {/* Actions */}
+          {AdminOptions && (
+            <div className="flex justify-end gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+              <button
+                onClick={() => handleDecline(selectedOrder)}
+                className="px-4 py-2 text-sm font-medium text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
+              >
+                Decline Order
               </button>
-            ) : (
               <button
                 onClick={(e) => handleApprove(selectedOrder, e)}
-                className="bg-green-500 text-white hover:bg-green-600 py-3 px-6 rounded-md"
+                disabled={isApproving}
+                className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 disabled:opacity-50"
               >
-                Approve
+                {isApproving ? <Loader3 bg="white" /> : "Approve Order"}
               </button>
-            ))}
-          <div
-            onClick={() => handleDecline(selectedOrder)}
-            className="flex items-center cursor-pointer text-red-500 hover:bg-gray-200 py-3 px-6 rounded-md"
-          >
-            <button>Decline</button>
-            <CgTrash className="ml-2 text-xl" />
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

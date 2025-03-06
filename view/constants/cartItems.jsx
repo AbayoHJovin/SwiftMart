@@ -12,6 +12,8 @@ export default function CartItems({ children }) {
   const [UpdateResponse, setUpdateResponse] = useState("");
   const [loading, setLoading] = useState(false);
   const [isUpdating,setisUpdating]=useState(false);
+  const [syncingItems, setSyncingItems] = useState({});
+
   function fetchCartItems() {
     if (currentUser) {
       const token = localStorage.getItem("token");
@@ -76,34 +78,35 @@ export default function CartItems({ children }) {
     }
   }
 
-  function updateCart(items) {
-    console.log("isUpdating cart:", items);
-    setisUpdating(true);
-    if (currentUser && currentUser.userId) {
-      fetch(`${apiUrl}/updateCart`, {
+  const updateCartItem = async (itemId, quantity) => {
+    setSyncingItems(prev => ({ ...prev, [itemId]: true }));
+    
+    try {
+      const response = await fetch(`${apiUrl}/updateCart`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId: currentUser.userId, items }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          // if(data.message==="Insufficient stock for product."){
-            setUpdateResponse(data.message);
-          // }
-          console.log("data", data);
-          // fetchCartItems();
-        })
-        .catch((e) => {
-          console.log(e);
-        })
-        .finally(() => {
-          setisUpdating(false);
-        });
-    } else {
-      console.error("User is not logged in");
-      setLoading(false);
+        body: JSON.stringify({
+          userId: currentUser.userId,
+          items: [{ id: itemId, quantity }]
+        }),
+      });
+      
+      const data = await response.json();
+      
+      if (data.message === "Insufficient stock for product.") {
+        setUpdateResponse(data.message);
+        return false;
+      }
+      
+      fetchCartItems(); // Refresh cart items
+      return true;
+    } catch (error) {
+      console.error("Error updating cart:", error);
+      return false;
+    } finally {
+      setSyncingItems(prev => ({ ...prev, [itemId]: false }));
     }
-  }
+  };
 
   return (
     <CartContext.Provider
@@ -112,9 +115,9 @@ export default function CartItems({ children }) {
         itemsOnCart,  
         addItemOncart,
         deleteItem,
-        updateCart,
+        updateCartItem,
         UpdateResponse,
-        isUpdating
+        syncingItems
       }}
     >
       {children}

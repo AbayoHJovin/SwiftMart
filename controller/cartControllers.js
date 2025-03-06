@@ -59,7 +59,11 @@ exports.getCartItem = async (req, res) => {
       include: {
         cartProducts: {
           include: {
-            product: true,
+            product: {
+              include: {
+                images: true,
+              }
+            },
           },
         },
       },
@@ -69,7 +73,16 @@ exports.getCartItem = async (req, res) => {
       return res.status(404).json({ message: "No items in your cart." });
     }
 
-    return res.status(200).json({ products: cart.cartProducts });
+    const processedCartProducts = cart.cartProducts.map(cartProduct => ({
+      ...cartProduct,
+      product: {
+        ...cartProduct.product,
+        mainImage: cartProduct.product.images.find(img => img.isMain)?.imageUrl || 
+                  cartProduct.product.images[0]?.imageUrl
+      }
+    }));
+
+    return res.status(200).json({ products: processedCartProducts });
   } catch (error) {
     return res
       .status(500)

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useProducts from "../../constants/products";
 import PopularProductCard from "./PopularProductCard";
+import { motion } from "framer-motion";
+import { Download } from "lucide-react";
 
 const Popular = () => {
   const navigate = useNavigate();
@@ -33,43 +35,56 @@ const Popular = () => {
   }, [products, loading]);
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
+    <motion.section 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="py-16 px-4 sm:px-6 lg:px-8"
+    >
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
             Popular Products
           </h2>
-          <button 
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => navigate('/shop/Unisex/pants')}
             className="text-green-600 hover:text-green-700 font-medium flex items-center gap-2"
           >
             View All
             <span className="text-xl">→</span>
-          </button>
+          </motion.button>
         </div>
 
-        {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {displayedProducts.map((product) => (
-            <PopularProductCard
+            <motion.div
               key={product.prodId}
-              product={product}
-              onClick={() => navigate(`/product/${product.prodId}`)}
-            />
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              whileHover={{ y: -5 }}
+            >
+              <PopularProductCard
+                product={product}
+                onClick={() => navigate(`/product/${product.prodId}`)}
+              />
+            </motion.div>
           ))}
         </div>
 
-        {/* Empty State */}
         {displayedProducts.length === 0 && !loading && (
-          <div className="text-center py-12">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-12"
+          >
             <p className="text-gray-600 dark:text-gray-400">
               No new arrivals at the moment. Check back soon!
             </p>
-          </div>
+          </motion.div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

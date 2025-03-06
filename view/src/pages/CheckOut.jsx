@@ -1,5 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import { CgInfo } from "react-icons/cg";
+import { motion, AnimatePresence } from "framer-motion";
 import { ThemeContext } from "../../constants/ThemeContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import { CurrentUserContext } from "../../constants/currentUser";
@@ -276,217 +277,314 @@ const OrderForm = () => {
   const formattedCost = new Intl.NumberFormat("en-US").format(cost);
 
   return (
-    <div className={`${theme === "dark" ? "bg-black" : "bg-white"}`}>
-      <ToastContainer />
-      <div
-        className={`flex flex-col lg:flex-row items-center p-8 ${
-          theme === "dark" ? "bg-black" : "bg-white"
-        }`}
-      >
-        {/* Order Form */}
-        <form className="max-w-4xl w-full flex flex-col justify-start mx-0 smm:mx-auto p-0 smm:p-8 rounded-lg">
-          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6">
-            Complete your order
-          </h2>
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className={`min-h-screen ${theme === "dark" ? "bg-gray-900" : "bg-gray-50"}`}
+    >
+      <ToastContainer position="top-center" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className={`flex flex-col lg:flex-row items-start gap-8 ${
+            theme === "dark" ? "bg-gray-900" : "bg-gray-50"
+          }`}
+        >
+          {/* Order Form */}
+          <motion.form 
+            className="flex-1 w-full bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 sm:p-8"
+            initial={{ x: -20 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.h2 
+              className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8"
+              initial={{ y: -10 }}
+              animate={{ y: 0 }}
+            >
+              Complete your order
+            </motion.h2>
 
-          {/* Personal Details Section */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
-              Personal Details
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input
-                className="p-3 outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
-                type="tel"
-                minLength={10}
-                placeholder="Phone number"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-              />
-              {formErrors.phone && (
-                <p className="text-red-500">{formErrors.phone}</p>
+            {/* Personal Details Section */}
+            <motion.div 
+              className="mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-6">
+                Personal Details
+              </h3>
+              <div className="space-y-4">
+                <div className="relative">
+                  <input
+                    className="w-full p-4 outline-none rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:border-green-500 transition-all duration-300 ease-in-out"
+                    type="tel"
+                    minLength={10}
+                    placeholder="Phone number"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
+                  {formErrors.phone && (
+                    <motion.p 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-500 text-sm mt-2"
+                    >
+                      {formErrors.phone}
+                    </motion.p>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Delivery Address Section */}
+            <motion.div 
+              className="mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-6">
+                Delivery Address
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Province select */}
+                <div className="relative">
+                  <select
+                    className="w-full p-4 outline-none rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:border-green-500 transition-all duration-300 ease-in-out appearance-none"
+                    name="province"
+                    value={formData.province}
+                    onChange={handleProvinceChange}
+                  >
+                    <option value="" disabled>Select a province</option>
+                    {availableProvinces.map((province, index) => (
+                      <option key={index} value={province}>{province}</option>
+                    ))}
+                  </select>
+                  {formErrors.province && (
+                    <motion.p 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-500 text-sm mt-2"
+                    >
+                      {formErrors.province}
+                    </motion.p>
+                  )}
+                </div>
+
+                {/* District select */}
+                <div className="relative">
+                  <select
+                    className="w-full p-4 outline-none rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:border-green-500 transition-all duration-300 ease-in-out appearance-none"
+                    name="district"
+                    value={formData.district}
+                    onChange={handleDistrictChange}
+                    disabled={!formData.province}
+                  >
+                    <option value="" disabled>
+                      {formData.province ? "Select a district" : "Select a province first"}
+                    </option>
+                    {availableDistricts.map((district, index) => (
+                      <option key={index} value={district}>{district}</option>
+                    ))}
+                  </select>
+                  {formErrors.district && (
+                    <motion.p 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-500 text-sm mt-2"
+                    >
+                      {formErrors.district}
+                    </motion.p>
+                  )}
+                </div>
+
+                {/* Sector select */}
+                <div className="relative">
+                  <select
+                    className="w-full p-4 outline-none rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:border-green-500 transition-all duration-300 ease-in-out appearance-none"
+                    name="sector"
+                    value={formData.sector}
+                    onChange={handleSectorChange}
+                    disabled={!formData.district}
+                  >
+                    <option value="" disabled>
+                      {formData.district ? "Select a sector" : "Select a district first"}
+                    </option>
+                    {availableSectors.map((sector, index) => (
+                      <option key={index} value={sector}>{sector}</option>
+                    ))}
+                  </select>
+                  {formErrors.sector && (
+                    <motion.p 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-500 text-sm mt-2"
+                    >
+                      {formErrors.sector}
+                    </motion.p>
+                  )}
+                </div>
+
+                {/* Cell select */}
+                <div className="relative">
+                  <select
+                    className="w-full p-4 outline-none rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:border-green-500 transition-all duration-300 ease-in-out appearance-none"
+                    name="cell"
+                    value={formData.cell}
+                    onChange={handleCellChange}
+                    disabled={!formData.sector}
+                  >
+                    <option value="" disabled>
+                      {formData.sector ? "Select a cell" : "Select a sector first"}
+                    </option>
+                    {availableCells.map((cell, index) => (
+                      <option key={index} value={cell}>{cell}</option>
+                    ))}
+                  </select>
+                  {formErrors.cell && (
+                    <motion.p 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-500 text-sm mt-2"
+                    >
+                      {formErrors.cell}
+                    </motion.p>
+                  )}
+                </div>
+
+                {/* Village select */}
+                <div className="relative">
+                  <select
+                    className="w-full p-4 outline-none rounded-lg border-2 border-gray-200 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:border-green-500 transition-all duration-300 ease-in-out appearance-none"
+                    name="village"
+                    value={formData.village}
+                    onChange={handleVillageChange}
+                    disabled={!formData.cell}
+                  >
+                    <option value="" disabled>
+                      {formData.cell ? "Select a village" : "Select a cell first"}
+                    </option>
+                    {availableVillages.map((village, index) => (
+                      <option key={index} value={village}>{village}</option>
+                    ))}
+                  </select>
+                  {formErrors.village && (
+                    <motion.p 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-500 text-sm mt-2"
+                    >
+                      {formErrors.village}
+                    </motion.p>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Amount to pay Section */}
+            <motion.div 
+              className="mb-8 bg-green-50 dark:bg-gray-700 p-6 rounded-xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
+                Amount to pay
+              </h3>
+              <p className="text-3xl font-bold text-gray-900 dark:text-gray-100">
+                RWF {formattedCost}
+              </p>
+            </motion.div>
+
+            {/* Terms and Conditions */}
+            <motion.div 
+              className="mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <label className="flex items-center space-x-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={formData.termsAccepted}
+                  onChange={handleCheckboxChange}
+                  className="w-5 h-5 text-green-600 rounded focus:ring-green-500 border-gray-300 transition-all duration-300"
+                />
+                <span className="text-gray-700 dark:text-gray-300">
+                  I agree to the terms and conditions of this service
+                </span>
+              </label>
+              {formErrors.termsAccepted && (
+                <motion.p 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-red-500 text-sm mt-2"
+                >
+                  {formErrors.termsAccepted}
+                </motion.p>
               )}
-            </div>
-          </div>
+            </motion.div>
 
-          {/* Delivery Address Section */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
-              Delivery Address
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Province select */}
-              <select
-                className="p-3 h-[3.1rem] outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
-                name="province"
-                value={formData.province}
-                onChange={handleProvinceChange}
+            {/* Important Information Section */}
+            <motion.div 
+              className="mb-8 bg-red-50 dark:bg-gray-700/50 p-6 rounded-xl flex items-start space-x-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <CgInfo className="text-3xl text-red-500 flex-shrink-0" />
+              <p className="text-gray-700 dark:text-gray-300 text-sm">
+                Note that after you click on complete purchase, you will be called
+                shortly on the phone number you entered. You will pay using the
+                method provided after getting your products. In case of any issues,
+                call or WhatsApp us on <span className="font-semibold">+250798509561</span>.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="flex flex-col sm:flex-row justify-end gap-4 mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+            >
+              <button
+                onClick={() => navigate(-1)}
+                type="button"
+                className="px-6 py-3 text-base font-medium rounded-lg border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 ease-in-out"
               >
-                <option value="" disabled>
-                  Select a province
-                </option>
-                {availableProvinces.map((province, index) => (
-                  <option key={index} value={province}>
-                    {province}
-                  </option>
-                ))}
-              </select>
-              {formErrors.province && (
-                <p className="text-red-500">{formErrors.province}</p>
-              )}
-
-              {/* District select */}
-              <select
-                className="p-3 h-[3.1rem] outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
-                name="district"
-                value={formData.district}
-                onChange={handleDistrictChange}
-                disabled={!formData.province}
+                Cancel
+              </button>
+              <button
+                onClick={handleSubmit}
+                className="px-6 py-3 text-base font-medium bg-green-600 text-white rounded-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 ease-in-out"
               >
-                <option value="" disabled>
-                  {formData.province
-                    ? "Select a district"
-                    : "Select a province first"}
-                </option>
-                {availableDistricts.map((district, index) => (
-                  <option key={index} value={district}>
-                    {district}
-                  </option>
-                ))}
-              </select>
-              {formErrors.district && (
-                <p className="text-red-500">{formErrors.district}</p>
-              )}
+                Pay RWF {formattedCost}
+              </button>
+            </motion.div>
+          </motion.form>
 
-              {/* Sector select */}
-              <select
-                className="p-3 h-[3.1rem] outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
-                name="sector"
-                value={formData.sector}
-                onChange={handleSectorChange}
-                disabled={!formData.district}
-              >
-                <option value="" disabled>
-                  {formData.district
-                    ? "Select a sector"
-                    : "Select a district first"}
-                </option>
-                {availableSectors.map((sector, index) => (
-                  <option key={index} value={sector}>
-                    {sector}
-                  </option>
-                ))}
-              </select>
-              {formErrors.sector && (
-                <p className="text-red-500">{formErrors.sector}</p>
-              )}
-
-              {/* Cell select */}
-              <select
-                className="p-3 h-[3.1rem] outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
-                name="cell"
-                value={formData.cell}
-                onChange={handleCellChange}
-                disabled={!formData.sector}
-              >
-                <option value="" disabled>
-                  {formData.sector
-                    ? "Select a cell"
-                    : "Select a sector first"}
-                </option>
-                {availableCells.map((cell, index) => (
-                  <option key={index} value={cell}>
-                    {cell}
-                  </option>
-                ))}
-              </select>
-              {formErrors.cell && (
-                <p className="text-red-500">{formErrors.cell}</p>
-              )}
-
-              {/* Village select */}
-              <select
-                className="p-3 h-[3.1rem] outline-none rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-green-500"
-                name="village"
-                value={formData.village}
-                onChange={handleVillageChange}
-                disabled={!formData.cell}
-              >
-                <option value="" disabled>
-                  {formData.cell
-                    ? "Select a village"
-                    : "Select a cell first"}
-                </option>
-                {availableVillages.map((village, index) => (
-                  <option key={index} value={village}>
-                    {village}
-                  </option>
-                ))}
-              </select>
-              {formErrors.village && (
-                <p className="text-red-500">{formErrors.village}</p>
-              )}
-            </div>
-          </div>
-
-          {/* Amount to pay Section */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4">
-              Amount to pay
-            </h3>
-            <h1>RWF {formattedCost}</h1>
-          </div>
-
-          {/* Terms and Conditions */}
-          <div className="flex items-center space-x-5 mb-8">
-            <input
-              type="checkbox"
-              checked={formData.termsAccepted}
-              onChange={handleCheckboxChange}
+          {/* Right side image */}
+          <motion.div 
+            className="hidden lg:block w-1/3"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <img
+              src="/confirmImage.png"
+              alt="payment"
+              className="w-full h-auto rounded-2xl shadow-lg"
             />
-            <h1 className="dark:text-gray-100">
-              I agree to the terms and conditions of this service
-            </h1>
-            {formErrors.termsAccepted && (
-              <p className="text-red-500">{formErrors.termsAccepted}</p>
-            )}
-          </div>
-
-          {/* Important Information Section */}
-          <div className="flex items-start space-x-5 mb-8">
-            <CgInfo className="text-[4rem] text-red-500" />
-            <h1 className="dark:text-gray-100">
-              Note that after you click on complete purchase, you will be called
-              shortly on the phone number you entered. You will pay using the
-              method provided after getting your products. In case of any issues,
-              call or WhatsApp us on +250798509561.
-            </h1>
-          </div>
-
-          <div className="flex flex-col sssm:flex-row justify-between mt-8 gap-3">
-            <button
-              onClick={handleSubmit}
-              className="p-3 w-full sssm:order-2 sssm:w-1/3 bg-green-600 text-white rounded-lg hover:bg-green-700"
-            >
-              Pay RWF {formattedCost}
-            </button>
-            <button
-              onClick={() => navigate(-1)}
-              type="button"
-              className="p-3 w-full sssm:order-1 sssm:w-1/3 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg"
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-        <img
-          src="/confirmImage.png"
-          alt="payment"
-          className="hidden xlg:block w-full h-auto lg:ml-10"
-        />
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

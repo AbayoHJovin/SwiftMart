@@ -180,30 +180,7 @@ export default function Account() {
         </div>
       ) : (
         <div className=" text-black dark:text-white bg-white dark:bg-black">
-          {/* <div className="my-10">
-            <div className="flex flex-col justify-center items-start ssm:items-center text-start ssm:text-center p-5 font-bold text-xl">
-              <h1 className="ssm:text-center">
-                You are not signed in. Better Create an account
-              </h1>
-              <h1 className="self-start ssm:self-center mt-4 ssm:mt-2">Or</h1>
-              <h1 className="ssm:text-center">
-                Login into your account if you want.
-              </h1>
-            </div>
-
-            <div className="flex p-5 flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-5 my-10">
-              <a href="/signup">
-                <button className="bg-green-900 text-white py-2 px-4 sm:py-3 sm:px-5 rounded-md text-sm sm:text-base">
-                  Sign Up
-                </button>
-              </a>
-              <a href="/login">
-                <button className="bg-green-900 text-white py-2 px-4 sm:py-3 sm:px-5 rounded-md text-sm sm:text-base">
-                  Login
-                </button>
-              </a>
-            </div>
-          </div> */}
+     
         </div>
       )}
       <Footer />

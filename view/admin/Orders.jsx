@@ -13,6 +13,7 @@ import Loader2 from "../src/components/loader2";
 import UseUsers from "../constants/Users";
 import OrderTable from "../src/components/OrderTable";
 import OfferModal from "../src/components/OfferModal";
+import { ChevronDown, Filter, Calendar } from 'lucide-react';
 
 const Orders = ({ AdminOptions, currentUser }) => {
   const now = new Date();
@@ -31,6 +32,17 @@ const Orders = ({ AdminOptions, currentUser }) => {
   const { currentUser: userWithAllCredentials } =
     useContext(CurrentUserContext);
   const { allOffers, isLoading } = useContext(OffersContext);
+  const [itemsPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [filterCriteria, setFilterCriteria] = useState('all');
+  const [sortOrder, setSortOrder] = useState('desc');
+
+  // Pagination logic
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredOrders?.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil((filteredOrders?.length || 0) / itemsPerPage);
+
   useEffect(() => {
     setLoading(true);
   }, []);
@@ -128,29 +140,87 @@ const Orders = ({ AdminOptions, currentUser }) => {
   };
 
   useEffect(() => {}, [boughtProducts]);
+
+  const handleFilterChange = (criteria) => {
+    setFilterCriteria(criteria);
+    let filtered = [...offers];
+    
+    switch(criteria) {
+      case 'pending':
+        filtered = filtered.filter(order => !order.approved);
+        break;
+      case 'approved':
+        filtered = filtered.filter(order => order.approved);
+        break;
+      case 'today':
+        filtered = filtered.filter(order => 
+          order.orderDate.split(' ')[0] === currentDate);
+        break;
+      default:
+        break;
+    }
+    setFilteredOrders(filtered);
+    setCurrentPage(1);
+  };
+
   return (
-    <div className="px-0 md:px-5 mx-0 text-black dark:text-white">
-      {offers?.length == 0 ? (
-        <div className="flex justify-center items-center h-screen text-center content-center">
-          <h1>No orders found</h1>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 px-4 py-8">
+      {offers?.length === 0 ? (
+        <div className="flex flex-col items-center justify-center h-[60vh] text-center">
+          <div className="bg-green-50 dark:bg-green-900/20 p-8 rounded-2xl">
+            <h1 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+              No Orders Found
+            </h1>
+            <p className="text-gray-600 dark:text-gray-300">
+              There are currently no orders to display
+            </p>
+          </div>
         </div>
       ) : (
-        <div>
-          <div className="flex items-center justify-between px-10 my-10">
-            {AdminOptions ? (
-              <div className="flex flex-col">
-                <div className="font-bold text-2xl">Orders</div>
-                <div>{offers?.length} Orders found</div>
+        <div className="max-w-7xl mx-auto space-y-6">
+          {/* Header Section */}
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              {AdminOptions && (
+                <div>
+                  <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                    Orders Overview
+                  </h1>
+                  <p className="text-gray-600 dark:text-gray-300 mt-1">
+                    {offers?.length} total orders found
+                  </p>
+                </div>
+              )}
+              
+              {/* Filters and Date Selection */}
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <div className="relative">
+                  <select
+                    onChange={(e) => handleFilterChange(e.target.value)}
+                    className="w-full sm:w-40 px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-200 appearance-none"
+                  >
+                    <option value="all">All Orders</option>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="today">Today</option>
+                  </select>
+                  <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4" />
+                </div>
+
+                <div className="relative">
+                  <input
+                    type="date"
+                    onChange={(e) => handleDate(e.target.value)}
+                    defaultValue={currentDate}
+                    className="w-full sm:w-auto px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-200"
+                  />
+                  <Calendar className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4" />
+                </div>
               </div>
-            ) : null}
-            <input
-              onInput={(e) => handleDate(e.target.value)}
-              defaultValue={currentDate}
-              type="date"
-              className="border border-gray-200 text-black px-5 h-10"
-            />
+            </div>
           </div>
 
+          {/* Orders Content */}
           {openOfferModal ? (
             <OfferModal
               selectedOrder={selectedOrder}
@@ -165,12 +235,33 @@ const Orders = ({ AdminOptions, currentUser }) => {
               handleDecline={handleDecline}
             />
           ) : (
-            <OrderTable
-              filteredOrders={filteredOrders}
-              AdminOptions={AdminOptions}
-              handleOfferClick={handleOfferClick}
-              users={users}
-            />
+            <div>
+              <OrderTable
+                filteredOrders={currentItems}
+                AdminOptions={AdminOptions}
+                handleOfferClick={handleOfferClick}
+                users={users}
+              />
+              
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex justify-center mt-6 gap-2">
+                  {Array.from({ length: totalPages }, (_, i) => (
+                    <button
+                      key={i + 1}
+                      onClick={() => setCurrentPage(i + 1)}
+                      className={`px-4 py-2 rounded-lg transition-colors duration-200 ${
+                        currentPage === i + 1
+                          ? 'bg-green-600 text-white'
+                          : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-green-50 dark:hover:bg-green-900/20'
+                      }`}
+                    >
+                      {i + 1}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           )}
         </div>
       )}

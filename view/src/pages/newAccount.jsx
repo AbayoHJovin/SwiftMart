@@ -70,6 +70,9 @@ const NewAccount = () => {
         setIsLoggingOut(false);
       });
   };
+  useEffect(()=>{
+    console.log("Current user is ",currentUser)
+  },[currentUser])
   const labels = [
     {
       icon: <User2 />,
