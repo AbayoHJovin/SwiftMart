@@ -1,41 +1,41 @@
 /* eslint-disable react/prop-types */
-import { memo, useState, useEffect } from "react";
+import { memo, useState, useEffect, useCallback } from "react";
 import { Modal, Input, Empty, Spin } from "antd";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import ProductDisplay from "./ProductDisplay";
-import { Search, Filter, X } from "lucide-react";
+import { Search, Filter, X, ShoppingCart, Info } from "lucide-react";
 
 const SearchComponent = memo(({ 
   isModalVisible, 
   setIsModalVisible,
   searchResults = [],
   loading,
-  handleSearch,
   handleAddToCart,
   handleDeleteItem,
   localCart = [],
-  localFav = [],
   theme
 }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [filteredResults, setFilteredResults] = useState(searchResults);
+  const [filteredResults, setFilteredResults] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
 
   // Categories derived from products
   const categories = ["all", ...new Set(searchResults.map(product => product.category))];
 
-  useEffect(() => {
+  // Memoized search function
+  const handleSearch = useCallback((term) => {
+    setIsSearching(true);
     let results = searchResults;
     
     // Filter by search term
-    if (searchTerm) {
+    if (term) {
       results = results.filter(product => 
-        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.category.toLowerCase().includes(searchTerm.toLowerCase())
+        product.prodName?.toLowerCase().includes(term.toLowerCase()) ||
+        product.prodDescription?.toLowerCase().includes(term.toLowerCase()) ||
+        product.category?.toLowerCase().includes(term.toLowerCase())
       );
     }
 
@@ -45,11 +45,25 @@ const SearchComponent = memo(({
     }
 
     setFilteredResults(results);
-  }, [searchTerm, selectedCategory, searchResults]);
+    setIsSearching(false);
+  }, [searchResults, selectedCategory]);
 
-  const handleInputChange = (value) => {
+  // Handle input change with debounce
+  const handleInputChange = useCallback((value) => {
     setSearchTerm(value);
     handleSearch(value);
+  }, [handleSearch]);
+
+  // Update filtered results when search results or category changes
+  useEffect(() => {
+    handleSearch(searchTerm);
+  }, [searchResults, selectedCategory, handleSearch, searchTerm]);
+
+  const handleModalClose = () => {
+    setIsModalVisible(false);
+    setSearchTerm("");
+    setSelectedCategory("all");
+    setFilteredResults([]);
   };
 
   const containerVariants = {
@@ -62,11 +76,7 @@ const SearchComponent = memo(({
     <Modal
       title={null}
       open={isModalVisible}
-      onCancel={() => {
-        setIsModalVisible(false);
-        setSearchTerm("");
-        setSelectedCategory("all");
-      }}
+      onCancel={handleModalClose}
       width="90vw"
       className="search-modal"
       footer={null}
@@ -82,21 +92,23 @@ const SearchComponent = memo(({
         {/* Search Header */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
           <div className="relative flex-1 w-full">
-            <Input
-              placeholder="Search for products..."
-              value={searchTerm}
-              onChange={(e) => handleInputChange(e.target.value)}
-              className="py-3 pl-12 pr-4 text-lg rounded-xl border-2 border-gray-200 focus:border-green-500 transition-all duration-300"
-              suffix={
-                searchTerm && (
-                  <X 
-                    className="cursor-pointer text-gray-400 hover:text-gray-600" 
-                    onClick={() => handleInputChange("")}
-                  />
-                )
-              }
-            />
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <Input
+                placeholder="Search for products..."
+                value={searchTerm}
+                onChange={(e) => handleInputChange(e.target.value)}
+                className="py-3 pl-12 pr-10 text-lg rounded-xl border-2 border-gray-200 focus:border-green-500 transition-all duration-300"
+              />
+              {searchTerm && (
+                <button
+                  onClick={() => handleInputChange("")}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              )}
+            </div>
           </div>
           
           <button
@@ -138,20 +150,110 @@ const SearchComponent = memo(({
 
         {/* Results Section */}
         <div className="relative min-h-[300px]">
-          {loading ? (
+          {loading || isSearching ? (
             <div className="absolute inset-0 flex items-center justify-center">
               <Spin size="large" />
             </div>
           ) : filteredResults.length > 0 ? (
-            <ProductDisplay
-              products={filteredResults}
-              loading={loading}
-              handleAddToCart={handleAddToCart}
-              handleDeleteItem={handleDeleteItem}
-              localCart={localCart}
-              localFav={localFav}
-              theme={theme}
-            />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filteredResults.map((product) => {
+                const isInCart = localCart.some(item => item.productId === product.prodId);
+                const mainImage = product.images?.find(img => img.isMain)?.imageUrl || 
+                                product.images?.[0]?.imageUrl || 
+                                "/placeholder.png";
+
+                return (
+                  <motion.div
+                    key={product.prodId}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`rounded-xl overflow-hidden shadow-lg ${
+                      theme === 'dark' ? 'bg-gray-800' : 'bg-white'
+                    }`}
+                  >
+                    {/* Product Image */}
+                    <div 
+                      className="relative aspect-square overflow-hidden cursor-pointer"
+                      onClick={() => navigate(`/product/${product.prodId}`)}
+                    >
+                      <img
+                        src={mainImage}
+                        alt={product.prodName}
+                        className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-110"
+                      />
+                      {product.discount > 0 && (
+                        <div className="absolute top-2 right-2">
+                          <span className="bg-green-500 text-white px-2 py-1 rounded-full text-sm font-medium">
+                            -{product.discount}%
+                          </span>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Product Info */}
+                    <div className="p-4">
+                      <h3 className={`text-lg font-semibold mb-2 line-clamp-2 ${
+                        theme === 'dark' ? 'text-white' : 'text-gray-800'
+                      }`}>
+                        {product.prodName}
+                      </h3>
+                      
+                      <p className={`text-sm mb-3 line-clamp-2 ${
+                        theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                      }`}>
+                        {product.prodDescription}
+                      </p>
+
+                      <div className="flex items-baseline mb-3">
+                        <span className={`text-xl font-bold ${
+                          theme === 'dark' ? 'text-green-400' : 'text-green-600'
+                        }`}>
+                          RWF {product.price.toLocaleString()}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-between mt-4">
+                        <motion.button
+                          whileTap={{ scale: 0.95 }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            isInCart ? handleDeleteItem(product.prodId) : handleAddToCart(product.prodId);
+                          }}
+                          className={`flex items-center px-3 py-2 rounded-lg ${
+                            isInCart
+                              ? 'bg-red-100 text-red-600 hover:bg-red-200'
+                              : 'bg-green-100 text-green-600 hover:bg-green-200'
+                          } transition-colors duration-300`}
+                        >
+                          <ShoppingCart className="w-5 h-5 mr-2" />
+                          {isInCart ? 'Remove' : 'Add to Cart'}
+                        </motion.button>
+
+                        <motion.button
+                          whileTap={{ scale: 0.95 }}
+                          onClick={() => navigate(`/product/${product.prodId}`)}
+                          className="p-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors duration-300"
+                        >
+                          <Info className="w-5 h-5" />
+                        </motion.button>
+                      </div>
+                    </div>
+
+                    {/* Stock Status */}
+                    {product.stock <= 5 && product.stock > 0 && (
+                      <div className="px-4 py-2 bg-orange-100 text-orange-600 text-sm">
+                        Only {product.stock} left in stock
+                      </div>
+                    )}
+                    {product.stock === 0 && (
+                      <div className="px-4 py-2 bg-red-100 text-red-600 text-sm">
+                        Out of stock
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              })}
+            </div>
           ) : (
             <motion.div
               initial={{ opacity: 0 }}
@@ -185,14 +287,13 @@ const SearchComponent = memo(({
           padding: 1.5rem;
         }
 
-        .search-modal .ant-input-affix-wrapper {
-          border-radius: 0.75rem;
-          border: 2px solid #e5e7eb;
-          transition: all 0.3s ease;
+        .search-modal .ant-input {
+          height: auto;
+          font-size: 1rem;
         }
 
-        .search-modal .ant-input-affix-wrapper:hover,
-        .search-modal .ant-input-affix-wrapper-focused {
+        .search-modal .ant-input:hover,
+        .search-modal .ant-input:focus {
           border-color: #10b981;
           box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
         }
