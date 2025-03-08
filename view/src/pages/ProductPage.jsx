@@ -25,20 +25,26 @@ const ProductPage = () => {
   useEffect(() => {
     const loadProduct = async () => {
       if (!prodId || !products.length) return; // Guard clause
-      
+
       setLoadingPage(true);
       try {
         const product = products.find((product) => product.prodId === prodId);
         if (product) {
-          const isOnTheCart = itemsOnCart?.find((item) => item.productId === prodId);
+          const isOnTheCart = itemsOnCart?.find(
+            (item) => item.productId === prodId
+          );
           setIsOnCart(!!isOnTheCart);
           setRealProduct(product);
-          
+
           // Set the initial image only if it hasn't been set yet or product changed
-          if (product.images.length > 0 && (!selectedImage || product.prodId !== realProduct?.prodId)) {
-            const mainImage = product.images.find((img) => img.isMain)?.imageUrl 
-              || product.images[0]?.imageUrl;
-            
+          if (
+            product.images.length > 0 &&
+            (!selectedImage || product.prodId !== realProduct?.prodId)
+          ) {
+            const mainImage =
+              product.images.find((img) => img.isMain)?.imageUrl ||
+              product.images[0]?.imageUrl;
+
             if (mainImage) {
               setSelectedImage(mainImage);
             }
@@ -75,11 +81,12 @@ const ProductPage = () => {
 
   const handleMouseMove = (e) => {
     if (!isZoomed) return;
-    
-    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+
+    const { left, top, width, height } =
+      e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - left) / width) * 100;
     const y = ((e.clientY - top) / height) * 100;
-    
+
     setMousePosition({ x, y });
   };
 
@@ -91,7 +98,9 @@ const ProductPage = () => {
   const handleMobileScroll = (e) => {
     if (window.innerWidth >= 1024) return; // Only for mobile/tablet
     const container = e.currentTarget;
-    const scrollPercentage = (container.scrollLeft / (container.scrollWidth - container.clientWidth)) * 100;
+    const scrollPercentage =
+      (container.scrollLeft / (container.scrollWidth - container.clientWidth)) *
+      100;
     setScrollPosition(scrollPercentage);
   };
 
@@ -110,15 +119,12 @@ const ProductPage = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8">
                 {/* Mobile Scroll Container */}
                 <div className="lg:hidden w-full mb-6">
-                  <div 
+                  <div
                     className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
                     onScroll={handleMobileScroll}
                   >
                     {realProduct.images.map((img, index) => (
-                      <div 
-                        key={index}
-                        className="flex-none w-full snap-center"
-                      >
+                      <div key={index} className="flex-none w-full snap-center">
                         <div className="aspect-square bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden">
                           <img
                             src={img.imageUrl}
@@ -135,7 +141,9 @@ const ProductPage = () => {
                       <div
                         key={index}
                         className={`h-1.5 rounded-full transition-all duration-300 ${
-                          Math.round(scrollPosition / (100 / realProduct.images.length)) === index
+                          Math.round(
+                            scrollPosition / (100 / realProduct.images.length)
+                          ) === index
                             ? "w-6 bg-green-600"
                             : "w-1.5 bg-gray-300 dark:bg-gray-700"
                         }`}
@@ -159,7 +167,9 @@ const ProductPage = () => {
                       >
                         <img
                           src={img.imageUrl}
-                          alt={`${realProduct.prodName} - Thumbnail ${index + 1}`}
+                          alt={`${realProduct.prodName} - Thumbnail ${
+                            index + 1
+                          }`}
                           className="w-full h-full object-contain"
                           loading="lazy"
                         />
@@ -181,7 +191,7 @@ const ProductPage = () => {
                         >
                           <img
                             src={selectedImage}
-                            alt={realProduct?.prodName || ''}
+                            alt={realProduct?.prodName || ""}
                             className="w-full h-full object-contain"
                           />
                           {isZoomed && (
@@ -190,7 +200,7 @@ const ProductPage = () => {
                               style={{
                                 backgroundImage: `url(${selectedImage})`,
                                 backgroundPosition: `${mousePosition.x}% ${mousePosition.y}%`,
-                                backgroundRepeat: 'no-repeat',
+                                backgroundRepeat: "no-repeat",
                                 backgroundSize: `${zoomLevel * 100}%`,
                                 zIndex: 10,
                               }}
@@ -199,7 +209,7 @@ const ProductPage = () => {
                         </div>
                       )}
                     </div>
-                    
+
                     {/* Zoom Controls */}
                     {selectedImage && (
                       <div className="mt-3">
@@ -216,8 +226,10 @@ const ProductPage = () => {
                               className="flex-grow h-1.5 bg-gray-300 rounded-lg appearance-none cursor-pointer"
                               style={{
                                 background: `linear-gradient(to right, #10B981 0%, #10B981 ${
-                                  ((zoomLevel - 1) * 33.33)
-                                }%, #D1D5DB ${((zoomLevel - 1) * 33.33)}%, #D1D5DB 100%)`,
+                                  (zoomLevel - 1) * 33.33
+                                }%, #D1D5DB ${
+                                  (zoomLevel - 1) * 33.33
+                                }%, #D1D5DB 100%)`,
                               }}
                             />
                             <span className="text-xs text-gray-500">4x</span>
@@ -237,14 +249,16 @@ const ProductPage = () => {
                     <h1 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-white mb-3">
                       {realProduct.prodName}
                     </h1>
-                    
+
                     <div className="flex items-center gap-4 mb-4">
                       <span className="text-2xl font-bold text-gray-800 dark:text-white">
                         RWF {realProduct.price}
                       </span>
                       <div className="flex items-center">
                         <span className="text-green-500">★★★★★</span>
-                        <span className="ml-1 text-sm text-gray-500">(1000)</span>
+                        <span className="ml-1 text-sm text-gray-500">
+                          (1000)
+                        </span>
                       </div>
                     </div>
 
@@ -259,7 +273,11 @@ const ProductPage = () => {
                     </div>
 
                     <button
-                      onClick={() => isOnCart ? deleteItem(realProduct.prodId) : addItemOncart(realProduct.prodId)}
+                      onClick={() =>
+                        isOnCart
+                          ? deleteItem(realProduct.prodId)
+                          : addItemOncart(realProduct.prodId)
+                      }
                       className="w-full sm:w-auto px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200"
                     >
                       {loading ? (
