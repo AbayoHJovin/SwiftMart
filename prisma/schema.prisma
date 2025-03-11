@@ -24,10 +24,10 @@ model Users {
   cart           Cart[]      
   favorites      Favorites[] 
   orders         Orders[]    
+  notifications  Notification[]
   createdAt      DateTime    @default(now())
   updatedAt      DateTime    @updatedAt
   profilePicture String?     @db.Text
-  notifications  Notification[]
 }
 
 model Cart {
@@ -81,11 +81,11 @@ model Orders {
   paymentMethod String      @db.VarChar(255)
   price         Decimal     @db.Decimal(10, 2)
   approved      Boolean     @default(false)
+  approvalMessage String?   @db.Text
   orderDate     String?     @db.Text
   orderItems    OrderItem[] 
   transactionUrl String?    @db.Text
   notifications Notification[]
-  approvalMessage String?    @db.Text  // Store approval message
 }
 
 model OrderItem {
@@ -123,14 +123,13 @@ model Subscription {
 }
 
 model Notification {
-  notificationId String   @id @default(uuid())
-  userId        String    // The user who receives the notification
-  user          Users     @relation(fields: [userId], references: [userId])
-  title         String    @db.VarChar(255)
-  message       String    @db.Text
-  type          String    @db.VarChar(50) // e.g., 'order', 'approval', 'system'
-  isRead        Boolean   @default(false)
-  createdAt     DateTime  @default(now())
-  orderId       String?   // Optional reference to an order
-  order         Orders?   @relation(fields: [orderId], references: [orderId])
+  id        String   @id @default(cuid())
+  userId    String
+  user      Users    @relation(fields: [userId], references: [userId])
+  orderId   String?
+  order     Orders?  @relation(fields: [orderId], references: [orderId])
+  message   String   @db.Text
+  type      String   @db.VarChar(50) // 'order_placed', 'order_approved', etc.
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
 }

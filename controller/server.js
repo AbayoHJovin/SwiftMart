@@ -11,8 +11,9 @@ const tokenRoutes = require("./Routes/tokenRoutes");
 const offerRoutes = require("./Routes/offerRoutes");
 const otpRoutes=require("./Routes/otpRoutes")
 const subscriptionRoutes=require("./Routes/subscriptions")
-const notificationRoutes = require("./Routes/notificationRoutes");
 const Paypal = require("./Routes/PaypalRoutes");
+const notificationRoutes = require("./Routes/notificationRoutes");
+const orderRoutes = require("./Routes/orderRoutes");
 require("dotenv").config();
 const Mtn = require("./Routes/MTNRoutes");
 
@@ -31,19 +32,19 @@ app.use(
 
 app.use(express.json());
 
-// Use routes with proper prefixes
-app.use("/api", userRoutes);
-app.use("/api", productRoutes);
-app.use("/api", tokenRoutes);
-app.use("/api", cartRoutes);
-app.use("/api", FavRoutes);
-app.use("/api", offerRoutes);
-app.use("/api", otpRoutes);
-app.use("/api", subscriptionRoutes);
-app.use("/api", notificationRoutes);
-app.use("/api", Paypal);
-app.use("/api", Mtn);
-
-app.listen(5000, () => {
-  console.log("Server is running on port 5000");
-});
+  
+  app.listen(5000, '0.0.0.0', () => {
+    console.log("Server is running on port 5000");
+  });
+app.use(userRoutes);
+app.use(productRoutes);
+app.use(tokenRoutes);
+app.use(cartRoutes);
+app.use(FavRoutes);
+app.use(offerRoutes);
+app.use(otpRoutes);
+app.use(subscriptionRoutes)
+app.use(Paypal);
+app.use(Mtn);
+app.use('/api/notifications', notificationRoutes);
+app.use('/api/orders', orderRoutes);

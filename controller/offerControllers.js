@@ -44,7 +44,6 @@ exports.addOffer = async (req, res) => {
         price,
         orderDate: orderDate,
         transactionUrl: transactionUrl,
-        status: 'Pending',
         orderItems: {
           create: validProducts.map((item) => ({
             productId: item.productId,
@@ -53,35 +52,6 @@ exports.addOffer = async (req, res) => {
         },
       },
       include: { orderItems: true },
-    });
-
-    // Create notification for admin
-    const admins = await prisma.users.findMany({
-      where: { isAdmin: true }
-    });
-
-    // Create notifications for all admins
-    await Promise.all(admins.map(admin => 
-      prisma.notification.create({
-        data: {
-          userId: admin.userId,
-          title: "New Order Received",
-          message: `New order #${newOrder.orderId} has been placed for RWF ${price}`,
-          type: "OrderPlaced",
-          orderId: newOrder.orderId
-        }
-      })
-    ));
-
-    // Create notification for customer
-    await prisma.notification.create({
-      data: {
-        userId: userId,
-        title: "Order Placed Successfully",
-        message: `Your order #${newOrder.orderId} has been placed and is pending approval.`,
-        type: "OrderPlaced",
-        orderId: newOrder.orderId
-      }
     });
 
     for (const item of orderProducts) {
@@ -120,14 +90,7 @@ exports.getOffer = async (req, res) => {
   try {
     const userOrders = await prisma.orders.findMany({
       where: { ordererId: userId },
-      include: { 
-        orderItems: true,
-        notifications: {
-          where: {
-            userId: userId
-          }
-        }
-      },
+      include: { orderItems: true }, // Ensure orderItems are fetched with order details
     });
     if (userOrders.length === 0) {
       throw new Error("No orders found for the user");
@@ -141,44 +104,18 @@ exports.getOffer = async (req, res) => {
 
 exports.approveOffer = async (req, res) => {
   const { offerId } = req.query;
-  const { message } = req.body;
 
   try {
     if (!offerId) throw new Error("Offer ID is required");
 
-    const order = await prisma.orders.findUnique({
-      where: { orderId: offerId },
-      include: { orderItems: true }
-    });
-
-    if (!order) {
-      throw new Error("Order not found");
-    }
-
-    const status = message ? 'ApprovedWithMessage' : 'Approved';
-
     const updatedOrder = await prisma.orders.update({
       where: { orderId: offerId },
-      data: { 
-        status,
-        approvalMessage: message || null
-      },
-    });
-
-    // Create notification for customer
-    await prisma.notification.create({
-      data: {
-        userId: order.ordererId,
-        title: message ? "Order Approved with Message" : "Order Approved",
-        message: message || `Your order #${offerId} has been approved.`,
-        type: "OrderApproved",
-        orderId: offerId
-      }
+      data: { approved: true },
     });
 
     return res
       .status(200)
-      .json({ message: "Order approved successfully", order: updatedOrder });
+      .json({ message: "Offer approved successfully", order: updatedOrder });
   } catch (e) {
     console.error(e);
     return res.status(400).json({ error: e.message || "Something went wrong" });
@@ -187,7 +124,6 @@ exports.approveOffer = async (req, res) => {
 
 exports.declineOffer = async (req, res) => {
   const { offerId } = req.query;
-  const { reason } = req.body;
 
   try {
     if (!offerId) throw new Error("Offer ID is required");
@@ -199,31 +135,16 @@ exports.declineOffer = async (req, res) => {
     if (!existingOrder) {
       return res.status(404).json({ error: "Offer not found" });
     }
-
-    // Create notification for customer about order cancellation
-    await prisma.notification.create({
-      data: {
-        userId: existingOrder.ordererId,
-        title: "Order Cancelled",
-        message: reason || `Your order #${offerId} has been cancelled.`,
-        type: "OrderCancelled",
-        orderId: offerId
-      }
-    });
-
-    // Delete order items first
-    await prisma.orderItem.deleteMany({
+    const deleteOfferDependencies = await prisma.orderItem.deleteMany({
       where: {
         orderId: offerId,
       },
     });
-
-    // Then delete the order
     await prisma.orders.delete({
       where: { orderId: offerId },
     });
 
-    return res.status(200).json({ message: "Order removed successfully" });
+    return res.status(200).json({ message: "Offer removed successfully" });
   } catch (e) {
     console.error(e);
     return res.status(400).json({ error: e.message || "Something went wrong" });

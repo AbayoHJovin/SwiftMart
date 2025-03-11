@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import LandingPage from "./pages/Landing";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./pages/About";
 import ShopNow from "./pages/ShopNow";
 import NotFound from "./pages/Notfound";
@@ -30,10 +30,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PaymentPage from "./pages/Pay.jsx";
 import UpdatePassword from "./pages/UpdatePassword.jsx";
 import SecurityAlert from "./pages/SecurityAlert.jsx";
+import { NotificationProvider } from "../constants/NotificationContext.jsx";
 // import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
 const queryClient = new QueryClient();
 
-function App() {
+// Root layout component that wraps all routes with necessary providers
+const RootLayout = () => {
   useEffect(() => {
     fetch(`${apiUrl}/refresh_token`, {
       method: "POST",
@@ -47,131 +49,117 @@ function App() {
       .catch((e) => console.error(e));
   }, []);
 
-  return <RouterProvider router={router} />;
-}
+  return (
+    <CurrentUser>
+      <ThemeProvider>
+        <NotificationProvider>
+          <CartItems>
+            <FavItems>
+              <Outlet />
+            </FavItems>
+          </CartItems>
+        </NotificationProvider>
+      </ThemeProvider>
+    </CurrentUser>
+  );
+};
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <CartItems>
-        <LandingPage />
-      </CartItems>
-    ),
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/shop/:gender/:product",
+        element: <ShopNow />,
+      },
+      {
+        path: "/shop/favourites",
+        element: <ShopNow />,
+      },
+      {
+        path: "/contacts",
+        element: <Contact />,
+      },
+      {
+        path: "/authorized/Admin/:option",
+        element: (
+          <AuthorizedAdmin>
+            <AdminDashboard />
+          </AuthorizedAdmin>
+        ),
+      },
+      {
+        path: "/account/:option",
+        element: <NewAccount />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <SignupForm />,
+      },
+      {
+        path: "/checkout",
+        element: <OrderForm />,
+      },
+      {
+        path: "/product/:prodId",
+        element: <ProductPage />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
+      },
+      {
+        path: "/paymentPage",
+        element: <PaymentPage />,
+      },
+      {
+        path: "offerComfirmation",
+        element: <OfferComfirmation />,
+      },
+      {
+        path: "/try/admin/auth",
+        element: (
+          <AuthorizedAdmin>
+            <AdminAuth />
+          </AuthorizedAdmin>
+        ),
+      },
+      {
+        path: "/try",
+        element: <CategorySection />,
+      },
+      {
+        path: "/update-password",
+        element: <UpdatePassword />,
+      },
+      {
+        path: "/cancel-reset",
+        element: <SecurityAlert />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
   },
-  {
-    path: "/about",
-    element: (
-      <CartItems>
-        <About />
-      </CartItems>
-    ),
-  },
-  {
-    path: "/shop/:gender/:product",
-    element: (
-      <CartItems>
-        <ShopNow />
-      </CartItems>
-    ),
-  },
-  {
-    path: "/shop/favourites",
-    element: (
-      <CartItems>
-        <ShopNow />
-      </CartItems>
-    ),
-  },
-  {
-    path: "/contacts",
-    element: (
-      <CartItems>
-        <Contact />
-      </CartItems>
-    ),
-  },
-  {
-    path: "/authorized/Admin/:option",
-    element: (
-      <AuthorizedAdmin>
-        <AdminDashboard />
-      </AuthorizedAdmin>
-    ),
-  },
-  {
-    path: "/account/:option",
-    element: (
-      <CartItems>
-        <FavItems>
-          <NewAccount />
-        </FavItems>
-      </CartItems>
-    ),
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/signup",
-    element: <SignupForm />,
-  },
-  {
-    path: "/checkout",
-    element: (
-      <CartItems>
-        <OrderForm />
-      </CartItems>
-    ),
-  },
-  {
-    path: "/product/:prodId",
-    element: (
-      <CartItems>
-        <ProductPage />
-      </CartItems>
-    ),
-  },
-
-  {
-    path: "/cart",
-    element: (
-      <CartItems>
-        <CartPage />
-      </CartItems>
-    ),
-  },
-  {path:"/paymentPage",element:<PaymentPage/>},
-  { path: "offerComfirmation", element: <OfferComfirmation /> },
-  {
-    path: "/try/admin/auth",
-    element: (
-      <AuthorizedAdmin>
-        <AdminAuth />
-      </AuthorizedAdmin>
-    ),
-  },
-  { path: "/try", element: <CategorySection /> },
-  {
-    path: "/update-password",
-    element: <UpdatePassword />,
-  },
-  {
-    path: "/cancel-reset",
-    element: <SecurityAlert />,
-  },
-  { path: "*", element: <NotFound /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <CurrentUser>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
-      </CurrentUser>
+      <RouterProvider router={router} />
     </QueryClientProvider>
   </React.StrictMode>
 );
