@@ -1,16 +1,34 @@
 const axios = require("axios");
 const { v4: uuidv4 } = require("uuid");
 const dotenv = require("dotenv");
+const path = require("path");
 const changeFormatAndPushToCloudinary = require("./functions/changeFormat");
 
-dotenv.config();
+// Load environment variables
+const result = dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
-const subscriptionKey = process.env.SUBSCRIPTION_KEY;
-const callbackHost = process.env.CALLBACK_URL;
+if (result.error) {
+  console.error('Error loading .env file:', result.error);
+  process.exit(1);
+}
+
+// Debug environment loading
+console.log('Environment loading status:', {
+  envFileLoaded: !result.error,
+  envPath: path.resolve(__dirname, '../.env'),
+  subscriptionKeyExists: !!process.env.SUBSCRIPTION_KEY
+});
+
+const subscriptionKey = process.env.SUBSCRIPTION_KEY?.trim();
+const callbackHost = process.env.CALLBACK_URL?.trim();
 
 if (!subscriptionKey) {
+  console.error('Environment variables loaded:', {
+    subscriptionKey: process.env.SUBSCRIPTION_KEY,
+    envVars: Object.keys(process.env).filter(key => key.includes('SUBSCRIPTION') || key.includes('KEY'))
+  });
   throw new Error(
-    "Error: SUBSCRIPTION_KEY is missing in environment variables."
+    "Error: SUBSCRIPTION_KEY is missing in environment variables. Please check your .env file configuration."
   );
 }
 
