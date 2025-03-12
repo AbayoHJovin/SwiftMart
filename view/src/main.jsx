@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { router } from "./router";
 import "./index.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import LandingPage from "./pages/Landing";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import About from "./pages/About";
 import ShopNow from "./pages/ShopNow";
 import NotFound from "./pages/Notfound";
@@ -26,12 +29,11 @@ import AdminAuth from "./pages/AdminAuth.jsx";
 import AuthorizedAdmin from "../constants/AuthorizedAdmin.jsx";
 import CategorySection from "./components/WhatWeSell.jsx";
 import FavItems from "../constants/favItems.jsx";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PaymentPage from "./pages/Pay.jsx";
 import UpdatePassword from "./pages/UpdatePassword.jsx";
 import SecurityAlert from "./pages/SecurityAlert.jsx";
 import { NotificationProvider } from "../constants/NotificationContext.jsx";
-// import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
+
 const queryClient = new QueryClient();
 
 // Root layout component that wraps all routes with necessary providers
@@ -63,98 +65,6 @@ const RootLayout = () => {
     </CurrentUser>
   );
 };
-
-const router = createBrowserRouter([
-  {
-    element: <RootLayout />,
-    children: [
-      {
-        path: "/",
-        element: <LandingPage />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/shop/:gender/:product",
-        element: <ShopNow />,
-      },
-      {
-        path: "/shop/favourites",
-        element: <ShopNow />,
-      },
-      {
-        path: "/contacts",
-        element: <Contact />,
-      },
-      {
-        path: "/authorized/Admin/:option",
-        element: (
-          <AuthorizedAdmin>
-            <AdminDashboard />
-          </AuthorizedAdmin>
-        ),
-      },
-      {
-        path: "/account/:option",
-        element: <NewAccount />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/signup",
-        element: <SignupForm />,
-      },
-      {
-        path: "/checkout",
-        element: <OrderForm />,
-      },
-      {
-        path: "/product/:prodId",
-        element: <ProductPage />,
-      },
-      {
-        path: "/cart",
-        element: <CartPage />,
-      },
-      {
-        path: "/paymentPage",
-        element: <PaymentPage />,
-      },
-      {
-        path: "offerComfirmation",
-        element: <OfferComfirmation />,
-      },
-      {
-        path: "/try/admin/auth",
-        element: (
-          <AuthorizedAdmin>
-            <AdminAuth />
-          </AuthorizedAdmin>
-        ),
-      },
-      {
-        path: "/try",
-        element: <CategorySection />,
-      },
-      {
-        path: "/update-password",
-        element: <UpdatePassword />,
-      },
-      {
-        path: "/cancel-reset",
-        element: <SecurityAlert />,
-      },
-      {
-        path: "*",
-        element: <NotFound />,
-      },
-    ],
-  },
-]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -2,6 +2,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { useNotifications } from "../constants/NotificationContext";
 import {
   Bell,
   User,
@@ -9,35 +11,22 @@ import {
   ChevronDown,
   Settings,
   Search,
-  X,
 } from "lucide-react";
 
 const AdminNav = ({ currentBar }) => {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showUserDropdown, setShowUserDropdown] = useState(false);
-  const [hasNewNotifications] = useState(true);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const navigate = useNavigate();
+  const { notifications, unreadCount, markAsRead } = useNotifications();
 
   const notificationRef = useRef();
   const userRef = useRef();
 
-  // Mock notifications
-  const notifications = [
-    {
-      id: 1,
-      title: "New Order",
-      message: "New order #1234 received",
-      time: "2 minutes ago",
-      isUnread: true,
-    },
-    {
-      id: 2,
-      title: "Stock Alert",
-      message: "Product 'Nike Air Max' is low in stock",
-      time: "1 hour ago",
-      isUnread: false,
-    },
-  ];
+  // Filter unread notifications
+  const unreadNotifications = notifications.filter(
+    (notification) => !notification.isRead && notification.type === 'new_order'
+  );
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -54,6 +43,28 @@ const AdminNav = ({ currentBar }) => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleNotificationClick = async (notification) => {
+    await markAsRead(notification.id);
+    setShowNotifications(false);
+    // Navigate to orders page with filter for unread/unapproved orders
+    navigate("/authorized/Admin/orders?filter=unapproved");
+  };
+
+  const formatTimeAgo = (dateString) => {
+    const now = new Date();
+    const date = new Date(dateString);
+    const diffTime = Math.abs(now - date);
+    const diffMinutes = Math.floor(diffTime / (1000 * 60));
+    const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffMinutes < 1) return 'Just now';
+    if (diffMinutes < 60) return `${diffMinutes}m ago`;
+    if (diffHours < 24) return `${diffHours}h ago`;
+    if (diffDays === 1) return 'Yesterday';
+    return date.toLocaleDateString();
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-sm">
@@ -94,8 +105,10 @@ const AdminNav = ({ currentBar }) => {
                 onClick={() => setShowNotifications(!showNotifications)}
               >
                 <Bell className="h-6 w-6" />
-                {hasNewNotifications && (
-                  <span className="absolute top-2 right-2 h-2 w-2 bg-red-500 rounded-full" />
+                {unreadCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    {unreadCount}
+                  </span>
                 )}
               </button>
 
@@ -111,35 +124,37 @@ const AdminNav = ({ currentBar }) => {
                     <div className="p-4">
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                          Notifications
+                          New Orders
                         </h3>
-                        <button className="text-sm text-green-600 hover:text-green-700 dark:text-green-400">
-                          Mark all as read
-                        </button>
                       </div>
                       <div className="space-y-3">
-                        {notifications.map((notification) => (
-                          <div
-                            key={notification.id}
-                            className={`p-3 rounded-lg transition-colors duration-200 ${
-                              notification.isUnread
-                                ? "bg-green-50 dark:bg-gray-700"
-                                : "hover:bg-gray-50 dark:hover:bg-gray-700"
-                            }`}
-                          >
-                            <div className="flex justify-between items-start">
-                              <h4 className="text-sm font-medium text-gray-900 dark:text-white">
-                                {notification.title}
-                              </h4>
-                              <span className="text-xs text-gray-500 dark:text-gray-400">
-                                {notification.time}
-                              </span>
-                            </div>
-                            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-                              {notification.message}
-                            </p>
-                          </div>
-                        ))}
+                        {unreadNotifications.length === 0 ? (
+                          <p className="text-center text-gray-500 dark:text-gray-400 py-4">
+                            No new orders
+                          </p>
+                        ) : (
+                          unreadNotifications.map((notification) => (
+                            <motion.div
+                              key={notification.id}
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              className="p-3 bg-green-50 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-green-100 dark:hover:bg-gray-600 transition-colors duration-200"
+                              onClick={() => handleNotificationClick(notification)}
+                            >
+                              <div className="flex justify-between items-start">
+                                <h4 className="text-sm font-medium text-gray-900 dark:text-white">
+                                  New Order
+                                </h4>
+                                <span className="text-xs text-gray-500 dark:text-gray-400">
+                                  {formatTimeAgo(notification.createdAt)}
+                                </span>
+                              </div>
+                              <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                                {notification.message}
+                              </p>
+                            </motion.div>
+                          ))
+                        )}
                       </div>
                     </div>
                   </motion.div>
