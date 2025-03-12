@@ -9,8 +9,7 @@ const cloudinary= require("cloudinary").v2
 const {
   createAccessToken,
   createRefreshToken,
-  sendAccessToken,
-  sendRefreshToken,
+  setTokenCookies,
 } = require("../auth/tokens");
 const isAuth = require("../auth/isAuth");
 require("dotenv").config();
@@ -48,27 +47,75 @@ exports.signupUser = async (req, res) => {
 
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
-  let isAdmin = false;
   try {
-    const user = await prisma.users.findFirst({ where: { email: email } });
+    // Find user
+    const user = await prisma.users.findFirst({ 
+      where: { email },
+      select: {
+        userId: true,
+        email: true,
+        username: true,
+        password: true,
+        profilePicture: true
+      }
+    });
+
     if (!user) {
-      return res.status(400).json({ message: "invalid credentials" });
+      return res.status(400).json({ 
+        success: false, 
+        message: "Invalid credentials" 
+      });
     }
+
+    // Verify password
     const validPassword = await bcrypt.compare(password, user.password);
     if (!validPassword) {
-      return res.status(400).json({ message: "invalid credentials" });
+      return res.status(400).json({ 
+        success: false, 
+        message: "Invalid credentials" 
+      });
     }
-    if (user.email === process.env.AD_EMAIL) {
-      isAdmin = true;
-    }
-    const accessToken = createAccessToken(user.userId);
-    const refreshToken = createRefreshToken(user.userId);
-    user.refreshToken = refreshToken;
-    sendRefreshToken(res, refreshToken);
-    sendAccessToken(req, res, accessToken, isAdmin);
-    return;
+
+    // Determine if user is admin
+    const isAdmin = user.email === process.env.AD_EMAIL;
+    const role = isAdmin ? 'admin' : 'user';
+
+    // Create tokens
+    const accessToken = createAccessToken(user.userId, role);
+    const refreshToken = createRefreshToken(user.userId, role);
+
+    // Store refresh token in database
+    await prisma.users.update({
+      where: { userId: user.userId },
+      data: { refreshToken }
+    });
+
+    // Prepare user data (excluding sensitive information)
+    const userData = {
+      userId: user.userId,
+      email: user.email,
+      username: user.username,
+      profilePicture: user.profilePicture
+    };
+
+    // Set cookies and prepare response
+    const responseData = setTokenCookies(res, {
+      accessToken,
+      refreshToken,
+      isAdmin,
+      user: userData
+    });
+
+    // Send response
+    res.status(200).json(responseData);
+
+    console.log(`User logged in successfully: ${user.email} (${role})`);
   } catch (err) {
-    res.status(500).json({ message: err.message || "Internal server error" });
+    console.error('Login error:', err);
+    res.status(500).json({ 
+      success: false, 
+      message: err.message || "Internal server error" 
+    });
   }
 };
 
@@ -137,28 +184,36 @@ exports.updateUserDetails = async (req, res) => {
 };
 
 exports.getCurrentUser = async (req, res) => {
-  const token = req.headers.token;
-  let isAdmin = false;
   try {
-    const userId = isAuth(token);
-
-    if (!userId) {
-      return res.json({ user: null });
-    }
+    // User data is already verified and attached by authMiddleware
+    const { userId, role } = req.user;
+    
     const currentUserCredentials = await prisma.users.findUnique({
       where: { userId },
+      select: {
+        userId: true,
+        username: true,
+        email: true,
+        profilePicture: true,
+        createdAt: true,
+        updatedAt: true
+      }
     });
+
     if (!currentUserCredentials) {
-      throw new Error("No user is found");
+      return res.status(404).json({ message: "User not found" });
     }
-    if (currentUserCredentials.email === process.env.AD_EMAIL) {
-      isAdmin = true;
-    }
-    const currentUser = lodash.omit(currentUserCredentials, ["password"]);
-    return res.status(200).json({ user: currentUser, isAdmin: isAdmin });
-  } catch (e) {
-    console.log(e);
-    return res.status(401).json({ error: e.message || "Something went wrong" });
+
+    const isAdmin = role === 'admin';
+    return res.status(200).json({ 
+      user: currentUserCredentials, 
+      isAdmin 
+    });
+  } catch (error) {
+    console.error("getCurrentUser error:", error);
+    return res.status(500).json({ 
+      message: error.message || "Internal server error" 
+    });
   }
 };
 

@@ -9,8 +9,8 @@ const cartRoutes = require("./Routes/cartRoutes");
 const FavRoutes = require("./Routes/favouriteRoutes");
 const tokenRoutes = require("./Routes/tokenRoutes");
 const offerRoutes = require("./Routes/offerRoutes");
-const otpRoutes=require("./Routes/otpRoutes")
-const subscriptionRoutes=require("./Routes/subscriptions")
+const otpRoutes = require("./Routes/otpRoutes");
+const subscriptionRoutes = require("./Routes/subscriptions");
 const Paypal = require("./Routes/PaypalRoutes");
 const notificationRoutes = require("./Routes/notificationRoutes");
 const orderRoutes = require("./Routes/orderRoutes");
@@ -20,10 +20,27 @@ const http = require('http');
 const socketIo = require('socket.io');
 const jwt = require('jsonwebtoken');
 const { PrismaClient } = require('@prisma/client');
+const { verifyAccessToken, verifyRefreshToken } = require('../auth/isAuth');
 
 const prisma = new PrismaClient();
 const app = express();
 const server = http.createServer(app);
+
+// Configure CORS with credentials
+app.use(cors({
+  origin: ["http://localhost:5173", "http://localhost:5174", "https://homedel.vercel.app"],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'token']
+}));
+
+// Configure cookie parser
+app.use(cookieParser());
+
+// Configure body parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const io = socketIo(server, {
   cors: {
     origin: ["http://localhost:5173", "http://localhost:5174", "https://homedel.vercel.app"],
@@ -38,43 +55,38 @@ const connectedClients = new Map();
 const adminSockets = new Set();
 
 // Verify token middleware for socket connections
-const verifyToken = async (token) => {
+const verifySocketToken = async (socket, next) => {
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await prisma.users.findUnique({
-      where: { userId: decoded.userId }
-    });
-    
-    if (!user) throw new Error('User not found');
-    return user;
-  } catch (error) {
-    throw new Error('Invalid token');
-  }
-};
+    const accessToken = socket.handshake.auth.token || 
+                       socket.handshake.headers.token ||
+                       socket.handshake.query.token;
 
-// Socket.IO connection handling with token verification
-io.use(async (socket, next) => {
-  try {
-    const token = socket.handshake.auth.token;
-    if (!token) {
-      throw new Error('Authentication token required');
+    if (!accessToken) {
+      return next(new Error('Authentication error: No token provided'));
     }
 
-    const user = await verifyToken(token);
-    socket.user = user;
+    const { valid, data, error } = await verifyAccessToken(accessToken);
+    
+    if (!valid) {
+      return next(new Error(`Authentication error: ${error}`));
+    }
+
+    socket.user = data;
     next();
   } catch (error) {
     next(new Error('Authentication error'));
   }
-});
+};
+
+io.use(verifySocketToken);
 
 io.on('connection', (socket) => {
   console.log('Client connected:', socket.id);
 
   // Handle user authentication
-  socket.on('authenticateUser', async ({ userId, token }) => {
+  socket.on('authenticateUser', async ({ userId }) => {
     try {
-      const user = await verifyToken(token);
+      const user = socket.user;
       if (user.userId !== userId) {
         throw new Error('Invalid user authentication');
       }
@@ -88,9 +100,9 @@ io.on('connection', (socket) => {
   });
 
   // Handle admin authentication
-  socket.on('authenticateAdmin', async ({ token }) => {
+  socket.on('authenticateAdmin', async () => {
     try {
-      const user = await verifyToken(token);
+      const user = socket.user;
       if (user.role !== 'admin') {
         throw new Error('Unauthorized: Admin access required');
       }
@@ -121,20 +133,6 @@ io.on('connection', (socket) => {
 app.set('io', io);
 app.set('connectedClients', connectedClients);
 app.set('adminSockets', adminSockets);
-
-app.use(cookieParser());
-app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "http://localhost:5174", "https://homedel.vercel.app"],
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'token'],
-  })
-);
-
-app.use(express.json());
 
 server.listen(5000, '0.0.0.0', () => {
   console.log("Server is running on port 5000");

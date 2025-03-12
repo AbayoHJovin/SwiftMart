@@ -21,6 +21,7 @@ model Users {
   otp            String?     @db.VarChar(10)
   resetToken     String?     // Add this field
   resetTokenExpiry DateTime?  // Add this field
+  refreshToken   String?     @db.Text  // Add refresh token field
   cart           Cart[]      
   favorites      Favorites[] 
   orders         Orders[]    

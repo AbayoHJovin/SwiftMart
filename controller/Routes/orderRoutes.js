@@ -5,23 +5,68 @@ const {
     approveOrder,
     updateApprovalMessage,
     deleteOrder,
-    getUserOrders
+    getUserOrders,
+    getAllOrders
 } = require('../orderControllers');
-const { verifyToken } = require('../../auth/verifyToken');
+const { authMiddleware } = require('../../auth/isAuth');
 
 // Create a new order
-router.post('/', verifyToken, createOrder);
+router.post('/', authMiddleware, createOrder);
+
+// Get all orders (admin only)
+router.get('/all', authMiddleware, (req, res, next) => {
+    if (req.user.role !== 'admin') {
+        return res.status(403).json({ 
+            success: false, 
+            message: 'Admin access required' 
+        });
+    }
+    next();
+}, getAllOrders);
 
 // Get user's orders
-router.get('/user/:userId', verifyToken, getUserOrders);
+router.get('/user/:userId', authMiddleware, (req, res, next) => {
+    if (req.user.userId === req.params.userId || req.user.role === 'admin') {
+        next();
+    } else {
+        res.status(403).json({ 
+            success: false, 
+            message: 'Access denied' 
+        });
+    }
+}, getUserOrders);
 
-// Approve order
-router.put('/:orderId/approve', verifyToken, approveOrder);
+// Approve order (admin only)
+router.put('/:orderId/approve', authMiddleware, (req, res, next) => {
+    if (req.user.role !== 'admin') {
+        return res.status(403).json({ 
+            success: false, 
+            message: 'Admin access required' 
+        });
+    }
+    next();
+}, approveOrder);
 
-// Update approval message
-router.put('/:orderId/approval-message', verifyToken, updateApprovalMessage);
+// Update approval message (admin only)
+router.put('/:orderId/approval-message', authMiddleware, (req, res, next) => {
+    if (req.user.role !== 'admin') {
+        return res.status(403).json({ 
+            success: false, 
+            message: 'Admin access required' 
+        });
+    }
+    next();
+}, updateApprovalMessage);
 
-// Delete order
-router.delete('/:orderId', verifyToken, deleteOrder);
+// Delete order (admin only)
+router.delete('/:orderId', authMiddleware, (req, res, next) => {
+    if (req.user.role !== 'admin') {
+        return res.status(403).json({ 
+            success: false, 
+            message: 'Admin access required' 
+        });
+    }
+    next();
+}, deleteOrder);
 
 module.exports = router; 

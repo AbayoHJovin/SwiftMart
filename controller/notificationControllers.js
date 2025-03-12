@@ -13,9 +13,16 @@ const createNotification = async (req, res) => {
                 type
             }
         });
-        res.status(201).json(notification);
+        res.status(201).json({
+            success: true,
+            notification
+        });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.error('Create notification error:', error);
+        res.status(500).json({ 
+            success: false, 
+            message: error.message || 'Error creating notification'
+        });
     }
 };
 
@@ -33,9 +40,16 @@ const getUserNotifications = async (req, res) => {
                 order: true
             }
         });
-        res.json(notifications);
+        res.json({
+            success: true,
+            notifications
+        });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.error('Get notifications error:', error);
+        res.status(500).json({ 
+            success: false, 
+            message: error.message || 'Error fetching notifications'
+        });
     }
 };
 
@@ -47,9 +61,16 @@ const markNotificationAsRead = async (req, res) => {
             where: { id: notificationId },
             data: { isRead: true }
         });
-        res.json(notification);
+        res.json({
+            success: true,
+            notification
+        });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.error('Mark notification read error:', error);
+        res.status(500).json({ 
+            success: false, 
+            message: error.message || 'Error marking notification as read'
+        });
     }
 };
 
@@ -63,9 +84,16 @@ const getUnreadCount = async (req, res) => {
                 isRead: false
             }
         });
-        res.json({ count });
+        res.json({
+            success: true,
+            count
+        });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.error('Get unread count error:', error);
+        res.status(500).json({ 
+            success: false, 
+            message: error.message || 'Error getting unread count'
+        });
     }
 };
 

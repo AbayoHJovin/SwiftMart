@@ -296,11 +296,52 @@ const updateOrderStatus = async (req, res) => {
     }
 };
 
+// Get all orders (admin only)
+const getAllOrders = async (req, res) => {
+    try {
+        const orders = await prisma.orders.findMany({
+            include: {
+                orderer: {
+                    select: {
+                        userId: true,
+                        username: true,
+                        email: true,
+                        profilePicture: true
+                    }
+                },
+                orderItems: {
+                    include: {
+                        product: true
+                    }
+                }
+            },
+            orderBy: {
+                orderDate: 'desc'
+            }
+        });
+
+        res.json({
+            success: true,
+            orders: orders.map(order => ({
+                ...order,
+                orderDate: new Date(order.orderDate).toISOString()
+            }))
+        });
+    } catch (error) {
+        console.error('Get all orders error:', error);
+        res.status(500).json({ 
+            success: false, 
+            message: error.message || 'Error fetching orders'
+        });
+    }
+};
+
 module.exports = {
     createOrder,
     approveOrder,
     updateApprovalMessage,
     deleteOrder,
     getUserOrders,
-    updateOrderStatus
+    updateOrderStatus,
+    getAllOrders
 }; 
