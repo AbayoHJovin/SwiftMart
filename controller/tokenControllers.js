@@ -4,7 +4,6 @@ const prisma = new PrismaClient();
 const {
   createAccessToken,
   createRefreshToken,
-  sendRefreshToken,
 } = require("../auth/tokens");
 const isAuth = require("../auth/isAuth")
 require("dotenv").config();
