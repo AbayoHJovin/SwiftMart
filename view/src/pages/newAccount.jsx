@@ -32,17 +32,19 @@ const NewAccount = () => {
     const token = localStorage.getItem("token");
     fetch(`${apiUrl}/protected`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", authorization: token },
+      headers: { 
+        "Content-Type": "application/json",
+        ...(token && { "Authorization": `Bearer ${token}` })
+      },
+      credentials: "include"
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.message === "Unauthorized") {
+        if (!data.success) {
           console.log("error in viewing account data", data);
           setIsSignedIn(false);
-        } else if (data.message === "Authorized") {
-          setIsSignedIn(true);
         } else {
-          setIsSignedIn(false);
+          setIsSignedIn(true);
         }
       })
       .catch((e) => {
