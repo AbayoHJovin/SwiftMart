@@ -85,7 +85,7 @@ exports.verifyOtp = async (req, res) => {
     });
 
     return res.status(200).json({ 
-      message: "OTP verified successfully",
+      success: true,
       redirectUrl: "/authorized/Admin/dashboard"
     });
   } catch (error) {

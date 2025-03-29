@@ -91,20 +91,22 @@ const AdminAuth = () => {
       body: JSON.stringify({ otp: otpValue }),
       credentials: "include",
     })
-      .then((response) => response.json())
-      .then((message) => {
-        if (message.message == "OTP verified successfully" && message.redirectUrl) {
-          setIsAdminLoggedIn(true);
-          window.location.href = message.redirectUrl;
-        } else {
-          toast.error("Invalid OTP");
-        }
-      })
-      .catch((e) => {
-        console.error(e);
-        toast.error("Invalid OTP");
-      })
-      .finally(() => setLoading(false));
+    .then(async (response) => {
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.message || "OTP verification failed");
+      }
+
+      if (data.success && data.redirectUrl) {
+        window.location.href = data.redirectUrl; 
+      }
+    })
+    .catch((error) => {
+      console.error("OTP Error:", error);
+      toast.error(error.message || "Invalid OTP");
+    })
+    .finally(() => setLoading(false));
   }
 
   const otpInputStyle = {
