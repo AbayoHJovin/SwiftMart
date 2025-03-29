@@ -128,7 +128,7 @@ exports.checkAdmin = async (req, res) => {
   
   try {
     if (!adminAuth) {
-      return res.status(401).json({ isAdmin: false, message: "Unauthorized" });
+      return res.status(401).json({ isAdmin: false, message: "Unauthorized", cookie: req.cookies });
     }
 
     jwt.verify(adminAuth, process.env.JWT_SECRET);
