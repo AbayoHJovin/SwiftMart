@@ -31,11 +31,9 @@
     "nodemailer": "^6.9.15",
     "nodemon": "^3.1.4",
     "otp-generator": "^4.0.1",
+    "prisma": "^6.5.0",
     "sequelize": "^6.37.5",
     "socket.io": "^4.7.5",
     "streamifier": "^0.1.1"
-  },
-  "devDependencies": {
-    "prisma": "^5.22.0"
   }
 }
