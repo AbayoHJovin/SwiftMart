@@ -6,10 +6,8 @@ function createAccessToken(userId) {
 function createRefreshToken(userId) {
   return jwt.sign({ userId }, process.env.REFRESH_TOKEN, { expiresIn: "7d" });
 }
-function sendAccessToken(req, res, accessToken,isAdmin) {
-  res
-    .status(200)
-    .json({ accessToken ,message:"loggedIn",isAdmin});
+function sendAccessToken(req, res, accessToken, isAdmin) {
+  res.status(200).json({ accessToken, message: "loggedIn", isAdmin });
 }
 function sendRefreshToken(res, refreshToken) {
   res.cookie("refreshToken", refreshToken, {
@@ -21,4 +19,9 @@ function sendRefreshToken(res, refreshToken) {
   });
 }
 
-module.exports = { createAccessToken, createRefreshToken,sendAccessToken,sendRefreshToken };
+module.exports = {
+  createAccessToken,
+  createRefreshToken,
+  sendAccessToken,
+  sendRefreshToken,
+};

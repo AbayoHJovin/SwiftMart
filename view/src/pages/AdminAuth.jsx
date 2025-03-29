@@ -5,13 +5,11 @@ import { useNavigate } from "react-router-dom";
 import ReactCodeInput from "react-code-input";
 import { apiUrl } from "../lib/apis";
 import Loader3 from "../components/Loading3";
-import { AdminContext } from "../../constants/AuthorizedAdmin";
 import { CurrentUserContext } from "../../constants/currentUser";
 import { ArrowLeft, Clock } from "lucide-react";
 
 const AdminAuth = () => {
   const navigate = useNavigate();
-  const { setIsAdminLoggedIn } = useContext(AdminContext);
   const { isAnAdmin, isLoading } = useContext(CurrentUserContext);
   const [otpValue, setOtpValue] = useState("");
   const [sendOtp, setSendOtp] = useState(true);
@@ -90,6 +88,7 @@ const AdminAuth = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ otp: otpValue }),
       credentials: "include",
+      mode: "cors" // Explicitly enable CORS
     })
     .then(async (response) => {
       const data = await response.json();

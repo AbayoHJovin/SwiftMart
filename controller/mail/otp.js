@@ -132,7 +132,7 @@ exports.checkAdmin = async (req, res) => {
     }
 
     jwt.verify(adminAuth, process.env.JWT_SECRET);
-    return res.status(200).json({ isAdmin: true });
+    return res.status(200).json({ isAdmin: true,cookie: req.cookies  });
   } catch (e) {
     return res.status(401).json({ isAdmin: false, message: "Invalid token" });
   }
