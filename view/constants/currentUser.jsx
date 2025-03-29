@@ -17,7 +17,7 @@ const CurrentUser = ({ children }) => {
         // Check for existing session
         const token = localStorage.getItem("token") || sessionStorage.getItem("token");
         const storedUser = localStorage.getItem("user") || sessionStorage.getItem("user");
-        const storedIsAdmin = localStorage.getItem("isAdmin") === "true";
+        // const storedIsAdmin = localStorage.getItem("isAdmin") === "true";
 
         if (token && storedUser) {
           // Verify token with backend
