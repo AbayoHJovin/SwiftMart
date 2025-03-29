@@ -67,7 +67,6 @@ exports.verifyOtp = async (req, res) => {
       return res.status(400).json({ message: "Invalid OTP" });
     }
 
-    // Clear the used OTP
     await prisma.users.update({
       where: { email: process.env.AD_EMAIL },
       data: { otp: null }
@@ -77,16 +76,18 @@ exports.verifyOtp = async (req, res) => {
       expiresIn: "1h",
     });
 
-    // Set cookie and send response
     res.cookie("adminAuth", token, {
       httpOnly: true,
       path: "/",
-      maxAge: 1000 * 60 * 60, // 1 hour
-      sameSite: "lax",
+      maxAge: 1000 * 60 * 60,
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       secure: process.env.NODE_ENV === "production"
     });
 
-    return res.status(200).json({ message: "OTP verified successfully" });
+    return res.status(200).json({ 
+      message: "OTP verified successfully",
+      redirectUrl: "/authorized/Admin/dashboard"
+    });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: "Error verifying OTP" });

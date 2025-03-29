@@ -93,9 +93,9 @@ const AdminAuth = () => {
     })
       .then((response) => response.json())
       .then((message) => {
-        if (message.message == "OTP verified successfully") {
+        if (message.message == "OTP verified successfully" && message.redirectUrl) {
           setIsAdminLoggedIn(true);
-          window.location.href = "/authorized/Admin/dashboard";
+          window.location.href = message.redirectUrl;
         } else {
           toast.error("Invalid OTP");
         }
