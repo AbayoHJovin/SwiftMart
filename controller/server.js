@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174", "https://homedel-jov.vercel.app"],
+    origin: ["http://localhost:5173", "http://localhost:5174", "https://homedel-jov.vercel.app/"],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'token'],
