@@ -5,111 +5,106 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-}
-
-enum Gender {
-  Male
-  Female
-  Unisex
+  
 }
 
 model Users {
-  userId         String      @id @default(uuid())
-  username       String      @db.VarChar(255)
-  email          String      @unique
-  password       String      @db.VarChar(255)
-  otp            String?     @db.VarChar(10)
-  resetToken     String?     // Add this field
-  resetTokenExpiry DateTime?  // Add this field
-  cart           Cart[]      
-  favorites      Favorites[] 
-  orders         Orders[]    
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
-  profilePicture String?     @db.Text
+  userId           String     @id @default(uuid())
+  username         String     @db.VarChar(255)
+  email            String     @unique
+  password         String     @db.VarChar(255)
+  otp              String?    @db.VarChar(10)
+  resetToken       String?
+  resetTokenExpiry DateTime?
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+  profilePicture   String?
+  cart             Cart?
+  favorites        Favorites?
+  orders           Orders[]
 }
 
 model Cart {
   cartId       String         @id @default(cuid())
-  owner        Users          @relation(fields: [ownerId], references: [userId])
   ownerId      String         @unique
-  cartProducts CartProducts[] 
+  owner        Users          @relation(fields: [ownerId], references: [userId])
+  cartProducts CartProducts[]
 }
 
 model CartProducts {
   id        String   @id @default(cuid())
-  cart      Cart     @relation(fields: [cartId], references: [cartId])
-  product   Products @relation(fields: [productId], references: [prodId])
   cartId    String
   productId String
   quantity  Int      @default(1)
+  cart      Cart     @relation(fields: [cartId], references: [cartId])
+  product   Products @relation(fields: [productId], references: [prodId])
 
   @@unique([cartId, productId])
 }
 
 model Products {
-  prodId          String         @id @default(cuid())
-  prodName        String         @db.VarChar(255)
-  prodDescription String         @db.Text
+  prodId          String          @id @default(cuid())
+  prodName        String          @db.VarChar(255)
+  prodDescription String
   price           Int
   gender          Gender
-  category        String         @db.VarChar(255)
-  stock           Int            @default(0)
-  popular         Boolean        @default(false)
-  images          ProductImages[] // New relation to ProductImages
-  cartProducts    CartProducts[] 
-  orderItems      OrderItem[]   
-  favProducts     FavProducts[] 
+  category        String          @db.VarChar(255)
+  stock           Int             @default(0)
+  popular         Boolean         @default(false)
+  cartProducts    CartProducts[]
+  favProducts     FavProducts[]
+  orderItems      OrderItem[]
+  images          ProductImages[]
 }
 
 model ProductImages {
   imageId   String   @id @default(cuid())
-  product   Products @relation(fields: [productId], references: [prodId])
   productId String
-  imageUrl  String   @db.Text // Stores the path or URL of the image
-  isMain    Boolean  @default(false) // Indicates if this is the main image
-  position  Int      @default(0) // Controls the order of sub-images
+  imageUrl  String
+  isMain    Boolean  @default(false)
+  position  Int      @default(0)
+  product   Products @relation(fields: [productId], references: [prodId])
 }
 
 model Orders {
-  orderId       String      @id @default(cuid())
-  orderer       Users       @relation(fields: [ordererId], references: [userId])
-  ordererId     String
-  address       String      @db.VarChar(255)
-  phoneNo       String      @db.VarChar(15)
-  paymentMethod String      @db.VarChar(255)
-  price         Decimal     @db.Decimal(10, 2)
-  approved      Boolean     @default(false)
-  orderDate     String?     @db.Text
-  orderItems    OrderItem[] 
-  transactionUrl String?    @db.Text
+  orderId        String      @id @default(cuid())
+  ordererId      String
+  address        String      @db.VarChar(255)
+  phoneNo        String      @db.VarChar(15)
+  paymentMethod  String      @db.VarChar(255)
+  price          Decimal     @db.Decimal(10, 2)
+  approved       Boolean     @default(false)
+  orderDate      String?
+  transactionUrl String?
+  orderItems     OrderItem[]
+  orderer        Users       @relation(fields: [ordererId], references: [userId])
 }
 
 model OrderItem {
   id        String   @id @default(cuid())
-  order     Orders   @relation(fields: [orderId], references: [orderId])
-  product   Products @relation(fields: [productId], references: [prodId])
   orderId   String
   productId String
   quantity  Int      @default(1)
+  order     Orders   @relation(fields: [orderId], references: [orderId])
+  product   Products @relation(fields: [productId], references: [prodId])
 
   @@unique([orderId, productId])
 }
 
 model Favorites {
   favId       String        @id @default(cuid())
-  user        Users         @relation(fields: [userId], references: [userId])
   userId      String        @unique
-  favProducts FavProducts[] 
+  favProducts FavProducts[]
+  user        Users         @relation(fields: [userId], references: [userId])
 }
 
 model FavProducts {
   id        String    @id @default(cuid())
-  favorite  Favorites @relation(fields: [favId], references: [favId])
-  product   Products  @relation(fields: [productId], references: [prodId])
   favId     String
   productId String
   quantity  Int       @default(1)
+  favorite  Favorites @relation(fields: [favId], references: [favId])
+  product   Products  @relation(fields: [productId], references: [prodId])
 
   @@unique([favId, productId])
 }
@@ -117,4 +112,10 @@ model FavProducts {
 model Subscription {
   subscriptionId String @id @default(uuid())
   email          String @unique @db.VarChar(255)
+}
+
+enum Gender {
+  Male
+  Female
+  Unisex
 }
