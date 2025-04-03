@@ -219,8 +219,8 @@ exports.forgotPassword = async (req, res) => {
       }
     });
 
-    const resetUrl = `http://localhost:5173/update-password?token=${resetToken}&email=${encodeURIComponent(email)}`;
-    const cancelUrl = `http://localhost:5173/cancel-reset?token=${resetToken}`;
+    const resetUrl = `https://homedel-jov.vercel.app/update-password?token=${resetToken}&email=${encodeURIComponent(email)}`;
+    const cancelUrl = `https://homedel-jov.vercel.app/cancel-reset?token=${resetToken}`;
 
     // Email configuration
     const transporter = nodemailer.createTransport({
